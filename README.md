@@ -35,9 +35,10 @@
   - You will see the option to open a pull request.
   - Give your PR a title.
   - Explain what your changes does, adding images and proof (test) if needed.
-  - Confirm that you're making the PR to the dev branch.
   - Click the open pull request button and wait.
   - Add comments where necessary and wait for the PR Leads to check.
+  - Confirm that you're making the PR to the dev branch.
+    > e.g. ![](./assets/PR.png)
 
 - #### Reminder: Constantly update from upstream
 
