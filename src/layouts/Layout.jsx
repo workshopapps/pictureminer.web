@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
-const Layout = () => {
+function Layout() {
   return (
     <div className="Layout">
       <Navbar />
@@ -11,6 +11,6 @@ const Layout = () => {
       <Footer />
     </div>
   );
-};
+}
 
 export default Layout;
