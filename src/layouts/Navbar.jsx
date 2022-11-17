@@ -1,10 +1,10 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import Logo from "../../components/ui/Logo";
-import UserContext from "../context/UserProvider";
+import Logo from "../components/ui/Logo";
+import { useUserProvider } from "../context/UserProvider";
 
 const Navbar = () => {
-  const { user, setUser } = useContext(UserContext);
+  const { user, setUser } = useUserProvider();
   const [openMenu, setOpenMenu] = useState(false);
   const handleClick = function (e) {
     e.target.closest(
