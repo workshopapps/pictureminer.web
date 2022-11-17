@@ -20,7 +20,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -64,9 +65,16 @@
     "autoprefixer": "^10.4.13",
     "babel-plugin-named-exports-order": "^0.0.2",
     "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
     "postcss": "^8.4.19",
+    "prettier": "2.7.1",
     "prop-types": "^15.8.1",
     "tailwindcss": "^3.2.4",
     "webpack": "^5.75.0"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": "npm run lint",
+    "*.{js,jsx,}": "npm run format"
   }
 }
