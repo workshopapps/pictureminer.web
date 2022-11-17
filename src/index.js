@@ -1,10 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import reportWebVitals from "./reportWebVitals";
-import RoutesComponents from "./routes";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import reportWebVitals from './reportWebVitals';
+import RoutesComponents from './routes';
 
-import "./index.css";
+import './index.css';
 
 const IndexPage = () => {
   return (
@@ -16,7 +16,7 @@ const IndexPage = () => {
   );
 };
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
 

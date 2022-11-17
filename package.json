@@ -15,6 +15,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "lint": "eslint . --fix --max-warnings=0",
+    "format": "prettier . --write",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
@@ -61,6 +63,7 @@
     "@storybook/testing-library": "^0.0.13",
     "autoprefixer": "^10.4.13",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "eslint-config-prettier": "^8.5.0",
     "postcss": "^8.4.19",
     "prop-types": "^15.8.1",
     "tailwindcss": "^3.2.4",
