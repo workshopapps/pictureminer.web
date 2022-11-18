@@ -58,9 +58,9 @@ const Footer = () => {
 					</form>
 				</div>
 			</div>
-			<div className="relative my-20">
+			<div className="relative my-20 flex justify-center">
 				<p
-					className="text-[#F7F7F7] font-normal  text-center bg-[#092C4C]"
+					className="text-[#F7F7F7] font-normal  text-center bg-[#092C4C] relative w-fit"
 					style={{
 						zIndex: 10,
 					}}
