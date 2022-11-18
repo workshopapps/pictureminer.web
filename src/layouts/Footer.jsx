@@ -11,20 +11,23 @@ const Footer = () => {
           <h2 className="mb-4">Company</h2>
           <Link to="/about-us">About us</Link>
           <Link to="/careers">Careers</Link>
-          <Link to="/news">News</Link>
-          <Link to="/contact">Contact</Link>
+          <Link to="/faq">FAQ</Link>
+          <Link to="/how-it-works">How it works</Link>
+          <Link to="/partner-with-us">Partner with us</Link>
         </div>
         <div className="flex flex-col gap-4">
           <h2 className="mb-4">Resources</h2>
           <Link to="/blog">Blog</Link>
+          <Link to="/pricing">Pricing</Link>
           <Link to="/support">Support</Link>
-          <Link to="/why-tozilla">Tozilla</Link>
+          <Link to="/why-tozilla">Why Tozilla</Link>
+          <Link to="/customer-stories">Customer Stories</Link>
         </div>
         <div className="flex flex-col gap-4">
           <h2 className="mb-4">Legal</h2>
-          <Link to="/terms">Road map</Link>
+          <Link to="/terms">Terms</Link>
           <Link to="/privacy">Privacy</Link>
-          <Link to="/contact">Contact</Link>
+          {/* <Link to="/contact">Contact</Link> */}
         </div>
         <div className="flex flex-col gap-2">
           <div className="mb-6">
@@ -67,12 +70,12 @@ const Footer = () => {
         >
           &copy; 2022 Tozilla. All rights reserverd.
         </p>
-        <div
+        {/* <div
           className="w-full h-[1px] bg-[#EAECF0] absolute top-[50%]"
           style={{
             zIndex: 1,
           }}
-        ></div>
+        ></div> */}
       </div>
     </footer>
   );
