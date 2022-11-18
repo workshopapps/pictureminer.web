@@ -25,4 +25,12 @@ export const carouselData = [
     position: 'Head Principal',
     company: 'Zuri',
   },
+
+  {
+    id: 2,
+    text: '"Our company uses Tozilla to generate top quality image analysis with the analysis of our product specifications"',
+    name: 'Adewale Adekoya',
+    position: 'Head Principal',
+    company: 'Jumia',
+  },
 ];

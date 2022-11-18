@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { carouselData } from '../../data/CustomerStoriesData';
 import PrevIcon from '../../assets/PrevIcon';
 import NextIcon from '../../assets/NextIcon';
+import '../../styles/Carousel.scss';
 const Carousel = () => {
   const [current, setCurrent] = useState(0);
 
@@ -18,12 +19,26 @@ const Carousel = () => {
   };
 
   return (
-    <div>
-      <PrevIcon onClick={prevSlide} />
-      <div className="text-lg font-bold flex justify-center align-middle text-center w-9/12 mx-auto">
-        {data.text}
+    <div className="carouselSlideonscroll m-3">
+      <div
+        className="flex flex-row
+      justify-between items-end
+
+
+
+      "
+      >
+        <PrevIcon onClick={prevSlide} />
+        <div className="text-lg font-bold flex justify-center align-middle text-center w-9/12 mx-auto">
+          {data.text}
+        </div>
+        <NextIcon onClick={nextSlide} />
       </div>
-      <NextIcon onClick={nextSlide} />
+      <div className="flex flex-row justify-around mt-4 items-center">
+        <div>{data.name}</div>
+        <div className="straightLine"></div>
+        <div>{data.position}</div>
+      </div>
     </div>
   );
 };
