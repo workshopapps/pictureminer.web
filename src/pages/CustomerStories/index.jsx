@@ -1,7 +1,12 @@
 import React from 'react';
+import HeaderText from './HeaderText';
 
 const index = () => {
-  return <div>index</div>;
+  return (
+    <div>
+      <HeaderText />
+    </div>
+  );
 };
 
 export default index;
