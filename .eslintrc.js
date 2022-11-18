@@ -19,13 +19,13 @@ module.exports = {
     'sourceType': 'module'
   },
   'plugins': [
-    'react', 'jest', 'pretttier'
+    'react', 'jest', 'prettier'
   ],
   'rules': {
-    'indent': [
-      'error',
-      2
-    ],
+    // 'indent': [
+    //   'error',
+    //   2
+    // ],
     // 'linebreak-style': [
     //   'error',
     //   'windows'
