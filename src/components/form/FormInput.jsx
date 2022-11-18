@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const FormInput = ({ name, label, type, onchange, value, onBlur }) => {
   return (

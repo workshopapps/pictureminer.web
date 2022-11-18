@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
 const Alert = ({ children }) => {
-  return <div className="alert">{children}</div>
-}
+  return <div className="alert">{children}</div>;
+};
 
-export default Alert
+export default Alert;

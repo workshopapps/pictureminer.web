@@ -6,7 +6,7 @@ import RoutesComponents from './routes';
 
 import './index.css';
 
-const IndexPage = () => {
+function IndexPage() {
   return (
     <>
       <BrowserRouter>
@@ -14,7 +14,7 @@ const IndexPage = () => {
       </BrowserRouter>
     </>
   );
-};
+}
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
