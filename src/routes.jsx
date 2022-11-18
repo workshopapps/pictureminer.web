@@ -6,19 +6,27 @@ import ErrorPage from './Error';
 import App from './App';
 import { CareerApplication } from './pages/career';
 
-const RoutesComponents = () => {
-  return (
-    <Layout>
-      <Routes>
-        {/* <Route path="" element={<App />}> */}
-        <Route index path="/" element={<App />}></Route>
+import DashboardLayout from './layouts/dashboard/DashboardLayout';
+import Dashboard from './pages/dashboard/Dashboard';
 
-        <Route path="/careers/application" element={<CareerApplication />} />
-        <Route path="*" element={<ErrorPage />}></Route>
-        {/* </Route> */}
-      </Routes>
-    </Layout>
-  );
+const RoutesComponents = () => {
+
+	return (
+		<>
+			<Routes>
+				<Route path="" element={<Layout />}>
+					<Route index path="/" element={<App />}></Route>
+           <Route path="/careers/application" element={<CareerApplication />} />
+					<Route path="*" element={<ErrorPage />}></Route>
+				</Route>
+				<Route path="" element={<DashboardLayout />}>
+					<Route path="/dashboard" element={<Dashboard />} />
+				</Route>
+			</Routes>
+		</>
+	);
+
+
 };
 
 export default RoutesComponents;
