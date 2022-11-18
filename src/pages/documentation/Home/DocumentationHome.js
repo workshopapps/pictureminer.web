@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './documentationHome.scss';
 import {
   Settings,
@@ -16,12 +15,10 @@ const cardsList = [
   {
     icon: <Settings size="32" color="#292D32" variant="Bold" />,
     title: 'Getting Started',
-    link: '/documentation/getting-started',
   },
   {
     icon: <StatusUp size="32" color="#292d32" />,
     title: 'Installations',
-    link: '/documentation/installations',
   },
   {
     icon: (
@@ -39,37 +36,30 @@ const cardsList = [
       </svg>
     ),
     title: 'APIs',
-    link: '/documentation/apis',
   },
   {
     icon: <Happyemoji size="32" color="#292d32" />,
     title: 'Examples',
-    link: '/documentation/examples',
   },
   {
     icon: <Activity size="32" color="#292d32" />,
     title: 'Utilities',
-    link: '/documentation/utilities',
   },
   {
     icon: <Card size="32" color="#292d32" />,
     title: 'Integrations',
-    link: '/documentation/integrations',
   },
   {
     icon: <DocumentCode size="32" color="#292d32" />,
     title: 'Web',
-    link: '/documentation/web',
   },
   {
     icon: <Mobile size="32" color="#292d32" />,
     title: 'Mobile',
-    link: '/documentation/mobile',
   },
   {
     icon: <Verify size="32" color="#292d32" />,
     title: 'Verifications',
-    link: '/documentation/verifications',
   },
 ];
 const DocumentationHome = () => {
@@ -86,9 +76,7 @@ const DocumentationHome = () => {
             <div className="card" key={index}>
               <div className="title">
                 <div className="icon">{item.icon}</div>
-                <h1>
-                  <Link to={item?.link}>{item.title}</Link>
-                </h1>
+                <h1>{item.title}</h1>
               </div>
               <p>
                 Torzilla (currently v3.3.7) has ways to quickly get started

@@ -17,6 +17,7 @@ import About from './pages/About/components/About';
 import DashboardLayout from './layouts/dashboard/DashboardLayout';
 import Dashboard from './pages/dashboard/Dashboard';
 import Images from './pages/dashboard/Images';
+import DocumentationHome from './pages/documentation/Home/DocumentationHome';
 
 const RoutesComponents = () => {
   return (
@@ -82,6 +83,11 @@ const RoutesComponents = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/images" element={<Images />} />
         </Route>
+        {/* <Route path="" element={<App />}> */}
+        <Route index path="/" element={<App />}></Route>
+        <Route path="/documentation" element={<DocumentationHome />}></Route>
+        <Route path="*" element={<ErrorPage />}></Route>
+        {/* </Route> */}
       </Routes>
     </>
   );
