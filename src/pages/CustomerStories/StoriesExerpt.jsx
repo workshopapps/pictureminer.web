@@ -8,7 +8,7 @@ const StoriesExerpt = ({ story }) => {
           src={story.image}
           alt="image"
           className="
-      object-cover  h-[224px] w-[396px] lg:w-auto rounded-t-lg"
+      object-cover  h-[224px] w-[396px] rounded-t-lg"
         />
 
         <div
@@ -17,26 +17,16 @@ const StoriesExerpt = ({ story }) => {
 
       "
         >
-          <a
-            className="font-bold
-          hover:text-orange-400
+          <div className="font-bold">{story.headline}</div>
 
-          "
-            href="#"
-          >
-            {' '}
-            {story.headline}
-          </a>
-
-          <div className="lg:text-base lg:tracking-wide">
-            {story.description}
-          </div>
+          <div>{story.description}</div>
         </div>
         <a
           href="#"
-          className=" hover:text-orange-400
-      flex  items-center text-[#434343] gap-2 p-4 w-[150px] h-[48px] lg:text-lg font-semibold  underline text-base font-medium leading-[24px] "
+          className="
+      flex  items-center text-[#434343] gap-2 p-4 w-[150px] h-[48px] text-base font-medium leading-[24px] "
         >
+          {' '}
           Read story
         </a>
       </div>

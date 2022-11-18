@@ -5,7 +5,11 @@ export default [
     headline:
       'How Jumia is maximizing their business with effective data analysis',
     description:
+<<<<<<< HEAD
       'How Jumia is maximizing their business by devoliping innovative insights with effective data analysis using Minergram',
+=======
+      'How Jumia is maximizing their business by devoliping innovative insights with effective data analysis using Tozilla',
+>>>>>>> 0314b4e (setup the card component)
   },
   {
     id: 2,
@@ -13,6 +17,7 @@ export default [
     headline:
       'How Jumia is maximizing their business with effective data analysis',
     description:
+<<<<<<< HEAD
       'How Jumia is maximizing their business by devoliping innovative insights with effective data analysis using Minergram',
   },
 
@@ -59,5 +64,8 @@ export const carouselData = [
     name: 'Adewale Adekoya',
     position: 'Head Principal',
     company: 'Jumia',
+=======
+      'How Jumia is maximizing their business by devoliping innovative insights with effective data analysis using Tozilla',
+>>>>>>> 0314b4e (setup the card component)
   },
 ];
