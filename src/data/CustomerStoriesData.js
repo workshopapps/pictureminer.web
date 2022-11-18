@@ -69,3 +69,13 @@ export const carouselData = [
 >>>>>>> 0314b4e (setup the card component)
   },
 ];
+
+export const carouselData = [
+  {
+    id: 1,
+    text: '"Our company uses Tozilla to generate adequate insights with the analysis of our product specifications"',
+    name: 'Mark Essien',
+    position: 'Head Principal',
+    company: 'Zuri',
+  },
+];
