@@ -81,7 +81,6 @@
 		"webpack": "^5.75.0"
 	},
 	"lint-staged": {
-		"*.{js,jsx}": "npm run lint --fix",
-		"*.{js,css,md}": "npm run format"
+		"*.{js,jsx}": ["eslint", "prettier --write"]
 	}
 }

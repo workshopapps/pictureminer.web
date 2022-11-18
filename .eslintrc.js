@@ -19,7 +19,7 @@ module.exports = {
     'sourceType': 'module'
   },
   'plugins': [
-    'react', 'jest', 'pretttier'
+    'react', 'jest'
   ],
   'rules': {
     'indent': [
