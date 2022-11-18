@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import '../../styles/Card.scss';
 const Card = ({ children, style }) => {
   return (
@@ -8,6 +9,10 @@ const Card = ({ children, style }) => {
       </div>
     </>
   );
+};
+
+Card.propTypes = {
+  children: PropTypes.node.isRequired,
 };
 
 export default Card;
