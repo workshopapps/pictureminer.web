@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 const HeaderText = () => {
   return (
     <div
@@ -14,6 +15,13 @@ const HeaderText = () => {
         Helping 3000+ companies mine images on their website for effecient data
         analysis and general company growth
       </p>
+=======
+
+const HeaderText = () => {
+  return (
+    <div>
+      <h1 className="text_lg">Customer Stories</h1>
+>>>>>>> 6650e3b (add the customerroute)
     </div>
   );
 };

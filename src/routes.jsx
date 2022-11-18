@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ErrorPage from './Error';
+<<<<<<< HEAD
 
 import {
   CareerApplication,
@@ -24,6 +25,10 @@ import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
 import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
 
 import Main from './pages/LandingPage/main';
+=======
+import CustomerStories from './pages/CustomerStories';
+import App from './App';
+>>>>>>> 6650e3b (add the customerroute)
 
 const RoutesComponents = () => {
   return (
@@ -71,12 +76,16 @@ const RoutesComponents = () => {
 
           <Route path="why-tozilla" element={<WhyTozilla />} />
         </Route>
+<<<<<<< HEAD
 
         <Route path="" element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/images" element={<Images />} />
+=======
+        <Route path="customer-stories" element={<CustomerStories />}>
+          {' '}
+>>>>>>> 6650e3b (add the customerroute)
         </Route>
-		    <Route path='/landingpage' element={<Main />} />
       </Routes>
     </>
   );
