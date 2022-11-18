@@ -10,7 +10,7 @@ const RoutesComponents = () => {
   return (
     <Layout>
       <Routes>
-        <Route path="" element={<App />}>
+        <Route>
           <Route index path="/" element={<App />}></Route>
           <Route path="*" element={<ErrorPage />}></Route>
           <Route path="/terms-of-use" element={<Termsofuse />}></Route>
