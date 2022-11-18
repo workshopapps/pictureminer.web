@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.svg';
@@ -16,7 +15,7 @@ const NavBar = () => {
           className="w-[150px] md:w-[233px] md:h-[37px]"
         />
       </div>
-      <button className={'md:hidden '} onClick={() => setHide((prev) => !prev)}>
+      <button className="md:hidden" onClick={() => setHide((prev) => !prev)}>
         <FaBars size={30} />
       </button>
       <div
@@ -24,8 +23,7 @@ const NavBar = () => {
           hide ? 'hidden md:flex' : ''
         }`}
       >
-        <Link to="/">Home</Link>
-        <Link to="/career">Career</Link>
+        <Link to="/career">Api Documentation</Link>
         <Link to="/pricing">Pricing</Link>
 
         <Link
