@@ -1,9 +1,9 @@
-import React, { Suspense } from "react";
+import React from 'react';
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route } from 'react-router-dom';
 // import Layout from "./layouts/Layout";
-import ErrorPage from "./Error";
-import App from "./App";
+import ErrorPage from './Error';
+import App from './App';
 
 const RoutesComponents = () => {
   return (
