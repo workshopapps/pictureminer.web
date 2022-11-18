@@ -4,15 +4,17 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './layouts/Layout';
 import ErrorPage from './Error';
 import App from './App';
+import DocumentationHome from './pages/documentation/Home/DocumentationHome';
 
 const RoutesComponents = () => {
   return (
     <Layout>
       <Routes>
-        <Route path="" element={<App />}>
-          <Route index path="/" element={<App />}></Route>
-          <Route path="*" element={<ErrorPage />}></Route>
-        </Route>
+        {/* <Route path="" element={<App />}> */}
+        <Route index path="/" element={<App />}></Route>
+        <Route path="/documentation" element={<DocumentationHome />}></Route>
+        <Route path="*" element={<ErrorPage />}></Route>
+        {/* </Route> */}
       </Routes>
     </Layout>
   );
