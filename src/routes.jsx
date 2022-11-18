@@ -1,13 +1,14 @@
 import React from 'react';
 
 import { Routes, Route } from 'react-router-dom';
-// import Layout from "./layouts/Layout";
+import Layout from './layouts/Layout';
 import ErrorPage from './Error';
 import App from './App';
 import DashboardLayout from './layouts/dashboard/DashboardLayout';
 import Dashboard from './pages/dashboard/Dashboard';
 
 const RoutesComponents = () => {
+
 	return (
 		<>
 			<Routes>
@@ -21,6 +22,7 @@ const RoutesComponents = () => {
 			</Routes>
 		</>
 	);
+
 };
 
 export default RoutesComponents;
