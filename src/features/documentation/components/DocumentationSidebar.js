@@ -1,7 +1,7 @@
 import React from 'react';
 import ScrollspyNav from 'react-scrollspy-nav';
 import PropTypes from 'prop-types';
-// import './DocumentationSidebar.scss';
+import './DocumentationSidebar.scss';
 const DocumentationSidebar = (props) => {
   return (
     <div className="documentation-sidebar">

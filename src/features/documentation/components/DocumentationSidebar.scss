@@ -29,8 +29,6 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    text-align: center;
-    align-self: center;
 
     position: sticky;
     .documentation-sidebar_section {
@@ -42,7 +40,7 @@
     .documentation-sidebar_active {
       align-self: flex-start;
       font-weight: 600;
-      transform: translateX(-15px);
+      transform: translateX(-5px);
     }
   }
 }
