@@ -15,7 +15,7 @@ const GettingStarted = () => {
         analysis and general company growth
       </div>
 
-      <div className=" text-center  bg-[#FF6C00] w-[100px] mx-auto text-white px-4 py-2 rounded-md">
+      <div className=" text-center  bg-[#FF6C00] w-[100px] cursor-pointer mx-auto text-white px-4 py-2 rounded-md ">
         Sign Up
       </div>
     </div>
