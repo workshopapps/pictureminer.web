@@ -24,9 +24,9 @@ const RoutesComponents = () => {
   return (
     <>
       <Routes>
-          <Route path="/about-us" element={<About />} />
         <Route path="" element={<Layout />}>
           <Route index path="/" element={<App />}></Route>
+          <Route path="/about-us" element={<About />} />
           <Route path="/careers/application" element={<CareerApplication />} />
           <Route path="/careers/more-jobs" element={<CareerMoreJobs />} />
           <Route
