@@ -1,10 +1,8 @@
 import React from 'react';
-
 import { Routes, Route } from 'react-router-dom';
 import Layout from './layouts/Layout';
 import ErrorPage from './Error';
 import CustomerStories from './pages/CustomerStories';
-import App from './App';
 import { CareerApplication } from './pages/career';
 
 import DashboardLayout from './layouts/dashboard/DashboardLayout';
@@ -16,19 +14,17 @@ import Installations from './pages/documentation/InstallationsPage/Installations
 import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
 import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
 
-import Main from './pages/LandingPage/Main';
+import LandingPage from './pages/LandingPage/LandingPage';
+import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
 
 const RoutesComponents = () => {
   return (
     <>
       <Routes>
         <Route path="" element={<Layout />}>
-          <Route index path="/" element={<App />}></Route>
-          <Route
-            index
-            path="/documentation"
-            element={<DocumentationHome />}
-          ></Route>
+          <Route exact path="" element={<LandingPage />} />
+          <Route path="/demo" element={<MinergramDemo />} />
+          <Route path="/documentation" element={<DocumentationHome />}></Route>
           <Route
             path="/documentation/getting-started"
             element={<GettingStarted />}
@@ -53,7 +49,6 @@ const RoutesComponents = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/images" element={<Images />} />
         </Route>
-        <Route path="/landingpage" element={<Main />} />
       </Routes>
     </>
   );
