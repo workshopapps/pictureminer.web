@@ -27,8 +27,24 @@ import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
 import Main from './pages/LandingPage/main';
 =======
 import CustomerStories from './pages/CustomerStories';
+<<<<<<< HEAD
 import App from './App';
 >>>>>>> 6650e3b (add the customerroute)
+=======
+import { CareerApplication } from './pages/career';
+import About from './pages/About/components/About';
+
+import DashboardLayout from './layouts/dashboard/DashboardLayout';
+import Dashboard from './pages/dashboard/Dashboard';
+import DocumentationHome from './pages/documentation/Home/DocumentationHome';
+import GettingStarted from './pages/documentation/GettingStartedPage/GettingStarted';
+import Installations from './pages/documentation/InstallationsPage/Installations';
+import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
+import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
+
+import LandingPage from './pages/LandingPage/LandingPage';
+import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
+>>>>>>> 8b9ec0b (made some changes to file)
 
 const RoutesComponents = () => {
   return (
