@@ -10,13 +10,14 @@ const CareerMoreJobs = () => {
     <div className="my-4">
       <header className="bg-[#092C4C] h-[220px] md:h-[320px] flex justify-end flex-col pb-4  px-[1rem] md:px-[80px] ">
         <h1
-          className=" text-[24px] sm:text-[36px] md:text-[48px] font-medium leading-[64px] text-[#fbfbfb] px-[1rem]"
+          className=" text-[24px] sm:text-[36px] md:text-[48px] font-medium leading-[64px] text-[#fbfbfb]"
           style={{
             letterSpacing: '-0.02em',
           }}
         >
           Jobs Available
         </h1>
+        <p className="text-[#fbfbfb] float-right">451 jobs available</p>
         <div className="w-full max-w-[254px] md:w-[254px] block my-6">
           <Dropdown
             options={options}
@@ -59,7 +60,7 @@ const CareerMoreJobs = () => {
                       grow
                     </p>
                     <Link
-                      to="#"
+                      to="/careers/jobs/singles"
                       className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00] text-[#FF6C00] font-medium leading-[24px]"
                     >
                       View more
@@ -84,7 +85,7 @@ const CareerMoreJobs = () => {
                       abilities and is willingly to help the team grow
                     </p>
                     <Link
-                      to="#"
+                      to="/careers/jobs/singles"
                       className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00] text-[#FF6C00] font-medium leading-[24px]"
                     >
                       View more
@@ -109,7 +110,7 @@ const CareerMoreJobs = () => {
                       abilities and is willingly to help the team grow
                     </p>
                     <Link
-                      to="#"
+                      to="/careers/jobs/singles"
                       className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00] text-[#FF6C00] font-medium leading-[24px]"
                     >
                       View more
@@ -145,7 +146,7 @@ const CareerMoreJobs = () => {
                       grow
                     </p>
                     <Link
-                      to="#"
+                      to="/careers/jobs/singles"
                       className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00] text-[#FF6C00] font-medium leading-[24px]"
                     >
                       View more
@@ -170,7 +171,7 @@ const CareerMoreJobs = () => {
                       abilities and is willingly to help the team grow
                     </p>
                     <Link
-                      to="#"
+                      to="/careers/jobs/singles"
                       className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00] text-[#FF6C00] font-medium leading-[24px]"
                     >
                       View more
@@ -205,7 +206,7 @@ const CareerMoreJobs = () => {
                       abilities and is willingly to help the team grow
                     </p>
                     <Link
-                      to="#"
+                      to="/careers/jobs/singles"
                       className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00] text-[#FF6C00] font-medium leading-[24px]"
                     >
                       View more
@@ -230,7 +231,7 @@ const CareerMoreJobs = () => {
                       abilities and is willingly to help the team grow
                     </p>
                     <Link
-                      to="#"
+                      to="/careers/jobs/singles"
                       className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00] text-[#FF6C00] font-medium leading-[24px]"
                     >
                       View more
@@ -255,7 +256,7 @@ const CareerMoreJobs = () => {
                       abilities and is willingly to help the team grow
                     </p>
                     <Link
-                      to="#"
+                      to="/careers/jobs/singles"
                       className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00] text-[#FF6C00] font-medium leading-[24px]"
                     >
                       View more
@@ -275,7 +276,6 @@ const CareerMoreJobs = () => {
           </article>
         </div>
       </section>
-      <section className="text-[#1D1D1D]  max-w-[1280px] mx-auto py-6 sm:pt-14 sm:pb-8 px-2 md:px-4"></section>
     </div>
   );
 };

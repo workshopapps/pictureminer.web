@@ -8,6 +8,7 @@ import {
   CareerApplication,
   CareerLanding,
   CareerMoreJobs,
+  CareerSingleJobView,
 } from './pages/career';
 
 const RoutesComponents = () => {
@@ -20,6 +21,7 @@ const RoutesComponents = () => {
         <Route path="/careers" element={<CareerLanding />} />
         <Route path="/careers/application" element={<CareerApplication />} />
         <Route path="/careers/more-jobs" element={<CareerMoreJobs />} />
+        <Route path="/careers/jobs/singles" element={<CareerSingleJobView />} />
         <Route path="*" element={<ErrorPage />}></Route>
         {/* </Route> */}
       </Routes>
