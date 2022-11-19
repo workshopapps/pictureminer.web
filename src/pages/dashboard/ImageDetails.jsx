@@ -1,5 +1,5 @@
 import Button from '../../components/ui/Button';
-import Modal from '../../components/ui/Modal';
+import Modal, { Backdrop } from '../../components/ui/Modal';
 
 import warningIcon from '../../assets/warning-icon.png';
 import { useState } from 'react';
@@ -159,47 +159,51 @@ const ImageDetails = () => {
       </section>
 
       {showDeleteModal && (
-        <Modal>
-          <div className="flex flex-col items-center justify-center gap-8 p-4">
-            <img className="" src={warningIcon} alt="warning icon" />
+        <>
+          {' '}
+          <Backdrop />{' '}
+          <Modal>
+            <div className="flex flex-col items-center justify-center gap-8 p-4">
+              <img className="" src={warningIcon} alt="warning icon" />
 
-            <h2 className="text-[1.7rem] font-[500]">Delete Image</h2>
+              <h2 className="text-[1.7rem] font-[500]">Delete Image</h2>
 
-            <p className="text-[#797b89] text-center text-md">
-              Are you sure you want to delete this image? This action cannot be
-              undone.
-            </p>
+              <p className="text-[#797b89] text-center text-md">
+                Are you sure you want to delete this image? This action cannot
+                be undone.
+              </p>
 
-            <div className="flex gap-4 mt-4 w-full">
-              <Button
-                styles={{
-                  border: '1px solid #8e8e8e',
-                  color: '#8e8e8e',
-                  padding: '1rem 2rem',
-                  width: '100%',
-                  borderRadius: '.5rem',
-                  fontSize: '1.5rem',
-                  fontWeight: '500',
-                }}
-                text="Cancel"
-                onclick={toggleDeleteModalHandler}
-              />
+              <div className="flex gap-4 mt-4 w-full">
+                <Button
+                  styles={{
+                    border: '1px solid #8e8e8e',
+                    color: '#8e8e8e',
+                    padding: '1rem 2rem',
+                    width: '100%',
+                    borderRadius: '.5rem',
+                    fontSize: '1.5rem',
+                    fontWeight: '500',
+                  }}
+                  text="Cancel"
+                  onclick={toggleDeleteModalHandler}
+                />
 
-              <Button
-                styles={{
-                  background: '#f04438',
-                  color: 'white',
-                  padding: '1rem',
-                  width: '100%',
-                  borderRadius: '.5rem',
-                  fontSize: '1.5rem',
-                  fontWeight: '500',
-                }}
-                text="Delete"
-              />
+                <Button
+                  styles={{
+                    background: '#f04438',
+                    color: 'white',
+                    padding: '1rem',
+                    width: '100%',
+                    borderRadius: '.5rem',
+                    fontSize: '1.5rem',
+                    fontWeight: '500',
+                  }}
+                  text="Delete"
+                />
+              </div>
             </div>
-          </div>
-        </Modal>
+          </Modal>
+        </>
       )}
     </main>
   );
