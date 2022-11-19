@@ -12,7 +12,7 @@ import DocumentationHome from './pages/documentation/Home/DocumentationHome';
 import GettingStarted from './pages/documentation/GettingStartedPage/GettingStarted';
 import Installations from './pages/documentation/InstallationsPage/Installations';
 
-import Main from './pages/LandingPage/main';
+import Main from './pages/LandingPage/Main';
 
 const RoutesComponents = () => {
   return (
