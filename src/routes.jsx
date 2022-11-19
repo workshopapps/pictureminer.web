@@ -15,7 +15,7 @@ import Installations from './pages/documentation/InstallationsPage/Installations
 import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
 import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
 
-import Main from './pages/LandingPage/main';
+import Main from './pages/LandingPage/Main';
 
 const RoutesComponents = () => {
   return (

@@ -7,7 +7,7 @@ const DemoHero = () => {
   return (
     <section className="DemoHero">
       <div className="back_icon">
-        <Link to='/' className='icon'>
+        <Link to='/landingpage' className='icon'>
           <ArrowLeft />
         </Link>
       </div>
