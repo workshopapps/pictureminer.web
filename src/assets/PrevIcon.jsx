@@ -4,6 +4,7 @@ const PrevIcon = ({ onClick }) => {
   return (
     <div onClick={onClick}>
       <svg
+        className="cursor-pointer"
         width="9"
         height="18"
         viewBox="0 0 9 18"

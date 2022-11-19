@@ -4,6 +4,7 @@ const NextIcon = ({ onClick }) => {
   return (
     <div>
       <svg
+        className="cursor-pointer"
         onClick={onClick}
         width="9"
         height="18"
