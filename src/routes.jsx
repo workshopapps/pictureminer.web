@@ -36,7 +36,7 @@ const RoutesComponents = () => {
             element={<GettingStarted />}
           ></Route>
           <Route
-            path="/documentation/installation"
+            path="/documentation/installations"
             element={<Installations />}
           ></Route>
           <Route path="/careers/application" element={<CareerApplication />} />

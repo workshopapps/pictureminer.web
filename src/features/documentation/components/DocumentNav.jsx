@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { HambergerMenu } from 'iconsax-react';
-// import './DocumentNavStyle.scss';
+import './DocumentNavStyle.scss';
 const DocumentNav = () => {
   const [isOpen, setOpen] = useState(false);
   return (
@@ -159,7 +158,7 @@ const DocumentNav = () => {
           <NavLink
             className=""
             activeClassName="is-active"
-            to="/documentation/installation"
+            to="/documentation/installations"
           >
             Installations
           </NavLink>
@@ -167,51 +166,51 @@ const DocumentNav = () => {
           <NavLink
             className=""
             activeClassName="is-active"
-            to="/documentation-apis"
+            to="/documentation/apis"
           >
             APIs
           </NavLink>
           <NavLink
             className=""
             activeClassName="is-active"
-            to="/documentation-example"
+            to="/documentation/examples"
           >
             Examples
           </NavLink>
           <NavLink
             className=""
             activeClassName="is-active"
-            to="/documentation-utils"
+            to="/documentation/utilities"
           >
             Utilities
           </NavLink>
           <NavLink
             className=""
             activeClassName="is-active"
-            to="/documentation-integration"
+            to="/documentation/integrations"
           >
-            Integration
+            Integrations
           </NavLink>
           <NavLink
             className=""
             activeClassName="is-active"
-            to="/documentation-web"
+            to="/documentation/web"
           >
             Web
           </NavLink>
           <NavLink
             className=""
             activeClassName="is-active"
-            to="/documentation-mobile"
+            to="/documentation/mobile"
           >
             Mobile
           </NavLink>
           <NavLink
             className=""
             activeClassName="is-active"
-            to="/documentation-verification"
+            to="/documentation/verifications"
           >
-            Verification
+            Verifications
           </NavLink>
         </div>
       </nav>

@@ -22,9 +22,11 @@ html {
   text-align: start;
   gap: 3rem;
   color: #434343;
-
-  .underline {
+  @media screen and (max-width: 400px) {
     width: 100%;
+  }
+  .getting-started_underline {
+    width: 90%;
     position: absolute;
     margin: 0 -20px;
     top: 55px;
@@ -36,7 +38,7 @@ html {
     color: #434343;
   }
 
-  .overview {
+  .getting-started_overview {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,7 +50,7 @@ html {
       color: #131313;
     }
   }
-  .download {
+  .getting-started_download {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -113,15 +115,15 @@ html {
   align-items: flex-start;
   justify-content: space-between;
   row-gap: 2rem;
-  padding: 2rem 0;
+
   width: 100%;
 
-  h3 {
+  > h3 {
     font-size: 24px;
     font-weight: 500;
     color: #131313;
   }
-  p {
+  > p {
     padding-inline-start: 5px;
   }
   .getting-started_codebox {
@@ -147,17 +149,17 @@ html {
   align-items: flex-start;
   justify-content: space-between;
   row-gap: 2rem;
-  padding: 2rem 0;
+
   text-align: justify;
   scroll-snap-type: y mandatory;
-  h3 {
+  > h3 {
     scroll-snap-align: start;
     font-size: 24px;
     font-weight: 500;
     color: #131313;
   }
 
-  p {
+  > p {
     padding-inline-start: 5px;
   }
 }

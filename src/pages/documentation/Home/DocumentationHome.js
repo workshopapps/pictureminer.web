@@ -21,6 +21,7 @@ const cardsList = [
   {
     icon: <StatusUp size="32" color="#292d32" />,
     title: 'Installations',
+    link: '/documentation/installations',
   },
   {
     icon: (
@@ -38,30 +39,37 @@ const cardsList = [
       </svg>
     ),
     title: 'APIs',
+    link: '/documentation/apis',
   },
   {
     icon: <Happyemoji size="32" color="#292d32" />,
     title: 'Examples',
+    link: '/documentation/examples',
   },
   {
     icon: <Activity size="32" color="#292d32" />,
     title: 'Utilities',
+    link: '/documentation/utilities',
   },
   {
     icon: <Card size="32" color="#292d32" />,
     title: 'Integrations',
+    link: '/documentation/integrations',
   },
   {
     icon: <DocumentCode size="32" color="#292d32" />,
     title: 'Web',
+    link: '/documentation/web',
   },
   {
     icon: <Mobile size="32" color="#292d32" />,
     title: 'Mobile',
+    link: '/documentation/mobile',
   },
   {
     icon: <Verify size="32" color="#292d32" />,
     title: 'Verifications',
+    link: '/documentation/verifications',
   },
 ];
 const DocumentationHome = () => {
