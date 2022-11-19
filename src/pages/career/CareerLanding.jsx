@@ -9,6 +9,7 @@ import legal from '../../assets/legal.svg';
 import customer from '../../assets/customer.svg';
 import finance from '../../assets/finance.svg';
 import admin from '../../assets/admin.svg';
+import EmployeesBlogPost from './EmployeesBlogPost';
 
 const options = ['All jobs', 'Designer', 'IT'];
 
@@ -199,6 +200,7 @@ const CareerLanding = () => {
           </div>
         </div>
       </section>
+      <EmployeesBlogPost />
     </main>
   );
 };
