@@ -1,6 +1,11 @@
 @import './_variables/mixins';
 @import './layout/dashboardLayout.scss';
 @import './layout/sidebar.scss';
+@import './layout/Hero.scss';
+@import './layout/Works.scss';
+@import './layout/LandingPage.scss';
+@import './layout/Testimonials.scss';
+@import './layout//Uses.scss';
 
 html {
 	font-size: 62.5%;
