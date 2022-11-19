@@ -14,6 +14,7 @@ import GettingStarted from './pages/documentation/GettingStartedPage/GettingStar
 import Installations from './pages/documentation/InstallationsPage/Installations';
 import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
 import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
+import Privacypolicy from './pages/privacypolicy/privacypolicy';
 
 import Main from './pages/LandingPage/main';
 
@@ -46,6 +47,7 @@ const RoutesComponents = () => {
           ></Route>
           <Route path="/careers/application" element={<CareerApplication />} />
           <Route path="/terms-of-use" element={<Termsofuse />}></Route>
+          <Route path="/privacy-policy" element={<Privacypolicy />}></Route>
           <Route path="*" element={<ErrorPage />}></Route>
         </Route>
         <Route path="" element={<DashboardLayout />}>
