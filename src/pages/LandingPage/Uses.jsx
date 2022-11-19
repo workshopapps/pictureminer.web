@@ -6,7 +6,7 @@ const Uses = () => {
     <section className='uses'>
       <div className='uses_intro'>
         <h1 className='uses_heading'>
-          Why use <span>Torzilla?</span>
+          Why use <span>Minergram?</span>
         </h1>
         <p className='uses_paragraph'>
           Get accurate, fast and descriptive text for your images.

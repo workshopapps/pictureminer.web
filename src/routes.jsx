@@ -12,7 +12,7 @@ import DocumentationHome from './pages/documentation/Home/DocumentationHome';
 import GettingStarted from './pages/documentation/GettingStartedPage/GettingStarted';
 import Installations from './pages/documentation/InstallationsPage/Installations';
 
-import LandingPage from './pages/LandingPage/LandingPage';
+import Main from './pages/LandingPage/main';
 
 const RoutesComponents = () => {
   return (
@@ -39,7 +39,7 @@ const RoutesComponents = () => {
         <Route path="" element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
         </Route>
-		<Route path='/landingpage' element={<LandingPage />} />
+		    <Route path='/landingpage' element={<Main />} />
       </Routes>
     </>
   );

@@ -7,7 +7,7 @@ const Works = () => {
     <section className='works'>
       <div className='works_content'>
         <h1 className='works_heading'>
-          How Torzilla Works
+          How Minergrap Works
         </h1>
         <div className='works_content_body'>
           <img src={images.works} className='works_image' alt="works image" />

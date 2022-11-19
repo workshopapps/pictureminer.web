@@ -1,6 +1,7 @@
 import React from 'react';
 import { DocumentUpload } from 'iconsax-react';
 import { images } from '../../Constants';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -25,7 +26,9 @@ const Hero = () => {
             <DocumentUpload size="32" color="#FF6c00" variant="Outline"/>
             <p>Upload Image</p>
           </div>
-          <input className='input_file' id="upload" type='file' accept='.png, .svg, .jpg'/>
+          <Link to='/'>
+            <input className='input_file' id="upload" type='file' accept='.png, .svg, .jpg'/>
+          </Link>
         </div>
 
       </div>

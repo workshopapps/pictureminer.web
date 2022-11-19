@@ -70,7 +70,7 @@ const Testimonials = () => {
             <Link to='/signup' className='start_link' >Sign up</Link>
           </div>
           <div className="start_btn_documentation">
-            <Link to='/seedocumentation' className='start_link' >See our documentation</Link>
+            <Link to='/documentation' className='start_link' >See our documentation</Link>
           </div>
         </div>
       </div>
