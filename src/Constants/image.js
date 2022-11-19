@@ -1,7 +1,6 @@
 import book from '../assets/LandingPageImages/book.svg';
 import message from '../assets/LandingPageImages/device-message.svg';
 import industriesLogo from '../assets/LandingPageImages/industrieslogos.svg';
-import logo from '../assets/LandingPageImages/logo.svg';
 import searchStatus from '../assets/LandingPageImages/search-status.svg';
 import userTick from '../assets/LandingPageImages/user-tick.svg';
 import works from '../assets/LandingPageImages/works.svg';
@@ -16,7 +15,6 @@ export default {
   book,
   message,
   industriesLogo,
-  logo,
   searchStatus,
   userTick,
   works,

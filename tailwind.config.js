@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
+
 // eslint-disable-next-line no-undef
 const plugin = require('tailwindcss/plugin');
 
@@ -8,6 +9,7 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+
 		Roboto: ['Roboto', 'sans-serif'],
         Axiforma: ['Axiforma', 'sans-serif'],
 	},
@@ -49,4 +51,22 @@ module.exports = {
       });
     }),
   ],
+
+      colors: {
+        lightOrange: 'hsl(var(--lightOrange))',
+        mainOrange: 'hsl(var(--mainOrange))',
+        modalGray: 'hsl(var(--grayModal) / 25%)',
+        inputGray: 'hsl(var(--grayModal) / 50%)',
+      },
+      fontSize: {
+        xLarge: 'var(--fs-xl)',
+        large: 'var(--fs-lg)',
+        normal: 'var(--fs)',
+        small: 'var(--fs-sm)',
+        xSmall: 'var(--fs-xs)',
+      },
+    },
+  },
+  plugins: [require('@tailwindcss/forms')],
+
 };

@@ -7,7 +7,7 @@
     display: none;
   }
   .dashboard_pages {
-    padding: 20px 64px;
+    padding-block: 20px 64px;
     width: 100%;
   }
   .navbar {
@@ -92,6 +92,7 @@
       inset: 0;
       background: rgba(34, 34, 34, 0.25);
       min-width: 100%;
+      z-index: 2;
     }
     .overlay[data-visible='false'] {
       display: none;
