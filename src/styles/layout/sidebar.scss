@@ -3,6 +3,7 @@
   min-height: 100%;
   border-right: 1px solid #ced5db;
   padding-right: 3px;
+  background: #ffffff;
   a {
     font-weight: 400;
     font-size: 16px;
@@ -32,5 +33,18 @@
     background: rgba(255, 226, 204, 0.5);
     border-right: 4px solid #ff6c00;
     border-radius: 4px;
+  }
+}
+@media (max-width: 830px) {
+  .sidebar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    transform: translateX(-100%);
+  }
+  .sidebar[data-visible='true'] {
+    transform: translateX(0%);
+    transition: all 400ms ease-out;
   }
 }

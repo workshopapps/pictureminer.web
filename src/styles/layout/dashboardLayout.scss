@@ -2,7 +2,10 @@
   min-height: 100vh;
   display: flex;
   height: 100%;
-
+  position: relative;
+  .menu__sidebar {
+    display: none;
+  }
   .dashboard_pages {
     padding: 20px 64px;
     width: 100%;
@@ -10,8 +13,10 @@
   .navbar {
     @include Flex;
     justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 6rem;
     .form__input {
-      width: 68.6rem;
+      width: 67rem;
       height: 48px;
       padding-inline: 16px;
       background: #ffffff;
@@ -73,6 +78,34 @@
         justify-content: center;
         color: #fff;
       }
+    }
+  }
+  @media (max-width: 830px) {
+    .menu__sidebar {
+      position: absolute;
+      display: flex;
+      left: 32px;
+      top: 24px;
+    }
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(34, 34, 34, 0.25);
+      min-width: 100%;
+    }
+    .overlay[data-visible='false'] {
+      display: none;
+    }
+    .navbar {
+      margin-left: 4rem;
+      justify-content: flex-end;
+      gap: 4rem;
+      .form__input {
+        width: 287px;
+      }
+    }
+    .dashboard_pages {
+      padding-inline: 38px;
     }
   }
 }

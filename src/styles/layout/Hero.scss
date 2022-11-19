@@ -1,0 +1,175 @@
+.hero {
+  padding-left: 80px;
+  padding-right: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.hero_text {
+  display: grid;
+  gap: 24px;
+  width: 523px;
+  margin-top: 172px;
+  position: relative;
+}
+
+.hero_text_heading {
+  font-weight: 600;
+  font-size: 60px;
+  line-height: 72px;
+  letter-spacing: -0.02em;
+  color: var(--grey-color);
+}
+
+.hero_text_heading span {
+  color: var(--primary-color);
+}
+
+.hero_text_paragraph {
+  width: 415px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: var(--grey-color-alternative);
+}
+
+.hero_curve {
+  position: absolute;
+  top: 230px;
+  left: 400px;
+}
+
+.hero_upload {
+  width: 632px;
+  height: 547px;
+  border: 1.37255px dashed var(--primary-color-alternative);
+  border-radius: 27.451px;
+  margin-top: 104px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 54px;
+}
+
+.hero_upload_text {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: var(--grey-color);
+}
+
+.hero_upload_file {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 56px;
+  background-color: #fff;
+  width: 209px;
+  border-radius: 8px;
+  justify-content: center;
+  border: 1px solid #ff6c00;
+}
+
+.upload_icon {
+  display: flex;
+  gap: 8px;
+  font-size: 18px;
+  color: var(--primary-color);
+}
+
+.upload_icon p {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 29px;
+}
+
+.input_file {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 890px) {
+  .hero{
+    padding-left: 42px;
+    padding-right: 43px;
+
+    flex-direction: column-reverse;
+    gap: 56px
+  }
+
+  .hero_text{
+    width: 746px;
+    margin-top: 0;
+    margin-bottom: 72px;
+  }
+
+  .hero_text_heading{
+    font-size: 48px;
+    line-height: 64px;
+  }
+
+  .hero_text_paragraph{
+    width: 741px;
+  }
+
+  .hero_upload{
+    margin-bottom: 0;
+  }
+
+  .hero_upload_text{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 35px;
+  }
+
+  .hero_curve{
+    display: none;
+  }
+
+  .addToFolder{
+    width: 92px;
+    height: 92px;
+  }
+}
+
+@media screen and (max-width: 780px ) {
+  .hero{
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 32px;
+  }
+
+  .hero_upload{
+    width: 90%;
+  }
+
+  .hero_text{
+    width: 90%;
+  }
+
+  .hero_text_heading{
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .hero_text_paragraph{
+    width: 100%;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .hero_upload_text{
+    font-size: 16px;
+    text-align: center;
+  }
+}
