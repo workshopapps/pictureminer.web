@@ -1,0 +1,39 @@
+.dashboard {
+  .dashboard__head {
+    @include Flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    .images__card {
+      width: 280px;
+      height: 140px;
+
+      background: rgba(255, 226, 204, 0.07);
+
+      border: 1px solid rgba(102, 80, 63, 0.07);
+      border-radius: 12px;
+      padding: 3.8rem;
+      margin-bottom: 6.8rem;
+    }
+    .button {
+      padding: 16px 24px;
+      background: #ff6c00;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: 500;
+      font-size: 17px;
+      line-height: 27px;
+    }
+  }
+  .api__details {
+    h1 {
+      margin-bottom: 2.4rem;
+    }
+    .api__detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr 3fr;
+      background: rgba(180, 180, 180, 0.1);
+      padding: 12px 6rem;
+      margin-bottom: 3.2rem;
+    }
+  }
+}
