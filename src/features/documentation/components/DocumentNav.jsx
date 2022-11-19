@@ -5,7 +5,7 @@ import './DocumentNavStyle.scss';
 const DocumentNav = () => {
   const [isOpen, setOpen] = useState(false);
   return (
-    <nav className=" bg-white-800 text-black shadow">
+    <nav className="bg-white-800 text-black shadow">
         <button
           className="p-2 md:hidden m-2 flex justify-between rounded-md outline-none focus:border-black-400 focus:border"
           onClick={() => setOpen(!isOpen)}
