@@ -2,8 +2,6 @@
   min-height: 100vh;
   display: flex;
   height: 100%;
-  // position: relative;
-
   position: relative;
   .menu__sidebar {
     display: none;
@@ -67,8 +65,6 @@
           top: 40px;
 
           background: #fbfbfb;
-
-
   .dashboard_pages {
     padding: 20px 64px;
     width: 100%;
@@ -76,6 +72,7 @@
   .navbar {
     @include Flex;
     justify-content: space-between;
+    align-items: flex-start;
     margin-bottom: 6rem;
     .form__input {
       width: 67rem;
@@ -186,4 +183,4 @@
       padding-inline: 38px;
     }
   }
-}
+}}}}}
