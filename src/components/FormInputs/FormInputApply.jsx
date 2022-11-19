@@ -16,6 +16,7 @@ function FormInputApply() {
   const [selectedProgram, setSelectedProgram] = useState("");
   const [messages, setMessages] = useState("");
   const [buttonBool, setButtonBool] = useState(false);
+  const [completed, setCompleted] = useState(false);
 
   useEffect(() => {
     if (
@@ -28,9 +29,12 @@ function FormInputApply() {
       messages
     ) {
       setButtonBool(true);
-      console.log(buttonBool);
+      setCompleted(true);
+  
+
     } else {
       setButtonBool(false);
+      setCompleted(false);
     }
   }, [
     buttonBool,
@@ -216,8 +220,8 @@ function FormInputApply() {
       </div>
 
       <div className="fifth-row flex flex-col lg:flex-row-reverse gap-[10px]  ">
-        <ApplyPrimary buttonBool={buttonBool} />
-        <Close />
+        <ApplyPrimary buttonBool={buttonBool} completed={completed}/>
+        <Close  />
       </div>
     </form>
   );

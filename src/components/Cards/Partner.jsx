@@ -13,7 +13,7 @@ function Partner() {
      <h1 className=" font-sans font-bold text-[24px] leading-8 text-[#1D1D1D] pb-4 md:text-[36px]   lg:h-[72px] lg:leading-[72px] lg:text-[50px] lg:w-[708px] ">
         {" "}
         Partner with{" "}
-        <span className="capitalize text-[#FF9D55] ">minegram</span>
+        <span className="capitalize text-[#FF9D55] ">minergram</span>
       </h1>
       <p className=" w-[396px] h-[90px] leading-[18px] font-normal text-[12px] text-[#1D1D1D] mb-4 md:w-[370px] md:h-[120px] lg:w-[602px] lg:h-[112px] lg:text-[18px] lg:leading-[22px]  ">
         Minergram wants to accelerate innovation, but we need people to do that.
