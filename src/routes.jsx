@@ -4,6 +4,7 @@ import Layout from './layouts/Layout';
 import ErrorPage from './Error';
 import CustomerStories from './pages/CustomerStories';
 import { CareerApplication } from './pages/career';
+import About from './pages/About/components/About';
 
 import DashboardLayout from './layouts/dashboard/DashboardLayout';
 import Dashboard from './pages/dashboard/Dashboard';
@@ -43,6 +44,7 @@ const RoutesComponents = () => {
             element={<UtilitiesPage />}
           ></Route>
           <Route path="/careers/application" element={<CareerApplication />} />
+          <Route path="/About-us" element={<About />} />
           <Route path="*" element={<ErrorPage />}></Route>
         </Route>{' '}
         <Route path="" element={<DashboardLayout />}>
