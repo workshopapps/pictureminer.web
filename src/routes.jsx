@@ -12,6 +12,8 @@ import DocumentationHome from './pages/documentation/Home/DocumentationHome';
 import GettingStarted from './pages/documentation/GettingStartedPage/GettingStarted';
 import Installations from './pages/documentation/InstallationsPage/Installations';
 
+import ImageDetails from './pages/dashboard/ImageDetails';
+
 const RoutesComponents = () => {
   return (
     <>
@@ -36,6 +38,10 @@ const RoutesComponents = () => {
         </Route>
         <Route path="" element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route
+            path="/dashboard/images/:pictureId"
+            element={<ImageDetails />}
+          />
         </Route>
       </Routes>
     </>
