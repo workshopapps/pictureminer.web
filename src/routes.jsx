@@ -38,11 +38,8 @@ import ImageDetails from './pages/dashboard/ImageDetails';
 import Privacypolicy from './pages/privacypolicy/privacypolicy';
 import Termsofuse from './pages/terms-of-use/Termsofuse';
 import Faq from './pages/FAQ/faq';
-
 import ApiDocumentation from './pages/documentation/ApiDocumentation';
 
-const RoutesComponents = () => {
-  return (
     <>
       <Routes>
         <Route path="" element={<Layout />}>
@@ -107,7 +104,5 @@ const RoutesComponents = () => {
         </Route>
       </Routes>
     </>
-  );
-};
 
 export default RoutesComponents;

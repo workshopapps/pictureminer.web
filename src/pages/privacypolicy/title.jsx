@@ -4,7 +4,7 @@ import { privacypolicy } from './datalist';
 
 const Privacytitle = () => {
   return (
-    <div className="px-5 md:mb-10 md:px-20">
+    <div className="px-5 md:mb-10 md:px-3">
       <div className="border-dashed mb-7 border-b-2">
         <h3 className="text-titlegrey text-2xl md:text-6xl md:pb-3 font-bold">
           {privacypolicy}
