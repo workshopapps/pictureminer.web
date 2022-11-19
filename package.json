@@ -6,6 +6,7 @@
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^13.4.0",
 		"@testing-library/user-event": "^13.5.0",
+		"iconsax-react": "^0.0.8",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-router-dom": "^6.4.3",
@@ -62,6 +63,7 @@
 		"@storybook/preset-create-react-app": "^4.1.2",
 		"@storybook/react": "^6.5.13",
 		"@storybook/testing-library": "^0.0.13",
+		"@tailwindcss/forms": "^0.5.3",
 		"autoprefixer": "^10.4.13",
 		"babel-plugin-named-exports-order": "^0.0.2",
 		"eslint": "^8.27.0",
@@ -81,6 +83,9 @@
 		"webpack": "^5.75.0"
 	},
 	"lint-staged": {
-		"*.{js,jsx}": ["eslint", "prettier --write"]
+		"*.{js,jsx}": [
+			"eslint",
+			"prettier --write"
+		]
 	}
 }

@@ -1,17 +1,29 @@
 import React from 'react';
 
-const FormInput = ({ name, label, type, onchange, value, onBlur }) => {
+const FormInput = ({
+  name,
+  label,
+  type,
+  onchange,
+  value,
+  // onBlur,
+  placeholder,
+  className,
+}) => {
   return (
-    <div className="form_input">
-      <label htmlFor={name}>{label}</label>
+    <div className="form_group">
+      <label htmlFor={name} className="form_label">
+        {label}
+      </label>
       <input
         onChange={onchange}
         type={type}
         name={name}
         id={name}
-        placeholder=""
+        placeholder={placeholder}
         value={value}
-        onBlur={() => onBlur()}
+        // onBlur={() => onBlur()}
+        className={className}
       />
     </div>
   );
