@@ -1,18 +1,18 @@
 html {
   scroll-behavior: smooth;
 }
-.getting-started_wrapper {
+.installation_wrapper {
   margin-bottom: 40px;
 }
 
-.getting-started_introductionContent {
+.installation_introductionContent {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding: 2rem 3rem;
 }
 
-.getting-started_mainContent {
+.installation_mainContent {
   width: 70%;
   position: relative;
   flex-direction: column;
@@ -23,7 +23,7 @@ html {
   gap: 3rem;
   color: #434343;
 
-  .underline {
+  .installation_underline {
     width: 100%;
     position: absolute;
     margin: 0 -20px;
@@ -36,7 +36,7 @@ html {
     color: #434343;
   }
 
-  .overview {
+  .installation_component {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -46,6 +46,25 @@ html {
       font-size: 30px;
       font-weight: 500;
       color: #131313;
+    }
+
+    .installation_component_subtext {
+      padding-top: 20px;
+      font-size: 20px;
+      text-align: justify;
+      line-height: 30px;
+      margin-left: 10px;
+      h3 {
+        font-weight: 600;
+
+        &::before {
+          content: '\2022';
+          margin: 0 2px;
+        }
+      }
+      > p {
+        padding-top: 10px;
+      }
     }
   }
   .download {
@@ -100,54 +119,20 @@ html {
   }
 }
 
-.getting-started_title {
+.installation_title {
   font-size: 30px;
   font-weight: 500;
   color: #131313;
   padding-inline-start: 20px;
 }
 
-.getting-started_code {
+.installation_section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
   row-gap: 2rem;
-  padding: 2rem 0;
-  width: 100%;
 
-  h3 {
-    font-size: 24px;
-    font-weight: 500;
-    color: #131313;
-  }
-  p {
-    padding-inline-start: 5px;
-  }
-  .getting-started_codebox {
-    width: 100%;
-    background-color: #fafafb;
-    border: 1px solid #d5d6de;
-    border-radius: 8px;
-    padding: 50px 40px;
-    display: flex;
-    flex-direction: column;
-
-    row-gap: 2rem;
-    text-align: justify;
-
-    overflow-wrap: break-word;
-    font-family: 'Roboto';
-  }
-}
-
-.imageMining {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  row-gap: 2rem;
-  padding: 2rem 0;
   text-align: justify;
   scroll-snap-type: y mandatory;
   h3 {
@@ -155,9 +140,5 @@ html {
     font-size: 24px;
     font-weight: 500;
     color: #131313;
-  }
-
-  p {
-    padding-inline-start: 5px;
   }
 }

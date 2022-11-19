@@ -101,9 +101,12 @@
           }
         }
         h1 {
-          font-size: 20px;
+          a {
+            font-size: 20px;
+            text-decoration: none;
 
-          font-weight: 700;
+            font-weight: 700;
+          }
         }
       }
       p {
