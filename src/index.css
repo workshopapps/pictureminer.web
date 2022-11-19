@@ -15,3 +15,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
+
+.career-hero-bg {
+  background-image: url('./assets/career-landing-bg.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
