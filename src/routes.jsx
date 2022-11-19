@@ -63,7 +63,6 @@ const RoutesComponents = () => {
 
           <Route path="/account-setup" element={<AccountSettings />} />
           <Route path="/billing" element={<Billing />} />
-
         </Route>
       </Routes>
     </>
