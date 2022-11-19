@@ -13,8 +13,12 @@ import GettingStarted from './pages/documentation/GettingStartedPage/GettingStar
 import Installations from './pages/documentation/InstallationsPage/Installations';
 import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
 import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
+
 import LandingPage from './pages/LandingPage/LandingPage';
 import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
+
+
+
 
 const RoutesComponents = () => {
   return (
