@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import logo from '../assets/logo.svg';
+=======
+
 import { HambergerMenu } from 'iconsax-react';
 
 const NavBar = () => {
@@ -18,7 +21,9 @@ const NavBar = () => {
         </div>
       </Link>
       <button className="md:hidden" onClick={() => setHide((prev) => !prev)}>
+
         <HambergerMenu size="30" color="#000000" />
+
       </button>
       <div
         className={`bg-slate-100 md:bg-white px-2 md:px-0 flex-col flex  md:flex-row gap-4 md:gap-8 md:justify-center md:items-center w-full md:w-fit mt-6 md:mt-0  pt-4   ${

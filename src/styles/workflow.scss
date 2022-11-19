@@ -1,24 +1,33 @@
 @import './_variables/mixins';
 @import './layout/dashboardLayout.scss';
 @import './layout/sidebar.scss';
+@import './pages/dashboard.scss';
+@import './pages/images.scss';
+@import './utilities.scss';
+@import './layout/Hero.scss';
+@import './layout/Works.scss';
+@import './layout/LandingPage.scss';
+@import './layout/Testimonials.scss';
+@import './layout//Uses.scss';
+@import './layout/DemoHero.scss';
 
 html {
-	font-size: 62.5%;
+  font-size: 62.5%;
 }
 *,
 ::after,
 ::before {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 a {
-	text-decoration: none !important;
+  text-decoration: none !important;
 }
 a,
 p {
-	font-style: normal;
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 24px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
 }
