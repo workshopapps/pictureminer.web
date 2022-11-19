@@ -12,17 +12,20 @@ const Dashboard = () => {
           </div>
           <h3>0</h3>
         </div>
+        <div className="images__card">
+          <div className="flex gap-6">
+            <Gallery size="13" /> <span>API Usage No</span>
+          </div>
+          <h3>0</h3>
+        </div>
         <Button text={'View Documentation'} />
       </div>
       <div className="api__details">
         <h1>API Details:</h1>
         {[
-          { title: 'API Key', details: 'vhvfyavfjvfhjhv' },
-          { title: 'API Key', details: 'vhvfyavfjvfhjhv' },
-          { title: 'API Key', details: 'vhvfyavfjvfhjhv' },
-          { title: 'API Key', details: 'vhvfyavfjvfhjhv' },
-          { title: 'API Key', details: 'vhvfyavfjvfhjhv' },
-          { title: 'API Key', details: 'vhvfyavfjvfhjhv' },
+          { title: 'Authorization Token', details: 'vhvfyavfjvfhjhv' },
+          { title: 'API Endpoint', details: 'vhvfyavfjvfhjhv' },
+          { title: 'Sample Curl Request', details: 'vhvfyavfjvfhjhv' },
         ].map((item) => (
           <>
             <div className="api__detail">
