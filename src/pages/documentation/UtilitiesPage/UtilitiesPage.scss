@@ -26,7 +26,7 @@ html {
     justify-content: center;
     align-items: flex-start;
     text-align: start;
-    gap: 3rem;
+    gap: 1.5rem;
     color: #434343;
     padding-right: 8px;
     @media screen and (max-width: 400px) {
@@ -38,7 +38,7 @@ html {
       position: absolute;
       margin: 0 -20px;
       top: 55px;
-      left: 30px;
+      left: 25px;
       border-bottom: 1px solid #8495a5;
     }
   
@@ -53,7 +53,8 @@ html {
       align-items: flex-start;
   
       h1 {
-        font-size: 30px;
+        font-size: 25px;
+        margin-bottom: 20px;
         font-weight: 500;
         color: #131313;
       }
@@ -61,7 +62,7 @@ html {
   }
   
   .utilities_title {
-    font-size: 30px;
+    font-size: 36px;
     font-weight: 500;
     color: #131313;
     padding-inline-start: 5px;

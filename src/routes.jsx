@@ -8,8 +8,13 @@ import { CareerApplication } from './pages/career';
 import DashboardLayout from './layouts/dashboard/DashboardLayout';
 import Dashboard from './pages/dashboard/Dashboard';
 import Images from './pages/dashboard/Images';
+
 import BlogList from './pages/blog/BlogList';
 import ExtensionBlog from './pages/blog/components/ExtensionBlog';
+
+import AccountSettings from './pages/dashboard/AccountSettings';
+import Billing from './pages/dashboard/Billing';
+
 import DocumentationHome from './pages/documentation/Home/DocumentationHome';
 import GettingStarted from './pages/documentation/GettingStartedPage/GettingStarted';
 import Installations from './pages/documentation/InstallationsPage/Installations';
@@ -18,6 +23,7 @@ import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
 
 import LandingPage from './pages/LandingPage/LandingPage';
 import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
+import ImageDetails from './pages/dashboard/ImageDetails';
 
 const RoutesComponents = () => {
   return (
@@ -52,6 +58,12 @@ const RoutesComponents = () => {
         <Route path="" element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/images" element={<Images />} />
+
+          <Route path="/images/:imageId" element={<ImageDetails />} />
+
+          <Route path="/account-setup" element={<AccountSettings />} />
+          <Route path="/billing" element={<Billing />} />
+
         </Route>
       </Routes>
     </>
