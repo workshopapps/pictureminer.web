@@ -1,4 +1,5 @@
 {
+
   "name": "pictureminer",
   "version": "0.1.0",
   "private": true,
@@ -93,4 +94,5 @@
       "prettier --write"
     ]
   }
+
 }
