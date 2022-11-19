@@ -8,8 +8,13 @@ import { CareerApplication } from './pages/career';
 import DashboardLayout from './layouts/dashboard/DashboardLayout';
 import Dashboard from './pages/dashboard/Dashboard';
 import Images from './pages/dashboard/Images';
+
+import BlogList from './pages/blog/BlogList';
+import ExtensionBlog from './pages/blog/components/ExtensionBlog';
+
 import AccountSettings from './pages/dashboard/AccountSettings';
 import Billing from './pages/dashboard/Billing';
+
 import DocumentationHome from './pages/documentation/Home/DocumentationHome';
 import GettingStarted from './pages/documentation/GettingStartedPage/GettingStarted';
 import Installations from './pages/documentation/InstallationsPage/Installations';
@@ -37,6 +42,8 @@ const RoutesComponents = () => {
             path="/documentation/installations"
             element={<Installations />}
           ></Route>
+          <Route path="/blog" element={<BlogList />} />
+          <Route path="/blog-page" element={<ExtensionBlog />} />
           <Route
             path="/documentation/examples"
             element={<ExamplePage />}
