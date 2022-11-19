@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import HeroSection from './assets/HeroSection.png';
 import { features } from './data/features';
@@ -8,7 +9,7 @@ import './styles.scss';
 function HowItWorks() {
   return (
     <main className="font-Axiforma">
-      <section className="relative">
+      <section className="relative mt-2 md:mt-0 lg:mt-[49px]">
         <div className="md:bg-black/50 h-[222px] md:h-[328px] lg:w[866px] lg:h-[489px] overflow-hidden">
           <img
             src={HeroSection}
@@ -78,19 +79,23 @@ function HowItWorks() {
             Ready to use Minergram?
           </p>
           <div className="flex flex-col md:flex-row items-center gap-[22px] lg:gap-x-8">
-            <button
+            <Link
+              to="/"
+              as="button"
               type="button"
               id="btn-primary-hover"
               className="bg-[#FF6C00] hover:bg-[#FF842B] focus:bg-[#AA4800] disabled:bg-[#D2D2D2] rounded-lg py-5px-[69px] flex items-center justify-center text-white h-[64px] w-[232px]"
             >
               Get Started
-            </button>
-            <button
+            </Link>
+            <Link
+              to="/documentation"
+              as="button"
               type="button"
               className="border border-[#FF6C00] hover-border-white bg-white hover:bg-[#FFE2CC] focus:bg-[#FFCEAA] disabled:bg-[#D2D2D2] disabled:border-[#686868] rounded-lg flex items-center justify-center text-[#FF6C00] h-[64px] w-[232px]"
             >
               View documentation
-            </button>
+            </Link>
           </div>
         </div>
       </section>
