@@ -11,6 +11,7 @@ import Dashboard from './pages/dashboard/Dashboard';
 import DocumentationHome from './pages/documentation/Home/DocumentationHome';
 import GettingStarted from './pages/documentation/GettingStartedPage/GettingStarted';
 import Installations from './pages/documentation/InstallationsPage/Installations';
+import ApiDocumentation from './pages/documentation/ApiDocumentation';
 
 const RoutesComponents = () => {
   return (
@@ -30,6 +31,10 @@ const RoutesComponents = () => {
           <Route
             path="/documentation/installations"
             element={<Installations />}
+          ></Route>
+          <Route
+            path="/documentation/apis"
+            element={<ApiDocumentation />}
           ></Route>
           <Route path="/careers/application" element={<CareerApplication />} />
           <Route path="*" element={<ErrorPage />}></Route>
