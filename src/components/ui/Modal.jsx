@@ -13,10 +13,13 @@ const Modal = ({ children }) => {
   );
 };
 
-export function Backdrop() {
+export function Backdrop({ onClick }) {
   return (
     // Modal overlay or Backdrop built with tailwindcss
-    <div className="modal-overlay fixed top-0 left-0 w-full h-screen bg-[#222222] opacity-25 z-[99]"></div>
+    <div
+      onClick={onClick}
+      className="modal-overlay fixed top-0 left-0 w-full h-screen bg-[#222222] opacity-25 z-[99]"
+    ></div>
   );
 }
 export default Modal;
