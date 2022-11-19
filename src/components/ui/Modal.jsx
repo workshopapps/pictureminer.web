@@ -3,7 +3,7 @@ import React from 'react';
 const Modal = ({ children }) => {
   return (
     <>
-      <div className="bg-gray-300 h-screen z-10">
+      <div className="bg-modalGray z-[5] fixed inset-0 w-full">
         <div className="">{children}</div>
       </div>
     </>

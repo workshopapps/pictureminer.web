@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { TextalignJustifycenter } from 'iconsax-react';
-import FormInput from '../../../components/form/FormInput';
-import Button from '../../../components/ui/Button';
+import FormInput from '../../components/form/FormInput';
+import Button from '../../components/ui/Button';
+import { AiOutlineExclamation } from 'react-icons/ai';
 
-function AccountSettings({ toggleSidebar }) {
+function AccountSettings() {
   const initialFormValues = {
     firstName: '',
     lastName: '',
@@ -44,7 +44,6 @@ function AccountSettings({ toggleSidebar }) {
     }
 
     if (formValues.newPassword === formValues.confirmPassword) {
-      // success.newPassword = 'Please make sure your password match';
       setSuccess(true);
     }
 
@@ -71,34 +70,40 @@ function AccountSettings({ toggleSidebar }) {
   };
 
   return (
-    <div className="">
-      <div className="pt-5 " onClick={toggleSidebar}>
-        <TextalignJustifycenter />
-      </div>
-      <section className="mt-12 mb-28 relative">
+    <div className="mt-12 mb-28 ">
+      <section className="relative">
         <h1 className="text-large">Account settings</h1>
         {successMessage && (
-          <div className="w-full rounded-md bg-green-200 text-gray-800 mt-10 px-4 py-4 absolute top-40">
-            {successMessage}
+          <div className="w-full rounded-md bg-green-600 text-white mt-10 px-4 py-4 absolute top-1/4 left-1/4 -translate-x-1/4 -translate-y-1/4 text-center flex items-center justify-center space-x-4">
+            <div className="rounded-full bg-white h-5 w-5 flex items-center justify-center ">
+              <AiOutlineExclamation className="text-green-700 text-small" />
+            </div>
+            <p>{successMessage}</p>
           </div>
         )}
         <form onSubmit={handleSubmit}>
-          <FormInput
-            name="firstName"
-            label="First name"
-            type="text"
-            onchange={handleChange}
-            placeholder="Your first name"
-            value={formValues.firstName}
-          />
-          <FormInput
-            name="lastName"
-            label="Last name"
-            type="text"
-            onchange={handleChange}
-            placeholder="Your last name"
-            value={formValues.lastName}
-          />
+          <div className="md:flex md:flex-row md:space-x-4 md:justify-between">
+            <FormInput
+              name="firstName"
+              label="First name"
+              type="text"
+              onchange={handleChange}
+              placeholder="Your first name"
+              value={formValues.firstName}
+              labelClassName="form_label"
+              containerClassName="form_group"
+            />
+            <FormInput
+              name="lastName"
+              label="Last name"
+              type="text"
+              onchange={handleChange}
+              placeholder="Your last name"
+              value={formValues.lastName}
+              labelClassName="form_label"
+              containerClassName="form_group"
+            />
+          </div>
           <FormInput
             name="email"
             label="Email address"
@@ -106,6 +111,8 @@ function AccountSettings({ toggleSidebar }) {
             onchange={handleChange}
             placeholder="example@gmail.com"
             value={formValues.email}
+            labelClassName="form_label"
+            containerClassName="form_group"
           />
           <FormInput
             name="businessName"
@@ -114,6 +121,8 @@ function AccountSettings({ toggleSidebar }) {
             onchange={handleChange}
             placeholder="minegram"
             value={formValues.businessName}
+            labelClassName="form_label"
+            containerClassName="form_group"
           />
           <FormInput
             name="currentPassword"
@@ -122,6 +131,8 @@ function AccountSettings({ toggleSidebar }) {
             onchange={handleChange}
             placeholder="123456"
             value={formValues.currentPassword}
+            labelClassName="form_label"
+            containerClassName="form_group"
           />
           <FormInput
             name="newPassword"
@@ -130,9 +141,11 @@ function AccountSettings({ toggleSidebar }) {
             onchange={handleChange}
             placeholder="Password@123"
             value={formValues.newPassword}
-            className={`${errorMessages.newPassword && 'border-red-500'} ${
+            inputClassName={`${errorMessages.newPassword && 'border-red-500'} ${
               success && 'border-green-300'
             }`}
+            labelClassName="form_label"
+            containerClassName="form_group"
           />
           <small
             className={`text-sm text-inputGray ${
@@ -148,9 +161,11 @@ function AccountSettings({ toggleSidebar }) {
             onchange={handleChange}
             placeholder="Password@123"
             value={formValues.confirmPassword}
-            className={`${errorMessages.confirmPassword && 'border-red-500'} ${
-              success && 'border-green-300'
-            }`}
+            inputClassName={`${
+              errorMessages.confirmPassword && 'border-red-500'
+            } ${success && 'border-green-300'}`}
+            labelClassName="form_label"
+            containerClassName="form_group"
           />
           <small
             className={`text-sm text-inputGray ${
@@ -159,18 +174,18 @@ function AccountSettings({ toggleSidebar }) {
           >
             {errorMessages.confirmPassword}
           </small>
-          <div className="mt-8 space-x-5 flex items-center justify-end">
+          <div className="mt-8 space-x-5 flex items-center justify-end md:justify-start">
             <Button
               text="cancel"
               onclick={cancelAccountSettingsUpdate}
-              className={`py-2 px-8 rounded-lg text-normal border border-[#686868] border-solid ${
+              className={`py-2 px-8 rounded-lg text-normal border border-[#686868] border-solid cursor-pointer ${
                 success && 'border-mainOrange text-mainOrange'
               }`}
               disabled={isSubmitting}
             />
             <Button
               text="save"
-              className={`py-2 px-8 rounded-lg text-normal bg-[#D2D2D2] ${
+              className={`py-2 px-8 rounded-lg text-normal bg-[#D2D2D2] cursor-pointer ${
                 success && 'bg-mainOrange text-white'
               }`}
               type="submit"

@@ -57,7 +57,7 @@
   }
 
   .form_group {
-    @apply flex flex-col mt-6;
+    @apply flex flex-col mt-6 w-full;
   }
 
   .form_label {

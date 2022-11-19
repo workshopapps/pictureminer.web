@@ -13,8 +13,8 @@ const FormInput = ({
   inputClassName,
 }) => {
   return (
-    <div className="form_group">
-      <label htmlFor={name} className="form_label">
+    <div className={`${containerClassName}`}>
+      <label htmlFor={name} className={`${labelClassName}`}>
         {label}
       </label>
       <input

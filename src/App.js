@@ -1,12 +1,9 @@
-import './App.css';
-import AccountSetup from './features/accountSetup/AccountSetup';
+import './index.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <AccountSetup />
-      </header>
+      <header className="App-header">App</header>
     </div>
   );
 }
