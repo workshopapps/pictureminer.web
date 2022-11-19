@@ -167,7 +167,7 @@ integrity="sha384-`}</p>
             'Introduction',
             ' Overview',
             'Image Mining',
-            ' Defining IMages',
+            ' Defining Images',
           ]}
         />
       </section>
