@@ -8,7 +8,7 @@ const Modal = ({ children }) => {
 
       {/* Modal */}
       <div className="modal-container fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-4 z-[100]">
-        <div className="bg-white p-6 rounded-xl shadow-[0px_20px_24px_-4px_rgba(16,24,40,0.1),0px_8px_8px_-4px_rgba(16,24,40,0.04)]">
+        <div className="bg-white p-6 rounded-xl shadow-[0px_20px_24px_-4px_rgba(16,24,40,0.1),0px_8px_8px_-4px_rgba(16,24,40,0.04)] max-w-[42rem]">
           {children}
         </div>
       </div>
