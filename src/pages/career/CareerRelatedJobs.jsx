@@ -29,8 +29,9 @@ const CareerRelatedJobs = () => {
               className="flex justify-between p-3 sm:p-4 absolute  bottom-0 right-0 left-0"
               style={{
                 backgroundColor: 'white',
-                border: '1px solid gray',
+                border: '1px solid #B4B4B4',
                 borderTop: 'none',
+                borderRadius: '0px 0px 8px 8px',
               }}
             >
               <p
@@ -61,8 +62,9 @@ const CareerRelatedJobs = () => {
               className="flex justify-between p-3 sm:p-4 absolute  bottom-0 right-0 left-0"
               style={{
                 backgroundColor: 'white',
-                border: '1px solid gray',
+                border: '1px solid #B4B4B4',
                 borderTop: 'none',
+                borderRadius: '0px 0px 8px 8px',
               }}
             >
               <p
@@ -92,8 +94,9 @@ const CareerRelatedJobs = () => {
               className="flex justify-between p-3 sm:p-4 absolute  bottom-0 right-0 left-0 "
               style={{
                 backgroundColor: 'white',
-                border: '1px solid gray',
+                border: '1px solid #B4B4B4',
                 borderTop: 'none',
+                borderRadius: '0px 0px 8px 8px',
               }}
             >
               <p
