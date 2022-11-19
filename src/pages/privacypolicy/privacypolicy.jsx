@@ -1,5 +1,5 @@
-import Privacytitle from "./title";
-import Policyapp from "./policyapplication"
+import Privacytitle from './title';
+import Policyapp from './policyapplication';
 
 
 const Privacypolicy = () => {

@@ -24,4 +24,8 @@ const datalist = [
   },
 ];
 
-export default datalist;
+const privacypolicy = 'Privacy Policy';
+
+const server = 'Our servers automatically record information ("Log Data") created by your use of the Services. Log Data may include information such as your IP address, browser type, operating system, the referring web page, pages visited, location, your mobile carrier, device, search terms, and cookie information. We receive Log Data when you interact with our Services, for example, when you visit our Website and / or Mobile App, sign into our Services, or interact with our email notifications.';
+
+export { datalist, privacypolicy, server };
