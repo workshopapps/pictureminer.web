@@ -1,0 +1,154 @@
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: Axiforma;
+  src: url(../../../assets/font/Axiforma-Regular.woff);
+}
+.installation_wrapper {
+  margin-bottom: 40px;
+  font-family: Axiforma;
+}
+
+.installation_introductionContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem 3rem;
+}
+
+.installation_mainContent {
+  width: 70%;
+  position: relative;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: start;
+  gap: 3rem;
+  color: #434343;
+  padding-right: 8px;
+  @media screen and (max-width: 400px) {
+    width: 100%;
+    padding-right: 0px;
+  }
+  .installation_underline {
+    width: 100%;
+    position: absolute;
+    margin: 0 -20px;
+    top: 55px;
+    left: 30px;
+    border-bottom: 1px solid #8495a5;
+  }
+
+  p {
+    color: #434343;
+  }
+
+  .installation_component {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    h1 {
+      font-size: 30px;
+      font-weight: 500;
+      color: #131313;
+    }
+
+    .installation_component_subtext {
+      padding-top: 20px;
+      font-size: 20px;
+      text-align: justify;
+      line-height: 30px;
+      margin-left: 10px;
+      h3 {
+        font-weight: 600;
+
+        &::before {
+          content: '\2022';
+          margin: 0 2px;
+        }
+      }
+      > p {
+        padding-top: 10px;
+      }
+    }
+  }
+  .download {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    h1 {
+      font-size: 30px;
+      font-weight: 500;
+      color: #131313;
+    }
+    .download_content {
+      display: flex;
+      justify-content: flex-start;
+
+      align-items: center;
+      column-gap: 5rem;
+      padding-inline-start: 8px;
+      @media screen and (max-width: 600px) {
+        flex-direction: column;
+        row-gap: 4rem;
+      }
+      > div {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        > h3 {
+          font-size: 24px;
+          font-weight: 500;
+          color: #131313;
+        }
+
+        > p {
+          text-align: justify;
+        }
+
+        > button {
+          border: 1px solid #ff6c00;
+          border-radius: 8px;
+          padding: 12px 20px;
+
+          font-size: 16px;
+          color: #ff6c00;
+        }
+      }
+    }
+  }
+}
+
+.installation_title {
+  font-size: 30px;
+  font-weight: 500;
+  color: #131313;
+  padding-inline-start: 20px;
+}
+
+.installation_section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  row-gap: 2rem;
+
+  text-align: justify;
+  scroll-snap-type: y mandatory;
+  h3 {
+    scroll-snap-align: start;
+    font-size: 24px;
+    font-weight: 500;
+    color: #131313;
+  }
+}
