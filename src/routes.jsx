@@ -10,8 +10,9 @@ import {
 } from './pages/career';
 
 import CustomerStories from './pages/CustomerStories';
-// import { CareerApplication } from './pages/career';
-import Termsofuse from './pages/terms-of-use/Termsofuse';
+import { CareerApplication } from './pages/career';
+import About from './pages/About/components/About';
+
 
 import DashboardLayout from './layouts/dashboard/DashboardLayout';
 import Dashboard from './pages/dashboard/Dashboard';
@@ -50,6 +51,7 @@ const RoutesComponents = () => {
   return (
     <>
       <Routes>
+          <Route path="/about-us" element={<About />} />
         <Route path="" element={<Layout />}>
           <Route exact path="" element={<LandingPage />} />
           <Route path="/demo" element={<MinergramDemo />} />
@@ -111,12 +113,19 @@ const RoutesComponents = () => {
 
         <Route path="" element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
+<<<<<<< HEAD
           <Route path="/images" element={<Images />} />
 
           <Route path="/images/:imageId" element={<ImageDetails />} />
 
           <Route path="/account-setup" element={<AccountSettings />} />
           <Route path="/billing" element={<Billing />} />
+<<<<<<< HEAD
+=======
+
+=======
+>>>>>>> 5e409c0 (About page added)
+>>>>>>> 62e62ea (About page added)
         </Route>
       </Routes>
     </>
