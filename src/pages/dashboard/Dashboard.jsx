@@ -3,7 +3,6 @@ import { Gallery, DocumentCopy } from 'iconsax-react';
 import Button from '../../components/ui/Button';
 
 const Dashboard = () => {
-  return <div>Dashboard</div>;
   return (
     <div className="dashboard">
       <div className="dashboard__head">
