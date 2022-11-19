@@ -8,10 +8,18 @@ import { CareerApplication } from './pages/career';
 
 import DashboardLayout from './layouts/dashboard/DashboardLayout';
 import Dashboard from './pages/dashboard/Dashboard';
+import Images from './pages/dashboard/Images';
 import DocumentationHome from './pages/documentation/Home/DocumentationHome';
 import GettingStarted from './pages/documentation/GettingStartedPage/GettingStarted';
 import Installations from './pages/documentation/InstallationsPage/Installations';
+
 import WhyTozilla from './pages/whyTozilla/whyTozilla';
+
+import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
+import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
+
+import Main from './pages/LandingPage/main';
+
 
 const RoutesComponents = () => {
   return (
@@ -32,13 +40,23 @@ const RoutesComponents = () => {
             path="/documentation/installations"
             element={<Installations />}
           ></Route>
+          <Route
+            path="/documentation/examples"
+            element={<ExamplePage/>}
+          ></Route>
+           <Route
+            path="/documentation/utilities"
+            element={<UtilitiesPage/>}
+          ></Route>
           <Route path="/careers/application" element={<CareerApplication />} />
           <Route path="*" element={<ErrorPage />}></Route>
 		  <Route path="why-tozilla" element={<WhyTozilla/>}/>
         </Route>
         <Route path="" element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/images" element={<Images />} />
         </Route>
+		    <Route path='/landingpage' element={<Main />} />
       </Routes>
     </>
   );

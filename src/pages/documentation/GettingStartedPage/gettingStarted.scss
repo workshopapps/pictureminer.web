@@ -114,9 +114,12 @@ html {
   font-size: 30px;
   font-weight: 500;
   color: #131313;
-  padding-inline-start: 20px;
+  padding-inline-start: 5px;
 }
-
+.getting-started_paragraph{
+  padding-inline-start: 5px;
+  color: #092C4C;
+}
 .getting-started_code {
   display: flex;
   flex-direction: column;
