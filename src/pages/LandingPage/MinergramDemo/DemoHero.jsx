@@ -7,7 +7,7 @@ const DemoHero = () => {
   return (
     <section className="DemoHero">
       <div className="back_icon">
-        <Link to='/' className='icon'>
+        <Link to="/" className="icon">
           <ArrowLeft />
         </Link>
       </div>
@@ -17,7 +17,9 @@ const DemoHero = () => {
           <div className="image_info">
             <h4 className="info_heading">Image Description</h4>
             <p className="info_description">
-              This is the pool area of Eko hotels and suites. In this image, there is a pool with lounging chairs and shades before it, surrounded by other hotel areas and trees.
+              This is the pool area of Eko hotels and suites. In this image,
+              there is a pool with lounging chairs and shades before it,
+              surrounded by other hotel areas and trees.
             </p>
           </div>
           <div className="more_info">
@@ -32,7 +34,9 @@ const DemoHero = () => {
             </p>
           </div>
           <div className="documetation_btn">
-            <Link to='/documentation' className='documentation_text'>See documentation</Link>
+            <Link to="/documentation" className="documentation_text">
+              See documentation
+            </Link>
           </div>
         </div>
         <div className="content_image">

@@ -5,50 +5,6 @@ import DataTable from 'react-data-table-component';
 import { Link } from 'react-router-dom';
 import foodImage from '../../assets/foodImage.png';
 
-const columns = [
-  {
-    name: 'S/No',
-    selector: (row) => row.sn,
-    sortable: true,
-    flex: 2,
-  },
-  {
-    name: 'Picture',
-    selector: (row) => row.picture,
-    sortable: true,
-    flex: 2,
-  },
-  {
-    name: 'Picture ID',
-    selector: (row) => row.pictureId,
-    sortable: true,
-    flex: 4,
-  },
-  {
-    name: 'Date Mined',
-    selector: (row) => row.dateMined,
-    sortable: true,
-    flex: 4,
-  },
-  {
-    name: 'Details',
-    selector: (row) => row.details,
-    sortable: true,
-    flex: 1,
-    right: true,
-  },
-  {
-    cell: () => (
-      <div className="delete">
-        <Trash size={24} color="#f04438" />
-      </div>
-    ),
-    selector: (row) => row.dateMined,
-    sortable: true,
-    width: '50px',
-  },
-];
-
 const data = [
   {
     id: 1,
@@ -56,7 +12,7 @@ const data = [
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
     dateMined: '12/12/2022',
-    details: <Link>View More</Link>,
+    details: <Link to={`${1}`}>View More</Link>,
   },
   {
     id: 2,
@@ -64,7 +20,7 @@ const data = [
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
     dateMined: '12/12/2022',
-    details: <Link>View More</Link>,
+    details: <Link to={`/${2}`}>View More</Link>,
   },
   {
     id: 3,
@@ -72,7 +28,7 @@ const data = [
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
     dateMined: '12/12/2022',
-    details: <Link>View More</Link>,
+    details: <Link to={`/${3}`}>View More</Link>,
   },
   {
     id: 4,
@@ -80,7 +36,7 @@ const data = [
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
     dateMined: '12/12/2022',
-    details: <Link>View More</Link>,
+    details: <Link to={`${4}`}>View More</Link>,
   },
   {
     id: 5,
@@ -88,12 +44,74 @@ const data = [
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
     dateMined: '12/12/2022',
-    details: <Link className="view__more">View More</Link>,
+    details: (
+      <Link to={`images/${5}`} className="view__more">
+        View More
+      </Link>
+    ),
   },
 ];
 
 const Images = () => {
+  const [dataS, setDataS] = useState(data);
   const [showMenu, setShowMenu] = useState(false);
+  const columns = [
+    {
+      name: 'S/No',
+      selector: (row) => row.sn,
+      sortable: true,
+      flex: 2,
+    },
+    {
+      name: 'Picture',
+      selector: (row) => row.picture,
+      sortable: true,
+      flex: 2,
+    },
+    {
+      name: 'Picture ID',
+      selector: (row) => row.pictureId,
+      sortable: true,
+      flex: 4,
+    },
+    {
+      name: 'Date Mined',
+      selector: (row) => row.dateMined,
+      sortable: true,
+      flex: 4,
+    },
+    {
+      name: 'Details',
+      cell: () => <Link to={`${1}`}>View More</Link>,
+      sortable: true,
+      flex: 1,
+      right: true,
+    },
+    {
+      cell: () => (
+        <div
+          className="delete"
+          onClick={() =>
+            setDataS((prev) => {
+              console.log(
+                prev.filter((item) => {
+                  item.id;
+                })
+              );
+              // return prev.filter((item) => {
+              //   item.id === 1;
+              // });
+            })
+          }
+        >
+          <Trash size={24} color="#f04438" />
+        </div>
+      ),
+      selector: (row) => row.dateMined,
+      sortable: true,
+      width: '50px',
+    },
+  ];
   return (
     <div className="dashboard_images">
       <div className="dashboard__images__head">
@@ -103,6 +121,7 @@ const Images = () => {
             text={'Filter'}
             icon={<ArrowDown2 size={24} color="#FF6C00" />}
             onclick={() => setShowMenu((prev) => !prev)}
+            className="button"
           />
           <div className={showMenu ? 'show filter' : 'hide filter'}>
             <p>Last two days </p>
@@ -113,7 +132,7 @@ const Images = () => {
         </div>
       </div>
       <div className="images_table">
-        <DataTable columns={columns} data={data} responsive striped />
+        <DataTable columns={columns} data={dataS} responsive striped />
         <div className="flex justify-end">
           <div className="pagination">
             <div className="prev">Prev</div>

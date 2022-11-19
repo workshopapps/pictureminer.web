@@ -1,10 +1,10 @@
 .uses {
   width: 100%;
   background-color: var(--secondary-blue-color);
-  padding-left: 112px;
-  padding-right: 252px;
+  padding-left: 80px;
+  padding-right: 80px;
   display: flex;
-  justify-content: space-between;
+  gap: 130px;
 }
 
 .uses_intro {
@@ -20,7 +20,7 @@
 
 .uses_heading {
   font-weight: 400;
-  font-size: 72px;
+  font-size: 64px;
   line-height: 90px;
   color: var(--primary-white-shade-one);
 }
@@ -46,7 +46,7 @@
 }
 
 .uses_benefit {
-  width: 297px;
+  width: 300px;
   height: 245px;
   display: flex;
   flex-direction: column;
