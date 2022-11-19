@@ -68,6 +68,24 @@ export const carouselData = [
       'How Jumia is maximizing their business by devoliping innovative insights with effective data analysis using Tozilla',
 >>>>>>> 0314b4e (setup the card component)
   },
+
+  {
+    id: 3,
+    image: '/customer-pic/3.png',
+    headline:
+      'How Jumia is maximizing their business with effective data analysis',
+    description:
+      'How Jumia is maximizing their business by devoliping innovative insights with effective data analysis using Tozilla',
+  },
+
+  {
+    id: 4,
+    image: '/customer-pic/4.png',
+    headline:
+      'How Jumia is maximizing their business with effective data analysis',
+    description:
+      'How Jumia is maximizing their business by devoliping innovative insights with effective data analysis using Tozilla',
+  },
 ];
 
 export const carouselData = [

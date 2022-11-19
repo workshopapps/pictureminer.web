@@ -35,9 +35,12 @@ const Carousel = () => {
         <NextIcon onClick={nextSlide} />
       </div>
       <div className="flex flex-row justify-around mt-4 items-center">
-        <div>{data.name}</div>
+        <div className="text-[#434343]">{data.name}</div>
         <div className="straightLine"></div>
         <div>{data.position}</div>
+      </div>
+      <div className="flex justify-center font-bold text-[#8E8E8E] text-lg">
+        {data.company}
       </div>
     </div>
   );
