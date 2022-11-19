@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import logo from '../assets/logo.svg';
-
 import { HambergerMenu } from 'iconsax-react';
 
 const NavBar = () => {

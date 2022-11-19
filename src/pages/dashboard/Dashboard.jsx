@@ -19,20 +19,17 @@ const Dashboard = () => {
           </div>
           <h3 style={{ marginTop: '20px', fontSize: '24px' }}>0</h3>
         </div>
-        <Link to={'/documentation'}>
-          <Button text={'View Documentation'} className="button" />
-        </Link>
+        <Button text={'View Documentation'} />
       </div>
       <div className="api__details">
         <h1>API Details:</h1>
         {[
-          { title: 'Authorization Token', details: 'vhvfyavfjvfhjhv' },
-          {
-            title: 'API Endpoint',
-            details: 'minergram.hng-9.com',
-            class: 'colored',
-          },
-          { title: 'Sample Curl Request', details: 'vhvfyavfjvfhjhv' },
+          { title: 'API Key', details: 'vhvfyavfjvfhjhv' },
+          { title: 'API Key', details: 'vhvfyavfjvfhjhv' },
+          { title: 'API Key', details: 'vhvfyavfjvfhjhv' },
+          { title: 'API Key', details: 'vhvfyavfjvfhjhv' },
+          { title: 'API Key', details: 'vhvfyavfjvfhjhv' },
+          { title: 'API Key', details: 'vhvfyavfjvfhjhv' },
         ].map((item) => (
           <div key={item.title}>
             <div className="api__detail">

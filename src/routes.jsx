@@ -18,35 +18,6 @@ import DashboardLayout from './layouts/dashboard/DashboardLayout';
 import Dashboard from './pages/dashboard/Dashboard';
 import Images from './pages/dashboard/Images';
 
-import BlogList from './pages/blog/BlogList';
-import ExtensionBlog from './pages/blog/components/ExtensionBlog';
-
-import AccountSettings from './pages/dashboard/AccountSettings';
-import Billing from './pages/dashboard/Billing';
-
-import DocumentationHome from './pages/documentation/Home/DocumentationHome';
-import GettingStarted from './pages/documentation/GettingStartedPage/GettingStarted';
-import Installations from './pages/documentation/InstallationsPage/Installations';
-import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
-import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
-import Integrations from './pages/documentation/IntegrationPage/Integrations';
-import Web from './pages/documentation/WebPage/Web';
-import WhyTozilla from './pages/whyTozilla/WhyTozilla';
-
-import LandingPage from './pages/LandingPage/LandingPage';
-import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
-import ImageDetails from './pages/dashboard/ImageDetails';
-
-import Privacypolicy from './pages/privacypolicy/privacypolicy';
-
-import ApiDocumentation from './pages/documentation/ApiDocumentation';
-import About from './pages/About/components/About';
-
-import Faq from './pages/FAQ/faq';
-
-import Layout from './layouts/Layout';
-import HowItWorks from './pages/howItWorks/howItWorks';
-import SupportPage from './pages/support';
 const RoutesComponents = () => {
   return (
     <>
@@ -109,6 +80,7 @@ const RoutesComponents = () => {
 
         <Route path="" element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/images" element={<Images />} />
         </Route>
       </Routes>
     </>

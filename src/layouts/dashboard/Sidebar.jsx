@@ -9,6 +9,7 @@ import {
 } from 'iconsax-react';
 
 const Sidebar = () => {
+<<<<<<< HEAD
   const [openSidebar, setOpenSidebar] = useState(false);
   return (
     <>
@@ -65,6 +66,49 @@ const Sidebar = () => {
         </nav>
       </aside>
     </>
+=======
+  return (
+    <aside className="sidebar">
+      <div className="logo">
+        <img src={logo} alt="" />
+      </div>
+      <nav>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? 'sidebar__links--active sidebar__links'
+              : 'sidebar__links '
+          }
+          to={'/dashboard'}
+        >
+          <Element3 size="16" color="#1d1d1d" />
+          Dashboard
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? 'sidebar__links--active sidebar__links'
+              : 'sidebar__links'
+          }
+          to={'/images'}
+        >
+          <Gallery size="16" color="#1d1d1d" />
+          Images
+        </NavLink>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? 'sidebar__links--active sidebar__links'
+              : 'sidebar__links'
+          }
+          to={'/billing'}
+        >
+          <Triangle size="16" color="#1d1d1d" />
+          Billing
+        </NavLink>
+      </nav>
+    </aside>
+>>>>>>> 01d75a9 (feat(Fe-17): Created the dashboard page)
   );
 };
 
