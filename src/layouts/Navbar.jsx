@@ -23,7 +23,7 @@ const NavBar = () => {
           hide ? 'hidden md:flex' : ''
         }`}
       >
-        <Link to="/career">Api Documentation</Link>
+        <Link to="/documentation">Api Documentation</Link>
         <Link to="/pricing">Pricing</Link>
 
         <Link

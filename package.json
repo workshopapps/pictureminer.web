@@ -12,7 +12,12 @@
 		"react-icons": "^4.6.0",
 		"react-router-dom": "^6.4.3",
 		"react-scripts": "5.0.1",
+<<<<<<< HEAD
 		"react-svg-loader": "^3.0.3",
+=======
+		"react-scrollspy-nav": "^1.3.0",
+		"sass": "^1.56.1",
+>>>>>>> 3afe30e3bcf4354306ad8fc9b8b5820f1fd09940
 		"web-vitals": "^2.1.4"
 	},
 	"scripts": {
