@@ -1,7 +1,10 @@
 import Button from '../../components/ui/Button';
 import Modal, { Backdrop } from '../../components/ui/Modal';
 
+import successIcon from '../../assets/success-icon.png';
 import warningIcon from '../../assets/warning-icon.png';
+import closeIcon from '../../assets/close-icon.png';
+
 import { useState } from 'react';
 
 const ImageDetails = () => {
@@ -13,9 +16,20 @@ const ImageDetails = () => {
   ];
 
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false);
+  const [showSaveSuccessModal, setShowSaveSuccessModal] = useState(false);
 
-  const toggleDeleteModalHandler = () => {
+  const toggleDeleteModal = () => {
     setShowDeleteModal((prev) => !prev);
+  };
+
+  const toggleDeleteSuccessModal = () => {
+    showDeleteModal && toggleDeleteModal();
+    setShowDeleteSuccessModal((prev) => !prev);
+  };
+
+  const toggleSaveSuccessModal = () => {
+    setShowSaveSuccessModal((prev) => !prev);
   };
 
   return (
@@ -31,10 +45,11 @@ const ImageDetails = () => {
               padding: '1rem',
               width: '14rem',
               borderRadius: '.5rem',
-              fontSize: '1.5rem',
+              fontSize: '1.4rem',
               fontWeight: '500',
             }}
             text="Save as Json"
+            onclick={toggleSaveSuccessModal}
           />
           <Button
             styles={{
@@ -43,11 +58,11 @@ const ImageDetails = () => {
               padding: '1rem 2rem',
               width: '14rem',
               borderRadius: '.5rem',
-              fontSize: '1.5rem',
+              fontSize: '1.4rem',
               fontWeight: '500',
             }}
             text="Delete"
-            onclick={toggleDeleteModalHandler}
+            onclick={toggleDeleteModal}
           />
         </div>
       </section>
@@ -160,8 +175,7 @@ const ImageDetails = () => {
 
       {showDeleteModal && (
         <>
-          {' '}
-          <Backdrop />{' '}
+          <Backdrop />
           <Modal>
             <div className="flex flex-col items-center justify-center gap-8 p-4">
               <img className="" src={warningIcon} alt="warning icon" />
@@ -185,7 +199,7 @@ const ImageDetails = () => {
                     fontWeight: '500',
                   }}
                   text="Cancel"
-                  onclick={toggleDeleteModalHandler}
+                  onclick={toggleDeleteModal}
                 />
 
                 <Button
@@ -199,6 +213,90 @@ const ImageDetails = () => {
                     fontWeight: '500',
                   }}
                   text="Delete"
+                  onclick={toggleDeleteSuccessModal}
+                />
+              </div>
+            </div>
+          </Modal>
+        </>
+      )}
+
+      {showDeleteSuccessModal && (
+        <>
+          <Backdrop />
+          <Modal>
+            <div className=" flex flex-col items-center justify-center gap-8 p-4">
+              <div className="flex w-full justify-end">
+                <div
+                  className="w-14 cursor-pointer"
+                  onClick={toggleDeleteSuccessModal}
+                >
+                  <img className="w-full" src={closeIcon} alt="close icon" />
+                </div>
+              </div>
+
+              <img className="" src={successIcon} alt="success icon" />
+
+              <h2 className="text-[1.7rem] font-[500]">Successful</h2>
+
+              <p className="text-[#797b89] text-center text-md">
+                Image successfully deleted
+              </p>
+
+              <div className="flex gap-4 mt-4 w-full justify-center">
+                <Button
+                  styles={{
+                    background: '#ff6c00',
+                    color: 'white',
+                    padding: '1rem',
+                    width: '15rem',
+                    borderRadius: '.5rem',
+                    fontSize: '1.5rem',
+                    fontWeight: '500',
+                  }}
+                  text="Done"
+                  onclick={toggleDeleteSuccessModal}
+                />
+              </div>
+            </div>
+          </Modal>
+        </>
+      )}
+      {showSaveSuccessModal && (
+        <>
+          <Backdrop />
+          <Modal>
+            <div className=" flex flex-col items-center justify-center gap-8 p-4">
+              <div className="flex w-full justify-end">
+                <div
+                  className="w-14 cursor-pointer"
+                  onClick={toggleSaveSuccessModal}
+                >
+                  <img className="w-full" src={closeIcon} alt="close icon" />
+                </div>
+              </div>
+
+              <img className="" src={successIcon} alt="success icon" />
+
+              <h2 className="text-[1.7rem] font-[500]">Successful</h2>
+
+              <p className="text-[#797b89] text-center text-md">
+                Image successfully saved
+              </p>
+
+              <div className="flex gap-4 mt-4 w-full justify-center">
+                <Button
+                  styles={{
+                    background: '#ff6c00',
+                    color: 'white',
+                    padding: '1rem',
+                    width: '15rem',
+                    borderRadius: '.5rem',
+                    fontSize: '1.5rem',
+                    fontWeight: '500',
+                  }}
+                  text="Done"
+                  onclick={toggleSaveSuccessModal}
                 />
               </div>
             </div>
