@@ -1,6 +1,6 @@
 /* eslint-disable indent */
 import React from 'react';
-// import logoFooter from '../assets/logo-footer.svg';
+import logoFooter from '../assets/Minegram.svg';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -31,7 +31,7 @@ const Footer = () => {
         </div>
         <div className="flex flex-col gap-2">
           <div className="mb-6">
-            {/* <img src={logoFooter} alt="logo" /> */}
+            <img src={logoFooter} alt="logo" />
           </div>
           <p className="text-white leading-[24px]">
             Subscribe to our newsletter

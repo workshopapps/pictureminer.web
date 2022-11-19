@@ -17,7 +17,7 @@ FROM nginx:1.21.0-alpine as production
 ENV NODE_ENV production
 
 # Copy built assets from builder
-COPY --from=builder /app/build /usr/share/nginx/html
+COPY --from=builder /frontend/build /usr/share/nginx/html
 
 # Remove default conf
 RUN mv /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/confbackup.conf

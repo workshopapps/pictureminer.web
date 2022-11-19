@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-// import logo from '../assets/logo.svg';
+import logo from '../assets/Minegram.svg';
 import { HambergerMenu } from 'iconsax-react';
 
 const NavBar = () => {
@@ -10,7 +10,7 @@ const NavBar = () => {
     <nav className="flex w-full justify-between px-6 flex-wrap whitespace-nowrap ">
       <div className="w-[233px] h-[37] pt-4 flex md:inline-block ">
         <img
-          // src={logo}
+          src={logo}
           alt="logo"
           className="w-[150px] md:w-[233px] md:h-[37px]"
         />
