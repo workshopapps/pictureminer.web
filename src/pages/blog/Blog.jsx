@@ -1,12 +1,14 @@
 import React from 'react';
 import BlogList from './BlogList';
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import ExtensionBlog from './components/ExtensionBlog';
 
 const Blog = () => {
   return (
-    <div>
-      <BlogList />
-    </div>
+    <Routes>
+      <Route index element={<BlogList />} />
+      <Route path="/blog-page" element={<ExtensionBlog />} />
+    </Routes>
   );
 };
 

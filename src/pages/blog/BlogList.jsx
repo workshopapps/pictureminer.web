@@ -7,6 +7,8 @@ import image4 from './assets/image4.png';
 import image5 from './assets/image5.png';
 import image6 from './assets/image6.png';
 import image7 from './assets/image7.png';
+import image8 from './assets/image8.png';
+import image9 from './assets/image9.png';
 
 const BlogList = () => {
   return (
@@ -44,8 +46,8 @@ const BlogList = () => {
           </div>
         </form>
 
-        <div className="flex flex-col justify-center gap-12 md:flex md:flex-row md:flex-wrap md:gap-y-10 md:gap-x-20 mx-auto">
-          <div className=" border w-[90%] md:w-[45%] lg:w-[35%] p-4 text-xs ">
+        <div className="flex flex-col justify-center gap-12 md:flex md:flex-row md:flex-wrap md:gap-y-10 md:gap-x-20 lg:w-full lg:gap-x-10">
+          <div className=" border w-[90%] md:w-[45%] lg:w-[25%] p-4 text-xs mx-auto md:mx-0">
             <BlogCard
               image={image1}
               imageText="The Future of the Tozilla Chrome Extention"
@@ -54,7 +56,7 @@ const BlogList = () => {
               our passion."
             />
           </div>
-          <div className=" border w-[90%] md:w-[45%] lg:w-[35%] p-4 text-xs ">
+          <div className=" border w-[90%] md:w-[45%] lg:w-[25%] p-4 text-xs mx-auto md:mx-0">
             <BlogCard
               image={image2}
               imageText="Introducing profile page for all Tozilla APIs"
@@ -63,7 +65,7 @@ const BlogList = () => {
               You can use the APIS analytics page to  search engine."
             />
           </div>
-          <div className=" border w-[90%] md:w-[45%] lg:w-[35%] p-4 text-xs ">
+          <div className=" border w-[90%] md:w-[45%] lg:w-[25%] p-4 text-xs mx-auto md:mx-0">
             <BlogCard
               image={image3}
               imageText="How to sign up for the Tozilla API"
@@ -72,7 +74,7 @@ const BlogList = () => {
               account so you never run out of searches. Changes how you sign up for the tozilla API"
             />
           </div>
-          <div className=" border w-[90%] md:w-[45%] lg:w-[35%] p-4 text-xs ">
+          <div className=" border w-[90%] md:w-[45%] lg:w-[25%] p-4 text-xs mx-auto md:mx-0">
             <BlogCard
               image={image4}
               imageText="How to sign up for the Tozilla API"
@@ -81,34 +83,47 @@ const BlogList = () => {
               account so you never run out of searches. Changes how you sign up for the tozilla API"
             />
           </div>
-          <div className=" border w-[90%] md:w-[45%] lg:w-[35%] p-4 text-xs ">
+          <div className=" border w-[90%] md:w-[45%] lg:w-[25%] p-4 text-xs mx-auto md:mx-0">
             <BlogCard
               image={image5}
-              imageText="The Future of the Tozilla Chrome Extention"
-              imageTextClassName="absolute bottom-5 z-50 ml-4 text-white text-start font-bold text-2xl md:text-3xl"
-              text="One of the easiest  and most popular way to use tozilla to search the web is with our offical browser extension. Image search is
-              our passion."
+              text="How to verify item images with Tozilla"
             />
           </div>
-          <div className=" border w-[90%] md:w-[45%] lg:w-[35%] p-4 text-xs ">
+          <div className=" border w-[90%] md:w-[45%] lg:w-[25%] p-4 text-xs mx-auto md:mx-0">
             <BlogCard
               image={image6}
-              imageText="The Future of the Tozilla Chrome Extention"
-              imageTextClassName="absolute bottom-5 z-50 ml-4 text-white text-start font-bold text-2xl md:text-3xl"
-              text="One of the easiest  and most popular way to use tozilla to search the web is with our offical browser extension. Image search is
-              our passion."
+              text="Happy Holiday from all of
+              us at Tozilla."
             />
           </div>
-          <div className=" border w-[90%] md:w-[45%] lg:w-[35%] p-4 text-xs ">
+          <div className=" border w-[90%] md:w-[45%] lg:w-[25%] p-4 text-xs mx-auto md:mx-0">
             <BlogCard
               image={image7}
-              imageText="The Future of the Tozilla Chrome Extention"
-              imageTextClassName="absolute bottom-5 z-50 ml-4 text-white text-start font-bold text-2xl md:text-3xl"
-              text="One of the easiest  and most popular way to use tozilla to search the web is with our offical browser extension. Image search is
-              our passion."
+              text="Where can i find Copyright
+              free images?"
+            />
+          </div>
+          <div className=" border w-[90%] md:w-[45%] lg:w-[25%] p-4 text-xs mx-auto md:mx-0">
+            <BlogCard
+              image={image8}
+              text="How to find high resolution
+              images with Tozilla."
+            />
+          </div>
+          <div className=" border w-[90%] md:w-[45%] lg:w-[25%] p-4 text-xs mx-auto md:mx-0">
+            <BlogCard
+              image={image9}
+              text="Introducing new pricing for
+              commercial reverse image search."
             />
           </div>
         </div>
+
+        <a href="#">
+          <button className="mt-14 py-4 px-14 text-xl font-bold text-white bg-[#ff6c00] border-2 border-[#FF6C00] rounded-lg hover:bg-opacity-[0.7] hover:border-opacity-5 mx-auto">
+            Learn More
+          </button>
+        </a>
       </div>
     </>
   );
