@@ -1,0 +1,79 @@
+.dashboard_images {
+  .dashboard__images__head {
+    margin-bottom: 3.2rem;
+    @include Flex;
+    justify-content: space-between;
+    .button {
+      @include Flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: center;
+      width: 130px;
+      height: 56px;
+      gap: 8px;
+
+      border: 1px solid #ff6c00;
+      border-radius: 8px;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 29px;
+    }
+    .filter {
+      position: absolute;
+      width: 220px;
+      height: 224px;
+      right: 0;
+      top: 70px;
+
+      padding: 8px;
+
+      background: #fbfbfb;
+
+      box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+      border-radius: 8px;
+      p {
+        margin-block: 6px;
+        padding-block: 12px;
+        &:hover {
+          background: rgba(255, 226, 204, 0.5);
+        }
+      }
+    }
+  }
+  .images_table {
+    .rdt_Table {
+      z-index: -1;
+    }
+    .rdt_TableHeadRow {
+      height: 41px;
+      background: #d2d2d2;
+      color: #fbfbfb;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 21px;
+    }
+    .rdt_TableRow {
+      height: 50px;
+
+      /* Shades/White */
+
+      background: #fbfbfb;
+      border: none;
+      a {
+        color: #ff6c00;
+      }
+    }
+    .dwPlXY {
+      background: rgba(180, 180, 180, 0.1);
+    }
+  }
+  .pagination {
+    @include Flex;
+    gap: 4rem;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #434343;
+    margin-top: 4.3rem;
+  }
+}
