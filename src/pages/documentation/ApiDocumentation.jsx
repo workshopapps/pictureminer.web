@@ -5,14 +5,14 @@ import DocumentNav from '../../features/documentation/components/DocumentNav';
 
 export default function ApiDocumentation() {
   return (
-    <div className="">
+    <div className="font-axiforma">
       <DocumentNav />
       <DocumentationHero
         headerText="API Documentation"
         paragraphText="An overview of Minergram’s API , Authentication, Errors and Metadata"
       />
       <div className="bg-[#FAFAFB] ">
-        <p className="max-w-[1272px] mx-auto text-[#061D33]">
+        <p className="max-w-[1272px] mx-auto text-[#061D33] py-4">
           Documentation/API
         </p>
       </div>
