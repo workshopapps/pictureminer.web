@@ -10,11 +10,11 @@ const Subtext = () => {
   const paratwo =
     'Please read the Terms of Use carefully before you start to use the Services. By using the Services, you accept and agree to be bound and abide by these Terms of Use. If you do not want to agree to these Terms of Use you must not access or use the Services.';
   return (
-    <div className="px-6 mb-5">
+    <div className="px-5 md:px-20 mb-5">
       <div>
-        <p className="text-subgrey pb-2 text-base">{para}</p>
+        <p className="text-subgrey pb-2 text-base md:text-xl">{para}</p>
 
-        <p className="text-subgrey pt-2 text-base">{paratwo}</p>
+        <p className="text-subgrey pt-2 text-base md:text-xl">{paratwo}</p>
       </div>
     </div>
   );
