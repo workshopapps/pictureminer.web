@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-
+import './DocumentNavStyle.scss';
 const DocumentNav = () => {
   const [isOpen, setOpen] = useState(false);
   return (
@@ -42,14 +42,18 @@ const DocumentNav = () => {
       </div>
       <div className={`md:block ${isOpen ? 'is-active' : 'hidden'}`}>
         <div className="flex md:justify-around  md:flex-row sm: flex-col sm: items-center p-5 text-sm">
-          <NavLink className="" activeClassName="is-active" to="/documentation">
+          <NavLink
+            className=""
+            activeClassName="is-active"
+            to="/documentation/getting-started"
+          >
             Getting Started
           </NavLink>
 
           <NavLink
             className=""
             activeClassName="is-active"
-            to="/documentation-installation"
+            to="/documentation/installations"
           >
             Installations
           </NavLink>
@@ -57,51 +61,51 @@ const DocumentNav = () => {
           <NavLink
             className=""
             activeClassName="is-active"
-            to="/documentation-apis"
+            to="/documentation/apis"
           >
             APIs
           </NavLink>
           <NavLink
             className=""
             activeClassName="is-active"
-            to="/documentation-example"
+            to="/documentation/examples"
           >
             Examples
           </NavLink>
           <NavLink
             className=""
             activeClassName="is-active"
-            to="/documentation-utils"
+            to="/documentation/utilities"
           >
             Utilities
           </NavLink>
           <NavLink
             className=""
             activeClassName="is-active"
-            to="/documentation-integration"
+            to="/documentation/integrations"
           >
-            Integration
+            Integrations
           </NavLink>
           <NavLink
             className=""
             activeClassName="is-active"
-            to="/documentation-web"
+            to="/documentation/web"
           >
             Web
           </NavLink>
           <NavLink
             className=""
             activeClassName="is-active"
-            to="/documentation-mobile"
+            to="/documentation/mobile"
           >
             Mobile
           </NavLink>
           <NavLink
             className=""
             activeClassName="is-active"
-            to="/documentation-verification"
+            to="/documentation/verifications"
           >
-            Verification
+            Verifications
           </NavLink>
         </div>
       </div>
