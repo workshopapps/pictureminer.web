@@ -1,0 +1,32 @@
+$medium: 800px;
+$large: 1200px;
+
+.card-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+
+  height: 100%;
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+  margin: auto;
+  // &:hover {
+  //   transform: translateY(-5px);
+  //   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  // }
+
+@media screen and ( min-width: $medium ) and ( max-width: $large ) {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+  height: 50%;
+  margin: 0;
+}
+}
+ 
+
