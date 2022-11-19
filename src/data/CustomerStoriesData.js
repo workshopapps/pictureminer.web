@@ -5,7 +5,7 @@ export default [
     headline:
       'How Jumia is maximizing their business with effective data analysis',
     description:
-      'How Jumia is maximizing their business by devoliping innovative insights with effective data analysis using Tozilla',
+      'How Jumia is maximizing their business by devoliping innovative insights with effective data analysis using Minergram',
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export default [
     headline:
       'How Jumia is maximizing their business with effective data analysis',
     description:
-      'How Jumia is maximizing their business by devoliping innovative insights with effective data analysis using Tozilla',
+      'How Jumia is maximizing their business by devoliping innovative insights with effective data analysis using Minergram',
   },
 
   {
@@ -22,7 +22,7 @@ export default [
     headline:
       'How Jumia is maximizing their business with effective data analysis',
     description:
-      'How Jumia is maximizing their business by devoliping innovative insights with effective data analysis using Tozilla',
+      'How Jumia is maximizing their business by devoliping innovative insights with effective data analysis using Minergram',
   },
 
   {
@@ -31,14 +31,14 @@ export default [
     headline:
       'How Jumia is maximizing their business with effective data analysis',
     description:
-      'How Jumia is maximizing their business by devoliping innovative insights with effective data analysis using Tozilla',
+      'How Jumia is maximizing their business by devoliping innovative insights with effective data analysis using Minergram',
   },
 ];
 
 export const carouselData = [
   {
     id: 1,
-    text: '"Our company uses Tozilla to generate adequate insights with the analysis of our product specifications"',
+    text: '"Our company uses Minergram to generate adequate insights with the analysis of our product specifications"',
     name: 'Mark Essien',
     position: 'Head Principal',
     company: 'Zuri',
@@ -46,7 +46,7 @@ export const carouselData = [
 
   {
     id: 2,
-    text: '"Our company uses Tozilla to generate top quality image analysis with the analysis of our product specifications"',
+    text: '"Our company uses Minergram to generate top quality image analysis with the analysis of our product specifications"',
     name: 'Adewale Adekoya',
     position: 'Head Principal',
     company: 'Jumia',

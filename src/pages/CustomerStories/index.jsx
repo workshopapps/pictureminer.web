@@ -12,10 +12,13 @@ const index = () => {
       <HeaderText />
       <Stories />
       <Carousel />
-      <div>
+      <div className='lg:hidden'>
         {lastarray.map((story) => {
           return <StoriesExerpt story={story} key={story.id} />;
         })}
+      </div>
+      <div className='hidden lg:block'>
+      <Stories />
       </div>
 
       <GettingStarted />

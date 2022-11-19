@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo.svg';
@@ -24,8 +23,7 @@ const NavBar = () => {
           hide ? 'hidden md:flex' : ''
         }`}
       >
-        <Link to="/">Home</Link>
-        <Link to="/career">Career</Link>
+        <Link to="/documentation">Api Documentation</Link>
         <Link to="/pricing">Pricing</Link>
 
         <Link

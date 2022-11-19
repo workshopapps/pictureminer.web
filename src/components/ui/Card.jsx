@@ -4,7 +4,7 @@ import '../../styles/Card.scss';
 const Card = ({ children, style }) => {
   return (
     <>
-      <div className="card-component" style={style}>
+      <div className="card-component xl:w-[420px]" style={style}>
         {children}
       </div>
     </>
