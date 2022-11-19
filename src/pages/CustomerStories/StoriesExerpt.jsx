@@ -17,15 +17,20 @@ const StoriesExerpt = ({ story }) => {
 
       "
         >
-          <a className="font-bold
+          <a
+            className="font-bold
           hover:text-orange-400
 
-          " href="#">
+          "
+            href="#"
+          >
             {' '}
             {story.headline}
           </a>
 
-          <div className='lg:text-base lg:tracking-wide'>{story.description}</div>
+          <div className="lg:text-base lg:tracking-wide">
+            {story.description}
+          </div>
         </div>
         <a
           href="#"
