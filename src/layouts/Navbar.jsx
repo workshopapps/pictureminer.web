@@ -16,7 +16,7 @@ const NavBar = () => {
 					className="w-[150px] md:w-[233px] md:h-[37px]"
 				/>
 			</div>
-			<button className={`md:hidden `} onClick={() => setHide((prev) => !prev)}>
+			<button className={'md:hidden '} onClick={() => setHide((prev) => !prev)}>
 				<FaBars size={30} />
 			</button>
 			<div
