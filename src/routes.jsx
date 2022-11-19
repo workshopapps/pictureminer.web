@@ -18,6 +18,7 @@ import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
 
 import LandingPage from './pages/LandingPage/LandingPage';
 import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
+import ImageDetails from './pages/dashboard/ImageDetails';
 
 const RoutesComponents = () => {
   return (
@@ -50,8 +51,12 @@ const RoutesComponents = () => {
         <Route path="" element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/images" element={<Images />} />
+
+          <Route path="/images/:imageId" element={<ImageDetails />} />
+
           <Route path="/account-setup" element={<AccountSettings />} />
           <Route path="/billing" element={<Billing />} />
+
         </Route>
       </Routes>
     </>
