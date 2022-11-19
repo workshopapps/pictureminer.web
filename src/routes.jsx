@@ -8,6 +8,8 @@ import { CareerApplication } from './pages/career';
 import DashboardLayout from './layouts/dashboard/DashboardLayout';
 import Dashboard from './pages/dashboard/Dashboard';
 import Images from './pages/dashboard/Images';
+import AccountSettings from './pages/dashboard/AccountSettings';
+import Billing from './pages/dashboard/Billing';
 import DocumentationHome from './pages/documentation/Home/DocumentationHome';
 import GettingStarted from './pages/documentation/GettingStartedPage/GettingStarted';
 import Installations from './pages/documentation/InstallationsPage/Installations';
@@ -49,7 +51,12 @@ const RoutesComponents = () => {
         <Route path="" element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/images" element={<Images />} />
+
           <Route path="/images/:imageId" element={<ImageDetails />} />
+
+          <Route path="/account-setup" element={<AccountSettings />} />
+          <Route path="/billing" element={<Billing />} />
+
         </Route>
       </Routes>
     </>
