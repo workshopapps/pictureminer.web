@@ -28,12 +28,16 @@ import Billing from './pages/dashboard/Billing';
 import DocumentationHome from './pages/documentation/Home/DocumentationHome';
 import GettingStarted from './pages/documentation/GettingStartedPage/GettingStarted';
 import Installations from './pages/documentation/InstallationsPage/Installations';
+
+import WhyTozilla from './pages/whyTozilla/whyTozilla';
+
 import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
 import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
 
 import LandingPage from './pages/LandingPage/LandingPage';
 import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
 import ImageDetails from './pages/dashboard/ImageDetails';
+
 
 const RoutesComponents = () => {
   return (
@@ -73,6 +77,8 @@ const RoutesComponents = () => {
             element={<CareerSingleJobView />}
           />
           <Route path="*" element={<ErrorPage />}></Route>
+
+		  <Route path="why-tozilla" element={<WhyTozilla/>}/>
 
         </Route>
 
