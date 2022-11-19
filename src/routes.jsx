@@ -13,6 +13,8 @@ import DocumentationHome from './pages/documentation/Home/DocumentationHome';
 import GettingStarted from './pages/documentation/GettingStartedPage/GettingStarted';
 import Installations from './pages/documentation/InstallationsPage/Installations';
 
+import Main from './pages/LandingPage/main';
+
 const RoutesComponents = () => {
   return (
     <>
@@ -39,6 +41,7 @@ const RoutesComponents = () => {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/images" element={<Images />} />
         </Route>
+		    <Route path='/landingpage' element={<Main />} />
       </Routes>
     </>
   );
