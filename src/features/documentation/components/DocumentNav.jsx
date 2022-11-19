@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { FaBars } from 'react-icons/fa';
 import './DocumentNavStyle.scss';
 const DocumentNav = () => {
   const [isOpen, setOpen] = useState(false);
   return (
     <nav className=" bg-white-800 text-black shadow">
-      <div className="md:hidden">
         <button
-          className="p-2 rounded-md outline-none focus:border-black-400 focus:border"
+          className="p-2 md:hidden m-2 flex justify-between rounded-md outline-none focus:border-black-400 focus:border"
           onClick={() => setOpen(!isOpen)}
         >
           {isOpen ? (
@@ -24,22 +24,22 @@ const DocumentNav = () => {
               />
             </svg>
           ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="w-6 h-6 text-white"
-              fill="black"
-              viewBox="0 0 30 30"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                xmlns="http://www.w3.org/2000/svg"
-                d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"
-              />
-            </svg>
+            // <svg
+            //   xmlns="http://www.w3.org/2000/svg"
+            //   className="w-6 h-6 text-white"
+            //   fill="black"
+            //   viewBox="0 0 30 30"
+            //   stroke="currentColor"
+            //   strokeWidth={2}
+            // >
+            //   <path
+            //     xmlns="http://www.w3.org/2000/svg"
+            //     d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"
+            //   />
+            // </svg>
+            <FaBars size={30} />
           )}
         </button>
-      </div>
       <div className={`md:block ${isOpen ? 'is-active' : 'hidden'}`}>
         <div className="flex md:justify-around  md:flex-row sm: flex-col sm: items-center p-5 text-sm">
           <NavLink
