@@ -86,6 +86,15 @@ export const carouselData = [
     description:
       'How Jumia is maximizing their business by devoliping innovative insights with effective data analysis using Tozilla',
   },
+
+  {
+    id: 5,
+    image: '/customer-pic/5.png',
+    headline:
+      'How Jumia is maximizing their business with effective data analysis',
+    description:
+      'How Jumia is maximizing their business by devoliping innovative insights with effective data analysis using Minergram',
+  },
 ];
 
 export const carouselData = [

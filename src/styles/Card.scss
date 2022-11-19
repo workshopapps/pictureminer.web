@@ -1,13 +1,9 @@
-$medium: 800px;
-$large: 1200px;
-
 .card-component {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 80%;
-
+  width: 90%;
   height: 100%;
   border-radius: 20px;
   background-color: #fff;
@@ -38,12 +34,3 @@ $large: 1200px;
     transform: translateY(-5px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
-}
-
-  
-  margin: auto;
-  // &:hover {
-  //   transform: translateY(-5px);
-  //   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  // }
-}
