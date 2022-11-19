@@ -16,9 +16,6 @@ import About from './pages/About/components/About';
 
 import DashboardLayout from './layouts/dashboard/DashboardLayout';
 import Dashboard from './pages/dashboard/Dashboard';
-import DocumentationHome from './pages/documentation/Home/DocumentationHome';
-import GettingStarted from './pages/documentation/GettingStartedPage/GettingStarted';
-import Installations from './pages/documentation/InstallationsPage/Installations';
 
 const RoutesComponents = () => {
   return (
