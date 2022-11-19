@@ -51,12 +51,12 @@ const RoutesComponents = () => {
   return (
     <>
       <Routes>
+        <Route path="" element={<Layout />}>
+          <Route index path="/" element={<App />}></Route>
           <Route path="/about-us" element={<About />} />
         <Route path="" element={<Layout />}>
           <Route exact path="" element={<LandingPage />} />
           <Route path="/demo" element={<MinergramDemo />} />
-          <Route path="/About-us" element={<About />} />
-          <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/documentation" element={<DocumentationHome />}></Route>
           <Route
             path="/documentation/getting-started"
@@ -85,10 +85,6 @@ const RoutesComponents = () => {
           <Route
             path="/documentation/utilities"
             element={<UtilitiesPage />}
-          ></Route>
-          <Route
-            path="/documentation/apis"
-            element={<ApiDocumentation />}
           ></Route>
 
           <Route path="/careers/application" element={<CareerApplication />} />
@@ -120,12 +116,9 @@ const RoutesComponents = () => {
 
           <Route path="/account-setup" element={<AccountSettings />} />
           <Route path="/billing" element={<Billing />} />
-<<<<<<< HEAD
-=======
 
 =======
 >>>>>>> 5e409c0 (About page added)
->>>>>>> 62e62ea (About page added)
         </Route>
       </Routes>
     </>
