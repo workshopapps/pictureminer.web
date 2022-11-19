@@ -1,6 +1,6 @@
 /* eslint-disable indent */
 import React from 'react';
-import logoFooter from '../assets/logo-footer.svg';
+import logoFooter from '../assets/Minegram.svg';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
