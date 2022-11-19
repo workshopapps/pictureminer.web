@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import design from '../../assets/design.svg';
-import finance from '../../assets/finance.svg';
-import admin from '../../assets/admin.svg';
+import design from '../../assets/design.png';
+import finance from '../../assets/finance.png';
+import admin from '../../assets/admin.png';
 
 const EmployeesBlogPost = () => {
   return (

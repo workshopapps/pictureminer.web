@@ -3,12 +3,12 @@ import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
-import design from '../../assets/design.svg';
-import it from '../../assets/it.svg';
-import legal from '../../assets/legal.svg';
-import customer from '../../assets/customer.svg';
-import finance from '../../assets/finance.svg';
-import admin from '../../assets/admin.svg';
+import design from '../../assets/design.png';
+import it from '../../assets/it.png';
+import legal from '../../assets/legal.png';
+import customer from '../../assets/customer.png';
+import finance from '../../assets/finance.png';
+import admin from '../../assets/admin.png';
 import EmployeesBlogPost from './EmployeesBlogPost';
 
 const options = ['All jobs', 'Designer', 'IT'];
