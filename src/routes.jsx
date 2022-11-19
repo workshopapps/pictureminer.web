@@ -11,6 +11,7 @@ import Dashboard from './pages/dashboard/Dashboard';
 import DocumentationHome from './pages/documentation/Home/DocumentationHome';
 import GettingStarted from './pages/documentation/GettingStartedPage/GettingStarted';
 import Installations from './pages/documentation/InstallationsPage/Installations';
+import WhyTozilla from './pages/whyTozilla/whyTozilla';
 
 const RoutesComponents = () => {
   return (
@@ -33,6 +34,7 @@ const RoutesComponents = () => {
           ></Route>
           <Route path="/careers/application" element={<CareerApplication />} />
           <Route path="*" element={<ErrorPage />}></Route>
+		  <Route path="why-tozilla" element={<WhyTozilla/>}/>
         </Route>
         <Route path="" element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
