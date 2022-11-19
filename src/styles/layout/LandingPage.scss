@@ -1,0 +1,26 @@
+@import url('https://fonts.cdnfonts.com/css/axiforma');
+
+/* VARIABLES */
+:root {
+  --primary-color: #ff6c00;
+  --gray-color: #667085;
+  --grey-color: #434343;
+  --grey-color-alternative: #8e8e8e;
+  --primary-color-alternative: #803600;
+  --secondary-blue-color: #09264c;
+  --primary-white-shade-one: #fffdfd;
+  --grey-shade-two: #d2d2d2;
+  --grey-dark: #1d1d1d;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Axiforma', sans-serif;
+  font-weight: 400;
+  background-color: #fff;
+}

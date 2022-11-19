@@ -1,0 +1,9 @@
+.show {
+  transform: translateY(0%);
+  opacity: 1;
+  transition: all 350ms ease-out;
+}
+.hide {
+  transform: translateY(-150%);
+  opacity: 0;
+}
