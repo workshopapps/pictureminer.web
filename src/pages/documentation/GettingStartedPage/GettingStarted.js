@@ -22,13 +22,13 @@ const GettingStarted = () => {
       >
         <div className="getting-started_mainContent">
           <h1 className="getting-started_title">Introduction</h1>
-          <div className="underline" />
+          <div className="getting-started_underline" />
 
           <p>
             Get started with Tozilla and learn by exploring interactive
             examples.
           </p>
-          <div className="overview" id="overview">
+          <div className="getting-started_overview" id="overview">
             <h1>Overview</h1>
             <p>
               Torzilla (currently v3.3.7) has a few easy ways to quickly get
@@ -36,7 +36,7 @@ const GettingStarted = () => {
               case. Read through to see what suits your particular needs.
             </p>
           </div>
-          <div className="download" id="download">
+          <div className="getting-started_download" id="download">
             <h1>Download</h1>
             <div className="download_content">
               <div>

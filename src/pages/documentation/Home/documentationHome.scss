@@ -44,9 +44,9 @@
       }
     }
 
-    input {
+    > input {
       background-image: url(../../../assets/documentationSearchIcon.svg);
-      background-position: 12px 12px;
+      background-position: 12px 8px;
       background-repeat: no-repeat;
       color: black;
       padding: 12px 16px 12px 45px;
@@ -109,7 +109,7 @@
           }
         }
       }
-      p {
+      > p {
         font-family: 'Roboto';
         font-size: 18px;
         font-weight: 400;

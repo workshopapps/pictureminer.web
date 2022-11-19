@@ -12,6 +12,10 @@
   border-left: 1px solid #8495a5;
 
   font-size: 20px;
+
+  @media screen and (max-width: 400px) {
+    display: none;
+  }
   .documentation-sidebar_title {
     font-size: 24px;
     font-weight: 600;
