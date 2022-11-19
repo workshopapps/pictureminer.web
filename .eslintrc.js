@@ -19,13 +19,15 @@ module.exports = {
     'sourceType': 'module'
   },
   'plugins': [
+
     'react', 'jest'
+
   ],
   'rules': {
-    'indent': [
-      'error',
-      2
-    ],
+    // 'indent': [
+    //   'error',
+    //   2
+    // ],
     // 'linebreak-style': [
     //   'error',
     //   'windows'
