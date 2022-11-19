@@ -4,7 +4,11 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './layouts/Layout';
 import ErrorPage from './Error';
 import App from './App';
-import { CareerApplication, CareerLanding } from './pages/career';
+import {
+  CareerApplication,
+  CareerLanding,
+  CareerMoreJobs,
+} from './pages/career';
 
 const RoutesComponents = () => {
   return (
@@ -15,6 +19,7 @@ const RoutesComponents = () => {
 
         <Route path="/careers" element={<CareerLanding />} />
         <Route path="/careers/application" element={<CareerApplication />} />
+        <Route path="/careers/more-jobs" element={<CareerMoreJobs />} />
         <Route path="*" element={<ErrorPage />}></Route>
         {/* </Route> */}
       </Routes>
