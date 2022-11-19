@@ -19,7 +19,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="carouselSlideonscroll m-3">
+    <div className="m-3">
       <div
         className="flex flex-row
       justify-between items-end
@@ -29,7 +29,7 @@ const Carousel = () => {
       "
       >
         <PrevIcon onClick={prevSlide} />
-        <div className="text-lg font-bold flex justify-center align-middle text-center w-9/12 mx-auto">
+        <div className="text-2xl font-bold lg:font-semibold flex justify-center align-middle text-center w-9/12 lg:w-3/6 lg:leading-6 mx-auto">
           {data.text}
         </div>
         <NextIcon onClick={nextSlide} />

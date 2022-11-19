@@ -17,16 +17,18 @@ const StoriesExerpt = ({ story }) => {
 
       "
         >
-          <div className="font-bold">{story.headline}</div>
+          <a className="font-bold" href="#">
+            {' '}
+            {story.headline}
+          </a>
 
           <div>{story.description}</div>
         </div>
         <a
           href="#"
           className="
-      flex  items-center text-[#434343] gap-2 p-4 w-[150px] h-[48px] text-base font-medium leading-[24px] "
+      flex  items-center text-[#434343] gap-2 p-4 w-[150px] h-[48px] lg:underline-offset-8 underline text-base font-medium leading-[24px] "
         >
-          {' '}
           Read story
         </a>
       </div>

@@ -1,24 +1,18 @@
-<<<<<<< HEAD
 $medium: 800px;
 $large: 1200px;
 
-=======
->>>>>>> 0314b4e (setup the card component)
 .card-component {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-<<<<<<< HEAD
   width: 80%;
 
-=======
-  width: 90%;
->>>>>>> 0314b4e (setup the card component)
   height: 100%;
   border-radius: 20px;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+<<<<<<< HEAD
 <<<<<<< HEAD
   
   margin: auto;
@@ -38,7 +32,6 @@ $large: 1200px;
 }
  
 
-=======
   transition: all 0.3s ease-in-out;
   margin: auto;
   &:hover {
@@ -46,4 +39,11 @@ $large: 1200px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   }
 }
->>>>>>> 0314b4e (setup the card component)
+
+  
+  margin: auto;
+  // &:hover {
+  //   transform: translateY(-5px);
+  //   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  // }
+}
