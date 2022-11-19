@@ -24,21 +24,9 @@ const RoutesComponents = () => {
   return (
     <>
       <Routes>
+          <Route path="/about-us" element={<About />} />
         <Route path="" element={<Layout />}>
           <Route index path="/" element={<App />}></Route>
-          <Route
-            index
-            path="/documentation"
-            element={<DocumentationHome />}
-          ></Route>
-          <Route
-            path="/documentation/getting-started"
-            element={<GettingStarted />}
-          ></Route>
-          <Route
-            path="/documentation/installations"
-            element={<Installations />}
-          ></Route>
           <Route path="/careers/application" element={<CareerApplication />} />
           <Route path="/careers/more-jobs" element={<CareerMoreJobs />} />
           <Route
@@ -61,13 +49,7 @@ const RoutesComponents = () => {
 
         <Route path="" element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/images" element={<Images />} />
         </Route>
-        {/* <Route path="" element={<App />}> */}
-        <Route index path="/" element={<App />}></Route>
-        <Route path="/documentation" element={<DocumentationHome />}></Route>
-        <Route path="*" element={<ErrorPage />}></Route>
-        {/* </Route> */}
       </Routes>
     </>
   );
