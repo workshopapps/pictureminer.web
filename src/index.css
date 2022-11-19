@@ -1,3 +1,6 @@
+@import url('https://fonts.cdnfonts.com/css/axiforma');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,12 +12,21 @@
 body {
   font-family: Axiforma;
 }
+/* * {
+  font-family: Axiforma;
+} */
 /*
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 } */
 
+.career-hero-bg {
+  background-image: url('./assets/career-landing-bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 @layer base {
   :root {
     /* colors */

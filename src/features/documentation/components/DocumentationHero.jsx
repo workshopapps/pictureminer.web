@@ -1,5 +1,5 @@
 import React from 'react';
-import './DocumentationHero.css';
+// import './DocumentationHero.scss';
 import PropTypes from 'prop-types';
 
 function DocumentationHero(props) {
