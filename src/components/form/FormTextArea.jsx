@@ -1,25 +1,23 @@
 import React from 'react';
 
-const FormInput = ({
+const FormTextArea = ({
   name,
   label,
-  type,
   onchange,
   value,
   onBlur,
   placeholder,
   containerClassName,
   labelClassName,
-  inputClassName,
+  textareaClassName,
 }) => {
   return (
-    <div className="form_group">
-      <label htmlFor={name} className="form_label">
+    <div className={`${containerClassName}`}>
+      <label htmlFor={name} className={`${labelClassName}`}>
         {label}
       </label>
-      <input
+      <textarea
         onChange={onchange}
-        type={type}
         name={name}
         id={name}
         placeholder={placeholder}
@@ -27,10 +25,10 @@ const FormInput = ({
         onBlur={() => {
           onBlur ? onBlur() : null;
         }}
-        className={`${inputClassName}`}
+        className={`${textareaClassName}`}
       />
     </div>
   );
 };
 
-export default FormInput;
+export default FormTextArea;
