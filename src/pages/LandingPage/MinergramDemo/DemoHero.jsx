@@ -7,7 +7,11 @@ const DemoHero = () => {
   return (
     <section className="DemoHero">
       <div className="back_icon">
+<<<<<<< HEAD
         <Link to="/" className="icon">
+=======
+        <Link to='/' className='icon'>
+>>>>>>> 3726bf7 (conflict resolved)
           <ArrowLeft />
         </Link>
       </div>

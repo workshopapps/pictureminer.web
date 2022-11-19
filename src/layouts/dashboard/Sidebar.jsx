@@ -9,20 +9,8 @@ import {
 } from 'iconsax-react';
 
 const Sidebar = () => {
-<<<<<<< HEAD
-<<<<<<< HEAD
-  const [openSidebar, setOpenSidebar] = useState(false);
-  return (
-    <>
-      <div className="menu__sidebar" onClick={() => setOpenSidebar(true)}>
-        <TextalignJustifycenter size="24" color="#292D32" />
-      </div>
-      <div
-        className="overlay"
-        onClick={() => setOpenSidebar(false)}
-        data-visible={openSidebar}
-      ></div>
 
+<<<<<<< HEAD
       <aside className="sidebar" data-visible={openSidebar}>
         <Link to="/">
           <div className="logo">
@@ -69,14 +57,14 @@ const Sidebar = () => {
     </>
 =======
 =======
+=======
+>>>>>>> aa65ae1 (conflict resolved)
   const [openSidebar, setOpenSidebar] = useState(false);
->>>>>>> 412f56f (feat(Fe-8) Create the image dashboard page)
   return (
     <>
       <div className="menu__sidebar" onClick={() => setOpenSidebar(true)}>
         <TextalignJustifycenter size="24" color="#292D32" />
       </div>
-<<<<<<< HEAD
       <nav>
         <NavLink
           className={({ isActive }) =>
@@ -112,9 +100,7 @@ const Sidebar = () => {
           Billing
         </NavLink>
       </nav>
-    </aside>
->>>>>>> 01d75a9 (feat(Fe-17): Created the dashboard page)
-=======
+
       <div
         className="overlay"
         onClick={() => setOpenSidebar(false)}
@@ -162,7 +148,6 @@ const Sidebar = () => {
         </nav>
       </aside>
     </>
->>>>>>> 412f56f (feat(Fe-8) Create the image dashboard page)
   );
 };
 

@@ -1,5 +1,3 @@
-import { ArrowDown2 } from 'iconsax-react';
-import React from 'react';
 import { ArrowDown2, Trash } from 'iconsax-react';
 import React, { useState } from 'react';
 import Button from '../../components/ui/Button';
@@ -126,7 +124,6 @@ const Images = () => {
           </div>
         </div>
       </div>
-      <div className="images_table"></div>
     </div>
   );
 };
