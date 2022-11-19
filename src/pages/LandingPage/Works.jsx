@@ -20,7 +20,7 @@ const Works = () => {
               </p>
             </div>
 
-            <Link to="/howitworks" className="works_btn">
+            <Link to="/how-it-works" className="works_btn">
               See More
             </Link>
           </div>

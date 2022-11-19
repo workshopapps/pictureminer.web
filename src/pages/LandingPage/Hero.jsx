@@ -31,7 +31,7 @@ const Hero = () => {
             <DocumentUpload size="32" color="#FF6c00" variant="Outline" />
             <p>Upload Image</p>
           </div>
-          <Link to="/">
+          <Link to="/landingpage/demo">
             <input
               className="input_file"
               id="upload"
