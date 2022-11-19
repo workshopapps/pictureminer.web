@@ -11,6 +11,8 @@ import Dashboard from './pages/dashboard/Dashboard';
 import DocumentationHome from './pages/documentation/Home/DocumentationHome';
 import GettingStarted from './pages/documentation/GettingStartedPage/GettingStarted';
 import Installations from './pages/documentation/InstallationsPage/Installations';
+import Integrations from './pages/documentation/IntegrationPage/Integrations';
+import Web from './pages/documentation/WebPage/Web';
 
 const RoutesComponents = () => {
   return (
@@ -27,6 +29,11 @@ const RoutesComponents = () => {
             path="/documentation/getting-started"
             element={<GettingStarted />}
           ></Route>
+          <Route
+            path="/documentation/integrations"
+            element={<Integrations />}
+          ></Route>
+          <Route path="/documentation/web" element={<Web />}></Route>
           <Route
             path="/documentation/installations"
             element={<Installations />}
