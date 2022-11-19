@@ -10,7 +10,7 @@
 }
 
 .card{
-    width: 1280px;
+    width: 1000px;
     height: 563px;
 
     background-color: var(--secondary-blue-color);
@@ -87,7 +87,7 @@
     gap: 40px;
     position: absolute;
     top: 456px;
-    left: 1008px;
+    left: 750px;
     z-index: 1;
 
     .arrow{
@@ -275,10 +275,18 @@
         line-height: 20px;
     }
 
+    
+
     .card{
         width: 90vw;
-        height: 400px;
+        height: 80vh;
         gap: 30px;
+
+        article{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
 
         img{
             width: 60px;
@@ -286,7 +294,7 @@
         }
 
         .testimony{
-            width: 50%;
+            width: 90%;
             font-weight: 400;
             font-size: 14px;
             line-height: 20px;
@@ -295,12 +303,11 @@
 
     .navigation_btns{
         top: 80%;
-        left: 45%;
+        left: 30%;
     }
 
     .start{
         width: 80vw;
-        align-self:center;
         
 
         .start_title{
