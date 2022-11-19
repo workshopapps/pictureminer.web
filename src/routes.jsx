@@ -16,7 +16,7 @@ import Installations from './pages/documentation/InstallationsPage/Installations
 import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
 import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
 
-import Main from './pages/LandingPage/main';
+import Main from './pages/LandingPage/Main';
 
 const RoutesComponents = () => {
   return (
@@ -46,6 +46,7 @@ const RoutesComponents = () => {
             element={<UtilitiesPage/>}
           ></Route>
           <Route path="/careers/application" element={<CareerApplication />} />
+          <Route path="/About-us" element={<About />} />
           <Route path="*" element={<ErrorPage />}></Route>
         </Route>
         <Route path="" element={<DashboardLayout />}>
