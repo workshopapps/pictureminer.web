@@ -1,9 +1,11 @@
 import Button from '../../components/ui/Button';
 import Modal, { Backdrop } from '../../components/ui/Modal';
 
-import successIcon from '../../assets/success-icon.png';
-import warningIcon from '../../assets/warning-icon.png';
-import closeIcon from '../../assets/close-icon.png';
+import successIcon from '../../assets/dashboardImageDetails/success-icon.png';
+import warningIcon from '../../assets/dashboardImageDetails/warning-icon.png';
+import closeIcon from '../../assets/dashboardImageDetails/close-icon.png';
+import saveIcon from '../../assets/dashboardImageDetails/download-icon.png';
+import trashIcon from '../../assets/dashboardImageDetails/trash-icon.png';
 
 import { useState } from 'react';
 
@@ -18,6 +20,7 @@ const ImageDetails = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false);
   const [showSaveSuccessModal, setShowSaveSuccessModal] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
   const toggleDeleteModal = () => {
     setShowDeleteModal((prev) => !prev);
@@ -34,10 +37,10 @@ const ImageDetails = () => {
 
   return (
     <main className="pt-12">
-      <section className="flex justify-between items-center">
+      <section className="relative flex justify-between items-center">
         <h2 className="font-bold text-3xl">Picture ID: #123AK</h2>
 
-        <div className="flex gap-4">
+        <div className="hidden gap-4 md:flex">
           <Button
             styles={{
               background: '#ff6c00',
@@ -65,6 +68,57 @@ const ImageDetails = () => {
             onclick={toggleDeleteModal}
           />
         </div>
+
+        <div
+          className="cursor-pointer md:hidden"
+          onClick={() => setShowMenu((prev) => !prev)}
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+              stroke="black"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12C18 12.5523 18.4477 13 19 13Z"
+              stroke="black"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13Z"
+              stroke="black"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
+
+        {showMenu && (
+          <>
+            <Backdrop />
+            <div className="absolute bg-white top-10 right-0 z-[100] p-2 w-[18rem]">
+              <div className="p-4 flex items-center gap-4 cursor-pointer justify-between">
+                <span className="text-xl">Save a Json</span>
+                <img src={saveIcon} className="" alt="save icon" />
+              </div>
+              <div className="p-4 border-t text-[#f04438] cursor-pointer flex items-center justify-between gap-4">
+                <span className="text-xl">Delete</span>
+                <img src={trashIcon} alt="delete icon" />
+              </div>
+            </div>
+          </>
+        )}
       </section>
       <section className="py-8">
         <div className="flex flex-col gap-6 md:flex-row">
@@ -91,11 +145,11 @@ const ImageDetails = () => {
               about the hotel.
             </p>
 
-            <div className="flex gap-6 mt-8">
+            <div className="flex flex-col gap-6 mt-8 items-center md:flex-row">
               <p>Was this article helpful</p>
 
               <div className="flex gap-4">
-                <div className="rounded-full bg-[#ffe2cc] text-black flex items-center text-2xl font-normal gap-2 px-2">
+                <div className="rounded-full bg-[#ffe2cc] text-black flex items-center text-2xl font-normal gap-2 p-4">
                   Yes
                   <svg
                     width="15"
@@ -108,7 +162,7 @@ const ImageDetails = () => {
                     <path d="M11.0392 4.99108C10.5597 4.99108 10.2531 4.48007 10.4787 4.05693L11.6132 1.92977C12.002 1.20075 11.4737 0.320312 10.6475 0.320312C10.3573 0.320312 10.0789 0.435618 9.87367 0.640852L6.25304 4.26147C5.7859 4.72864 5.52344 5.36225 5.52344 6.02291V11.5302C5.52344 12.9059 6.63872 14.0212 8.01451 14.0212H13.1724C14.0226 14.0212 14.7656 13.4472 14.9802 12.6245L16.4306 7.06493C16.4661 6.92845 16.4842 6.78799 16.4842 6.64696C16.4842 5.73245 15.7428 4.99108 14.8283 4.99108H11.0392Z" />
                   </svg>
                 </div>
-                <div className="rounded-full bg-[#ffe2cc] text-black flex items-center text-2xl font-normal gap-2 px-2">
+                <div className="rounded-full bg-[#ffe2cc] text-black flex items-center text-2xl font-normal gap-2 p-4">
                   No{' '}
                   <svg
                     width="15"
