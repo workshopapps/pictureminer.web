@@ -16,8 +16,9 @@ import About from './pages/About/components/About';
 
 import DashboardLayout from './layouts/dashboard/DashboardLayout';
 import Dashboard from './pages/dashboard/Dashboard';
-import Images from './pages/dashboard/Images';
 import DocumentationHome from './pages/documentation/Home/DocumentationHome';
+import GettingStarted from './pages/documentation/GettingStartedPage/GettingStarted';
+import Installations from './pages/documentation/InstallationsPage/Installations';
 
 const RoutesComponents = () => {
   return (
@@ -25,40 +26,19 @@ const RoutesComponents = () => {
       <Routes>
         <Route path="" element={<Layout />}>
           <Route index path="/" element={<App />}></Route>
-          <Route path="/about-us" element={<About />} />
-        <Route path="" element={<Layout />}>
-          <Route exact path="" element={<LandingPage />} />
-          <Route path="/demo" element={<MinergramDemo />} />
-          <Route path="/documentation" element={<DocumentationHome />}></Route>
+          <Route
+            index
+            path="/documentation"
+            element={<DocumentationHome />}
+          ></Route>
           <Route
             path="/documentation/getting-started"
             element={<GettingStarted />}
           ></Route>
-          <Route path="customer-stories" element={<CustomerStories />}></Route>
-          <Route path="support" element={<SupportPage />}></Route>
           <Route
-            path="/documentation/integrations"
-            element={<Integrations />}
-          ></Route>
-          <Route path="/documentation/web" element={<Web />}></Route>
-          <Route
-            path="/documentation/installations"
+            path="/documentation/installation"
             element={<Installations />}
           ></Route>
-
-          <Route path="/careers" element={<CareerLanding />} />
-
-          <Route path="/blog" element={<BlogList />} />
-          <Route path="/blog-page" element={<ExtensionBlog />} />
-          <Route
-            path="/documentation/examples"
-            element={<ExamplePage />}
-          ></Route>
-          <Route
-            path="/documentation/utilities"
-            element={<UtilitiesPage />}
-          ></Route>
-
           <Route path="/careers/application" element={<CareerApplication />} />
           <Route path="/careers/more-jobs" element={<CareerMoreJobs />} />
           <Route
