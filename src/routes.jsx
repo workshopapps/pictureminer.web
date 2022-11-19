@@ -109,16 +109,6 @@ const RoutesComponents = () => {
 
         <Route path="" element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
-<<<<<<< HEAD
-          <Route path="/images" element={<Images />} />
-
-          <Route path="/images/:imageId" element={<ImageDetails />} />
-
-          <Route path="/account-setup" element={<AccountSettings />} />
-          <Route path="/billing" element={<Billing />} />
-
-=======
->>>>>>> 5e409c0 (About page added)
         </Route>
       </Routes>
     </>
