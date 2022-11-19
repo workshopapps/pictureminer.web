@@ -7,16 +7,12 @@ import Testimonials from './Testimonials';
 
 const LandingPage = () => {
   return (
-
-      <div className="landing_page">
-        <Navbar />
-        <Hero />
-        <Uses />
-        <Works />
-        <Testimonials />
-        <Footer />
-      </div>
-
+    <div className="landing_page">
+      <Hero />
+      <Uses />
+      <Works />
+      <Testimonials />
+    </div>
   );
 };
 
