@@ -96,3 +96,80 @@
   height: 100%;
   cursor: pointer;
 }
+
+
+@media screen and (max-width: 890px) {
+  .hero{
+    padding-left: 42px;
+    padding-right: 43px;
+
+    flex-direction: column-reverse;
+    gap: 56px
+  }
+
+  .hero_text{
+    width: 746px;
+    margin-top: 0;
+    margin-bottom: 72px;
+  }
+
+  .hero_text_heading{
+    font-size: 48px;
+    line-height: 64px;
+  }
+
+  .hero_text_paragraph{
+    width: 741px;
+  }
+
+  .hero_upload{
+    margin-bottom: 0;
+  }
+
+  .hero_upload_text{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 35px;
+  }
+
+  .hero_curve{
+    display: none;
+  }
+
+  .addToFolder{
+    width: 92px;
+    height: 92px;
+  }
+}
+
+@media screen and (max-width: 780px ) {
+  .hero{
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 32px;
+  }
+
+  .hero_upload{
+    width: 90%;
+  }
+
+  .hero_text{
+    width: 90%;
+  }
+
+  .hero_text_heading{
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .hero_text_paragraph{
+    width: 100%;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .hero_upload_text{
+    font-size: 16px;
+    text-align: center;
+  }
+}

@@ -38,15 +38,15 @@ const Testimonials = () => {
                   <div key={id} className={id === current ? 'slide active' : 'slide'}>
                     {id === current && (
                       <article>
-                      <p className="testimony"><span>&quot;</span>{slide.message}<span>&quot;</span></p>
-                      <div className="profile">
-                        <img src={slide.profileImg} alt="profile picture" />
-                        <div className="profile_details">
-                          <span className="profile_name">{slide.name}</span>
-                          <span className="profile_company">{slide.company}</span>
+                        <p className="testimony"><span>&quot;</span>{slide.message}<span>&quot;</span></p>
+                        <div className="profile">
+                          <img src={slide.profileImg} alt="profile picture" />
+                          <div className="profile_details">
+                            <span className="profile_name">{slide.name}</span>
+                            <span className="profile_company">{slide.company}</span>
+                          </div>
                         </div>
-                      </div>
-                    </article>
+                      </article>
                     )}
                   </div>
               );

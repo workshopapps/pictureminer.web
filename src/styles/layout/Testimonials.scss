@@ -7,7 +7,6 @@
 .testimonial_card{
     margin-bottom: 152px;
     display: flex;
-
 }
 
 .card{
@@ -52,8 +51,8 @@
     align-items: center;
 
     img{
-        width: 60px;
-        height: 60px;
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
     }
 }
@@ -212,15 +211,122 @@
     text-align: center;
 }
 
-// .card.active_slide{
-//     opacity: 1;
-//     transform: translateX(0)
-// }
+@media screen and (max-width: 890px) {
+    .testimonials_header{
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 28px;
+    }
 
-// .card.last_slide{
-//     transform: translateX(-100%);
-// }
+    .testimonials_description{
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 28px;
+    }
 
-// .card.next_slide{
-//     transform: translateX(100%);
-// }
+    .card{
+        width: 754px;
+        height: 563px;
+
+        article{
+            gap: 50px;
+        }
+
+        .testimony{
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 35px;
+            width: 453px;
+        }
+    }
+
+    .navigation_btns{
+        top: 446px;
+        left: 450px;
+    }
+
+    .start{
+        width: 754px;
+        gap: 40px;
+
+        .start_title{
+            font-weight: 500;
+            font-size: 36px;
+            line-height: 50px;
+        }
+    }
+}
+
+@media screen and (max-width: 780px ){
+    .testimonials{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+    .testimonials_header{
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .testimonials_description{
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .card{
+        width: 90vw;
+        height: 400px;
+        gap: 30px;
+
+        img{
+            width: 60px;
+            height: 60px;
+        }
+
+        .testimony{
+            width: 50%;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+        }
+    }
+
+    .navigation_btns{
+        top: 80%;
+        left: 45%;
+    }
+
+    .start{
+        width: 80vw;
+        align-self:center;
+        
+
+        .start_title{
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 28px;
+        }
+    }
+
+    
+
+
+    .start_btn_signup{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 8.38196px 12.5729px;
+        gap: 4.19px;
+        width: 56.15px;
+        height: 29.76px;
+    }
+
+    .start_btns{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
