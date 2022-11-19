@@ -1,8 +1,14 @@
 html {
   scroll-behavior: smooth;
 }
+
+@font-face {
+  font-family: Axiforma;
+  src: url(../../../assets/font/Axiforma-Regular.woff);
+}
 .installation_wrapper {
   margin-bottom: 40px;
+  font-family: Axiforma;
 }
 
 .installation_introductionContent {
@@ -22,7 +28,11 @@ html {
   text-align: start;
   gap: 3rem;
   color: #434343;
-
+  padding-right: 8px;
+  @media screen and (max-width: 400px) {
+    width: 100%;
+    padding-right: 0px;
+  }
   .installation_underline {
     width: 100%;
     position: absolute;
