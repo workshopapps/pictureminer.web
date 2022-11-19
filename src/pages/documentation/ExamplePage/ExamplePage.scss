@@ -1,0 +1,72 @@
+html {
+    scroll-behavior: smooth;
+  }
+  @font-face {
+    font-family: Axiforma;
+    src: url(../../../assets/font/Axiforma-Regular.woff);
+  }
+  
+  .example_wrapper {
+    margin-bottom: 40px;
+  }
+  
+  .example_introductionContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 2rem 3rem;
+    font-family: Axiforma;
+  }
+  
+  .example_mainContent {
+    width: 70%;
+    position: relative;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: start;
+    gap: 3rem;
+    color: #434343;
+    padding-right: 8px;
+    @media screen and (max-width: 400px) {
+      width: 100%;
+      padding-right: 0px;
+    }
+    .example_underline {
+      width: 90%;
+      position: absolute;
+      margin: 0 -20px;
+      top: 55px;
+      left: 30px;
+      border-bottom: 1px solid #8495a5;
+    }
+  
+    p {
+      color: #434343;
+    }
+  
+    .example_overview {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+  
+      h1 {
+        font-size: 30px;
+        font-weight: 500;
+        color: #131313;
+      }
+    }
+  }
+  
+  .example_title {
+    font-size: 30px;
+    font-weight: 500;
+    color: #131313;
+    padding-inline-start: 5px;
+  }
+  .example_paragraph{
+    padding-inline-start: 5px;
+    color: #092C4C;
+  }
