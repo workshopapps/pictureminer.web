@@ -12,6 +12,8 @@ import Images from './pages/dashboard/Images';
 import DocumentationHome from './pages/documentation/Home/DocumentationHome';
 import GettingStarted from './pages/documentation/GettingStartedPage/GettingStarted';
 import Installations from './pages/documentation/InstallationsPage/Installations';
+import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
+import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
 
 import Main from './pages/LandingPage/main';
 
@@ -33,6 +35,14 @@ const RoutesComponents = () => {
           <Route
             path="/documentation/installations"
             element={<Installations />}
+          ></Route>
+          <Route
+            path="/documentation/examples"
+            element={<ExamplePage/>}
+          ></Route>
+           <Route
+            path="/documentation/utilities"
+            element={<UtilitiesPage/>}
           ></Route>
           <Route path="/careers/application" element={<CareerApplication />} />
           <Route path="*" element={<ErrorPage />}></Route>
