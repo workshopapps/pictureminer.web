@@ -1,20 +1,20 @@
-import React, { useEffect } from "react";
-import ApplyPrimary from "../Buttons/ApplyPrimary";
-import Close from "../Buttons/Close";
-import { useState } from "react";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+import React, { useEffect } from 'react';
+import ApplyPrimary from '../Buttons/ApplyPrimary';
+import Close from '../Buttons/Close';
+import { useState } from 'react';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
 function FormInputApply() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [workEmail, setWorkEmail] = useState("");
-  const [companyWebsite, setCompanyWebsite] = useState("");
-  const [role, setRole] = useState("");
-  const [selectedProgram, setSelectedProgram] = useState("");
-  const [messages, setMessages] = useState("");
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [workEmail, setWorkEmail] = useState('');
+  const [companyWebsite, setCompanyWebsite] = useState('');
+  const [role, setRole] = useState('');
+  const [selectedProgram, setSelectedProgram] = useState('');
+  const [messages, setMessages] = useState('');
   const [buttonBool, setButtonBool] = useState(false);
   const [completed, setCompleted] = useState(false);
 
@@ -30,8 +30,6 @@ function FormInputApply() {
     ) {
       setButtonBool(true);
       setCompleted(true);
-  
-
     } else {
       setButtonBool(false);
       setCompleted(false);
@@ -141,7 +139,7 @@ function FormInputApply() {
             htmlFor="role"
             className=" font-sans font-light text-[16px] capitalize "
           >
-            Role{" "}
+            Role{' '}
           </label>
           <input
             type="text"
@@ -160,14 +158,14 @@ function FormInputApply() {
             htmlFor="role"
             className=" font-sans font-light text-[16px] capitalize "
           >
-            Select Program{" "}
+            Select Program{' '}
           </label>
           <FormControl>
             {!selectedProgram && (
               <InputLabel id="demo-simple-select-label">
                 <span className=" font-sans  text-[14px] capitalize leading-[20px] text-[#B4B4B4] font-normal h-[20px] flex flex-row items-center pb-2 ">
-                  {" "}
-                  Select Program{" "}
+                  {' '}
+                  Select Program{' '}
                 </span>
               </InputLabel>
             )}
@@ -182,14 +180,14 @@ function FormInputApply() {
               }}
             >
               <MenuItem
-                value={"Referral Program"}
+                value={'Referral Program'}
                 className=" bg-[#ADB9C3] h-[44px] py-[13px] px-[14px] text-[#3C3C43] "
               >
                 <span className=" h-[44px] py-[13px] px-[14px] text-[#3C3C43] text-[12px] leading-[18px]   ">
                   Referral Program
                 </span>
               </MenuItem>
-              <MenuItem value={"TechPartner Program"}>
+              <MenuItem value={'TechPartner Program'}>
                 <span className="text-[#FF842B] h-[44px] py-[13px] px-[14px] text-[12px] leading-[18px]  ">
                   Tech Partner Program
                 </span>
@@ -220,8 +218,8 @@ function FormInputApply() {
       </div>
 
       <div className="fifth-row flex flex-col lg:flex-row-reverse gap-[10px]  ">
-        <ApplyPrimary buttonBool={buttonBool} completed={completed}/>
-        <Close  />
+        <ApplyPrimary buttonBool={buttonBool} completed={completed} />
+        <Close />
       </div>
     </form>
   );

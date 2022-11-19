@@ -1,7 +1,7 @@
-import React from 'react'
-import ApplicationIsReceived from '../components/Cards/ApplicationIsReceived'
-import Footer from '../layouts/Footer'
-import Header from '../layouts/Header'
+import React from 'react';
+import ApplicationIsReceived from '../components/Cards/ApplicationIsReceived';
+import Footer from '../layouts/Footer';
+import Header from '../layouts/Header';
 
 function ApplicationReceived() {
   return (
@@ -10,7 +10,7 @@ function ApplicationReceived() {
     <ApplicationIsReceived/>
     <Footer/>
     </div>
-  )
+  );
 }
 
-export default ApplicationReceived
+export default ApplicationReceived;

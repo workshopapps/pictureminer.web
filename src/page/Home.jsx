@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import Partner from '../components/Cards/Partner';
-import Header from '../layouts/Header'
+import Header from '../layouts/Header';
 import Footer from '../layouts/Footer';
 
 function Home() {
@@ -10,7 +10,7 @@ function Home() {
         <Partner/>
         <Footer/>
     </div>
-  )
+  );
 }
 
 export default Home;

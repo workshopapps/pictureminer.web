@@ -1,7 +1,7 @@
-import React from "react";
-import Group1 from "../../assets/Group 162757.png";
-import Group2 from "../../assets/Group 162757-2.png";
-import Group3 from "../../assets/Group 162756.png";
+import React from 'react';
+import Group1 from '../../assets/Group 162757.png';
+import Group2 from '../../assets/Group 162757-2.png';
+import Group3 from '../../assets/Group 162756.png';
 function Benefits() {
   return (
     <div className="flex flex-col items-center w-[425px] bg-[#FAFAFA] md:w-screen lg:w-screen max-w-screen-2xl ">

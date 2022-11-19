@@ -1,7 +1,7 @@
-import React from "react";
-import QuoteDown from "../../assets/quote-down.png";
-import Flow from "../../assets/Frame 1000003706.png";
-import MarkEssien from "../../assets/Rectangle 4715.png";
+import React from 'react';
+import QuoteDown from '../../assets/quote-down.png';
+import Flow from '../../assets/Frame 1000003706.png';
+import MarkEssien from '../../assets/Rectangle 4715.png';
 function HearFromPartner() {
   return (
     <div className="flex flex-col items-center w-[425px] bg-[#FAFAFA] md:w-screen lg:w-screen max-w-screen-2xl md:flex-row lg:flex-row   lg:justify-center lg:gap-20 ">
@@ -24,14 +24,23 @@ function HearFromPartner() {
               <h2 className="w-[395px]  font-sans font-semibold text-[12px] leading-[20px] text-[#1D1D1D] ">
                 Mark Essien
               </h2>
-              <h2 className="w-[395px] font-sans font-semibold text-[12px] leading-[20px] text-[#B4B4B4] ">Founder/CEO of hotels.ng</h2>
-              <img src={Flow} alt="Flow" className="items-start w-[92px] h-[10px]  "/>
+              <h2 className="w-[395px] font-sans font-semibold text-[12px] leading-[20px] text-[#B4B4B4] ">
+                Founder/CEO of hotels.ng
+              </h2>
+              <img
+                src={Flow}
+                alt="Flow"
+                className="items-start w-[92px] h-[10px]  "
+              />
             </div>
           </div>
         </div>
-
       </div>
-        <img src={MarkEssien} alt="Mark Essien" className=" w-[395px] h-[322.45px] md:w-[324px] md:h-[280px] md:mt-32  lg:w-[413px] lg:h-[358px] lg:mt-32" />
+      <img
+        src={MarkEssien}
+        alt="Mark Essien"
+        className=" w-[395px] h-[322.45px] md:w-[324px] md:h-[280px] md:mt-32  lg:w-[413px] lg:h-[358px] lg:mt-32"
+      />
     </div>
   );
 }
