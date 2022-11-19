@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import logo from '../../assets/Minegram.svg';
+import logo from '../../assets/Minegram.svg';
 import { NavLink } from 'react-router-dom';
 import {
   Element3,
@@ -23,7 +23,7 @@ const Sidebar = () => {
 
       <aside className="sidebar" data-visible={openSidebar}>
         <div className="logo">
-          {/* <img src={logo} alt="" /> */}
+          <img src={logo} alt="" />
         </div>
         <nav>
           <NavLink
