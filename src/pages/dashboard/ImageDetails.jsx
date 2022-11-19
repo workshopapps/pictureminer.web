@@ -35,6 +35,10 @@ const ImageDetails = () => {
     setShowSaveSuccessModal((prev) => !prev);
   };
 
+  const toggleShowMenu = () => {
+    setShowMenu((prev) => !prev);
+  };
+
   return (
     <main className="pt-12">
       <section className="relative flex justify-between items-center">
@@ -106,13 +110,25 @@ const ImageDetails = () => {
 
         {showMenu && (
           <>
-            <Backdrop />
+            <Backdrop onClick={toggleShowMenu} />
             <div className="absolute bg-white top-10 right-0 z-[100] p-2 w-[18rem]">
-              <div className="p-4 flex items-center gap-4 cursor-pointer justify-between">
+              <div
+                onClick={() => {
+                  toggleShowMenu();
+                  toggleSaveSuccessModal();
+                }}
+                className="p-4 flex items-center gap-4 cursor-pointer justify-between"
+              >
                 <span className="text-xl">Save a Json</span>
                 <img src={saveIcon} className="" alt="save icon" />
               </div>
-              <div className="p-4 border-t text-[#f04438] cursor-pointer flex items-center justify-between gap-4">
+              <div
+                onClick={() => {
+                  toggleShowMenu();
+                  toggleDeleteModal();
+                }}
+                className="p-4 border-t text-[#f04438] cursor-pointer flex items-center justify-between gap-4"
+              >
                 <span className="text-xl">Delete</span>
                 <img src={trashIcon} alt="delete icon" />
               </div>
@@ -206,7 +222,6 @@ const ImageDetails = () => {
                       style={{ width: tag.percentage }}
                     ></div>
                     <p>{tag.title}</p>
-                    {console.log(tag.percentage)}
                   </div>
                   <p className="absolute top-3 right-4">{tag.percentage}</p>
                 </div>
