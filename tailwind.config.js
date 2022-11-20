@@ -17,6 +17,8 @@ module.exports = {
         small: 'var(--fs-sm)',
         xSmall: 'var(--fs-xs)',
       },
+
+      fontFamily: { axiforma: 'Axiforma' },
     },
   },
   // plugins: [require('@tailwindcss/forms')],

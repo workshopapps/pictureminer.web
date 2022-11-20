@@ -33,6 +33,8 @@ import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
 
 import LandingPage from './pages/LandingPage/LandingPage';
 import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
+
+import ApiDocumentation from './pages/documentation/ApiDocumentation';
 import ImageDetails from './pages/dashboard/ImageDetails';
 
 const RoutesComponents = () => {
@@ -64,6 +66,10 @@ const RoutesComponents = () => {
           <Route
             path="/documentation/utilities"
             element={<UtilitiesPage />}
+          ></Route>
+          <Route
+            path="/documentation/apis"
+            element={<ApiDocumentation />}
           ></Route>
 
           <Route path="/careers/application" element={<CareerApplication />} />

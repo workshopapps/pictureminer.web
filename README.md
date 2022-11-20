@@ -68,7 +68,7 @@ The command should install all the dependencies for you.
 
 To format your code, run the following command:
 
-    npm run format  
+    npm run format
 
 ## Linting Code
 
@@ -96,4 +96,5 @@ To commit your code, run the following command:
 
     git add .
     git commit -m "your commit message"
+
 Husky will run the lint and format scripts before you commit your code. If there are any linting errors, you will not be able to commit your code. You will have to fix the linting errors before you can commit your code.
