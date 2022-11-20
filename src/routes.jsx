@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 import Layout from './layouts/Layout';
 import ErrorPage from './Error';
 
-import App from './App';
 import {
   CareerApplication,
   CareerLanding,
@@ -12,8 +11,6 @@ import {
 } from './pages/career';
 
 import CustomerStories from './pages/CustomerStories';
-import { CareerApplication } from './pages/career';
-
 
 import DashboardLayout from './layouts/dashboard/DashboardLayout';
 import Dashboard from './pages/dashboard/Dashboard';
@@ -37,7 +34,6 @@ import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
 import LandingPage from './pages/LandingPage/LandingPage';
 import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
 import ImageDetails from './pages/dashboard/ImageDetails';
-
 
 const RoutesComponents = () => {
   return (
@@ -78,10 +74,8 @@ const RoutesComponents = () => {
           />
           <Route path="*" element={<ErrorPage />}></Route>
 
-		  <Route path="why-tozilla" element={<WhyTozilla/>}/>
-
+          <Route path="why-tozilla" element={<WhyTozilla />} />
         </Route>
-
 
         <Route path="" element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
@@ -91,7 +85,6 @@ const RoutesComponents = () => {
 
           <Route path="/account-setup" element={<AccountSettings />} />
           <Route path="/billing" element={<Billing />} />
-
         </Route>
       </Routes>
     </>

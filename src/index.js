@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import RoutesComponents from './routes';
-// import './styles/workflow.scss'; This overwrites tailwind preflight
+import './styles/workflow.scss';
 import './App.css';
+import './index.css';
 
 function IndexPage() {
   return (
