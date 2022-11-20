@@ -50,6 +50,126 @@ const data = [
       </Link>
     ),
   },
+  {
+    id: 6,
+    sn: 6,
+    picture: <img src={foodImage} alt="" />,
+    pictureId: '#123445k',
+    dateMined: '12/12/2022',
+    details: (
+      <Link to={`images/${5}`} className="view__more">
+        View More
+      </Link>
+    ),
+  },
+  {
+    id: 7,
+    sn: 7,
+    picture: <img src={foodImage} alt="" />,
+    pictureId: '#123447k',
+    dateMined: '12/12/2022',
+    details: (
+      <Link to={`images/${5}`} className="view__more">
+        View More
+      </Link>
+    ),
+  },
+  {
+    id: 8,
+    sn: 8,
+    picture: <img src={foodImage} alt="" />,
+    pictureId: '#123445k',
+    dateMined: '12/12/2022',
+    details: (
+      <Link to={`images/${5}`} className="view__more">
+        View More
+      </Link>
+    ),
+  },
+  {
+    id: 9,
+    sn: 9,
+    picture: <img src={foodImage} alt="" />,
+    pictureId: '#123445k',
+    dateMined: '12/12/2022',
+    details: (
+      <Link to={`images/${5}`} className="view__more">
+        View More
+      </Link>
+    ),
+  },
+  {
+    id: 10,
+    sn: 10,
+    picture: <img src={foodImage} alt="" />,
+    pictureId: '#123445k',
+    dateMined: '12/12/2022',
+    details: (
+      <Link to={`images/${5}`} className="view__more">
+        View More
+      </Link>
+    ),
+  },
+  {
+    id: 11,
+    sn: 11,
+    picture: <img src={foodImage} alt="" />,
+    pictureId: '#123445k',
+    dateMined: '12/12/2022',
+    details: (
+      <Link to={`images/${5}`} className="view__more">
+        View More
+      </Link>
+    ),
+  },
+  {
+    id: 12,
+    sn: 12,
+    picture: <img src={foodImage} alt="" />,
+    pictureId: '#123445k',
+    dateMined: '12/12/2022',
+    details: (
+      <Link to={`images/${5}`} className="view__more">
+        View More
+      </Link>
+    ),
+  },
+  {
+    id: 13,
+    sn: 13,
+    picture: <img src={foodImage} alt="" />,
+    pictureId: '#123445k',
+    dateMined: '12/12/2022',
+    details: (
+      <Link to={`images/${5}`} className="view__more">
+        View More
+      </Link>
+    ),
+  },
+  {
+    id: 14,
+    sn: 14,
+    picture: <img src={foodImage} alt="" />,
+    pictureId: '#123445k',
+    dateMined: '12/12/2022',
+    details: (
+      <Link to={`images/${5}`} className="view__more">
+        View More
+      </Link>
+    ),
+  },
+  {
+    id: 15,
+    sn: 15,
+    picture: <img src={foodImage} alt="" />,
+    pictureId: '#123445k',
+    dateMined: '12/12/2022',
+    details: (
+      <Link to={`images/${5}`} className="view__more">
+        View More
+      </Link>
+    ),
+  },
 ];
 
 const Images = () => {
@@ -132,16 +252,13 @@ const Images = () => {
         </div>
       </div>
       <div className="images_table">
-        <DataTable columns={columns} data={dataS} responsive striped />
-        <div className="flex justify-end">
-          <div className="pagination">
-            <div className="prev">Prev</div>
-            <p>1</p>
-            <p>2</p>
-            <p>3</p>
-            <div className="prev">Next</div>
-          </div>
-        </div>
+        <DataTable
+          columns={columns}
+          data={dataS}
+          responsive
+          striped
+          pagination
+        />
       </div>
     </div>
   );

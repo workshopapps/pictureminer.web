@@ -11,13 +11,13 @@ const Dashboard = () => {
           <div className="flex gap-6">
             <span>Images</span>
           </div>
-          <h3>0</h3>
+          <h3 style={{ marginTop: '20px', fontSize: '20px' }}>0</h3>
         </div>
         <div className="images__card">
           <div className="flex gap-6">
             <span>API Usage No</span>
           </div>
-          <h3>0</h3>
+          <h3 style={{ marginTop: '20px', fontSize: '20px' }}>0</h3>
         </div>
         <Link to={'/documentation'}>
           <Button text={'View Documentation'} className="button" />
