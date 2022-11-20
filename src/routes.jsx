@@ -72,15 +72,14 @@ const RoutesComponents = () => {
             element={<UtilitiesPage />}
           ></Route>
 
-          <Route path="/terms-of-use" element={<Termsofuse />}></Route>
-          <Route path="/privacy-policy" element={<Privacypolicy />}></Route>
-
           <Route path="/careers/application" element={<CareerApplication />} />
           <Route path="/careers/more-jobs" element={<CareerMoreJobs />} />
           <Route
             path="/careers/jobs/singles"
             element={<CareerSingleJobView />}
           />
+          <Route path="/terms-of-use" element={<Termsofuse />}></Route>
+          <Route path="/privacy-policy" element={<Privacypolicy />}></Route>
           <Route path="*" element={<ErrorPage />}></Route>
 
 		  <Route path="why-tozilla" element={<WhyTozilla/>}/>
