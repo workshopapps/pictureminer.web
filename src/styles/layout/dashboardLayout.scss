@@ -8,14 +8,19 @@
     display: none;
   }
   .dashboard_pages {
-    padding: 20px 64px;
+    padding: 20px 0;
+    // padding: 20px 64px 0;
     width: 100%;
+
+    @media (min-width: 550px) {
+      padding: 20px 80px 0;
+    }
   }
   .navbar {
     @include Flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
     .filt {
       display: none;
       @media (max-width: 550px) {
