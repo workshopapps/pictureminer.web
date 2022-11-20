@@ -16,6 +16,12 @@
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 6rem;
+    .filt {
+      display: none;
+      @media (max-width: 550px) {
+        display: block;
+      }
+    }
     .form__input {
       width: 67rem;
       height: 48px;
@@ -87,6 +93,14 @@
         color: #fff;
       }
     }
+    @media (max-width: 500px) {
+      .user {
+        display: none;
+      }
+      .form_input {
+        width: 197px;
+      }
+    }
   }
   @media (max-width: 830px) {
     .menu__sidebar {
@@ -112,6 +126,12 @@
       .form__input {
         width: 287px;
       }
+      @media (max-width: 550px) {
+        gap: 10px;
+        .form__input {
+          width: 197px !important;
+        }
+      }
     }
     .dashboard_pages {
       padding-inline: 38px;
@@ -125,6 +145,11 @@
     }
     .dashboard_pages {
       padding-inline: 38px;
+    }
+  }
+  @media (max-width: 550px) {
+    .dashboard_pages {
+      padding-inline: 16px;
     }
   }
 }

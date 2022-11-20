@@ -1,3 +1,4 @@
+import { Filter } from 'iconsax-react';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -7,6 +8,9 @@ const DashboardNavbar = () => {
     <div className="navbar">
       <div className="form__input">
         <input type="search" name="" id="" placeholder="Search" />
+      </div>
+      <div className="filt">
+        <Filter size={'40'} color="#ff6c00" />
       </div>
       <div className="user">
         <div className="user__grid">
