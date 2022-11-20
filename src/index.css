@@ -18,13 +18,12 @@ code {
     monospace;
 } */
 
-
 .career-hero-bg {
   background-image: url('./assets/career-landing-bg.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-=======
+}
 @layer base {
   :root {
     /* colors */
