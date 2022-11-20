@@ -11,6 +11,7 @@ import {
 
 import CustomerStories from './pages/CustomerStories';
 // import { CareerApplication } from './pages/career';
+import Termsofuse from './pages/terms-of-use/Termsofuse';
 
 import DashboardLayout from './layouts/dashboard/DashboardLayout';
 import Dashboard from './pages/dashboard/Dashboard';
@@ -36,6 +37,11 @@ import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
 import ImageDetails from './pages/dashboard/ImageDetails';
 
 import Privacypolicy from './pages/privacypolicy/privacypolicy';
+// import Termsofuse from './pages/terms-of-use/Termsofuse';
+
+import ApiDocumentation from './pages/documentation/ApiDocumentation';
+import About from './pages/About/components/About';
+// import ImageDetails from './pages/dashboard/ImageDetails';
 
 import Termsofuse from './pages/terms-of-use/Termsofuse';
 import Faq from './pages/FAQ/faq';
@@ -46,7 +52,6 @@ import ApiDocumentation from './pages/documentation/ApiDocumentation';
 
 import Layout from './layouts/Layout';
 import HowItWorks from './pages/howItWorks/howItWorks';
-
 const RoutesComponents = () => {
   return (
     <>
@@ -54,6 +59,7 @@ const RoutesComponents = () => {
         <Route path="" element={<Layout />}>
           <Route exact path="" element={<LandingPage />} />
           <Route path="/demo" element={<MinergramDemo />} />
+          <Route path="/About-us" element={<About />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/documentation" element={<DocumentationHome />}></Route>
           <Route
