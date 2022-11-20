@@ -4,6 +4,10 @@ import Button from '../../components/ui/Button';
 import DataTable from 'react-data-table-component';
 import { Link } from 'react-router-dom';
 import foodImage from '../../assets/foodImage.png';
+import Modal, { Backdrop } from '../../components/ui/Modal';
+import successIcon from '../../assets/dashboardImageDetails/success-icon.png';
+import warningIcon from '../../assets/dashboardImageDetails/warning-icon.png';
+import closeIcon from '../../assets/dashboardImageDetails/close-icon.png';
 
 const data = [
   {
@@ -173,8 +177,20 @@ const data = [
 ];
 
 const Images = () => {
-  const [dataS, setDataS] = useState(data);
   const [showMenu, setShowMenu] = useState(false);
+  const toggleShowMenu = () => {
+    setShowMenu((prev) => !prev);
+  };
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false);
+  const toggleDeleteModal = () => {
+    setShowDeleteModal((prev) => !prev);
+  };
+
+  const toggleDeleteSuccessModal = () => {
+    showDeleteModal && toggleDeleteModal();
+    setShowDeleteSuccessModal((prev) => !prev);
+  };
   const columns = [
     {
       name: 'S/No',
@@ -211,20 +227,9 @@ const Images = () => {
       cell: () => (
         <div
           className="delete"
-          onClick={(e) => {
-            setDataS((prev) => {
-              return prev.filter((item) => {
-                console.log(
-                  item.id,
-                  e.target.parentElement.parentElement.parentElement.id[4],
-                  dataS
-                );
-                return (
-                  item.id !==
-                  e.target.parentElement.parentElement.parentElement.id[4]
-                );
-              });
-            });
+          onClick={() => {
+            toggleShowMenu();
+            toggleDeleteModal();
           }}
         >
           <Trash size={24} color="#f04438" />
@@ -257,12 +262,101 @@ const Images = () => {
       <div className="images_table">
         <DataTable
           columns={columns}
-          data={dataS}
+          data={data}
           responsive
           striped
           pagination
         />
       </div>
+      {showDeleteModal && (
+        <>
+          <Backdrop />
+          <Modal>
+            <div className="flex flex-col items-center justify-center gap-8 p-4">
+              <img className="" src={warningIcon} alt="warning icon" />
+
+              <h2 className="text-[1.7rem] font-[500]">Delete Image</h2>
+
+              <p className="text-[#797b89] text-center text-md">
+                Are you sure you want to delete this image? This action cannot
+                be undone.
+              </p>
+
+              <div className="flex gap-4 mt-4 w-full">
+                <Button
+                  styles={{
+                    border: '1px solid #8e8e8e',
+                    color: '#8e8e8e',
+                    padding: '1rem 2rem',
+                    width: '100%',
+                    borderRadius: '.5rem',
+                    fontSize: '1.5rem',
+                    fontWeight: '500',
+                  }}
+                  text="Cancel"
+                  onclick={toggleDeleteModal}
+                />
+
+                <Button
+                  styles={{
+                    background: '#f04438',
+                    color: 'white',
+                    padding: '1rem',
+                    width: '100%',
+                    borderRadius: '.5rem',
+                    fontSize: '1.5rem',
+                    fontWeight: '500',
+                  }}
+                  text="Delete"
+                  onclick={toggleDeleteSuccessModal}
+                />
+              </div>
+            </div>
+          </Modal>
+        </>
+      )}
+
+      {showDeleteSuccessModal && (
+        <>
+          <Backdrop />
+          <Modal>
+            <div className=" flex flex-col items-center justify-center gap-8 p-4">
+              <div className="flex w-full justify-end">
+                <div
+                  className="w-14 cursor-pointer"
+                  onClick={toggleDeleteSuccessModal}
+                >
+                  <img className="w-full" src={closeIcon} alt="close icon" />
+                </div>
+              </div>
+
+              <img className="" src={successIcon} alt="success icon" />
+
+              <h2 className="text-[1.7rem] font-[500]">Successful</h2>
+
+              <p className="text-[#797b89] text-center text-md">
+                Image successfully deleted
+              </p>
+
+              <div className="flex gap-4 mt-4 w-full justify-center">
+                <Button
+                  styles={{
+                    background: '#ff6c00',
+                    color: 'white',
+                    padding: '1rem',
+                    width: '15rem',
+                    borderRadius: '.5rem',
+                    fontSize: '1.5rem',
+                    fontWeight: '500',
+                  }}
+                  text="Done"
+                  onclick={toggleDeleteSuccessModal}
+                />
+              </div>
+            </div>
+          </Modal>
+        </>
+      )}
     </div>
   );
 };
