@@ -56,6 +56,18 @@
       background: rgba(180, 180, 180, 0.1);
       padding: 12px 6rem;
       margin-bottom: 3.2rem;
+      .copy {
+        cursor: pointer;
+        position: relative;
+        &:active::after {
+          content: 'copied';
+          color: #ff6c00;
+          position: absolute;
+          left: 20px;
+          top: 0;
+          transition: all 380ms ease;
+        }
+      }
       .colored {
         color: #ff6c00;
       }

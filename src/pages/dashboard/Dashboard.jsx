@@ -2,7 +2,7 @@ import React from 'react';
 import { DocumentCopy } from 'iconsax-react';
 import Button from '../../components/ui/Button';
 import { Link } from 'react-router-dom';
-
+// import copy from 'copy-to-clipboard';
 const Dashboard = () => {
   return (
     <div className="dashboard">
@@ -38,7 +38,10 @@ const Dashboard = () => {
             <div className="api__detail">
               <span>{item.title}</span>
               <span className={item.class}>{item.details}</span>
-              <span>
+              <span
+                className="copy"
+                onClick={() => navigator.clipboard.writeText(item.details)}
+              >
                 <DocumentCopy size="16" color="#1d1d1d" />
               </span>
             </div>
