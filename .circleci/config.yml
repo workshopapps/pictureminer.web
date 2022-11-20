@@ -10,7 +10,7 @@ version: 2
           - dev
         docker:
           # specify the version you desire here
-          - image: circleci/node:8.0
+          - image: circleci/node:16.*
           - image: docker:17.09.1-ce-git  # enable the docker build support
        working_directory: ~/repo
          steps:
