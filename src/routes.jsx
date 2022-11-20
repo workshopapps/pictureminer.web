@@ -26,11 +26,11 @@ import Billing from './pages/dashboard/Billing';
 import DocumentationHome from './pages/documentation/Home/DocumentationHome';
 import GettingStarted from './pages/documentation/GettingStartedPage/GettingStarted';
 import Installations from './pages/documentation/InstallationsPage/Installations';
-
-import WhyTozilla from './pages/whyTozilla/whyTozilla';
-
-import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
 import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
+import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
+import Integrations from './pages/documentation/integrationPage/Integrations';
+import Web from './pages/documentation/WebPage/Web';
+import WhyTozilla from './pages/whyTozilla/WhyTozilla';
 
 import LandingPage from './pages/LandingPage/LandingPage';
 import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
@@ -60,6 +60,11 @@ const RoutesComponents = () => {
             element={<GettingStarted />}
           ></Route>
           <Route path="customer-stories" element={<CustomerStories />}></Route>
+          <Route
+            path="/documentation/integrations"
+            element={<Integrations />}
+          ></Route>
+          <Route path="/documentation/web" element={<Web />}></Route>
           <Route
             path="/documentation/installations"
             element={<Installations />}
