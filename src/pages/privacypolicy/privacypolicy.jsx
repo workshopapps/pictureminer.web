@@ -5,7 +5,7 @@ import Policyapp from './policyapplication';
 const Privacypolicy = () => {
     return (
         <>
-        <div className="container mt-14 mb-10">
+        <div className="mt-14 mb-10">
         <Privacytitle />
         <Policyapp/>
         </div>

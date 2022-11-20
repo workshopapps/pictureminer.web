@@ -40,6 +40,8 @@ import Termsofuse from './pages/terms-of-use/Termsofuse';
 import Faq from './pages/FAQ/faq';
 import ApiDocumentation from './pages/documentation/ApiDocumentation';
 
+const RoutesComponents = () => {
+  return (
     <>
       <Routes>
         <Route path="" element={<Layout />}>
@@ -104,5 +106,7 @@ import ApiDocumentation from './pages/documentation/ApiDocumentation';
         </Route>
       </Routes>
     </>
+  );
+};
 
 export default RoutesComponents;

@@ -5,7 +5,7 @@ import terms from './copyright';
 
 const Termsofusesection = () => {
   return (
-    <div className="px-5 md:px-20 md:text-xl">
+    <div className="px-7 md:px-20 md:text-xl">
       <div className="py-5">
         <h3 className="text-titlegrey mb-4 text-lg md:text-xl font-bold">
           1. Terms of use
