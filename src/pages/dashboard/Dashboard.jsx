@@ -1,6 +1,7 @@
 import React from 'react';
-import { Gallery, DocumentCopy } from 'iconsax-react';
+import { DocumentCopy } from 'iconsax-react';
 import Button from '../../components/ui/Button';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
   return (
@@ -8,17 +9,19 @@ const Dashboard = () => {
       <div className="dashboard__head">
         <div className="images__card">
           <div className="flex gap-6">
-            <Gallery size="13" /> <span>Images</span>
+            <span>Images</span>
           </div>
           <h3>0</h3>
         </div>
         <div className="images__card">
           <div className="flex gap-6">
-            <Gallery size="13" /> <span>API Usage No</span>
+            <span>API Usage No</span>
           </div>
           <h3>0</h3>
         </div>
-        <Button text={'View Documentation'} />
+        <Link to={'/documentation'}>
+          <Button text={'View Documentation'} className="button" />
+        </Link>
       </div>
       <div className="api__details">
         <h1>API Details:</h1>
