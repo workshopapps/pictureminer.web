@@ -23,5 +23,5 @@ module.exports = {
       fontFamily: { axiforma: 'Axiforma' },
     },
   },
-  // plugins: [require('@tailwindcss/forms')],
+  plugins: [require('@tailwindcss/forms')],
 };
