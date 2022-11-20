@@ -28,6 +28,7 @@ function AccountSettings() {
     setFormValues((prevFormValues) => ({ ...prevFormValues, [name]: value }));
     setIsTouched(true);
     setIsFormValueEmpty(false);
+    setIsSubmitting(false);
   };
 
   const handleSubmit = (e) => {
@@ -73,9 +74,10 @@ function AccountSettings() {
       setIsSubmitting(false);
     }
 
-    Object.values(formValues).every((formValue) => {
-      if (formValue === '') return setIsFormValueEmpty(true);
+    const isNullish = Object.values(formValues).every((formValue) => {
+      if (formValue === '') return true;
     });
+    setIsFormValueEmpty(isNullish);
   }, [errorMessages]);
 
   const cancelAccountSettingsUpdate = () => {
@@ -97,7 +99,7 @@ function AccountSettings() {
         <section className="">
           <h1 className="text-large">Account settings</h1>
           {successMessage && (
-            <div className="w-[320px] md:w-[500px] p-6 rounded-md bg-[#12B76A] text-white mt-10 absolute top-[10%] right-20 flex items-center justify-between space-x-4 flex-shrink-0">
+            <div className="w-[350px] md:w-[500px] p-6 rounded-md bg-[#12B76A] text-white mt-10 absolute top-[10%] right-5 lg:right-20 flex items-center justify-between space-x-4 flex-shrink-0">
               <div className="rounded-full bg-white flex items-center justify-center ">
                 <AiOutlineExclamation className="text-green-700 text-normal " />
               </div>
