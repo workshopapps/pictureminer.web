@@ -38,10 +38,12 @@ import ImageDetails from './pages/dashboard/ImageDetails';
 import Privacypolicy from './pages/privacypolicy/privacypolicy';
 
 import ApiDocumentation from './pages/documentation/ApiDocumentation';
+import About from './pages/About/components/About';
+
+import Faq from './pages/FAQ/faq';
 
 import Layout from './layouts/Layout';
 import HowItWorks from './pages/howItWorks/howItWorks';
-
 const RoutesComponents = () => {
   return (
     <>
@@ -49,6 +51,7 @@ const RoutesComponents = () => {
         <Route path="" element={<Layout />}>
           <Route exact path="" element={<LandingPage />} />
           <Route path="/demo" element={<MinergramDemo />} />
+          <Route path="/About-us" element={<About />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/documentation" element={<DocumentationHome />}></Route>
           <Route
@@ -86,6 +89,8 @@ const RoutesComponents = () => {
           />
           <Route path="/terms-of-use" element={<Termsofuse />}></Route>
           <Route path="/privacy-policy" element={<Privacypolicy />}></Route>
+          <Route path="/faq" element={<Faq />}></Route>
+
           <Route path="/careers/more-jobs" element={<CareerMoreJobs />} />
           <Route
             path="/careers/jobs/singles"

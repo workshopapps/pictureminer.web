@@ -7,7 +7,7 @@ import Termsofusesection from './termsofusesection';
 const Termsofuse = () => {
   return (
     <>
-      <div className="container mt-14 mb-10">
+      <div className="mt-14 mb-10">
         <Title />
         <Subtext />
         <Termsofusesection />

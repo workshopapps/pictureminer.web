@@ -3,6 +3,7 @@
 // eslint-disable-next-line no-undef
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  plugins: [require('tw-elements/dist/plugin')],
   theme: {
     extend: {
       colors: {
@@ -24,5 +25,6 @@ module.exports = {
       fontFamily: { axiforma: 'Axiforma' },
     },
   },
-  // plugins: [require('@tailwindcss/forms')],
+  // eslint-disable-next-line no-dupe-keys
+  plugins: [require('@tailwindcss/forms'), require('tw-elements/dist/plugin')],
 };

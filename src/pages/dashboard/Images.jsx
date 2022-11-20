@@ -7,7 +7,7 @@ import foodImage from '../../assets/foodImage.png';
 
 const data = [
   {
-    id: 1,
+    id: '1',
     sn: 1,
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
@@ -15,7 +15,7 @@ const data = [
     details: <Link to={`${1}`}>View More</Link>,
   },
   {
-    id: 2,
+    id: '2',
     sn: 2,
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
@@ -23,7 +23,7 @@ const data = [
     details: <Link to={`/${2}`}>View More</Link>,
   },
   {
-    id: 3,
+    id: '3',
     sn: 3,
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
@@ -31,7 +31,7 @@ const data = [
     details: <Link to={`/${3}`}>View More</Link>,
   },
   {
-    id: 4,
+    id: '4',
     sn: 4,
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
@@ -39,8 +39,128 @@ const data = [
     details: <Link to={`${4}`}>View More</Link>,
   },
   {
-    id: 5,
+    id: '5',
     sn: 5,
+    picture: <img src={foodImage} alt="" />,
+    pictureId: '#123445k',
+    dateMined: '12/12/2022',
+    details: (
+      <Link to={`images/${5}`} className="view__more">
+        View More
+      </Link>
+    ),
+  },
+  {
+    id: '6',
+    sn: 6,
+    picture: <img src={foodImage} alt="" />,
+    pictureId: '#123445k',
+    dateMined: '12/12/2022',
+    details: (
+      <Link to={`images/${5}`} className="view__more">
+        View More
+      </Link>
+    ),
+  },
+  {
+    id: '7',
+    sn: 7,
+    picture: <img src={foodImage} alt="" />,
+    pictureId: '#123447k',
+    dateMined: '12/12/2022',
+    details: (
+      <Link to={`images/${5}`} className="view__more">
+        View More
+      </Link>
+    ),
+  },
+  {
+    id: '8',
+    sn: 8,
+    picture: <img src={foodImage} alt="" />,
+    pictureId: '#123445k',
+    dateMined: '12/12/2022',
+    details: (
+      <Link to={`images/${5}`} className="view__more">
+        View More
+      </Link>
+    ),
+  },
+  {
+    id: '9',
+    sn: 9,
+    picture: <img src={foodImage} alt="" />,
+    pictureId: '#123445k',
+    dateMined: '12/12/2022',
+    details: (
+      <Link to={`images/${5}`} className="view__more">
+        View More
+      </Link>
+    ),
+  },
+  {
+    id: '10',
+    sn: 10,
+    picture: <img src={foodImage} alt="" />,
+    pictureId: '#123445k',
+    dateMined: '12/12/2022',
+    details: (
+      <Link to={`images/${5}`} className="view__more">
+        View More
+      </Link>
+    ),
+  },
+  {
+    id: '11',
+    sn: 11,
+    picture: <img src={foodImage} alt="" />,
+    pictureId: '#123445k',
+    dateMined: '12/12/2022',
+    details: (
+      <Link to={`images/${5}`} className="view__more">
+        View More
+      </Link>
+    ),
+  },
+  {
+    id: '12',
+    sn: 12,
+    picture: <img src={foodImage} alt="" />,
+    pictureId: '#123445k',
+    dateMined: '12/12/2022',
+    details: (
+      <Link to={`images/${5}`} className="view__more">
+        View More
+      </Link>
+    ),
+  },
+  {
+    id: '13',
+    sn: 13,
+    picture: <img src={foodImage} alt="" />,
+    pictureId: '#123445k',
+    dateMined: '12/12/2022',
+    details: (
+      <Link to={`images/${5}`} className="view__more">
+        View More
+      </Link>
+    ),
+  },
+  {
+    id: '14',
+    sn: 14,
+    picture: <img src={foodImage} alt="" />,
+    pictureId: '#123445k',
+    dateMined: '12/12/2022',
+    details: (
+      <Link to={`images/${5}`} className="view__more">
+        View More
+      </Link>
+    ),
+  },
+  {
+    id: '15',
+    sn: 15,
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
     dateMined: '12/12/2022',
@@ -91,18 +211,21 @@ const Images = () => {
       cell: () => (
         <div
           className="delete"
-          onClick={() =>
+          onClick={(e) => {
             setDataS((prev) => {
-              console.log(
-                prev.filter((item) => {
-                  item.id;
-                })
-              );
-              // return prev.filter((item) => {
-              //   item.id === 1;
-              // });
-            })
-          }
+              return prev.filter((item) => {
+                console.log(
+                  item.id,
+                  e.target.parentElement.parentElement.parentElement.id[4],
+                  dataS
+                );
+                return (
+                  item.id !==
+                  e.target.parentElement.parentElement.parentElement.id[4]
+                );
+              });
+            });
+          }}
         >
           <Trash size={24} color="#f04438" />
         </div>
@@ -132,16 +255,13 @@ const Images = () => {
         </div>
       </div>
       <div className="images_table">
-        <DataTable columns={columns} data={dataS} responsive striped />
-        <div className="flex justify-end">
-          <div className="pagination">
-            <div className="prev">Prev</div>
-            <p>1</p>
-            <p>2</p>
-            <p>3</p>
-            <div className="prev">Next</div>
-          </div>
-        </div>
+        <DataTable
+          columns={columns}
+          data={dataS}
+          responsive
+          striped
+          pagination
+        />
       </div>
     </div>
   );
