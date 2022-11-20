@@ -1,4 +1,6 @@
+import { Filter } from 'iconsax-react';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const DashboardNavbar = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -6,6 +8,9 @@ const DashboardNavbar = () => {
     <div className="navbar">
       <div className="form__input">
         <input type="search" name="" id="" placeholder="Search" />
+      </div>
+      <div className="filt">
+        <Filter size={'40'} color="#ff6c00" />
       </div>
       <div className="user">
         <div className="user__grid">
@@ -34,7 +39,10 @@ const DashboardNavbar = () => {
             />
           </svg>
           <div className={showMenu ? 'show account' : 'hide account'}>
-            <p>Account Settings</p>
+            <p>
+              <Link to="/account-setup">Account Settings</Link>
+            </p>
+
             <p>Log out</p>
           </div>
         </div>

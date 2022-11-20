@@ -11,7 +11,7 @@ import {
 } from './pages/career';
 
 import CustomerStories from './pages/CustomerStories';
-import { CareerApplication } from './pages/career';
+
 import Termsofuse from './pages/terms-of-use/Termsofuse';
 
 import DashboardLayout from './layouts/dashboard/DashboardLayout';
@@ -38,10 +38,8 @@ import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
 import ImageDetails from './pages/dashboard/ImageDetails';
 
 import Privacypolicy from './pages/privacypolicy/privacypolicy';
-import Termsofuse from './pages/terms-of-use/Termsofuse';
 
 import ApiDocumentation from './pages/documentation/ApiDocumentation';
-import ImageDetails from './pages/dashboard/ImageDetails';
 
 const RoutesComponents = () => {
   return (
