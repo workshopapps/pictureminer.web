@@ -10,7 +10,7 @@
         display: none;
       }
     }
-    margin-bottom: 3.2rem;
+    margin-bottom: 32px;
     @include Flex;
     justify-content: space-between;
     .button {
@@ -29,6 +29,9 @@
       font-weight: 500;
       font-size: 18px;
       line-height: 29px;
+      @media (max-width: 500px) {
+        display: none;
+      }
     }
     .filter {
       position: absolute;
@@ -83,12 +86,12 @@
   }
   .pagination {
     @include Flex;
-    gap: 4rem;
+    gap: 40px;
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
     color: #434343;
-    margin-top: 4.3rem;
+    margin-top: 43px;
   }
 }
 @media (max-width: 550px) {
