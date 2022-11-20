@@ -1,0 +1,50 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+  jobs:
+    build:
+      branches:
+        only:
+          - dev
+        docker:
+          # specify the version you desire here
+          - image: circleci/node:8.0
+          - image: docker:17.09.1-ce-git  # enable the docker build support
+       working_directory: ~/repo
+         steps:
+           - checkout
+           - setup_remote_docker
+           # Download and cache dependencies
+           - restore_cache:
+             keys:
+               - v1-dependencies-{{ checksum "package.json" }}
+               # fallback to using the latest cache if no exact match is found
+               - v1-dependencies-
+    
+          # clearing the cache
+          - run: npm cache clear --force
+          # - run: rm package-lock.json
+          - run: npm install
+          - save_cache:
+            paths:
+              - node_modules
+            key: v1-dependencies-{{ checksum "package.json" }}
+          # run tests!
+          - run: npm run test
+          # build the docker image on success
+          - run:
+            name: Build Success
+            when: on_success
+            command: |
+              docker --version
+              docker login -u=$DOCKER_LOGIN -p=$DOCKER_PASSWORD
+              docker build -t fynewily/scalefrontend:$CIRCLE_BRANCH --build-arg MACHINE_NAME=<application_name>-$CIRCLE_BRANCH .
+              docker push fynewily/scalefrontend:$CIRCLE_BRANCH
+              echo "Docker build made sucessfully!! for scalefrontend $CIRCLE_BRANCH"
+          - run:
+            name: Build Failure
+            when: on_fail
+            command: |
+              echo "ERROR building scalefrontend $CIRCLE_BRANCH"
