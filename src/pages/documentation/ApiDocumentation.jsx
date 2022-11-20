@@ -15,7 +15,7 @@ export default function ApiDocumentation() {
         <p className=" text-[#061D33] py-4 px-10">Documentation/API</p>
       </div>
       <div className="flex justify-between items-start py-4 px-10">
-        <div className="w-[100%] sm:w-[60%] md:w-[80%]  ">
+        <div className="w-[100%] sm:w-[60%] md:w-[70%]  ">
           <section id="introduction">
             <h2 className="text-[#051626] text-[30px] font-medium leading-[50px] mt-6 sm:mt-4">
               Introduction
