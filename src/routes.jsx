@@ -35,6 +35,7 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
 
 import ApiDocumentation from './pages/documentation/ApiDocumentation';
+import ImageDetails from './pages/dashboard/ImageDetails';
 
 const RoutesComponents = () => {
   return (
