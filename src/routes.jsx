@@ -49,7 +49,6 @@ import HowItWorks from './pages/howItWorks/howItWorks';
 
 const RoutesComponents = () => {
   return (
-
     <>
       <Routes>
         <Route path="" element={<Layout />}>
@@ -115,5 +114,7 @@ const RoutesComponents = () => {
         </Route>
       </Routes>
     </>
+  );
+};
 
 export default RoutesComponents;

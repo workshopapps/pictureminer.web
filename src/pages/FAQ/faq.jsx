@@ -3,6 +3,8 @@ import 'tw-elements';
 
 const Faq = () => {
   return (
+    <div className="mt-14 md:px-28 container mb-10 md:mb-20 md:mt20">
+      <h3 className='text-xl py-8 text-center md:text-3xl'>Frequently Asked Questions</h3>
     <div className="accordion mx-5 accordion-flush" id="accordionExample5">
       <div className="accordion-item bg-white border border-gray-200">
         <h2 className="accordion-header mb-0" id="headingOne5">
@@ -12,11 +14,12 @@ const Faq = () => {
         relative
         flex
         items-center
+        md:text-xl
         text-lg
         w-full
         py-4
         px-5
-        text-base text-gray-800 text-left
+        text-base titlegrey text-left
         bg-white
         border-0
         rounded-none
@@ -37,7 +40,7 @@ const Faq = () => {
           className="accordion-collapse collapse show"
           aria-labelledby="headingOne5"
         >
-          <div className="accordion-body text-base py-4 px-5">
+          <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
             Minergram is an API (Application Programming Interface) system that
             allows for communication between two applications using requests and
             responses. For an overview of how to use Minergram, check out our
@@ -54,11 +57,12 @@ const Faq = () => {
         relative
         flex
         items-center
+        md:text-xl
         text-lg
         w-full
         py-4
         px-5
-        text-base text-gray-800 text-left
+        text-base titlegrey text-left
         bg-white
         border-0
         rounded-none
@@ -79,7 +83,7 @@ const Faq = () => {
           className="accordion-collapse collapse"
           aria-labelledby="headingTwo5"
         >
-          <div className="accordion-body text-base py-4 px-5">
+          <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
             Minergram allows users to make a request by uploading an image or a
             URL and get a swift validated response(s) detailing the content of
             their request(s). Learn more about how Minergram works
@@ -97,11 +101,12 @@ const Faq = () => {
         relative
         flex
         items-center
+        md:text-xl
         text-lg
         w-full
         py-4
         px-5
-        text-base text-gray-800 text-left
+        text-base titlegrey text-left
         bg-white
         border-0
         rounded-none
@@ -122,7 +127,7 @@ const Faq = () => {
           className="accordion-collapse collapse"
           aria-labelledby="headingThree5"
         >
-          <div className="accordion-body text-base py-4 px-5">
+          <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
             There are many uses for ToZilla, but here are a few:
             <ol>
               <li>Captioning</li>
@@ -143,11 +148,12 @@ const Faq = () => {
         relative
         flex
         items-center
+        md:text-xl
         text-lg
         w-full
         py-4
         px-5
-        text-base text-gray-800 text-left
+        text-base titlegrey text-left
         bg-white
         border-0
         rounded-none
@@ -168,7 +174,7 @@ const Faq = () => {
           className="accordion-collapse collapse"
           aria-labelledby="headingThree5"
         >
-          <div className="accordion-body text-base py-4 px-5">
+          <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
             Minergram is a subscription-based service but it is free for
             individuals.
           </div>
@@ -184,11 +190,12 @@ const Faq = () => {
         relative
         flex
         items-center
+        md:text-xl
         text-lg
         w-full
         py-4
         px-5
-        text-base text-gray-800 text-left
+        text-base titlegrey text-left
         bg-white
         border-0
         rounded-none
@@ -210,7 +217,7 @@ const Faq = () => {
           className="accordion-collapse collapse"
           aria-labelledby="headingThree5"
         >
-          <div className="accordion-body text-base py-4 px-5">
+          <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
             Yes, there is a paid version (minergram.com/paid-vers) of Minergram
             for commercial use, which allows you to make bulk searches. The
             commercial version of Minergram includes a user interface for easy
@@ -230,11 +237,12 @@ const Faq = () => {
         relative
         flex
         items-center
+        md:text-xl
         text-lg
         w-full
         py-4
         px-5
-        text-base text-gray-800 text-left
+        text-base titlegrey text-left
         bg-white
         border-0
         rounded-none
@@ -256,7 +264,7 @@ const Faq = () => {
           className="accordion-collapse collapse"
           aria-labelledby="headingThree5"
         >
-          <div className="accordion-body text-base py-4 px-5">
+          <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
             Yes. We have a set of image recognition APIs that work with your own
             image collections. You can find out more about our APIs by visiting
             our technology/documentation page.
@@ -273,11 +281,12 @@ const Faq = () => {
         relative
         flex
         items-center
+        md:text-xl
         text-lg
         w-full
         py-4
         px-5
-        text-base text-gray-800 text-left
+        text-base titlegrey text-left
         bg-white
         border-0
         rounded-none
@@ -298,7 +307,7 @@ const Faq = () => {
           className="accordion-collapse collapse"
           aria-labelledby="headingThree5"
         >
-          <div className="accordion-body text-base py-4 px-5">
+          <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
             From the dashboard, you can upload an image, paste an image, or
             point to a web image by typing or pasting it in a URL. You can also
             use our Drag &amp; Drop feature.
@@ -315,11 +324,12 @@ const Faq = () => {
         relative
         flex
         items-center
+        md:text-xl
         text-lg
         w-full
         py-4
         px-5
-        text-base text-gray-800 text-left
+        text-base titlegrey text-left
         bg-white
         border-0
         rounded-none
@@ -340,7 +350,7 @@ const Faq = () => {
           className="accordion-collapse collapse"
           aria-labelledby="headingThree5"
         >
-          <div className="accordion-body text-base py-4 px-5">
+          <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
             <p className="py-3">
               File type: ToZilla accepts a variety of formats, including, but
               not limited to, JPEG, PNG, GIF, BMP, TIFF, and WebP images.
@@ -372,11 +382,12 @@ const Faq = () => {
         relative
         flex
         items-center
+        md:text-xl
         text-lg
         w-full
         py-4
         px-5
-        text-base text-gray-800 text-left
+        text-base titlegrey text-left
         bg-white
         border-0
         rounded-none
@@ -397,7 +408,7 @@ const Faq = () => {
           className="accordion-collapse collapse"
           aria-labelledby="headingThree5"
         >
-          <div className="accordion-body text-base py-4 px-5">
+          <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
             Yes. Just select your preferred option from the ‘Sort by’ dropdown
             list above your results. Minergram will remember your selection for
             the duration of your session. For more information, see our guide
@@ -415,11 +426,12 @@ const Faq = () => {
         relative
         flex
         items-center
+        md:text-xl
         text-lg
         w-full
         py-4
         px-5
-        text-base text-gray-800 text-left
+        text-base titlegrey text-left
         bg-white
         border-0
         rounded-none
@@ -440,7 +452,7 @@ const Faq = () => {
           className="accordion-collapse collapse"
           aria-labelledby="headingThree5"
         >
-          <div className="accordion-body text-base py-4 px-5">
+          <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
             Visit the accounts tab on your dashboard and follow the instructions
             from there. You can also contact us (minergram.com/contact-us) and
             one of our reps will be happy to help.
@@ -457,11 +469,12 @@ const Faq = () => {
         relative
         flex
         items-center
+        md:text-xl
         text-lg
         w-full
         py-4
         px-5
-        text-base text-gray-800 text-left
+        text-base titlegrey text-left
         bg-white
         border-0
         rounded-none
@@ -482,7 +495,7 @@ const Faq = () => {
           className="accordion-collapse collapse"
           aria-labelledby="headingThree5"
         >
-          <div className="accordion-body text-base py-4 px-5">
+          <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
             <p className="py-3">
               When you search with Minergram API, your images are automatically
               saved so you can view your history on our dashboard. Minergram
@@ -506,11 +519,12 @@ const Faq = () => {
         relative
         flex
         items-center
+        md:text-xl
         text-lg
         w-full
         py-4
         px-5
-        text-base text-gray-800 text-left
+        text-base titlegrey text-left
         bg-white
         border-0
         rounded-none
@@ -531,7 +545,7 @@ const Faq = () => {
           className="accordion-collapse collapse"
           aria-labelledby="headingThree5"
         >
-          <div className="accordion-body text-base py-4 px-5">
+          <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
             Minergram doesn’t directly provide information on the owners of an
             image’s copyright. You may find websites that are more likely to
             contain ownership information.
@@ -548,11 +562,12 @@ const Faq = () => {
         relative
         flex
         items-center
+        md:text-xl
         text-lg
         w-full
         py-4
         px-5
-        text-base text-gray-800 text-left
+        text-base titlegrey text-left
         bg-white
         border-0
         rounded-none
@@ -573,7 +588,7 @@ const Faq = () => {
           className="accordion-collapse collapse"
           aria-labelledby="headingThree5"
         >
-          <div className="accordion-body text-base py-4 px-5">
+          <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
             <p>
               Removing your images from ToZilla is easy and hassle-free. Just
               select the files you want to remove and click the delete button.
@@ -587,6 +602,7 @@ const Faq = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
