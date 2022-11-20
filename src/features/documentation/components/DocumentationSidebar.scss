@@ -1,0 +1,46 @@
+.documentation-sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  position: sticky;
+  top: 20px;
+  margin-block-start: 40px;
+  padding-left: 15px;
+
+  border-left: 1px solid #8495a5;
+
+  font-size: 20px;
+
+  @media screen and (max-width: 400px) {
+    display: none;
+  }
+  @media screen and (min-width: 400px) and (max-width:768px){
+    margin-block-start: 100px;
+  }
+  .documentation-sidebar_title {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+
+    position: sticky;
+    .documentation-sidebar_section {
+      display: block;
+      font-weight: 400;
+      will-change: transform;
+      transition: all 0.2s ease;
+    }
+    .documentation-sidebar_active {
+      align-self: flex-start;
+      font-weight: 600;
+      transform: translateX(-5px);
+    }
+  }
+}

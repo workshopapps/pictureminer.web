@@ -1,0 +1,86 @@
+@import url('https://fonts.cdnfonts.com/css/axiforma');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Axiforma;
+  src: url(./assets//font/Axiforma-Regular.woff);
+}
+body {
+  font-family: Axiforma;
+}
+/* * {
+  font-family: Axiforma;
+} */
+/*
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+} */
+
+.career-hero-bg {
+  background-image: url('./assets/career-landing-bg.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@layer base {
+  :root {
+    /* colors */
+    --grayModal: 0deg 0% 13%; /* #222222*/
+    --lightOrange: 26deg 100% 90%; /* #FFE2CC */
+    --mainOrange: 25deg 100% 50%; /* #FF6C00 */
+
+    /* fonts */
+    --fs-xl: clamp(3rem, 1rem + 4.2vw, 4.5rem);
+    --fs-lg: clamp(1.5rem, 1rem + 1.5vw, 2rem);
+    --fs: clamp(1.125rem, 0.875rem + 1vw, 1.875rem);
+    --fs-sm: clamp(1rem, 0.7rem + 1vw, 1.3rem);
+    --fs-xs: clamp(0.75rem, 0.5rem + 1vw, 1.2rem);
+  }
+
+  [type='text'],
+  [type='email'],
+  [type='url'],
+  [type='password'],
+  [type='number'],
+  [type='date'],
+  [type='datetime-local'],
+  [type='month'],
+  [type='search'],
+  [type='tel'],
+  [type='time'],
+  [type='week'],
+  [multiple],
+  textarea,
+  select {
+    @apply border border-solid border-x-inputGray text-inputGray py-3 px-4 rounded-xl focus:border-lightOrange focus:ring-mainOrange placeholder:text-inputGray placeholder:text-small;
+  }
+
+  [type='checkbox'],
+  [type='radio'] {
+    @apply rounded border-lightOrange text-mainOrange hover:border-lightOrange cursor-pointer focus:ring-mainOrange focus:bg-white;
+  }
+}
+
+@layer components {
+  .container {
+    @apply mx-auto px-4 md:px-0;
+    width: clamp(375px, 90vw, 750px);
+  }
+
+  .dashboardSidebarLinks {
+    @apply flex space-x-4 hover:bg-lightOrange py-3 mr-2 rounded-r-md hover:border-r-4 hover:border-solid hover:border-mainOrange;
+  }
+
+  .form_group {
+    @apply flex flex-col mt-6 w-full;
+  }
+
+  .form_label {
+    @apply text-small mb-2;
+  }
+}

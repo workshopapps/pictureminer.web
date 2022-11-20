@@ -1,0 +1,12 @@
+
+
+/node_modules
+
+.eslintrc.js
+
+# Ignore artifacts:
+build
+coverage
+
+# Ignore all HTML files:
+*.html
