@@ -39,10 +39,9 @@ const DashboardNavbar = () => {
             />
           </svg>
           <div className={showMenu ? 'show account' : 'hide account'}>
-            <p>
-              <Link to="/account-setup">Account Settings</Link>
-            </p>
-
+            <Link to="account-setup">
+              <p>Account Settings</p>
+            </Link>
             <p>Log out</p>
           </div>
         </div>
