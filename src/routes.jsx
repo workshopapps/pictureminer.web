@@ -12,6 +12,8 @@ import {
 
 import CustomerStories from './pages/CustomerStories';
 
+import Termsofuse from './pages/terms-of-use/Termsofuse';
+
 import DashboardLayout from './layouts/dashboard/DashboardLayout';
 import Dashboard from './pages/dashboard/Dashboard';
 import Images from './pages/dashboard/Images';
@@ -34,6 +36,10 @@ import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
 import LandingPage from './pages/LandingPage/LandingPage';
 import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
 import ImageDetails from './pages/dashboard/ImageDetails';
+
+import Privacypolicy from './pages/privacypolicy/privacypolicy';
+
+import ApiDocumentation from './pages/documentation/ApiDocumentation';
 
 const RoutesComponents = () => {
   return (
@@ -65,8 +71,19 @@ const RoutesComponents = () => {
             path="/documentation/utilities"
             element={<UtilitiesPage />}
           ></Route>
+          <Route
+            path="/documentation/apis"
+            element={<ApiDocumentation />}
+          ></Route>
 
           <Route path="/careers/application" element={<CareerApplication />} />
+          <Route path="/careers/more-jobs" element={<CareerMoreJobs />} />
+          <Route
+            path="/careers/jobs/singles"
+            element={<CareerSingleJobView />}
+          />
+          <Route path="/terms-of-use" element={<Termsofuse />}></Route>
+          <Route path="/privacy-policy" element={<Privacypolicy />}></Route>
           <Route path="/careers/more-jobs" element={<CareerMoreJobs />} />
           <Route
             path="/careers/jobs/singles"

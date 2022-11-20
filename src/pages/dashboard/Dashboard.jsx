@@ -9,15 +9,15 @@ const Dashboard = () => {
       <div className="dashboard__head">
         <div className="images__card">
           <div className="flex gap-6">
-            <span>Images</span>
+            <span style={{ fontSize: '16px' }}>Images</span>
           </div>
-          <h3 style={{ marginTop: '20px', fontSize: '20px' }}>0</h3>
+          <h3 style={{ marginTop: '20px', fontSize: '24px' }}>0</h3>
         </div>
         <div className="images__card">
           <div className="flex gap-6">
-            <span>API Usage No</span>
+            <span style={{ fontSize: '16px' }}>API Usage No</span>
           </div>
-          <h3 style={{ marginTop: '20px', fontSize: '20px' }}>0</h3>
+          <h3 style={{ marginTop: '20px', fontSize: '24px' }}>0</h3>
         </div>
         <Link to={'/documentation'}>
           <Button text={'View Documentation'} className="button" />
@@ -27,18 +27,22 @@ const Dashboard = () => {
         <h1>API Details:</h1>
         {[
           { title: 'Authorization Token', details: 'vhvfyavfjvfhjhv' },
-          { title: 'API Endpoint', details: 'vhvfyavfjvfhjhv' },
+          {
+            title: 'API Endpoint',
+            details: 'minergram.hng-9.com',
+            class: 'colored',
+          },
           { title: 'Sample Curl Request', details: 'vhvfyavfjvfhjhv' },
         ].map((item) => (
-          <>
+          <div key={item.title}>
             <div className="api__detail">
               <span>{item.title}</span>
-              <span>{item.details}</span>
+              <span className={item.class}>{item.details}</span>
               <span>
                 <DocumentCopy size="16" color="#1d1d1d" />
               </span>
             </div>
-          </>
+          </div>
         ))}
       </div>
     </div>

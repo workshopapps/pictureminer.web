@@ -5,6 +5,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        titlegrey: '#434343',
+        subgrey: '#444444',
         lightOrange: 'hsl(var(--lightOrange))',
         mainOrange: 'hsl(var(--mainOrange))',
         modalGray: 'hsl(var(--grayModal) / 25%)',
@@ -17,6 +19,8 @@ module.exports = {
         small: 'var(--fs-sm)',
         xSmall: 'var(--fs-xs)',
       },
+
+      fontFamily: { axiforma: 'Axiforma' },
     },
   },
   // plugins: [require('@tailwindcss/forms')],

@@ -42,6 +42,7 @@ const DashboardNavbar = () => {
             <p>
               <Link to="/account-setup">Account Settings</Link>
             </p>
+
             <p>Log out</p>
           </div>
         </div>

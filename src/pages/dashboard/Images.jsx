@@ -7,7 +7,7 @@ import foodImage from '../../assets/foodImage.png';
 
 const data = [
   {
-    id: 1,
+    id: '1',
     sn: 1,
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
@@ -15,7 +15,7 @@ const data = [
     details: <Link to={`${1}`}>View More</Link>,
   },
   {
-    id: 2,
+    id: '2',
     sn: 2,
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
@@ -23,7 +23,7 @@ const data = [
     details: <Link to={`/${2}`}>View More</Link>,
   },
   {
-    id: 3,
+    id: '3',
     sn: 3,
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
@@ -31,7 +31,7 @@ const data = [
     details: <Link to={`/${3}`}>View More</Link>,
   },
   {
-    id: 4,
+    id: '4',
     sn: 4,
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
@@ -39,7 +39,7 @@ const data = [
     details: <Link to={`${4}`}>View More</Link>,
   },
   {
-    id: 5,
+    id: '5',
     sn: 5,
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
@@ -51,7 +51,7 @@ const data = [
     ),
   },
   {
-    id: 6,
+    id: '6',
     sn: 6,
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
@@ -63,7 +63,7 @@ const data = [
     ),
   },
   {
-    id: 7,
+    id: '7',
     sn: 7,
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123447k',
@@ -75,7 +75,7 @@ const data = [
     ),
   },
   {
-    id: 8,
+    id: '8',
     sn: 8,
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
@@ -87,7 +87,7 @@ const data = [
     ),
   },
   {
-    id: 9,
+    id: '9',
     sn: 9,
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
@@ -99,7 +99,7 @@ const data = [
     ),
   },
   {
-    id: 10,
+    id: '10',
     sn: 10,
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
@@ -111,7 +111,7 @@ const data = [
     ),
   },
   {
-    id: 11,
+    id: '11',
     sn: 11,
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
@@ -123,7 +123,7 @@ const data = [
     ),
   },
   {
-    id: 12,
+    id: '12',
     sn: 12,
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
@@ -135,7 +135,7 @@ const data = [
     ),
   },
   {
-    id: 13,
+    id: '13',
     sn: 13,
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
@@ -147,7 +147,7 @@ const data = [
     ),
   },
   {
-    id: 14,
+    id: '14',
     sn: 14,
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
@@ -159,7 +159,7 @@ const data = [
     ),
   },
   {
-    id: 15,
+    id: '15',
     sn: 15,
     picture: <img src={foodImage} alt="" />,
     pictureId: '#123445k',
@@ -211,18 +211,21 @@ const Images = () => {
       cell: () => (
         <div
           className="delete"
-          onClick={() =>
+          onClick={(e) => {
             setDataS((prev) => {
-              console.log(
-                prev.filter((item) => {
-                  item.id;
-                })
-              );
-              // return prev.filter((item) => {
-              //   item.id === 1;
-              // });
-            })
-          }
+              return prev.filter((item) => {
+                console.log(
+                  item.id,
+                  e.target.parentElement.parentElement.parentElement.id[4],
+                  dataS
+                );
+                return (
+                  item.id !==
+                  e.target.parentElement.parentElement.parentElement.id[4]
+                );
+              });
+            });
+          }}
         >
           <Trash size={24} color="#f04438" />
         </div>
