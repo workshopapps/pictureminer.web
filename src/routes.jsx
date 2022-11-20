@@ -1,6 +1,5 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Layout from './layouts/Layout';
 import ErrorPage from './Error';
 
 import {
@@ -44,6 +43,15 @@ import ApiDocumentation from './pages/documentation/ApiDocumentation';
 import About from './pages/About/components/About';
 // import ImageDetails from './pages/dashboard/ImageDetails';
 
+import Termsofuse from './pages/terms-of-use/Termsofuse';
+import Faq from './pages/FAQ/faq';
+
+import ApiDocumentation from './pages/documentation/ApiDocumentation';
+// import ImageDetails from './pages/dashboard/ImageDetails';
+
+
+import Layout from './layouts/Layout';
+import HowItWorks from './pages/howItWorks/howItWorks';
 const RoutesComponents = () => {
   return (
     <>
@@ -52,6 +60,7 @@ const RoutesComponents = () => {
           <Route exact path="" element={<LandingPage />} />
           <Route path="/demo" element={<MinergramDemo />} />
           <Route path="/About-us" element={<About />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/documentation" element={<DocumentationHome />}></Route>
           <Route
             path="/documentation/getting-started"
@@ -88,6 +97,8 @@ const RoutesComponents = () => {
           />
           <Route path="/terms-of-use" element={<Termsofuse />}></Route>
           <Route path="/privacy-policy" element={<Privacypolicy />}></Route>
+          <Route path="/faq" element={<Faq/> }></Route>
+
           <Route path="/careers/more-jobs" element={<CareerMoreJobs />} />
           <Route
             path="/careers/jobs/singles"
