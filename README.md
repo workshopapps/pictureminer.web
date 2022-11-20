@@ -1,6 +1,4 @@
 # pictureminer.web
-<<<<<<< HEAD
-=======
 
 ## Contributing to the picture miner project, follow these steps
 
@@ -100,4 +98,3 @@ To commit your code, run the following command:
     git commit -m "your commit message"
 
 Husky will run the lint and format scripts before you commit your code. If there are any linting errors, you will not be able to commit your code. You will have to fix the linting errors before you can commit your code.
->>>>>>> 45772989b034650fe6d798e6fcfeb093c38bca6e

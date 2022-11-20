@@ -41,8 +41,8 @@ import Privacypolicy from './pages/privacypolicy/privacypolicy';
 // import Termsofuse from './pages/terms-of-use/Termsofuse';
 
 import ApiDocumentation from './pages/documentation/ApiDocumentation';
-// import ImageDetails from './pages/dashboard/ImageDetails';
 import About from './pages/About/components/About';
+// import ImageDetails from './pages/dashboard/ImageDetails';
 
 const RoutesComponents = () => {
   return (

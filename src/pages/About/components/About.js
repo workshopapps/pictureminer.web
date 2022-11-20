@@ -3,7 +3,7 @@ import MainImg from '../images/About-main-img.png';
 import FirstImg from '../images/About-first-img.png';
 import SecondImg from '../images/About-second-img.png';
 import ourMission from '../images/About-mission-img.png';
-import '../../../styles/pages/about.css';
+import '../../../styles/layout/about.css';
 
 export default function About() {
   return (
