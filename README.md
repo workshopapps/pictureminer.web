@@ -114,7 +114,7 @@ Stop the running app and build docker image:
 ## Check running containers
     docker ps
   
-# Stop the container
+# Stop the container.
 
 ## Tag locally before pushing to the Dockerhub
 
