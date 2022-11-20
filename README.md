@@ -98,3 +98,14 @@ To commit your code, run the following command:
     git commit -m "your commit message"
 
 Husky will run the lint and format scripts before you commit your code. If there are any linting errors, you will not be able to commit your code. You will have to fix the linting errors before you can commit your code.
+
+
+## Building Docker Image
+Stop the running app and build docker image
+    docker build -t <image-name> .
+    
+## View Built Image
+    docker image ls
+
+## Run Docker Image
+    docker run -p port:port <image-name>
