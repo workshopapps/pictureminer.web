@@ -37,18 +37,11 @@ import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
 import ImageDetails from './pages/dashboard/ImageDetails';
 
 import Privacypolicy from './pages/privacypolicy/privacypolicy';
-// import Termsofuse from './pages/terms-of-use/Termsofuse';
 
 import ApiDocumentation from './pages/documentation/ApiDocumentation';
 import About from './pages/About/components/About';
-// import ImageDetails from './pages/dashboard/ImageDetails';
 
-import Termsofuse from './pages/terms-of-use/Termsofuse';
 import Faq from './pages/FAQ/faq';
-
-import ApiDocumentation from './pages/documentation/ApiDocumentation';
-// import ImageDetails from './pages/dashboard/ImageDetails';
-
 
 import Layout from './layouts/Layout';
 import HowItWorks from './pages/howItWorks/howItWorks';
@@ -97,7 +90,7 @@ const RoutesComponents = () => {
           />
           <Route path="/terms-of-use" element={<Termsofuse />}></Route>
           <Route path="/privacy-policy" element={<Privacypolicy />}></Route>
-          <Route path="/faq" element={<Faq/> }></Route>
+          <Route path="/faq" element={<Faq />}></Route>
 
           <Route path="/careers/more-jobs" element={<CareerMoreJobs />} />
           <Route
