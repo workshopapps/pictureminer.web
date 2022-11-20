@@ -1,0 +1,38 @@
+version: 2.1
+orbs:
+  node: circleci/node@5.0.2
+# Define the jobs we want to run for this project
+jobs:
+  build_and_test:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          command: yarn install
+          name: install packages 
+      - run:
+          command: yarn build
+          name: Build app
+
+  deploy:
+    docker:
+      - image: arvindr226/alpine-ssh
+    steps:
+      - checkout
+      - run: ssh -oStrictHostKeyChecking=no -v $USER@$IP "cd pictureminer.web/ && git checkout dev && git pull && sudo docker-compose up -d --build"
+
+# 
+workflows:
+  version: 2
+  build-project:
+    jobs:
+      - build_and_test
+      - deploy:
+          requires:
+           - build_and_test
+          filters:
+            branches:
+              only:
+               - dev

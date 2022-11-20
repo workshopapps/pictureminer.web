@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import logo from '../../assets/Minegram.svg';
-import { NavLink } from 'react-router-dom';
+import logo from '../../assets/logo.svg';
+import { Link, NavLink } from 'react-router-dom';
 import {
   Element3,
   Gallery,
@@ -22,9 +22,12 @@ const Sidebar = () => {
       ></div>
 
       <aside className="sidebar" data-visible={openSidebar}>
-        <div className="logo">
-          <img src={logo} alt="" />
-        </div>
+        <Link to="/">
+          <div className="logo">
+            <img src={logo} alt="" />
+          </div>
+        </Link>
+
         <nav>
           <NavLink
             className={({ isActive }) =>
