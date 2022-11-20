@@ -5,6 +5,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        titlegrey: '#434343',
+        subgrey: '#444444',
         lightOrange: 'hsl(var(--lightOrange))',
         mainOrange: 'hsl(var(--mainOrange))',
         modalGray: 'hsl(var(--grayModal) / 25%)',
