@@ -49,9 +49,6 @@ import HowItWorks from './pages/howItWorks/howItWorks';
 
 const RoutesComponents = () => {
   return (
-
-const RoutesComponents = () => {
-  return (
     <>
       <Routes>
         <Route path="" element={<Layout />}>
