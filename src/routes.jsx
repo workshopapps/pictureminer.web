@@ -13,8 +13,6 @@ import {
 import CustomerStories from './pages/CustomerStories';
 // import { CareerApplication } from './pages/career';
 
-import Termsofuse from './pages/terms-of-use/Termsofuse';
-
 import DashboardLayout from './layouts/dashboard/DashboardLayout';
 import Dashboard from './pages/dashboard/Dashboard';
 import Images from './pages/dashboard/Images';
@@ -39,13 +37,13 @@ import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
 import ImageDetails from './pages/dashboard/ImageDetails';
 
 import Privacypolicy from './pages/privacypolicy/privacypolicy';
-// import Termsofuse from './pages/terms-of-use/Termsofuse';
+
+import Termsofuse from './pages/terms-of-use/Termsofuse';
+import Faq from './pages/FAQ/faq';
 
 import ApiDocumentation from './pages/documentation/ApiDocumentation';
 // import ImageDetails from './pages/dashboard/ImageDetails';
 
-const RoutesComponents = () => {
-  return (
     <>
       <Routes>
         <Route path="" element={<Layout />}>
@@ -87,6 +85,8 @@ const RoutesComponents = () => {
           />
           <Route path="/terms-of-use" element={<Termsofuse />}></Route>
           <Route path="/privacy-policy" element={<Privacypolicy />}></Route>
+          <Route path="/faq" element={<Faq/> }></Route>
+
           <Route path="/careers/more-jobs" element={<CareerMoreJobs />} />
           <Route
             path="/careers/jobs/singles"
@@ -108,7 +108,5 @@ const RoutesComponents = () => {
         </Route>
       </Routes>
     </>
-  );
-};
 
 export default RoutesComponents;

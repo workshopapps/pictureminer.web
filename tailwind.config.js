@@ -2,6 +2,9 @@
 // eslint-disable-next-line no-undef
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  plugins: [
+    require('tw-elements/dist/plugin')
+  ],
   theme: {
     extend: {
       colors: {
