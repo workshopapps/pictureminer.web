@@ -1,0 +1,24 @@
+What information do we collect, and where do we get it from?
+We consider it important that visitors of Tozilla’s Website, members of the Tozilla Community as well as job applicants are informed as to when, for what purposes and which personal data are processed. The use of certain services we offer may require personal data. Personal data is therefore processed only under certain circumstances and for specific purposes. Personal data means any information relating to an identified or identifiable natural person (e.g. name, address, telephone number, date of birth or email address). Hereinafter referred to as data.
+Our servers automatically record information ("Log Data") created by your use of the Services. Log Data may include information such as your IP address, browser type, operating system, the referring web page, pages visited, location, your mobile carrier, device, search terms, and cookie information. We receive Log Data when you interact with our Services, for example, when you visit our Website and / or Mobile App, sign into our Services, or interact with our email notifications.
+We process log-files for technical and security reasons. (IP address of the visitor, time stamp (date, time, time zone), location and name of the requested file, HTTP status code (e.g. file sent successfully, file not found), size of the requested file, web page which referred the visitor to our website).
+We process your data for direct marketing purposes. (contact information: first name, last name, email address; qualification: Individual or business; ticket: Data Scientists (Basic): first name, last name, email address, job title, company; information on how you got to know about the online course: Tozilla website, Tozilla email, Tozilla partner, Work colleague / existing Tozilla user, Facebook, Twitter, XING, LinkedIn, Other; consent to updates: Tozilla blog)
+In general, we only disclose your personal data to third parties in so far as we have a legitimate interest in doing so, it is necessary to perform the contract we have with you or if you have given your consent. Furthermore, your data may be disclosed to third parties in so far as we may be obliged to do so pursuant to legal provisions or an enforceable administrative or court order.
+We use third party service providers for data processing. Service providers are generally involved as so-called Processors, who may only process the personal data of the visitor of our website, our clients or job applications in accordance with our instructions. For example, your contact details may be passed along to a service provider in order to give you access to a Webinar in which you requested participation.
+
+Data protection rights
+Data protection rights
+
+Right of access: Users have the right to request confirmation from Tozilla as to which personal data concerning them is being processed and whether these data are being transmitted to a third party.
+
+Right to rectification: Users have the right to request Tozilla to correct any incorrect or incomplete personal data relating to them.
+
+Right to erasure: Users have the right to request Tozilla to erase promptly any personal data relating to them if these data are no longer necessary for the purposes for which they were collected or processed. The same applies if the data subject withdraws consent or objects to the processing in absence of an overriding legitimate interest of the controller or if these data are being unlawfully processed. The data subject may additionally execute this right in case where the controller is subject to a legal obligation to delete these personal data or when the personal data have been collected in the context of information society services.
+
+Right to restriction of processing: Users have the right to request Tozilla to restrict processing.
+
+Right to customizability: Users have the right to request Tozilla to provide their data in a portable format.
+
+Right to withdraw consent: Users have the right at any time to withdraw their consent to the processing of any personal data relating to them for any specific purpose or purposes if that processing is based on their express consent. The withdrawal of consent will not affect the lawfulness for the processing on the basis of that consent carried out prior to the withdrawal of consent.
+
+Right to object: Users have the right at any time to object to the processing of any personal data relating to them if the processing occurs on the basis of the legitimate interest of the controller or of a third party. Where personal data are processed for direct marketing purposes, users have an absolute right to object to such processing at any time.
