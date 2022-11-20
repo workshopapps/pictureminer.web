@@ -1,6 +1,5 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Layout from './layouts/Layout';
 import ErrorPage from './Error';
 
 import {
@@ -44,11 +43,19 @@ import Faq from './pages/FAQ/faq';
 import ApiDocumentation from './pages/documentation/ApiDocumentation';
 // import ImageDetails from './pages/dashboard/ImageDetails';
 
+
+import Layout from './layouts/Layout';
+import HowItWorks from './pages/howItWorks/howItWorks';
+
+const RoutesComponents = () => {
+  return (
+
     <>
       <Routes>
         <Route path="" element={<Layout />}>
           <Route exact path="" element={<LandingPage />} />
           <Route path="/demo" element={<MinergramDemo />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/documentation" element={<DocumentationHome />}></Route>
           <Route
             path="/documentation/getting-started"
