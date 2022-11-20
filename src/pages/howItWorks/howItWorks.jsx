@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import HeroSection from './assets/HeroSection.png';
+import Feature from './components/feature';
 import { features } from './data/features';
 import './styles.scss';
-
 
 function HowItWorks() {
   return (
@@ -42,35 +42,7 @@ function HowItWorks() {
       </section>
       <section className="mt-12 md:mt-32 lg:mt-40 space-y-20 md:space-y-[167px] lg:space-y-[120px]">
         {features.map((feature, idx) => (
-          <div
-            key={feature.title}
-            className="md:odd:bg-[#D2D2D2]/20 first:py-11 px-[74px] md:pl-[104px] md:pr-[81px] lg:px-[188px]"
-          >
-            <div
-              key={feature.title}
-              className="flex flex-col md:flex-row gap-y-7 md:gap-0 items-center justify-center md:gap-x-12 lg:gap-x-[109px]"
-            >
-              <div className="w-[281px] lg:w-[416px]">
-                <div className="relative mx-auto w-fit md:mx-0">
-                  <h1 className="how-it-works-gradient-text">0{idx + 1}</h1>
-                  <h3 className="text-black md:w-[78px] lg:w-[117px] font-bold md:text-base lg:text-2xl">
-                    {feature.title}
-                  </h3>
-                </div>
-                <p
-                  className="mt-[30px] lg:mt-8 text-[#1D1D1D] text-sm lg:text-lg font-Roboto"
-                  dangerouslySetInnerHTML={{ __html: feature.text }}
-                />
-              </div>
-              <div className="">
-                <img
-                  src={feature.image}
-                  alt=""
-                  className="w-[315px] lg:w-[540px] h-[253px] lg:h-[510px] rounded-[4px]"
-                />
-              </div>
-            </div>
-          </div>
+          <Feature key={feature.title} {...feature} idx={idx} />
         ))}
       </section>
       <section className="my-[120px] md:my-[180px] md:bg-[#F6F6F6] md:py-[66px] lg:py-[86px]">
