@@ -34,7 +34,7 @@ const Faq = () => {
         transition
         focus:outline-none"
             >
-              <AccordionItemButton className='d-flex justify-content-between'>What is Minergram? <BsChevronDown/></AccordionItemButton>
+              <AccordionItemButton className='flex justify-between'>What is Minergram? <BsChevronDown/></AccordionItemButton>
             </AccordionItemHeading>
             <AccordionItemPanel>
               <p className="text-base px-5 md:text-lg">
@@ -59,7 +59,7 @@ const Faq = () => {
         transition
         focus:outline-none"
             >
-              <AccordionItemButton  className='d-flex justify-content-between'>
+              <AccordionItemButton  className='flex justify-between'>
                 How does Minergram work? <BsChevronDown />
               </AccordionItemButton>
             </AccordionItemHeading>
@@ -87,7 +87,7 @@ const Faq = () => {
         transition
         focus:outline-none"
             >
-              <AccordionItemButton  className='d-flex justify-content-between'>
+              <AccordionItemButton  className='flex justify-between'>
                 What can I do with Minergram?<BsChevronDown/>
               </AccordionItemButton>
             </AccordionItemHeading>
@@ -117,7 +117,7 @@ const Faq = () => {
         transition
         focus:outline-none"
             >
-              <AccordionItemButton  className='d-flex justify-content-between'>
+              <AccordionItemButton  className='flex justify-between'>
                 Is Minergram free to use?<BsChevronDown/>
               </AccordionItemButton>
             </AccordionItemHeading>
@@ -142,7 +142,7 @@ const Faq = () => {
         transition
         focus:outline-none"
             >
-              <AccordionItemButton  className='d-flex justify-content-between'>
+              <AccordionItemButton  className='flex justify-between'>
                 Can I use Minergram for commercial purposes or high-volume
                 searching?<BsChevronDown/>
               </AccordionItemButton>
@@ -173,7 +173,7 @@ const Faq = () => {
         transition
         focus:outline-none"
             >
-              <AccordionItemButton className='d-flex justify-content-between'>
+              <AccordionItemButton className='flex justify-between'>
                 Can I use Minergram’s image recognition technologies with my own
                 images?<BsChevronDown/>
               </AccordionItemButton>
@@ -200,7 +200,7 @@ const Faq = () => {
         transition
         focus:outline-none"
             >
-              <AccordionItemButton className='d-flex justify-content-between'>
+              <AccordionItemButton className='flex justify-between'>
                 How do I submit an image to be searched?<BsChevronDown/>
               </AccordionItemButton>
             </AccordionItemHeading>
@@ -226,7 +226,7 @@ const Faq = () => {
         transition
         focus:outline-none"
             >
-              <AccordionItemButton className='d-flex justify-content-between'>
+              <AccordionItemButton className='flex justify-between'>
                 {' '}
                 What kinds of images can I search on Minergram?<BsChevronDown/>
               </AccordionItemButton>
@@ -270,7 +270,7 @@ const Faq = () => {
         transition
         focus:outline-none"
             >
-              <AccordionItemButton className='d-flex justify-content-between'>Can I sort my results?<BsChevronDown/></AccordionItemButton>
+              <AccordionItemButton className='flex justify-between'>Can I sort my results?<BsChevronDown/></AccordionItemButton>
             </AccordionItemHeading>
             <AccordionItemPanel className="text-base md:text-lg">
               <p className="text-base px-5 md:text-lg">
@@ -296,7 +296,7 @@ const Faq = () => {
         transition
         focus:outline-none"
             >
-              <AccordionItemButton className='d-flex justify-content-between'>
+              <AccordionItemButton className='flex justify-between'>
                 How do I change my account email or password?<BsChevronDown/>
               </AccordionItemButton>
             </AccordionItemHeading>
@@ -323,7 +323,7 @@ const Faq = () => {
         transition
         focus:outline-none"
             >
-              <AccordionItemButton className='d-flex justify-content-between'>
+              <AccordionItemButton className='flex justify-between'>
                 What happens to the images I upload to Minergram?<BsChevronDown/>
               </AccordionItemButton>
             </AccordionItemHeading>
@@ -355,7 +355,7 @@ const Faq = () => {
         transition
         focus:outline-none"
             >
-              <AccordionItemButton className='d-flex justify-content-between'>
+              <AccordionItemButton className='flex justify-between'>
                 {' '}
                 How can I use Minergram to find the copyright owner of an image?<BsChevronDown/>
               </AccordionItemButton>
@@ -382,7 +382,7 @@ const Faq = () => {
         transition
         focus:outline-none"
             >
-              <AccordionItemButton className='d-flex justify-content-between'>
+              <AccordionItemButton className='flex justify-between'>
                 How do I get my images removed from Minergram?<BsChevronDown/>
               </AccordionItemButton>
             </AccordionItemHeading>
