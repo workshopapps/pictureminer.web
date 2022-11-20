@@ -30,7 +30,7 @@ import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
 import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
 import Integrations from './pages/documentation/IntegrationPage/Integrations';
 import Web from './pages/documentation/WebPage/Web';
-import WhyTozilla from './pages/whyTozilla/WhyTozilla';
+import WhyTozilla from './pages/whyTozilla/whyTozilla';
 
 import LandingPage from './pages/LandingPage/LandingPage';
 import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
