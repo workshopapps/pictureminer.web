@@ -12,12 +12,12 @@
 
       border: 1px solid rgba(102, 80, 63, 0.07);
       border-radius: 12px;
-      padding: 3.8rem;
-      margin-bottom: 6.8rem;
+      padding: 38px;
+      margin-bottom: 68px;
       @media (max-width: 550px) {
         padding: 15px;
-        width: 197px;
-        height: 90px;
+        width: 140px;
+        height: 100px;
       }
     }
     .button {
@@ -47,15 +47,27 @@
       line-height: 24px;
 
       color: #060608;
-      margin-bottom: 2.4rem;
+      margin-bottom: 24px;
     }
     .api__detail {
       font-size: 14px;
       display: grid;
       grid-template-columns: 1fr 1fr 2fr;
       background: rgba(180, 180, 180, 0.1);
-      padding: 12px 6rem;
-      margin-bottom: 3.2rem;
+      padding: 12px 60px;
+      margin-bottom: 32px;
+      .copy {
+        cursor: pointer;
+        position: relative;
+        &:active::after {
+          content: 'copied';
+          color: #ff6c00;
+          position: absolute;
+          left: 0;
+          top: 40px;
+          transition: all 380ms ease;
+        }
+      }
       .colored {
         color: #ff6c00;
       }
