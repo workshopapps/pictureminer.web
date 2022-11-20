@@ -16,7 +16,7 @@ const UtilitiesPage = () => {
       <section className="utilities_introductionContent" id="utilities">
         <div className="utilities_mainContent">
           <h1 className="utilities_title">Utilities</h1>
-          <div className="utilities_underline" />
+          <div className="utilities_underline"></div>
           <p className="utilities_paragraph">
             Get started with Tozilla’s Utility
           </p>

@@ -16,7 +16,7 @@ const ExamplePage = () => {
       <section className="example_introductionContent" id="example">
         <div className="example_mainContent">
           <h1 className="example_title">Examples</h1>
-          <div className="example_underline" />
+          <div className="example_underline"></div>
           <p className="example_paragraph">
             Get started with Tozilla’s usage with examples
           </p>
