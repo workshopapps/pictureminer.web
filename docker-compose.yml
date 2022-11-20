@@ -1,12 +1,8 @@
-version: '3.9'
+version: '3'
 services:
-  react:
-    image: fynewily/scalefrontend:v1
+  frontend:
+    build:
+    context: .
     ports:
       - "80:80"
-    restart: always
-  django:
-    image: fynewily/scalebackend:v1
-    ports:
-      - "9000:9000"
     restart: always 

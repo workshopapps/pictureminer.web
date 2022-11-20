@@ -1,50 +1,38 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
-version: 2
-  jobs:
-    build:
-      branches:
-        only:
-          - dev
-        docker:
-          # specify the version you desire here
-          - image: circleci/node:16.*
-          - image: docker:17.09.1-ce-git  # enable the docker build support
-       working_directory: ~/repo
-         steps:
-           - checkout
-           - setup_remote_docker
-           # Download and cache dependencies
-           - restore_cache:
-             keys:
-               - v1-dependencies-{{ checksum "package.json" }}
-               # fallback to using the latest cache if no exact match is found
-               - v1-dependencies-
-    
-          # clearing the cache
-          - run: npm cache clear --force
-          # - run: rm package-lock.json
-          - run: npm install
-          - save_cache:
-            paths:
-              - node_modules
-            key: v1-dependencies-{{ checksum "package.json" }}
-          # run tests!
-          - run: npm run test
-          # build the docker image on success
-          - run:
-            name: Build Success
-            when: on_success
-            command: |
-              docker --version
-              docker login -u=$DOCKER_LOGIN -p=$DOCKER_PASSWORD
-              docker build -t fynewily/scalefrontend:$CIRCLE_BRANCH --build-arg MACHINE_NAME=<application_name>-$CIRCLE_BRANCH .
-              docker push fynewily/scalefrontend:$CIRCLE_BRANCH
-              echo "Docker build made sucessfully!! for scalefrontend $CIRCLE_BRANCH"
-          - run:
-            name: Build Failure
-            when: on_fail
-            command: |
-              echo "ERROR building scalefrontend $CIRCLE_BRANCH"
+version: 2.1
+orbs:
+  node: circleci/node@5.0.2
+# Define the jobs we want to run for this project
+jobs:
+  build_and_test:
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: yarn
+      - run:
+          command: yarn install
+          name: install packages 
+      - run:
+          command: yarn build
+          name: Build app
+
+  deploy:
+    docker:
+      - image: arvindr226/alpine-ssh
+    steps:
+      - checkout
+      - run: ssh -oStrictHostKeyChecking=no -v $USER@$IP "cd pictureminer.web/ && git checkout dev && git pull && sudo docker-compose up -d --build"
+
+# 
+workflows:
+  version: 2
+  build-project:
+    jobs:
+      - build_and_test
+      - deploy:
+          requires:
+           - build_and_test
+          filters:
+            branches:
+              only:
+               - dev
