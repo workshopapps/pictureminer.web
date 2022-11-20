@@ -1,6 +1,5 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Layout from './layouts/Layout';
 import ErrorPage from './Error';
 
 import {
@@ -11,6 +10,7 @@ import {
 } from './pages/career';
 
 import CustomerStories from './pages/CustomerStories';
+// import { CareerApplication } from './pages/career';
 
 import DashboardLayout from './layouts/dashboard/DashboardLayout';
 import Dashboard from './pages/dashboard/Dashboard';
@@ -36,9 +36,19 @@ import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
 import ImageDetails from './pages/dashboard/ImageDetails';
 
 import Privacypolicy from './pages/privacypolicy/privacypolicy';
+
 import Termsofuse from './pages/terms-of-use/Termsofuse';
 import Faq from './pages/FAQ/faq';
+
 import ApiDocumentation from './pages/documentation/ApiDocumentation';
+// import ImageDetails from './pages/dashboard/ImageDetails';
+
+
+import Layout from './layouts/Layout';
+import HowItWorks from './pages/howItWorks/howItWorks';
+
+const RoutesComponents = () => {
+  return (
 
 const RoutesComponents = () => {
   return (
@@ -47,6 +57,7 @@ const RoutesComponents = () => {
         <Route path="" element={<Layout />}>
           <Route exact path="" element={<LandingPage />} />
           <Route path="/demo" element={<MinergramDemo />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
           <Route path="/documentation" element={<DocumentationHome />}></Route>
           <Route
             path="/documentation/getting-started"
