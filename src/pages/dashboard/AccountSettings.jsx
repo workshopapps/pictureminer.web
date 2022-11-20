@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import FormInput from '../../components/form/FormInput';
 import Button from '../../components/ui/Button';
 import { AiOutlineExclamation } from 'react-icons/ai';
+import { IoCloseSharp } from 'react-icons/io5';
 
 function AccountSettings() {
   const initialFormValues = {
@@ -44,7 +45,11 @@ function AccountSettings() {
       errors.confirmPassword = 'Please make sure your password match';
     }
 
-    if (formValues.newPassword === formValues.confirmPassword) {
+    if (
+      formValues.newPassword === formValues.confirmPassword &&
+      formValues.newPassword &&
+      formValues.confirmPassword
+    ) {
       setSuccess(true);
     }
 
@@ -53,11 +58,10 @@ function AccountSettings() {
 
   useEffect(() => {
     if (Object.keys(errorMessages).length === 0 && isSubmitting) {
-      setSuccessMessage('Message sent successfully');
-      console.log('first');
+      setSuccessMessage('User details updated successfully');
       setTimeout(() => {
         setFormValues(initialFormValues);
-        setSuccessMessage('');
+        // setSuccessMessage('');
         setIsSubmitting(false);
         setSuccess(false);
       }, 5000);
@@ -67,24 +71,32 @@ function AccountSettings() {
   }, [errorMessages]);
 
   const cancelAccountSettingsUpdate = () => {
-    // console.log('hi');
+    setFormValues(initialFormValues);
+    // setIsSubmitting(true);
   };
 
   const togglePassword = () => {
     setShowPassword((prevState) => !prevState);
   };
 
+  const toggleSuccessMessage = () => {
+    setSuccessMessage('');
+  };
+
   return (
     <div className="mt-12 mb-28 -z-0">
       <div className="container">
-        <section className="relative">
+        <section className="">
           <h1 className="text-large">Account settings</h1>
           {successMessage && (
-            <div className="w-full rounded-md bg-green-600 text-white mt-10 px-4 py-4 absolute top-1/4 left-1/4 -translate-x-1/4 -translate-y-1/4 text-center flex items-center justify-center space-x-4">
-              <div className="rounded-full bg-white h-5 w-5 flex items-center justify-center ">
-                <AiOutlineExclamation className="text-green-700 text-small" />
+            <div className="w-[320px] md:w-[450px] p-6 rounded-md bg-[#12B76A] text-white mt-10 absolute top-[10%] right-20 flex items-center justify-between space-x-4 flex-shrink-0">
+              <div className="rounded-full bg-white flex items-center justify-center ">
+                <AiOutlineExclamation className="text-green-700 text-large " />
               </div>
-              <p>{successMessage}</p>
+              <p className="text-normal">{successMessage}</p>
+              <div onClick={toggleSuccessMessage}>
+                <IoCloseSharp className="text-large cursor-pointer" />
+              </div>
             </div>
           )}
           <form onSubmit={handleSubmit}>
@@ -196,6 +208,7 @@ function AccountSettings() {
             <div className="mt-8 space-x-5 flex items-center justify-end md:justify-start">
               <Button
                 text="cancel"
+                type="button"
                 onclick={cancelAccountSettingsUpdate}
                 className={`py-2 px-8 rounded-lg text-normal border border-[#686868] border-solid cursor-pointer ${
                   success && 'border-mainOrange text-mainOrange'
