@@ -1,6 +1,16 @@
 .dashboard_images {
   .dashboard__images__head {
-    margin-bottom: 3.2rem;
+    h1 {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 30px;
+
+      color: #1d1d1d;
+      @media (max-width: 550px) {
+        display: none;
+      }
+    }
+    margin-bottom: 32px;
     @include Flex;
     justify-content: space-between;
     .button {
@@ -11,12 +21,17 @@
       width: 130px;
       height: 56px;
       gap: 8px;
+      color: #ff6c00;
+      font-weight: 400;
 
       border: 1px solid #ff6c00;
       border-radius: 8px;
       font-weight: 500;
       font-size: 18px;
       line-height: 29px;
+      @media (max-width: 500px) {
+        display: none;
+      }
     }
     .filter {
       position: absolute;
@@ -41,9 +56,6 @@
     }
   }
   .images_table {
-    .rdt_Table {
-      z-index: -1;
-    }
     .rdt_TableHeadRow {
       height: 41px;
       background: #d2d2d2;
@@ -51,6 +63,11 @@
       font-weight: 500;
       font-size: 16px;
       line-height: 21px;
+      @media (max-width: 550px) {
+        .rdt_TableCol[data-column-id='4'] {
+          display: none;
+        }
+      }
     }
     .rdt_TableRow {
       height: 50px;
@@ -69,11 +86,23 @@
   }
   .pagination {
     @include Flex;
-    gap: 4rem;
+    gap: 40px;
     font-weight: 500;
     font-size: 14px;
     line-height: 20px;
     color: #434343;
-    margin-top: 4.3rem;
+    margin-top: 43px;
+  }
+}
+@media (max-width: 550px) {
+  .rdt_TableCol[data-column-id='4'],
+  .rdt_TableCol[data-column-id='5'],
+  .rdt_TableCol[data-column-id='6'] {
+    display: none;
+  }
+  .rdt_TableCell[data-column-id='4'],
+  .rdt_TableCell[data-column-id='5'],
+  .rdt_TableCell[data-column-id='6'] {
+    display: none;
   }
 }

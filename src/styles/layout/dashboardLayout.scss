@@ -2,21 +2,33 @@
   min-height: 100vh;
   display: flex;
   height: 100%;
-  position: relative;
+  // position: relative;
+
   .menu__sidebar {
     display: none;
   }
   .dashboard_pages {
-    padding: 20px 64px;
+    padding: 20px 0;
+    // padding: 20px 64px 0;
     width: 100%;
+
+    @media (min-width: 550px) {
+      padding: 20px 80px 0;
+    }
   }
   .navbar {
     @include Flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 6rem;
+    margin-bottom: 4rem;
+    .filt {
+      display: none;
+      @media (max-width: 550px) {
+        display: block;
+      }
+    }
     .form__input {
-      width: 67rem;
+      width: 670px;
       height: 48px;
       padding-inline: 16px;
       background: #ffffff;
@@ -25,6 +37,7 @@
       input {
         width: 100%;
         height: 100%;
+        border: none;
       }
     }
     .user {
@@ -36,6 +49,12 @@
         grid-template-rows: repeat(2, 1fr);
         column-gap: 8px;
         align-items: center;
+        .user_image {
+          font-size: 20px;
+        }
+        .user_number {
+          font-size: 10px;
+        }
       }
       .drop__down {
         position: relative;
@@ -79,6 +98,14 @@
         color: #fff;
       }
     }
+    @media (max-width: 500px) {
+      .user {
+        display: none;
+      }
+      .form_input {
+        width: 197px;
+      }
+    }
   }
   @media (max-width: 830px) {
     .menu__sidebar {
@@ -92,20 +119,43 @@
       inset: 0;
       background: rgba(34, 34, 34, 0.25);
       min-width: 100%;
+      z-index: 4;
     }
     .overlay[data-visible='false'] {
       display: none;
     }
     .navbar {
-      margin-left: 4rem;
+      margin-left: 40px;
       justify-content: flex-end;
-      gap: 4rem;
+      gap: 40px;
+      margin-bottom: 16px;
       .form__input {
         width: 287px;
+      }
+      @media (max-width: 550px) {
+        gap: 10px;
+        .form__input {
+          width: 197px !important;
+        }
       }
     }
     .dashboard_pages {
       padding-inline: 38px;
+    }
+  }
+  @media (max-width: 1200px) {
+    .navbar {
+      .form__input {
+        width: 360px;
+      }
+    }
+    .dashboard_pages {
+      padding-inline: 38px;
+    }
+  }
+  @media (max-width: 550px) {
+    .dashboard_pages {
+      padding-inline: 16px;
     }
   }
 }
