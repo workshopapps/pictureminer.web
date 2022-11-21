@@ -342,10 +342,10 @@ const ImageDetails = () => {
         <>
           <Backdrop />
           <Modal>
-            <div className=" flex flex-col items-center justify-center gap-8 p-4">
+            <div className=" flex flex-col items-center justify-center gap-8 p-2">
               <div className="flex w-full justify-end">
                 <div
-                  className="w-14 cursor-pointer"
+                  className="w-10 cursor-pointer"
                   onClick={toggleDeleteSuccessModal}
                 >
                   <img className="w-full" src={closeIcon} alt="close icon" />
