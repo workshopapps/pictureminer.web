@@ -45,6 +45,7 @@ import Faq from './pages/FAQ/faq';
 
 import Layout from './layouts/Layout';
 import HowItWorks from './pages/howItWorks/howItWorks';
+import SupportPage from './pages/support';
 const RoutesComponents = () => {
   return (
     <>
@@ -60,6 +61,7 @@ const RoutesComponents = () => {
             element={<GettingStarted />}
           ></Route>
           <Route path="customer-stories" element={<CustomerStories />}></Route>
+          <Route path="support" element={<SupportPage />}></Route>
           <Route
             path="/documentation/integrations"
             element={<Integrations />}
