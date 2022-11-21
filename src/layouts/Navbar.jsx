@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import logo from '../assets/logo.svg';
+
 import { HambergerMenu } from 'iconsax-react';
 
 const NavBar = () => {
@@ -8,25 +10,23 @@ const NavBar = () => {
 
   return (
     <nav className="flex w-full justify-between px-6 flex-wrap whitespace-nowrap ">
-      <div className="w-[233px] h-[37] pt-4 flex md:inline-block ">
-        <img
-          src={logo}
-          alt="logo"
-          className="w-[150px] md:w-[233px] md:h-[37px]"
-        />
-      </div>
+      <Link to="/">
+        <div className="w-[233px] h-[37] pt-4 flex md:inline-block ">
+          <img
+            src={logo}
+            alt="logo"
+            className="w-[150px] md:w-[233px] md:h-[37px]"
+          />
+        </div>
+      </Link>
       <button className="md:hidden" onClick={() => setHide((prev) => !prev)}>
-        <HambergerMenu size="32" color="#FF8A65" />
+        <HambergerMenu size="30" color="#000000" />
       </button>
       <div
         className={`bg-slate-100 md:bg-white px-2 md:px-0 flex-col flex  md:flex-row gap-4 md:gap-8 md:justify-center md:items-center w-full md:w-fit mt-6 md:mt-0  pt-4   ${
           hide ? 'hidden md:flex' : ''
         }`}
       >
-        <Link to="/career">Api Documentation</Link>
-        <Link to="/">Home</Link>
-        <Link to="/career">Career</Link>
-
         <Link to="/documentation">Api Documentation</Link>
         <Link to="/pricing">Pricing</Link>
 

@@ -1,6 +1,11 @@
 html {
   scroll-behavior: smooth;
 }
+@font-face {
+  font-family: Axiforma;
+  src: url(../../../assets/font/Axiforma-Regular.woff);
+}
+
 .getting-started_wrapper {
   margin-bottom: 40px;
 }
@@ -10,6 +15,7 @@ html {
   justify-content: space-between;
   align-items: flex-start;
   padding: 2rem 3rem;
+  font-family: Axiforma;
 }
 
 .getting-started_mainContent {
@@ -22,8 +28,10 @@ html {
   text-align: start;
   gap: 3rem;
   color: #434343;
+  padding-right: 8px;
   @media screen and (max-width: 400px) {
     width: 100%;
+    padding-right: 0px;
   }
   .getting-started_underline {
     width: 90%;

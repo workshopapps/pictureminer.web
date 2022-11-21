@@ -20,13 +20,9 @@ const Works = () => {
               </p>
             </div>
 
-<<<<<<< HEAD
             <Link to="/how-it-works" className="works_btn">
               See More
             </Link>
-=======
-            <Link to='/howitworks' className='works_btn' >See More</Link>
->>>>>>> 3726bf7 (conflict resolved)
           </div>
         </div>
       </div>

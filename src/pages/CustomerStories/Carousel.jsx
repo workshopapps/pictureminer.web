@@ -19,7 +19,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="m-3">
+    <div className="m-3 lg:mx-20">
       <div
         className="flex flex-row
       justify-between items-end
@@ -29,17 +29,17 @@ const Carousel = () => {
       "
       >
         <PrevIcon onClick={prevSlide} />
-        <div className="text-2xl font-bold lg:font-semibold flex justify-center align-middle text-center w-9/12 lg:w-3/6 lg:leading-6 mx-auto">
+        <div className="text-2xl lg:text-6xl font-bold lg:font-semibold flex justify-center align-middle text-center w-9/12 lg:w-3/6  mx-auto">
           {data.text}
         </div>
         <NextIcon onClick={nextSlide} />
       </div>
-      <div className="flex flex-row justify-around mt-4 items-center">
-        <div className="text-[#434343]">{data.name}</div>
+      <div className="flex flex-row justify-around lg:justify-center lg:gap-[40px] mt-4 items-center">
+        <div className="text-black font-bold lg:text-lg">{data.name}</div>
         <div className="straightLine"></div>
         <div>{data.position}</div>
       </div>
-      <div className="flex justify-center font-bold text-[#8E8E8E] text-lg">
+      <div className="flex justify-center font-bold text-[#8E8E8E] text-lg ">
         {data.company}
       </div>
     </div>

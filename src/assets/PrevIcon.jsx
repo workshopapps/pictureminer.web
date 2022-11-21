@@ -4,14 +4,7 @@ const PrevIcon = ({ onClick }) => {
   return (
     <div onClick={onClick}>
       <svg
-<<<<<<< HEAD
-<<<<<<< HEAD
         className="cursor-pointer"
-=======
->>>>>>> 6951468 (created the carousel component and the onclick function)
-=======
-        className="cursor-pointer"
->>>>>>> 6ee895e (add styles to the desktop version of the page)
         width="9"
         height="18"
         viewBox="0 0 9 18"

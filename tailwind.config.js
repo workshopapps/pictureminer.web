@@ -1,5 +1,5 @@
+/** @type {import('tailwindcss').Config} */
 
-<<<<<<< HEAD
 // eslint-disable-next-line no-undef
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
@@ -27,15 +27,3 @@ module.exports = {
   },
   plugins: [require('@tailwindcss/forms'), require('tw-elements/dist/plugin')],
 };
-=======
-module.exports = {
-  content: ["./src/**/*.{js,jsx,ts,tsx}", "./index.html"],
-
-  theme: {
-    extend: {},
-  },
-  variant:{backgroundColor:['active']},
-  plugins: [],
-}
-
->>>>>>> 80cda23 (first commit)
