@@ -354,7 +354,7 @@ const ImageDetails = () => {
 
               <img className="" src={successIcon} alt="success icon" />
 
-              <h2 className="text-[1.7rem] font-[500]">Successful</h2>
+              <h2 className="text-xl font-[500]">Successful</h2>
 
               <p className="text-[#797b89] text-center text-md">
                 Image successfully deleted
@@ -383,10 +383,10 @@ const ImageDetails = () => {
         <>
           <Backdrop />
           <Modal>
-            <div className=" flex flex-col items-center justify-center gap-8 p-4">
+            <div className=" flex flex-col items-center justify-center gap-8 p-2">
               <div className="flex w-full justify-end">
                 <div
-                  className="w-14 cursor-pointer"
+                  className="w-10 cursor-pointer"
                   onClick={toggleSaveSuccessModal}
                 >
                   <img className="w-full" src={closeIcon} alt="close icon" />
@@ -395,7 +395,7 @@ const ImageDetails = () => {
 
               <img className="" src={successIcon} alt="success icon" />
 
-              <h2 className="text-[1.7rem] font-[500]">Successful</h2>
+              <h2 className="text-xl font-[500]">Successful</h2>
 
               <p className="text-[#797b89] text-center text-md">
                 Image successfully saved
