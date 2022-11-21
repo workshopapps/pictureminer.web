@@ -46,8 +46,8 @@ const BlogList = () => {
           </div>
         </form>
 
-        <div className="flex flex-col justify-center gap-12 md:flex md:flex-row md:flex-wrap md:gap-y-10 md:gap-x-20 lg:w-full lg:gap-x-10">
-          <div className=" border w-[90%] md:w-[45%] lg:w-[25%] p-4 text-xs mx-auto md:mx-0">
+        <div className="flex flex-col justify-center gap-20 md:gap-12 md:flex md:flex-row md:flex-wrap md:gap-y-10 md:gap-x-20 lg:w-full lg:gap-x-10">
+          <div className="w-full md:w-[45%] lg:w-[25%] md:p-4 text-xs mx-auto md:mx-0">
             <BlogCard
               image={image1}
               imageText="The Future of the Tozilla Chrome Extention"
@@ -56,7 +56,7 @@ const BlogList = () => {
               our passion."
             />
           </div>
-          <div className=" border w-[90%] md:w-[45%] lg:w-[25%] p-4 text-xs mx-auto md:mx-0">
+          <div className="w-full md:w-[45%] lg:w-[25%] md:p-4 text-xs mx-auto md:mx-0">
             <BlogCard
               image={image2}
               imageText="Introducing profile page for all Tozilla APIs"
@@ -65,7 +65,7 @@ const BlogList = () => {
               You can use the APIS analytics page to  search engine."
             />
           </div>
-          <div className=" border w-[90%] md:w-[45%] lg:w-[25%] p-4 text-xs mx-auto md:mx-0">
+          <div className="w-full md:w-[45%] lg:w-[25%] md:p-4 text-xs mx-auto md:mx-0">
             <BlogCard
               image={image3}
               imageText="How to sign up for the Tozilla API"
@@ -74,7 +74,7 @@ const BlogList = () => {
               account so you never run out of searches. Changes how you sign up for the tozilla API"
             />
           </div>
-          <div className=" border w-[90%] md:w-[45%] lg:w-[25%] p-4 text-xs mx-auto md:mx-0">
+          <div className="w-full md:w-[45%] lg:w-[25%] md:p-4 text-xs mx-auto md:mx-0">
             <BlogCard
               image={image4}
               imageText="How to sign up for the Tozilla API"
@@ -83,34 +83,34 @@ const BlogList = () => {
               account so you never run out of searches. Changes how you sign up for the tozilla API"
             />
           </div>
-          <div className=" border w-[90%] md:w-[45%] lg:w-[25%] p-4 text-xs mx-auto md:mx-0">
+          <div className="w-full md:w-[45%] lg:w-[25%] md:p-4 text-xs mx-auto md:mx-0">
             <BlogCard
               image={image5}
               text="How to verify item images with Tozilla"
             />
           </div>
-          <div className=" border w-[90%] md:w-[45%] lg:w-[25%] p-4 text-xs mx-auto md:mx-0">
+          <div className="w-full md:w-[45%] lg:w-[25%] md:p-4 text-xs mx-auto md:mx-0">
             <BlogCard
               image={image6}
               text="Happy Holiday from all of
               us at Tozilla."
             />
           </div>
-          <div className=" border w-[90%] md:w-[45%] lg:w-[25%] p-4 text-xs mx-auto md:mx-0">
+          <div className="w-full md:w-[45%] lg:w-[25%] md:p-4 text-xs mx-auto md:mx-0">
             <BlogCard
               image={image7}
               text="Where can i find Copyright
               free images?"
             />
           </div>
-          <div className=" border w-[90%] md:w-[45%] lg:w-[25%] p-4 text-xs mx-auto md:mx-0">
+          <div className="w-full md:w-[45%] lg:w-[25%] md:p-4 text-xs mx-auto md:mx-0">
             <BlogCard
               image={image8}
               text="How to find high resolution
               images with Tozilla."
             />
           </div>
-          <div className=" border w-[90%] md:w-[45%] lg:w-[25%] p-4 text-xs mx-auto md:mx-0">
+          <div className="w-full md:w-[45%] lg:w-[25%] md:p-4 text-xs mx-auto md:mx-0">
             <BlogCard
               image={image9}
               text="Introducing new pricing for
