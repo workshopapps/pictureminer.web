@@ -5,8 +5,8 @@ import './DocumentNavStyle.scss';
 const DocumentNav = () => {
   const [isOpen, setOpen] = useState(false);
   return (
-    <>
-      <nav className=" bg-white-800 text-black shadow mt-6">
+    <div>
+         <nav className=" bg-white-800 text-black shadow mt-6">
         <button
           className="p-2 md:hidden m-2 flex justify-between rounded-md outline-none focus:border-black-400 focus:border"
           onClick={() => setOpen(!isOpen)}
@@ -41,7 +41,7 @@ const DocumentNav = () => {
             <HambergerMenu size={30} />
           )}
         </button>
-
+</nav>
         <div className={`md:block ${isOpen ? 'is-active' : 'hidden'}`}>
           <div className="flex md:justify-around  md:flex-row sm: flex-col sm: items-center p-5 text-sm">
             <NavLink
@@ -86,7 +86,7 @@ const DocumentNav = () => {
           <HambergerMenu size={30} />
         )}
       </button>
-
+        </nav>
             <NavLink
               className=""
               activeClassName="is-active"
@@ -250,8 +250,10 @@ const DocumentNav = () => {
             Verifications
           </NavLink>
         </div>
+      </div>
       </nav>
-    </>
+      </div>
+    </div>
   );
 };
 
