@@ -48,5 +48,7 @@ jobs:
           git pull origin dev
           # rm local images cache
           docker rmi --force root0877/miner_frontend || true
+          #set env 
+          export Frontend=$IMAGE_TAG
           # pull images from remote
-          docker compose up -d --force-recreate
+          sudo PictureTag=$PictureTag  ImageTag=$ImageTag Frontend=$Frontend docker compose up -d --force-recreate
