@@ -1,26 +1,18 @@
-// import logo from './logo.svg';
-import './App.css';
-import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Apply from './page/Apply';
+import Home from './page/Home';
+import ApplicationReceived from './page/ApplicationReceived';
 
 function App() {
   return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
-    <ExamplePage/>
+    <section className=" relative flex h-screen items-center justify-center">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/apply" element={<Apply />} />
+        <Route path="/application" element={<ApplicationReceived />} />
+      </Routes>
+    </section>
   );
 }
 

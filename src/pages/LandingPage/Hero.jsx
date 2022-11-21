@@ -31,6 +31,7 @@ const Hero = () => {
             <DocumentUpload size="32" color="#FF6c00" variant="Outline" />
             <p>Upload Image</p>
           </div>
+<<<<<<< HEAD
           <Link to="/landingpage/demo">
             <input
               className="input_file"
@@ -38,6 +39,10 @@ const Hero = () => {
               type="file"
               accept=".png, .svg, .jpg"
             />
+=======
+          <Link to='/'>
+            <input className='input_file' id="upload" type='file' accept='.png, .svg, .jpg'/>
+>>>>>>> 3726bf7 (conflict resolved)
           </Link>
         </div>
       </div>
