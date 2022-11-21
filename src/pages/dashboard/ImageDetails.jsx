@@ -25,7 +25,7 @@ const ImageDetails = () => {
   const [showSaveSuccessModal, setShowSaveSuccessModal] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
-  const [questionList, setQuestionList] = useState([]);
+  // const [questionList, setQuestionList] = useState(['How are you?']);
   const questionInputRef = useRef();
 
   const toggleDeleteModal = () => {
@@ -48,14 +48,14 @@ const ImageDetails = () => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
-    setQuestionList((prevList) => [
-      ...prevList,
-      questionInputRef.current.value,
-    ]);
+    // setQuestionList((prevList) => [
+    //   ...prevList,
+    //   questionInputRef.current.value,
+    // ]);
   };
 
   return (
-    <main className="pt-12">
+    <main className="">
       <section className="relative flex justify-between items-center">
         <div className="flex items-center gap-4">
           <svg
@@ -277,14 +277,14 @@ const ImageDetails = () => {
               />
             </form>
 
-            <div className="flex flex-col gap-4">
-              {questionList.map((question, index) => {
-                {
-                  console.log(questionList);
-                  console.log(question);
-                }
+            <div className="flex flex-col gap-4 py-4">
+              <p>Question: Is there a tree in this image?</p>
+
+              <p>Answer: No there are none</p>
+
+              {/* {questionList.map((question, index) => {
                 <p key={index}>Question: {question}</p>;
-              })}
+              })} */}
             </div>
           </div>
         </div>
@@ -297,7 +297,7 @@ const ImageDetails = () => {
             <div className="flex flex-col items-center justify-center gap-8 p-4">
               <img className="" src={warningIcon} alt="warning icon" />
 
-              <h2 className="text-[1.7rem] font-[500]">Delete Image</h2>
+              <h2 className="text-xl font-[500]">Delete Image</h2>
 
               <p className="text-[#797b89] text-center text-md">
                 Are you sure you want to delete this image? This action cannot
@@ -309,10 +309,10 @@ const ImageDetails = () => {
                   styles={{
                     border: '1px solid #8e8e8e',
                     color: '#8e8e8e',
-                    padding: '1rem 2rem',
+                    padding: '.7rem 1.4rem',
                     width: '100%',
                     borderRadius: '.5rem',
-                    fontSize: '1.5rem',
+                    fontSize: '.9rem',
                     fontWeight: '500',
                   }}
                   text="Cancel"
@@ -323,10 +323,10 @@ const ImageDetails = () => {
                   styles={{
                     background: '#f04438',
                     color: 'white',
-                    padding: '1rem',
+                    padding: '.7rem 1.4rem',
                     width: '100%',
                     borderRadius: '.5rem',
-                    fontSize: '1.5rem',
+                    fontSize: '.9rem',
                     fontWeight: '500',
                   }}
                   text="Delete"
@@ -365,10 +365,10 @@ const ImageDetails = () => {
                   styles={{
                     background: '#ff6c00',
                     color: 'white',
-                    padding: '1rem',
+                    padding: '.7rem 1.4rem',
                     width: '15rem',
                     borderRadius: '.5rem',
-                    fontSize: '1.5rem',
+                    fontSize: '.9rem',
                     fontWeight: '500',
                   }}
                   text="Done"
@@ -406,10 +406,10 @@ const ImageDetails = () => {
                   styles={{
                     background: '#ff6c00',
                     color: 'white',
-                    padding: '1rem',
+                    padding: '.7rem 1.4rem',
                     width: '15rem',
                     borderRadius: '.5rem',
-                    fontSize: '1.5rem',
+                    fontSize: '.9rem',
                     fontWeight: '500',
                   }}
                   text="Done"
