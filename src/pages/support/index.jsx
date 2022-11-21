@@ -5,11 +5,11 @@ import mobile from '../../assets/mobile.jpg';
 import product from '../../assets/product.jpg';
 import mail from '../../assets/mail.jpg';
 import chat from '../../assets/chat.jpg';
-import Layout from '../../layouts/Layout';
+// import Layout from '../../layouts/Layout';
 
 const Support = () => {
   return (
-    <Layout>
+    <div className='bg-[#fafafa]'>
       <div className="flex justify-center flex-col mx-96 gap-6">
         <h1 className=" text-5xl">How can we help you?</h1>
         <input type="text" placeholder="Search" className="border w-5/6" />
@@ -64,7 +64,7 @@ const Support = () => {
           </button>
         </div>
       </div>
-    </Layout>
+    </div>
   );
 };
 
