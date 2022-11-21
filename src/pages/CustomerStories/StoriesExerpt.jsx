@@ -8,7 +8,7 @@ const StoriesExerpt = ({ story }) => {
           src={story.image}
           alt="image"
           className="
-      object-cover  h-[224px] w-[396px] lg:w-auto rounded-t-lg"
+      object-cover  h-[224px] w-[396px] rounded-t-lg"
         />
 
         <div
@@ -34,8 +34,8 @@ const StoriesExerpt = ({ story }) => {
         </div>
         <a
           href="#"
-          className=" hover:text-orange-400
-      flex  items-center text-[#434343] gap-2 p-4 w-[150px] h-[48px] lg:text-lg font-semibold  underline text-base font-medium leading-[24px] "
+          className="
+      flex  items-center text-[#434343] gap-2 p-4 w-[150px] h-[48px] lg:underline-offset-8 underline text-base font-medium leading-[24px] "
         >
           Read story
         </a>

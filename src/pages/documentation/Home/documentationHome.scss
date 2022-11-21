@@ -1,15 +1,9 @@
-@font-face {
-  font-family: Axiforma;
-  src: url(../../../assets/font/Axiforma-Regular.woff);
-}
-
 .documetation_wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   margin-top: 20px;
-  font-family: Axiforma;
 
   .hero_wrapper {
     width: 100%;
@@ -20,7 +14,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    background-image: url(../../../assets/documentationImages/documentationHero.png);
+    background-image: url(../../../assets/documentationHero.png);
 
     padding: 12px;
 
@@ -51,7 +45,7 @@
     }
 
     > input {
-      background-image: url(../../../assets/documentationImages/documentationSearchIcon.svg);
+      background-image: url(../../../assets/documentationSearchIcon.svg);
       background-position: 12px 8px;
       background-repeat: no-repeat;
       color: black;
