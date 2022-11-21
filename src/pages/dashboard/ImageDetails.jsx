@@ -156,7 +156,7 @@ const ImageDetails = () => {
                 }}
                 className="p-4 flex items-center gap-4 cursor-pointer justify-between"
               >
-                <span className="text-lg">Save a Json</span>
+                <span className="">Save a Json</span>
                 <img src={saveIcon} className="" alt="save icon" />
               </div>
               <div
@@ -166,7 +166,7 @@ const ImageDetails = () => {
                 }}
                 className="p-4 border-t text-[#f04438] cursor-pointer flex items-center justify-between gap-4"
               >
-                <span className="text-lg">Delete</span>
+                <span className="">Delete</span>
                 <img src={trashIcon} alt="delete icon" />
               </div>
             </div>
