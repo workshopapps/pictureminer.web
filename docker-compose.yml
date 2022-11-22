@@ -2,21 +2,21 @@ version: "3"
 services:
   picture_api:
 
-    image: docker.io/root0877/picture_api:6bbe063b21b79923f5d257e7ea8b278656f1cb09
+    image: docker.io/root0877/picture_api:latest
     ports:
       - 9000:9000
     container_name: picture-api
     restart: always
 
   image_miner:
-    image: docker.io/root0877/image_miner:fa81c23c6936314fd87bfe077f03a44a57acea18
+    image: docker.io/root0877/image_miner:latest
     ports:
       - 8000:8000
     container_name: image-miner
     restart: always
 
   frontend:
-    image: docker.io/root0877/miner_frontend:40324fdde8a696d8e70201dcdfa556a8ac10b94b
+    image: docker.io/root0877/miner_frontend:latest
     ports:
       - 3000:3000
     container_name: frontend

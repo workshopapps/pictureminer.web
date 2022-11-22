@@ -25,12 +25,12 @@ jobs:
 
     - name: docker build images
       run: |
-        docker build ./ -t root0877/miner_frontend:$IMAGE_TAG 
+        docker build ./ -t root0877/miner_frontend:latest
         
 
     - name: docker push
       run: |
-        docker push root0877/miner_frontend:$IMAGE_TAG
+        docker push root0877/miner_frontend:latest
 
   deploy:
     needs: build
@@ -47,8 +47,7 @@ jobs:
           # pull git updates
           git pull origin dev
           # rm local images cache
-          sudo docker rmi --force root0877/miner_frontend || true
-          #set env 
-          export Frontend=$IMAGE_TAG
+          sudo docker stop frontend && sudo docker rm frontend
+          sudo docker rmi --force root0877/miner_frontend:latest || true
           # pull images from remote
-          sudo docker compose up -d --force-recreate
+          sudo docker-compose up -d --force-recreate
