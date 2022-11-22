@@ -51,4 +51,4 @@ jobs:
           #set env 
           export Frontend=$IMAGE_TAG
           # pull images from remote
-          sudo PictureTag=$PictureTag  ImageTag=$ImageTag Frontend=$Frontend docker compose up -d --force-recreate
+          sudo docker compose up -d --force-recreate
