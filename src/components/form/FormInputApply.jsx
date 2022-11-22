@@ -143,7 +143,7 @@ function FormInputApply() {
           </label>
           <input
             type="text"
-            placeholder="placeholder"
+            placeholder="Role"
             name="role"
             value={role}
             onChange={(e) => {

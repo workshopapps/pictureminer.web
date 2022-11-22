@@ -1,7 +1,7 @@
 import React from 'react';
-import Group1 from '../../assets/Rectangle 4729-2.png';
-import Group2 from '../../assets/Rectangle 4730.png';
-import Apply from '../Buttons/Apply';
+import Group1 from '../../assets/PartnerWithUsPages/Rectangle 4729-2.png';
+import Group2 from '../../assets/PartnerWithUsPages/Rectangle 4730.png';
+import Apply from '../../components/Buttons/Apply';
 function Explore() {
   return (
     <div className="bg-white flex flex-col text-center items-center w-[425px] md:w-[768px]  lg:w-[1024px] ">

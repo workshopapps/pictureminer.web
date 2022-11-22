@@ -1,9 +1,9 @@
 import React from 'react';
-import Group1 from '../../assets/Rectangle 4731-2.png';
-import FormInputApply from '../FormInputs/FormInputApply';
+import Group1 from '../../assets/PartnerWithUsPages/Rectangle 4731-2.png';
+import FormInputApply from '../../components/form/FormInputApply';
 function Apply() {
   return (
-    <div className="flex flex-col items-center w-[425px] bg-white md:w-screen lg:w-screen max-w-screen-2xl md:mt-10">
+    <div className="flex flex-col items-center bg-white w-[425px] mt-14 md:w-[768px]  lg:w-[1024px] lg:mx-auto ">
       <div className="p-4">
         <div className="flex flex-col gap-10 md:flex-row lg:gap-10  ">
           <div className="flex flex-col gap-8 md:gap-10">

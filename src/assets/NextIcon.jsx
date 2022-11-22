@@ -4,14 +4,7 @@ const NextIcon = ({ onClick }) => {
   return (
     <div>
       <svg
-<<<<<<< HEAD
-<<<<<<< HEAD
         className="cursor-pointer"
-=======
->>>>>>> 6951468 (created the carousel component and the onclick function)
-=======
-        className="cursor-pointer"
->>>>>>> 6ee895e (add styles to the desktop version of the page)
         onClick={onClick}
         width="9"
         height="18"
