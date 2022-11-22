@@ -9,14 +9,14 @@ services:
     restart: always
 
   image_miner:
-    image: docker.io/root0877/image_miner:${ImageTag}
+    image: docker.io/root0877/image_miner:v1
     ports:
       - 8000:8000
     container_name: image-miner
     restart: always
 
   frontend:
-    image: docker.io/root0877/miner_frontend:${Frontend}
+    image: docker.io/root0877/miner_frontend:v1
     ports:
       - 3000:3000
     container_name: frontend
