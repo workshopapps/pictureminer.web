@@ -34,15 +34,18 @@ function Footer() {
             <img src={logoFooter} alt="logo" />
           </div>
           <p className="text-white leading-[24px]">
-    <div className="bg-[#092C4C] flex flex-col  w-[425px] gap-20 p-8  md:w-screen lg:w-screen max-w-screen-2xl lg:items-center  ">
-    <div className="flex flex-col gap-16  md:flex-row-reverse lg:flex-row-reverse   lg:gap-80   ">
-    <div className="flex flex-col pt-8">
-        <div className="flex flex-col gap-[16px] p-0 items-start ">
-          <img src={MinerGram} alt="MinerGram" />
-          <h2 className=" text-white font-semibold text-[16px] leading-[24px]  ">
-            Subscribe to our newsletter
-          </h2>
-          <FormFooter />
+            </p>
+        </div>
+        <div className="bg-[#092C4C] flex flex-col  w-[425px] gap-20 p-8  md:w-screen lg:w-screen max-w-screen-2xl lg:items-center  ">
+          <div className="flex flex-col gap-16  md:flex-row-reverse lg:flex-row-reverse   lg:gap-80   ">
+            <div className="flex flex-col pt-8">
+              <div className="flex flex-col gap-[16px] p-0 items-start ">
+                <img src={MinerGram} alt="MinerGram" />
+                <h2 className=" text-white font-semibold text-[16px] leading-[24px]  ">
+                Subscribe to our newsletter
+                </h2>
+                <FormFooter />
+          </div></div></div></div>
       <div className="flex flex-col gap-16  md:flex-row-reverse lg:flex-row-reverse   lg:gap-80   ">
         <div className="flex flex-col pt-8">
           <div className="flex flex-col gap-[16px] p-0 items-start ">
@@ -70,6 +73,7 @@ function Footer() {
         <hr className=" hidden text-[#EAECF0] w-[290px] h-[1px] md:hidden lg:block lg:w-[456px]" />
       </div>
     </div>
+    <footer/>
   );
 }
 
