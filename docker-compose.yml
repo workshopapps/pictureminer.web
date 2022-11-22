@@ -16,7 +16,7 @@ services:
     restart: always
 
   frontend:
-    image: docker.io/root0877/miner_frontend:${Frontend}
+    image: docker.io/root0877/miner_frontend:40324fdde8a696d8e70201dcdfa556a8ac10b94b
     ports:
       - 3000:3000
     container_name: frontend
