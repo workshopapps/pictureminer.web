@@ -5,17 +5,18 @@ import mobile from '../../assets/mobile.jpg';
 import product from '../../assets/product.jpg';
 import mail from '../../assets/mail.jpg';
 import chat from '../../assets/chat.jpg';
+import './index.css';
 // import Layout from '../../layouts/Layout';
 
 const Support = () => {
   return (
     <div className='bg-[#fafafa]'>
-      <div className="flex justify-center flex-col mx-96 gap-6">
-        <h1 className=" text-5xl">How can we help you?</h1>
+      <div className="flex justify-center flex-col xl:mx-96 gap-6  support-head">
+        <h1 className=" text-5xl support-h1 max-sm:text-3xl">How can we help you?</h1>
         <input type="text" placeholder="Search" className="border w-5/6" />
       </div>
       <p className="flex justify-center pb-12 pt-32">Categories</p>
-      <div className="flex flex-wrap gap-12 mx-20 justify-between">
+      <div className="flex flex-wrap gap-12 mx-20 justify-between support-cards max-md:justify-center">
         <SupportCard
           img={mine}
           title="Getting Started"
@@ -53,8 +54,8 @@ const Support = () => {
           article="2 articles"
         />
       </div>
-      <div className="bg-[rgba(255,108,0,0.1)] mt-36 mx-20 h-80 flex justify-between items-center px-28 mb-44">
-        <div>
+      <div className="bg-[rgba(255,108,0,0.1)] mt-36 mx-20 h-80 flex justify-between items-center px-28 mb-44 support-foot max-sm:mx-0 max-sm:justify-around">
+        <div className='support-find'>
           <p className="font-bold">Can’t find what you’re looking for?</p>
           <p>We are only one ticket away!</p>
         </div>
