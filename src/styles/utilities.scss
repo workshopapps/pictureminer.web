@@ -1,0 +1,10 @@
+.show {
+  transform: translateY(0%);
+  opacity: 1;
+  transition: all 350ms ease-out;
+  z-index: 10;
+}
+.hide {
+  transform: translateY(-250%);
+  opacity: 0;
+}

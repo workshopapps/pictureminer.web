@@ -1,6 +1,6 @@
 /* eslint-disable indent */
 import React from 'react';
-import logoFooter from '../assets/logo-footer.svg';
+import logoFooter from '../assets/Minegram.svg';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -25,8 +25,8 @@ const Footer = () => {
         </div>
         <div className="flex flex-col gap-4">
           <h2 className="mb-4">Legal</h2>
-          <Link to="/terms">Terms</Link>
-          <Link to="/privacy">Privacy</Link>
+          <Link to="/terms-of-use">Terms</Link>
+          <Link to="/privacy-policy">Privacy</Link>
           {/* <Link to="/contact">Contact</Link> */}
         </div>
         <div className="flex flex-col gap-2">
@@ -41,19 +41,11 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter email address"
-                className="flex-1  h-[44px] flex items-center text-[sm] leading-[20px] mt-3 pl-2 outline-none"
-                style={{
-                  borderTopLeftRadius: '8px',
-                  borderBottomLeftRadius: '8px',
-                }}
+                className=" flex-1  h-[44px] flex items-center text-[sm] leading-[20px] mt-3 pl-2 outline-none bg-white border border-solid border-l-[#909090] border-t-[#909090] border-b-[#909090] rounded-l-lg rounded-r-none font-normal   focus:outline-none "
               />
               <button
                 type="submit"
-                className="flex-1  w-[100px] h-[44px] flex justify-center items-center text-sm  border border-[#FF6C00]  font-medium leading-[20px] text-white bg-[#FF6C00]  mt-3 "
-                style={{
-                  borderTopRightRadius: '8px',
-                  borderBottomRightRadius: '8px',
-                }}
+                className="flex-1  w-[100px] h-[44px] flex justify-center items-center text-sm  border border-[#FF6C00]  font-medium leading-[20px] text-white bg-[#FF6C00]  mt-3 rounded-r-lg text-[14px] text-center  hover:bg-[#FF9D55]  "
               >
                 Subscribe
               </button>

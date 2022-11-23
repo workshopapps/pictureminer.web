@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import RoutesComponents from './routes';
 import './styles/workflow.scss';
+import './App.css';
 import './index.css';
 
 import { AppProvider } from './context/context';

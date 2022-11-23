@@ -1,6 +1,6 @@
 import React from 'react';
 import Dropdown from 'react-dropdown';
-import 'react-dropdown/style.css';
+// import 'react-dropdown/style.css';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
 import design from '../../assets/design.png';

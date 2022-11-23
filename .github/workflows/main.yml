@@ -1,0 +1,53 @@
+name: cicd
+
+on:
+  push:
+    branches:
+      - "dev"
+  pull_request:
+    branches:
+      - "dev"
+
+env:
+  IMAGE_TAG: ${{ github.sha }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: docker login
+      env:
+        DOCKER_USER: ${{ secrets.DOCKER_HUB_USERNAME }}   
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}  
+      run: |
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
+
+    - name: docker build images
+      run: |
+        docker build ./ -t root0877/miner_frontend:latest
+        
+
+    - name: docker push
+      run: |
+        docker push root0877/miner_frontend:latest
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.SSH_PASSWORD }}
+        script: |
+          cd ~/pictureminer.web
+          # pull git updates
+          git pull origin dev
+          # rm local images cache
+          sudo docker stop frontend && sudo docker rm frontend
+          sudo docker rmi --force root0877/miner_frontend:latest || true
+          # pull images from remote
+          sudo docker-compose up -d --force-recreate
