@@ -29,6 +29,15 @@
       font-weight: 500;
       font-size: 18px;
       line-height: 29px;
+      &:hover {
+        background: #ff6c00;
+
+        color: #fff;
+        svg {
+          color: #fff;
+          fill: #fff;
+        }
+      }
       @media (max-width: 500px) {
         display: none;
       }
