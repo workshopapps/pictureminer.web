@@ -1,8 +1,8 @@
 import React from 'react';
 import DocumentationHero from '../../../features/documentation/components/DocumentationHero';
 import DocumentNav from '../../../features/documentation/components/DocumentNav';
-import ImageMining from '../../../assets/imageMining.png';
-import DefiningImage from '../../../assets/definingImages.png';
+import ImageMining from '../../../assets/documentationImages/imageMining.png';
+import DefiningImage from '../../../assets/documentationImages/definingImages.png';
 
 import './gettingStarted.scss';
 import DocumentationSidebar from '../../../features/documentation/components/DocumentationSidebar';
@@ -167,7 +167,7 @@ integrity="sha384-`}</p>
             'Introduction',
             ' Overview',
             'Image Mining',
-            ' Defining IMages',
+            ' Defining Images',
           ]}
         />
       </section>

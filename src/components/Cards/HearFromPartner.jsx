@@ -1,10 +1,11 @@
 import React from 'react';
-import QuoteDown from '../../assets/quote-down.png';
-import Flow from '../../assets/Frame 1000003706.png';
-import MarkEssien from '../../assets/Rectangle 4715.png';
+import QuoteDown from '../../assets/PartnerWithUsPages/quote-down.png';
+import Flow from '../../assets/PartnerWithUsPages/Frame 1000003706.png';
+import MarkEssien from '../../assets/PartnerWithUsPages/Rectangle 4715.png';
+
 function HearFromPartner() {
   return (
-    <div className="flex flex-col items-center w-[425px] bg-[#FAFAFA] md:w-screen lg:w-screen max-w-screen-2xl md:flex-row lg:flex-row   lg:justify-center lg:gap-20 ">
+    <div className="flex flex-col items-center  bg-[#FAFAFA]  w-[425px] md:w-[768px] lg:w-screen lg:max-w-screen-xl  md:flex-row lg:flex-row md:pl-6  lg:justify-center lg:gap-20 ">
       <div className=" flex flex-col items-start pt-14 gap-[30px] pb-12 lg:gap-[30px]  ">
         <h1 className=" w-[287px] h-[34px] font-sans font-bold text-[24px] leading-[34px] text-[#1D1D1D] text-start md:w-[358px] md:h-[42px] md:text-[30px] md:leading-[42px]  lg:w-[548px] lg:h-[42px] lg:text-[38px] lg:leading-[42px]  ">
           Hear from Our Partners

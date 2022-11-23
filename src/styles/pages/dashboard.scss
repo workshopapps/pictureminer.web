@@ -28,6 +28,13 @@
       font-weight: 500;
       font-size: 17px;
       line-height: 27px;
+      &:hover {
+        color: #ff6c00;
+        font-weight: 400;
+
+        border: 1px solid #ff6c00;
+        background-color: #fff;
+      }
       @media (max-width: 830px) {
         position: absolute;
         left: 50%;

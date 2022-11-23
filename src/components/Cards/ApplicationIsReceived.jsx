@@ -1,9 +1,9 @@
 import React from 'react';
-import ImageDone from '../../assets/pana.png';
-import BackToHome from '../Buttons/BackToHome';
+import ImageDone from '../../assets/PartnerWithUsPages/pana.png';
+import BackToHome from '../../components/Buttons/BackToHome';
 function ApplicationIsReceived() {
   return (
-    <div className="flex flex-col items-center gap-[50px]  w-[425px] bg-white md:w-screen lg:w-screen max-w-screen-2xl pt-20 pb-40">
+    <div className="flex flex-col items-center gap-[50px]  bg-white  w-[425px] md:w-[768px]  lg:w-[1024px] pt-20 pb-40 mx-auto">
       <div className="text-center gap-[20px] flex flex-col  w-[303px]  h-[86px] md:w-[552px] lg:w-[552px] p-4">
         <h1 className=" w-[303px] h-[42px] font-sans font-bold text-[24px] leading-[34px] text-[#1D1D1D] text-center md:text-[30px] md:w-[552px] lg:w-[552px]lg:text-[40px] ">
           {' '}

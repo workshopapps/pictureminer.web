@@ -10,8 +10,10 @@ import {
 } from './pages/career';
 
 import CustomerStories from './pages/CustomerStories';
+import About from './pages/About/components/About';
 // import { CareerApplication } from './pages/career';
 import Termsofuse from './pages/terms-of-use/Termsofuse';
+import PartnerWithUs from './pages/PartnerWithUs/App';
 
 import DashboardLayout from './layouts/dashboard/DashboardLayout';
 import Dashboard from './pages/dashboard/Dashboard';
@@ -27,25 +29,28 @@ import DocumentationHome from './pages/documentation/Home/DocumentationHome';
 import GettingStarted from './pages/documentation/GettingStartedPage/GettingStarted';
 import Installations from './pages/documentation/InstallationsPage/Installations';
 import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
+
 import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
+import LandingPage from './pages/LandingPage/LandingPage';
+import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
 import Integrations from './pages/documentation/IntegrationPage/Integrations';
 import Web from './pages/documentation/WebPage/Web';
 import WhyTozilla from './pages/whyTozilla/WhyTozilla';
 
-import LandingPage from './pages/LandingPage/LandingPage';
-import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
 import ImageDetails from './pages/dashboard/ImageDetails';
 
 import Privacypolicy from './pages/privacypolicy/privacypolicy';
 
 import ApiDocumentation from './pages/documentation/ApiDocumentation';
-import About from './pages/About/components/About';
 
 import Faq from './pages/FAQ/faq';
 
 import Layout from './layouts/Layout';
 import HowItWorks from './pages/howItWorks/howItWorks';
 import SupportPage from './pages/support';
+import Home from './pages/PartnerWithUs/page/Home';
+import Apply from './pages/PartnerWithUs/page/Apply';
+import ApplicationReceived from './pages/PartnerWithUs/page/ApplicationReceived';
 const RoutesComponents = () => {
   return (
     <>
@@ -55,6 +60,7 @@ const RoutesComponents = () => {
           <Route path="/demo" element={<MinergramDemo />} />
           <Route path="/About-us" element={<About />} />
           <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route path="/partner-with-us" element={<PartnerWithUs />}></Route>
           <Route path="/documentation" element={<DocumentationHome />}></Route>
           <Route
             path="/documentation/getting-started"
@@ -108,6 +114,10 @@ const RoutesComponents = () => {
 
           <Route path="why-tozilla" element={<WhyTozilla />} />
         </Route>
+
+        <Route path="/" element={<Home />} />
+        <Route path="/apply" element={<Apply />} />
+        <Route path="/application" element={<ApplicationReceived />} />
 
         <Route path="" element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />

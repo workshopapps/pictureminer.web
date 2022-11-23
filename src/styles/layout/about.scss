@@ -14,14 +14,9 @@
 }
 
 @import '../_variables/variables';
-@import url(../../assets/font/Axiforma-Regular.woff);
 
 .about-general-container {
   width: 100%;
-  @font-face {
-    font-family: 'axiforma';
-    src: url(../../assets/font/Axiforma-Regular.woff);
-  }
   @include column-aligned();
   .header-container {
     width: inherit;

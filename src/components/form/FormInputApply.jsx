@@ -143,7 +143,7 @@
 //           </label>
 //           <input
 //             type="text"
-//             placeholder="placeholder"
+//             placeholder="Role"
 //             name="role"
 //             value={role}
 //             onChange={(e) => {
@@ -153,7 +153,7 @@
 //           />
 //         </div>
 
-//         <div className="flex flex-col gap-[5px] items-start text-center ">
+// //         <div className="flex flex-col gap-[5px] items-start text-center ">
 //           <label
 //             htmlFor="role"
 //             className=" font-sans font-light text-[16px] capitalize "

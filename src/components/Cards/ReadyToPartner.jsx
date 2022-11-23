@@ -1,5 +1,6 @@
 import React from 'react';
-import Apply from '../Buttons/Apply';
+import Apply from '../../components/Buttons/Apply';
+
 
 function ReadyToPartner() {
   return (
