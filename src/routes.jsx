@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ErrorPage from './Error';
+import Login from './pages/Login';
 
 import {
   CareerApplication,
@@ -124,6 +125,7 @@ const RoutesComponents = () => {
             <Route path="*" element={<ErrorPage />}></Route>
 
             <Route path="why-tozilla" element={<WhyTozilla />} />
+            <Route path= '/login' element={<Login />} />
           </Route>
 
           <Route path="/" element={<Home />} />
@@ -139,6 +141,7 @@ const RoutesComponents = () => {
             <Route path="/account-setup" element={<AccountSettings />} />
             <Route path="/billing" element={<Billing />} />
           </Route>
+
         </Routes>
       </ScrollToTop>
     </>
