@@ -52,6 +52,7 @@ import Home from './pages/PartnerWithUs/page/Home';
 import Apply from './pages/PartnerWithUs/page/Apply';
 import ApplicationReceived from './pages/PartnerWithUs/page/ApplicationReceived';
 import ScrollToTop from './layouts/ScrollToTop';
+import Pricing from './pages/pricing/Pricing';
 const RoutesComponents = () => {
   return (
     <>
@@ -63,6 +64,7 @@ const RoutesComponents = () => {
             <Route path="/About-us" element={<About />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/partner-with-us" element={<PartnerWithUs />}></Route>
+            <Route path="/pricing" element={<Pricing />} />
             <Route
               path="/documentation"
               element={<DocumentationHome />}
