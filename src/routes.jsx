@@ -62,7 +62,6 @@ const RoutesComponents = () => {
       login: { serverResponse: user },
     },
   } = useGlobalContext();
-
   return (
     <>
       <ScrollToTop>
