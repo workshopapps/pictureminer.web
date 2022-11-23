@@ -4,32 +4,29 @@ import LoginHeader from './LoginHeader';
 import LoginSchema from './schema';
 import './Login.scss';
 import { Formik } from 'formik';
+
+const initialValues = {
+  Email: '',
+  Password: '',
+};
 const index = () => {
+  const onSubmit = (values) => {
+    console.log(values);
+  };
   return (
     <div className='logincontainer'>
       <LoginHeader />
       <Formik
-        initialValues={{
-          Email: '',
-          Password: '',
-        }}
-        onSubmit={(values) => {
-          console.log(values);
-        }}
+        initialValues={initialValues}
+        onSubmit={(values) => {onSubmit(values);}}
         validationSchema={LoginSchema}
 
       >
-        {({ isValid }) => {
+        {({ handleSubmit }) => {
           return (
             <div className='loginform'>
-              <LoginForm />
-              <button
-                className='loginbutton'
-                type='submit'
-                disabled={!isValid}
-              >
-                Login
-              </button>
+              <LoginForm onSubmit={handleSubmit} />
+
             </div>
           );
         }}

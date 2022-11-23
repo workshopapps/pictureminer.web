@@ -3,7 +3,8 @@ import { useField } from 'formik';
 import './Login.scss';
 const FormInput = ({ type = 'text', placeholder, name, id }) => {
   const [field, meta, helpers] = useField(name);
-  const showError = meta.touched && meta.error;
+  const showError = meta.error;
+  console.log(showError);
 
   return (
     <>
