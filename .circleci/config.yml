@@ -11,7 +11,7 @@ jobs:
       - run:
           name: Build front-end
           command: |
-            cd pictureminer.web
+            cd ~
             npm install
             npm run build
       - save_cache:
@@ -26,7 +26,7 @@ jobs:
       - run:
           name: Back-end build
           command: |
-             cd pictureminer.api
+             cd ~
              go mod download
              go build -o /pictureminer
       - save_cache:
