@@ -3,35 +3,163 @@ orbs:
   node: circleci/node@5.0.2
 # Define the jobs we want to run for this project
 jobs:
-  build_and_test:
-    executor: node/default
-    steps:
-      - checkout
-      - node/install-packages:
-          pkg-manager: yarn
-      - run:
-          command: yarn install
-          name: install packages 
-      - run:
-          command: yarn build
-          name: Build app
-
-  deploy:
+  build-frontend:
     docker:
-      - image: arvindr226/alpine-ssh
+      - image: circleci/node:13.8.0
     steps:
       - checkout
-      - run: ssh -oStrictHostKeyChecking=no -v $USER@$IP "cd pictureminer.web/ && git checkout dev && git pull && sudo docker-compose up -d --build"
+      - run:
+          name: Build front-end
+          command: |
+            cd pictureminer.web
+            npm install
+            npm run build
+      - save_cache:
+          paths: [pictureminer.web/node_modules]
+          key: frontend-build
+
+  build-backend:
+    docker:
+      - image: circleci/golang:1.9
+    steps:
+      - checkout
+      - run:
+          name: Back-end build
+          command: |
+             cd pictureminer.api
+             go mod download
+             go build -o /pictureminer
+      - save_cache:
+          paths: [pictureminer.api/node_modules]
+          key: backend-build
+  
+  test-frontend:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - checkout
+      - restore_cache:
+          keys:  [frontend-build]
+      - run:
+          name: Test frontend
+          command:  |
+            cd pictureminer.web
+            npm install
+            npm run test
+                
+  test-backend:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - checkout
+      - restore_cache:
+          keys:  [backend-build]
+      - run:
+          name: Test backend
+          command:  |
+            cd pictureminer.api
+            go mod download
+            go run main_test.go
+
+  deploy-frontend:
+    working_directory: /pictureminer.web
+    docker:
+      - image: docker:17.05.0-ce-git
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Install dependencies
+          command: |
+            apk add --no-cache \
+              py-pip=9.0.0-r1
+            pip install \
+              docker-compose==1.12.0 \
+              awscli==1.11.76
+      
+      - restore_cache:
+          keys: 
+            - v1-{{ .Branch }}
+          paths:  /caches/app.tar
+      - run:
+          name: Build application Docker image
+          command: |
+            docker build -t pictureminer-frontend .
+      - run:
+          name: Save Docker image layer cache
+          command: |
+            mkdir -p /caches
+            docker save -o /caches/app.tar app
+      - save_cache:
+          key: v1-{{ .Branch }}-{{ epoch }}
+          paths:
+            - /caches/app.tar
+      - run:
+          name: Deploy application Docker Hub
+          command: |
+            docker push -p 3000:3000 pictureminer-frontend
+  
+  deploy-backend:
+    working_directory: /pictureminer.api
+    docker:
+      - image: docker:17.05.0-ce-git
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Install dependencies
+          command: |
+            apk add --no-cache \
+              py-pip=9.0.0-r1
+            pip install \
+              docker-compose==1.12.0 \
+              awscli==1.11.76
+      
+      - restore_cache:
+          keys: 
+            - v1-{{ .Branch }}
+          paths:  /caches/app.tar
+      - run:
+          name: Build application Docker image
+          command: |
+            docker build -t pictureminer-backend .
+      - run:
+          name: Save Docker image layer cache
+          command: |
+            mkdir -p /caches
+            docker save -o /caches/app.tar app
+      - save_cache:
+          key: v1-{{ .Branch }}-{{ epoch }}
+          paths:
+            - /caches/app.tar
+      - run:
+          name: Deploy application Docker Hub
+          command: |
+            docker push -p 8000:8000 pictureminer-backend
+
+  # deploy-frontend:
+  #   docker:
+  #     - image: arvindr226/alpine-ssh
+  #   steps:
+  #     - checkout
+  #     - run: ssh -oStrictHostKeyChecking=no -v $USER@$IP "cd pictureminer.web/ && git checkout dev && git pull && sudo docker-compose up -d --build"
 
 # 
 workflows:
   version: 2
-  build-project:
+  workflow:
     jobs:
-      - build_and_test
-      - deploy:
+      - build-frontend
+      - build-backend
+      - test-frontend:
           requires:
-           - build_and_test
+            - build-frontend
+      - test-backend:
+          requires: [build-backend]
+      - deploy-frontend:
+          requires: [test-frontend]
+      - deploy-backend:
+          requires: [test-backend]
           filters:
             branches:
               only:
