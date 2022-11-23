@@ -6,23 +6,25 @@ import RoutesComponents from './routes';
 import './styles/workflow.scss';
 import './index.css';
 
+import { AppProvider } from './context/context';
+
 function IndexPage() {
-	return (
-		<>
-			<BrowserRouter>
-				<RoutesComponents />
-			</BrowserRouter>
-		</>
-	);
+  return (
+    <AppProvider>
+      <BrowserRouter>
+        <RoutesComponents />
+      </BrowserRouter>
+    </AppProvider>
+  );
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-	// <React.StrictMode>
+  // <React.StrictMode>
 
-	<IndexPage />
+  <IndexPage />
 
-	// </React.StrictMode>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

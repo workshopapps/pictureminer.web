@@ -17,7 +17,17 @@ import DocumentationHome from './pages/documentation/Home/DocumentationHome';
 import GettingStarted from './pages/documentation/GettingStartedPage/GettingStarted';
 import Installations from './pages/documentation/InstallationsPage/Installations';
 
+import { useGlobalContext } from './context/context';
+
 const RoutesComponents = () => {
+  const {
+    state: {
+      // This has other key-value like loading, error etc
+      // eslint-disable-next-line no-unused-vars
+      login: { serverResponse: user },
+    },
+  } = useGlobalContext();
+
   return (
     <>
       <Routes>
