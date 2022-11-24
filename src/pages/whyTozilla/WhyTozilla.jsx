@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { features } from './data/features';
 import Computer from './assets/computer.png';
 import { testimonials } from './data/testimonials';

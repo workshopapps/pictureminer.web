@@ -1,28 +1,11 @@
-.DemoHero{
+.Ecommerce{
     padding: 60px;
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 24px;
 }
-
-.back_icon{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 16px;
-    gap: 8px;
-    width: 56px;
-    height: 48px;
-    background: #FF6C00;
-    border-radius: 8px;
-}
-
-.icon{
-    color: white;
-}
-
 .content{
     display: flex;
     justify-content: space-between;
@@ -37,27 +20,21 @@
     color: #434343;
 }
 
-.heading{
+.ecommerce_heading{
     font-weight: 500;
     font-size: 30px;
-    /* identical to box height, or 140% */
-
-
-    /* Primary/Main */
-
-    color: #FF6C00;
+    background: #092C4C;
+    border-radius: 0px 8px 8px 0px;
+    margin: 10px 0;
+    color: #fff;
+    width:40%;
+    text-align: center;
 }
 
 .info_heading{
     font-weight: 700;
     font-size: 20px;
-    line-height: 30px;
-    /* identical to box height, or 150% */
-
-
-    /* Grey/300 */
-
-    
+    line-height: 30px; 
 } 
 
 .info_description{
@@ -81,29 +58,34 @@
         line-height: 28px;
     }
 }
-
-
-.documentation_btn{
-    flex-direction: row;
+.image_container{
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 16px 24px;
+    padding: 16px 40px;
+    text-align: center;
     gap: 8px;
-    margin-top: 20px;
+    margin:auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
     background-color: #fff;
     width:50%;
-    border: 1px solid #FF6C00;
+    border: 1px dashed #803600;
     border-radius: 8px;
 
     .documentation_text{
         font-weight: 500;
         font-size: 16px;
         line-height: 24px;
-        /* identical to box height, or 150% */
-        display: flex;
-        align-items: center;
-        /* Primary/Main */
         color: #FF6C00;
+    }
+    .btn{
+        border-right: none;
+        background-color: #FF6C00;
+        color: #fff;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
     }
 }
 
