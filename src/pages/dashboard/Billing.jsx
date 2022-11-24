@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './styles/dashboard.css';
 import { MdOutlineErrorOutline } from 'react-icons/md';
 import { IoCloseSharp } from 'react-icons/io5';
 import { BsCheckCircle } from 'react-icons/bs';
