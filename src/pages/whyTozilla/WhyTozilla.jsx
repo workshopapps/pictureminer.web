@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { features } from './data/features';
 import Computer from './assets/computer.webp';
 import { testimonials } from './data/testimonials';

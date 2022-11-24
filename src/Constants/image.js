@@ -10,6 +10,8 @@ import profile1 from '../assets/LandingPageImages/profile1.webp';
 import profile2 from '../assets/LandingPageImages/profile2.webp';
 import profile3 from '../assets/LandingPageImages/profile3.webp';
 import demo from '../assets/LandingPageImages/demo.svg';
+import ecommerceImage from '../assets/LandingPageImages/EcommerceImage.png';
+import Vector from '../assets/LandingPageImages/Vector.png';
 
 export default {
   book,
@@ -24,4 +26,6 @@ export default {
   profile2,
   profile3,
   demo,
+  ecommerceImage,
+  Vector,
 };
