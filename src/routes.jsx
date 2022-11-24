@@ -35,7 +35,7 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
 import Integrations from './pages/documentation/IntegrationPage/Integrations';
 import Web from './pages/documentation/WebPage/Web';
-import WhyTozilla from './pages/whyTozilla/whyTozilla';
+import WhyTozilla from './pages/whyTozilla/WhyTozilla';
 
 import ImageDetails from './pages/dashboard/ImageDetails';
 
@@ -55,6 +55,7 @@ import Apply from './pages/PartnerWithUs/page/Apply';
 import ApplicationReceived from './pages/PartnerWithUs/page/ApplicationReceived';
 import ScrollToTop from './layouts/ScrollToTop';
 import Pricing from './pages/pricing/Pricing';
+import Payment from './pages/pricing/Payment';
 const RoutesComponents = () => {
   // const {
   //   state: {
@@ -73,7 +74,8 @@ const RoutesComponents = () => {
             <Route path="/About-us" element={<About />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/partner-with-us" element={<PartnerWithUs />}></Route>
-            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/pricing" element={<Pricing />}></Route>
+            <Route path="/pricing/:paymentPlan" element={<Payment />} />
             <Route
               path="/documentation"
               element={<DocumentationHome />}

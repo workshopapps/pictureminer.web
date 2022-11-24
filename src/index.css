@@ -87,10 +87,14 @@ code {
     font-weight: 700;
     font-size: 72px;
     line-height: 90px;
-    
+
     letter-spacing: -0.02em;
-    
-    background: linear-gradient(207.72deg, #686868 -7.41%, rgba(104, 104, 104, 0) 65.31%);
+
+    background: linear-gradient(
+      207.72deg,
+      #686868 -7.41%,
+      rgba(104, 104, 104, 0) 65.31%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
