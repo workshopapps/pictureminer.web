@@ -52,6 +52,8 @@ import Home from './pages/PartnerWithUs/page/Home';
 import Apply from './pages/PartnerWithUs/page/Apply';
 import ApplicationReceived from './pages/PartnerWithUs/page/ApplicationReceived';
 import ScrollToTop from './layouts/ScrollToTop';
+import ForgotPassword from './pages/forgotPassword/ForgotPassword';
+import ResetPassword from './pages/resetPassword/ResetPassword';
 const RoutesComponents = () => {
   return (
     <>
@@ -138,6 +140,12 @@ const RoutesComponents = () => {
 
             <Route path="/account-setup" element={<AccountSettings />} />
             <Route path="/billing" element={<Billing />} />
+          </Route>
+
+          <Route path="/forgot-password" element={<ForgotPassword />}></Route>
+
+          <Route path="/reset-password" element={<ResetPassword />}>
+            {' '}
           </Route>
         </Routes>
       </ScrollToTop>
