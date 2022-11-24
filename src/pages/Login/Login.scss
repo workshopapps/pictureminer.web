@@ -11,7 +11,11 @@ $large: 1200px;
   border-radius: 10px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   margin-top: 20px;
-
+.invalidLogin {
+  color: red;
+  font-size: 12px;
+  margin-top: 10px;
+}
   .dont {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -53,6 +57,12 @@ $large: 1200px;
       border: 1px solid #ccc;
       border-radius: 5px;
       padding: 0 10px;
+    }
+
+    .logininput::placeholder {
+      color: #ccc;
+      padding: 0 10px;
+      font-size: 0.8rem;
     }
     
     .loginbutton {
@@ -130,6 +140,15 @@ $large: 1200px;
     margin-bottom: 30px;
     .inputlabel {
       width: 700px;
+    }
+
+    .invalidLogin {
+      width: 700px;
+      font-size: medium;
+      background-color: #fff;
+      width: 700px;
+      border: 1px solid #D64751;
+      border-radius: 5px;
     }
 
     .loginform {

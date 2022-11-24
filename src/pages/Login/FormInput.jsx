@@ -15,6 +15,7 @@ const FormInput = ({ type = 'text', placeholder, name, id, label }) => {
     className = {showError ? 'errorinput' : 'logininput'}
     />
     {showError && <div className = 'errortext'>{meta.error}</div>}
+
     </>
   );
 };
