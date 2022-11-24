@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Button from '../../components/ui/Button';
 import DataTable from 'react-data-table-component';
 import { Link } from 'react-router-dom';
-import foodImage from '../../assets/foodImage.png';
+import foodImage from '../../assets/foodImage.webp';
 
 const data = [
   {

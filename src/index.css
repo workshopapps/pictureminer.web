@@ -22,7 +22,7 @@ code {
 } */
 
 .career-hero-bg {
-  background-image: url('./assets/career-landing-bg.png');
+  background-image: url('./assets/career-landing-bg.webp');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -98,20 +98,18 @@ code {
     font-size: '72px';
     line-height: '90px';
 
-    
     letter-spacing: '-0.02em';
-    
+
     background: 'linear-gradient(207.72deg, #686868 -7.41%, rgba(104, 104, 104, 0) 65.31%)';
     -webkit-background-clip: 'text';
     -webkit-text-fill-color: 'transparent';
     background-clip: 'text';
     text-fill-color: 'transparent';
   }
-  
+
   @media screen and (max-width: 768px) {
     .how-it-works-gradient-text {
       font-size: '48px';
     }
-  };
-  
+  }
 }
