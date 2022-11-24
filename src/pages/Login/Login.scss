@@ -1,3 +1,7 @@
+$medium: 800px;
+$large: 1200px;
+
+
 .logincontainer {
   display: flex;
   flex-direction: column;
@@ -8,13 +12,18 @@
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   margin-top: 20px;
 
+  .dont {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 700px;
+  }
+.create {
+  color: #FF6C00;
+}
     .inputlabel {
-      width: 300px;
-    height: 40px;
-      
-      
-
-    }
+    width: 300px;
+    
+  }
 
     
     .errorinput {
@@ -57,16 +66,21 @@
       font-size: 16px;
       font-weight: 600;
       cursor: pointer;
+
+      &:hover {
+        background-color: #FF8C00;
+      }
     }
   }
 }
 
 .errortext {
   color: red;
-  font-size: 12px;
-  margin-top: 5px;
-  align-self: flex-start;
-  margin-left: 10px;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 300px;
 }
 
 .forgot {
@@ -74,7 +88,71 @@
   font-size: 12px;
   margin-top: 5px;
   margin-left: 10px;
+  width: 300px;
+  margin-bottom: 40px;
 
 }
 
 
+@media screen and ( min-width: $medium ) and ( max-width: $large ) {
+  .loginform {
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+  }
+
+  .logincontainer {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+
+    .dont {
+      width: 300px;
+    }
+  }
+}
+  
+@media screen and ( min-width: $large ) {
+  .loginform {
+    width: 700px;
+    height: 400px;
+    background-color: #fff;
+  }
+
+.forgot {
+  width: 700px;
+}
+  .logincontainer {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+    .inputlabel {
+      width: 700px;
+    }
+
+    .loginform {
+      width: 700px;
+      height: 400px;
+      background-color: #fff;
+      .logininput {
+        width: 700px;
+      }
+
+      .loginbutton {
+        width: 700px;
+      }
+    }
+    
+
+
+    .errorinput {
+      width: 700px;
+    }
+  }
+
+  .errortext {
+    width: 700px;
+  }
+}

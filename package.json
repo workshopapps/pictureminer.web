@@ -12,6 +12,8 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.0",
     "formik": "^2.2.9",
+    "flowbite": "^1.5.4",
+    "flowbite-react": "^0.3.5",
     "iconsax-react": "^0.0.8",
     "react": "^18.2.0",
     "react-data-table-component": "^7.5.3",

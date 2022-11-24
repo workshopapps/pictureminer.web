@@ -4,7 +4,7 @@ const LoginHeader = () => {
   return (
     <div>
 
-      <div className="flex flex-col items-center justify-center w-full h-full">
+      <div className="flex flex-col font-extrabold my-6 items-center justify-center w-full h-full">
         Log In to your account
         </div>
 
