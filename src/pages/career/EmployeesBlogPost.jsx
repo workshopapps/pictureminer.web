@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import design from '../../assets/design.png';
-import finance from '../../assets/finance.png';
-import admin from '../../assets/admin.png';
+import design from '../../assets/design.webp';
+import finance from '../../assets/finance.webp';
+import admin from '../../assets/admin.webp';
 
 const EmployeesBlogPost = () => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import HeroSection from './assets/HeroSection.png';
+import HeroSection from './assets/HeroSection.webp';
 import Feature from './components/feature';
 import { features } from './data/features';
 import './styles.scss';

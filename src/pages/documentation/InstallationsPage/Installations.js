@@ -3,8 +3,8 @@ import React from 'react';
 import DocumentationHero from '../../../features/documentation/components/DocumentationHero';
 import DocumentationSidebar from '../../../features/documentation/components/DocumentationSidebar';
 import DocumentNav from '../../../features/documentation/components/DocumentNav';
-import InstallationLibraryImage from '../.../../../../assets/documentationImages/InstallationsLibraries.png';
-import InstallationTorzillaLite from '../.../../../../assets/documentationImages/InstallationTorzillaLite.png';
+import InstallationLibraryImage from '../.../../../../assets/documentationImages/InstallationsLibraries.webp';
+import InstallationTorzillaLite from '../.../../../../assets/documentationImages/InstallationTorzillaLite.webp';
 import './installations.scss';
 const Installations = () => {
   return (

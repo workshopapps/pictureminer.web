@@ -1,11 +1,11 @@
 import Button from '../../components/ui/Button';
 import Modal, { Backdrop } from '../../components/ui/Modal';
 
-import successIcon from '../../assets/dashboardImageDetails/success-icon.png';
-import warningIcon from '../../assets/dashboardImageDetails/warning-icon.png';
-import closeIcon from '../../assets/dashboardImageDetails/close-icon.png';
-import saveIcon from '../../assets/dashboardImageDetails/download-icon.png';
-import trashIcon from '../../assets/dashboardImageDetails/trash-icon.png';
+import successIcon from '../../assets/dashboardImageDetails/success-icon.webp';
+import warningIcon from '../../assets/dashboardImageDetails/warning-icon.webp';
+import closeIcon from '../../assets/dashboardImageDetails/close-icon.webp';
+import saveIcon from '../../assets/dashboardImageDetails/download-icon.webp';
+import trashIcon from '../../assets/dashboardImageDetails/trash-icon.webp';
 
 import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
