@@ -3,15 +3,11 @@ import React, { useState } from 'react';
 import Button from '../../components/ui/Button';
 import DataTable from 'react-data-table-component';
 import { Link } from 'react-router-dom';
-<<<<<<< HEAD
 import foodImage from '../../assets/foodImage.webp';
-=======
-import foodImage from '../../assets/foodImage.png';
 import Modal, { Backdrop } from '../../components/ui/Modal';
-import successIcon from '../../assets/dashboardImageDetails/success-icon.png';
-import warningIcon from '../../assets/dashboardImageDetails/warning-icon.png';
-import closeIcon from '../../assets/dashboardImageDetails/close-icon.png';
->>>>>>> 58e47b9d4b92968fbba0a022bb640a7ddf8f2568
+import successIcon from '../../assets/dashboardImageDetails/success-icon.webp';
+import warningIcon from '../../assets/dashboardImageDetails/warning-icon.webp';
+import closeIcon from '../../assets/dashboardImageDetails/close-icon.webp';
 
 const data = [
   {

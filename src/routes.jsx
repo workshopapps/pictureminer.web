@@ -31,11 +31,8 @@ import Installations from './pages/documentation/InstallationsPage/Installations
 import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
 
 import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
-<<<<<<< HEAD
-=======
 import LandingPage from './pages/LandingPage/LandingPage';
 import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
->>>>>>> 58e47b9d4b92968fbba0a022bb640a7ddf8f2568
 import Integrations from './pages/documentation/IntegrationPage/Integrations';
 import Web from './pages/documentation/WebPage/Web';
 import WhyTozilla from './pages/whyTozilla/WhyTozilla';
