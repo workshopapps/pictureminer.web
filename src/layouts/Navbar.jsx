@@ -37,7 +37,7 @@ const NavBar = () => {
           Login
         </Link>
         <Link
-          to="/signup"
+          to="/sign-up"
           className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00]  font-medium leading-[24px] text-white bg-[#FF6C00]"
         >
           Sign up
