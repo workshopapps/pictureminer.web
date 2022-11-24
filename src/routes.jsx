@@ -36,7 +36,9 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
 import Integrations from './pages/documentation/IntegrationPage/Integrations';
 import Web from './pages/documentation/WebPage/Web';
-// import WhyTozilla from './pages/whyTozilla/whyTozilla';
+
+import WhyTozilla from './pages/whyTozilla/WhyTozilla';
+
 
 import ImageDetails from './pages/dashboard/ImageDetails';
 
@@ -56,6 +58,8 @@ import Apply from './pages/PartnerWithUs/page/Apply';
 import ApplicationReceived from './pages/PartnerWithUs/page/ApplicationReceived';
 import ScrollToTop from './layouts/ScrollToTop';
 import Pricing from './pages/pricing/Pricing';
+import ForgotPassword from './pages/forgotPassword/ForgotPassword';
+import ResetPassword from './pages/resetPassword/ResetPassword';
 const RoutesComponents = () => {
   // const {
   //   state: {
@@ -158,6 +162,10 @@ const RoutesComponents = () => {
 
           </Route>
 
+
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+
+          <Route path="/reset-password" element={<ResetPassword />} />
 
         </Routes>
       </ScrollToTop>
