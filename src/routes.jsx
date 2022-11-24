@@ -73,10 +73,11 @@ const RoutesComponents = () => {
               path="/documentation/getting-started"
               element={<GettingStarted />}
             ></Route>
+
             <Route
               path="customer-stories"
               element={<CustomerStories />}
-            ></Route>
+            />
             <Route path="support" element={<SupportPage />}></Route>
             <Route
               path="/documentation/integrations"
@@ -132,17 +133,21 @@ const RoutesComponents = () => {
           <Route path="/" element={<Home />} />
           <Route path="/apply" element={<Apply />} />
           <Route path="/application" element={<ApplicationReceived />} />
-          <Route element = {<ProtectedRoutes/>}>
-          <Route path="" element={<DashboardLayout />}>
+          {/*If your riute us priviate, use Protected Route */}
+
+          <Route  element={<DashboardLayout />}>
+
             <Route path="/dashboard" element={<Dashboard />} />
+
             <Route path="/images" element={<Images />} />
 
             <Route path="/images/:imageId" element={<ImageDetails />} />
 
             <Route path="/account-setup" element={<AccountSettings />} />
             <Route path="/billing" element={<Billing />} />
+
           </Route>
-          </Route>
+
 
         </Routes>
       </ScrollToTop>

@@ -5,12 +5,9 @@ const LoginHeader = () => {
     <div>
 
       <div className="flex flex-col items-center justify-center w-full h-full">
-        Log in
+        Log In to your account
         </div>
 
-        <div>
-          Welcome back, please enter your details
-        </div>
 
     </div>
   );

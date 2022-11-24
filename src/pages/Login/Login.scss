@@ -9,17 +9,24 @@
   margin-top: 20px;
 
     .inputlabel {
-      margin-bottom: 10px;
       width: 300px;
     height: 40px;
       
       
 
     }
+
+    
+    .errorinput {
+      border: 1px solid #D64751;
+      width: 300px;
+      height: 40px;
+      border-radius: 5px;
+      padding: 0 10px;
+    }
   .loginform {
     display: flex;
     flex-direction: column;
-    
     align-items: center;
     width: 400px;
     height: 400px;
@@ -45,11 +52,29 @@
       margin-bottom: 20px;
       border: 1px solid #ccc;
       border-radius: 5px;
-      background-color: #fff;
-      color: #000;
+      background-color: #FF6C00;
+      color: #fff;
       font-size: 16px;
       font-weight: 600;
       cursor: pointer;
     }
   }
 }
+
+.errortext {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  align-self: flex-start;
+  margin-left: 10px;
+}
+
+.forgot {
+  color : #FF6C00;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: 10px;
+
+}
+
+

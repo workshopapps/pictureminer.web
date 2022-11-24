@@ -22,7 +22,6 @@ const index = () => {
 
   const onSubmit = (values) => {
     const { Email, Password } = values;
-    console.log(Email, Password);
     try {
       const user =  login( { email:Email, password:Password });
       setUser(user);

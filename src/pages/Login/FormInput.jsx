@@ -4,17 +4,17 @@ import './Login.scss';
 const FormInput = ({ type = 'text', placeholder, name, id }) => {
   const [field, meta, helpers] = useField(name);
   const showError = meta.error && meta.touched;
-  console.log(showError);
 
   return (
     <>
+    <label className='inputlabel' htmlFor="name"> {name}</label>
     <input type={type} placeholder = {placeholder} name = {name} id = {id}
     onChange = {e => helpers.setValue(e.target.value)}
     onBlur = {() => helpers.setTouched(true)}
     value = {field.value}
-    className = {showError ? 'logininput' : 'logininput'}
+    className = {showError ? 'errorinput' : 'logininput'}
     />
-    {showError && <div className = 'error'>{meta.error}</div>}
+    {showError && <div className = 'errortext'>{meta.error}</div>}
     </>
   );
 };

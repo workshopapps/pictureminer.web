@@ -17,6 +17,10 @@ const LoginForm = ({ onSubmit }) => {
       id = 'password'
       />
 
+      <div className='forgot'>
+        Forgot Password?
+      </div>
+
       <Button
         text='Login'
         type='submit'
