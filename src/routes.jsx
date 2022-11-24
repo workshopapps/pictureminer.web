@@ -37,7 +37,7 @@ import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
 import Integrations from './pages/documentation/IntegrationPage/Integrations';
 import Web from './pages/documentation/WebPage/Web';
 
-// import WhyTozilla from './pages/whyTozilla/WhyTozilla';
+import WhyTozilla from './pages/whyTozilla/WhyTozilla';
 
 import ImageDetails from './pages/dashboard/ImageDetails';
 
@@ -56,11 +56,11 @@ import Home from './pages/PartnerWithUs/page/Home';
 import Apply from './pages/PartnerWithUs/page/Apply';
 import ApplicationReceived from './pages/PartnerWithUs/page/ApplicationReceived';
 import ScrollToTop from './layouts/ScrollToTop';
-import Signup from './pages/signup';
 import Pricing from './pages/pricing/Pricing';
 import ImageUpload from './pages/dashboard/ImageUpload';
 import ForgotPassword from './pages/forgotPassword/ForgotPassword';
 import ResetPassword from './pages/resetPassword/ResetPassword';
+import Payment from './pages/pricing/Payment';
 const RoutesComponents = () => {
   // const {
   //   state: {
@@ -75,12 +75,12 @@ const RoutesComponents = () => {
         <Routes>
           <Route path="" element={<Layout />}>
             <Route exact path="" element={<LandingPage />} />
-            <Route path="/signup" element={<Signup />} />
             <Route path="/demo" element={<MinergramDemo />} />
             <Route path="/About-us" element={<About />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/partner-with-us" element={<PartnerWithUs />}></Route>
-            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/pricing" element={<Pricing />}></Route>
+            <Route path="/pricing/:paymentPlan" element={<Payment />} />
             <Route
               path="/documentation"
               element={<DocumentationHome />}
@@ -139,7 +139,7 @@ const RoutesComponents = () => {
             />
             <Route path="*" element={<ErrorPage />}></Route>
 
-            {/* <Route path="why-tozilla" element={<WhyTozilla />} /> */}
+            <Route path="/why-tozilla" element={<WhyTozilla />} />
             <Route path="/login" element={<Login />} />
           </Route>
 

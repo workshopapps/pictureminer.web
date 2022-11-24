@@ -3,6 +3,7 @@ import FormInput from '../../components/form/FormInput';
 import Button from '../../components/ui/Button';
 import { AiOutlineExclamation } from 'react-icons/ai';
 import { IoCloseSharp } from 'react-icons/io5';
+import './styles/dashboard.css';
 
 function AccountSettings() {
   const initialFormValues = {
@@ -95,7 +96,7 @@ function AccountSettings() {
 
   return (
     <div className="mb-28 -z-0">
-      <div className="container">
+      <div className="container-dashboard">
         <section className="">
           <h1 className="text-large">Account settings</h1>
           {successMessage && (
