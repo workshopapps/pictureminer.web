@@ -6,16 +6,20 @@ import RoutesComponents from './routes';
 import './styles/workflow.scss';
 import './App.css';
 import './index.css';
+import { UserProvider } from './context/UserProvider';
 
-import { AppProvider } from './context/context';
+// import { AppProvider } from './context/context';
 
 function IndexPage() {
   return (
-    <AppProvider>
+    <UserProvider>
+      {/* <AppProvider> */}
       <BrowserRouter>
         <RoutesComponents />
       </BrowserRouter>
-    </AppProvider>
+
+      {/* </AppProvider> */}
+    </UserProvider>
   );
 }
 

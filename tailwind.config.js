@@ -2,7 +2,10 @@
 
 // eslint-disable-next-line no-undef
 module.exports = {
-  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  content: [
+    './src/**/*.{js,jsx,ts,tsx}',
+    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
+  ],
   plugins: [require('tw-elements/dist/plugin')],
   theme: {
     extend: {
@@ -13,6 +16,8 @@ module.exports = {
         mainOrange: 'hsl(var(--mainOrange))',
         modalGray: 'hsl(var(--grayModal) / 25%)',
         inputGray: 'hsl(var(--grayModal) / 50%)',
+        grey300: 'hsl(var(--grey300))',
+        grey800: 'hsl(var(--grey300))',
       },
       fontSize: {
         xLarge: 'var(--fs-xl)',
@@ -25,6 +30,9 @@ module.exports = {
       fontFamily: { axiforma: 'Axiforma' },
     },
   },
-  // eslint-disable-next-line no-dupe-keys
-  plugins: [require('@tailwindcss/forms'), require('tw-elements/dist/plugin')],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('tw-elements/dist/plugin'),
+    require('flowbite/plugin'),
+  ],
 };
