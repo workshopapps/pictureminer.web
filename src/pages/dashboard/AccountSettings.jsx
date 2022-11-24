@@ -118,8 +118,8 @@ function AccountSettings() {
                 onchange={handleChange}
                 placeholder="Your first name"
                 value={formValues.firstName}
-                labelClassName="form_label"
-                containerClassName="form_group"
+                labelClassName="form__label"
+                containerClassName="form__group"
               />
               <FormInput
                 name="lastName"
@@ -128,8 +128,8 @@ function AccountSettings() {
                 onchange={handleChange}
                 placeholder="Your last name"
                 value={formValues.lastName}
-                labelClassName="form_label"
-                containerClassName="form_group"
+                labelClassName="form__label"
+                containerClassName="form__group"
               />
             </div>
             <FormInput
@@ -139,8 +139,8 @@ function AccountSettings() {
               onchange={handleChange}
               placeholder="example@gmail.com"
               value={formValues.email}
-              labelClassName="form_label"
-              containerClassName="form_group"
+              labelClassName="form__label"
+              containerClassName="form__group"
             />
             <FormInput
               name="businessName"
@@ -149,8 +149,8 @@ function AccountSettings() {
               onchange={handleChange}
               placeholder="minegram"
               value={formValues.businessName}
-              labelClassName="form_label"
-              containerClassName="form_group"
+              labelClassName="form__label"
+              containerClassName="form__group"
             />
             <FormInput
               name="currentPassword"
@@ -159,8 +159,8 @@ function AccountSettings() {
               onchange={handleChange}
               placeholder="123456"
               value={formValues.currentPassword}
-              labelClassName="form_label"
-              containerClassName="form_group"
+              labelClassName="form__label"
+              containerClassName="form__group"
               showPassword={showPassword}
               togglePassword={togglePassword}
               inputClassName="w-full"
@@ -177,8 +177,8 @@ function AccountSettings() {
               inputClassName={`w-full ${
                 errorMessages.newPassword && 'border-red-500'
               } ${success && 'border-green-300'}`}
-              labelClassName="form_label"
-              containerClassName="form_group"
+              labelClassName="form__label"
+              containerClassName="form__group"
               showPassword={showPassword}
               togglePassword={togglePassword}
               buttonClassName="absolute bg-transparent top-2/4 right-[3%] -translate-x-[3%] -translate-y-2/4 cursor-pointer"
@@ -200,8 +200,8 @@ function AccountSettings() {
               inputClassName={`w-full ${
                 errorMessages.confirmPassword && 'border-red-500'
               } ${success && 'border-green-300'}`}
-              labelClassName="form_label"
-              containerClassName="form_group"
+              labelClassName="form__label"
+              containerClassName="form__group"
               showPassword={showPassword}
               togglePassword={togglePassword}
               buttonClassName="absolute bg-transparent top-2/4 right-[3%] -translate-x-[3%] -translate-y-2/4 cursor-pointer"

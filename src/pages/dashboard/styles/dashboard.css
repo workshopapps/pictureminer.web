@@ -1,0 +1,19 @@
+@tailwind components;
+
+@layer components {
+  .dashboardSidebarLinks {
+    @apply flex space-x-4 hover:bg-lightOrange py-3 mr-2 rounded-r-md hover:border-r-4 hover:border-solid hover:border-mainOrange;
+  }
+
+  .form__group {
+    @apply flex flex-col mt-6 w-full;
+  }
+
+  .form__label {
+    @apply text-small mb-2;
+  }
+
+  /* .dashboardSidebarLinks {
+    @apply flex space-x-4 hover:bg-lightOrange py-3 mr-2 rounded-r-md hover:border-r-4 hover:border-solid hover:border-mainOrange;
+  } */
+}
