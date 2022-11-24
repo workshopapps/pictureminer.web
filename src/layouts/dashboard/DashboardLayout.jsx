@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Outlet } from 'react-router-dom';
 // import { useGlobalContext } from '../../context/context';
-import UserContext from '../../context/UserProvider';
+import UserContext from '../../context/UserContext';
 import DashboardNavbar from './DashboardNavbar';
 import Sidebar from './Sidebar';
 

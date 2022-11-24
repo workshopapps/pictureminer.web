@@ -1,7 +1,7 @@
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
 import { getLocalStorage } from '../localStorage';
-import { useState,} from 'react';
+import { useState} from 'react';
 
 const useUploadImage = () => {
 

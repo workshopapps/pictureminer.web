@@ -7,7 +7,7 @@ import { Formik } from 'formik';
 import useLogin from '../../Hooks/useLogin';
 import UserContext from '../../context/UserContext';
 import { useNavigate } from 'react-router-dom';
-import { ImageUpload } from './ImageUpload';
+
 
 const initialValues = {
   Email: '',
@@ -54,7 +54,7 @@ const index = () => {
           );
         }}
       </Formik>
-      <ImageUpload />
+
 
     </div>
   );
