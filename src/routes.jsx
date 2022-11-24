@@ -43,7 +43,7 @@ import Privacypolicy from './pages/privacypolicy/privacypolicy';
 
 import ApiDocumentation from './pages/documentation/ApiDocumentation';
 
-import { useGlobalContext } from './context/context';
+// import { useGlobalContext } from './context/context';
 
 import Faq from './pages/FAQ/faq';
 
@@ -56,14 +56,13 @@ import ApplicationReceived from './pages/PartnerWithUs/page/ApplicationReceived'
 import ScrollToTop from './layouts/ScrollToTop';
 import Pricing from './pages/pricing/Pricing';
 const RoutesComponents = () => {
-  const {
-    state: {
-      // This has other key-value like loading, error etc
-      // eslint-disable-next-line no-unused-vars
-      login: { serverResponse: user },
-    },
-  } = useGlobalContext();
-
+  // const {
+  //   state: {
+  //     // This has other key-value like loading, error etc
+  //     // eslint-disable-next-line no-unused-vars
+  //     login: { serverResponse: user },
+  //   },
+  // } = useGlobalContext();
   return (
     <>
       <ScrollToTop>

@@ -59,7 +59,6 @@ export const signup = (username, password) => async (dispatch) => {
       { username, password },
       config
     );
-
     dispatch({
       type: USER_SIGNUP_SUCCESS,
       payload: data,
