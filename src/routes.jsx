@@ -153,11 +153,9 @@ const RoutesComponents = () => {
             <Route path="/billing" element={<Billing />} />
           </Route>
 
-          <Route path="/forgot-password" element={<ForgotPassword />}></Route>
+          <Route path="/forgot-password" element={<ForgotPassword />} />
 
-          <Route path="/reset-password" element={<ResetPassword />}>
-            {' '}
-          </Route>
+          <Route path="/reset-password" element={<ResetPassword />} />
         </Routes>
       </ScrollToTop>
     </>
