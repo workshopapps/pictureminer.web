@@ -11,13 +11,13 @@ const useLogin = () => {
     (data) => axios.post('http://44.211.169.234:9000/api/v1/login', data),
     {
       onSuccess: (data) => {
-        setUser(data.data);
-        setLocalStorage('user', data.data);
-        console.log(data.data, user);
+        setUser(data?.data);
+        setLocalStorage('user', data?.data);
+        console.log(data?.data, user);
 
       },
       onError: (error) => {
-        setError(error.response.data);
+        setError(error.response?.data);
       },
     }
 
