@@ -7,7 +7,7 @@ import axios from 'axios';
 const useLogin = () => {
   const [error, setError] = useState(null);
   const { setUser, user } = useContext(UserContext);
-  const { mutateAsync, isLoading, data, isError} = useMutation(
+  const { mutateAsync, isLoading, data, isError } = useMutation(
     (data) => axios.post('http://44.211.169.234:9000/api/v1/login', data),
     {
       onSuccess: (data) => {
