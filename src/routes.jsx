@@ -13,6 +13,7 @@ import {
 import CustomerStories from './pages/CustomerStories';
 import About from './pages/About/components/About';
 // import { CareerApplication } from './pages/career';
+import ProtectedRoutes from './ProtectedRoutes';
 import Termsofuse from './pages/terms-of-use/Termsofuse';
 import PartnerWithUs from './pages/PartnerWithUs/App';
 
@@ -131,7 +132,7 @@ const RoutesComponents = () => {
           <Route path="/" element={<Home />} />
           <Route path="/apply" element={<Apply />} />
           <Route path="/application" element={<ApplicationReceived />} />
-
+          <Route element = {<ProtectedRoutes/>}>
           <Route path="" element={<DashboardLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/images" element={<Images />} />
@@ -140,6 +141,7 @@ const RoutesComponents = () => {
 
             <Route path="/account-setup" element={<AccountSettings />} />
             <Route path="/billing" element={<Billing />} />
+          </Route>
           </Route>
 
         </Routes>
