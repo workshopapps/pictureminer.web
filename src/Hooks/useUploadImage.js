@@ -1,7 +1,7 @@
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
 import { getLocalStorage } from '../localStorage';
-import { useState,} from 'react';
+import { useState } from 'react';
 
 const useUploadImage = () => {
 
@@ -10,7 +10,7 @@ const useUploadImage = () => {
   const userToken = user ? user.data.Token : null;
   console.log(userToken);
   const config = {
-    headers: {
+  headers: {
       'Content-Type': 'multipart/form-data',
       Authorization: `Bearer ${userToken}`,
 
