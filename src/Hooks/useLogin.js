@@ -21,7 +21,7 @@ const useLogin = () => {
       },
     }
   );
-  return { mutate, isLoading, error };
+  return { mutate, isLoading, error, };
 };
 
 export default useLogin;

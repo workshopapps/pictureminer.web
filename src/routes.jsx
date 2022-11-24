@@ -56,6 +56,7 @@ import Apply from './pages/PartnerWithUs/page/Apply';
 import ApplicationReceived from './pages/PartnerWithUs/page/ApplicationReceived';
 import ScrollToTop from './layouts/ScrollToTop';
 import Pricing from './pages/pricing/Pricing';
+import ImageUpload from './pages/dashboard/ImageUpload';
 const RoutesComponents = () => {
   // const {
   //   state: {
@@ -150,6 +151,7 @@ const RoutesComponents = () => {
             <Route path="/dashboard" element={<Dashboard />} />
 
             <Route path="/images" element={<Images />} />
+            <Route path="/imageUpload" element={<ImageUpload />} />
 
             <Route path="/images/:imageId" element={<ImageDetails />} />
 
