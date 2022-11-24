@@ -54,6 +54,7 @@ import Home from './pages/PartnerWithUs/page/Home';
 import Apply from './pages/PartnerWithUs/page/Apply';
 import ApplicationReceived from './pages/PartnerWithUs/page/ApplicationReceived';
 import ScrollToTop from './layouts/ScrollToTop';
+import Signup from './pages/signup';
 const RoutesComponents = () => {
   const {
     state: {
@@ -69,6 +70,7 @@ const RoutesComponents = () => {
         <Routes>
           <Route path="" element={<Layout />}>
             <Route exact path="" element={<LandingPage />} />
+            <Route path="/signup" element={<Signup />} />
             <Route path="/demo" element={<MinergramDemo />} />
             <Route path="/About-us" element={<About />} />
             <Route path="/how-it-works" element={<HowItWorks />} />

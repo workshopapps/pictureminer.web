@@ -44,36 +44,44 @@ export const login = (username, password) => async (dispatch) => {
   }
 };
 
-export const signup = (username, password) => async (dispatch) => {
-  try {
-    dispatch({
-      type: USER_SIGNUP_REQUEST,
-    });
-    const config = {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    };
-    const { data } = await axios.post(
-      routes.signup,
-      { username, password },
-      config
-    );
+export const signup =
+  ({ firstName, lastName, email, username, password }) =>
+  async (dispatch) => {
+    try {
+      dispatch({
+        type: USER_SIGNUP_REQUEST,
+      });
+      const config = {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      };
+      const { data } = await axios.post(
+        routes.signup,
+        {
+          username,
+          email,
+          password,
+          first_name: firstName,
+          last_name: lastName,
+        },
+        config
+      );
 
-    dispatch({
-      type: USER_SIGNUP_SUCCESS,
-      payload: data,
-    });
-  } catch (error) {
-    dispatch({
-      type: USER_SIGNUP_FAIL,
-      payload:
-        error.response && error.response.data.message
-          ? error.response.data.message
-          : error.message,
-    });
-  }
-};
+      dispatch({
+        type: USER_SIGNUP_SUCCESS,
+        payload: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: USER_SIGNUP_FAIL,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
+    }
+  };
 
 export async function logout(dispatch) {
   dispatch({ type: USER_LOGOUT });
