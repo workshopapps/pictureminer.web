@@ -1,0 +1,177 @@
+$medium: 800px;
+$large: 1200px;
+
+
+.logincontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  margin-top: 20px;
+.invalidLogin {
+  color: red;
+  font-size: 12px;
+  margin-top: 10px;
+}
+  .dont {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 700px;
+  }
+.create {
+  color: #FF6C00;
+}
+    .inputlabel {
+    width: 300px;
+    
+  }
+
+    
+    .errorinput {
+      border: 1px solid #D64751;
+      width: 300px;
+      height: 40px;
+      border-radius: 5px;
+      padding: 0 10px;
+    }
+  .loginform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+    
+    .loginlogo {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 20px;
+    }
+    .logininput {
+      width: 300px;
+      height: 40px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 0 10px;
+    }
+
+    .logininput::placeholder {
+      color: #ccc;
+      padding: 0 10px;
+      font-size: 0.8rem;
+    }
+    
+    .loginbutton {
+      width: 300px;
+      height: 40px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #FF6C00;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #FF8C00;
+      }
+    }
+  }
+}
+
+.errortext {
+  color: red;
+    font-size: 12px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: 300px;
+}
+
+.forgot {
+  color : #FF6C00;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: 10px;
+  width: 300px;
+  margin-bottom: 40px;
+
+}
+
+
+@media screen and ( min-width: $medium ) and ( max-width: $large ) {
+  .loginform {
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+  }
+
+  .logincontainer {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+
+    .dont {
+      width: 300px;
+    }
+  }
+}
+  
+@media screen and ( min-width: $large ) {
+  .loginform {
+    width: 700px;
+    height: 400px;
+    background-color: #fff;
+  }
+
+.forgot {
+  width: 700px;
+}
+  .logincontainer {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+    .inputlabel {
+      width: 700px;
+    }
+
+    .invalidLogin {
+      width: 700px;
+      font-size: medium;
+      background-color: #fff;
+      width: 700px;
+      border: 1px solid #D64751;
+      border-radius: 5px;
+    }
+
+    .loginform {
+      width: 700px;
+      height: 400px;
+      background-color: #fff;
+      .logininput {
+        width: 700px;
+      }
+
+      .loginbutton {
+        width: 700px;
+      }
+    }
+    
+
+
+    .errorinput {
+      width: 700px;
+    }
+  }
+
+  .errortext {
+    width: 700px;
+  }
+}

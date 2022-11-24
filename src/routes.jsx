@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ErrorPage from './Error';
+import Login from './pages/Login';
 
 import {
   CareerApplication,
@@ -35,6 +36,7 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
 import Integrations from './pages/documentation/IntegrationPage/Integrations';
 import Web from './pages/documentation/WebPage/Web';
+
 import WhyTozilla from './pages/whyTozilla/WhyTozilla';
 
 import ImageDetails from './pages/dashboard/ImageDetails';
@@ -55,6 +57,9 @@ import Apply from './pages/PartnerWithUs/page/Apply';
 import ApplicationReceived from './pages/PartnerWithUs/page/ApplicationReceived';
 import ScrollToTop from './layouts/ScrollToTop';
 import Pricing from './pages/pricing/Pricing';
+import ImageUpload from './pages/dashboard/ImageUpload';
+import ForgotPassword from './pages/forgotPassword/ForgotPassword';
+import ResetPassword from './pages/resetPassword/ResetPassword';
 import Payment from './pages/pricing/Payment';
 const RoutesComponents = () => {
   // const {
@@ -84,10 +89,8 @@ const RoutesComponents = () => {
               path="/documentation/getting-started"
               element={<GettingStarted />}
             ></Route>
-            <Route
-              path="customer-stories"
-              element={<CustomerStories />}
-            ></Route>
+
+            <Route path="customer-stories" element={<CustomerStories />} />
             <Route path="support" element={<SupportPage />}></Route>
             <Route
               path="/documentation/integrations"
@@ -136,22 +139,30 @@ const RoutesComponents = () => {
             />
             <Route path="*" element={<ErrorPage />}></Route>
 
-            <Route path="why-tozilla" element={<WhyTozilla />} />
+            <Route path="/why-tozilla" element={<WhyTozilla />} />
+            <Route path="/login" element={<Login />} />
           </Route>
 
           <Route path="/" element={<Home />} />
           <Route path="/apply" element={<Apply />} />
           <Route path="/application" element={<ApplicationReceived />} />
+          {/*If your riute us priviate, use Protected Route */}
 
-          <Route path="" element={<DashboardLayout />}>
+          <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
+
             <Route path="/images" element={<Images />} />
+            <Route path="/imageUpload" element={<ImageUpload />} />
 
             <Route path="/images/:imageId" element={<ImageDetails />} />
 
             <Route path="/account-setup" element={<AccountSettings />} />
             <Route path="/billing" element={<Billing />} />
           </Route>
+
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+
+          <Route path="/reset-password" element={<ResetPassword />} />
         </Routes>
       </ScrollToTop>
     </>

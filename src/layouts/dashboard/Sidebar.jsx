@@ -4,6 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import {
   Element3,
   Gallery,
+  GalleryExport,
   TextalignJustifycenter,
   Triangle,
 } from 'iconsax-react';
@@ -51,6 +52,18 @@ const Sidebar = () => {
             <Gallery size="16" color="#1d1d1d" />
             Images
           </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? 'sidebar__links--active sidebar__links'
+                : 'sidebar__links'
+            }
+            to={'/imageUpload'}
+          >
+            <GalleryExport size="16" color="#1d1d1d" />
+            Image Upload
+          </NavLink>
+
           <NavLink
             className={({ isActive }) =>
               isActive

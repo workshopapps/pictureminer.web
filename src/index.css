@@ -22,7 +22,7 @@ code {
 } */
 
 .career-hero-bg {
-  background-image: url('./assets/career-landing-bg.png');
+  background-image: url('./assets/career-landing-bg.webp');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -98,7 +98,7 @@ code {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
+    -webkit-text-fill-color: transparent;
   }
 
   @media screen and (max-width: 768px) {
