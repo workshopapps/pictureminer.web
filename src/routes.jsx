@@ -45,6 +45,7 @@ import Faq from './pages/FAQ/faq';
 
 import Layout from './layouts/Layout';
 import HowItWorks from './pages/howItWorks/howItWorks';
+import ImageUpload from './pages/dashboard/ImageUpload';
 const RoutesComponents = () => {
   return (
     <>
@@ -110,6 +111,7 @@ const RoutesComponents = () => {
         <Route path="" element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/images" element={<Images />} />
+          <Route path="/imageUpload" element={<ImageUpload />} />
 
           <Route path="/images/:imageId" element={<ImageDetails />} />
 
