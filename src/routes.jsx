@@ -35,7 +35,7 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
 import Integrations from './pages/documentation/IntegrationPage/Integrations';
 import Web from './pages/documentation/WebPage/Web';
-import WhyTozilla from './pages/whyTozilla/WhyTozilla';
+import WhyTozilla from './pages/whyTozilla/whyTozilla';
 
 import ImageDetails from './pages/dashboard/ImageDetails';
 
@@ -43,7 +43,7 @@ import Privacypolicy from './pages/privacypolicy/privacypolicy';
 
 import ApiDocumentation from './pages/documentation/ApiDocumentation';
 
-import { useGlobalContext } from './context/context';
+// import { useGlobalContext } from './context/context';
 
 import Faq from './pages/FAQ/faq';
 
@@ -54,15 +54,15 @@ import Home from './pages/PartnerWithUs/page/Home';
 import Apply from './pages/PartnerWithUs/page/Apply';
 import ApplicationReceived from './pages/PartnerWithUs/page/ApplicationReceived';
 import ScrollToTop from './layouts/ScrollToTop';
+import Pricing from './pages/pricing/Pricing';
 const RoutesComponents = () => {
-  const {
-    state: {
-      // This has other key-value like loading, error etc
-      // eslint-disable-next-line no-unused-vars
-      login: { serverResponse: user },
-    },
-  } = useGlobalContext();
-
+  // const {
+  //   state: {
+  //     // This has other key-value like loading, error etc
+  //     // eslint-disable-next-line no-unused-vars
+  //     login: { serverResponse: user },
+  //   },
+  // } = useGlobalContext();
   return (
     <>
       <ScrollToTop>
@@ -73,6 +73,7 @@ const RoutesComponents = () => {
             <Route path="/About-us" element={<About />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/partner-with-us" element={<PartnerWithUs />}></Route>
+            <Route path="/pricing" element={<Pricing />} />
             <Route
               path="/documentation"
               element={<DocumentationHome />}

@@ -33,11 +33,13 @@ code {
     --grayModal: 0deg 0% 13%; /* #222222*/
     --lightOrange: 26deg 100% 90%; /* #FFE2CC */
     --mainOrange: 25deg 100% 50%; /* #FF6C00 */
+    --grey300: 0deg 0% 26%; /*#434343*/
+    --grey800: 0deg 0% 80%; /*#ccc*/
 
     /* fonts */
     --fs-xl: clamp(3rem, 1rem + 4.2vw, 4.5rem);
     --fs-lg: clamp(1.5rem, 1rem + 1.5vw, 2rem);
-    --fs: clamp(1.125rem, 0.875rem + 1vw, 1.875rem);
+    --fs: clamp(1.125rem, 0.875rem + 1vw, 1.575rem);
     --fs-sm: clamp(1rem, 0.7rem + 1vw, 1.1rem);
     --fs-xs: clamp(0.75rem, 0.5rem + 1vw, 1.2rem);
   }
@@ -71,45 +73,37 @@ code {
     @apply mx-auto lg:mx-0 px-4 md:px-0;
     width: clamp(375px, 90vw, 650px);
   }
-
-  .dashboardSidebarLinks {
-    @apply flex space-x-4 hover:bg-lightOrange py-3 mr-2 rounded-r-md hover:border-r-4 hover:border-solid hover:border-mainOrange;
-  }
-
-  .form_group {
-    @apply flex flex-col mt-6 w-full;
-  }
-
-  .form_label {
-    @apply text-small mb-2;
-  }
 }
 
 @layer components {
   .how-it-works-gradient-text {
-    position: 'absolute';
-    width: '95px';
-    left: '49px';
-    top: '-45px';
+    position: absolute;
+    width: 95px;
+    left: 49px;
+    top: -45px;
 
-    font-family: 'Axiforma';
-    font-style: 'normal';
-    font-weight: '700';
-    font-size: '72px';
-    line-height: '90px';
+    font-family: Axiforma;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 90px;
 
-    letter-spacing: '-0.02em';
+    letter-spacing: -0.02em;
 
-    background: 'linear-gradient(207.72deg, #686868 -7.41%, rgba(104, 104, 104, 0) 65.31%)';
-    -webkit-background-clip: 'text';
-    -webkit-text-fill-color: 'transparent';
-    background-clip: 'text';
-    -webkit-text-fill-color: 'transparent';
+    background: linear-gradient(
+      207.72deg,
+      #686868 -7.41%,
+      rgba(104, 104, 104, 0) 65.31%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   @media screen and (max-width: 768px) {
     .how-it-works-gradient-text {
-      font-size: '48px';
+      font-size: 48px;
     }
   }
 }
