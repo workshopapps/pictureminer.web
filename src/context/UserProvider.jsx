@@ -3,7 +3,6 @@ const UserContext = createContext({});
 
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState({ name: '', token: '' });
-
   return (
     <UserContext.Provider
       value={{ user: user, setUser: (user) => setUser(user) }}
