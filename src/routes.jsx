@@ -35,7 +35,7 @@ import LandingPage from './pages/LandingPage/LandingPage';
 import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
 import Integrations from './pages/documentation/IntegrationPage/Integrations';
 import Web from './pages/documentation/WebPage/Web';
-import WhyTozilla from './pages/whyTozilla/WhyTozilla';
+import WhyTozilla from './pages/whyTozilla/whyTozilla';
 
 import ImageDetails from './pages/dashboard/ImageDetails';
 
