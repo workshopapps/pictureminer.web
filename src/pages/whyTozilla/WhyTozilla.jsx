@@ -1,10 +1,9 @@
 import React from 'react';
 import { features } from './data/features';
-import Computer from './assets/computer.png';
+import Computer from './assets/computer.webp';
 import { testimonials } from './data/testimonials';
 import Testimonial from './components/testimonial';
 import Feature from './components/feature';
-
 
 function WhyTozilla() {
   return (
@@ -33,7 +32,7 @@ function WhyTozilla() {
       </section>
       <section className="md:gap-x-10 gap-y-5 flex flex-wrap justify-center lg:justify-start mx-[114px] md:mx-[196px] lg:mx-[130px] mt-[18px] md:mt-[58px] mb-11 md:mb-[74px] lg:my-[120px]">
         {features.map((feature) => (
-          <Feature key={feature.title} {...feature}/>
+          <Feature key={feature.title} {...feature} />
         ))}
       </section>
       <section className="py-[15px] md:py-[45px] lg:py-20 px-[27px] md:px-20 lg:px-[158px] bg-[#E0E0E0]">
@@ -46,9 +45,9 @@ function WhyTozilla() {
           </p>
         </div>
         <div className="flex gap-x-[30px] md:gap-x-5 lg:gap-x-[21px] md:mt-[15px] lg:mt-10">
-            {testimonials.map((testimonial, idx) => (
-                <Testimonial key={idx} {...testimonial}/>
-            ))}
+          {testimonials.map((testimonial, idx) => (
+            <Testimonial key={idx} {...testimonial} />
+          ))}
         </div>
       </section>
     </main>
