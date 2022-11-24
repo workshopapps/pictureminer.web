@@ -1,4 +1,4 @@
-import { useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import UserContext from './UserContext';
 import { getLocalStorage } from '../localStorage';
 const UserProvider = ({ children }) => {
