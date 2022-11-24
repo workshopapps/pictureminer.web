@@ -7,7 +7,8 @@ import closeIcon from '../../assets/dashboardImageDetails/close-icon.webp';
 import saveIcon from '../../assets/dashboardImageDetails/download-icon.webp';
 import trashIcon from '../../assets/dashboardImageDetails/trash-icon.webp';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ImageDetails = () => {
   const TAG_LIST = [
@@ -17,10 +18,15 @@ const ImageDetails = () => {
     { title: 'Sky', percentage: '10%' },
   ];
 
+  const navigate = useNavigate();
+
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false);
   const [showSaveSuccessModal, setShowSaveSuccessModal] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+
+  // const [questionList, setQuestionList] = useState(['How are you?']);
+  const questionInputRef = useRef();
 
   const toggleDeleteModal = () => {
     setShowDeleteModal((prev) => !prev);
@@ -39,10 +45,41 @@ const ImageDetails = () => {
     setShowMenu((prev) => !prev);
   };
 
+  const onSubmitHandler = (event) => {
+    event.preventDefault();
+
+    // setQuestionList((prevList) => [
+    //   ...prevList,
+    //   questionInputRef.current.value,
+    // ]);
+  };
+
   return (
-    <main className="pt-12">
+    <main className="">
       <section className="relative flex justify-between items-center">
-        <h2 className="font-bold text-3xl">Picture ID: #123AK</h2>
+        <div className="flex items-center gap-4">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            className="mb-1 cursor-pointer"
+            onClick={() => {
+              navigate('/images');
+            }}
+          >
+            <path
+              d="M15.0038 19.9201L8.48375 13.4001C7.71375 12.6301 7.71375 11.3701 8.48375 10.6001L15.0038 4.08008"
+              stroke="#1D1D1D"
+              strokeWidth="1.5"
+              strokeMiterlimit="10"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <h2 className="font-bold text-2xl"> Picture ID: #123AK</h2>
+        </div>
 
         <div className="hidden gap-4 md:flex">
           <Button
@@ -50,9 +87,9 @@ const ImageDetails = () => {
               background: '#ff6c00',
               color: 'white',
               padding: '1rem',
-              width: '14rem',
+              width: '10rem',
               borderRadius: '.5rem',
-              fontSize: '1.4rem',
+              fontSize: '.9rem',
               fontWeight: '500',
             }}
             text="Save as Json"
@@ -63,9 +100,9 @@ const ImageDetails = () => {
               border: '1px solid #ff6c00',
               color: '#ff6c00',
               padding: '1rem 2rem',
-              width: '14rem',
+              width: '10rem',
               borderRadius: '.5rem',
-              fontSize: '1.4rem',
+              fontSize: '.9rem',
               fontWeight: '500',
             }}
             text="Delete"
@@ -119,7 +156,7 @@ const ImageDetails = () => {
                 }}
                 className="p-4 flex items-center gap-4 cursor-pointer justify-between"
               >
-                <span className="text-xl">Save a Json</span>
+                <span className="">Save a Json</span>
                 <img src={saveIcon} className="" alt="save icon" />
               </div>
               <div
@@ -129,7 +166,7 @@ const ImageDetails = () => {
                 }}
                 className="p-4 border-t text-[#f04438] cursor-pointer flex items-center justify-between gap-4"
               >
-                <span className="text-xl">Delete</span>
+                <span className="">Delete</span>
                 <img src={trashIcon} alt="delete icon" />
               </div>
             </div>
@@ -145,8 +182,8 @@ const ImageDetails = () => {
               alt="Image descr"
             />
           </div>
-          <div className="bg-[#f8f8f8] md:w-1/2 w rounded-md p-6 flex flex-col gap-8">
-            <h3 className="font-[500] text-3xl">Image description</h3>
+          <div className="bg-[#f8f8f8] md:w-1/2 w rounded-md p-6 flex flex-col gap-8 text-md">
+            <h3 className="font-[500] text-xl">Image description</h3>
 
             <p>
               This is an image of EKO hotel and suites, a popular 5 star hotel
@@ -161,11 +198,11 @@ const ImageDetails = () => {
               about the hotel.
             </p>
 
-            <div className="flex flex-col gap-6 mt-8 items-center md:flex-row">
+            <div className="flex flex-col gap-6 mt-8 md:flex-row">
               <p>Was this article helpful</p>
 
               <div className="flex gap-4">
-                <div className="rounded-full bg-[#ffe2cc] text-black flex items-center text-2xl font-normal gap-2 p-4">
+                <div className="rounded-full bg-[#ffe2cc] text-black flex items-center font-normal gap-2 py-2 px-4">
                   Yes
                   <svg
                     width="15"
@@ -178,7 +215,7 @@ const ImageDetails = () => {
                     <path d="M11.0392 4.99108C10.5597 4.99108 10.2531 4.48007 10.4787 4.05693L11.6132 1.92977C12.002 1.20075 11.4737 0.320312 10.6475 0.320312C10.3573 0.320312 10.0789 0.435618 9.87367 0.640852L6.25304 4.26147C5.7859 4.72864 5.52344 5.36225 5.52344 6.02291V11.5302C5.52344 12.9059 6.63872 14.0212 8.01451 14.0212H13.1724C14.0226 14.0212 14.7656 13.4472 14.9802 12.6245L16.4306 7.06493C16.4661 6.92845 16.4842 6.78799 16.4842 6.64696C16.4842 5.73245 15.7428 4.99108 14.8283 4.99108H11.0392Z" />
                   </svg>
                 </div>
-                <div className="rounded-full bg-[#ffe2cc] text-black flex items-center text-2xl font-normal gap-2 p-4">
+                <div className="rounded-full bg-[#ffe2cc] text-black flex items-center font-normal gap-2 py-2 px-4">
                   No{' '}
                   <svg
                     width="15"
@@ -206,7 +243,7 @@ const ImageDetails = () => {
       <section className="">
         <div className="flex flex-col gap-6 md:flex-row">
           <div className=" p-6 bg-[#f8f8f8] rounded-lg md:w-1/2">
-            <h3 className="text-3xl font-[500]">Generated Tags</h3>
+            <h3 className="text-lg font-[500]">Generated Tags</h3>
 
             <div className="flex flex-col gap-4">
               {TAG_LIST.map((tag, index) => (
@@ -229,15 +266,26 @@ const ImageDetails = () => {
             </div>
           </div>
           <div className=" p-6 bg-[#f8f8f8] rounded-lg md:w-1/2">
-            <h3 className="text-2xl">Query AI</h3>
+            <h3 className="text-lg mb-2">Query AI</h3>
 
-            <form className="w-full">
+            <form className="w-full" onSubmit={onSubmitHandler}>
               <input
+                ref={questionInputRef}
                 type="text"
                 placeholder="Ask any question?"
-                className="border p-4 rounded-lg w-full outline-none text-xl"
+                className="border p-4 rounded-lg w-full outline-none text-sm"
               />
             </form>
+
+            <div className="flex flex-col gap-4 py-4">
+              <p>Question: Is there a tree in this image?</p>
+
+              <p>Answer: No there are none</p>
+
+              {/* {questionList.map((question, index) => {
+                <p key={index}>Question: {question}</p>;
+              })} */}
+            </div>
           </div>
         </div>
       </section>
@@ -249,7 +297,7 @@ const ImageDetails = () => {
             <div className="flex flex-col items-center justify-center gap-8 p-4">
               <img className="" src={warningIcon} alt="warning icon" />
 
-              <h2 className="text-[1.7rem] font-[500]">Delete Image</h2>
+              <h2 className="text-xl font-[500]">Delete Image</h2>
 
               <p className="text-[#797b89] text-center text-md">
                 Are you sure you want to delete this image? This action cannot
@@ -261,10 +309,10 @@ const ImageDetails = () => {
                   styles={{
                     border: '1px solid #8e8e8e',
                     color: '#8e8e8e',
-                    padding: '1rem 2rem',
+                    padding: '.7rem 1.4rem',
                     width: '100%',
                     borderRadius: '.5rem',
-                    fontSize: '1.5rem',
+                    fontSize: '.9rem',
                     fontWeight: '500',
                   }}
                   text="Cancel"
@@ -275,10 +323,10 @@ const ImageDetails = () => {
                   styles={{
                     background: '#f04438',
                     color: 'white',
-                    padding: '1rem',
+                    padding: '.7rem 1.4rem',
                     width: '100%',
                     borderRadius: '.5rem',
-                    fontSize: '1.5rem',
+                    fontSize: '.9rem',
                     fontWeight: '500',
                   }}
                   text="Delete"
@@ -294,10 +342,10 @@ const ImageDetails = () => {
         <>
           <Backdrop />
           <Modal>
-            <div className=" flex flex-col items-center justify-center gap-8 p-4">
+            <div className=" flex flex-col items-center justify-center gap-8 p-2">
               <div className="flex w-full justify-end">
                 <div
-                  className="w-14 cursor-pointer"
+                  className="w-10 cursor-pointer"
                   onClick={toggleDeleteSuccessModal}
                 >
                   <img className="w-full" src={closeIcon} alt="close icon" />
@@ -306,7 +354,7 @@ const ImageDetails = () => {
 
               <img className="" src={successIcon} alt="success icon" />
 
-              <h2 className="text-[1.7rem] font-[500]">Successful</h2>
+              <h2 className="text-xl font-[500]">Successful</h2>
 
               <p className="text-[#797b89] text-center text-md">
                 Image successfully deleted
@@ -317,10 +365,10 @@ const ImageDetails = () => {
                   styles={{
                     background: '#ff6c00',
                     color: 'white',
-                    padding: '1rem',
+                    padding: '.7rem 1.4rem',
                     width: '15rem',
                     borderRadius: '.5rem',
-                    fontSize: '1.5rem',
+                    fontSize: '.9rem',
                     fontWeight: '500',
                   }}
                   text="Done"
@@ -335,10 +383,10 @@ const ImageDetails = () => {
         <>
           <Backdrop />
           <Modal>
-            <div className=" flex flex-col items-center justify-center gap-8 p-4">
+            <div className=" flex flex-col items-center justify-center gap-8 p-2">
               <div className="flex w-full justify-end">
                 <div
-                  className="w-14 cursor-pointer"
+                  className="w-10 cursor-pointer"
                   onClick={toggleSaveSuccessModal}
                 >
                   <img className="w-full" src={closeIcon} alt="close icon" />
@@ -347,7 +395,7 @@ const ImageDetails = () => {
 
               <img className="" src={successIcon} alt="success icon" />
 
-              <h2 className="text-[1.7rem] font-[500]">Successful</h2>
+              <h2 className="text-xl font-[500]">Successful</h2>
 
               <p className="text-[#797b89] text-center text-md">
                 Image successfully saved
@@ -358,10 +406,10 @@ const ImageDetails = () => {
                   styles={{
                     background: '#ff6c00',
                     color: 'white',
-                    padding: '1rem',
+                    padding: '.7rem 1.4rem',
                     width: '15rem',
                     borderRadius: '.5rem',
-                    fontSize: '1.5rem',
+                    fontSize: '.9rem',
                     fontWeight: '500',
                   }}
                   text="Done"

@@ -7,13 +7,15 @@ import './styles/workflow.scss';
 import './App.css';
 import './index.css';
 
+import { AppProvider } from './context/context';
+
 function IndexPage() {
   return (
-    <>
+    <AppProvider>
       <BrowserRouter>
         <RoutesComponents />
       </BrowserRouter>
-    </>
+    </AppProvider>
   );
 }
 
