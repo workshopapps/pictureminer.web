@@ -1,15 +1,67 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { DocumentCopy } from 'iconsax-react';
 import Button from '../../components/ui/Button';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import UserContext from '../../context/UserProvider';
+axios.defaults.baseURL = 'http://44.211.169.234:9000/api/v1/';
 // import copy from 'copy-to-clipboard';
 const Dashboard = () => {
+  const { user } = useContext(UserContext);
+  const [dashboarddata, setDashboardData] = useState('');
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setDashboardData((prev) => {
+          return {
+            ...prev,
+            loading: true,
+          };
+        });
+
+        const response = await axios.get('mine-service/get-all', {
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            Authorization: `Bearer ${user.token}`,
+          },
+        });
+
+        if (response) {
+          setDashboardData((prev) => {
+            return {
+              ...prev,
+              loading: false,
+            };
+          });
+        }
+      } catch (error) {
+        console.log(error);
+        // setDatal((prev) => {
+        //   return {
+        //     ...prev,
+        //     error: 'Please try again or Log in and log out',
+        //     loading: false,
+        //   }
+        // })
+      } finally {
+        // setDatal((prev) => {
+        //   return {
+        //     ...prev,
+        //     loading: false,
+        //   }
+        // })
+      }
+    };
+    fetchData();
+  }, []);
   return (
     <div className="dashboard">
       <div className="dashboard__head">
         <div className="images__card">
           <div className="flex gap-6">
             <span style={{ fontSize: '16px' }}>Images</span>
+            {dashboarddata.logo}
           </div>
           <h3 style={{ marginTop: '20px', fontSize: '24px' }}>0</h3>
         </div>
