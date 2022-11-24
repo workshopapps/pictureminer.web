@@ -7,7 +7,7 @@ import UserContext from '../../context/UserContext';
 axios.defaults.baseURL = 'http://44.211.169.234:9000/api/v1/';
 // import copy from 'copy-to-clipboard';
 const Dashboard = () => {
-  const { user } = useContext(UserContext);
+  const  { user } = useContext(UserContext);
   const [dashboarddata, setDashboardData] = useState('');
   useEffect(() => {
     const fetchData = async () => {
@@ -23,7 +23,7 @@ const Dashboard = () => {
           headers: {
             'Content-Type': 'application/json',
             Accept: 'application/json',
-            Authorization: `Bearer ${user.token}`,
+            Authorization: `Bearer ${user.data.Token}`,
           },
         });
 
