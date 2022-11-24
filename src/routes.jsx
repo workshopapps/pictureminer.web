@@ -61,6 +61,9 @@ import ImageUpload from './pages/dashboard/ImageUpload';
 import ForgotPassword from './pages/forgotPassword/ForgotPassword';
 import ResetPassword from './pages/resetPassword/ResetPassword';
 import Payment from './pages/pricing/Payment';
+import Signup from './pages/signup';
+import { AppProvider } from './context/context';
+
 const RoutesComponents = () => {
   // const {
   //   state: {
@@ -70,11 +73,12 @@ const RoutesComponents = () => {
   //   },
   // } = useGlobalContext();
   return (
-    <>
+    <AppProvider>
       <ScrollToTop>
         <Routes>
           <Route path="" element={<Layout />}>
             <Route exact path="" element={<LandingPage />} />
+            <Route path="/signup" element={<Signup />} />
             <Route path="/demo" element={<MinergramDemo />} />
             <Route path="/About-us" element={<About />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
@@ -165,7 +169,7 @@ const RoutesComponents = () => {
           <Route path="/reset-password" element={<ResetPassword />} />
         </Routes>
       </ScrollToTop>
-    </>
+    </AppProvider>
   );
 };
 
