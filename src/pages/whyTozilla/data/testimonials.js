@@ -1,4 +1,4 @@
-import Person1 from '../assets/Person-1.png';
+import Person1 from '../assets/Person-1.webp';
 
 
 export const testimonials = [

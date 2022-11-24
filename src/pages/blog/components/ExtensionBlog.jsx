@@ -1,6 +1,6 @@
 import React from 'react';
 import BlogPage from './BlogPage';
-import image from '../assets/image1.png';
+import image from '../assets/image1.webp';
 
 const ExtensionBlog = () => {
   return (

@@ -2196,7 +2196,7 @@ code {
 } */
 
 .career-hero-bg {
-  background-image: url('./assets/career-landing-bg.png');
+  background-image: url('./assets/career-landing-bg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
