@@ -50,15 +50,12 @@ import Faq from './pages/FAQ/faq';
 
 import Layout from './layouts/Layout';
 import HowItWorks from './pages/howItWorks/howItWorks';
-<<<<<<< HEAD
 import SupportPage from './pages/support';
 import Home from './pages/PartnerWithUs/page/Home';
 import Apply from './pages/PartnerWithUs/page/Apply';
 import ApplicationReceived from './pages/PartnerWithUs/page/ApplicationReceived';
 import ScrollToTop from './layouts/ScrollToTop';
 import Pricing from './pages/pricing/Pricing';
-=======
->>>>>>> cb3d6a09629958356b2a986735a36ffa8d39b314
 import ImageUpload from './pages/dashboard/ImageUpload';
 const RoutesComponents = () => {
   // const {
@@ -70,7 +67,6 @@ const RoutesComponents = () => {
   // } = useGlobalContext();
   return (
     <>
-<<<<<<< HEAD
       <ScrollToTop>
         <Routes>
           <Route path="" element={<Layout />}>
@@ -167,78 +163,6 @@ const RoutesComponents = () => {
 
         </Routes>
       </ScrollToTop>
-=======
-      <Routes>
-        <Route path="" element={<Layout />}>
-          <Route exact path="" element={<LandingPage />} />
-          <Route path="/demo" element={<MinergramDemo />} />
-          <Route path="/About-us" element={<About />} />
-          <Route path="/how-it-works" element={<HowItWorks />} />
-          <Route path="/documentation" element={<DocumentationHome />}></Route>
-          <Route
-            path="/documentation/getting-started"
-            element={<GettingStarted />}
-          ></Route>
-          <Route path="customer-stories" element={<CustomerStories />}></Route>
-          <Route
-            path="/documentation/integrations"
-            element={<Integrations />}
-          ></Route>
-          <Route path="/documentation/web" element={<Web />}></Route>
-          <Route
-            path="/documentation/installations"
-            element={<Installations />}
-          ></Route>
-
-          <Route path="/careers" element={<CareerLanding />} />
-
-          <Route path="/blog" element={<BlogList />} />
-          <Route path="/blog-page" element={<ExtensionBlog />} />
-          <Route
-            path="/documentation/examples"
-            element={<ExamplePage />}
-          ></Route>
-          <Route
-            path="/documentation/utilities"
-            element={<UtilitiesPage />}
-          ></Route>
-          <Route
-            path="/documentation/apis"
-            element={<ApiDocumentation />}
-          ></Route>
-
-          <Route path="/careers/application" element={<CareerApplication />} />
-          <Route path="/careers/more-jobs" element={<CareerMoreJobs />} />
-          <Route
-            path="/careers/jobs/singles"
-            element={<CareerSingleJobView />}
-          />
-          <Route path="/terms-of-use" element={<Termsofuse />}></Route>
-          <Route path="/privacy-policy" element={<Privacypolicy />}></Route>
-          <Route path="/faq" element={<Faq />}></Route>
-
-          <Route path="/careers/more-jobs" element={<CareerMoreJobs />} />
-          <Route
-            path="/careers/jobs/singles"
-            element={<CareerSingleJobView />}
-          />
-          <Route path="*" element={<ErrorPage />}></Route>
-
-          <Route path="why-tozilla" element={<WhyTozilla />} />
-        </Route>
-
-        <Route path="" element={<DashboardLayout />}>
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/images" element={<Images />} />
-          <Route path="/imageUpload" element={<ImageUpload />} />
-
-          <Route path="/images/:imageId" element={<ImageDetails />} />
-
-          <Route path="/account-setup" element={<AccountSettings />} />
-          <Route path="/billing" element={<Billing />} />
-        </Route>
-      </Routes>
->>>>>>> cb3d6a09629958356b2a986735a36ffa8d39b314
     </>
   );
 };

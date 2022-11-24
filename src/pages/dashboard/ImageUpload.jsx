@@ -4,7 +4,7 @@ import { images } from '../../Constants';
 // import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import useUploadImage from '../../Hooks/useUploadImage';
-
+import Button from '../../components/ui/Button';
 const ImageUpload = () => {
   const { mutate, response } = useUploadImage();
 
@@ -29,7 +29,12 @@ const ImageUpload = () => {
   const onImageChange = (e) => {
     setImagesUpload([...e.target.files]);
   };
-
+  const handleImageSubmit = () => {
+    console.log('clicked');
+    const formData = new FormData();
+    imagesUpload.forEach((image) => formData.append('image', image));
+    mutate(formData);
+  };
   return (
     <div className="mx-auto">
       <div className="hero_upload">
@@ -60,6 +65,10 @@ const ImageUpload = () => {
             <img key={imagesUpload.length} src={imageSrc} className="w-36" />
           ))}
         </div>
+       <button onClick={handleImageSubmit}>
+        upload
+       </button>
+{response && <p>{response.data.text_content}</p>}
       </div>
     </div>
   );
