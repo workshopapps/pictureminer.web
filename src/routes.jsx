@@ -39,7 +39,6 @@ import Web from './pages/documentation/WebPage/Web';
 
 import WhyTozilla from './pages/whyTozilla/WhyTozilla';
 
-
 import ImageDetails from './pages/dashboard/ImageDetails';
 
 import Privacypolicy from './pages/privacypolicy/privacypolicy';
@@ -61,6 +60,7 @@ import Pricing from './pages/pricing/Pricing';
 import ImageUpload from './pages/dashboard/ImageUpload';
 import ForgotPassword from './pages/forgotPassword/ForgotPassword';
 import ResetPassword from './pages/resetPassword/ResetPassword';
+import Payment from './pages/pricing/Payment';
 const RoutesComponents = () => {
   // const {
   //   state: {
@@ -79,7 +79,8 @@ const RoutesComponents = () => {
             <Route path="/About-us" element={<About />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/partner-with-us" element={<PartnerWithUs />}></Route>
-            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/pricing" element={<Pricing />}></Route>
+            <Route path="/pricing/:paymentPlan" element={<Payment />} />
             <Route
               path="/documentation"
               element={<DocumentationHome />}
@@ -89,10 +90,7 @@ const RoutesComponents = () => {
               element={<GettingStarted />}
             ></Route>
 
-            <Route
-              path="customer-stories"
-              element={<CustomerStories />}
-            />
+            <Route path="customer-stories" element={<CustomerStories />} />
             <Route path="support" element={<SupportPage />}></Route>
             <Route
               path="/documentation/integrations"
@@ -141,8 +139,8 @@ const RoutesComponents = () => {
             />
             <Route path="*" element={<ErrorPage />}></Route>
 
-            {/* <Route path="why-tozilla" element={<WhyTozilla />} /> */}
-            <Route path= '/login' element={<Login />} />
+            <Route path="/why-tozilla" element={<WhyTozilla />} />
+            <Route path="/login" element={<Login />} />
           </Route>
 
           <Route path="/" element={<Home />} />
@@ -150,8 +148,7 @@ const RoutesComponents = () => {
           <Route path="/application" element={<ApplicationReceived />} />
           {/*If your riute us priviate, use Protected Route */}
 
-          <Route  element={<DashboardLayout />}>
-
+          <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
 
             <Route path="/images" element={<Images />} />
@@ -161,14 +158,11 @@ const RoutesComponents = () => {
 
             <Route path="/account-setup" element={<AccountSettings />} />
             <Route path="/billing" element={<Billing />} />
-
           </Route>
-
 
           <Route path="/forgot-password" element={<ForgotPassword />} />
 
           <Route path="/reset-password" element={<ResetPassword />} />
-
         </Routes>
       </ScrollToTop>
     </>
