@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import LoginForm from './LoginForm';
 import LoginHeader from './LoginHeader';
-import LoginSchema from './schema';
+// import LoginSchema from './schema';
 import './Login.scss';
 import { Formik } from 'formik';
 import useLogin from '../../hooks/useLogin';
@@ -35,7 +35,7 @@ const index = () => {
         onSubmit={(values) => {
           onSubmit(values);
         }}
-        validationSchema={LoginSchema}
+        // validationSchema={LoginSchema}
       >
         {({ handleSubmit }) => {
           return (

@@ -2,8 +2,9 @@ import { Filter } from 'iconsax-react';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const DashboardNavbar = ({ user }) => {
+const DashboardNavbar = ({ data }) => {
   const [showMenu, setShowMenu] = useState(false);
+  console.log(data);
   return (
     <div className="navbar">
       <div className="form__input">
@@ -14,8 +15,8 @@ const DashboardNavbar = ({ user }) => {
       </div>
       <div className="user">
         <div className="user__grid">
-          <div className="user_image">K</div>
-          <p className="user_name">Ken Akand</p>
+          <div className="user_image">{data ? data.Username[0] : null}</div>
+          <p className="user_name">{data ? data.Username : null}</p>
           <p className="user_number">Admin ID No: 12345</p>
         </div>
         <div

@@ -3,7 +3,7 @@ import MainImg from '../images/About-main-img.webp';
 import FirstImg from '../images/About-first-img.webp';
 import SecondImg from '../images/About-second-img.webp';
 import ourMission from '../images/About-mission-img.webp';
-import '../../../styles/layout/about.css';
+import '../../../styles/layout/about.scss';
 
 export default function About() {
   return (
