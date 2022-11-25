@@ -20,7 +20,7 @@ const Support = () => {
         <SupportCard
           img={mine}
           title="Getting Started"
-          word="Learn how to navigate Tozilla and get the most out of  it"
+          word="Learn how to navigate Minergram and get the most out of  it"
           article="2 articles"
         />
         <SupportCard
@@ -38,7 +38,7 @@ const Support = () => {
         <SupportCard
           img={product}
           title="Productivity"
-          word="Learn how Tozilla increases work output using to-do lists and reminder"
+          word="Learn how Minergram increases work output using to-do lists and reminder"
           article="2 articles"
         />
         <SupportCard

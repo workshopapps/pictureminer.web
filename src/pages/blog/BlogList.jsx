@@ -18,7 +18,7 @@ const BlogList = () => {
           <h1 className="text-4xl font-semibold mb-3">Our Blog</h1>
           <p className="text-base leading-relaxed font-medium">
             Launching our interactive image recognition API documentation with
-            Tozilla. You can use API to perform high-volume reverse image search
+            Minergram. You can use API to perform high-volume reverse image search
             manually in your browser.
           </p>
         </div>
@@ -50,50 +50,50 @@ const BlogList = () => {
           <div className="w-full md:w-[35%] lg:w-[30%] text-xs mx-auto md:mx-0">
             <BlogCard
               image={image1}
-              imageText="The Future of the Tozilla Chrome Extention"
+              imageText="The Future of the Minergram Chrome Extention"
               imageTextClassName="absolute bottom-5 z-50 ml-4 text-white text-start font-bold text-base"
-              text="One of the easiest  and most popular way to use tozilla to search the web is with our offical browser extension. Image search is
+              text="One of the easiest  and most popular way to use Minergram to search the web is with our offical browser extension. Image search is
               our passion."
             />
           </div>
           <div className="w-full md:w-[35%] lg:w-[30%] text-xs mx-auto md:mx-0">
             <BlogCard
               image={image2}
-              imageText="Introducing profile page for all Tozilla APIs"
+              imageText="Introducing profile page for all Minergram APIs"
               imageTextClassName="absolute bottom-5 z-50 ml-4 text-white text-start font-bold text-base"
-              text="We are excited to launch our  client profile pages and anlytics for all our tozilla  APIs.
+              text="We are excited to launch our  client profile pages and anlytics for all our Minergram  APIs.
               You can use the APIS analytics page to  search engine."
             />
           </div>
           <div className="w-full md:w-[35%] lg:w-[30%] text-xs mx-auto md:mx-0">
             <BlogCard
               image={image3}
-              imageText="How to sign up for the Tozilla API"
+              imageText="How to sign up for the Minergram API"
               imageTextClassName="absolute bottom-5 z-50 ml-4 text-white text-start font-bold text-base"
-              text="New feature to the Tozilla API: The ability to automatically top up your
-              account so you never run out of searches. Changes how you sign up for the tozilla API"
+              text="New feature to the Minergram API: The ability to automatically top up your
+              account so you never run out of searches. Changes how you sign up for the Minergram API"
             />
           </div>
           <div className="w-full md:w-[35%] lg:w-[30%] text-xs mx-auto md:mx-0">
             <BlogCard
               image={image4}
-              imageText="How to sign up for the Tozilla API"
+              imageText="How to sign up for the Minergram API"
               imageTextClassName="absolute bottom-5 z-50 ml-4 text-white text-start font-bold text-base"
-              text="New feature to the Tozilla API: The ability to automatically top up your
-              account so you never run out of searches. Changes how you sign up for the tozilla API"
+              text="New feature to the Minergram API: The ability to automatically top up your
+              account so you never run out of searches. Changes how you sign up for the Minergram API"
             />
           </div>
           <div className="w-full md:w-[35%] lg:w-[30%] text-xs mx-auto md:mx-0">
             <BlogCard
               image={image5}
-              text="How to verify item images with Tozilla"
+              text="How to verify item images with Minergram"
             />
           </div>
           <div className="w-full md:w-[35%] lg:w-[30%] text-xs mx-auto md:mx-0">
             <BlogCard
               image={image6}
               text="Happy Holiday from all of
-              us at Tozilla."
+              us at Minergram."
             />
           </div>
           <div className="w-full md:w-[35%] lg:w-[30%] text-xs mx-auto md:mx-0">
@@ -107,7 +107,7 @@ const BlogList = () => {
             <BlogCard
               image={image8}
               text="How to find high resolution
-              images with Tozilla."
+              images with Minergram."
             />
           </div>
           <div className="w-full md:w-[35%] lg:w-[30%] text-xs mx-auto md:mx-0">

@@ -128,7 +128,7 @@ const Faq = () => {
           aria-labelledby="headingThree5"
         >
           <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
-            There are many uses for ToZilla, but here are a few:
+            There are many uses for Minergram, but here are a few:
             <ol>
               <li>Captioning</li>
               <li>Image Recognition</li>
@@ -352,17 +352,17 @@ const Faq = () => {
         >
           <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
             <p className="py-3">
-              File type: ToZilla accepts a variety of formats, including, but
+              File type: Minergram accepts a variety of formats, including, but
               not limited to, JPEG, PNG, GIF, BMP, TIFF, and WebP images.
             </p>
             <p className="py-3">
-              Image dimensions: ToZilla works best with images that are at least
+              Image dimensions: Minergram works best with images that are at least
               300 pixels in either dimension.
             </p>
             <p className="py-3">vFile size: 20 megabytes is the maximum file size per image.</p>
             <p className="py-3">
               Watermarked images: For best results, visibly watermarked images
-              should be avoided as ToZilla may search for the watermark and not
+              should be avoided as Minergram may search for the watermark and not
               the image itself.
             </p>
             <p className="py-3">
@@ -590,9 +590,9 @@ const Faq = () => {
         >
           <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
             <p>
-              Removing your images from ToZilla is easy and hassle-free. Just
+              Removing your images from Minergram is easy and hassle-free. Just
               select the files you want to remove and click the delete button.
-              This image(s) is then removed from ToZilla servers.
+              This image(s) is then removed from Minergram servers.
             </p>
             <p>
               If your image appears anywhere else on the web and you want it

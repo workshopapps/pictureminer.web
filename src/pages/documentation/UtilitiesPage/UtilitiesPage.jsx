@@ -33,20 +33,20 @@ const UtilitiesPage = () => {
               only one object per request.The Minergram API differs for every
               account as we release new versions and tailor functionality. Log
               in to see docs customized to your version of the API, with your
-              test key and data. Get started with Tozilla’s Utility
+              test key and data. Get started with Minergram’s Utility
             </p>
           </div>
           <div className="utilities_overview" id="overview">
             <h1>Utilities</h1>
             <p className="mb-3">
-              The Tozilla API is organized around REST. Our API has predictable
+              The Minergram API is organized around REST. Our API has predictable
               resource-oriented URLs,accepts form-encoded request bodies,
               returns JSON-encoded responses, and uses standard HTTP response
               codes, authentication, and verbs.
             </p>
             <p className="mb-3">
-              The Tozilla API doesnt support bulk updates. You can work on only
-              one object per request.The Tozilla API differs for every account
+              The Minergram API doesnt support bulk updates. You can work on only
+              one object per request.The Minergram API differs for every account
               as we release new versions and tailor functionality. Log in to see
               docs customized to your version of the API, with your test key and
               data.

@@ -41,7 +41,7 @@ import Healthcare from './pages/LandingPage/HealthcarePage/Healthcare';
 import ExternalDemoPage from './pages/LandingPage/ExternalPage/ExternalPage';
 import Integrations from './pages/documentation/IntegrationPage/Integrations';
 import Web from './pages/documentation/WebPage/Web';
-import WhyTozilla from './pages/whyTozilla/WhyTozilla';
+import WhyMinergram from './pages/whyMinergram/WhyMinergram';
 import ImageDetails from './pages/dashboard/ImageDetails';
 import Privacypolicy from './pages/privacypolicy/privacypolicy';
 
@@ -150,7 +150,7 @@ const RoutesComponents = () => {
             />
             <Route path="*" element={<ErrorPage />}></Route>
 
-            <Route path="/why-tozilla" element={<WhyTozilla />} />
+            <Route path="/why-Minergram" element={<WhyMinergram />} />
             <Route path="/login" element={<Login />} />
           </Route>
 

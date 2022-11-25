@@ -20,7 +20,7 @@ const Footer = () => {
           <Link to="/blog">Blog</Link>
           <Link to="/pricing">Pricing</Link>
           <Link to="/support">Support</Link>
-          <Link to="/why-tozilla">Why Tozilla</Link>
+          <Link to="/why-Minergram">Why Minergram</Link>
           <Link to="/customer-stories">Customer Stories</Link>
         </div>
         <div className="flex flex-col gap-4">
