@@ -4,11 +4,11 @@ import { images } from '../../Constants';
 // import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import useUploadImage from '../../Hooks/useUploadImage';
-// import Button from '../../components/ui/Button';
+import './styles/imageUpload.scss';
+
 const ImageUpload = () => {
   const { mutate, response } = useUploadImage();
 
-  //   const [file, setFile] = useState([]);
   const [imagesUpload, setImagesUpload] = useState([]);
   const [imageURLs, setImageURLs] = useState([]);
 
@@ -21,11 +21,6 @@ const ImageUpload = () => {
     setImageURLs(newImageUrls);
   }, [imagesUpload]);
 
-  //   const handleChange = (e) => {
-  //     console.log(e.target.files);
-  //     setFile(URL.createObjectURL(e.target.files[0]));
-  //   };
-
   const onImageChange = (e) => {
     setImagesUpload([...e.target.files]);
   };
@@ -34,6 +29,7 @@ const ImageUpload = () => {
     const formData = new FormData();
     imagesUpload.forEach((image) => formData.append('image', image));
     mutate(formData);
+    console.log(imagesUpload);
   };
   return (
     <div className="mx-auto">
@@ -52,21 +48,24 @@ const ImageUpload = () => {
             <p>Upload Image</p>
           </div>
           <input
-            className="input_file"
+            className="input_file cursor-pointer"
             id="upload"
             type="file"
             multiple
             accept="image/*, .png, .svg, .jpg"
             onChange={onImageChange}
+            onClick={handleImageSubmit}
           />
         </div>
-        <div className="flex flex-row">
-          {imageURLs.map((imageSrc) => (
-            <img key={imagesUpload.length} src={imageSrc} className="w-36" />
-          ))}
+        <div className="flex flex-col gap-5 items-center justify-center">
+          <div className="flex flex-row gap-5 items-center justify-center">
+            {imageURLs.map((imageSrc) => (
+              <img key={imagesUpload.length} src={imageSrc} className="w-24" />
+            ))}
+          </div>
+          {response && <p>Reload: {response.data.text_content}</p>}
+          {console.log(response)}
         </div>
-        <button onClick={handleImageSubmit}>upload</button>
-        {response && <p>{response.data.text_content}</p>}
       </div>
     </div>
   );

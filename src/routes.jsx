@@ -150,7 +150,7 @@ const RoutesComponents = () => {
             />
             <Route path="*" element={<ErrorPage />}></Route>
 
-            <Route path="/why-tozilla" element={<WhyTozilla />} />
+            {/* <Route path="why-tozilla" element={<WhyTozilla />} /> */}
             <Route path="/login" element={<Login />} />
           </Route>
 
@@ -171,9 +171,7 @@ const RoutesComponents = () => {
             <Route path="/billing" element={<Billing />} />
           </Route>
 
-          <Route path="/forgot-password" element={<ForgotPassword />} />
 
-          <Route path="/reset-password" element={<ResetPassword />} />
         </Routes>
       </ScrollToTop>
     </AppProvider>
