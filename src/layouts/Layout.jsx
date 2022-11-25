@@ -8,7 +8,7 @@ import Navbar from './Navbar';
 
 function Layout() {
   return (
-    <div className="Layout">
+    <div className="flex flex-col  justify-between">
       <Navbar />
       <Outlet />
       <Footer />
