@@ -22,6 +22,8 @@ const useUploadImage = () => {
         data,
         config
       ),
+  const { mutate, isLoading, } = useMutation(
+    (data) => axios.post('http://minergramtest.herokuapp.com/api/v1/mine-service/upload', data, config),
     {
       onSuccess: (data) => {
         setResponse(data.data);
