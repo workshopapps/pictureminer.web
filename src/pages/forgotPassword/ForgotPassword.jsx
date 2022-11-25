@@ -17,9 +17,7 @@ export default function ForgotPassword() {
         body: '',
         userId: '',
       });
-      // setSuccessMessage(
-      //   res.status === 'success' ? res.message : 'Email does not exist'
-      // );
+
       if (res.status === 'success') {
         setBoolSuccess(res.status === 'success');
       } else {
