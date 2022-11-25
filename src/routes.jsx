@@ -80,13 +80,13 @@ const RoutesComponents = () => {
         <Routes>
           <Route path="" element={<Layout />}>
             <Route exact path="" element={<LandingPage />} />
+            <Route exact path="/hospitality" element={<Hospitality />} />
+            <Route exact path="/search-engine" element={<SearchEngine />} />
+            <Route exact path="/health-care" element={<Healthcare />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/demo" element={<MinergramDemo />} />
             <Route path="/external-demo-page" element={<ExternalDemoPage />} />
             <Route path="/e-commerce" element={<EcommercePage />} />
-            <Route path="/hospitality" element={<Hospitality />} />
-            <Route path="/search-engine" element={<SearchEngine />} />
-            <Route path="/healthcare" element={<Healthcare />} />
             <Route path="/About-us" element={<About />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/partner-with-us" element={<PartnerWithUs />}></Route>
