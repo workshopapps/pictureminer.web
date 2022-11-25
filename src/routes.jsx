@@ -33,7 +33,7 @@ import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
 
 import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
 import LandingPage from './pages/LandingPage/LandingPage';
-import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
+// import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
 import EcommercePage from './pages/LandingPage/EcommercePage/EcommercePage';
 import Hospitality from './pages/LandingPage/HospitalityPage/Hospitality';
 import SearchEngine from './pages/LandingPage/SearchEnginePage/SearchEngine';
@@ -84,8 +84,8 @@ const RoutesComponents = () => {
             <Route exact path="/search-engine" element={<SearchEngine />} />
             <Route exact path="/health-care" element={<Healthcare />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/demo" element={<MinergramDemo />} />
-            <Route path="/external-demo-page" element={<ExternalDemoPage />} />
+            {/* <Route path="/demo" element={<MinergramDemo />} /> */}
+            <Route path="/demo" element={<ExternalDemoPage />} />
             <Route path="/e-commerce" element={<EcommercePage />} />
             <Route path="/About-us" element={<About />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
