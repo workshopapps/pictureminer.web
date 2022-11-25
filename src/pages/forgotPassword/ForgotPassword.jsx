@@ -1,32 +1,45 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from '../../components/Button';
 import PasswordNavBar from '../../layouts/PasswordNavBar';
 import Arrow from './assets/arrow.svg';
 import checkMark from './assets/checkMark.webp';
-import { instance } from './utils';
+// import { instance } from './utils';
 
 export default function ForgotPassword() {
   const [boolSuccess, setBoolSuccess] = useState(false);
   const [email, setEmail] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const navigate = useNavigate();
 
   async function handleSubmit() {
-    try {
-      const res = await instance.post('', {
-        title: email,
-        body: '',
-        userId: '',
-      });
+    setLoading(true);
+    setBoolSuccess(true);
+    setLoading(false);
+    setTimeout(() => {
+      navigate('/reset-password');
+    }, 2000);
+    // try {
+    //   const res = await instance.post('forgot-password', {
+    //     email,
+    //   }).data;
+    //   setLoading(false);
+    //   console.log(res);
 
-      if (res.status === 'success') {
-        setBoolSuccess(res.status === 'success');
-      } else {
-        setErrorMessage('Email does not exist');
-      }
-    } catch (error) {
-      setErrorMessage(error.message ?? 'An error as occured');
-      console.error(error);
-    }
+    //   if (res.status === 'success') {
+    //     setBoolSuccess(res.status === 'success');
+    //     setTimeout(() => {
+    //       navigate('/reset-password');
+    //     }, 2000);
+    //   } else {
+    //     setErrorMessage('Email does not exist');
+    //   }
+    // } catch (error) {
+    //   setErrorMessage(error.message ?? 'An error as occured');
+    //   console.error(error);
+    // }
   }
 
   return (
@@ -41,8 +54,8 @@ export default function ForgotPassword() {
                 alt=" checkMark "
                 className="w-[122px] mx-auto"
               />
-              <h1 className="text-[32px] font-bold leading-[53px] mt-6">
-                Password sent to mail
+              <h1 className="text-[25px] font-bold leading-[53px] mt-6">
+                Redirecting to reset password page in 2 seconds.....
               </h1>
             </div>
           ) : (
@@ -73,7 +86,7 @@ export default function ForgotPassword() {
                 <p className="text-[#D64751] text-lg mb-3"> {errorMessage} </p>
               )}
               <Button
-                text={'Reset password'}
+                text={loading ? 'Loading...' : 'Reset password'}
                 onClick={handleSubmit}
                 disabled={email === ''}
               />
