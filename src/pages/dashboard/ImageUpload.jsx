@@ -71,6 +71,7 @@ const ImageUpload = () => {
             Mine Text
           </button>
         )}
+
         <div>{isLoading && <p className="loading">Fetching.....</p>}</div>
         {response && <p>Reload: {response.data.text_content}</p>}
         {console.log(response)}

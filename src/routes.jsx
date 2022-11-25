@@ -44,7 +44,7 @@ import Web from './pages/documentation/WebPage/Web';
 import WhyMinergram from './pages/whyTozilla/WhyMinergram';
 import ImageDetails from './pages/dashboard/ImageDetails';
 import Privacypolicy from './pages/privacypolicy/privacypolicy';
-import UserContext from './context/UserContext';
+
 import ApiDocumentation from './pages/documentation/ApiDocumentation';
 
 // import { useGlobalContext } from './context/context';
@@ -151,6 +151,8 @@ const RoutesComponents = () => {
             <Route path="*" element={<ErrorPage />}></Route>
 
             {/* <Route path="why-tozilla" element={<WhyTozilla />} /> */}
+            <Route path="why-minergram" element={<WhyMinergram />} />
+
             <Route path="/login" element={<Login />} />
           </Route>
 
@@ -170,6 +172,8 @@ const RoutesComponents = () => {
             <Route path="/account-setup" element={<AccountSettings />} />
             <Route path="/billing" element={<Billing />} />
           </Route>
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
         </Routes>
       </ScrollToTop>
     </AppProvider>

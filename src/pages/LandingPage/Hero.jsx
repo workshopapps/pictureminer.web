@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import style from '../../styles/layout/Hero.module.scss';
+import UserContext from '../../context/UserContext';
 
 const Hero = () => {
+  const { user } = React.useContext(UserContext);
   return (
     <section className={style.container}>
       <h1>
@@ -16,7 +18,7 @@ const Hero = () => {
         results.
       </p>
       <div className={style.ctaWrapper}>
-        <Link to="/signup">Sign Up</Link>
+        {user ? null : <Link to="/signup">Sign Up</Link>}
         <Link to="/documentation">See our documentation</Link>
       </div>
     </section>
