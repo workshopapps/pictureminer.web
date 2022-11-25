@@ -77,7 +77,7 @@ const DocumentationHome = () => {
     <div className="documetation_wrapper">
       <div className="hero_wrapper">
         <h1>Documentation</h1>
-        <h3>Everything you need to know about the Torzilla picture miner </h3>
+        <h3>Everything you need to know about the Minergram picture miner </h3>
         <input type="text" name="documentation_search" placeholder="Search" />
       </div>
       <div className="mainContent">
@@ -91,7 +91,7 @@ const DocumentationHome = () => {
                 </h1>
               </div>
               <p>
-                Torzilla (currently v3.3.7) has ways to quickly get started
+                Minergram (currently v3.3.7) has ways to quickly get started
                 appealing to a different skill level and case. Read through to
                 see what suits.
               </p>
