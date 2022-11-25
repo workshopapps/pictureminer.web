@@ -10,23 +10,23 @@ const Footer = () => {
         <div className="flex flex-col gap-3">
           <h2 className="mb-4">Company</h2>
           <Link to="/about-us">About us</Link>
-          <Link to="/careers">Careers</Link>
+
           <Link to="/faq">FAQ</Link>
           <Link to="/how-it-works">How it works</Link>
-          <Link to="/partner-with-us">Partner with us</Link>
+
         </div>
         <div className="flex flex-col gap-4">
           <h2 className="mb-4">Resources</h2>
           <Link to="/blog">Blog</Link>
           <Link to="/pricing">Pricing</Link>
           <Link to="/support">Support</Link>
-          <Link to="/why-tozilla">Why Tozilla</Link>
-          <Link to="/customer-stories">Customer Stories</Link>
+          <Link to="/why-Minergram">Why Minergram</Link>
+
         </div>
         <div className="flex flex-col gap-4">
           <h2 className="mb-4">Legal</h2>
           <Link to="/terms-of-use">Terms</Link>
-          <Link to="/privacy-policy">Privacy</Link>
+
           {/* <Link to="/contact">Contact</Link> */}
         </div>
         <div className="flex flex-col gap-2">

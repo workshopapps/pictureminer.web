@@ -41,10 +41,10 @@ import Healthcare from './pages/LandingPage/HealthcarePage/Healthcare';
 import ExternalDemoPage from './pages/LandingPage/ExternalPage/ExternalPage';
 import Integrations from './pages/documentation/IntegrationPage/Integrations';
 import Web from './pages/documentation/WebPage/Web';
-import WhyTozilla from './pages/whyTozilla/WhyTozilla';
+import WhyMinergram from './pages/whyTozilla/WhyMinergram';
 import ImageDetails from './pages/dashboard/ImageDetails';
 import Privacypolicy from './pages/privacypolicy/privacypolicy';
-
+import UserContext from './context/UserContext';
 import ApiDocumentation from './pages/documentation/ApiDocumentation';
 
 // import { useGlobalContext } from './context/context';

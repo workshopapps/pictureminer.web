@@ -1,22 +1,22 @@
 const datalist = [
   {
-    text: 'Right of access: Users have the right to request confirmation from Tozilla as to which personal data concerning them is being processed and whether these data are being transmitted to a third party.Right of access: Users have the right to request confirmation from Tozilla as to which personal data concerning them is being processed and whether these data are being transmitted to a third party.',
+    text: 'Right of access: Users have the right to request confirmation from Minergram as to which personal data concerning them is being processed and whether these data are being transmitted to a third party.Right of access: Users have the right to request confirmation from Minergram as to which personal data concerning them is being processed and whether these data are being transmitted to a third party.',
   },
 
   {
-    text: 'Right to rectification: Users have the right to request Tozilla to correct any incorrect or incomplete personal data relating to them.',
+    text: 'Right to rectification: Users have the right to request Minergram to correct any incorrect or incomplete personal data relating to them.',
   },
 
   {
-    text: 'Right to erasure: Users have the right to request Tozilla to erase promptly any personal data relating to them if these data are no longer necessary for the purposes for which they were collected or processed. The same applies if the data subject withdraws consent or objects to the processing in absence of an overriding legitimate interest of the controller or if these data are being unlawfully processed. The data subject may additionally execute this right in case where the controller is subject to a legal obligation to delete these personal data or when the personal data have been collected in the context of information society services.',
+    text: 'Right to erasure: Users have the right to request Minergram to erase promptly any personal data relating to them if these data are no longer necessary for the purposes for which they were collected or processed. The same applies if the data subject withdraws consent or objects to the processing in absence of an overriding legitimate interest of the controller or if these data are being unlawfully processed. The data subject may additionally execute this right in case where the controller is subject to a legal obligation to delete these personal data or when the personal data have been collected in the context of information society services.',
   },
 
   {
-    text: 'Right to restriction of processing: Users have the right to request Tozilla to restrict processing.',
+    text: 'Right to restriction of processing: Users have the right to request Minergram to restrict processing.',
   },
 
   {
-    text: 'Right to customizability: Users have the right to request Tozilla to provide their data in a portable format.',
+    text: 'Right to customizability: Users have the right to request Minergram to provide their data in a portable format.',
   },
 
   {

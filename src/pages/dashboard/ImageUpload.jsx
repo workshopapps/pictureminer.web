@@ -7,7 +7,7 @@ import useUploadImage from '../../Hooks/useUploadImage';
 import './styles/imageUpload.scss';
 
 const ImageUpload = () => {
-  const { mutate, response } = useUploadImage();
+  const { mutate, response,isLoading } = useUploadImage();
 
   const [imagesUpload, setImagesUpload] = useState([]);
   const [imageURLs, setImageURLs] = useState([]);
@@ -54,7 +54,7 @@ const ImageUpload = () => {
             multiple
             accept="image/*, .png, .svg, .jpg"
             onChange={onImageChange}
-            onClick={handleImageSubmit}
+            
           />
         </div>
         <div className="flex flex-col gap-5 items-center justify-center">
@@ -63,7 +63,18 @@ const ImageUpload = () => {
               <img key={imagesUpload.length} src={imageSrc} className="w-24" />
             ))}
           </div>
-          {response && <p>Reload: {response.data.text_content}</p>}
+
+{imageURLs.length > 0 && (<button className='button'
+            onClick={handleImageSubmit}
+            disabled={imagesUpload.length < 1 || imagesUpload.length > 3}
+          >
+            Mine Text
+          </button>)}
+          
+          <div>
+            {isLoading && <p className='loading'>Fetching.....</p>}
+          </div>
+          {response && <p >Reload: {response.data.text_content}</p>}
           {console.log(response)}
         </div>
       </div>
