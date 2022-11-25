@@ -13,7 +13,7 @@
   text-align: center;
   h1 {
     color: #434343;
-    font-size: 6vw;
+    font-size: calc(1rem + 5vw);
     font-weight: 600;
     span {
       color: $main-color;
@@ -21,7 +21,7 @@
   }
 
   p {
-    font-size: 2vw;
+    font-size: calc(0.65rem + 1vw);
     color: #8e8e8e;
     line-height: 30px;
     font-weight: 600;
