@@ -1,20 +1,11 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ErrorPage from './Error';
 import Login from './pages/Login';
 
-import {
-  CareerApplication,
-  CareerLanding,
-  CareerMoreJobs,
-  CareerSingleJobView,
-} from './pages/career';
-
-import CustomerStories from './pages/CustomerStories';
 import About from './pages/About/components/About';
-// import { CareerApplication } from './pages/career';
+
 import Termsofuse from './pages/terms-of-use/Termsofuse';
-import PartnerWithUs from './pages/PartnerWithUs/App';
 
 import DashboardLayout from './layouts/dashboard/DashboardLayout';
 import Dashboard from './pages/dashboard/Dashboard';
@@ -54,9 +45,7 @@ import Faq from './pages/FAQ/faq';
 import Layout from './layouts/Layout';
 import HowItWorks from './pages/howItWorks/howItWorks';
 import SupportPage from './pages/support';
-import Home from './pages/PartnerWithUs/page/Home';
-import Apply from './pages/PartnerWithUs/page/Apply';
-import ApplicationReceived from './pages/PartnerWithUs/page/ApplicationReceived';
+
 import ScrollToTop from './layouts/ScrollToTop';
 import Pricing from './pages/pricing/Pricing';
 import ImageUpload from './pages/dashboard/ImageUpload';
@@ -65,15 +54,17 @@ import ResetPassword from './pages/resetPassword/ResetPassword';
 import Payment from './pages/pricing/Payment';
 import Signup from './pages/signup';
 import { AppProvider } from './context/context';
+import { getLocalStorage } from './localStorage';
+import UserContext from './context/UserContext';
 
 const RoutesComponents = () => {
-  // const {
-  //   state: {
-  //     // This has other key-value like loading, error etc
-  //     // eslint-disable-next-line no-unused-vars
-  //     login: { serverResponse: user },
-  //   },
-  // } = useGlobalContext();
+  const { setUser } = useContext(UserContext);
+
+  const userData = getLocalStorage('user');
+  useEffect(() => {
+    setUser(userData);
+  }, []);
+
   return (
     <AppProvider>
       <ScrollToTop>
@@ -89,7 +80,7 @@ const RoutesComponents = () => {
             <Route path="/e-commerce" element={<EcommercePage />} />
             <Route path="/About-us" element={<About />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
-            <Route path="/partner-with-us" element={<PartnerWithUs />}></Route>
+
             <Route path="/pricing" element={<Pricing />}></Route>
             <Route path="/pricing/:paymentPlan" element={<Payment />} />
             <Route
@@ -101,7 +92,6 @@ const RoutesComponents = () => {
               element={<GettingStarted />}
             ></Route>
 
-            <Route path="customer-stories" element={<CustomerStories />} />
             <Route path="support" element={<SupportPage />}></Route>
             <Route
               path="/documentation/integrations"
@@ -112,8 +102,6 @@ const RoutesComponents = () => {
               path="/documentation/installations"
               element={<Installations />}
             ></Route>
-
-            <Route path="/careers" element={<CareerLanding />} />
 
             <Route path="/blog" element={<BlogList />} />
             <Route path="/blog-page" element={<ExtensionBlog />} />
@@ -130,24 +118,9 @@ const RoutesComponents = () => {
               element={<ApiDocumentation />}
             ></Route>
 
-            <Route
-              path="/careers/application"
-              element={<CareerApplication />}
-            />
-            <Route path="/careers/more-jobs" element={<CareerMoreJobs />} />
-            <Route
-              path="/careers/jobs/singles"
-              element={<CareerSingleJobView />}
-            />
             <Route path="/terms-of-use" element={<Termsofuse />}></Route>
             <Route path="/privacy-policy" element={<Privacypolicy />}></Route>
             <Route path="/faq" element={<Faq />}></Route>
-
-            <Route path="/careers/more-jobs" element={<CareerMoreJobs />} />
-            <Route
-              path="/careers/jobs/singles"
-              element={<CareerSingleJobView />}
-            />
             <Route path="*" element={<ErrorPage />}></Route>
 
             {/* <Route path="why-tozilla" element={<WhyTozilla />} /> */}
@@ -155,10 +128,6 @@ const RoutesComponents = () => {
 
             <Route path="/login" element={<Login />} />
           </Route>
-
-          <Route path="/" element={<Home />} />
-          <Route path="/apply" element={<Apply />} />
-          <Route path="/application" element={<ApplicationReceived />} />
           {/*If your riute us priviate, use Protected Route */}
 
           <Route element={<DashboardLayout />}>

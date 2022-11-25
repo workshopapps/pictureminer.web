@@ -7,10 +7,55 @@ import closeIcon from '../../assets/dashboardImageDetails/close-icon.webp';
 import saveIcon from '../../assets/dashboardImageDetails/download-icon.webp';
 import trashIcon from '../../assets/dashboardImageDetails/trash-icon.webp';
 
-import { useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useContext, useEffect, useRef, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import UserContext from '../../context/UserContext';
+import axios from 'axios';
 
 const ImageDetails = () => {
+  const param = useParams();
+
+  const [imageDets, setImageDets] = useState({ loading: false });
+  const { user } = useContext(UserContext);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setImageDets((prev) => {
+          return {
+            ...prev,
+            loading: true,
+          };
+        });
+
+        const response = await axios.get('mine-service/get-all', {
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            Authorization: `Bearer ${user.Token}`,
+          },
+        });
+
+        if (response) {
+          const deets = response?.data.filter((item) => {
+            console.log(item.date_created.split('.')[1] === param.imageId);
+            return item.date_created.split('.')[1] === param.imageId;
+          });
+          console.log(deets);
+          setImageDets((prev) => {
+            return {
+              ...prev,
+              loading: false,
+              details: deets,
+            };
+          });
+        }
+      } catch (error) {
+        console.log(error);
+      } finally {
+      }
+    };
+    fetchData();
+  }, [user]);
   const TAG_LIST = [
     { title: 'Water', percentage: '55%' },
     { title: 'Trees', percentage: '30%' },
@@ -78,7 +123,14 @@ const ImageDetails = () => {
               strokeLinejoin="round"
             />
           </svg>
-          <h2 className="font-bold text-2xl"> Picture ID: #123AK</h2>
+          <h2 className="font-bold text-2xl">
+            {' '}
+            {`Picture ID: #${
+              imageDets?.details
+                ? imageDets?.details[0].date_created.split('.')[1]
+                : 'None'
+            }`}
+          </h2>
         </div>
 
         <div className="hidden gap-4 md:flex">
@@ -178,7 +230,11 @@ const ImageDetails = () => {
           <div className="w-full md:w-1/2">
             <img
               className="w-full"
-              src="https://images.unsplash.com/photo-1596120236172-231999844ade?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dmFjYXRpb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+              src={
+                imageDets?.details
+                  ? imageDets?.details[0].image_path
+                  : 'https://images.unsplash.com/photo-1596120236172-231999844ade?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dmFjYXRpb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'
+              }
               alt="Image descr"
             />
           </div>
@@ -186,8 +242,9 @@ const ImageDetails = () => {
             <h3 className="font-[500] text-xl">Image description</h3>
 
             <p>
-              This is an image of EKO hotel and suites, a popular 5 star hotel
-              in victoria island, lagos, Nigeria.
+              {imageDets?.details
+                ? imageDets?.details[0].text_content
+                : 'This is an image of EKO hotel and suites, a popular 5 star hotel in victoria island, lagos, Nigeria.'}
             </p>
 
             <p>
