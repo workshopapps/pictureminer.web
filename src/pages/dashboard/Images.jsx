@@ -3,7 +3,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import Button from '../../components/ui/Button';
 import DataTable from 'react-data-table-component';
 import { Link } from 'react-router-dom';
-import foodImage from '../../assets/foodImage.webp';
 import Modal, { Backdrop } from '../../components/ui/Modal';
 import successIcon from '../../assets/dashboardImageDetails/success-icon.webp';
 import warningIcon from '../../assets/dashboardImageDetails/warning-icon.webp';
@@ -124,6 +123,7 @@ const Images = () => {
       } catch (error) {
         console.log(error);
       } finally {
+        /* empty */
       }
     };
     fetchData();

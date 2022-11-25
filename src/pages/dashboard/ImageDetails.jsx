@@ -9,7 +9,7 @@ import trashIcon from '../../assets/dashboardImageDetails/trash-icon.webp';
 
 import { useContext, useEffect, useRef, useState } from 'react';
 
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import UserContext from '../../context/UserContext';
 import axios from 'axios';
@@ -54,6 +54,7 @@ const ImageDetails = () => {
       } catch (error) {
         console.log(error);
       } finally {
+        /* empty */
       }
     };
     fetchData();
@@ -106,14 +107,12 @@ const ImageDetails = () => {
     link.click();
   };
 
-  const { user } = useContext(UserContext);
-
   const [image, setImage] = useState({
     image_name: '',
     image_path: '',
   });
 
-  const [imageDesc] = useState('Loading Description...');
+  // const [imageDesc] = useState('Loading Description...');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -204,7 +203,6 @@ const ImageDetails = () => {
                 : 'None'
             }`}
           </h2>
-
         </div>
 
         <div className="hidden gap-4 md:flex">
@@ -305,7 +303,6 @@ const ImageDetails = () => {
       <section className="py-8">
         <div className="flex flex-col gap-6 md:flex-row">
           <div className="w-full md:w-1/2">
-
             <img
               className="w-full"
               src={
@@ -315,12 +312,9 @@ const ImageDetails = () => {
               }
               alt="Image descr"
             />
-
           </div>
           <div className="bg-[#f8f8f8] md:w-1/2 w rounded-md p-6 flex flex-col gap-8 text-md">
             <h3 className="font-[500] text-xl">Image description</h3>
-
-
 
             <p>
               {imageDets?.details
@@ -335,7 +329,6 @@ const ImageDetails = () => {
               ambience. You can visit https://www.ekohotels.com/ to learn more
               about the hotel.
             </p>
-
 
             <div className="flex flex-col gap-6 mt-8 md:flex-row">
               <p>Was this article helpful</p>

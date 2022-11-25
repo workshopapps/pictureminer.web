@@ -1,7 +1,7 @@
+import { useState } from 'react';
 import { useMutation } from 'react-query';
 import axios from 'axios';
 import { getLocalStorage } from '../localStorage';
-import { useState } from 'react';
 
 const useUploadImage = () => {
   const [response, setResponse] = useState(null);
