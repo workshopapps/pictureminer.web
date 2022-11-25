@@ -35,9 +35,12 @@ import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
 import LandingPage from './pages/LandingPage/LandingPage';
 import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
 import EcommercePage from './pages/LandingPage/EcommercePage/EcommercePage';
+import Hospitality from './pages/LandingPage/HospitalityPage/Hospitality';
+import SearchEngine from './pages/LandingPage/SearchEnginePage/SearchEngine';
+import Healthcare from './pages/LandingPage/HealthcarePage/Healthcare';
 import ExternalDemoPage from './pages/LandingPage/ExternalPage/ExternalPage';
 import Integrations from './pages/documentation/IntegrationPage/Integrations';
-import Web from './pages/documentation/WebPage/Web'
+import Web from './pages/documentation/WebPage/Web';
 import WhyTozilla from './pages/whyTozilla/WhyTozilla';
 import ImageDetails from './pages/dashboard/ImageDetails';
 import Privacypolicy from './pages/privacypolicy/privacypolicy';
@@ -80,7 +83,10 @@ const RoutesComponents = () => {
             <Route path="/signup" element={<Signup />} />
             <Route path="/demo" element={<MinergramDemo />} />
             <Route path="/external-demo-page" element={<ExternalDemoPage />} />
-            <Route path="/e-commerce" element={<EcommercePage/>}/>
+            <Route path="/e-commerce" element={<EcommercePage />} />
+            <Route path="/hospitality" element={<Hospitality />} />
+            <Route path="/search-engine" element={<SearchEngine />} />
+            <Route path="/healthcare" element={<Healthcare />} />
             <Route path="/About-us" element={<About />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/partner-with-us" element={<PartnerWithUs />}></Route>
