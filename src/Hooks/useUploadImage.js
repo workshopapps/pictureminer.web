@@ -4,32 +4,35 @@ import { getLocalStorage } from '../localStorage';
 import { useState } from 'react';
 
 const useUploadImage = () => {
-
   const [response, setResponse] = useState(null);
   const user = getLocalStorage('user');
   const userToken = user ? user.data.Token : null;
-  // console.log(userToken);
+  console.log(userToken);
+
   const config = {
-  headers: {
+    headers: {
       'Content-Type': 'multipart/form-data',
       Authorization: `Bearer ${userToken}`,
-
     },
   };
-  const { mutate, isLoading, } = useMutation(
-    (data) => axios.post('https://minergramtest.herokuapp.com/api/v1/mine-service/upload', data, config),
+  const { mutate, isLoading } = useMutation(
+    (data) =>
+      axios.post(
+        'https://minergramtest.herokuapp.com/api/v1/mine-service/upload',
+        data,
+        config
+      ),
     {
       onSuccess: (data) => {
         setResponse(data.data);
-
+        console.log(data);
       },
       onError: (error) => {
         console.log(error);
-        console.log(user);
       },
     }
   );
-  return { mutate, isLoading, response, };
+  return { mutate, isLoading, response };
 };
 
 export default useUploadImage;
