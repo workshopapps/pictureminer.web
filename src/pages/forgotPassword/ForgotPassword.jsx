@@ -79,7 +79,10 @@ export default function ForgotPassword() {
                 onClick={handleSubmit}
                 disabled={email === ''}
               />
-              <a href="" className="flex justify-center text-[#4F4F4F] mt-2">
+              <a
+                href="/login"
+                className="flex justify-center text-[#4F4F4F] mt-2"
+              >
                 <img src={Arrow} alt="arrow-icon" className="mr-2" />
                 Back to login
               </a>
