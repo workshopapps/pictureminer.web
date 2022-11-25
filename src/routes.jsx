@@ -41,7 +41,7 @@ import Healthcare from './pages/LandingPage/HealthcarePage/Healthcare';
 import ExternalDemoPage from './pages/LandingPage/ExternalPage/ExternalPage';
 import Integrations from './pages/documentation/IntegrationPage/Integrations';
 import Web from './pages/documentation/WebPage/Web';
-import WhyMinergram from './pages/whyMinergram/WhyMinergram';
+import WhyMinergram from './pages/whyTozilla/WhyMinergram';
 import ImageDetails from './pages/dashboard/ImageDetails';
 import Privacypolicy from './pages/privacypolicy/privacypolicy';
 
