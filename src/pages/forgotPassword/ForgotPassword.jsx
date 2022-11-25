@@ -4,7 +4,6 @@ import Button from '../../components/Button';
 import PasswordNavBar from '../../layouts/PasswordNavBar';
 import Arrow from './assets/arrow.svg';
 import checkMark from './assets/checkMark.webp';
-// import { instance } from './utils';
 
 export default function ForgotPassword() {
   const [boolSuccess, setBoolSuccess] = useState(false);
