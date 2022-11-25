@@ -3,12 +3,12 @@ import { DocumentCopy } from 'iconsax-react';
 import Button from '../../components/ui/Button';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import UserContext from '../../context/UserProvider';
+import UserContext from '../../context/UserContext';
 
 axios.defaults.baseURL = 'http://44.211.169.234:9000/api/v1/';
 // import copy from 'copy-to-clipboard';
 const Dashboard = () => {
-  const  { user } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const [dashboarddata, setDashboardData] = useState('');
   useEffect(() => {
     const fetchData = async () => {

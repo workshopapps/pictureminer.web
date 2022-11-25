@@ -2,7 +2,7 @@ import { Filter } from 'iconsax-react';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const DashboardNavbar = () => {
+const DashboardNavbar = ({ user }) => {
   const [showMenu, setShowMenu] = useState(false);
   return (
     <div className="navbar">
