@@ -3,8 +3,10 @@ import { DocumentUpload } from 'iconsax-react';
 import { images } from '../../Constants';
 // import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+
 import useUploadImage from '../../hooks/useUploadImage';
 import './styles/imageUpload.scss';
+
 
 const ImageUpload = () => {
   const { mutate, response, isLoading } = useUploadImage();

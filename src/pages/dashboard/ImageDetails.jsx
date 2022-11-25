@@ -8,7 +8,9 @@ import saveIcon from '../../assets/dashboardImageDetails/download-icon.webp';
 import trashIcon from '../../assets/dashboardImageDetails/trash-icon.webp';
 
 import { useContext, useEffect, useRef, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+
+import { useNavigate } from 'react-router-dom';
+
 import UserContext from '../../context/UserContext';
 import axios from 'axios';
 
@@ -70,7 +72,6 @@ const ImageDetails = () => {
   const [showSaveSuccessModal, setShowSaveSuccessModal] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
-  // const [questionList, setQuestionList] = useState(['How are you?']);
   const questionInputRef = useRef();
 
   const toggleDeleteModal = () => {
@@ -92,12 +93,83 @@ const ImageDetails = () => {
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
-
-    // setQuestionList((prevList) => [
-    //   ...prevList,
-    //   questionInputRef.current.value,
-    // ]);
   };
+
+  const saveToJsonHandler = () => {
+    const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(
+      JSON.stringify({ ...image })
+    )}`;
+    const link = document.createElement('a');
+    link.href = jsonString;
+    link.download = 'data.json';
+
+    link.click();
+  };
+
+  const { user } = useContext(UserContext);
+
+  const [image, setImage] = useState({
+    image_name: '',
+    image_path: '',
+  });
+
+  const [imageDesc] = useState('Loading Description...');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'http://44.211.169.234:9000/api/v1/mine-service/get-all',
+          {
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json',
+              Authorization: `Bearer ${user.data.Token}`,
+            },
+          }
+        );
+
+        if (response) {
+          setImage(response.data[0]);
+          // setImage(response.data[0]);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  }, [user]);
+
+  // useEffect(() => {
+  //   // let formData = new FormData();
+  //   // formData.append('image', image.image_name);
+  //   // console.log(formData);
+
+  //   if (image.image_path) {
+  //     const fetchData = async () => {
+  //       // console.log(image.image_path);
+  //       const blob = await image.image_path.blob();
+  //       const file = new File([blob], 'image.jpg', { type: blob.type });
+  //       console.log(file);
+  //       try {
+  //         const response = await axios.post(
+  //           'http://178.128.242.94:8000/caption-generator'
+  //         );
+
+  //         if (response) {
+  //           // setImage(response.data[0]);
+  //           console.log(response);
+  //           console.log('Superfly');
+  //         }
+  //       } catch (error) {
+  //         console.log(error);
+  //       }
+  //     };
+
+  //     fetchData();
+  //   }
+  // }, [image]);
 
   return (
     <main className="">
@@ -123,6 +195,7 @@ const ImageDetails = () => {
               strokeLinejoin="round"
             />
           </svg>
+
           <h2 className="font-bold text-2xl">
             {' '}
             {`Picture ID: #${
@@ -131,6 +204,7 @@ const ImageDetails = () => {
                 : 'None'
             }`}
           </h2>
+
         </div>
 
         <div className="hidden gap-4 md:flex">
@@ -145,7 +219,10 @@ const ImageDetails = () => {
               fontWeight: '500',
             }}
             text="Save as Json"
-            onclick={toggleSaveSuccessModal}
+            onclick={() => {
+              toggleSaveSuccessModal();
+              saveToJsonHandler();
+            }}
           />
           <Button
             styles={{
@@ -228,6 +305,7 @@ const ImageDetails = () => {
       <section className="py-8">
         <div className="flex flex-col gap-6 md:flex-row">
           <div className="w-full md:w-1/2">
+
             <img
               className="w-full"
               src={
@@ -237,9 +315,12 @@ const ImageDetails = () => {
               }
               alt="Image descr"
             />
+
           </div>
           <div className="bg-[#f8f8f8] md:w-1/2 w rounded-md p-6 flex flex-col gap-8 text-md">
             <h3 className="font-[500] text-xl">Image description</h3>
+
+
 
             <p>
               {imageDets?.details
@@ -254,6 +335,7 @@ const ImageDetails = () => {
               ambience. You can visit https://www.ekohotels.com/ to learn more
               about the hotel.
             </p>
+
 
             <div className="flex flex-col gap-6 mt-8 md:flex-row">
               <p>Was this article helpful</p>

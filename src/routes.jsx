@@ -32,7 +32,9 @@ import Healthcare from './pages/LandingPage/HealthcarePage/Healthcare';
 import ExternalDemoPage from './pages/LandingPage/ExternalPage/ExternalPage';
 import Integrations from './pages/documentation/IntegrationPage/Integrations';
 import Web from './pages/documentation/WebPage/Web';
+
 import WhyMinergram from './pages/whyTozilla/WhyMinergram';
+
 import ImageDetails from './pages/dashboard/ImageDetails';
 import Privacypolicy from './pages/privacypolicy/privacypolicy';
 
@@ -75,8 +77,10 @@ const RoutesComponents = () => {
             <Route exact path="/search-engine" element={<SearchEngine />} />
             <Route exact path="/health-care" element={<Healthcare />} />
             <Route path="/signup" element={<Signup />} />
+
             {/* <Route path="/demo" element={<MinergramDemo />} /> */}
             <Route path="/demo" element={<ExternalDemoPage />} />
+
             <Route path="/e-commerce" element={<EcommercePage />} />
             <Route path="/About-us" element={<About />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
