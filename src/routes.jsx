@@ -80,6 +80,9 @@ const RoutesComponents = () => {
         <Routes>
           <Route path="" element={<Layout />}>
             <Route exact path="" element={<LandingPage />} />
+            <Route exact path="/hospitality" element={<Hospitality />} />
+            <Route exact path="/search-engine" element={<SearchEngine />} />
+            <Route exact path="/health-care" element={<Healthcare />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/demo" element={<MinergramDemo />} />
             <Route path="/external-demo-page" element={<ExternalDemoPage />} />

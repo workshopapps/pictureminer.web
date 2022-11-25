@@ -12,23 +12,32 @@ export default function ResetPassword() {
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [loading, setLoading] = useState(false);
+  // const [searchParams] = useSearchParams();
+
+  // const token = searchParams.get('token');
 
   const navigate = useNavigate();
 
   async function handleSubmit(e) {
     e.preventDefault();
-    if (email === '' || password === '' || confirmPassword === '') {
+    if (
+      email === '' ||
+      password === '' ||
+      confirmPassword === '' ||
+      password !== confirmPassword
+    ) {
       return;
     }
     setLoading(true);
     const body = {
+      // token,
       email,
       password,
-      confirmPassword,
+      confirm_password: confirmPassword,
     };
 
     try {
-      const res = await instance.post('', body);
+      const res = await (await instance.post('reset', body)).data;
       setLoading(false);
       console.log(res);
       if (res.status === 'success') {
