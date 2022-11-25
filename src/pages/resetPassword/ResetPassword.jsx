@@ -12,9 +12,6 @@ export default function ResetPassword() {
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [loading, setLoading] = useState(false);
-  // const [searchParams] = useSearchParams();
-
-  // const token = searchParams.get('token');
 
   const navigate = useNavigate();
 
@@ -30,7 +27,6 @@ export default function ResetPassword() {
     }
     setLoading(true);
     const body = {
-      // token,
       email,
       password,
       confirm_password: confirmPassword,
