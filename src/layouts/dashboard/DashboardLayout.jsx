@@ -2,8 +2,10 @@ import React, { useContext } from 'react';
 import { Outlet } from 'react-router-dom';
 // import { useGlobalContext } from '../../context/context';
 import UserContext from '../../context/UserContext';
+
 import DashboardNavbar from './DashboardNavbar';
 import Sidebar from './Sidebar';
+import Login from '../../pages/Login';
 
 const DashboardLayout = () => {
   // const {
@@ -18,7 +20,7 @@ const DashboardLayout = () => {
 
   return (
     <>
-      {
+      {user ? (
         <div className="dashboard_layout">
           <Sidebar />
           <div className="dashboard_pages">
@@ -26,7 +28,9 @@ const DashboardLayout = () => {
             <Outlet />
           </div>
         </div>
-      }
+      ) : (
+        <Login />
+      )}
     </>
   );
 };

@@ -3,7 +3,8 @@ import { DocumentCopy } from 'iconsax-react';
 import Button from '../../components/ui/Button';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import UserContext from '../../context/UserContext';
+import UserContext from '../../context/UserProvider';
+
 axios.defaults.baseURL = 'http://44.211.169.234:9000/api/v1/';
 // import copy from 'copy-to-clipboard';
 const Dashboard = () => {

@@ -12,7 +12,7 @@ import {
 
 import CustomerStories from './pages/CustomerStories';
 import About from './pages/About/components/About';
-// import { CareerApplication } from './pages/career';
+
 import Termsofuse from './pages/terms-of-use/Termsofuse';
 import PartnerWithUs from './pages/PartnerWithUs/App';
 
