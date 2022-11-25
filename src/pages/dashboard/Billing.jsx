@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './styles/dashboard.css';
 import { MdOutlineErrorOutline } from 'react-icons/md';
 import { IoCloseSharp } from 'react-icons/io5';
 import { BsCheckCircle } from 'react-icons/bs';
@@ -27,8 +28,8 @@ function Billing() {
   };
 
   return (
-    <div className="mt-12 lg:mt-40 mb-28 relative">
-      <div className="container">
+    <div className="mt-12 mb-28 relative">
+      <div className="container-dashboard">
         {showPlanDetailsModal && (
           <div className="bg-modalGray z-[5] fixed inset-0 w-full">
             <div className="w-5/6 md:w-2/4 lg:w-4/12 p-6 flex flex-col bg-white absolute rounded-md top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 ">
@@ -85,8 +86,8 @@ function Billing() {
               <div className="mt-5">
                 <h4>We are sorry to see you leave</h4>
                 <p className="text-sm text-inputGray mt-2">
-                  We are about to cancel your tozilla basic plan. If you would
-                  like to proceed with the cancelling of your tozilla basic
+                  We are about to cancel your Minergram basic plan. If you would
+                  like to proceed with the cancelling of your Minergram basic
                   plan, select &#8220;Cancel plan&#8220;below.
                 </p>
               </div>
@@ -123,7 +124,7 @@ function Billing() {
               <div className="mt-5">
                 <h4>Success</h4>
                 <p className="text-sm text-inputGray mt-2">
-                  You have successfully opted out of tozilla basic plan.
+                  You have successfully opted out of Minergram basic plan.
                 </p>
               </div>
               <div className="mt-8 flex flex-col space-y-4 w-full">
@@ -157,7 +158,7 @@ function Billing() {
           <div className="flex border border-modalGray border-solid rounded mt-8 items-center justify-between p-2">
             <div className="">
               <small>Plan</small>
-              <p className="text-small">Tozilla Basic</p>
+              <p className="text-small">Minergram Basic</p>
             </div>
             <div>
               <small>Price</small>
@@ -168,18 +169,18 @@ function Billing() {
             className="mt-8 text-red-500 cursor-pointer"
             onClick={toggleCancelPlanModal}
           >
-            Cancel Tozilla Basic Plan
+            Cancel Minergram Basic Plan
           </p>
         </section>
         <section className="border border-modalGray border-solid rounded mt-8 p-4">
           <p>Billing history</p>
           <div className="flex flex-col mt-8 space-y-4">
             <div className="border border-modalGray border-solid rounded p-2 ">
-              <p>Tozilla basic plan subscription - $9.99</p>
+              <p>Minergram basic plan subscription - $9.99</p>
               <small className="font-medium text-inputGray">Nov 10, 2022</small>
             </div>
             <div className="border border-modalGray border-solid rounded p-2 ">
-              <p>Tozilla basic plan subscription - $9.99</p>
+              <p>Minergram basic plan subscription - $9.99</p>
               <small className="font-medium text-inputGray">Nov 10, 2022</small>
             </div>
           </div>

@@ -6,10 +6,12 @@ import userTick from '../assets/LandingPageImages/user-tick.svg';
 import works from '../assets/LandingPageImages/works.svg';
 import addToFolder from '../assets/LandingPageImages/folderadd.svg';
 import heroCurve from '../assets/LandingPageImages/herocurve.svg';
-import profile1 from '../assets/LandingPageImages/profile1.jpeg';
-import profile2 from '../assets/LandingPageImages/profile2.jpeg';
-import profile3 from '../assets/LandingPageImages/profile3.jpeg';
+import profile1 from '../assets/LandingPageImages/profile1.webp';
+import profile2 from '../assets/LandingPageImages/profile2.webp';
+import profile3 from '../assets/LandingPageImages/profile3.webp';
 import demo from '../assets/LandingPageImages/demo.svg';
+import ecommerceImage from '../assets/LandingPageImages/EcommerceImage.png';
+import Vector from '../assets/LandingPageImages/Vector.png';
 
 export default {
   book,
@@ -24,4 +26,6 @@ export default {
   profile2,
   profile3,
   demo,
+  ecommerceImage,
+  Vector,
 };

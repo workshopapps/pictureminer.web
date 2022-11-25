@@ -3,6 +3,7 @@ import FormInput from '../../components/form/FormInput';
 import Button from '../../components/ui/Button';
 import { AiOutlineExclamation } from 'react-icons/ai';
 import { IoCloseSharp } from 'react-icons/io5';
+import './styles/dashboard.css';
 
 function AccountSettings() {
   const initialFormValues = {
@@ -20,10 +21,15 @@ function AccountSettings() {
   const [errorMessages, setErrorMessages] = useState({});
   const [success, setSuccess] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const [isTouched, setIsTouched] = useState(false);
+  const [isFormValueEmpty, setIsFormValueEmpty] = useState(false);
 
   const handleChange = (e) => {
     const { value, name } = e.target;
     setFormValues((prevFormValues) => ({ ...prevFormValues, [name]: value }));
+    setIsTouched(true);
+    setIsFormValueEmpty(false);
+    setIsSubmitting(false);
   };
 
   const handleSubmit = (e) => {
@@ -31,6 +37,7 @@ function AccountSettings() {
 
     setIsSubmitting(true);
     setErrorMessages(validateForm(formValues));
+    setIsTouched(false);
   };
 
   const validateForm = (formValues) => {
@@ -61,18 +68,22 @@ function AccountSettings() {
       setSuccessMessage('User details updated successfully');
       setTimeout(() => {
         setFormValues(initialFormValues);
-        // setSuccessMessage('');
         setIsSubmitting(false);
         setSuccess(false);
       }, 5000);
     } else {
       setIsSubmitting(false);
     }
+
+    const isNullish = Object.values(formValues).every((formValue) => {
+      if (formValue === '') return true;
+    });
+    setIsFormValueEmpty(isNullish);
   }, [errorMessages]);
 
   const cancelAccountSettingsUpdate = () => {
     setFormValues(initialFormValues);
-    // setIsSubmitting(true);
+    setIsTouched(false);
   };
 
   const togglePassword = () => {
@@ -84,18 +95,18 @@ function AccountSettings() {
   };
 
   return (
-    <div className="mt-12 mb-28 -z-0">
-      <div className="container">
+    <div className="mb-28 -z-0">
+      <div className="container-dashboard">
         <section className="">
           <h1 className="text-large">Account settings</h1>
           {successMessage && (
-            <div className="w-[320px] md:w-[450px] p-6 rounded-md bg-[#12B76A] text-white mt-10 absolute top-[10%] right-20 flex items-center justify-between space-x-4 flex-shrink-0">
+            <div className="w-[350px] md:w-[500px] p-6 rounded-md bg-[#12B76A] text-white mt-10 absolute top-[10%] right-5 lg:right-20 flex items-center justify-between space-x-4 flex-shrink-0">
               <div className="rounded-full bg-white flex items-center justify-center ">
-                <AiOutlineExclamation className="text-green-700 text-large " />
+                <AiOutlineExclamation className="text-green-700 text-normal " />
               </div>
-              <p className="text-normal">{successMessage}</p>
+              <p className="text-xSmall">{successMessage}</p>
               <div onClick={toggleSuccessMessage}>
-                <IoCloseSharp className="text-large cursor-pointer" />
+                <IoCloseSharp className="text-normal cursor-pointer" />
               </div>
             </div>
           )}
@@ -108,8 +119,8 @@ function AccountSettings() {
                 onchange={handleChange}
                 placeholder="Your first name"
                 value={formValues.firstName}
-                labelClassName="form_label"
-                containerClassName="form_group"
+                labelClassName="form__label"
+                containerClassName="form__group"
               />
               <FormInput
                 name="lastName"
@@ -118,8 +129,8 @@ function AccountSettings() {
                 onchange={handleChange}
                 placeholder="Your last name"
                 value={formValues.lastName}
-                labelClassName="form_label"
-                containerClassName="form_group"
+                labelClassName="form__label"
+                containerClassName="form__group"
               />
             </div>
             <FormInput
@@ -129,8 +140,8 @@ function AccountSettings() {
               onchange={handleChange}
               placeholder="example@gmail.com"
               value={formValues.email}
-              labelClassName="form_label"
-              containerClassName="form_group"
+              labelClassName="form__label"
+              containerClassName="form__group"
             />
             <FormInput
               name="businessName"
@@ -139,8 +150,8 @@ function AccountSettings() {
               onchange={handleChange}
               placeholder="minegram"
               value={formValues.businessName}
-              labelClassName="form_label"
-              containerClassName="form_group"
+              labelClassName="form__label"
+              containerClassName="form__group"
             />
             <FormInput
               name="currentPassword"
@@ -149,8 +160,8 @@ function AccountSettings() {
               onchange={handleChange}
               placeholder="123456"
               value={formValues.currentPassword}
-              labelClassName="form_label"
-              containerClassName="form_group"
+              labelClassName="form__label"
+              containerClassName="form__group"
               showPassword={showPassword}
               togglePassword={togglePassword}
               inputClassName="w-full"
@@ -167,20 +178,19 @@ function AccountSettings() {
               inputClassName={`w-full ${
                 errorMessages.newPassword && 'border-red-500'
               } ${success && 'border-green-300'}`}
-              labelClassName="form_label"
-              containerClassName="form_group"
+              labelClassName="form__label"
+              containerClassName="form__group"
               showPassword={showPassword}
               togglePassword={togglePassword}
               buttonClassName="absolute bg-transparent top-2/4 right-[3%] -translate-x-[3%] -translate-y-2/4 cursor-pointer"
               eyeIconClassName="text-large text-inputGray"
             />
-            <small
-              className={`text-sm text-inputGray ${
-                errorMessages.newPassword ? 'text-red-500' : ''
-              }`}
-            >
-              {errorMessages.newPassword}
-            </small>
+            {errorMessages.newPassword && (
+              <small className="text-sm text-red-500">
+                {errorMessages.newPassword}
+              </small>
+            )}
+
             <FormInput
               name="confirmPassword"
               label="Confirm password"
@@ -191,37 +201,36 @@ function AccountSettings() {
               inputClassName={`w-full ${
                 errorMessages.confirmPassword && 'border-red-500'
               } ${success && 'border-green-300'}`}
-              labelClassName="form_label"
-              containerClassName="form_group"
+              labelClassName="form__label"
+              containerClassName="form__group"
               showPassword={showPassword}
               togglePassword={togglePassword}
               buttonClassName="absolute bg-transparent top-2/4 right-[3%] -translate-x-[3%] -translate-y-2/4 cursor-pointer"
               eyeIconClassName="text-large text-inputGray"
             />
-            <small
-              className={`text-sm text-inputGray ${
-                errorMessages.confirmPassword ? 'text-red-500' : ''
-              }`}
-            >
-              {errorMessages.confirmPassword}
-            </small>
-            <div className="mt-8 space-x-5 flex items-center justify-end md:justify-start">
+            {errorMessages.confirmPassword && (
+              <small className="text-sm text-red-500">
+                {errorMessages.confirmPassword}
+              </small>
+            )}
+
+            <div className="mt-12 space-x-5 flex items-center justify-end md:justify-start">
               <Button
                 text="cancel"
                 type="button"
                 onclick={cancelAccountSettingsUpdate}
-                className={`py-2 px-8 rounded-lg text-normal border border-[#686868] border-solid cursor-pointer ${
-                  success && 'border-mainOrange text-mainOrange'
+                className={`py-2 px-8 rounded-lg text-small border border-[#686868] border-solid cursor-pointer ${
+                  success || (isTouched && 'border-mainOrange text-mainOrange')
                 }`}
-                disabled={isSubmitting}
+                disabled={!isTouched || isFormValueEmpty}
               />
               <Button
                 text="save"
-                className={`py-2 px-8 rounded-lg text-normal bg-[#D2D2D2] cursor-pointer ${
-                  success && 'bg-mainOrange text-white'
+                className={`py-2 px-8 rounded-lg text-small bg-[#D2D2D2] cursor-pointer ${
+                  success || (isTouched && 'bg-mainOrange text-white')
                 }`}
                 type="submit"
-                disabled={isSubmitting}
+                disabled={!isTouched || isFormValueEmpty}
               />
             </div>
           </form>

@@ -1,8 +1,8 @@
 import React from 'react';
 import DocumentationHero from '../../../features/documentation/components/DocumentationHero';
 import DocumentNav from '../../../features/documentation/components/DocumentNav';
-import ImageMining from '../../../assets/documentationImages/imageMining.png';
-import DefiningImage from '../../../assets/documentationImages/definingImages.png';
+import ImageMining from '../../../assets/documentationImages/imageMining.webp';
+import DefiningImage from '../../../assets/documentationImages/definingImages.webp';
 
 import './gettingStarted.scss';
 import DocumentationSidebar from '../../../features/documentation/components/DocumentationSidebar';
@@ -13,7 +13,7 @@ const GettingStarted = () => {
       <DocumentNav />
       <DocumentationHero
         headerText="Getting Started"
-        paragraphText="An overview of Tozilla, how to download and use, basic templates and examples, and more."
+        paragraphText="An overview of Minergram, how to download and use, basic templates and examples, and more."
       />
 
       <section
@@ -25,7 +25,7 @@ const GettingStarted = () => {
           <div className="getting-started_underline" />
 
           <p>
-            Get started with Tozilla and learn by exploring interactive
+            Get started with Minergram and learn by exploring interactive
             examples.
           </p>
           <div className="getting-started_overview" id="overview">
@@ -46,7 +46,7 @@ const GettingStarted = () => {
                   appealing to a different skill level and case. Read through to
                   see what suits.
                 </p>
-                <button>Download Tozilla</button>
+                <button>Download Minergram</button>
               </div>
               <div>
                 <h3>Source Code</h3>

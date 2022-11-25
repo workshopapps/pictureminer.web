@@ -3,8 +3,8 @@ import React from 'react';
 import DocumentationHero from '../../../features/documentation/components/DocumentationHero';
 import DocumentationSidebar from '../../../features/documentation/components/DocumentationSidebar';
 import DocumentNav from '../../../features/documentation/components/DocumentNav';
-import InstallationLibraryImage from '../.../../../../assets/documentationImages/InstallationsLibraries.png';
-import InstallationTorzillaLite from '../.../../../../assets/documentationImages/InstallationTorzillaLite.png';
+import InstallationLibraryImage from '../.../../../../assets/documentationImages/InstallationsLibraries.webp';
+import InstallationTorzillaLite from '../.../../../../assets/documentationImages/InstallationTorzillaLite.webp';
 import './installations.scss';
 const Installations = () => {
   return (
@@ -21,7 +21,7 @@ const Installations = () => {
           <div className="installation_underline" />
 
           <p>
-            Get started with Tozilla and learn by exploring interactive
+            Get started with Minergram and learn by exploring interactive
             examples.
           </p>
           <div className="installation_component" id="components">
@@ -77,7 +77,7 @@ const Installations = () => {
             </p>
           </section>
           <section className="installation_section" id="torzillaLite">
-            <h3>Tozilla Lite</h3>
+            <h3>Minergram Lite</h3>
             <p>
               Recognise and mine images with Torzilla. each one appealing to a
               different skill level and use case. Read through to see what suits

@@ -16,6 +16,7 @@ const FormInput = ({
   showPassword,
   buttonClassName,
   eyeIconClassName,
+  required,
 }) => {
   const regEx = /password/gi;
   const nameMatch = name.match(regEx);
@@ -37,6 +38,7 @@ const FormInput = ({
               onBlur ? onBlur() : null;
             }}
             className={`${inputClassName}`}
+            required={required}
           />
           <button
             className={`${buttonClassName}`}
@@ -62,6 +64,7 @@ const FormInput = ({
             onBlur ? onBlur() : null;
           }}
           className={`${inputClassName}`}
+          required={required}
         />
       )}
     </div>
