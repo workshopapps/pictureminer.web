@@ -55,7 +55,7 @@ export default function ForgotPassword() {
                 className="w-[122px] mx-auto"
               />
               <h1 className="text-[25px] font-bold leading-[53px] mt-6">
-                Redirecting to reset password page in 2 seconds.....
+                Redirecting in 2 seconds.....
               </h1>
             </div>
           ) : (
