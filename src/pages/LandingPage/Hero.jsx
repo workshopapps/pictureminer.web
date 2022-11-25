@@ -16,7 +16,7 @@ const Hero = () => {
         results.
       </p>
       <div className={style.ctaWrapper}>
-        <Link>Sign Up</Link>
+        <Link to="/signup">Sign Up</Link>
         <Link to="/documentation">See our documentation</Link>
       </div>
     </section>

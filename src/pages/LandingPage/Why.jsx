@@ -16,7 +16,7 @@ const Why = () => {
               Minergram is very easy to and you can get several texts for
               several images within a few seconds to a few minutes.
             </p>
-            <Link>See More</Link>
+            <Link to="/demo">See More</Link>
           </div>
         </div>
       </div>
