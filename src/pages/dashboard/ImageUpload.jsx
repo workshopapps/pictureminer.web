@@ -4,7 +4,6 @@ import { images } from '../../Constants';
 // import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import useUploadImage from '../../Hooks/useUploadImage';
-// import Button from '../../components/ui/Button';
 import './styles/imageUpload.scss';
 
 const ImageUpload = () => {
@@ -30,6 +29,7 @@ const ImageUpload = () => {
     const formData = new FormData();
     imagesUpload.forEach((image) => formData.append('image', image));
     mutate(formData);
+    console.log(imagesUpload);
   };
   return (
     <div className="mx-auto">
@@ -57,14 +57,13 @@ const ImageUpload = () => {
             onClick={handleImageSubmit}
           />
         </div>
-        <div className="flex flex-row gap-5 items-center justify-center">
+        <div className="flex flex-col gap-5 items-center justify-center">
           {imageURLs.map((imageSrc) => (
             <img key={imagesUpload.length} src={imageSrc} className="w-24" />
           ))}
-          {response && <p>{response.data.text_content}</p>}
+          {response && <p>Reload: {response.data.text_content}</p>}
+          {console.log(response)}
         </div>
-        <button onClick={handleImageSubmit}>upload</button>
-        {response && <p>{response.data.text_content}</p>}
       </div>
     </div>
   );
