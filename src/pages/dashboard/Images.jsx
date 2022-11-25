@@ -1,5 +1,5 @@
 import { ArrowDown2, Trash } from 'iconsax-react';
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Button from '../../components/ui/Button';
 import DataTable from 'react-data-table-component';
 import { Link } from 'react-router-dom';
@@ -8,175 +8,12 @@ import Modal, { Backdrop } from '../../components/ui/Modal';
 import successIcon from '../../assets/dashboardImageDetails/success-icon.webp';
 import warningIcon from '../../assets/dashboardImageDetails/warning-icon.webp';
 import closeIcon from '../../assets/dashboardImageDetails/close-icon.webp';
-
-const data = [
-  {
-    id: '1',
-    sn: 1,
-    picture: <img src={foodImage} alt="" />,
-    pictureId: '#123445k',
-    dateMined: '12/12/2022',
-    details: <Link to={`${1}`}>View More</Link>,
-  },
-  {
-    id: '2',
-    sn: 2,
-    picture: <img src={foodImage} alt="" />,
-    pictureId: '#123445k',
-    dateMined: '12/12/2022',
-    details: <Link to={`/${2}`}>View More</Link>,
-  },
-  {
-    id: '3',
-    sn: 3,
-    picture: <img src={foodImage} alt="" />,
-    pictureId: '#123445k',
-    dateMined: '12/12/2022',
-    details: <Link to={`/${3}`}>View More</Link>,
-  },
-  {
-    id: '4',
-    sn: 4,
-    picture: <img src={foodImage} alt="" />,
-    pictureId: '#123445k',
-    dateMined: '12/12/2022',
-    details: <Link to={`${4}`}>View More</Link>,
-  },
-  {
-    id: '5',
-    sn: 5,
-    picture: <img src={foodImage} alt="" />,
-    pictureId: '#123445k',
-    dateMined: '12/12/2022',
-    details: (
-      <Link to={`images/${5}`} className="view__more">
-        View More
-      </Link>
-    ),
-  },
-  {
-    id: '6',
-    sn: 6,
-    picture: <img src={foodImage} alt="" />,
-    pictureId: '#123445k',
-    dateMined: '12/12/2022',
-    details: (
-      <Link to={`images/${5}`} className="view__more">
-        View More
-      </Link>
-    ),
-  },
-  {
-    id: '7',
-    sn: 7,
-    picture: <img src={foodImage} alt="" />,
-    pictureId: '#123447k',
-    dateMined: '12/12/2022',
-    details: (
-      <Link to={`images/${5}`} className="view__more">
-        View More
-      </Link>
-    ),
-  },
-  {
-    id: '8',
-    sn: 8,
-    picture: <img src={foodImage} alt="" />,
-    pictureId: '#123445k',
-    dateMined: '12/12/2022',
-    details: (
-      <Link to={`images/${5}`} className="view__more">
-        View More
-      </Link>
-    ),
-  },
-  {
-    id: '9',
-    sn: 9,
-    picture: <img src={foodImage} alt="" />,
-    pictureId: '#123445k',
-    dateMined: '12/12/2022',
-    details: (
-      <Link to={`images/${5}`} className="view__more">
-        View More
-      </Link>
-    ),
-  },
-  {
-    id: '10',
-    sn: 10,
-    picture: <img src={foodImage} alt="" />,
-    pictureId: '#123445k',
-    dateMined: '12/12/2022',
-    details: (
-      <Link to={`images/${5}`} className="view__more">
-        View More
-      </Link>
-    ),
-  },
-  {
-    id: '11',
-    sn: 11,
-    picture: <img src={foodImage} alt="" />,
-    pictureId: '#123445k',
-    dateMined: '12/12/2022',
-    details: (
-      <Link to={`images/${5}`} className="view__more">
-        View More
-      </Link>
-    ),
-  },
-  {
-    id: '12',
-    sn: 12,
-    picture: <img src={foodImage} alt="" />,
-    pictureId: '#123445k',
-    dateMined: '12/12/2022',
-    details: (
-      <Link to={`images/${5}`} className="view__more">
-        View More
-      </Link>
-    ),
-  },
-  {
-    id: '13',
-    sn: 13,
-    picture: <img src={foodImage} alt="" />,
-    pictureId: '#123445k',
-    dateMined: '12/12/2022',
-    details: (
-      <Link to={`images/${5}`} className="view__more">
-        View More
-      </Link>
-    ),
-  },
-  {
-    id: '14',
-    sn: 14,
-    picture: <img src={foodImage} alt="" />,
-    pictureId: '#123445k',
-    dateMined: '12/12/2022',
-    details: (
-      <Link to={`images/${5}`} className="view__more">
-        View More
-      </Link>
-    ),
-  },
-  {
-    id: '15',
-    sn: 15,
-    picture: <img src={foodImage} alt="" />,
-    pictureId: '#123445k',
-    dateMined: '12/12/2022',
-    details: (
-      <Link to={`images/${5}`} className="view__more">
-        View More
-      </Link>
-    ),
-  },
-];
+import axios from 'axios';
+import UserContext from '../../context/UserContext';
 
 const Images = () => {
+  const { user } = useContext(UserContext);
+  const [imageData, setImageData] = useState({ loading: false });
   const [showMenu, setShowMenu] = useState(false);
   const toggleShowMenu = () => {
     setShowMenu((prev) => !prev);
@@ -218,7 +55,7 @@ const Images = () => {
     },
     {
       name: 'Details',
-      cell: () => <Link to={`${1}`}>View More</Link>,
+      selector: (cell) => cell.details,
       sortable: true,
       flex: 1,
       right: true,
@@ -240,6 +77,58 @@ const Images = () => {
       width: '50px',
     },
   ];
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setImageData((prev) => {
+          return {
+            ...prev,
+            loading: true,
+          };
+        });
+
+        const response = await axios.get('mine-service/get-all', {
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            Authorization: `Bearer ${user.Token}`,
+          },
+        });
+
+        if (response) {
+          const structuredData = response?.data.map((item, index) => {
+            return {
+              id: index,
+              sn: index,
+              picture: <img src={item.image_path} alt="" />,
+              pictureId: `#${item.date_created.split('.')[1]}`,
+              dateMined: `${item.date_created.split('T')[0]}`,
+              details: (
+                <Link
+                  to={`${item.date_created.split('.')[1]}`}
+                  className="view__more"
+                >
+                  View More
+                </Link>
+              ),
+            };
+          });
+          setImageData((prev) => {
+            return {
+              ...prev,
+              loading: false,
+              tabledata: structuredData,
+            };
+          });
+        }
+      } catch (error) {
+        console.log(error);
+      } finally {
+      }
+    };
+    fetchData();
+  }, [user]);
+
   return (
     <div className="dashboard_images">
       <div className="dashboard__images__head">
@@ -250,6 +139,7 @@ const Images = () => {
             icon={<ArrowDown2 size={24} color="#FF6C00" />}
             onclick={() => setShowMenu((prev) => !prev)}
             className="button"
+            type="secondary"
           />
           <div className={showMenu ? 'show filter' : 'hide filter'}>
             <p>Last two days </p>
@@ -262,7 +152,8 @@ const Images = () => {
       <div className="images_table">
         <DataTable
           columns={columns}
-          data={data}
+          data={imageData.tabledata}
+          progressPending={imageData.loading}
           responsive
           striped
           pagination

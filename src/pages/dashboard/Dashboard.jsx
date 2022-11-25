@@ -38,28 +38,14 @@ const Dashboard = () => {
             };
           });
         }
-        console.log(response.data);
       } catch (error) {
         console.log(error);
-        // setDatal((prev) => {
-        //   return {
-        //     ...prev,
-        //     error: 'Please try again or Log in and log out',
-        //     loading: false,
-        //   }
-        // })
       } finally {
-        // setDatal((prev) => {
-        //   return {
-        //     ...prev,
-        //     loading: false,
-        //   }
-        // })
       }
     };
     fetchData();
   }, [user]);
-  console.log(dashboarddata);
+
   return (
     <div className="dashboard">
       <div className="dashboard__head">

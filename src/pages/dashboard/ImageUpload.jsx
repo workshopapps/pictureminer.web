@@ -62,7 +62,6 @@ const ImageUpload = () => {
               <img key={imagesUpload.length} src={imageSrc} className="w-24" />
             ))}
           </div>
-
           {imageURLs.length > 0 && (
             <button
               className="button"

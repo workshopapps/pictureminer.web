@@ -1,10 +1,17 @@
 import { Filter } from 'iconsax-react';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import UserContext from '../../context/UserContext';
+import { removeItemFromLocalStorage } from '../../localStorage';
 
 const DashboardNavbar = ({ data }) => {
   const [showMenu, setShowMenu] = useState(false);
-  console.log(data);
+  const { setUser } = useContext(UserContext);
+  const handleLogout = () => {
+    setUser(null);
+    removeItemFromLocalStorage('user');
+  };
+
   return (
     <div className="navbar">
       <div className="form__input">
@@ -43,7 +50,7 @@ const DashboardNavbar = ({ data }) => {
             <Link to="account-setup">
               <p>Account Settings</p>
             </Link>
-            <p>Log out</p>
+            <p onClick={handleLogout}>Log out</p>
           </div>
         </div>
       </div>

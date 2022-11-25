@@ -35,7 +35,7 @@ import Web from './pages/documentation/WebPage/Web';
 import WhyMinergram from './pages/whyTozilla/WhyMinergram';
 import ImageDetails from './pages/dashboard/ImageDetails';
 import Privacypolicy from './pages/privacypolicy/privacypolicy';
-import UserContext from './context/UserContext';
+
 import ApiDocumentation from './pages/documentation/ApiDocumentation';
 
 // import { useGlobalContext } from './context/context';
@@ -55,6 +55,7 @@ import Payment from './pages/pricing/Payment';
 import Signup from './pages/signup';
 import { AppProvider } from './context/context';
 import { getLocalStorage } from './localStorage';
+import UserContext from './context/UserContext';
 
 const RoutesComponents = () => {
   const { setUser } = useContext(UserContext);
@@ -121,6 +122,10 @@ const RoutesComponents = () => {
             <Route path="/privacy-policy" element={<Privacypolicy />}></Route>
             <Route path="/faq" element={<Faq />}></Route>
             <Route path="*" element={<ErrorPage />}></Route>
+
+            {/* <Route path="why-tozilla" element={<WhyTozilla />} /> */}
+            <Route path="why-minergram" element={<WhyMinergram />} />
+
             <Route path="/login" element={<Login />} />
           </Route>
           {/*If your riute us priviate, use Protected Route */}
@@ -136,6 +141,8 @@ const RoutesComponents = () => {
             <Route path="/account-setup" element={<AccountSettings />} />
             <Route path="/billing" element={<Billing />} />
           </Route>
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
         </Routes>
       </ScrollToTop>
     </AppProvider>

@@ -15,7 +15,7 @@ const DashboardLayout = () => {
 
   return (
     <>
-      {
+      {user ? (
         <div className="dashboard_layout">
           <Sidebar />
           <div className="dashboard_pages">
@@ -23,9 +23,9 @@ const DashboardLayout = () => {
             <Outlet />
           </div>
         </div>
-        // ) : (
-        //   <Login />
-      }
+      ) : (
+        <Login />
+      )}
     </>
   );
 };

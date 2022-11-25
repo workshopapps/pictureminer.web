@@ -5,8 +5,5 @@ export default yup.object().shape({
     .string()
     .email('Email must be a valid email')
     .isRequired('Email is required'),
-  Password: yup
-    .string()
-    // .min(6, 'Password must be at least 6 characters')
-    .isRequired('Password is required'),
+  Password: yup.string().required('Password is required'),
 });
