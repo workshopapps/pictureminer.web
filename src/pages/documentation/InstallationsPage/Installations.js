@@ -4,7 +4,7 @@ import DocumentationHero from '../../../features/documentation/components/Docume
 import DocumentationSidebar from '../../../features/documentation/components/DocumentationSidebar';
 import DocumentNav from '../../../features/documentation/components/DocumentNav';
 import InstallationLibraryImage from '../.../../../../assets/documentationImages/InstallationsLibraries.webp';
-import InstallationMinergramLite from '../.../../../../assets/documentationImages/InstallationMinergramLit.webp';
+import InstallationMinergramLite from '../.../../../../assets/documentationImages/InstallationMinergramLite.webp';
 import './installations.scss';
 const Installations = () => {
   return (
