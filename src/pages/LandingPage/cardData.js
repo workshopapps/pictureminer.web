@@ -1,30 +1,22 @@
-import { images } from '../../Constants';
-
 export default [
   {
-    id: 1,
-    name: 'Frank Graham',
-    profileImg: images.profile1,
-    message:
-      'Minergram offers the best API integration services for picture mining. I can now get description for all of my images at a go.',
-    company: 'Deloitte',
+    title: 'E-Commerce',
+    p: 'The quickest, easiest way to get your products classified and categorized, cuts down on process time, so you can focus.',
+    link: '/e-commerce',
   },
-
   {
-    id: 2,
-    name: 'Abel Matthew',
-    profileImg: images.profile2,
-    message:
-      'Thanks to Minergram, I dont have to worry about what is behind an image. It does it all for me.',
-    company: 'Jumia',
+    title: 'Lodging',
+    p: 'To guarantee that consumers receive incredibly precise information, our API provides structured descriptions for accommodations. The process of captioning is streamlined and involves relatively little manual labor. ',
+    link: '/lodging',
   },
-
   {
-    id: 3,
-    name: 'John Joseph',
-    profileImg: images.profile3,
-    message:
-      'Working with my team has never been more easy. I ove the simplicity of this API',
-    company: 'Amazon',
+    title: 'Hospitality',
+    p: ' Hospitality: classification and labeling of images In addition to assisting you in finding files quickly and accurately, we also help you centralize your medical digital assets.',
+    link: '/hospitality',
+  },
+  {
+    title: 'Search Engine',
+    p: 'Our API creates structured descriptions for image databases, for huge online picture libraries, saving them time, stress, and manual labor.',
+    link: '/search-engine',
   },
 ];
