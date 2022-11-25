@@ -31,7 +31,7 @@ const GettingStarted = () => {
           <div className="getting-started_overview" id="overview">
             <h1>Overview</h1>
             <p>
-              Torzilla (currently v3.3.7) has a few easy ways to quickly get
+              Minergram (currently v3.3.7) has a few easy ways to quickly get
               started, each one appealing to a different skill level and use
               case. Read through to see what suits your particular needs.
             </p>
@@ -42,7 +42,7 @@ const GettingStarted = () => {
               <div>
                 <h3>Tozoila</h3>
                 <p>
-                  Torzilla (currently v3.3.7) has ways to quickly get started
+                  Minergram (currently v3.3.7) has ways to quickly get started
                   appealing to a different skill level and case. Read through to
                   see what suits.
                 </p>
@@ -51,7 +51,7 @@ const GettingStarted = () => {
               <div>
                 <h3>Source Code</h3>
                 <p>
-                  Torzilla (currently v3.3.7) has ways to quickly get started
+                  Minergram (currently v3.3.7) has ways to quickly get started
                   appealing to a different skill level and case. Read through to
                   see what suits.
                 </p>
@@ -113,7 +113,7 @@ integrity="sha384-`}</p>
           <section className="imageMining" id="imageMining">
             <h3>Image Mining</h3>
             <p>
-              Recognise and mine images with Torzilla. each one appealing to a
+              Recognise and mine images with Minergram. each one appealing to a
               different skill level and use case. Read through to see what suits
               your particular needs.
             </p>
@@ -135,7 +135,7 @@ integrity="sha384-`}</p>
           <section className="imageMining" id="definingImages">
             <h3>Defining Images</h3>
             <p>
-              Recognise and mine images with Torzilla. each one appealing to a
+              Recognise and mine images with Minergram. each one appealing to a
               different skill level and use case. Read through to see what suits
               your particular needs.
             </p>
