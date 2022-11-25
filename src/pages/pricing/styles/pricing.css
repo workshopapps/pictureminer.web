@@ -9,4 +9,8 @@
     @apply mx-auto px-4 md:px-0;
     width: clamp(375px, 90vw, 950px);
   }
+  .payment-container {
+    @apply mx-auto px-4 md:px-0;
+    width: clamp(375px, 90vw, 680px);
+  }
 }

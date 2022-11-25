@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles/pricing.css';
 import { BiLike } from 'react-icons/bi';
 import { SlCheck } from 'react-icons/sl';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 function Pricing() {
+  const [isChecked, setIsChecked] = useState(true);
+
   return (
     <div className="mt-16 md:mt-20">
       <header className="text-center pricing-container">
@@ -28,7 +31,9 @@ function Pricing() {
       <section className="mt-16 md:mt-20 mx-auto max-w-screen-xl bg-white dark:bg-gray-900">
         {/* Toggle */}
         <div className="flex items-center space-x-6 px-4 md:justify-center">
-          <h2 className="font-bold text-small">Monthly</h2>
+          <h2 className="font-bold text-small ">
+            {isChecked ? 'Monthly' : 'Yearly(Save 12%)'}
+          </h2>
           <label className="inline-flex relative items-center cursor-pointer">
             <input
               type="checkbox"
@@ -36,7 +41,10 @@ function Pricing() {
               className="sr-only peer"
               defaultChecked={true}
             />
-            <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-lightOrange dark:peer-focus:ring-mainOrange dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-mainOrange"></div>
+            <div
+              className="w-11 h-6 bg-mainOrange rounded-full peer peer-focus:ring-4 peer-focus:ring-lightOrange peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-mainOrange"
+              onClick={() => setIsChecked((prevState) => !prevState)}
+            ></div>
             <span className="ml-5 text-sm font-medium text-gray-900 dark:text-gray-300"></span>
           </label>
         </div>
@@ -52,53 +60,45 @@ function Pricing() {
               {/* List items  */}
               <ul role="list" className="mb-8 mt-16 space-y-4 text-left">
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <SlCheck className="text-lg" />
                   <span>2 GB free storage space</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <SlCheck className="text-lg" />
                   <span>10 free trials </span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <SlCheck className="text-lg" />
                   <span>Image upload not more than 16MB</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <SlCheck className="text-lg " />
                   <span>Live chat</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <SlCheck className="text-lg " />
                   <span>24/7 Hour support </span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <AiOutlineCloseCircle className="text-xl text-red-500" />
                   <span>Gain access to uploads by others</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <AiOutlineCloseCircle className="text-xl text-red-500" />
                   <span>Faster processing speed </span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <AiOutlineCloseCircle className="text-xl text-red-500" />
                   <span>Upload two images simultaneously</span>
                 </li>
               </ul>
-              <a
-                href="#"
-                className="w-[50%] md:w-[60%] text-white bg-mainOrange hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center space-x-4"
+              <Link
+                to="/signup"
+                className="w-[50%] md:w-[60%] text-white bg-mainOrange hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center space-x-4 hover:bg-mainOrange/70"
               >
                 <span className="text-small"> Choose plan</span>
                 <span className="text-3xl font-light">&#8250;</span>
-              </a>
+              </Link>
             </div>
             {/* Pricing Card  */}
             <div className="flex flex-col p-6 mx-auto max-w-2xl text-center text-white bg-mainOrange rounded-lg border border-gray-100 shadow xl:py-8">
@@ -110,53 +110,46 @@ function Pricing() {
               {/* List items  */}
               <ul role="list" className="mb-8 mt-16 space-y-4 text-left">
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <SlCheck className="text-lg" />
                   <span>6 GB free storage space</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <SlCheck className="text-lg" />
                   <span>25 free trials </span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <SlCheck className="text-lg" />
                   <span>Image upload not more than 200MB</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <SlCheck className="text-lg " />
                   <span>Live chat</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <SlCheck className="text-lg " />
                   <span>24/7 Hour support </span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <SlCheck className="text-lg " />{' '}
                   <span>Gain access to uploads by others</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <SlCheck className="text-lg " />{' '}
                   <span>Faster processing speed </span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <SlCheck className="text-lg " />{' '}
                   <span>Upload two images simultaneously</span>
                 </li>
               </ul>
-              <a
-                href="#"
-                className="w-[50%] md:w-[60%] text-mainOrange bg-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center space-x-4"
+              <Link
+                to="/pricing/standard"
+                className="w-[50%] md:w-[60%] text-mainOrange bg-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center space-x-4 hover:bg-lightOrange "
               >
+                {' '}
                 <span className="text-small"> Choose plan</span>
                 <span className="text-3xl font-light">&#8250;</span>
-              </a>
+              </Link>
             </div>
             {/* Pricing Card  */}
             <div className="flex flex-col p-6 mx-auto max-w-2xl text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow xl:py-8 ">
@@ -168,53 +161,45 @@ function Pricing() {
               {/* List items  */}
               <ul role="list" className="mb-8 mt-16 space-y-4 text-left">
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <SlCheck className="text-lg" />
                   <span>Unlimited free storage space</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <SlCheck className="text-lg" />
                   <span>40 free trials </span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <SlCheck className="text-lg" />
                   <span>Image upload not more than 500MB</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <SlCheck className="text-lg " />
                   <span>Live chat</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <SlCheck className="text-lg " />
                   <span>24/7 Hour support </span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <SlCheck className="text-lg" />
                   <span>Gain access to uploads by others</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <SlCheck className="text-lg" />
                   <span>Faster processing speed </span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  {/* Icon  */}
                   <SlCheck className="text-lg" />
                   <span>Upload two images simultaneously</span>
                 </li>
               </ul>
-              <a
-                href="#"
-                className="w-[50%] md:w-[60%] text-white bg-mainOrange hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center space-x-4"
+              <Link
+                to="/pricing/premium"
+                className="w-[50%] md:w-[60%] text-white bg-mainOrange hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center space-x-4 hover:bg-mainOrange/70"
               >
                 <span className="text-small"> Choose plan</span>
                 <span className="text-3xl font-light">&#8250;</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

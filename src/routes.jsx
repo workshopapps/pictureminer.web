@@ -34,12 +34,15 @@ import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
 import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
 import LandingPage from './pages/LandingPage/LandingPage';
 import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
+import EcommercePage from './pages/LandingPage/EcommercePage/EcommercePage';
+import Hospitality from './pages/LandingPage/HospitalityPage/Hospitality';
+import SearchEngine from './pages/LandingPage/SearchEnginePage/SearchEngine';
+import Healthcare from './pages/LandingPage/HealthcarePage/Healthcare';
+import ExternalDemoPage from './pages/LandingPage/ExternalPage/ExternalPage';
 import Integrations from './pages/documentation/IntegrationPage/Integrations';
 import Web from './pages/documentation/WebPage/Web';
-// import WhyTozilla from './pages/whyTozilla/whyTozilla';
-
+import WhyTozilla from './pages/whyTozilla/WhyTozilla';
 import ImageDetails from './pages/dashboard/ImageDetails';
-
 import Privacypolicy from './pages/privacypolicy/privacypolicy';
 
 import ApiDocumentation from './pages/documentation/ApiDocumentation';
@@ -57,6 +60,11 @@ import ApplicationReceived from './pages/PartnerWithUs/page/ApplicationReceived'
 import ScrollToTop from './layouts/ScrollToTop';
 import Pricing from './pages/pricing/Pricing';
 import ImageUpload from './pages/dashboard/ImageUpload';
+import ForgotPassword from './pages/forgotPassword/ForgotPassword';
+import ResetPassword from './pages/resetPassword/ResetPassword';
+import Payment from './pages/pricing/Payment';
+import Signup from './pages/signup';
+import { AppProvider } from './context/context';
 
 const RoutesComponents = () => {
   // const {
@@ -67,16 +75,23 @@ const RoutesComponents = () => {
   //   },
   // } = useGlobalContext();
   return (
-    <>
+    <AppProvider>
       <ScrollToTop>
         <Routes>
           <Route path="" element={<Layout />}>
             <Route exact path="" element={<LandingPage />} />
+            <Route path="/signup" element={<Signup />} />
             <Route path="/demo" element={<MinergramDemo />} />
+            <Route path="/external-demo-page" element={<ExternalDemoPage />} />
+            <Route path="/e-commerce" element={<EcommercePage />} />
+            <Route path="/hospitality" element={<Hospitality />} />
+            <Route path="/search-engine" element={<SearchEngine />} />
+            <Route path="/healthcare" element={<Healthcare />} />
             <Route path="/About-us" element={<About />} />
             <Route path="/how-it-works" element={<HowItWorks />} />
             <Route path="/partner-with-us" element={<PartnerWithUs />}></Route>
-            <Route path="/pricing" element={<Pricing />} />
+            <Route path="/pricing" element={<Pricing />}></Route>
+            <Route path="/pricing/:paymentPlan" element={<Payment />} />
             <Route
               path="/documentation"
               element={<DocumentationHome />}
@@ -155,9 +170,11 @@ const RoutesComponents = () => {
             <Route path="/account-setup" element={<AccountSettings />} />
             <Route path="/billing" element={<Billing />} />
           </Route>
+
+
         </Routes>
       </ScrollToTop>
-    </>
+    </AppProvider>
   );
 };
 

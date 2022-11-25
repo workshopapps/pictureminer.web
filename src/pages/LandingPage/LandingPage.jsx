@@ -1,18 +1,18 @@
 import React from 'react';
+import Benefits from './Benefits';
 
 import Hero from './Hero';
 import Uses from './Uses';
-import Works from './Works';
-import Testimonials from './Testimonials';
+import Why from './Why';
 
 const LandingPage = () => {
   return (
-    <div className="landing_page">
+    <>
       <Hero />
       <Uses />
-      <Works />
-      <Testimonials />
-    </div>
+      <Why />
+      <Benefits />
+    </>
   );
 };
 

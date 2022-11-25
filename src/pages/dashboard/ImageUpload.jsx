@@ -63,10 +63,8 @@ const ImageUpload = () => {
           ))}
           {response && <p>{response.data.text_content}</p>}
         </div>
-        {/* <button onClick={handleImageSubmit} className="">
-          Upload
-        </button>
-        {response && <p>{response.data.text_content}</p>} */}
+        <button onClick={handleImageSubmit}>upload</button>
+        {response && <p>{response.data.text_content}</p>}
       </div>
     </div>
   );

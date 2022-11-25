@@ -1,8 +1,8 @@
 import React from 'react';
-import MainImg from '../images/About-main-img.png';
-import FirstImg from '../images/About-first-img.png';
-import SecondImg from '../images/About-second-img.png';
-import ourMission from '../images/About-mission-img.png';
+import MainImg from '../images/About-main-img.webp';
+import FirstImg from '../images/About-first-img.webp';
+import SecondImg from '../images/About-second-img.webp';
+import ourMission from '../images/About-mission-img.webp';
 import '../../../styles/layout/about.css';
 
 export default function About() {

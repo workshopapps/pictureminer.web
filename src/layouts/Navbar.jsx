@@ -6,7 +6,7 @@ import logo from '../assets/logo.svg';
 import { HambergerMenu } from 'iconsax-react';
 
 const NavBar = () => {
-  const [hide, setHide] = useState(false);
+  const [hide, setHide] = useState(true);
 
   return (
     <nav className="flex w-full justify-between px-6 flex-wrap whitespace-nowrap ">
@@ -27,7 +27,7 @@ const NavBar = () => {
           hide ? 'hidden md:flex' : ''
         }`}
       >
-        <Link to="/documentation">Api Documentation</Link>
+        <Link to="/documentation">API Documentation</Link>
         <Link to="/pricing">Pricing</Link>
 
         <Link
@@ -37,7 +37,7 @@ const NavBar = () => {
           Login
         </Link>
         <Link
-          to="/sign-up"
+          to="/signup"
           className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00]  font-medium leading-[24px] text-white bg-[#FF6C00]"
         >
           Sign up

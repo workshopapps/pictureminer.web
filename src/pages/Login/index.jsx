@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useState } from 'react';
 import LoginForm from './LoginForm';
 import LoginHeader from './LoginHeader';
 import LoginSchema from './schema';
 import './Login.scss';
 import { Formik } from 'formik';
 import useLogin from '../../Hooks/useLogin';
-import UserContext from '../../context/UserContext';
+
 import { useNavigate } from 'react-router-dom';
 
 const initialValues = {
@@ -13,26 +13,23 @@ const initialValues = {
   Password: '',
 };
 const index = () => {
+
+  const [errorMessage, seterrorMessage] = useState(null);
   const navigate = useNavigate();
+  const { mutateAsync, } = useLogin();
 
 
-  const  { user } = useContext(UserContext);
-  const { mutate } = useLogin();
-
-
-  const onSubmit = (values) => {
+  const onSubmit = async(values) => {
     const { Email, Password } = values;
     try {
-       mutate( { email:Email, password:Password });
-
-      // setLocalStorage('user', data);
+      await mutateAsync({ Email, Password });
       navigate('/dashboard');
-      console.log(user);
-
-
 
     } catch (error) {
       console.log(error);
+      seterrorMessage(error.response?.data.message);
+
+
     }
   };
   return (
@@ -47,7 +44,7 @@ const index = () => {
         {({ handleSubmit }) => {
           return (
             <div className='loginform'>
-              <LoginForm onSubmit={handleSubmit} />
+              <LoginForm onSubmit={handleSubmit} errorMessage = {errorMessage}/>
 
             </div>
           );
