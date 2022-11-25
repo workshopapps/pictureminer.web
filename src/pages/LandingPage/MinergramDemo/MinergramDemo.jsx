@@ -25,14 +25,20 @@ const MinergramDemo = () => {
           <div className="more_info">
             <h3 className="info_heading">More Image Information</h3>
             <p className="info_description">
-             <p className='text-lg'> <strong>Question:</strong> Where was this image taken?</p>
-             <p className='text-lg'>Answer: Eko hotels and suites, Lagos state</p>
+              <p className="text-lg">
+                {' '}
+                <strong>Question:</strong> Where was this image taken?
+              </p>
+              <p className="text-lg">
+                Answer: Eko hotels and suites, Lagos state
+              </p>
             </p>
             <div className="info_description">
-             <p  className='text-lg'><strong>Question:</strong> What objects are on this image?</p>
-             <p className='text-lg'>Answer: pool, shades, trees, chairs</p>
-             </div>
-
+              <p className="text-lg">
+                <strong>Question:</strong> What objects are on this image?
+              </p>
+              <p className="text-lg">Answer: pool, shades, trees, chairs</p>
+            </div>
           </div>
           <div className="documentation_btn">
             <Link to="/documentation" className="documentation_text">

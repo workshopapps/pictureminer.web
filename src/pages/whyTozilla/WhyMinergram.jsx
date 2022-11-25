@@ -5,7 +5,7 @@ import { testimonials } from './data/testimonials';
 import Testimonial from './components/testimonial';
 import Feature from './components/feature';
 
-function WhyTozilla() {
+function WhyMinergram() {
   return (
     <main className="font-Axiforma">
       <section className="flex flex-col md:flex-row items-center gap-y-[18px] px-[22px] md:px-20">
@@ -17,7 +17,7 @@ function WhyTozilla() {
             Minergram is a game-changing and very accurate image recognition API
             that makes life easier by digitizing the many laborious data
             gathering, processing, and increasing production processes while
-            also improving the quality of our daily lives. Tozilla helps you
+            also improving the quality of our daily lives. Minergram helps you
             gain valuable insight into your operations that enables true
             business transformation and is widely used in industries.
           </p>
@@ -54,4 +54,4 @@ function WhyTozilla() {
   );
 }
 
-export default WhyTozilla;
+export default WhyMinergram;
