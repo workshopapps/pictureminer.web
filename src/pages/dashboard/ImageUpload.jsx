@@ -7,7 +7,7 @@ import useUploadImage from '../../Hooks/useUploadImage';
 import './styles/imageUpload.scss';
 
 const ImageUpload = () => {
-  const { mutate, response } = useUploadImage();
+  const { mutate, response,isLoading } = useUploadImage();
 
   const [imagesUpload, setImagesUpload] = useState([]);
   const [imageURLs, setImageURLs] = useState([]);
@@ -64,13 +64,17 @@ const ImageUpload = () => {
             ))}
           </div>
 
-          <button
+{imageURLs.length > 0 && (<button className='button'
             onClick={handleImageSubmit}
             disabled={imagesUpload.length < 1 || imagesUpload.length > 3}
           >
             Mine Text
-          </button>
-          {response && <p>Reload: {response.data.text_content}</p>}
+          </button>)}
+          
+          <div>
+            {isLoading && <p className='loading'>Fetching.....</p>}
+          </div>
+          {response && <p >Reload: {response.data.text_content}</p>}
           {console.log(response)}
         </div>
       </div>
