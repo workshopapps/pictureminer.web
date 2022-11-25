@@ -48,13 +48,18 @@ const ImageContainer = () => {
         htmlFor="input-file-upload"
         className={dragActive ? 'drag-active' : ''}
       >
-        <div className="block flex my-4">
+        <div className=" flex flex-col my-4 gap-3">
           <input
-            className="input placeholder:normal placeholder:text-slate-400 block bg-white w-full border border-slate-400 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
-            placeholder="Place URL"
+            className="input   block bg-white w-full border border-slate-400 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
             type="file"
             name="search"
             onChange={handleChange}
+          />
+          <input
+            className="input placeholder:normal placeholder:text-slate-400 block bg-white w-full border border-slate-400 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+            placeholder="Enter URL"
+            type="text"
+            name="search"
           />
         </div>
       </label>
