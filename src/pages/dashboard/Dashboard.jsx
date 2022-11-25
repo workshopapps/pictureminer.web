@@ -41,6 +41,7 @@ const Dashboard = () => {
       } catch (error) {
         console.log(error);
       } finally {
+        /* empty */
       }
     };
     fetchData();
