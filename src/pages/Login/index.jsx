@@ -24,7 +24,7 @@ const index = () => {
       navigate('/dashboard');
     } catch (error) {
       console.log(error);
-      seterrorMessage(error.response.data.message);
+      seterrorMessage(error.response?.data.message);
     }
   };
   return (

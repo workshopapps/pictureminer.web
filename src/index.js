@@ -9,8 +9,10 @@ import UserProvider from './context/UserProvider';
 import './styles/workflow.scss';
 import './App.css';
 import './index.css';
+
 const queryClient = new QueryClient();
 function IndexPage() {
+
   return (
     <>
       <QueryClientProvider client={queryClient}>

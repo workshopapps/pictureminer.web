@@ -15,16 +15,16 @@ export const reducers = (initialState, action) => {
     case USER_SIGNUP_REQUEST:
       return {
         ...initialState,
-        forgotPassword: {
-          ...initial.forgotPassword,
+        signup: {
+          ...initial.signup,
           loading: true,
         },
       };
     case USER_SIGNUP_SUCCESS:
       return {
         ...initialState,
-        forgotPassword: {
-          ...initial.forgotPassword,
+        signup: {
+          ...initial.signup,
           loading: false,
           success: true,
           serverResponse: action.payload,
@@ -33,8 +33,8 @@ export const reducers = (initialState, action) => {
     case USER_SIGNUP_FAIL:
       return {
         ...initialState,
-        forgotPassword: {
-          ...initial.forgotPassword,
+        signup: {
+          ...initial.signup,
           loading: false,
           error: action.payload,
         },
