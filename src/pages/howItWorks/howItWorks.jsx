@@ -24,11 +24,11 @@ function HowItWorks() {
               How It Works
             </h1>
             <h5 className="hidden lg:block mt-1.5 md:mt-0 lg:mt-2 md:font-semibold lg:font-medium text-[#FFFDFD]/80 md:text-sm lg:text-2xl lg:leading-[35px]">
-              Don’t sweat it! Here’s how Tozilla allows you to mine your picture
+              Don’t sweat it! Here’s how Minergram allows you to mine your picture
               content from any device, anytime, anywhere!
             </h5>
             <h5 className="lg:hidden mt-1.5 md:mt-0 font-semibold text-[#FFFDFD]/80 text-sm">
-              Tozilla allows users mine picture content on your website from any
+              Minergram allows users mine picture content on your website from any
               device
             </h5>
             <button

@@ -20,8 +20,8 @@ const Policyapp = () => {
           What information do we collect, and where do we get it from?
         </h3>
         <p className="text-subgrey text-base md:text-xl">
-          We consider it important that visitors of Tozilla’s Website, members
-          of the Tozilla Community as well as job applicants are informed as to
+          We consider it important that visitors of Minergram’s Website, members
+          of the Minergram Community as well as job applicants are informed as to
           when, for what purposes and which personal data are processed. The use
           of certain services we offer may require personal data. Personal data
           is therefore processed only under certain circumstances and for
@@ -52,9 +52,9 @@ const Policyapp = () => {
           information: first name, last name, email address; qualification:
           Individual or business; ticket: Data Scientists (Basic): first name,
           last name, email address, job title, company; information on how you
-          got to know about the online course: Tozilla website, Tozilla email,
-          Tozilla partner, Work colleague / existing Tozilla user, Facebook,
-          Twitter, XING, LinkedIn, Other; consent to updates: Tozilla blog)
+          got to know about the online course: Minergram website, Minergram email,
+          Minergram partner, Work colleague / existing Minergram user, Facebook,
+          Twitter, XING, LinkedIn, Other; consent to updates: Minergram blog)
         </p>
       </div>
 
