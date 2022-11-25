@@ -5,6 +5,8 @@ import { images } from '../../Constants';
 import { useState, useEffect } from 'react';
 import useUploadImage from '../../Hooks/useUploadImage';
 // import Button from '../../components/ui/Button';
+import './styles/imageUpload.scss';
+
 const ImageUpload = () => {
   const { mutate, response } = useUploadImage();
 
