@@ -1,6 +1,6 @@
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
-import { getLocalStorage } from '../localStorage';
+// import { getLocalStorage } from '../localStorage';
 import { useState } from 'react';
 
 const useUploadImage = () => {
@@ -15,19 +15,18 @@ const useUploadImage = () => {
         'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE3MDUzMjY5ODgsImlkIjoiT2JqZWN0SUQoXCI2MzdmZTg4YzBhZjk3MTZlNmM5ZmI5NThcIikifQ.b0bZ7H9K2P9BFc4VNjKXCxYaxqY5ygp49E8Lzb8_l5w',
     },
   };
+
   const { mutate, isLoading } = useMutation(
     (data) =>
       axios.post(
-        'http://44.211.169.234:9000/api/v1/mine-service/upload',
+        'http://minergramtest.herokuapp.com/api/v1/mine-service/upload',
         data,
         config
       ),
-  const { mutate, isLoading, } = useMutation(
-    (data) => axios.post('http://minergramtest.herokuapp.com/api/v1/mine-service/upload', data, config),
     {
       onSuccess: (data) => {
         setResponse(data.data);
-        console.log(data.data);
+        console.log(data);
       },
       onError: (error) => {
         console.log(error);

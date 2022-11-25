@@ -58,9 +58,11 @@ const ImageUpload = () => {
           />
         </div>
         <div className="flex flex-col gap-5 items-center justify-center">
-          {imageURLs.map((imageSrc) => (
-            <img key={imagesUpload.length} src={imageSrc} className="w-24" />
-          ))}
+          <div className="flex flex-row gap-5 items-center justify-center">
+            {imageURLs.map((imageSrc) => (
+              <img key={imagesUpload.length} src={imageSrc} className="w-24" />
+            ))}
+          </div>
           {response && <p>Reload: {response.data.text_content}</p>}
           {console.log(response)}
         </div>
