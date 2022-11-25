@@ -14,13 +14,11 @@ const useLogin = () => {
         setUser(data?.data);
         setLocalStorage('user', data?.data);
         console.log(data?.data, user);
-
       },
       onError: (error) => {
         setError(error.response?.data);
       },
     }
-
   );
   return { mutateAsync, isLoading, error, data, isError };
 };

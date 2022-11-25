@@ -1,0 +1,65 @@
+@use '../_variables//variables' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 5rem;
+  gap: 32px;
+
+  text-align: center;
+  h1 {
+    color: #434343;
+    font-size: 6vmax;
+    font-weight: 600;
+    span {
+      color: $main-color;
+    }
+  }
+
+  p {
+    font-size: 1rem;
+    color: #8e8e8e;
+    line-height: 30px;
+    font-weight: 600;
+  }
+
+  .ctaWrapper {
+    padding: 4rem 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    a {
+      padding: 16px 24px;
+      text-decoration: none;
+      border: 1px solid $main-color;
+      border-radius: 8px;
+
+      &:nth-of-type(1) {
+        background-color: $main-color;
+        color: white;
+        padding: 16px 40px;
+      }
+      &:nth-of-type(2n) {
+        color: $main-color;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      flex-direction: column;
+
+      a {
+        width: 100%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 5rem 2rem;
+  }
+}
