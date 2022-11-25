@@ -63,16 +63,16 @@
 
 .hero_upload {
   width: 632px;
-  height: 570px;
+  height: 580px;
   border: 1.37255px dashed var(--primary-color-alternative);
   border-radius: 27.451px;
-  margin-top: 104px;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 40px;
   justify-content: center;
   align-items: center;
-  margin-bottom: 54px;
+  margin: 2em auto 3em auto;
 }
 
 .hero_upload_text {

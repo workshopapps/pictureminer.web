@@ -1,6 +1,6 @@
 /* eslint-disable indent */
 import React from 'react';
-import logoFooter from '../assets/Minegram.svg';
+import logoFooter from '../assets/logo-footer.svg';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -13,7 +13,6 @@ const Footer = () => {
 
           <Link to="/faq">FAQ</Link>
           <Link to="/how-it-works">How it works</Link>
-
         </div>
         <div className="flex flex-col gap-4">
           <h2 className="mb-4">Resources</h2>
@@ -21,7 +20,6 @@ const Footer = () => {
           <Link to="/pricing">Pricing</Link>
           <Link to="/support">Support</Link>
           <Link to="/why-Minergram">Why Minergram</Link>
-
         </div>
         <div className="flex flex-col gap-4">
           <h2 className="mb-4">Legal</h2>
