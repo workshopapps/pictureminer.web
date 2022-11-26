@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import LoginForm from './LoginForm';
 import LoginHeader from './LoginHeader';
-// import LoginSchema from './schema';
 import './Login.scss';
 import { Formik } from 'formik';
-import useLogin from '../../Hooks/useLogin';
-
+import useLogin from '../../hooks/useLogin';
+import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
 
 const initialValues = {
   Email: '',
   Password: '',
 };
+
+const validationSchema = Yup.object({
+  Email: Yup.string().email('Invalid email format').required('Required'),
+  Password: Yup.string().required('Required'),
+});
 const index = () => {
   const [errorMessage, seterrorMessage] = useState(null);
   const navigate = useNavigate();
@@ -35,7 +39,7 @@ const index = () => {
         onSubmit={(values) => {
           onSubmit(values);
         }}
-        // validationSchema={LoginSchema}
+        validationSchema={validationSchema}
       >
         {({ handleSubmit }) => {
           return (
