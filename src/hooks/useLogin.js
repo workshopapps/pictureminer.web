@@ -6,7 +6,9 @@ import axios from 'axios';
 
 const useLogin = () => {
   const [error, setError] = useState(null);
+
   const { setUser, user } = useContext(UserContext);
+
   const { mutateAsync, isLoading, data, isError } = useMutation(
     (data) =>
       axios.post('https://minergramtest.herokuapp.com/api/v1/login', data),
