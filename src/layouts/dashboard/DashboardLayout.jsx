@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useContext, useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 // import { useGlobalContext } from '../../context/context';
