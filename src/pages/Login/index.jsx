@@ -14,8 +14,8 @@ const initialValues = {
 };
 
 const validationSchema = Yup.object({
-  Email: Yup.string().email('Invalid email format').required('Required'),
-  Password: Yup.string().required('Required'),
+  Email: Yup.string().email('Invalid email format').required('Email is required'),
+  Password: Yup.string().required('Password is required'),
 });
 const index = () => {
   const [errorMessage, seterrorMessage] = useState(null);
