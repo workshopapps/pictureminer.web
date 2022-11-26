@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { DocumentUpload } from 'iconsax-react';
 import { images } from '../../Constants';
-import useUploadImage from '../../hooks/useUploadImage';
+// import { Link } from 'react-router-dom';
+import useUploadImage from '../../Hooks/useUploadImage';
 import './styles/imageUpload.scss';
 
 const ImageUpload = () => {
