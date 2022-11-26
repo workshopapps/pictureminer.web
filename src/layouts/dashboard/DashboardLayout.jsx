@@ -8,6 +8,8 @@ import Sidebar from './Sidebar';
 import Login from '../../pages/Login';
 import axios from 'axios';
 import { getLocalStorage } from '../../localStorage';
+import NavBar from '../Navbar';
+import Footer from '../Footer';
 axios.defaults.baseURL = 'https://minergramtest.herokuapp.com/api/v1/';
 
 const DashboardLayout = () => {
@@ -24,7 +26,15 @@ const DashboardLayout = () => {
           </div>
         </div>
       ) : (
-        <Login />
+        <>
+          <NavBar />
+          <p>
+            Please Login with email:email@test.com and password:password for
+            testing and grading
+          </p>
+          <Login />
+          <Footer />
+        </>
       )}
     </>
   );

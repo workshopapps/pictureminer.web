@@ -7,7 +7,9 @@ import { removeItemFromLocalStorage } from '../../localStorage';
 const DashboardNavbar = ({ data }) => {
   const [showMenu, setShowMenu] = useState(false);
   const { setUser } = useContext(UserContext);
-  const handleLogout = () => {
+  const handleLogout = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     setUser(null);
     removeItemFromLocalStorage('user');
   };
@@ -50,7 +52,8 @@ const DashboardNavbar = ({ data }) => {
             <Link to="account-setup">
               <p>Account Settings</p>
             </Link>
-            <p onClick={handleLogout}>Log out</p>
+
+            <p>Log out</p>
           </div>
         </div>
       </div>
