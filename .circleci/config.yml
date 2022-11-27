@@ -10,7 +10,6 @@ jobs:
       - run:
           name: Build front-end
           command: |
-            cd pictureminer.web
             npm install
             npm run build
       - save_cache:
