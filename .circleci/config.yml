@@ -10,6 +10,7 @@ jobs:
       - run:
           name: Build front-end
           command: |
+            npm install -g npm
             npm ci
             npm run build
       - save_cache:
