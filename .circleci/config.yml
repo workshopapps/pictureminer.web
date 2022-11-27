@@ -10,9 +10,9 @@ jobs:
       - run:
           name: Build front-end
           command: |
-            npm install -g npm
-            npm ci
-            npm run build
+            sudo npm install -g npm
+            sudo npm ci
+            sudo npm run build
       - save_cache:
           paths: [pictureminer.web/node_modules]
           key: frontend-build
