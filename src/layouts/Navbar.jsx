@@ -37,30 +37,37 @@ const NavBar = () => {
         <Link to="/documentation">API Documentation</Link>
         <Link to="/pricing">Pricing</Link>
 
-{
-  user ? (
-    <Link to="/dashboard" className='className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00] text-[#FF6C00] font-medium leading-[24px]"'>Dashboard</Link>
-  ) : (<Link
-    to="/login"
-    className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00] text-[#FF6C00] font-medium leading-[24px]"
-  >
-    Login
-  </Link>
-)
+        {user ? (
+          <Link
+            to="/dashboard"
+            className='className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00] text-[#FF6C00] font-medium leading-[24px]"'
+          >
+            Dashboard
+          </Link>
+        ) : (
+          <Link
+            to="/login"
+            className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00] text-[#FF6C00] font-medium leading-[24px]"
+          >
+            Login
+          </Link>
+        )}
 
-}
-
-{
-  user ? (<div onClick={handleLogout} className="rounded-[8px] cursor-pointer w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00]  font-medium leading-[24px] text-white bg-[#FF6C00]">
-    Logout
-  </div>) : ( <Link
-    to="/signup"
-    className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00]  font-medium leading-[24px] text-white bg-[#FF6C00]"
-  >
-    Sign up
-  </Link>)
-}
-
+        {user ? (
+          <div
+            onClick={handleLogout}
+            className="rounded-[8px] cursor-pointer w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00]  font-medium leading-[24px] text-white bg-[#FF6C00]"
+          >
+            Logout
+          </div>
+        ) : (
+          <Link
+            to="/signup"
+            className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00]  font-medium leading-[24px] text-white bg-[#FF6C00]"
+          >
+            Sign up
+          </Link>
+        )}
       </div>
     </nav>
   );
