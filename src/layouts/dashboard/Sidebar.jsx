@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import logo from '../../assets/logo.svg';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useState } from "react";
+import logo from "../../assets/logo.svg";
+import { Link, NavLink } from "react-router-dom";
 import {
   Element3,
   Gallery,
   GalleryExport,
   TextalignJustifycenter,
   Triangle,
-} from 'iconsax-react';
+} from "iconsax-react";
 
 const Sidebar = () => {
   const [openSidebar, setOpenSidebar] = useState(false);
@@ -33,10 +33,11 @@ const Sidebar = () => {
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? 'sidebar__links--active sidebar__links'
-                : 'sidebar__links '
+                ? "sidebar__links--active sidebar__links"
+                : "sidebar__links "
             }
-            to={'/dashboard'}
+            to={"/dashboard"}
+            onClick={() => setOpenSidebar(false)}
           >
             <Element3 size="16" color="#1d1d1d" />
             Dashboard
@@ -44,10 +45,11 @@ const Sidebar = () => {
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? 'sidebar__links--active sidebar__links'
-                : 'sidebar__links'
+                ? "sidebar__links--active sidebar__links"
+                : "sidebar__links"
             }
-            to={'/images'}
+            onClick={() => setOpenSidebar(false)}
+            to={"/images"}
           >
             <Gallery size="16" color="#1d1d1d" />
             Images
@@ -55,10 +57,11 @@ const Sidebar = () => {
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? 'sidebar__links--active sidebar__links'
-                : 'sidebar__links'
+                ? "sidebar__links--active sidebar__links"
+                : "sidebar__links"
             }
-            to={'/imageUpload'}
+            onClick={() => setOpenSidebar(false)}
+            to={"/imageUpload"}
           >
             <GalleryExport size="16" color="#1d1d1d" />
             Image Upload
@@ -67,10 +70,11 @@ const Sidebar = () => {
           <NavLink
             className={({ isActive }) =>
               isActive
-                ? 'sidebar__links--active sidebar__links'
-                : 'sidebar__links'
+                ? "sidebar__links--active sidebar__links"
+                : "sidebar__links"
             }
-            to={'/billing'}
+            onClick={() => setOpenSidebar(false)}
+            to={"/billing"}
           >
             <Triangle size="16" color="#1d1d1d" />
             Billing

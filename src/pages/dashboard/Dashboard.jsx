@@ -56,7 +56,7 @@ const Dashboard = () => {
             {/* {dashboarddata.logo} */}
           </div>
           <h3 style={{ marginTop: '20px', fontSize: '24px' }}>
-            {dashboarddata?.imageData.length
+            {dashboarddata?.imageData
               ? dashboarddata.imageData.length
               : null}
           </h3>

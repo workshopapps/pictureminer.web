@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { DocumentUpload } from 'iconsax-react';
 import { images } from '../../Constants';
+// import { Link } from 'react-router-dom';
 import useUploadImage from '../../Hooks/useUploadImage';
 import './styles/imageUpload.scss';
 
@@ -71,11 +72,9 @@ const ImageUpload = () => {
           )}
 
           <div>{isLoading && <p className="loading">Fetching.....</p>}</div>
-          {response && <p>Reload: {response.data.text_content}</p>}
+          {response && <p>Result: {response.data.text_content}</p>}
           {console.log(response)}
         </div>
-        <button onClick={handleImageSubmit}>upload</button>
-        {response && <p>{response.data.text_content}</p>}
       </div>
     </div>
   );
