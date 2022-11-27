@@ -10,7 +10,7 @@ jobs:
       - run:
           name: Build front-end
           command: |
-            npm install
+            npm ci
             npm run build
       - save_cache:
           paths: [pictureminer.web/node_modules]
