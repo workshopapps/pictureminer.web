@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { DocumentUpload } from 'iconsax-react';
-import { images } from '../../Constants';
+import React, { useState, useEffect } from "react";
+import { DocumentUpload } from "iconsax-react";
+import { images } from "../../Constants";
 // import { Link } from 'react-router-dom';
-import useUploadImage from '../../hooks/useUploadImage';
-import './styles/imageUpload.scss';
+import useUploadImage from "../../Hooks/useUploadImage";
+import "./styles/imageUpload.scss";
 
 const ImageUpload = () => {
   const { mutate, response, isLoading } = useUploadImage();
@@ -24,9 +24,9 @@ const ImageUpload = () => {
     setImagesUpload([...e.target.files]);
   };
   const handleImageSubmit = () => {
-    console.log('clicked');
+    console.log("clicked");
     const formData = new FormData();
-    imagesUpload.forEach((image) => formData.append('image', image));
+    imagesUpload.forEach((image) => formData.append("image", image));
     mutate(formData);
     console.log(imagesUpload);
   };
@@ -72,11 +72,9 @@ const ImageUpload = () => {
           )}
 
           <div>{isLoading && <p className="loading">Fetching.....</p>}</div>
-          {response && <p>Reload: {response.data.text_content}</p>}
+          {response && <p>Result: {response.data.text_content}</p>}
           {console.log(response)}
         </div>
-        <button onClick={handleImageSubmit}>upload</button>
-        {response && <p>{response.data.text_content}</p>}
       </div>
     </div>
   );

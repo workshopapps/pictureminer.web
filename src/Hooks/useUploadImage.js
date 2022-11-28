@@ -6,7 +6,7 @@ import { getLocalStorage } from '../localStorage';
 const useUploadImage = () => {
   const [response, setResponse] = useState(null);
   const user = getLocalStorage('user');
-  const userToken = user ? user.data.Token : null;
+  const userToken = user ? user.Token : null;
   console.log(userToken);
 
   const config = {

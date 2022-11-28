@@ -111,12 +111,16 @@
 }
 @media (max-width: 550px) {
   .rdt_TableCol[data-column-id='4'],
-  .rdt_TableCol[data-column-id='5'],
+  
   .rdt_TableCol[data-column-id='6'] {
     display: none;
   }
+  .rdt_TableCell[data-column-id='5']{
+    font-size: 12px;
+
+  }
   .rdt_TableCell[data-column-id='4'],
-  .rdt_TableCell[data-column-id='5'],
+
   .rdt_TableCell[data-column-id='6'] {
     display: none;
   }
