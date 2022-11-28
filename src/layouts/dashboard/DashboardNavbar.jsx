@@ -1,8 +1,8 @@
-import { Filter } from "iconsax-react";
-import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-import UserContext from "../../context/UserContext";
-import { removeItemFromLocalStorage } from "../../localStorage";
+import { Filter } from 'iconsax-react';
+import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
+import UserContext from '../../context/UserContext';
+import { removeItemFromLocalStorage } from '../../localStorage';
 
 const DashboardNavbar = ({ data }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -10,7 +10,7 @@ const DashboardNavbar = ({ data }) => {
   const handleLogout = (e) => {
     e.stopImmediatePropagation();
     setUser(null);
-    removeItemFromLocalStorage("user");
+    removeItemFromLocalStorage('user');
   };
 
   return (
@@ -19,7 +19,7 @@ const DashboardNavbar = ({ data }) => {
         <input type="search" name="" id="" placeholder="Search" />
       </div>
       <div className="filt">
-        <Filter size={"40"} color="#ff6c00" />
+        <Filter size={'40'} color="#ff6c00" />
       </div>
       <div className="user">
         <div className="user__grid">
@@ -47,7 +47,7 @@ const DashboardNavbar = ({ data }) => {
               strokeLinejoin="round"
             />
           </svg>
-          <div className={showMenu ? "show account" : "hide account"}>
+          <div className={showMenu ? 'show account' : 'hide account'}>
             <Link to="account-setup">
               <p>Account Settings</p>
             </Link>
