@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import UserContext from '../../context/UserContext';
 
-axios.defaults.baseURL = 'https://minergramtest.herokuapp.com/api/v1/';
+axios.defaults.baseURL = 'https://discripto.hng.tech/api1/api/v1/';
 
 const Dashboard = () => {
   const { user } = useContext(UserContext);
@@ -56,9 +56,7 @@ const Dashboard = () => {
             {/* {dashboarddata.logo} */}
           </div>
           <h3 style={{ marginTop: '20px', fontSize: '24px' }}>
-            {dashboarddata?.imageData.length
-              ? dashboarddata.imageData.length
-              : null}
+            {dashboarddata?.imageData ? dashboarddata?.imageData?.length : null}
           </h3>
         </div>
         <div className="images__card">

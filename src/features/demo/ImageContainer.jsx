@@ -67,7 +67,7 @@ const ImageContainer = () => {
     try {
       const response = await axios({
         method: 'post',
-        url: 'https://yiowpv.deta.dev/api/microservice/content',
+        url: 'http://178.128.242.94/caption-generator',
         data: formData,
         headers: {
           accept: 'application/json',

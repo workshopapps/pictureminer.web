@@ -10,7 +10,13 @@ function Layout() {
   return (
     <div className="flex flex-col  justify-between">
       <Navbar />
-      <Outlet />
+      <div
+        style={{
+          minHeight: '90vh',
+        }}
+      >
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );

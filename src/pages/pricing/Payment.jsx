@@ -32,50 +32,50 @@ function reducer(state, action) {
   const { type, payload } = action;
 
   switch (type) {
-    case actions.inputChanged: {
-      return {
-        ...state,
-        isTouched: true,
-        isFormValueEmpty: false,
-        isSubmitting: false,
-        errorMessages: {},
-      };
-    }
-    case actions.formSubmitted: {
-      return {
-        ...state,
-        isTouched: false,
-        isSubmitting: true,
-        errorMessages: payload,
-      };
-    }
-    case actions.isSubmitting: {
-      return {
-        ...state,
-        successMessage: 'User details updated successfully',
-      };
-    }
-    case actions.isNotSubmitting: {
-      return {
-        ...state,
-        isSubmitting: false,
-      };
-    }
-    case actions.isFormEmpty: {
-      return {
-        ...state,
-        isFormValueEmpty: payload,
-      };
-    }
-    case actions.toggleSuccessMessage: {
-      return {
-        ...state,
-        successMessage: '',
-      };
-    }
+  case actions.inputChanged: {
+    return {
+      ...state,
+      isTouched: true,
+      isFormValueEmpty: false,
+      isSubmitting: false,
+      errorMessages: {},
+    };
+  }
+  case actions.formSubmitted: {
+    return {
+      ...state,
+      isTouched: false,
+      isSubmitting: true,
+      errorMessages: payload,
+    };
+  }
+  case actions.isSubmitting: {
+    return {
+      ...state,
+      successMessage: 'User details updated successfully',
+    };
+  }
+  case actions.isNotSubmitting: {
+    return {
+      ...state,
+      isSubmitting: false,
+    };
+  }
+  case actions.isFormEmpty: {
+    return {
+      ...state,
+      isFormValueEmpty: payload,
+    };
+  }
+  case actions.toggleSuccessMessage: {
+    return {
+      ...state,
+      successMessage: '',
+    };
+  }
 
-    default:
-      break;
+  default:
+    break;
   }
 }
 

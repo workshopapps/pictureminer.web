@@ -1,16 +1,16 @@
-import React, { useContext } from "react";
-import { Outlet } from "react-router-dom";
+import React, { useContext } from 'react';
+import { Outlet } from 'react-router-dom';
 // import { useGlobalContext } from '../../context/context';
-import UserContext from "../../context/UserContext";
+import UserContext from '../../context/UserContext';
 
-import DashboardNavbar from "./DashboardNavbar";
-import Sidebar from "./Sidebar";
-import Login from "../../pages/Login";
-import axios from "axios";
+import DashboardNavbar from './DashboardNavbar';
+import Sidebar from './Sidebar';
+import Login from '../../pages/Login';
+import axios from 'axios';
 
-import NavBar from "../Navbar";
-import Footer from "../Footer";
-axios.defaults.baseURL = "https://minergramtest.herokuapp.com/api/v1/";
+import NavBar from '../Navbar';
+import Footer from '../Footer';
+axios.defaults.baseURL = 'https://discripto.hng.tech/api1/api/v1/';
 
 const DashboardLayout = () => {
   const { user } = useContext(UserContext);

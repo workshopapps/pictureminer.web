@@ -10,7 +10,7 @@ const MinergramDemo = (props) => {
           <ArrowLeft />
         </button>
       </div>
-      <h3 className="heading">Minergram Demo</h3>
+      <h3 className="heading">Discripto Demo</h3>
       <div className="content">
         <div className="content_text">
           <div className="image_info">

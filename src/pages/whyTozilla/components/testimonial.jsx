@@ -1,15 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-
 function Testimonial({ text, image, name, onSmallScreen }) {
   return (
     <div
       className={`flex-0 testimonial-card px-3 py-2 md:pt-0 md:pl-[14px] md:pr-3 md:pb-5 lg:p-0 lg:pb-7 ${onSmallScreen}`}
     >
       <h1 className="lg:pl-[26px] lg:pt-[19px] mb-2 md:mb-0 h-[27px] md:h-[50px] lg:h-[62px]">
-        <svg width="35" height="23" className="hidden lg:block" viewBox="0 0 35 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M11.4 -9.53674e-07C3.8 4.88 0.0400002 10 0.0400002 15.2C0.0400002 19.36 2.84 22.32 6.68 22.32C10.12 22.32 13 19.6 13 16.32C13 13.36 10.52 10.72 7.64 10.72H7.48C8.36 9.2 10.68 7.04 14.44 4.24L11.4 -9.53674e-07ZM27.24 10.72C28.12 9.2 30.44 7.04 34.2 4.24L31.16 -9.53674e-07C23.56 4.88 19.8 10 19.8 15.2C19.8 19.36 22.6 22.32 26.44 22.32C29.88 22.32 32.76 19.6 32.76 16.32C32.76 13.36 30.28 10.72 27.4 10.72H27.24Z" fill="#8E8E8E"/>
+        <svg
+          width="35"
+          height="23"
+          className="hidden lg:block"
+          viewBox="0 0 35 23"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M11.4 -9.53674e-07C3.8 4.88 0.0400002 10 0.0400002 15.2C0.0400002 19.36 2.84 22.32 6.68 22.32C10.12 22.32 13 19.6 13 16.32C13 13.36 10.52 10.72 7.64 10.72H7.48C8.36 9.2 10.68 7.04 14.44 4.24L11.4 -9.53674e-07ZM27.24 10.72C28.12 9.2 30.44 7.04 34.2 4.24L31.16 -9.53674e-07C23.56 4.88 19.8 10 19.8 15.2C19.8 19.36 22.6 22.32 26.44 22.32C29.88 22.32 32.76 19.6 32.76 16.32C32.76 13.36 30.28 10.72 27.4 10.72H27.24Z"
+            fill="#8E8E8E"
+          />
         </svg>
         <svg
           width="24"
@@ -42,11 +51,7 @@ function Testimonial({ text, image, name, onSmallScreen }) {
         {text}
       </p>
       <div className="lg:ml-6 mt-1.5 lg:mt-7 flex items-center space-x-3 lg:space-x-[14px]">
-        <img
-          src={image}
-          alt="Person looking up"
-          className="w-[30px] lg:w-10"
-        />
+        <img src={image} alt="Person looking up" className="w-[30px] lg:w-10" />
         <h6 className="font-Axiforma text-xs lg:text-[15px] leading-[18px] lg:leading-[25px] font-medium lg:font-bold">
           {name}
         </h6>
@@ -56,10 +61,10 @@ function Testimonial({ text, image, name, onSmallScreen }) {
 }
 
 Testimonial.propTypes = {
-    name: PropTypes.string,
-    text: PropTypes.string,
-    image: PropTypes.element,
-    onSmallScreen: PropTypes.string
+  name: PropTypes.string,
+  text: PropTypes.string,
+  image: PropTypes.element,
+  onSmallScreen: PropTypes.string,
 };
 
 export default Testimonial;

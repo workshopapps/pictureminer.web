@@ -13,7 +13,7 @@ function Benefits() {
           </h1>
           <p className=" w-[307px] h-[36px] font-sans font-normal text-[12px] leading-[18px] text-center text-[1D1D1D] md:w-[666px] md:text-[14px] lg:text-[16px] lg:leading-[24px] lg:pl-14">
             These are a few of the benefits that come with partnering up with us
-            at Minergram.
+            at Discripto.
           </p>
         </div>
         <div className="second flex flex-col items-start gap-[40px] w-[323px] h-[497px] md:flex-row md:gap-[2px] md:w-[751px] md:h-[190px] lg:w-[986px]">

@@ -11,8 +11,8 @@ import DashboardLayout from './layouts/dashboard/DashboardLayout';
 import Dashboard from './pages/dashboard/Dashboard';
 import Images from './pages/dashboard/Images';
 
-import BlogList from './pages/blog/BlogList';
-import ExtensionBlog from './pages/blog/components/ExtensionBlog';
+// import BlogList from './pages/blog/BlogList';
+// import ExtensionBlog from './pages/blog/components/ExtensionBlog';
 
 import AccountSettings from './pages/dashboard/AccountSettings';
 import Billing from './pages/dashboard/Billing';
@@ -46,7 +46,7 @@ import Faq from './pages/FAQ/faq';
 
 import Layout from './layouts/Layout';
 import HowItWorks from './pages/howItWorks/howItWorks';
-import SupportPage from './pages/support';
+// import SupportPage from './pages/support';
 
 import ScrollToTop from './layouts/ScrollToTop';
 import Pricing from './pages/pricing/Pricing';
@@ -96,7 +96,7 @@ const RoutesComponents = () => {
               element={<GettingStarted />}
             ></Route>
 
-            <Route path="support" element={<SupportPage />}></Route>
+            {/* <Route path="support" element={<SupportPage />}></Route> */}
             <Route
               path="/documentation/integrations"
               element={<Integrations />}
@@ -107,8 +107,8 @@ const RoutesComponents = () => {
               element={<Installations />}
             ></Route>
 
-            <Route path="/blog" element={<BlogList />} />
-            <Route path="/blog-page" element={<ExtensionBlog />} />
+            {/* <Route path="/blog" element={<BlogList />} /> */}
+            {/* <Route path="/blog-page" element={<ExtensionBlog />} /> */}
             <Route
               path="/documentation/examples"
               element={<ExamplePage />}
@@ -128,7 +128,7 @@ const RoutesComponents = () => {
             <Route path="*" element={<ErrorPage />}></Route>
 
             {/* <Route path="why-tozilla" element={<WhyTozilla />} /> */}
-            <Route path="why-minergram" element={<WhyMinergram />} />
+            <Route path="why-discripto" element={<WhyMinergram />} />
 
             <Route path="/login" element={<Login />} />
           </Route>

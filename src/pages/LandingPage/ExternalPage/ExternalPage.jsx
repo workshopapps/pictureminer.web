@@ -6,8 +6,8 @@ import '../../../styles/layout/Ecommerce.scss';
 const ExternalPage= () => {
   return (
     <div>
-   <ImageContainer />
-   </div>
+      <ImageContainer />
+    </div>
   );
 };
 
