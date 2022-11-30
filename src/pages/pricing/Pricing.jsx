@@ -94,19 +94,19 @@ function Pricing() {
               </ul>
               <Link
                 to="/signup"
-                className="w-[50%] md:w-[60%] text-white bg-mainOrange hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center space-x-4 hover:bg-mainOrange/70"
+                className="w-[50%] md:w-[60%] text-white bg-mainOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center space-x-4 hover:bg-mainOrange/70"
               >
                 <span className="text-small"> Choose plan</span>
                 <span className="text-3xl font-light">&#8250;</span>
               </Link>
             </div>
             {/* Pricing Card  */}
-            <div className="flex flex-col p-6 mx-auto max-w-2xl text-center text-white bg-mainOrange rounded-lg border border-gray-100 shadow xl:py-8">
+            <div className="flex flex-col p-6 mx-auto max-w-2xl text-center  bg-[#FFE2CC] rounded-lg border border-gray-100 shadow xl:py-8">
               <div className="flex justify-between items-baseline mt-8">
                 <h3 className="mb-4 text-large font-semibold">Standard</h3>
                 <span className="mr-2 text-normal font-extrabold">$14</span>
               </div>
-              <div className="w-20 border-2 border-white border-solid"></div>
+              <div className="w-20 border-2 border-mainOrange border-solid"></div>
               {/* List items  */}
               <ul role="list" className="mb-8 mt-16 space-y-4 text-left">
                 <li className="flex items-center space-x-3">
@@ -144,7 +144,7 @@ function Pricing() {
               </ul>
               <Link
                 to="/pricing/standard"
-                className="w-[50%] md:w-[60%] text-mainOrange bg-white hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center space-x-4 hover:bg-lightOrange "
+                className="w-[50%] md:w-[60%] text-white bg-mainOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center space-x-4 hover:bg-mainOrange/70 "
               >
                 {' '}
                 <span className="text-small"> Choose plan</span>
@@ -195,7 +195,7 @@ function Pricing() {
               </ul>
               <Link
                 to="/pricing/premium"
-                className="w-[50%] md:w-[60%] text-white bg-mainOrange hover:bg-primary-700 focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center space-x-4 hover:bg-mainOrange/70"
+                className="w-[50%] md:w-[60%] text-white bg-mainOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center space-x-4 hover:bg-mainOrange/70"
               >
                 <span className="text-small"> Choose plan</span>
                 <span className="text-3xl font-light">&#8250;</span>
