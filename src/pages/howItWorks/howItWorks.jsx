@@ -24,12 +24,12 @@ function HowItWorks() {
               How It Works
             </h1>
             <h5 className="hidden lg:block mt-1.5 md:mt-0 lg:mt-2 md:font-semibold lg:font-medium text-[#FFFDFD]/80 md:text-sm lg:text-2xl lg:leading-[35px]">
-              Don’t sweat it! Here’s how Minergram allows you to mine your picture
-              content from any device, anytime, anywhere!
+              Don’t sweat it! Here’s how Discripto allows you to mine your
+              picture content from any device, anytime, anywhere!
             </h5>
             <h5 className="lg:hidden mt-1.5 md:mt-0 font-semibold text-[#FFFDFD]/80 text-sm">
-              Minergram allows users mine picture content on your website from any
-              device
+              Discripto allows users mine picture content on your website from
+              any device
             </h5>
             <button
               type="button"
@@ -48,7 +48,7 @@ function HowItWorks() {
       <section className="my-[120px] md:my-[180px] md:bg-[#F6F6F6] md:py-[66px] lg:py-[86px]">
         <div className="flex flex-col items-center justify-center">
           <p className="mb-[22px] md:mb-9 text-base md:text-xl md:leading-[30px] text-black text-center">
-            Ready to use Minergram?
+            Ready to use Discripto?
           </p>
           <div className="flex flex-col md:flex-row items-center gap-[22px] lg:gap-x-8">
             <Link
