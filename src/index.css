@@ -39,9 +39,9 @@ code {
     /* fonts */
     --fs-xl: clamp(3rem, 1rem + 4.2vw, 4.5rem);
     --fs-lg: clamp(1.5rem, 1rem + 1.5vw, 2rem);
-    --fs: clamp(1.125rem, 0.875rem + 1vw, 1.575rem);
+    --fs: clamp(1.125rem, 0.875rem + 1vw, 1.275rem);
     --fs-sm: clamp(1rem, 0.7rem + 1vw, 1.1rem);
-    --fs-xs: clamp(0.75rem, 0.5rem + 1vw, 1.2rem);
+    --fs-xs: clamp(0.75rem, 0.5rem + 1vw, 1.1rem);
   }
 
   [type='text'],

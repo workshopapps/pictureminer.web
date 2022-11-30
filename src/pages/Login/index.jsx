@@ -5,7 +5,6 @@ import './Login.scss';
 import { Formik } from 'formik';
 import useLogin from '../../Hooks/useLogin';
 import * as Yup from 'yup';
-
 import { useNavigate } from 'react-router-dom';
 
 const initialValues = {
@@ -14,7 +13,9 @@ const initialValues = {
 };
 
 const validationSchema = Yup.object({
-  Email: Yup.string().email('Invalid email format').required('Email is required'),
+  Email: Yup.string()
+    .email('Invalid email format')
+    .required('Email is required'),
   Password: Yup.string().required('Password is required'),
 });
 const index = () => {

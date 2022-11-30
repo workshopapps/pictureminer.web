@@ -17,7 +17,7 @@ export default function About() {
             <div className="about-msg1">
               <h1 className="h1">Who We Are</h1>
               <p className="p">
-                Minergram is just the first of many products to come from team
+                Discripto is just the first of many products to come from team
                 scales, inc. we are saddled to delivering sustainable tech
                 products to further drive the positive contribution if techs in
                 our society and we are just getting started.

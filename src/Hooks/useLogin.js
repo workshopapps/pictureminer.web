@@ -7,11 +7,10 @@ import axios from 'axios';
 const useLogin = () => {
   const [error, setError] = useState(null);
 
-  const { setUser, user } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
 
   const { mutateAsync, isLoading, data, isError } = useMutation(
-    (data) =>
-      axios.post('https://minergramtest.herokuapp.com/api/v1/login', data),
+    (data) => axios.post('https://discripto.hng.tech/api1/api/v1/login', data),
     {
       onSuccess: (data) => {
         setUser(data?.data.data);

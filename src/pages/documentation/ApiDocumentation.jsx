@@ -9,7 +9,7 @@ export default function ApiDocumentation() {
       <DocumentNav />
       <DocumentationHero
         headerText="API Documentation"
-        paragraphText="An overview of Minergram's API , Authentication, Errors and Metadata"
+        paragraphText="An overview of Discripto's API , Authentication, Errors and Metadata"
       />
       <div className="bg-[#FAFAFB] hidden sm:block">
         <p className=" text-[#061D33] py-4 px-10">Documentation/API</p>
@@ -22,7 +22,7 @@ export default function ApiDocumentation() {
             </h2>
             <hr className="my-4 hidden sm:block" />
             <p className="text-[16px] text-[#092C4C] leading-[35px] hidden sm:block">
-              Get started with Minergram API and explore various benefits and
+              Get started with Discripto API and explore various benefits and
               uses
             </p>
           </section>
@@ -31,7 +31,7 @@ export default function ApiDocumentation() {
               Overview
             </h2>
             <p className="mt-6 sm:mt-12 leading-[30px] text-[16px] text-[#1D1D1D]">
-              The Minergram API is organized around REST. Our API has
+              The Discripto API is organized around REST. Our API has
               predictable resource oriented URLs, accepts form-encoded request
               bodies, returns JSON-encoded responses, and uses standard HTTP
               response codes, authentication, and verbs.
@@ -43,8 +43,8 @@ export default function ApiDocumentation() {
               is live mode or test mode.
             </p>
             <p className="mt-6 sm:mt-12 leading-[30px] text-[16px] text-[#1D1D1D]">
-              The Minergram API does&apos;nt support bulk updates. You can work
-              on only one object per request. The Minergram API differs for
+              The Discripto API does&apos;nt support bulk updates. You can work
+              on only one object per request. The Discripto API differs for
               every account as we release new versions and tailor functionality.
               Log in to see docs customized to your version of the API,
             </p>
@@ -54,8 +54,8 @@ export default function ApiDocumentation() {
               Authentication
             </h2>
             <p className="mt-6 sm:mt-12 leading-[30px] text-[16px] text-[#1D1D1D]">
-              The Minergram API uses API keys to authenticate requests. You can
-              view and manage your API keys in the Minergram Dashboard.
+              The Discripto API uses API keys to authenticate requests. You can
+              view and manage your API keys in the Discripto Dashboard.
             </p>
             <p className="mt-6 sm:mt-12 leading-[30px] text-[16px] text-[#1D1D1D]">
               Authentication to the API is performed via HTTP Basic Auth.
@@ -68,7 +68,7 @@ export default function ApiDocumentation() {
               Errors
             </h2>
             <p className="mt-6 sm:mt-12 leading-[30px] text-[16px] text-[#1D1D1D]">
-              Minergram uses conventional HTTP response codes to indicate the
+              Discripto uses conventional HTTP response codes to indicate the
               success or failure of an API request. In general: Codes in the 2xx
               range indicate success. Codes in the 4xx range indicate an error
               that failed given the information provided (e.g., a required
@@ -87,16 +87,16 @@ export default function ApiDocumentation() {
               Metadata
             </h2>
             <p className="mt-6 sm:mt-12 leading-[30px] text-[16px] text-[#1D1D1D]">
-              Updateable Minergram objects—including Account, Charge, Customer,
+              Updateable Discripto objects—including Account, Charge, Customer,
               PaymentIntent, Subscription, Refund and Transfer—have a metadata
               parameter. You can use this parameter to attach key-value data to
-              these Minergram objects.
+              these Discripto objects.
             </p>
             <p className="mt-6 sm:mt-12 leading-[30px] text-[16px] text-[#1D1D1D]">
               Metadata is useful for storing additional, structured information
               on an object. As an example, you could store your user&apos;s full
               name and corresponding unique identifier from your system on a
-              Minergram Customer object. Metadata is not used by Minergram—for
+              Discripto Customer object. Metadata is not used by Discripto—for
               example, not used to authorize or decline a charge—and won&apos;t
               be seen by your users unless you choose to show it to them.
             </p>

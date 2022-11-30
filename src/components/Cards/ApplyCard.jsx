@@ -13,7 +13,7 @@ function Apply() {
                 Apply to a partnership program
               </h1>
               <p className=" w-[365px] h-[90px] font-sans font-normal text-[12px] leading-[18px] text-center text-[1D1D1D] md:w-[365px] md:text-[14px] md:text-start lg:text-[16px] lg:leading-[24px]  ">
-                Want to become a part of the Minergram partnership ecosystem?
+                Want to become a part of the Discripto partnership ecosystem?
                 Our Head of Partnerships will get in touch with you after you
                 complete the form below to start the conversation and learn more
                 about your company and how your solution supports merchant

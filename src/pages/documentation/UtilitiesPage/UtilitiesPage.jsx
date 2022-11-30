@@ -11,45 +11,45 @@ const UtilitiesPage = () => {
       <DocumentNav />
       <DocumentationHero
         headerText="Utilities"
-        paragraphText="An overview of Minergram's Utility"
+        paragraphText="An overview of Discripto's Utility"
       />
       <section className="utilities_introductionContent" id="utilities">
         <div className="utilities_mainContent">
           <h1 className="utilities_title">Utilities</h1>
           <div className="utilities_underline"></div>
           <p className="utilities_paragraph">
-            Get started with Minergram’s Utility
+            Get started with Discripto’s Utility
           </p>
           <div className="utilities_overview" id="overview">
             <h1>Utilities</h1>
             <p className="mb-3">
-              The Minergram API is organized around REST. Our API has
+              The Discripto API is organized around REST. Our API has
               predictable resource-oriented URLs,accepts form-encoded request
               bodies, returns JSON-encoded responses, and uses standard HTTP
               response codes, authentication, and verbs.
             </p>
             <p className="mb-3">
-              The Minergram API doesnt support bulk updates. You can work on
-              only one object per request.The Minergram API differs for every
+              The Discripto API doesnt support bulk updates. You can work on
+              only one object per request.The Discripto API differs for every
               account as we release new versions and tailor functionality. Log
               in to see docs customized to your version of the API, with your
-              test key and data. Get started with Minergram’s Utility
+              test key and data. Get started with Discripto’s Utility
             </p>
           </div>
           <div className="utilities_overview" id="overview">
             <h1>Utilities</h1>
             <p className="mb-3">
-              The Minergram API is organized around REST. Our API has predictable
-              resource-oriented URLs,accepts form-encoded request bodies,
-              returns JSON-encoded responses, and uses standard HTTP response
-              codes, authentication, and verbs.
+              The Discripto API is organized around REST. Our API has
+              predictable resource-oriented URLs,accepts form-encoded request
+              bodies, returns JSON-encoded responses, and uses standard HTTP
+              response codes, authentication, and verbs.
             </p>
             <p className="mb-3">
-              The Minergram API doesnt support bulk updates. You can work on only
-              one object per request.The Minergram API differs for every account
-              as we release new versions and tailor functionality. Log in to see
-              docs customized to your version of the API, with your test key and
-              data.
+              The Discripto API doesnt support bulk updates. You can work on
+              only one object per request.The Discripto API differs for every
+              account as we release new versions and tailor functionality. Log
+              in to see docs customized to your version of the API, with your
+              test key and data.
             </p>
             <p className="mb-3">
               You can use the Stripe API in test mode, which doesnt affect your

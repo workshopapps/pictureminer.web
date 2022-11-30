@@ -9,7 +9,7 @@ const Web = () => {
       <DocumentNav />
       <DocumentationHero
         headerText="Web"
-        paragraphText="An overview of Minergram Web, uses and procedures"
+        paragraphText="An overview of Discripto Web, uses and procedures"
       />
       <div className="flex">
         <div className="p-[3rem]" style={{ flex: '80%' }}>
@@ -21,7 +21,7 @@ const Web = () => {
           </h1>
           <hr className="border-top-width-2 border-black" />
           <p className="text-xl mt-5">
-            Get started with Minergram Web and explore various benefits of
+            Get started with Discripto Web and explore various benefits of
             picture mining
           </p>
           <br />
