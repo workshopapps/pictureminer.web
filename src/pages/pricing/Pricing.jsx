@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 import React, { useState } from 'react';
 import './styles/pricing.css';
 import { BiLike } from 'react-icons/bi';
@@ -209,3 +211,4 @@ function Pricing() {
 }
 
 export default Pricing;
+>>>>>>> de818175ecdddd281fdb8bcfea56e9c06a4b158e

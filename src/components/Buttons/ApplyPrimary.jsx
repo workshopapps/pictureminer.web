@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
@@ -21,3 +23,4 @@ function ApplyPrimary({ completed, buttonBool }) {
 }
 
 export default ApplyPrimary;
+>>>>>>> de818175ecdddd281fdb8bcfea56e9c06a4b158e

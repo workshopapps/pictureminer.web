@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 import { useState } from 'react';
 import './styles/index.css';
 import { faqData } from './data';
@@ -78,3 +80,4 @@ const Faq = () => {
 };
 
 export default Faq;
+>>>>>>> de818175ecdddd281fdb8bcfea56e9c06a4b158e
