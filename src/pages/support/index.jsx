@@ -1,10 +1,10 @@
 import SupportCard from './SupportCard';
-import mine from '../../assets/minergram.jpg';
-import setting from '../../assets/setting.jpg';
-import mobile from '../../assets/mobile.jpg';
-import product from '../../assets/product.jpg';
-import mail from '../../assets/mail.jpg';
-import chat from '../../assets/chat.jpg';
+import mine from '../../assets/minergram.webp';
+import setting from '../../assets/setting.webp';
+import mobile from '../../assets/mobile.webp';
+import product from '../../assets/product.webp';
+import mail from '../../assets/mail.webp';
+import chat from '../../assets/chat.webp';
 import './index.css';
 // import Layout from '../../layouts/Layout';
 
