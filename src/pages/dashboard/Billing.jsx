@@ -86,8 +86,8 @@ function Billing() {
               <div className="mt-5">
                 <h4>We are sorry to see you leave</h4>
                 <p className="text-sm text-inputGray mt-2">
-                  We are about to cancel your Minergram basic plan. If you would
-                  like to proceed with the cancelling of your Minergram basic
+                  We are about to cancel your Discripto basic plan. If you would
+                  like to proceed with the cancelling of your Discripto basic
                   plan, select &#8220;Cancel plan&#8220;below.
                 </p>
               </div>
@@ -124,7 +124,7 @@ function Billing() {
               <div className="mt-5">
                 <h4>Success</h4>
                 <p className="text-sm text-inputGray mt-2">
-                  You have successfully opted out of Minergram basic plan.
+                  You have successfully opted out of Discripto basic plan.
                 </p>
               </div>
               <div className="mt-8 flex flex-col space-y-4 w-full">
@@ -158,7 +158,7 @@ function Billing() {
           <div className="flex border border-modalGray border-solid rounded mt-8 items-center justify-between p-2">
             <div className="">
               <small>Plan</small>
-              <p className="text-small">Minergram Basic</p>
+              <p className="text-small">Discripto Basic</p>
             </div>
             <div>
               <small>Price</small>
@@ -169,18 +169,18 @@ function Billing() {
             className="mt-8 text-red-500 cursor-pointer"
             onClick={toggleCancelPlanModal}
           >
-            Cancel Minergram Basic Plan
+            Cancel Discripto Basic Plan
           </p>
         </section>
         <section className="border border-modalGray border-solid rounded mt-8 p-4">
           <p>Billing history</p>
           <div className="flex flex-col mt-8 space-y-4">
             <div className="border border-modalGray border-solid rounded p-2 ">
-              <p>Minergram basic plan subscription - $9.99</p>
+              <p>Discripto basic plan subscription - $9.99</p>
               <small className="font-medium text-inputGray">Nov 10, 2022</small>
             </div>
             <div className="border border-modalGray border-solid rounded p-2 ">
-              <p>Minergram basic plan subscription - $9.99</p>
+              <p>Discripto basic plan subscription - $9.99</p>
               <small className="font-medium text-inputGray">Nov 10, 2022</small>
             </div>
           </div>

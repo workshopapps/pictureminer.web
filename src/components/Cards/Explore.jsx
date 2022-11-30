@@ -41,8 +41,8 @@ function Explore() {
               <p className=" w-[335px] h-[72px] font-sans font-normal text-[12px] leading-[18px] text-center md:text-start lg:text-start text-[1D1D1D] md:h-[140px] md:text-[14px] lg:text-[16px] lg:w-[400px]">
                 For a more effective experience for our customers, we have
                 developed an API integration that expands the capabilities of
-                Minergram’s main product so that more data can be imported and
-                give clients a seamless experience.{' '}
+                Discripto&apos;s main product so that more data can be imported
+                and give clients a seamless experience.{' '}
               </p>
             </div>
             <img src={Group2} alt="Tech Partner Program" />

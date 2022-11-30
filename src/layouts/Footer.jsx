@@ -16,10 +16,10 @@ const Footer = () => {
         </div>
         <div className="flex flex-col gap-4">
           <h2 className="mb-4">Resources</h2>
-          <Link to="/blog">Blog</Link>
+          {/* <Link to="/blog">Blog</Link> */}
           <Link to="/pricing">Pricing</Link>
-          <Link to="/support">Support</Link>
-          <Link to="/why-Minergram">Why Minergram</Link>
+          {/* <Link to="/support">Support</Link> */}
+          <Link to="/why-discripto">Why Discripto</Link>
         </div>
         <div className="flex flex-col gap-4">
           <h2 className="mb-4">Legal</h2>
@@ -59,7 +59,7 @@ const Footer = () => {
             zIndex: 10,
           }}
         >
-          &copy; 2022 Minergram. All rights reserverd.
+          &copy; 2022 Discripto. All rights reserverd.
         </p>
         <div className="bg-[#EAECF0] h-[2px] flex-1 hidden sm:block"></div>
       </div>

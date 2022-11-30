@@ -21,13 +21,13 @@ const Installations = () => {
           <div className="installation_underline" />
 
           <p>
-            Get started with Minergram and learn by exploring interactive
+            Get started with Discripto and learn by exploring interactive
             examples.
           </p>
           <div className="installation_component" id="components">
             <h1>Components</h1>
             <p>
-              Minergram (currently v3.3.7) has a few easy ways to quickly get
+              Discripto (currently v3.3.7) has a few easy ways to quickly get
               started, each one appealing to a different skill level and use
               case. Read through to see what suits your particular needs.
             </p>
@@ -61,7 +61,7 @@ const Installations = () => {
           <section className="installation_section" id="libraries">
             <h3>Libraries</h3>
             <p style={{ paddingLeft: '3px' }}>
-              Minergram (currently v3.3.7) has a few easy ways to quickly get
+              Discripto (currently v3.3.7) has a few easy ways to quickly get
               started, each one appealing to a different skill level and use
               case. Read through to see what suits your particular needs.
             </p>
@@ -71,21 +71,21 @@ const Installations = () => {
           <section className="installation_section" id="procedures">
             <h3>Procedures</h3>
             <p>
-              Minergram (currently v3.3.7) has a few easy ways to quickly get
+              Discripto (currently v3.3.7) has a few easy ways to quickly get
               started, each one appealing to a different skill level and use
               case. Read through to see what suits your particular needs.
             </p>
           </section>
-          <section className="installation_section" id="minergramLite">
-            <h3>Minergram Lite</h3>
+          <section className="installation_section" id="DiscriptoLite">
+            <h3>Discripto Lite</h3>
             <p>
-              Recognise and mine images with Minergram. each one appealing to a
+              Recognise and mine images with Discripto. each one appealing to a
               different skill level and use case. Read through to see what suits
               your particular needs.
             </p>
             <img
               src={InstallationMinergramLite}
-              alt="Minergramlite Lite Process"
+              alt="discriptolite Lite Process"
             />
           </section>
         </div>
@@ -95,14 +95,14 @@ const Installations = () => {
             'components',
             'libraries',
             'procedures',
-            'minergramLite',
+            'DiscriptoLite',
           ]}
           linkTexts={[
             'Installation',
             ' Components',
             'Libraries',
             ' Procedures',
-            ' Minergram Lite',
+            ' Discripto Lite',
           ]}
         />
       </section>

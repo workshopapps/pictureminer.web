@@ -15,10 +15,10 @@ function HearFromPartner() {
           <div className=" flex flex-col items-start gap-[20px] ">
             <img src={QuoteDown} alt=" Quote down" />
             <p className=" w-[395px] h-[100px] font-sans font-bold text-[14px] leading-[20px] text-[#1D1D1D] md:w-[375px] md:h-[120px] md:text-[16px] md:leading-[24px] lg:text-[18px] ">
-              I love what Minergram has done for my Company so far. We have
+              I love what Discripto has done for my Company so far. We have
               noticed a 60% spike in customer conversion ever since we partenerd
-              with them. I’m looking forward to how far Minergram will take my
-              company.
+              with them. I&apos;m looking forward to how far Discripto will take
+              my company.
             </p>
 
             <div className="flex flex-col items-start gap-[10px] ">

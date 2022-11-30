@@ -18,8 +18,8 @@ const BlogList = () => {
           <h1 className="text-4xl font-semibold mb-3">Our Blog</h1>
           <p className="text-base leading-relaxed font-medium">
             Launching our interactive image recognition API documentation with
-            Minergram. You can use API to perform high-volume reverse image search
-            manually in your browser.
+            Discripto. You can use API to perform high-volume reverse image
+            search manually in your browser.
           </p>
         </div>
         <form>
@@ -50,50 +50,50 @@ const BlogList = () => {
           <div className="w-full md:w-[35%] lg:w-[30%] text-xs mx-auto md:mx-0">
             <BlogCard
               image={image1}
-              imageText="The Future of the Minergram Chrome Extention"
+              imageText="The Future of the Discripto Chrome Extention"
               imageTextClassName="absolute bottom-5 z-50 ml-4 text-white text-start font-bold text-base"
-              text="One of the easiest  and most popular way to use Minergram to search the web is with our offical browser extension. Image search is
+              text="One of the easiest  and most popular way to use Discripto to search the web is with our offical browser extension. Image search is
               our passion."
             />
           </div>
           <div className="w-full md:w-[35%] lg:w-[30%] text-xs mx-auto md:mx-0">
             <BlogCard
               image={image2}
-              imageText="Introducing profile page for all Minergram APIs"
+              imageText="Introducing profile page for all Discripto APIs"
               imageTextClassName="absolute bottom-5 z-50 ml-4 text-white text-start font-bold text-base"
-              text="We are excited to launch our  client profile pages and anlytics for all our Minergram  APIs.
+              text="We are excited to launch our  client profile pages and anlytics for all our Discripto  APIs.
               You can use the APIS analytics page to  search engine."
             />
           </div>
           <div className="w-full md:w-[35%] lg:w-[30%] text-xs mx-auto md:mx-0">
             <BlogCard
               image={image3}
-              imageText="How to sign up for the Minergram API"
+              imageText="How to sign up for the Discripto API"
               imageTextClassName="absolute bottom-5 z-50 ml-4 text-white text-start font-bold text-base"
-              text="New feature to the Minergram API: The ability to automatically top up your
-              account so you never run out of searches. Changes how you sign up for the Minergram API"
+              text="New feature to the Discripto API: The ability to automatically top up your
+              account so you never run out of searches. Changes how you sign up for the Discripto API"
             />
           </div>
           <div className="w-full md:w-[35%] lg:w-[30%] text-xs mx-auto md:mx-0">
             <BlogCard
               image={image4}
-              imageText="How to sign up for the Minergram API"
+              imageText="How to sign up for the Discripto API"
               imageTextClassName="absolute bottom-5 z-50 ml-4 text-white text-start font-bold text-base"
-              text="New feature to the Minergram API: The ability to automatically top up your
-              account so you never run out of searches. Changes how you sign up for the Minergram API"
+              text="New feature to the Discripto API: The ability to automatically top up your
+              account so you never run out of searches. Changes how you sign up for the Discripto API"
             />
           </div>
           <div className="w-full md:w-[35%] lg:w-[30%] text-xs mx-auto md:mx-0">
             <BlogCard
               image={image5}
-              text="How to verify item images with Minergram"
+              text="How to verify item images with Discripto"
             />
           </div>
           <div className="w-full md:w-[35%] lg:w-[30%] text-xs mx-auto md:mx-0">
             <BlogCard
               image={image6}
               text="Happy Holiday from all of
-              us at Minergram."
+              us at Discripto."
             />
           </div>
           <div className="w-full md:w-[35%] lg:w-[30%] text-xs mx-auto md:mx-0">
@@ -107,7 +107,7 @@ const BlogList = () => {
             <BlogCard
               image={image8}
               text="How to find high resolution
-              images with Minergram."
+              images with Discripto."
             />
           </div>
           <div className="w-full md:w-[35%] lg:w-[30%] text-xs mx-auto md:mx-0">

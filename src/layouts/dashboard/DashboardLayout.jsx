@@ -10,7 +10,7 @@ import axios from 'axios';
 
 import NavBar from '../Navbar';
 import Footer from '../Footer';
-axios.defaults.baseURL = 'https://minergramtest.herokuapp.com/api/v1/';
+axios.defaults.baseURL = 'https://discripto.hng.tech/api1/api/v1/';
 
 const DashboardLayout = () => {
   const { user } = useContext(UserContext);
