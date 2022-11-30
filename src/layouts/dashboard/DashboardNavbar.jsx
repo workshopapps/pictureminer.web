@@ -8,7 +8,6 @@ const DashboardNavbar = ({ data }) => {
   const [showMenu, setShowMenu] = useState(false);
   const { setUser } = useContext(UserContext);
   const handleLogout = (e) => {
-    e.stopImmediatePropagation();
     setUser(null);
     removeItemFromLocalStorage('user');
   };
@@ -25,7 +24,6 @@ const DashboardNavbar = ({ data }) => {
         <div className="user__grid">
           <div className="user_image">{data ? data.Username[0] : null}</div>
           <p className="user_name">{data ? data.Username : null}</p>
-          <p className="user_number">Admin ID No: 12345</p>
         </div>
         <div
           className="drop__down"

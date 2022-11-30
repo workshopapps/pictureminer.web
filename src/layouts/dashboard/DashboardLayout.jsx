@@ -10,11 +10,7 @@ import axios from 'axios';
 
 import NavBar from '../Navbar';
 import Footer from '../Footer';
-<<<<<<< HEAD
-axios.defaults.baseURL = 'https://minergramtest.herokuapp.com/api/v1/';
-=======
 axios.defaults.baseURL = 'https://discripto.hng.tech/api1/api/v1/';
->>>>>>> 2e163862590cc2a217c41125987f2781b2ceb398
 
 const DashboardLayout = () => {
   const { user } = useContext(UserContext);
