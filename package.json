@@ -35,7 +35,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
- 
     "lint": "eslint --fix --ext .js,.jsx .",
     "format": "prettier . --write",
     "test": "react-scripts test",

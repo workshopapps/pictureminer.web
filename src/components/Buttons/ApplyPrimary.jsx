@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+
 function ApplyPrimary({ completed, buttonBool }) {
   const navigate = useNavigate();
 
