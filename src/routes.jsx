@@ -2,29 +2,19 @@ import React, { useContext, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import ErrorPage from './Error';
 import Login from './pages/Login';
-
 import About from './pages/About/components/About';
-
 import Termsofuse from './pages/terms-of-use/Termsofuse';
-
 import DashboardLayout from './layouts/dashboard/DashboardLayout';
 import Dashboard from './pages/dashboard/Dashboard';
 import Images from './pages/dashboard/Images';
-
-// import BlogList from './pages/blog/BlogList';
-// import ExtensionBlog from './pages/blog/components/ExtensionBlog';
-
 import AccountSettings from './pages/dashboard/AccountSettings';
 import Billing from './pages/dashboard/Billing';
-
 import DocumentationHome from './pages/documentation/Home/DocumentationHome';
 import GettingStarted from './pages/documentation/GettingStartedPage/GettingStarted';
 import Installations from './pages/documentation/InstallationsPage/Installations';
 import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
-
 import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
 import LandingPage from './pages/LandingPage/LandingPage';
-// import MinergramDemo from './pages/LandingPage/MinergramDemo/MinergramDemo';
 import EcommercePage from './pages/LandingPage/EcommercePage/EcommercePage';
 import Hospitality from './pages/LandingPage/HospitalityPage/Hospitality';
 import SearchEngine from './pages/LandingPage/SearchEnginePage/SearchEngine';
@@ -32,22 +22,13 @@ import Healthcare from './pages/LandingPage/HealthcarePage/Healthcare';
 import ExternalDemoPage from './pages/LandingPage/ExternalPage/ExternalPage';
 import Integrations from './pages/documentation/IntegrationPage/Integrations';
 import Web from './pages/documentation/WebPage/Web';
-
 import WhyMinergram from './pages/whyTozilla/WhyMinergram';
-
 import ImageDetails from './pages/dashboard/ImageDetails';
 import Privacypolicy from './pages/privacypolicy/privacypolicy';
-
 import ApiDocumentation from './pages/documentation/ApiDocumentation';
-
-// import { useGlobalContext } from './context/context';
-
 import Faq from './pages/FAQ/faq';
-
 import Layout from './layouts/Layout';
 import HowItWorks from './pages/howItWorks/howItWorks';
-// import SupportPage from './pages/support';
-
 import ScrollToTop from './layouts/ScrollToTop';
 import Pricing from './pages/pricing/Pricing';
 import ImageUpload from './pages/dashboard/ImageUpload';
@@ -95,8 +76,6 @@ const RoutesComponents = () => {
               path="/documentation/getting-started"
               element={<GettingStarted />}
             ></Route>
-
-            {/* <Route path="support" element={<SupportPage />}></Route> */}
             <Route
               path="/documentation/integrations"
               element={<Integrations />}
@@ -106,9 +85,6 @@ const RoutesComponents = () => {
               path="/documentation/installations"
               element={<Installations />}
             ></Route>
-
-            {/* <Route path="/blog" element={<BlogList />} /> */}
-            {/* <Route path="/blog-page" element={<ExtensionBlog />} /> */}
             <Route
               path="/documentation/examples"
               element={<ExamplePage />}
