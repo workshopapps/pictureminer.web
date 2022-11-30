@@ -1,4 +1,4 @@
-const secondparp1 = `Minergram provides the Services "as is" and "as available," without
+const secondparp1 = `Discripto provides the Services "as is" and "as available," without
             warranty of any kind. Without limiting this, we expressly disclaim
             all warranties, whether express, implied or statutory, regarding the
             Services including without limitation any warranty of
@@ -6,7 +6,7 @@ const secondparp1 = `Minergram provides the Services "as is" and "as available,"
             accuracy and non-infringement.`;
 
 const servicespar2 =
-  'To the fullest extent permitted by applicable law, you will indemnify, defend and hold harmless Minergram, its affiliates and Minergram’s as well as the affiliates’ respective past, present and future employees, officers, directors, contractors, consultants, equity holders, suppliers, vendors, service providers, parent companies, subsidiaries, affiliates, agents, representatives, predecessors, successors and assigns (the "Minergram Parties") from and against all claims, demands, actions, damages, losses, costs and expenses (including attorneys’ fees) that arise from or relate to: (i) your use of the Services, (ii) your responsibilities or obligations under these Terms of Use, (iii) your violation of these Terms of Use, or (iv) your violation of any rights of any other person or entity, (v) any dispute relating to the Services between you and any other person, and (vi) any regulatory enforcement actions, which were initiated by your actions or omissions.';
+  'To the fullest extent permitted by applicable law, you will indemnify, defend and hold harmless Discripto, its affiliates and Discripto’s as well as the affiliates’ respective past, present and future employees, officers, directors, contractors, consultants, equity holders, suppliers, vendors, service providers, parent companies, subsidiaries, affiliates, agents, representatives, predecessors, successors and assigns (the "Discripto Parties") from and against all claims, demands, actions, damages, losses, costs and expenses (including attorneys’ fees) that arise from or relate to: (i) your use of the Services, (ii) your responsibilities or obligations under these Terms of Use, (iii) your violation of these Terms of Use, or (iv) your violation of any rights of any other person or entity, (v) any dispute relating to the Services between you and any other person, and (vi) any regulatory enforcement actions, which were initiated by your actions or omissions.';
 
 const feedbackpar = `If you send or transmit any communications or materials to us by mail,
           email, telephone, or otherwise, suggesting or recommending changes to

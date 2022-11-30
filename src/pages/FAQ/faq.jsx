@@ -34,7 +34,7 @@ const Faq = () => {
               aria-expanded="true"
               aria-controls="collapseOne5"
             >
-              What is Minergram?
+              What is Discripto?
             </button>
           </h2>
           <div
@@ -43,10 +43,10 @@ const Faq = () => {
             aria-labelledby="headingOne5"
           >
             <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
-              Minergram is an API (Application Programming Interface) system
+              Discripto is an API (Application Programming Interface) system
               that allows for communication between two applications using
-              requests and responses. For an overview of how to use Minergram,
-              check out our brief tutorial (minergram.com/how-to-use)
+              requests and responses. For an overview of how to use Discripto,
+              check out our brief tutorial (Discripto.com/how-to-use)
             </div>
           </div>
         </div>
@@ -77,7 +77,7 @@ const Faq = () => {
               aria-expanded="false"
               aria-controls="collapseTwo5"
             >
-              How does Minergram work?
+              How does Discripto work?
             </button>
           </h2>
           <div
@@ -86,11 +86,11 @@ const Faq = () => {
             aria-labelledby="headingTwo5"
           >
             <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
-              Minergram allows users to make a request by uploading an image or
+              Discripto allows users to make a request by uploading an image or
               a URL and get a swift validated response(s) detailing the content
-              of their request(s). Learn more about how Minergram works
-              (minergram.com/steps-works), or get an overview of our technology
-              (minergram.com/support-page).
+              of their request(s). Learn more about how Discripto works
+              (Discripto.com/steps-works), or get an overview of our technology
+              (Discripto.com/support-page).
             </div>
           </div>
         </div>
@@ -121,7 +121,7 @@ const Faq = () => {
               aria-expanded="false"
               aria-controls="collapseThree5"
             >
-              What can I do with Minergram?
+              What can I do with Discripto?
             </button>
           </h2>
           <div
@@ -130,7 +130,7 @@ const Faq = () => {
             aria-labelledby="headingThree5"
           >
             <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
-              There are many uses for Minergram, but here are a few:
+              There are many uses for Discripto, but here are a few:
               <ol>
                 <li>Captioning</li>
                 <li>Image Recognition</li>
@@ -168,7 +168,7 @@ const Faq = () => {
               aria-expanded="false"
               aria-controls="collapseThree5"
             >
-              Is Minergram free to use?
+              Is Discripto free to use?
             </button>
           </h2>
           <div
@@ -177,7 +177,7 @@ const Faq = () => {
             aria-labelledby="headingThree5"
           >
             <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
-              Minergram is a subscription-based service but it is free for
+              Discripto is a subscription-based service but it is free for
               individuals.
             </div>
           </div>
@@ -210,7 +210,7 @@ const Faq = () => {
               aria-expanded="false"
               aria-controls="collapseThree5"
             >
-              Can I use Minergram for commercial purposes or high-volume
+              Can I use Discripto for commercial purposes or high-volume
               searching?
             </button>
           </h2>
@@ -220,12 +220,12 @@ const Faq = () => {
             aria-labelledby="headingThree5"
           >
             <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
-              Yes, there is a paid version (minergram.com/paid-vers) of
-              Minergram for commercial use, which allows you to make bulk
-              searches. The commercial version of Minergram includes a user
+              Yes, there is a paid version (Discripto.com/paid-vers) of
+              Discripto for commercial use, which allows you to make bulk
+              searches. The commercial version of Discripto includes a user
               interface for easy searching, as well as an API for integrating
-              Minergram with your own website or system. If you have any
-              questions, please get in touch (minergram.com/contact).
+              Discripto with your own website or system. If you have any
+              questions, please get in touch (Discripto.com/contact).
             </div>
           </div>
         </div>
@@ -257,7 +257,7 @@ const Faq = () => {
               aria-expanded="false"
               aria-controls="collapseThree5"
             >
-              Can I use Minergram’s image recognition technologies with my own
+              Can I use Discripto’s image recognition technologies with my own
               images?
             </button>
           </h2>
@@ -344,7 +344,7 @@ const Faq = () => {
               aria-expanded="false"
               aria-controls="collapseThree5"
             >
-              What kinds of images can I search on Minergram?
+              What kinds of images can I search on Discripto?
             </button>
           </h2>
           <div
@@ -354,11 +354,11 @@ const Faq = () => {
           >
             <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
               <p className="py-3">
-                File type: Minergram accepts a variety of formats, including,
+                File type: Discripto accepts a variety of formats, including,
                 but not limited to, JPEG, PNG, GIF, BMP, TIFF, and WebP images.
               </p>
               <p className="py-3">
-                Image dimensions: Minergram works best with images that are at
+                Image dimensions: Discripto works best with images that are at
                 least 300 pixels in either dimension.
               </p>
               <p className="py-3">
@@ -366,12 +366,12 @@ const Faq = () => {
               </p>
               <p className="py-3">
                 Watermarked images: For best results, visibly watermarked images
-                should be avoided as Minergram may search for the watermark and
+                should be avoided as Discripto may search for the watermark and
                 not the image itself.
               </p>
               <p className="py-3">
                 Subject matter: Submitted images must adhere to our Terms of
-                Service (minergram.com/termservice).
+                Service (Discripto.com/termservice).
               </p>
             </div>
           </div>
@@ -414,9 +414,9 @@ const Faq = () => {
           >
             <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
               Yes. Just select your preferred option from the ‘Sort by’ dropdown
-              list above your results. Minergram will remember your selection
+              list above your results. Discripto will remember your selection
               for the duration of your session. For more information, see our
-              guide (minergram.com/guide) on using Minergram.
+              guide (Discripto.com/guide) on using Discripto.
             </div>
           </div>
         </div>
@@ -459,7 +459,7 @@ const Faq = () => {
             <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
               Visit the accounts tab on your dashboard and follow the
               instructions from there. You can also contact us
-              (minergram.com/contact-us) and one of our reps will be happy to
+              (Discripto.com/contact-us) and one of our reps will be happy to
               help.
             </div>
           </div>
@@ -492,7 +492,7 @@ const Faq = () => {
               aria-expanded="false"
               aria-controls="collapseThree5"
             >
-              What happens to the images I upload to Minergram?
+              What happens to the images I upload to Discripto?
             </button>
           </h2>
           <div
@@ -502,14 +502,14 @@ const Faq = () => {
           >
             <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
               <p className="py-3">
-                When you search with Minergram API, your images are
+                When you search with Discripto API, your images are
                 automatically saved so you can view your history on our
-                dashboard. Minergram processes millions of new images every day,
+                dashboard. Discripto processes millions of new images every day,
                 but your images belong to you.
               </p>
               <p className="py-3">
                 You can choose to delete your files from our servers at any
-                time. Searching with Minergram is private, secure, and always
+                time. Searching with Discripto is private, secure, and always
                 improving.
               </p>
             </div>
@@ -543,7 +543,7 @@ const Faq = () => {
               aria-expanded="false"
               aria-controls="collapseThree5"
             >
-              How can I use Minergram to find the copyright owner of an image?
+              How can I use Discripto to find the copyright owner of an image?
             </button>
           </h2>
           <div
@@ -552,7 +552,7 @@ const Faq = () => {
             aria-labelledby="headingThree5"
           >
             <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
-              Minergram doesn’t directly provide information on the owners of an
+              Discripto doesn’t directly provide information on the owners of an
               image’s copyright. You may find websites that are more likely to
               contain ownership information.
             </div>
@@ -586,7 +586,7 @@ const Faq = () => {
               aria-expanded="false"
               aria-controls="collapseThree5"
             >
-              How do I get my images removed from Minergram?
+              How do I get my images removed from Discripto?
             </button>
           </h2>
           <div
@@ -596,9 +596,9 @@ const Faq = () => {
           >
             <div className="accordion-body md:text-lg subgrey text-base py-4 px-5">
               <p>
-                Removing your images from Minergram is easy and hassle-free.
+                Removing your images from Discripto is easy and hassle-free.
                 Just select the files you want to remove and click the delete
-                button. This image(s) is then removed from Minergram servers.
+                button. This image(s) is then removed from Discripto servers.
               </p>
               <p>
                 If your image appears anywhere else on the web and you want it

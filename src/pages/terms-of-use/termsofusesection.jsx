@@ -12,21 +12,21 @@ const Termsofusesection = () => {
         </h3>
         <p className="text-subgrey text-base md:text-xl">
           These Terms of Use may only be modified by a written amendment signed
-          by an authorized representative of Minergram, or by the posting by
-          Minergram of a revised version in accordance with section 12. These
-          Terms of Use, together with the Minergram Privacy Policy, represent the
-          complete and exclusive statement of the agreement between you and us.
-          These Terms of Use supersede any proposal or prior agreement oral or
-          written, and any other communications between you and Minergram relating
-          to the subject matter of these terms including any confidentiality or
-          nondisclosure agreements.
+          by an authorized representative of Discripto, or by the posting by
+          Discripto of a revised version in accordance with section 12. These
+          Terms of Use, together with the Discripto Privacy Policy, represent
+          the complete and exclusive statement of the agreement between you and
+          us. These Terms of Use supersede any proposal or prior agreement oral
+          or written, and any other communications between you and Discripto
+          relating to the subject matter of these terms including any
+          confidentiality or nondisclosure agreements.
         </p>
       </div>
       <div className="py-5">
         <p className="text-subgrey py-2 text-base md:text-xl">{secondparp1}</p>
 
         <p className="text-subgrey py-2 text-base md:text-xl">
-          Minergram does not warrant that the Services will meet your
+          Discripto does not warrant that the Services will meet your
           requirements; that the Services will be uninterrupted, timely, secure,
           or error-free; that the information provided through the Services is
           accurate, reliable or correct; that any defects or errors will be
@@ -78,7 +78,7 @@ const Termsofusesection = () => {
           Copyright Infringement
         </h5>
         <p className="text-subgrey py-2 md:text-xl text-base">
-          If you are a copyright owner and you believe that Content on Minergram
+          If you are a copyright owner and you believe that Content on Discripto
           and/or available via the Services violates your rights, please contact
           us via.
         </p>
@@ -92,9 +92,9 @@ const Termsofusesection = () => {
         </p>
         <p className="text-subgrey py-2 md:text-xl text-base">
           To the extent these Terms of Use are not enforceable by applicable
-          law, you grant Minergram the rights we need to use Your Content without
-          attribution and to make reasonable adaptations of Your Content as
-          necessary to provide the Services.
+          law, you grant Discripto the rights we need to use Your Content
+          without attribution and to make reasonable adaptations of Your Content
+          as necessary to provide the Services.
         </p>
       </div>
 

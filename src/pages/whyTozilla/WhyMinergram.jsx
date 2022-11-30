@@ -11,13 +11,13 @@ function WhyMinergram() {
       <section className="flex flex-col md:flex-row items-center gap-y-[18px] px-[22px] md:px-20">
         <div className="md:max-w-[399px] lg:max-w-[487px]">
           <h4 className="font-medium text-2xl lg:text-[35px] lg:leading-[56px] font-Axiforma text-[#061D33]">
-            Why Should you Choose to use Minergram API?
+            Why Should you Choose to use Discripto API?
           </h4>
           <p className="mt-[18px] md:mt-5 lg:mt-[25px] text-xs leading-[18px] lg:text-lg lg:leading-7 text-[#08253F]">
-            Minergram is a game-changing and very accurate image recognition API
+            Discripto is a game-changing and very accurate image recognition API
             that makes life easier by digitizing the many laborious data
             gathering, processing, and increasing production processes while
-            also improving the quality of our daily lives. Minergram helps you
+            also improving the quality of our daily lives. Discripto helps you
             gain valuable insight into your operations that enables true
             business transformation and is widely used in industries.
           </p>

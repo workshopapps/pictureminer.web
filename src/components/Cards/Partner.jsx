@@ -15,13 +15,14 @@ function Partner() {
           <h1 className=" font-sans font-bold text-[24px] leading-8 text-[#1D1D1D] pb-4 md:text-[30px]  md:w-[350px]  lg:h-[72px] lg:text-[50px] w-[320px] lg:w-[560px]  ">
             {' '}
             Partner with{' '}
-            <span className="capitalize text-[#FF9D55] ">minergram</span>
+            <span className="capitalize text-[#FF9D55] ">Discripto</span>
           </h1>
           <p className=" w-[390px] h-[90px] leading-[18px] font-normal text-[12px] text-[#1D1D1D] mb-4 md:w-[370px] md:h-[120px] lg:w-[602px] lg:h-[112px] lg:text-[18px] lg:leading-[22px]  ">
-            Minergram wants to accelerate innovation, but we need people to do
-            that. We&apos;ve established a reputable network of Partners to assist
-            organizations in innovating more quickly by continuously evaluating,
-            measuring, and improving their customer experience with our API.
+            Discripto wants to accelerate innovation, but we need people to do
+            that. We&apos;ve established a reputable network of Partners to
+            assist organizations in innovating more quickly by continuously
+            evaluating, measuring, and improving their customer experience with
+            our API.
           </p>
           <BecomeAPartner />
         </div>

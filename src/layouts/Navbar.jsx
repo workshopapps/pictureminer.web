@@ -40,7 +40,7 @@ const NavBar = () => {
         {user ? (
           <Link
             to="/dashboard"
-            className='className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00] text-[#FF6C00] font-medium leading-[24px]"'
+            className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00] text-[#FF6C00] font-medium leading-[24px]"
           >
             Dashboard
           </Link>
@@ -54,12 +54,12 @@ const NavBar = () => {
         )}
 
         {user ? (
-          <div
+          <button
             onClick={handleLogout}
             className="rounded-[8px] cursor-pointer w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00]  font-medium leading-[24px] text-white bg-[#FF6C00]"
           >
             Logout
-          </div>
+          </button>
         ) : (
           <Link
             to="/signup"

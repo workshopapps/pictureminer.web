@@ -122,7 +122,7 @@ const Signup = () => {
           <div>
             <p className="leading-[20px] text-[14px] font-normal mx-auto">
               By clicking the “Create account” button, you agree to
-              Minergram&apos;s{' '}
+              Discripto&apos;s{' '}
               <Link to="/terms-of-use" className="text-[#ff6c00]">
                 terms of acceptable use.
               </Link>
