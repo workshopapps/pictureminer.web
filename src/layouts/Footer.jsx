@@ -42,6 +42,7 @@ const Footer = () => {
               />
               <button
                 type="submit"
+                disabled="true"
                 className="flex-1 py-3 px-4 h-[44px] flex justify-center items-center text-sm  border border-[#FF6C00]  font-medium leading-[20px] text-white bg-[#FF6C00]  mt-3 rounded-r-lg text-[14px] text-center  hover:bg-[#FF9D55]  "
               >
                 Subscribe
