@@ -5,7 +5,7 @@ const BatchUpload = () => {
     <div>
       <h4>Image Details</h4>
 
-      <div className='flex gap-3'>
+      <div className='flex gap-3 flex-col'>
 
 
         <AuthInput
