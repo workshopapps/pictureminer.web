@@ -8,3 +8,14 @@
   transform: translateY(-250%);
   opacity: 0;
 }
+.tablist {
+  @include Flex;
+  gap: 15px;
+  .active__tab {
+    background-color: #ff6c00;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    box-shadow: 0.5px 3px 6px rgba(0, 0, 0, 0.5);
+  }
+}
