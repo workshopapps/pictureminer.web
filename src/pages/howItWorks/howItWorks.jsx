@@ -35,7 +35,7 @@ function HowItWorks() {
               type="button"
               className="absolute md:relative bottom-0 mx-auto md:translate-y-0 translate-y-1/2 bg-[#FF6C00] hover:bg-[#FF9D55] md:mt-6 lg:mt-9 w-40 h-12 leading-[26px] text-white flex items-center justify-center rounded-lg"
             >
-              Get Started
+              <Link to="/signup">Get Started</Link>
             </button>
           </div>
         </div>
