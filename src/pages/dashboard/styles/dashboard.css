@@ -2,7 +2,7 @@
 
 @layer components {
   .container-dashboard {
-    @apply mx-auto lg: mx-0 px-4 md:px-0;
+    @apply mx-auto mx-0-lg px-4 px-0-md;
     width: clamp(375px, 90vw, 650px);
   }
 
