@@ -39,11 +39,12 @@ code {
     --sec-brown: 25deg 100% 25%; /*#803600*/
 
     /* fonts */
-    --fs-xl: clamp(2rem, 1rem + 4.2vw, 3.5rem);
+    --fs-xl: clamp(2rem, 1rem + 2.2vw, 3.5rem);
     --fs-lg: clamp(1.5rem, 1rem + 1.5vw, 2rem);
-    --fs: clamp(1.125rem, 0.875rem + 1vw, 1.375rem);
-    --fs-sm: clamp(1rem, 0.7rem + 1vw, 1.1rem);
-    --fs-xs: clamp(0.75rem, 0.5rem + 1vw, 1.1rem);
+    --fs-md: clamp(1.275rem, 1rem + 1vw, 1.8rem);
+    --fs: clamp(1.125rem, 0.75rem + 1vw, 1.275rem);
+    --fs-sm: clamp(0.85rem, 0.7rem + 1vw, 1.1rem);
+    --fs-xs: clamp(0.75rem, 0.5rem + 1vw, 1rem);
   }
 
   [type='text'],
