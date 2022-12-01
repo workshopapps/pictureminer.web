@@ -19,10 +19,13 @@ module.exports = {
         inputGray: 'hsl(var(--grayModal) / 50%)',
         grey300: 'hsl(var(--grey300))',
         grey800: 'hsl(var(--grey300))',
+        secBlue: 'hsl(var(--sec-blue))',
+        secBrown: 'hsl(var(--sec-brown))',
       },
       fontSize: {
         xLarge: 'var(--fs-xl)',
         large: 'var(--fs-lg)',
+        medium: 'var(--fs-md)',
         normal: 'var(--fs)',
         small: 'var(--fs-sm)',
         xSmall: 'var(--fs-xs)',
