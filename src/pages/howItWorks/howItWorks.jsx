@@ -52,7 +52,7 @@ function HowItWorks() {
           </p>
           <div className="flex flex-col md:flex-row items-center gap-[22px] lg:gap-x-8">
             <Link
-              to="/"
+              to="/signup"
               as="button"
               type="button"
               id="btn-primary-hover"

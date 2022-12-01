@@ -1,5 +1,6 @@
 import React from 'react';
 import { features } from './data/features';
+import { Link } from 'react-router-dom';
 import Computer from './assets/computer.webp';
 
 import Feature from './components/feature';
@@ -15,8 +16,8 @@ function WhyMinergram() {
           <p className="mt-[18px] md:mt-5 lg:mt-[25px] text-xs leading-[18px] lg:text-lg lg:leading-7 text-[#08253F]">
           Discripto is an accurate image recognition API that makes life easier by digitizing the many laborious data gathering, processing, and increasing production processes.
           </p>
-          <button className="items-center w-[200px] h-[48px] bg-[#FF6C00] rounded-lg gap-[8px] py-[16px] px-[24px] font-sans font-normal text-[14px] leading-[20px] text-white hover:bg-[#FF9D55] my-[50px] ">
-          Get Started
+          <button type='button' className="items-center w-[200px] h-[48px] bg-[#FF6C00] rounded-lg gap-[8px] py-[16px] px-[24px] font-sans font-normal text-[14px] leading-[20px] text-white hover:bg-[#FF9D55] my-[50px] ">
+            <Link to="/signup">Get Started</Link>
           </button>
         </div>
         <div>
