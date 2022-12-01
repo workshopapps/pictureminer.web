@@ -75,6 +75,10 @@
 
         align-self: flex-start;
         margin-top: auto;
+
+        &:hover {
+          color: #ffffff;
+        }
       }
 
       @media screen and (max-width: 430px) {

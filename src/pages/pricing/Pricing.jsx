@@ -94,7 +94,7 @@ function Pricing() {
               </ul>
               <Link
                 to="/signup"
-                className="w-[50%] md:w-[60%] text-white bg-mainOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center space-x-4 hover:bg-mainOrange/70"
+                className="w-[50%] md:w-[60%] text-white bg-mainOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center space-x-4 hover:bg-white hover:text-[#FF6C00] "
               >
                 <span className="text-small"> Choose plan</span>
                 <span className="text-3xl font-light">&#8250;</span>
@@ -144,7 +144,7 @@ function Pricing() {
               </ul>
               <Link
                 to="/pricing/standard"
-                className="w-[50%] md:w-[60%] text-white bg-mainOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center space-x-4 hover:bg-mainOrange/70 "
+                className="w-[50%] md:w-[60%] text-white bg-mainOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center space-x-4 hover:bg-white hover:text-[#FF6C00] "
               >
                 {' '}
                 <span className="text-small"> Choose plan</span>
@@ -195,7 +195,7 @@ function Pricing() {
               </ul>
               <Link
                 to="/pricing/premium"
-                className="w-[50%] md:w-[60%] text-white bg-mainOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center space-x-4 hover:bg-mainOrange/70"
+                className="w-[50%] md:w-[60%] text-white bg-mainOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center space-x-4 hover:bg-white hover:text-[#FF6C00] "
               >
                 <span className="text-small"> Choose plan</span>
                 <span className="text-3xl font-light">&#8250;</span>

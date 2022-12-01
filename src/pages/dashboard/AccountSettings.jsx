@@ -220,14 +220,17 @@ function AccountSettings() {
                 type="button"
                 onclick={cancelAccountSettingsUpdate}
                 className={`py-2 px-8 rounded-lg text-small border border-[#686868] border-solid cursor-pointer ${
-                  success || (isTouched && 'border-mainOrange text-mainOrange')
+                  success ||
+                  (isTouched &&
+                    'border-mainOrange text-mainOrange hover:bg-mainOrange hover:text-white')
                 }`}
                 disabled={!isTouched || isFormValueEmpty}
               />
               <Button
                 text="save"
                 className={`py-2 px-8 rounded-lg text-small bg-[#D2D2D2] cursor-pointer ${
-                  success || (isTouched && 'bg-mainOrange text-white')
+                  success ||
+                  (isTouched && 'bg-mainOrange text-white hover:bg-[#FF9D55]')
                 }`}
                 type="submit"
                 disabled={!isTouched || isFormValueEmpty}
