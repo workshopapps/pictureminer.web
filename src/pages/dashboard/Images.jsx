@@ -189,7 +189,7 @@ const Images = () => {
               striped
               pagination
               noDataComponent={<NoImageComponent />}
-              progressComponent={<div class="loader2"></div>}
+              progressComponent={<div className="loader2"></div>}
             />
           </div>
           {showDeleteModal && (
