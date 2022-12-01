@@ -1,22 +1,22 @@
-import { ArrowDown2, Trash } from 'iconsax-react';
-import React, { useContext, useEffect, useState } from 'react';
-import Button from '../../components/ui/Button';
-import DataTable from 'react-data-table-component';
-import { Link } from 'react-router-dom';
-import Modal, { Backdrop } from '../../components/ui/Modal';
-import successIcon from '../../assets/dashboardImageDetails/success-icon.webp';
-import warningIcon from '../../assets/dashboardImageDetails/warning-icon.webp';
-import closeIcon from '../../assets/dashboardImageDetails/close-icon.webp';
-import axios from 'axios';
-import UserContext from '../../context/UserContext';
-import computer from '../../assets/computer.png';
+import { ArrowDown2, Trash } from "iconsax-react";
+import React, { useContext, useEffect, useState } from "react";
+import Button from "../../components/ui/Button";
+import DataTable from "react-data-table-component";
+import { Link } from "react-router-dom";
+import Modal, { Backdrop } from "../../components/ui/Modal";
+import successIcon from "../../assets/dashboardImageDetails/success-icon.webp";
+import warningIcon from "../../assets/dashboardImageDetails/warning-icon.webp";
+import closeIcon from "../../assets/dashboardImageDetails/close-icon.webp";
+import axios from "axios";
+import UserContext from "../../context/UserContext";
+import computer from "../../assets/computer.png";
 
 const NoImageComponent = () => {
   return (
     <div className="no__image">
       <p>0 Image mined (no data to show yet)</p>
       <div className="image_wrapper">
-        <Link to={'/imageUpload'}>
+        <Link to={"/imageUpload"}>
           <img src={computer} alt="no image" />
         </Link>
       </div>
@@ -43,31 +43,31 @@ const Images = () => {
   };
   const columns = [
     {
-      name: 'S/No',
+      name: "S/No",
       selector: (row) => row.sn,
       sortable: true,
       flex: 2,
     },
     {
-      name: 'Picture',
+      name: "Picture",
       selector: (row) => row.picture,
       sortable: true,
       flex: 2,
     },
     {
-      name: 'Picture ID',
+      name: "Picture ID",
       selector: (row) => row.pictureId,
       sortable: true,
       flex: 4,
     },
     {
-      name: 'Date Mined',
+      name: "Date Mined",
       selector: (row) => row.dateMined,
       sortable: true,
       flex: 4,
     },
     {
-      name: 'Details',
+      name: "Details",
       selector: (cell) => cell.details,
       sortable: true,
       flex: 1,
@@ -87,7 +87,7 @@ const Images = () => {
       ),
       selector: (row) => row.dateMined,
       sortable: true,
-      width: '50px',
+      width: "50px",
     },
   ];
   useEffect(() => {
@@ -100,10 +100,10 @@ const Images = () => {
           };
         });
 
-        const response = await axios.get('mine-service/get-all', {
+        const response = await axios.get("mine-service/get-all", {
           headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
+            "Content-Type": "application/json",
+            Accept: "application/json",
             Authorization: `Bearer ${user.Token}`,
           },
         });
@@ -114,11 +114,11 @@ const Images = () => {
               id: index,
               sn: index,
               picture: <img src={item.image_path} alt="" />,
-              pictureId: `#${item.date_created.split('.')[1]}`,
-              dateMined: `${item.date_created.split('T')[0]}`,
+              pictureId: `#${item.date_created.split(".")[1]}`,
+              dateMined: `${item.date_created.split("T")[0]}`,
               details: (
                 <Link
-                  to={`${item.date_created.split('.')[1]}`}
+                  to={`${item.date_created.split(".")[1]}`}
                   className="view__more"
                 >
                   View More
@@ -155,13 +155,13 @@ const Images = () => {
         <h1>Images</h1>
         <div className="relative">
           <Button
-            text={'Filter'}
+            text={"Filter"}
             icon={<ArrowDown2 size={24} color="#FF6C00" />}
             onclick={() => setShowMenu((prev) => !prev)}
             className="button"
             type="secondary"
           />
-          <div className={showMenu ? 'show filter' : 'hide filter'}>
+          <div className={showMenu ? "show filter" : "hide filter"}>
             <p>Last two days </p>
             <p>Last 1 week</p>
             <p>Last 1 month</p>
@@ -178,7 +178,7 @@ const Images = () => {
           striped
           pagination
           noDataComponent={<NoImageComponent />}
-          // progressComponent={<>no data</>}
+          progressComponent={<div class="loader2"></div>}
         />
       </div>
       {showDeleteModal && (
@@ -198,13 +198,13 @@ const Images = () => {
               <div className="flex gap-4 mt-4 w-full">
                 <Button
                   styles={{
-                    border: '1px solid #8e8e8e',
-                    color: '#8e8e8e',
-                    padding: '1rem 2rem',
-                    width: '100%',
-                    borderRadius: '.5rem',
-                    fontSize: '1.5rem',
-                    fontWeight: '500',
+                    border: "1px solid #8e8e8e",
+                    color: "#8e8e8e",
+                    padding: "1rem 2rem",
+                    width: "100%",
+                    borderRadius: ".5rem",
+                    fontSize: "1.5rem",
+                    fontWeight: "500",
                   }}
                   text="Cancel"
                   onclick={toggleDeleteModal}
@@ -212,13 +212,13 @@ const Images = () => {
 
                 <Button
                   styles={{
-                    background: '#f04438',
-                    color: 'white',
-                    padding: '1rem',
-                    width: '100%',
-                    borderRadius: '.5rem',
-                    fontSize: '1.5rem',
-                    fontWeight: '500',
+                    background: "#f04438",
+                    color: "white",
+                    padding: "1rem",
+                    width: "100%",
+                    borderRadius: ".5rem",
+                    fontSize: "1.5rem",
+                    fontWeight: "500",
                   }}
                   text="Delete"
                   onclick={toggleDeleteSuccessModal}
@@ -254,13 +254,13 @@ const Images = () => {
               <div className="flex gap-4 mt-4 w-full justify-center">
                 <Button
                   styles={{
-                    background: '#ff6c00',
-                    color: 'white',
-                    padding: '1rem',
-                    width: '15rem',
-                    borderRadius: '.5rem',
-                    fontSize: '1.5rem',
-                    fontWeight: '500',
+                    background: "#ff6c00",
+                    color: "white",
+                    padding: "1rem",
+                    width: "15rem",
+                    borderRadius: ".5rem",
+                    fontSize: "1.5rem",
+                    fontWeight: "500",
                   }}
                   text="Done"
                   onclick={toggleDeleteSuccessModal}
