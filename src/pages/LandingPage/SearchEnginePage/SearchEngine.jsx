@@ -1,4 +1,4 @@
-// import React, { useState } from 'react';
+import React from 'react';
 import heroImg from '../assets/Search-engine-hero.jpg';
 import businessAnalysis from '../assets/Business-Analysis.jpg';
 import structuresDescription from '../assets/Structures-Descriptions.jpg';
