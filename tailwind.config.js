@@ -25,6 +25,7 @@ module.exports = {
       fontSize: {
         xLarge: 'var(--fs-xl)',
         large: 'var(--fs-lg)',
+        medium: 'var(--fs-md)',
         normal: 'var(--fs)',
         small: 'var(--fs-sm)',
         xSmall: 'var(--fs-xs)',
