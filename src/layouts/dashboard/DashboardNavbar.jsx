@@ -4,6 +4,8 @@ import { Link, useLocation } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import { removeItemFromLocalStorage } from "../../localStorage";
 
+import { RiSearchLine } from 'react-icons/ri';
+
 const DashboardNavbar = ({ data }) => {
   const [showMenu, setShowMenu] = useState(false);
   const { setUser } = useContext(UserContext);
@@ -14,8 +16,13 @@ const DashboardNavbar = ({ data }) => {
   const location = useLocation();
   return (
     <div className="navbar">
+
       {location.pathname === "/images" ? (
         <>
+         <RiSearchLine className='icon__ri' color='#6B7280'
+        size= '1.2rem'
+
+      />
           <div className="form__input">
             <input type="search" name="" id="" placeholder="Search" />
           </div>
@@ -24,6 +31,10 @@ const DashboardNavbar = ({ data }) => {
           </div>
         </>
       ) : null}
+
+
+     
+      
 
       <div className="user">
         <div className="user__grid">
