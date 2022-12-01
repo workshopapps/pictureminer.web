@@ -9,6 +9,20 @@ import warningIcon from '../../assets/dashboardImageDetails/warning-icon.webp';
 import closeIcon from '../../assets/dashboardImageDetails/close-icon.webp';
 import axios from 'axios';
 import UserContext from '../../context/UserContext';
+import computer from '../../assets/computer.png';
+
+const NoImageComponent = () => {
+  return (
+    <div className="no__image">
+      <p>0 Image mined (no data to show yet)</p>
+      <div className="image_wrapper">
+        <Link to={'/imageUpload'}>
+          <img src={computer} alt="no image" />
+        </Link>
+      </div>
+    </div>
+  );
+};
 
 const Images = () => {
   const { user } = useContext(UserContext);
@@ -123,6 +137,12 @@ const Images = () => {
       } catch (error) {
         console.log(error);
       } finally {
+        setImageData((prev) => {
+          return {
+            ...prev,
+            loading: false,
+          };
+        });
         /* empty */
       }
     };
@@ -157,6 +177,8 @@ const Images = () => {
           responsive
           striped
           pagination
+          noDataComponent={<NoImageComponent />}
+          // progressComponent={<>no data</>}
         />
       </div>
       {showDeleteModal && (
