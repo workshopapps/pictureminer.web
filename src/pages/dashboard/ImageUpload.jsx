@@ -72,7 +72,9 @@ const ImageUpload = () => {
           )}
 
           <div>{isLoading && <p className="loading">Fetching.....</p>}</div>
-          {response && <p>Result: {response.data.text_content}</p>}
+          {response && (
+            <p className="text-center">Result: {response.data.text_content}</p>
+          )}
           {console.log(response)}
         </div>
       </div>

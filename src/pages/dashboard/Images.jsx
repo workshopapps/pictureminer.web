@@ -23,10 +23,24 @@ const Images = () => {
     setShowDeleteModal((prev) => !prev);
   };
 
-  const toggleDeleteSuccessModal = () => {
+  const toggleDeleteSuccessModal = async () => {
     showDeleteModal && toggleDeleteModal();
     setShowDeleteSuccessModal((prev) => !prev);
+    // console.log(imageData.tabledata);
+    // console.log(imageData);
+    // setImageData(
+    //   [...imageData].filter((image) => image.tabledata.pictureId !== pictureId)
+    // );
+
+    // console.log(id);
+    // await axios.delete(`${id}`);
+    // setImageData(
+    //   imageData.filter((image) => {
+    //     return image.id !== id;
+    //   })
+    // );
   };
+
   const columns = [
     {
       name: 'S/No',
@@ -137,7 +151,7 @@ const Images = () => {
           <Button
             text={'Filter'}
             icon={<ArrowDown2 size={24} color="#FF6C00" />}
-            onclick={() => setShowMenu((prev) => !prev)}
+            onclick={() => toggleShowMenu((prev) => !prev)}
             className="button"
             type="secondary"
           />

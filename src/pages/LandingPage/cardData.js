@@ -7,7 +7,6 @@ export default [
   {
     title: 'Lodging',
     p: 'To guarantee that consumers receive incredibly precise information, our API provides structured descriptions for accommodations. The process of captioning is streamlined and involves relatively little manual labor. ',
-    link: '/lodging',
   },
   {
     title: 'Hospitality',
