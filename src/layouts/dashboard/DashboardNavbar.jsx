@@ -1,23 +1,23 @@
-import { Filter } from "iconsax-react";
-import React, { useContext, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import UserContext from "../../context/UserContext";
-import { removeItemFromLocalStorage } from "../../localStorage";
+import { Filter } from 'iconsax-react';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import UserContext from '../../context/UserContext';
+import { removeItemFromLocalStorage } from '../../localStorage';
 
-import { RiSearchLine } from "react-icons/ri";
+import { RiSearchLine } from 'react-icons/ri';
 
 const DashboardNavbar = ({ data }) => {
   const [showMenu, setShowMenu] = useState(false);
   const { setUser } = useContext(UserContext);
   const handleLogout = () => {
     setUser(null);
-    removeItemFromLocalStorage("user");
+    removeItemFromLocalStorage('user');
   };
   const location = useLocation();
   return (
     <div className="navbar">
       <div className="">
-        {location.pathname === "/images" ? (
+        {location.pathname === '/images' ? (
           <>
             <RiSearchLine className="icon__ri" color="#6B7280" size="1.2rem" />
 
@@ -25,7 +25,7 @@ const DashboardNavbar = ({ data }) => {
               <input type="search" name="" id="" placeholder="Search" />
             </div>
             <div className="filt">
-              <Filter size={"40"} color="#ff6c00" />
+              <Filter size={'40'} color="#ff6c00" />
             </div>
           </>
         ) : null}
@@ -56,7 +56,7 @@ const DashboardNavbar = ({ data }) => {
               strokeLinejoin="round"
             />
           </svg>
-          <div className={showMenu ? "show account" : "hide account"}>
+          <div className={showMenu ? 'show account' : 'hide account'}>
             <Link to="account-setup">
               <p>Account Settings</p>
             </Link>
