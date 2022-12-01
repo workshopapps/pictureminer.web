@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import React, { useState, useEffect, useReducer } from 'react';
 import { useParams } from 'react-router-dom';
 import FormInput from '../../components/form/FormInput';
@@ -32,50 +33,50 @@ function reducer(state, action) {
   const { type, payload } = action;
 
   switch (type) {
-  case actions.inputChanged: {
-    return {
-      ...state,
-      isTouched: true,
-      isFormValueEmpty: false,
-      isSubmitting: false,
-      errorMessages: {},
-    };
-  }
-  case actions.formSubmitted: {
-    return {
-      ...state,
-      isTouched: false,
-      isSubmitting: true,
-      errorMessages: payload,
-    };
-  }
-  case actions.isSubmitting: {
-    return {
-      ...state,
-      successMessage: 'User details updated successfully',
-    };
-  }
-  case actions.isNotSubmitting: {
-    return {
-      ...state,
-      isSubmitting: false,
-    };
-  }
-  case actions.isFormEmpty: {
-    return {
-      ...state,
-      isFormValueEmpty: payload,
-    };
-  }
-  case actions.toggleSuccessMessage: {
-    return {
-      ...state,
-      successMessage: '',
-    };
-  }
+    case actions.inputChanged: {
+      return {
+        ...state,
+        isTouched: true,
+        isFormValueEmpty: false,
+        isSubmitting: false,
+        errorMessages: {},
+      };
+    }
+    case actions.formSubmitted: {
+      return {
+        ...state,
+        isTouched: false,
+        isSubmitting: true,
+        errorMessages: payload,
+      };
+    }
+    case actions.isSubmitting: {
+      return {
+        ...state,
+        successMessage: 'User details updated successfully',
+      };
+    }
+    case actions.isNotSubmitting: {
+      return {
+        ...state,
+        isSubmitting: false,
+      };
+    }
+    case actions.isFormEmpty: {
+      return {
+        ...state,
+        isFormValueEmpty: payload,
+      };
+    }
+    case actions.toggleSuccessMessage: {
+      return {
+        ...state,
+        successMessage: '',
+      };
+    }
 
-  default:
-    break;
+    default:
+      break;
   }
 }
 
@@ -249,7 +250,7 @@ function Payment() {
             )}
             <Button
               text="Proceed to payment"
-              className={`w-full py-2 px-8 rounded-lg text-small bg-[#D2D2D2] cursor-pointer mt-7 ${
+              className={`w-full py-2 px-8 rounded-lg text-small bg-[#D2D2D2] hover:bg-[#EEEEEE] cursor-pointer mt-7 ${
                 state.success || (state.isTouched && 'bg-mainOrange text-white')
               }`}
               type="submit"

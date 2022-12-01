@@ -34,7 +34,7 @@ function Billing() {
           <div className="bg-modalGray z-[5] fixed inset-0 w-full">
             <div className="w-5/6 md:w-2/4 lg:w-4/12 p-6 flex flex-col bg-white absolute rounded-md top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 ">
               <IoCloseSharp
-                className="text-large item ml-auto cursor-pointer"
+                className="text-large item ml-auto cursor-pointer hover:text-[#FF9D55]"
                 onClick={togglePlanDetailsModal}
               />
               <ul className="space-y-4 mt-6">
@@ -96,7 +96,7 @@ function Billing() {
                   type="button"
                   text="Undo"
                   className={
-                    'py-2 rounded-lg text-small font-medium border border-mainOrange border-solid w-full text-mainOrange'
+                    'py-2 rounded-lg text-small font-medium border border-mainOrange border-solid w-full text-mainOrange hover:bg-[#FF6C00] hover:text-white'
                   }
                   onclick={toggleCancelPlanModal}
                 ></Button>
@@ -104,7 +104,7 @@ function Billing() {
                   type="button"
                   text="Cancel plan"
                   className={
-                    'py-2 rounded-lg text-small font-medium border bg-mainOrange w-full text-white'
+                    'py-2 rounded-lg text-small font-medium border bg-mainOrange w-full text-white hover:bg-[#FF9D55]'
                   }
                   onclick={toggleCancelPlanAndCancelPlanModal}
                 ></Button>
@@ -132,7 +132,7 @@ function Billing() {
                   type="button"
                   text="Done"
                   className={
-                    'py-2 rounded-lg text-small font-medium border bg-mainOrange w-full text-white'
+                    'py-2 rounded-lg text-small font-medium border bg-mainOrange w-full text-white hover:bg-[#FF9D55]'
                   }
                   onclick={toggleCancelPlan}
                 ></Button>
@@ -145,7 +145,7 @@ function Billing() {
           <div className="flex items-center justify-between">
             <p>Plan details</p>
             <p
-              className="hidden md:block text-[#A74700] cursor-pointer"
+              className="hidden md:block text-red-500 cursor-pointer hover:text-[#FF9D55]"
               onClick={togglePlanDetailsModal}
             >
               Check plan benefits
@@ -166,7 +166,7 @@ function Billing() {
             </div>
           </div>
           <p
-            className="mt-8 text-red-500 cursor-pointer"
+            className="mt-8 text-red-500 cursor-pointer hover:text-[#FF9D55]"
             onClick={toggleCancelPlanModal}
           >
             Cancel Discripto Basic Plan

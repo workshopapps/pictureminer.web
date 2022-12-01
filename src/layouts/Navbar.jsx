@@ -34,20 +34,24 @@ const NavBar = () => {
           hide ? 'hidden md:flex' : ''
         }`}
       >
-        <Link to="/documentation">API Documentation</Link>
-        <Link to="/pricing">Pricing</Link>
+        <Link to="/documentation" className="hover:text-[#FF9D55]">
+          API Documentation
+        </Link>
+        <Link to="/pricing" className="hover:text-[#FF9D55]">
+          Pricing
+        </Link>
 
         {user ? (
           <Link
             to="/dashboard"
-            className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00] text-[#FF6C00] font-medium leading-[24px]"
+            className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00] text-[#FF6C00] hover:bg-[#FF6C00] hover:text-white font-medium leading-[24px]"
           >
             Dashboard
           </Link>
         ) : (
           <Link
             to="/login"
-            className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00] text-[#FF6C00] font-medium leading-[24px]"
+            className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00] text-[#FF6C00] hover:bg-[#FF6C00] hover:text-white  font-medium leading-[24px]"
           >
             Login
           </Link>
@@ -56,14 +60,14 @@ const NavBar = () => {
         {user ? (
           <button
             onClick={handleLogout}
-            className="rounded-[8px] cursor-pointer w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00]  font-medium leading-[24px] text-white bg-[#FF6C00]"
+            className="rounded-[8px] cursor-pointer w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00]  font-medium leading-[24px] text-white bg-[#FF6C00] hover:bg-[#FF9D55]"
           >
             Logout
           </button>
         ) : (
           <Link
             to="/signup"
-            className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00]  font-medium leading-[24px] text-white bg-[#FF6C00]"
+            className="rounded-[8px] w-[150px] h-[48px] flex justify-center items-center text-base  border border-[#FF6C00]  font-medium leading-[24px] text-white bg-[#FF6C00] hover:bg-[#FF9D55]"
           >
             Sign up
           </Link>
