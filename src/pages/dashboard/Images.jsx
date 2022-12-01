@@ -206,11 +206,14 @@ const Images = () => {
                     fontSize: "1.5rem",
                     fontWeight: "500",
                   }}
+                  className="border border-[#8e8e8e] text-[#8e8e8e] py-4 px-8 w-full rounded-lg text-2xl font-medium hover:bg-[#FF6C00] hover:text-white"
+           
                   text="Cancel"
                   onclick={toggleDeleteModal}
                 />
 
                 <Button
+
                   styles={{
                     background: "#f04438",
                     color: "white",
@@ -220,6 +223,9 @@ const Images = () => {
                     fontSize: "1.5rem",
                     fontWeight: "500",
                   }}
+
+                  className="bg-[#f04438] text-white p-4 w-full rounded-lg text-2xl font-medium hover:bg-[#FF9D55]"
+               
                   text="Delete"
                   onclick={toggleDeleteSuccessModal}
                 />
@@ -262,6 +268,8 @@ const Images = () => {
                     fontSize: "1.5rem",
                     fontWeight: "500",
                   }}
+
+                  className="bg-[#ff6c00] text-white p-4 w-60 rounded-lg text-2xl font-medium hover:bg-[#FF9D55]"
                   text="Done"
                   onclick={toggleDeleteSuccessModal}
                 />

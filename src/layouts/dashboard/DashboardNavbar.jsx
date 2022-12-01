@@ -7,7 +7,7 @@ import { removeItemFromLocalStorage } from '../../localStorage';
 const DashboardNavbar = ({ data }) => {
   const [showMenu, setShowMenu] = useState(false);
   const { setUser } = useContext(UserContext);
-  const handleLogout = (e) => {
+  const handleLogout = () => {
     setUser(null);
     removeItemFromLocalStorage('user');
   };

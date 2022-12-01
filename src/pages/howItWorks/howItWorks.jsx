@@ -33,7 +33,7 @@ function HowItWorks() {
             </h5>
             <button
               type="button"
-              className="absolute md:relative bottom-0 mx-auto md:translate-y-0 translate-y-1/2 bg-[#FF6C00] md:mt-6 lg:mt-9 w-40 h-12 leading-[26px] text-white flex items-center justify-center rounded-lg"
+              className="absolute md:relative bottom-0 mx-auto md:translate-y-0 translate-y-1/2 bg-[#FF6C00] hover:bg-[#FF9D55] md:mt-6 lg:mt-9 w-40 h-12 leading-[26px] text-white flex items-center justify-center rounded-lg"
             >
               Get Started
             </button>
@@ -56,7 +56,7 @@ function HowItWorks() {
               as="button"
               type="button"
               id="btn-primary-hover"
-              className="bg-[#FF6C00] hover:bg-[#FF842B] focus:bg-[#AA4800] disabled:bg-[#D2D2D2] rounded-lg py-5px-[69px] flex items-center justify-center text-white h-[64px] w-[232px]"
+              className="bg-[#FF6C00] hover:bg-[#FF9D55] focus:bg-[#AA4800] disabled:bg-[#D2D2D2] rounded-lg py-5px-[69px] flex items-center justify-center text-white h-[64px] w-[232px]"
             >
               Get Started
             </Link>
@@ -64,7 +64,7 @@ function HowItWorks() {
               to="/documentation"
               as="button"
               type="button"
-              className="border border-[#FF6C00] hover-border-white bg-white hover:bg-[#FFE2CC] focus:bg-[#FFCEAA] disabled:bg-[#D2D2D2] disabled:border-[#686868] rounded-lg flex items-center justify-center text-[#FF6C00] h-[64px] w-[232px]"
+              className="border border-[#FF6C00] bg-white hover:bg-[#F6F6F6] focus:bg-[#FFCEAA] disabled:bg-[#D2D2D2] disabled:border-[#686868] rounded-lg flex items-center justify-center text-[#FF6C00] h-[64px] w-[232px]"
             >
               View documentation
             </Link>

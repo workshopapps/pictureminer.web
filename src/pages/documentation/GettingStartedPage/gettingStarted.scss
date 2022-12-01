@@ -104,6 +104,11 @@ html {
 
           font-size: 16px;
           color: #ff6c00;
+
+          &:hover {
+            background-color: #ff6c00;
+            color: #ffffff;
+          }
         }
       }
     }
@@ -116,9 +121,9 @@ html {
   color: #131313;
   padding-inline-start: 5px;
 }
-.getting-started_paragraph{
+.getting-started_paragraph {
   padding-inline-start: 5px;
-  color: #092C4C;
+  color: #092c4c;
 }
 .getting-started_code {
   display: flex;
