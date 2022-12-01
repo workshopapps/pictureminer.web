@@ -17,9 +17,6 @@ const DashboardNavbar = ({ data }) => {
       <div className="form__input">
         <input type="search" name="" id="" placeholder="Search" />
       </div>
-      <div className="filt">
-        <Filter size={'40'} color="#ff6c00" />
-      </div>
       <div className="user">
         <div className="user__grid">
           <div className="user_image">{data ? data.Username[0] : null}</div>
