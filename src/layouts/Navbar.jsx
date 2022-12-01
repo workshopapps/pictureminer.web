@@ -34,8 +34,12 @@ const NavBar = () => {
           hide ? 'hidden md:flex' : ''
         }`}
       >
-        <Link to="/documentation">API Documentation</Link>
-        <Link to="/pricing">Pricing</Link>
+        <Link to="/documentation" className="hover:text-[#FF9D55]">
+          API Documentation
+        </Link>
+        <Link to="/pricing" className="hover:text-[#FF9D55]">
+          Pricing
+        </Link>
 
         {user ? (
           <Link

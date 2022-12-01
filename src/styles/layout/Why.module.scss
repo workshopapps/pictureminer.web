@@ -53,6 +53,10 @@
           color: white;
           border: none;
           align-self: flex-start;
+
+          &:hover {
+            background-color: #ff9d55;
+          }
         }
       }
 

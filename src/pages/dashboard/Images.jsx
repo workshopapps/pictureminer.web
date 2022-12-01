@@ -175,29 +175,31 @@ const Images = () => {
 
               <div className="flex gap-4 mt-4 w-full">
                 <Button
-                  styles={{
-                    border: '1px solid #8e8e8e',
-                    color: '#8e8e8e',
-                    padding: '1rem 2rem',
-                    width: '100%',
-                    borderRadius: '.5rem',
-                    fontSize: '1.5rem',
-                    fontWeight: '500',
-                  }}
+                  className="border border-[#8e8e8e] text-[#8e8e8e] py-4 px-8 w-full rounded-lg text-2xl font-medium hover:bg-[#FF6C00] hover:text-white"
+                  // styles={{
+                  //   border: '1px solid #8e8e8e',
+                  //   color: '#8e8e8e',
+                  //   padding: '1rem 2rem',
+                  //   width: '100%',
+                  //   borderRadius: '.5rem',
+                  //   fontSize: '1.5rem',
+                  //   fontWeight: '500',
+                  // }}
                   text="Cancel"
                   onclick={toggleDeleteModal}
                 />
 
                 <Button
-                  styles={{
-                    background: '#f04438',
-                    color: 'white',
-                    padding: '1rem',
-                    width: '100%',
-                    borderRadius: '.5rem',
-                    fontSize: '1.5rem',
-                    fontWeight: '500',
-                  }}
+                  className="bg-[#f04438] text-white p-4 w-full rounded-lg text-2xl font-medium hover:bg-[#FF9D55]"
+                  // styles={{
+                  //   background: '#f04438',
+                  //   color: 'white',
+                  //   padding: '1rem',
+                  //   width: '100%',
+                  //   borderRadius: '.5rem',
+                  //   fontSize: '1.5rem',
+                  //   fontWeight: '500',
+                  // }}
                   text="Delete"
                   onclick={toggleDeleteSuccessModal}
                 />
@@ -231,15 +233,16 @@ const Images = () => {
 
               <div className="flex gap-4 mt-4 w-full justify-center">
                 <Button
-                  styles={{
-                    background: '#ff6c00',
-                    color: 'white',
-                    padding: '1rem',
-                    width: '15rem',
-                    borderRadius: '.5rem',
-                    fontSize: '1.5rem',
-                    fontWeight: '500',
-                  }}
+                  className="bg-[#ff6c00] text-white p-4 w-60 rounded-lg text-2xl font-medium hover:bg-[#FF9D55]"
+                  // styles={{
+                  //   background: '#ff6c00',
+                  //   color: 'white',
+                  //   padding: '1rem',
+                  //   width: '15rem',
+                  //   borderRadius: '.5rem',
+                  //   fontSize: '1.5rem',
+                  //   fontWeight: '500',
+                  // }}
                   text="Done"
                   onclick={toggleDeleteSuccessModal}
                 />
