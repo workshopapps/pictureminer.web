@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import UserContext from "../../context/UserContext";
 import { removeItemFromLocalStorage } from "../../localStorage";
 
-import { RiSearchLine } from 'react-icons/ri';
+import { RiSearchLine } from "react-icons/ri";
 
 const DashboardNavbar = ({ data }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -16,25 +16,20 @@ const DashboardNavbar = ({ data }) => {
   const location = useLocation();
   return (
     <div className="navbar">
+      <div className="">
+        {location.pathname === "/images" ? (
+          <>
+            <RiSearchLine className="icon__ri" color="#6B7280" size="1.2rem" />
 
-      {location.pathname === "/images" ? (
-        <>
-         <RiSearchLine className='icon__ri' color='#6B7280'
-        size= '1.2rem'
-
-      />
-          <div className="form__input">
-            <input type="search" name="" id="" placeholder="Search" />
-          </div>
-          <div className="filt">
-            <Filter size={"40"} color="#ff6c00" />
-          </div>
-        </>
-      ) : null}
-
-
-     
-      
+            <div className="form__input">
+              <input type="search" name="" id="" placeholder="Search" />
+            </div>
+            <div className="filt">
+              <Filter size={"40"} color="#ff6c00" />
+            </div>
+          </>
+        ) : null}
+      </div>
 
       <div className="user">
         <div className="user__grid">
