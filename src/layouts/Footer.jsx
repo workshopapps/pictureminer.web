@@ -38,11 +38,11 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Enter email address"
-                className=" flex-1  h-[44px] flex items-center text-[sm] leading-[20px] mt-3 pl-2 outline-none bg-white border border-solid border-l-[#909090] border-t-[#909090] border-b-[#909090] rounded-l-lg rounded-r-none font-normal   focus:outline-none "
+                className=" flex-1  h-[44px] flex items-center text-[sm] leading-[20px] mt-3 py-3 px-4 outline-none bg-white border border-solid border-l-[#909090] border-t-[#909090] border-b-[#909090] rounded-l-lg rounded-r-none font-normal   focus:outline-none "
               />
               <button
                 type="submit"
-                className="flex-1 px-2  h-[44px] flex justify-center items-center text-sm  border border-[#FF6C00]  font-medium leading-[20px] text-white bg-[#FF6C00]  mt-3 rounded-r-lg text-[14px] text-center  hover:bg-[#FF9D55]  "
+                className="flex-1 py-3 px-4 h-[44px] flex justify-center items-center text-sm  border border-[#FF6C00]  font-medium leading-[20px] text-white bg-[#FF6C00]  mt-3 rounded-r-lg text-[14px] text-center  hover:bg-[#FF9D55]  "
               >
                 Subscribe
               </button>
@@ -53,12 +53,12 @@ const Footer = () => {
       <div className="relative mt-8 flex justify-between items-center">
         <div className=" hidden sm:block bg-[#EAECF0] h-[2px] flex-1"></div>
         <p
-          className="text-[#F7F7F7] flex-1 font-normal  text-center relative w-fit"
+          className="text-[#F7F7F7] flex-1 font-normal  text-center relative w-fit mt-2"
           style={{
             zIndex: 10,
           }}
         >
-          &copy; 2022 Discripto. All rights reserverd.
+          &copy; 2022 Discripto. All rights reserved.
         </p>
         <div className="bg-[#EAECF0] h-[2px] flex-1 hidden sm:block"></div>
       </div>
