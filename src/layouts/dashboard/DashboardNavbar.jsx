@@ -15,7 +15,10 @@ const DashboardNavbar = ({ data }) => {
 
   return (
     <div className="navbar">
-      <RiSearchLine className='icon__ri'/>
+      <RiSearchLine className='icon__ri' color='#6B7280'
+        size= '1.2rem'
+
+      />
       <div className="form__input">
 
         <input type="search" name="" id="" placeholder="Search" />
