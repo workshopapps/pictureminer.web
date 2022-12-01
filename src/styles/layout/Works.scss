@@ -82,26 +82,29 @@
 
   background: #ff6c00;
   border-radius: 8px;
+
+  &:hover {
+    background: #ff9d55;
+  }
 }
 
 @media screen and (max-width: 890px) {
-
-  .works{
+  .works {
     margin-top: 96px;
   }
 
-  .works_image{
+  .works_image {
     display: none;
   }
 
-  .works_content{
+  .works_content {
     align-items: center;
     gap: 38px;
     height: 485px;
     padding-bottom: 30px;
   }
 
-  .works_heading{
+  .works_heading {
     width: auto;
     font-size: 36px;
     line-height: 50px;
@@ -109,19 +112,19 @@
     text-align: center;
   }
 
-  .works_text{
+  .works_text {
     height: fit-content;
     align-items: center;
   }
 
-  .works_paragraph{
+  .works_paragraph {
     font-weight: 400;
     font-size: 20px;
     line-height: 30px;
     text-align: center;
   }
 
-  .works_sub{
+  .works_sub {
     font-weight: 600;
     font-size: 36px;
     line-height: 50px;
@@ -129,41 +132,41 @@
   }
 }
 
-@media screen and (max-width: 780px ) {
-    .works{
-      margin-top: 74px;
-      padding: 16px;
-    }
+@media screen and (max-width: 780px) {
+  .works {
+    margin-top: 74px;
+    padding: 16px;
+  }
 
-    .works_content{
-      gap: 16px;
-      height: 350px;
-      width: 90%;
-      margin: auto;
-    }
+  .works_content {
+    gap: 16px;
+    height: 350px;
+    width: 90%;
+    margin: auto;
+  }
 
-    .works_heading{
-      font-weight: 500;
-      font-size: 18px;
-      line-height: 28px;
-    }
+  .works_heading {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+  }
 
-    .sub_paragraph{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+  .sub_paragraph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .works_sub{
-      font-weight: 600;
-      font-size: 18px;
-      line-height: 28px;
-      text-align: center;
-    }
+  .works_sub {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+  }
 
-    .works_paragraph{
-      font-weight: 400;
-      font-size: 12px;
-      line-height: 18px;
-    }
+  .works_paragraph {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+  }
 }

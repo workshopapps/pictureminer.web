@@ -13,7 +13,7 @@ const Why = () => {
           <div className={style.text}>
             <h1>Get The Data You Need From Your Images</h1>
             <p>
-              Discripto is very easy to and you can get several texts for
+              Discripto is very easy to use and you can get several texts for
               several images within a few seconds to a few minutes.
             </p>
             <Link to="/demo">See More</Link>
