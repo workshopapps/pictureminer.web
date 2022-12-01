@@ -15,8 +15,9 @@ const DashboardNavbar = ({ data }) => {
 
   return (
     <div className="navbar">
+      <RiSearchLine className='icon__ri'/>
       <div className="form__input">
-        <RiSearchLine />
+
         <input type="search" name="" id="" placeholder="Search" />
       </div>
       <div className="filt">
