@@ -123,7 +123,7 @@ const ImageContainer = () => {
           {isError ? <p className="text-[#ff6c00] text-sm">{errMsg}</p> : null}
           {showBtn ? (
             <button
-              className="py-2 px-8 bg-[#ff6c00] rounded text-white"
+              className="py-2 px-8 bg-[#ff6c00] hover:bg-[#FF9D55] rounded text-white"
               onClick={handleSubmit}
             >
               Submit

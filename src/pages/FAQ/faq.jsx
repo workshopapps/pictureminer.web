@@ -69,7 +69,7 @@ const Faq = () => {
             Send us a message if you still need clarifications
           </p>
         </div>
-        <button className="bg-mainOrange px-[45px] py-[18.5px] md:px-28  rounded-lg text-small text-white font-semibold mt-10 md:mt-0">
+        <button className="bg-mainOrange hover:bg-[#FF9D55] px-[45px] py-[18.5px] md:px-28  rounded-lg text-small text-white font-semibold mt-10 md:mt-0">
           Get in touch
         </button>
       </div>

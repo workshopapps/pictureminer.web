@@ -44,9 +44,18 @@
         background-color: $main-color;
         color: white;
         padding: 16px 40px;
+
+        &:hover {
+          background-color: #ff9d55;
+        }
       }
       &:nth-of-type(2n) {
         color: $main-color;
+
+        &:hover {
+          background-color: #ff6c00;
+          color: #ffffff;
+        }
       }
     }
 

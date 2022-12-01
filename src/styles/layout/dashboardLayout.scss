@@ -46,11 +46,13 @@
       @include Flex;
       gap: 8px;
       .user__grid {
-        display: grid;
+        display: flex;
         grid-template-columns: auto 1fr;
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
         column-gap: 8px;
         align-items: center;
+        place-items: center;
+        justify-content: center;
         .user_image {
           font-size: 20px;
         }
