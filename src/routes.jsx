@@ -39,6 +39,7 @@ import Signup from './pages/signup';
 import { AppProvider } from './context/context';
 import { getLocalStorage } from './localStorage';
 import UserContext from './context/UserContext';
+import BatchUpload from './pages/dashboard/BatchUpload';
 
 const RoutesComponents = () => {
   const { setUser } = useContext(UserContext);
@@ -112,6 +113,7 @@ const RoutesComponents = () => {
 
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path = '/dashboard/BatchUpload' element = {<BatchUpload/> } />
 
             <Route path="/images" element={<Images />} />
             <Route path="/imageUpload" element={<ImageUpload />} />
