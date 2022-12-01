@@ -26,9 +26,8 @@
       position: absolute;
       left: 20px;
       top: 12px;
-      
     }
-    
+
     .filt {
       display: none;
       @media (max-width: 550px) {
@@ -49,7 +48,6 @@
         border: none;
         text-indent: 16px;
         padding-left: 40px;
-        
       }
     }
     .user {
@@ -113,9 +111,9 @@
       }
     }
     @media (max-width: 500px) {
-      .user {
-        display: none;
-      }
+      // .user {
+      //   display: none;
+      // }
       .form_input {
         width: 197px;
       }
@@ -147,7 +145,6 @@
         width: 287px;
       }
 
-      
       @media (max-width: 550px) {
         gap: 10px;
         .form__input {
@@ -164,13 +161,11 @@
       .icon__ri {
         position: absolute;
         left: 20px;
-        top: 12px
+        top: 12px;
       }
       position: relative;
       .form__input {
         width: 360px;
-        
-        
       }
     }
     .dashboard_pages {
@@ -184,7 +179,7 @@
 
     .navbar {
       .icon__ri {
-        left:30%
+        left: 30%;
       }
     }
   }
