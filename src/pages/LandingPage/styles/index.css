@@ -6,10 +6,6 @@
     width: clamp(375px, 95vw, 1280px);
   }
 
-  .container__try-demo {
-    width: clamp(375px, 95vw, 648px);
-  }
-
   .b-red {
     @apply border border-solid border-red-500;
   }

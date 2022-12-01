@@ -3,18 +3,10 @@ import heroImg from '../assets/Search-engine-hero.jpg';
 import businessAnalysis from '../assets/Business-Analysis.jpg';
 import structuresDescription from '../assets/Structures-Descriptions.jpg';
 import preciseImageDescription from '../assets/Precise-Image-Description.jpg';
-import { images } from '../../../Constants';
-import { ExportCurve } from 'iconsax-react';
-// import ImageUpload from '../../dashboard/ImageUpload';
 import '../styles/index.css';
+import TryDemo from '../../../components/ui/TryDemo';
 
 const SearchEngine = () => {
-  // const [imagesUpload, setImagesUpload] = useState([]);
-
-  //   const onImageChange = (e) => {
-  //     setImagesUpload([...e.target.files]);
-  //   };
-
   return (
     <>
       <section className="bg-secBlue py-10 mt-4">
@@ -84,30 +76,8 @@ const SearchEngine = () => {
           </div>
         </div>
       </section>
-      {/* Try demo section */}
       <div className="my-24 flex items-center justify-center">
-        <div className="container__try-demo w- border border-dashed border-secBrown rounded-lg flex flex-col items-center justify-center pt-8 pb-14">
-          <h3 className="text-mainOrange text-large">Try Demo</h3>
-          <img src={images.addToFolder} alt="" className="mt-10 h-16 w-16" />
-          <p className="mt-6 text-xs md:text-sm text-gray-400">
-            Drag and drop CSV file here or click to upload
-          </p>
-          <div className="relative bg-mainOrange cursor-pointer px-24 py-3 rounded-lg mt-6">
-            <div className="flex justify-center items-center gap-2 text-white ">
-              <ExportCurve size="24" color="#FFF" variant="Outline" />
-              <p className="mt-2">Upload csv file</p>
-            </div>
-            <input
-              className="absolute inset-0 opacity-0 w-full h-full cursor-pointer"
-              id="upload"
-              type="file"
-              multiple
-              accept="image/*, .png, .svg, .jpg"
-              // onChange={onImageChange}
-            />
-          </div>
-        </div>
-        {/* <ImageUpload /> */}
+        <TryDemo />
       </div>
     </>
   );

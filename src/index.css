@@ -75,6 +75,10 @@ code {
     @apply mx-auto lg:mx-0 px-4 md:px-0;
     width: clamp(375px, 90vw, 650px);
   }
+
+  .container__try-demo {
+    width: clamp(375px, 95vw, 648px);
+  }
 }
 
 @layer components {
