@@ -1,12 +1,16 @@
 /* eslint-disable no-trailing-spaces */
 import React from 'react';
-import ImageContainer from '../../../features/demo/ImageContainer';
+// import ImageContainer from '../../../features/demo/ImageContainer';
+import ImageUpload from '../../dashboard/ImageUpload';
 import '../../../styles/layout/Ecommerce.scss';
 
-const ExternalPage= () => {
+const ExternalPage = () => {
   return (
     <div>
-      <ImageContainer />
+      {/* <ImageContainer /> */}
+      <section>
+        <ImageUpload demo />
+      </section>
     </div>
   );
 };
