@@ -12,7 +12,7 @@
     padding: 2rem;
     h1 {
       color: var(--secondary-blue-color);
-      font-size: 4vmax;
+      font-size: 48px;
       font-weight: 600;
       text-align: center;
     }
@@ -32,7 +32,7 @@
           text-align: left;
           font-size: 36px;
           color: black;
-          font-weight: 600;
+          font-weight: 500;
         }
 
         p {
@@ -40,6 +40,7 @@
           color: #686868;
           margin-top: 8px;
           margin-bottom: 25px;
+          font-weight: 400;
         }
 
         a {
@@ -59,6 +60,18 @@
 
         img {
           width: 100%;
+        }
+
+        .content h1 {
+          font-size: 34px;
+        }
+
+        .text h1 {
+          font-size: 24px;
+        }
+
+        .content p {
+          font-size: 15px;
         }
 
         .text {

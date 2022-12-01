@@ -13,7 +13,7 @@
   text-align: center;
   h1 {
     color: #434343;
-    font-size: calc(1rem + 5vw);
+    font-size: 60px;
     font-weight: 600;
     span {
       color: $main-color;
@@ -21,7 +21,7 @@
   }
 
   p {
-    font-size: calc(0.65rem + 1vw);
+    font-size: 20px;
     color: #8e8e8e;
     line-height: 30px;
     font-weight: 600;
@@ -61,6 +61,14 @@
 
     @media screen and (max-width: 600px) {
       flex-direction: column;
+      .container {
+        h1 {
+          font-size: 28px;
+        }
+        p {
+          font-size: 12px;
+        }
+      }
 
       a {
         width: 100%;
