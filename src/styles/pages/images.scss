@@ -111,17 +111,25 @@
 }
 @media (max-width: 550px) {
   .rdt_TableCol[data-column-id='4'],
-  
   .rdt_TableCol[data-column-id='6'] {
     display: none;
   }
-  .rdt_TableCell[data-column-id='5']{
+  .rdt_TableCell[data-column-id='5'] {
     font-size: 12px;
-
   }
   .rdt_TableCell[data-column-id='4'],
-
   .rdt_TableCell[data-column-id='6'] {
     display: none;
+  }
+}
+.no__image {
+  text-align: center;
+  .image_wrapper {
+    height: 328.9900207519531px;
+    width: min(496px, 75vw);
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 }
