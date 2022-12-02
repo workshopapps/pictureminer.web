@@ -1,7 +1,7 @@
-import HowItWorks1 from '../assets/how-it-works-1.webp';
-import HowItWorks2 from '../assets/how-it-works-2.webp';
+import HowItWorks1 from '../assets/integrate.png';
+import HowItWorks2 from '../assets/Request.png';
 import HowItWorks3 from '../assets/how-it-works-3.webp';
-import HowItWorks4 from '../assets/how-it-works-4.webp';
+import HowItWorks4 from '../assets/Deliver.png';
 
 export const features = [
   {

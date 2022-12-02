@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Button from '../../components/ui/Button';
 import Modal, { Backdrop } from '../../components/ui/Modal';
 
@@ -6,6 +7,7 @@ import warningIcon from '../../assets/dashboardImageDetails/warning-icon.webp';
 import closeIcon from '../../assets/dashboardImageDetails/close-icon.webp';
 import saveIcon from '../../assets/dashboardImageDetails/download-icon.webp';
 import trashIcon from '../../assets/dashboardImageDetails/trash-icon.webp';
+import customer from '../../assets/customer.webp';
 
 import { useState } from 'react';
 
@@ -17,7 +19,8 @@ import { useNavigate } from 'react-router-dom';
 const BatchDetails = () => {
   // const param = useParams();
 
-  // const [imageDets, setImageDets] = useState({ loading: false });
+  // eslint-disable-next-line no-unused-vars
+  const [imageDets, setImageDets] = useState({ loading: false });
   // const { user } = useContext(UserContext);
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -59,6 +62,12 @@ const BatchDetails = () => {
   //   };
   //   fetchData();
   // }, [user]);
+  const TAG_LIST = [
+    { title: 'Water', percentage: '55%' },
+    { title: 'Trees', percentage: '30%' },
+    { title: 'Cloth', percentage: '20%' },
+    { title: 'Sky', percentage: '10%' },
+  ];
 
   const navigate = useNavigate();
 
@@ -66,6 +75,8 @@ const BatchDetails = () => {
   const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false);
   const [showSaveSuccessModal, setShowSaveSuccessModal] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+
+  // const questionInputRef = useRef();
 
   const toggleDeleteModal = () => {
     setShowDeleteModal((prev) => !prev);
@@ -84,19 +95,18 @@ const BatchDetails = () => {
     setShowMenu((prev) => !prev);
   };
 
-  // const saveToJsonHandler = () => {
-  //   const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(
-  //     JSON.stringify({ ...image })
-  //   )}`;
-  //   const link = document.createElement('a');
-  //   link.href = jsonString;
-  //   link.download = 'data.json';
-
-  //   link.click();
-  // };
+  const saveToJsonHandler = () => {
+    const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(
+      JSON.stringify({ image: '', image_path: '' })
+    )}`;
+    const link = document.createElement('a');
+    link.href = jsonString;
+    link.download = 'data.json';
+    link.click();
+  };
 
   return (
-    <main className="">
+    <main className="dashboard_details">
       <section className="relative flex justify-between items-center">
         <div className="flex items-center gap-4">
           <svg
@@ -129,7 +139,7 @@ const BatchDetails = () => {
             text="Save as Json"
             onclick={() => {
               toggleSaveSuccessModal();
-              // saveToJsonHandler();
+              saveToJsonHandler();
             }}
           />
           <Button
@@ -208,7 +218,27 @@ const BatchDetails = () => {
           <div className="batch_images">
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
               <div className="batch_image" key={item}>
-                <img src="" alt="" />
+                <img src={customer} alt="" />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h3 className="tag">Bathroom</h3>
+          <div className="batch_images">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
+              <div className="batch_image" key={item}>
+                <img src={customer} alt="" />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h3 className="tag">Bathroom</h3>
+          <div className="batch_images">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
+              <div className="batch_image" key={item}>
+                <img src={customer} alt="" />
               </div>
             ))}
           </div>

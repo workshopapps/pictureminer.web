@@ -8,7 +8,7 @@ import Feature from './components/feature';
 function WhyMinergram() {
   return (
     <main className="font-Axiforma">
-      <section className="flex flex-col md:flex-col max-[480px]:max-w-full max-[480px]:p-[25px] items-center m-auto max-w-[60%] my-[30px] min-[1024px]:pt-[25px]">
+      <section className="flex flex-col md:flex-col max-[480px]:max-w-full md:py-[30px] max-[480px]:p-[25px] items-center m-auto max-w-[60%] my-[30px] min-[1024px]:pt-[25px]">
         <div className="text-center">
           <h4 className="font-medium text-2xl lg:leading-[56px] font-Axiforma text-[#061D33] max-[480px]:text-2xl min-[1024px]:text-4xl min-[1200px]:text-5xl">
             Why Choose Discripto API?
