@@ -96,12 +96,18 @@
     @media screen and (max-width: 770px) {
       .cardWrapper {
         grid-template-columns: 1fr 1fr;
+        > div:nth-child(3) {
+          transform: translateX(50%);
+        }
       }
     }
 
     @media screen and (max-width: 430px) {
       .cardWrapper {
         grid-template-columns: 1fr;
+        > div:nth-child(3) {
+          transform: translateX(0);
+        }
       }
 
       h1 {
