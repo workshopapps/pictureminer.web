@@ -32,23 +32,23 @@ function HowItWorks() {
           </div>
         </div>
       </section>
-      <div className="flex flex-col justify-center items-center py-10 px-5">
-        <p className="font-bold text-xl md:text-3xl">Solutions we provide</p>
+      <div className="flex flex-col justify-center items-center py-8 px-5">
+        <p className="font-bold text-xl md:text-2xl">Solutions we provide</p>
       </div>
-      <section className="space-y-20 md:space-y-[167px] lg:space-y-[120px] px-10">
+      <section className="space-y-10 md:space-y-[100px] mb-20">
         {features.map((feature, idx) => (
-          <Feature key={feature.title} {...feature} idx={idx}/>
+          <Feature key={feature.title} {...feature} idx={idx} />
         ))}
       </section>
-      <section className="my-16 md:bg-[#F6F6F6] md:py-[66px] lg:py-[86px]">
+      <section className="bg-[#F6F6F6] py-[66px] lg:py-[86px]">
         <div className="flex flex-col items-center justify-center">
           <p className="mb-[22px] md:mb-9 text-base md:text-xl md:leading-[30px] text-black text-center">
             Ready to use Discripto?
           </p>
           <div className="flex flex-col md:flex-row items-center gap-[22px] lg:gap-x-8">
             <Link
-              to='/signup'
-              as='button'
+              to="/signup"
+              as="button"
               type="button"
               id="btn-primary-hover"
               className="bg-[#FF6C00] hover:bg-[#FF9D55] focus:bg-[#AA4800] disabled:bg-[#D2D2D2] rounded-lg py-5px-[69px] flex items-center justify-center text-white h-[64px] w-[232px]"
