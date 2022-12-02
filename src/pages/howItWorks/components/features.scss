@@ -1,0 +1,10 @@
+.feature{
+    display: flex;
+    flex-direction: row;
+    .feature:nth-child(even){
+        flex-direction: row;
+    }
+    .feature:nth-child(odd){
+        flex-direction: row-reverse;
+    }
+}
