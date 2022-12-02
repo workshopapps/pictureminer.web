@@ -17,6 +17,7 @@ import axios from 'axios';
 const BatchDetails = () => {
   const param = useParams();
 
+  // eslint-disable-next-line no-unused-vars
   const [imageDets, setImageDets] = useState({ loading: false });
   const { user } = useContext(UserContext);
   useEffect(() => {
@@ -59,6 +60,7 @@ const BatchDetails = () => {
     };
     fetchData();
   }, [user]);
+  // eslint-disable-next-line no-unused-vars
   const TAG_LIST = [
     { title: 'Water', percentage: '55%' },
     { title: 'Trees', percentage: '30%' },
@@ -73,6 +75,7 @@ const BatchDetails = () => {
   const [showSaveSuccessModal, setShowSaveSuccessModal] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
+  // eslint-disable-next-line no-unused-vars
   const questionInputRef = useRef();
 
   const toggleDeleteModal = () => {
@@ -92,6 +95,7 @@ const BatchDetails = () => {
     setShowMenu((prev) => !prev);
   };
 
+  // eslint-disable-next-line no-unused-vars
   const onSubmitHandler = (event) => {
     event.preventDefault();
   };
@@ -252,6 +256,7 @@ const BatchDetails = () => {
           <h3 className="tag">Bathroom</h3>
           <div className="batch_images">
             {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => (
+              // eslint-disable-next-line react/jsx-key
               <div className="batch_image">
                 <img src="" alt="" />
               </div>
