@@ -122,21 +122,21 @@ const Signup = () => {
           <div>
             <p className="leading-[20px] text-[14px] font-normal mx-auto">
               By clicking the “Create account” button, you agree to
-              Minergram&apos;s{' '}
+              Discripto&apos;s{' '}
               <Link to="/terms-of-use" className="text-[#ff6c00]">
                 terms of acceptable use.
               </Link>
             </p>
             <button
               type="submit"
-              className="bg-[#FF6C00] w-full text-white flex justify-center items-center rounded-[8px] mt-4 h-[50px] mb-3"
+              className="bg-[#FF6C00] hover:bg-[#FF9D55] w-full text-white flex justify-center items-center rounded-[8px] mt-4 h-[50px] mb-3"
               disabled={loading}
             >
               {loading ? 'Loading......' : 'Create account'}
             </button>
             <p className="leading-[20px] text-[14px] font-normal text-center  mb-8">
               Already have an account?{' '}
-              <Link to="/login" className="text-[#ff6c00]">
+              <Link to="/login" className="text-[#ff6c00] ">
                 Log in
               </Link>{' '}
             </p>

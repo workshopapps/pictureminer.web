@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { useMutation } from '@tanstack/react-query';
+// import { useMutation } from '@tanstack/react-query';
+import { useMutation } from 'react-query';
 import axios from 'axios';
 import { getLocalStorage } from '../localStorage';
 
@@ -18,7 +19,7 @@ const useUploadImage = () => {
   const { mutate, isLoading } = useMutation(
     (data) =>
       axios.post(
-        'https://minergramtest.herokuapp.com/api/v1/mine-service/upload',
+        'https://discripto.hng.tech/api1/api/v1/mine-service/upload',
         data,
         config
       ),

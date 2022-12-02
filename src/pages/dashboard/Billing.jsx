@@ -34,7 +34,7 @@ function Billing() {
           <div className="bg-modalGray z-[5] fixed inset-0 w-full">
             <div className="w-5/6 md:w-2/4 lg:w-4/12 p-6 flex flex-col bg-white absolute rounded-md top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 ">
               <IoCloseSharp
-                className="text-large item ml-auto cursor-pointer"
+                className="text-large item ml-auto cursor-pointer hover:text-[#FF9D55]"
                 onClick={togglePlanDetailsModal}
               />
               <ul className="space-y-4 mt-6">
@@ -86,8 +86,8 @@ function Billing() {
               <div className="mt-5">
                 <h4>We are sorry to see you leave</h4>
                 <p className="text-sm text-inputGray mt-2">
-                  We are about to cancel your Minergram basic plan. If you would
-                  like to proceed with the cancelling of your Minergram basic
+                  We are about to cancel your Discripto basic plan. If you would
+                  like to proceed with the cancelling of your Discripto basic
                   plan, select &#8220;Cancel plan&#8220;below.
                 </p>
               </div>
@@ -96,7 +96,7 @@ function Billing() {
                   type="button"
                   text="Undo"
                   className={
-                    'py-2 rounded-lg text-small font-medium border border-mainOrange border-solid w-full text-mainOrange'
+                    'py-2 rounded-lg text-small font-medium border border-mainOrange border-solid w-full text-mainOrange hover:bg-[#FF6C00] hover:text-white'
                   }
                   onclick={toggleCancelPlanModal}
                 ></Button>
@@ -104,7 +104,7 @@ function Billing() {
                   type="button"
                   text="Cancel plan"
                   className={
-                    'py-2 rounded-lg text-small font-medium border bg-mainOrange w-full text-white'
+                    'py-2 rounded-lg text-small font-medium border bg-mainOrange w-full text-white hover:bg-[#FF9D55]'
                   }
                   onclick={toggleCancelPlanAndCancelPlanModal}
                 ></Button>
@@ -124,7 +124,7 @@ function Billing() {
               <div className="mt-5">
                 <h4>Success</h4>
                 <p className="text-sm text-inputGray mt-2">
-                  You have successfully opted out of Minergram basic plan.
+                  You have successfully opted out of Discripto basic plan.
                 </p>
               </div>
               <div className="mt-8 flex flex-col space-y-4 w-full">
@@ -132,7 +132,7 @@ function Billing() {
                   type="button"
                   text="Done"
                   className={
-                    'py-2 rounded-lg text-small font-medium border bg-mainOrange w-full text-white'
+                    'py-2 rounded-lg text-small font-medium border bg-mainOrange w-full text-white hover:bg-[#FF9D55]'
                   }
                   onclick={toggleCancelPlan}
                 ></Button>
@@ -145,7 +145,7 @@ function Billing() {
           <div className="flex items-center justify-between">
             <p>Plan details</p>
             <p
-              className="hidden md:block text-[#A74700] cursor-pointer"
+              className="hidden md:block text-red-500 cursor-pointer hover:text-[#FF9D55]"
               onClick={togglePlanDetailsModal}
             >
               Check plan benefits
@@ -158,7 +158,7 @@ function Billing() {
           <div className="flex border border-modalGray border-solid rounded mt-8 items-center justify-between p-2">
             <div className="">
               <small>Plan</small>
-              <p className="text-small">Minergram Basic</p>
+              <p className="text-small">Discripto Basic</p>
             </div>
             <div>
               <small>Price</small>
@@ -166,21 +166,21 @@ function Billing() {
             </div>
           </div>
           <p
-            className="mt-8 text-red-500 cursor-pointer"
+            className="mt-8 text-red-500 cursor-pointer hover:text-[#FF9D55]"
             onClick={toggleCancelPlanModal}
           >
-            Cancel Minergram Basic Plan
+            Cancel Discripto Basic Plan
           </p>
         </section>
         <section className="border border-modalGray border-solid rounded mt-8 p-4">
           <p>Billing history</p>
           <div className="flex flex-col mt-8 space-y-4">
             <div className="border border-modalGray border-solid rounded p-2 ">
-              <p>Minergram basic plan subscription - $9.99</p>
+              <p>Discripto basic plan subscription - $9.99</p>
               <small className="font-medium text-inputGray">Nov 10, 2022</small>
             </div>
             <div className="border border-modalGray border-solid rounded p-2 ">
-              <p>Minergram basic plan subscription - $9.99</p>
+              <p>Discripto basic plan subscription - $9.99</p>
               <small className="font-medium text-inputGray">Nov 10, 2022</small>
             </div>
           </div>

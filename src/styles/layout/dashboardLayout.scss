@@ -21,6 +21,14 @@
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 4rem;
+    position: relative;
+    .icon__ri {
+      position: absolute;
+      left: 20px;
+      top: 12px;
+      
+    }
+    
     .filt {
       display: none;
       @media (max-width: 550px) {
@@ -40,17 +48,21 @@
         height: 100%;
         border: none;
         text-indent: 16px;
+        padding-left: 40px;
+        
       }
     }
     .user {
       @include Flex;
       gap: 8px;
       .user__grid {
-        display: grid;
+        display: flex;
         grid-template-columns: auto 1fr;
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
         column-gap: 8px;
         align-items: center;
+        place-items: center;
+        justify-content: center;
         .user_image {
           font-size: 20px;
         }
@@ -101,9 +113,6 @@
       }
     }
     @media (max-width: 500px) {
-      .user {
-        display: none;
-      }
       .form_input {
         width: 197px;
       }
@@ -134,6 +143,8 @@
       .form__input {
         width: 287px;
       }
+
+      
       @media (max-width: 550px) {
         gap: 10px;
         .form__input {
@@ -147,8 +158,16 @@
   }
   @media (max-width: 1200px) {
     .navbar {
+      .icon__ri {
+        position: absolute;
+        left: 20px;
+        top: 12px
+      }
+      position: relative;
       .form__input {
         width: 360px;
+        
+        
       }
     }
     .dashboard_pages {
@@ -158,6 +177,12 @@
   @media (max-width: 550px) {
     .dashboard_pages {
       padding-inline: 16px;
+    }
+
+    .navbar {
+      .icon__ri {
+        left:30%
+      }
     }
   }
 }

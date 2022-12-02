@@ -12,8 +12,8 @@
 
   h1 {
     color: white;
-    font-size: 4vmax;
-    font-weight: 600;
+    font-size: 60px;
+    font-weight: 400;
     text-align: center;
 
     span {
@@ -29,7 +29,7 @@
     padding: 2rem 0;
     gap: 15px;
     > div {
-      width: 350px;
+      width: 40%;
 
       border: 1px solid rgba(180, 180, 180, 0.1);
       border-radius: 8px;
@@ -45,15 +45,15 @@
 
       h3 {
         font-size: 30px;
-        font-weight: 600;
+        font-weight: 400;
       }
 
       ul {
         list-style: none;
 
         li {
-          font-size: 20px;
-          font-weight: 500;
+          font-size: 24px;
+          font-weight: 400;
           &:before {
             content: '\2022';
             color: red;
@@ -75,13 +75,23 @@
 
         align-self: flex-start;
         margin-top: auto;
+
+        &:hover {
+          color: #ffffff;
+        }
       }
 
       @media screen and (max-width: 430px) {
         width: 95%;
-        h3,
+
+        .container h1 {
+          font-size: 30px;
+        }
+        h3 {
+          font-size: 24px;
+        }
         ul li {
-          font-size: 18px;
+          font-size: 16px;
         }
       }
     }

@@ -26,10 +26,9 @@ const LoginForm = ({ onSubmit, errorMessage }) => {
       </div>
 
       <Button text="Login" type="submit" className="loginbutton" />
-      {errorMessage && <div className="invalidLogin">
-      Invalid Login Details</div>}
-
-
+      {errorMessage && (
+        <div className="invalidLogin">Invalid Login Details</div>
+      )}
 
       <div className="dont">
         Dont have an account?{' '}

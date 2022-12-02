@@ -24,18 +24,18 @@ function HowItWorks() {
               How It Works
             </h1>
             <h5 className="hidden lg:block mt-1.5 md:mt-0 lg:mt-2 md:font-semibold lg:font-medium text-[#FFFDFD]/80 md:text-sm lg:text-2xl lg:leading-[35px]">
-              Don’t sweat it! Here’s how Minergram allows you to mine your picture
-              content from any device, anytime, anywhere!
+              Don’t sweat it! Here’s how Discripto allows you to mine your
+              picture content from any device, anytime, anywhere!
             </h5>
             <h5 className="lg:hidden mt-1.5 md:mt-0 font-semibold text-[#FFFDFD]/80 text-sm">
-              Minergram allows users mine picture content on your website from any
-              device
+              Discripto allows users mine picture content on your website from
+              any device
             </h5>
             <button
               type="button"
-              className="absolute md:relative bottom-0 mx-auto md:translate-y-0 translate-y-1/2 bg-[#FF6C00] md:mt-6 lg:mt-9 w-40 h-12 leading-[26px] text-white flex items-center justify-center rounded-lg"
+              className="absolute md:relative bottom-0 mx-auto md:translate-y-0 translate-y-1/2 bg-[#FF6C00] hover:bg-[#FF9D55] md:mt-6 lg:mt-9 w-40 h-12 leading-[26px] text-white flex items-center justify-center rounded-lg"
             >
-              Get Started
+              <Link to="/signup">Get Started</Link>
             </button>
           </div>
         </div>
@@ -48,7 +48,7 @@ function HowItWorks() {
       <section className="my-[120px] md:my-[180px] md:bg-[#F6F6F6] md:py-[66px] lg:py-[86px]">
         <div className="flex flex-col items-center justify-center">
           <p className="mb-[22px] md:mb-9 text-base md:text-xl md:leading-[30px] text-black text-center">
-            Ready to use Minergram?
+            Ready to use Discripto?
           </p>
           <div className="flex flex-col md:flex-row items-center gap-[22px] lg:gap-x-8">
             <Link
@@ -56,7 +56,7 @@ function HowItWorks() {
               as="button"
               type="button"
               id="btn-primary-hover"
-              className="bg-[#FF6C00] hover:bg-[#FF842B] focus:bg-[#AA4800] disabled:bg-[#D2D2D2] rounded-lg py-5px-[69px] flex items-center justify-center text-white h-[64px] w-[232px]"
+              className="bg-[#FF6C00] hover:bg-[#FF9D55] focus:bg-[#AA4800] disabled:bg-[#D2D2D2] rounded-lg py-5px-[69px] flex items-center justify-center text-white h-[64px] w-[232px]"
             >
               Get Started
             </Link>
@@ -64,7 +64,7 @@ function HowItWorks() {
               to="/documentation"
               as="button"
               type="button"
-              className="border border-[#FF6C00] hover-border-white bg-white hover:bg-[#FFE2CC] focus:bg-[#FFCEAA] disabled:bg-[#D2D2D2] disabled:border-[#686868] rounded-lg flex items-center justify-center text-[#FF6C00] h-[64px] w-[232px]"
+              className="border border-[#FF6C00] bg-white hover:bg-[#F6F6F6] focus:bg-[#FFCEAA] disabled:bg-[#D2D2D2] disabled:border-[#686868] rounded-lg flex items-center justify-center text-[#FF6C00] h-[64px] w-[232px]"
             >
               View documentation
             </Link>

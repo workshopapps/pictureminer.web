@@ -13,7 +13,7 @@ const GettingStarted = () => {
       <DocumentNav />
       <DocumentationHero
         headerText="Getting Started"
-        paragraphText="An overview of Minergram, how to download and use, basic templates and examples, and more."
+        paragraphText="An overview of Discripto, how to download and use, basic templates and examples, and more."
       />
 
       <section
@@ -25,13 +25,13 @@ const GettingStarted = () => {
           <div className="getting-started_underline" />
 
           <p>
-            Get started with Minergram and learn by exploring interactive
+            Get started with Discripto and learn by exploring interactive
             examples.
           </p>
           <div className="getting-started_overview" id="overview">
             <h1>Overview</h1>
             <p>
-              Minergram (currently v3.3.7) has a few easy ways to quickly get
+              Discripto (currently v3.3.7) has a few easy ways to quickly get
               started, each one appealing to a different skill level and use
               case. Read through to see what suits your particular needs.
             </p>
@@ -42,16 +42,16 @@ const GettingStarted = () => {
               <div>
                 <h3>Tozoila</h3>
                 <p>
-                  Minergram (currently v3.3.7) has ways to quickly get started
+                  Discripto (currently v3.3.7) has ways to quickly get started
                   appealing to a different skill level and case. Read through to
                   see what suits.
                 </p>
-                <button>Download Minergram</button>
+                <button>Download Discripto</button>
               </div>
               <div>
                 <h3>Source Code</h3>
                 <p>
-                  Minergram (currently v3.3.7) has ways to quickly get started
+                  Discripto (currently v3.3.7) has ways to quickly get started
                   appealing to a different skill level and case. Read through to
                   see what suits.
                 </p>
@@ -88,7 +88,7 @@ const GettingStarted = () => {
               </p>
               <p
                 style={{ color: '#D92D20' }}
-              >{`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" 
+              >{`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
 integrity="sha384-`}</p>
 
               <p>
@@ -113,7 +113,7 @@ integrity="sha384-`}</p>
           <section className="imageMining" id="imageMining">
             <h3>Image Mining</h3>
             <p>
-              Recognise and mine images with Minergram. each one appealing to a
+              Recognise and mine images with Discripto. each one appealing to a
               different skill level and use case. Read through to see what suits
               your particular needs.
             </p>
@@ -135,7 +135,7 @@ integrity="sha384-`}</p>
           <section className="imageMining" id="definingImages">
             <h3>Defining Images</h3>
             <p>
-              Recognise and mine images with Minergram. each one appealing to a
+              Recognise and mine images with Discripto. each one appealing to a
               different skill level and use case. Read through to see what suits
               your particular needs.
             </p>

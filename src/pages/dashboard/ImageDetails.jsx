@@ -207,15 +207,16 @@ const ImageDetails = () => {
 
         <div className="hidden gap-4 md:flex">
           <Button
-            styles={{
-              background: '#ff6c00',
-              color: 'white',
-              padding: '1rem',
-              width: '10rem',
-              borderRadius: '.5rem',
-              fontSize: '.9rem',
-              fontWeight: '500',
-            }}
+            className="bg-[#ff6c00] text-white p-4 w-40 rounded-lg font-medium hover:bg-[#FF9D55]"
+            // styles={{
+            //   background: '#ff6c00',
+            //   color: 'white',
+            //   padding: '1rem',
+            //   width: '10rem',S
+            //   borderRadius: '.5rem',
+            //   fontSize: '.9rem',
+            //   fontWeight: '500',
+            // }}
             text="Save as Json"
             onclick={() => {
               toggleSaveSuccessModal();
@@ -223,15 +224,16 @@ const ImageDetails = () => {
             }}
           />
           <Button
-            styles={{
-              border: '1px solid #ff6c00',
-              color: '#ff6c00',
-              padding: '1rem 2rem',
-              width: '10rem',
-              borderRadius: '.5rem',
-              fontSize: '.9rem',
-              fontWeight: '500',
-            }}
+            className="border border-[#ff6c00] text-[#ff6c00] py-4 px-8 w-40 rounded-lg font-medium	hover:bg-[#FF6C00] hover:text-white"
+            // styles={{
+            //   border: '1px solid #ff6c00',
+            //   color: '#ff6c00',
+            //   padding: '1rem 2rem',
+            //   width: '10rem',
+            //   borderRadius: '.5rem',
+            //   fontSize: '.9rem',
+            //   fontWeight: '500',
+            // }}
             text="Delete"
             onclick={toggleDeleteModal}
           />
@@ -438,29 +440,29 @@ const ImageDetails = () => {
 
               <div className="flex gap-4 mt-4 w-full">
                 <Button
-                  styles={{
-                    border: '1px solid #8e8e8e',
-                    color: '#8e8e8e',
-                    padding: '.7rem 1.4rem',
-                    width: '100%',
-                    borderRadius: '.5rem',
-                    fontSize: '.9rem',
-                    fontWeight: '500',
-                  }}
+                  className="border border-[#8e8e8e] text-8e8e8e py-3 px-6 w-full rounded-lg	font-medium hover:bg-[#FF6C00] hover:text-white"
+                  // styles={{,
+                  //   padding: '.7rem 1.4rem',
+                  //   width: '100%',
+                  //   borderRadius: '.5rem',
+                  //   fontSize: '.9rem',
+                  //   fontWeight: '500',
+                  // }}
                   text="Cancel"
                   onclick={toggleDeleteModal}
                 />
 
                 <Button
-                  styles={{
-                    background: '#f04438',
-                    color: 'white',
-                    padding: '.7rem 1.4rem',
-                    width: '100%',
-                    borderRadius: '.5rem',
-                    fontSize: '.9rem',
-                    fontWeight: '500',
-                  }}
+                  className="bg-[#f04438] text-white py-3 px-6 w-full rounded-lg	font-medium hover:bg-[#FF6C00]"
+                  // styles={{
+                  //   background: '#f04438',
+                  //   color: 'white',
+                  //   padding: '.7rem 1.4rem',
+                  //   width: '100%',
+                  //   borderRadius: '.5rem',
+                  //   fontSize: '.9rem',
+                  //   fontWeight: '500',
+                  // }}
                   text="Delete"
                   onclick={toggleDeleteSuccessModal}
                 />
@@ -494,15 +496,16 @@ const ImageDetails = () => {
 
               <div className="flex gap-4 mt-4 w-full justify-center">
                 <Button
-                  styles={{
-                    background: '#ff6c00',
-                    color: 'white',
-                    padding: '.7rem 1.4rem',
-                    width: '15rem',
-                    borderRadius: '.5rem',
-                    fontSize: '.9rem',
-                    fontWeight: '500',
-                  }}
+                  className="bg-[#ff6c00] text-white py-3 px-6 w-60 rounded-lg font-medium hover:bg-[#FF9D55]"
+                  // styles={{
+                  //   background: '#ff6c00',
+                  //   color: 'white',
+                  //   padding: '.7rem 1.4rem',
+                  //   width: '15rem',
+                  //   borderRadius: '.5rem',
+                  //   fontSize: '.9rem',
+                  //   fontWeight: '500',
+                  // }}
                   text="Done"
                   onclick={toggleDeleteSuccessModal}
                 />
@@ -535,15 +538,16 @@ const ImageDetails = () => {
 
               <div className="flex gap-4 mt-4 w-full justify-center">
                 <Button
-                  styles={{
-                    background: '#ff6c00',
-                    color: 'white',
-                    padding: '.7rem 1.4rem',
-                    width: '15rem',
-                    borderRadius: '.5rem',
-                    fontSize: '.9rem',
-                    fontWeight: '500',
-                  }}
+                  className="bg-[#ff6c00] text-white py-3 px-6 w-60 rounded-lg font-medium hover:bg-[#FF9D55]"
+                  // styles={{
+                  //   background: '#ff6c00',
+                  //   color: 'white',
+                  //   padding: '.7rem 1.4rem',
+                  //   width: '15rem',
+                  //   borderRadius: '.5rem',
+                  //   fontSize: '.9rem',
+                  //   fontWeight: '500',
+                  // }}
                   text="Done"
                   onclick={toggleSaveSuccessModal}
                 />

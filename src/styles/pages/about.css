@@ -73,15 +73,15 @@
     width: 100%;
   }
   .section-container .first-container,
-.section-container .second-container {
+  .section-container .second-container {
     display: flex;
     width: 95%;
     margin: 8% auto;
   }
   .section-container .first-container .about-msg1,
-.section-container .first-container .about-msg2,
-.section-container .second-container .about-msg1,
-.section-container .second-container .about-msg2 {
+  .section-container .first-container .about-msg2,
+  .section-container .second-container .about-msg1,
+  .section-container .second-container .about-msg2 {
     width: 50%;
     margin: auto;
     display: flex;
@@ -90,9 +90,9 @@
     padding: 5%;
   }
   .section-container .first-container .img-first,
-.section-container .first-container img-second,
-.section-container .second-container .img-first,
-.section-container .second-container img-second {
+  .section-container .first-container img-second,
+  .section-container .second-container .img-first,
+  .section-container .second-container img-second {
     margin: 0 auto;
   }
   .section-container .h1 {
@@ -113,15 +113,15 @@
     width: 100%;
   }
   .section-container .first-container,
-.section-container .second-container {
+  .section-container .second-container {
     display: flex;
     width: 95%;
     margin: 8% auto;
   }
   .section-container .first-container .about-msg1,
-.section-container .first-container .about-msg2,
-.section-container .second-container .about-msg1,
-.section-container .second-container .about-msg2 {
+  .section-container .first-container .about-msg2,
+  .section-container .second-container .about-msg1,
+  .section-container .second-container .about-msg2 {
     width: 50%;
     margin: auto;
     display: flex;
@@ -130,9 +130,9 @@
     padding: 5%;
   }
   .section-container .first-container .img-first,
-.section-container .first-container img-second,
-.section-container .second-container .img-first,
-.section-container .second-container img-second {
+  .section-container .first-container img-second,
+  .section-container .second-container .img-first,
+  .section-container .second-container img-second {
     margin: 0 auto;
   }
 }
@@ -144,7 +144,7 @@
     flex-direction: column;
   }
   .section-container .about-msg1,
-.section-container .about-msg2 {
+  .section-container .about-msg2 {
     width: 100% !important;
   }
-}/*# sourceMappingURL=about.css.map */
+} /*# sourceMappingURL=about.css.map */

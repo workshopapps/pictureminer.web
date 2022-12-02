@@ -3,7 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import RoutesComponents from './routes';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+// import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider } from 'react-query';
 import UserProvider from './context/UserProvider';
 import './styles/workflow.scss';
 import './App.css';
@@ -11,7 +12,6 @@ import './index.css';
 
 const queryClient = new QueryClient();
 function IndexPage() {
-
   return (
     <>
       <QueryClientProvider client={queryClient}>

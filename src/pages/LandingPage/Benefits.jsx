@@ -4,7 +4,7 @@ const Benefits = () => {
   return (
     <div className={style.container}>
       <h1>
-        (Benefits) Solutions We{' '}
+      Benefits We{' '}
         <span style={{ color: '#FF6C00' }}>Provide</span>
       </h1>
 
@@ -12,16 +12,16 @@ const Benefits = () => {
         <div>
           <h3>Classification & categorization</h3>
           <p>
-            Minergram is the first and only app that allows you to classify and
+            Discripto is the first and only app that allows you to classify and
             categorize your photos in a faster, easier and more efficient way.
-            With Minergram, you don&apos;t have to spend time laboriously
-            categorizing thousands of photos. Minergram does it all for you!
+            With Discripto, you don&apos;t have to spend time laboriously
+            categorizing thousands of photos. Discripto does it all for you!
           </p>
         </div>
         <div>
           <h3>Can use to detect image similarity</h3>
           <p>
-            Minergram is a tool that helps you detect image similarity. You can
+            Discripto is a tool that helps you detect image similarity. You can
             quickly compare two or more images and find the similarities and
             differences between them. This is a great tool for designer
             agencies, and or companies who compare images in large scale.
@@ -38,11 +38,11 @@ const Benefits = () => {
         <div>
           <h3>Seamless integration with your website</h3>
           <p>
-            Minergram is the perfect way to increase your website&apos;s
+            Discripto is the perfect way to increase your website&apos;s
             functionality. Our seamless integration makes it easy to incorporate
             into your website, and our wide variety of features allows you to
-            tailor Minergram to your specific needs. Plus, our affordable
-            pricing makes Minergram a cost-effective way to improve your
+            tailor Discripto to your specific needs. Plus, our affordable
+            pricing makes Discripto a cost-effective way to improve your
             website.
           </p>
         </div>

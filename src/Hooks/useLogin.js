@@ -1,4 +1,5 @@
-import { useMutation } from '@tanstack/react-query';
+// import { useMutation } from '@tanstack/react-query';
+import { useMutation } from 'react-query';
 import { useState, useContext } from 'react';
 import UserContext from '../context/UserContext';
 import { setLocalStorage } from '../localStorage';
@@ -10,8 +11,7 @@ const useLogin = () => {
   const { setUser } = useContext(UserContext);
 
   const { mutateAsync, isLoading, data, isError } = useMutation(
-    (data) =>
-      axios.post('https://minergramtest.herokuapp.com/api/v1/login', data),
+    (data) => axios.post('https://discripto.hng.tech/api1/api/v1/login', data),
     {
       onSuccess: (data) => {
         setUser(data?.data.data);

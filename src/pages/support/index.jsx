@@ -1,18 +1,20 @@
 import SupportCard from './SupportCard';
-import mine from '../../assets/minergram.jpg';
-import setting from '../../assets/setting.jpg';
-import mobile from '../../assets/mobile.jpg';
-import product from '../../assets/product.jpg';
-import mail from '../../assets/mail.jpg';
-import chat from '../../assets/chat.jpg';
+import mine from '../../assets/minergram.webp';
+import setting from '../../assets/setting.webp';
+import mobile from '../../assets/mobile.webp';
+import product from '../../assets/product.webp';
+import mail from '../../assets/mail.webp';
+import chat from '../../assets/chat.webp';
 import './index.css';
 // import Layout from '../../layouts/Layout';
 
 const Support = () => {
   return (
-    <div className='bg-[#fafafa]'>
+    <div className="bg-[#fafafa]">
       <div className="flex justify-center flex-col xl:mx-96 gap-6  support-head">
-        <h1 className=" text-5xl support-h1 max-sm:text-3xl">How can we help you?</h1>
+        <h1 className=" text-5xl support-h1 max-sm:text-3xl">
+          How can we help you?
+        </h1>
         <input type="text" placeholder="Search" className="border w-5/6" />
       </div>
       <p className="flex justify-center pb-12 pt-32">Categories</p>
@@ -20,7 +22,7 @@ const Support = () => {
         <SupportCard
           img={mine}
           title="Getting Started"
-          word="Learn how to navigate Minergram and get the most out of  it"
+          word="Learn how to navigate Discripto and get the most out of  it"
           article="2 articles"
         />
         <SupportCard
@@ -38,7 +40,7 @@ const Support = () => {
         <SupportCard
           img={product}
           title="Productivity"
-          word="Learn how Minergram increases work output using to-do lists and reminder"
+          word="Learn how Discripto increases work output using to-do lists and reminder"
           article="2 articles"
         />
         <SupportCard
@@ -55,7 +57,7 @@ const Support = () => {
         />
       </div>
       <div className="bg-[rgba(255,108,0,0.1)] mt-36 mx-20 h-80 flex justify-between items-center px-28 mb-44 support-foot max-sm:mx-0 max-sm:justify-around">
-        <div className='support-find'>
+        <div className="support-find">
           <p className="font-bold">Can’t find what you’re looking for?</p>
           <p>We are only one ticket away!</p>
         </div>

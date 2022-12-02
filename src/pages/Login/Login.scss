@@ -1,7 +1,6 @@
 $medium: 800px;
 $large: 1200px;
 
-
 .logincontainer {
   display: flex;
   flex-direction: column;
@@ -11,32 +10,29 @@ $large: 1200px;
   border-radius: 10px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   margin-top: 20px;
-.invalidLogin {
-  color: red;
-  font-size: 12px;
-  margin-top: 10px;
-}
+  .invalidLogin {
+    color: red;
+    font-size: 12px;
+    margin-top: 10px;
+  }
   .dont {
     margin-top: 10px;
     margin-bottom: 10px;
-    width: 300px;
   }
-.create {
-  color: #FF6C00;
-}
-    .inputlabel {
+  .create {
+    color: #ff6c00;
+  }
+  .inputlabel {
     width: 300px;
-    
   }
 
-    
-    .errorinput {
-      border: 1px solid #D64751;
-      width: 300px;
-      height: 40px;
-      border-radius: 5px;
-      padding: 0 10px;
-    }
+  .errorinput {
+    border: 1px solid #d64751;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    padding: 0 10px;
+  }
   .loginform {
     display: flex;
     flex-direction: column;
@@ -44,7 +40,7 @@ $large: 1200px;
     width: 400px;
     height: 400px;
     background-color: #fff;
-    
+
     .loginlogo {
       width: 100px;
       height: 100px;
@@ -68,21 +64,21 @@ $large: 1200px;
     .logininput:focus {
       outline: none;
     }
-    
+
     .loginbutton {
       width: 300px;
       height: 40px;
       margin-bottom: 20px;
       border: 1px solid #ccc;
       border-radius: 5px;
-      background-color: #FF6C00;
+      background-color: #ff6c00;
       color: #fff;
       font-size: 16px;
       font-weight: 600;
       cursor: pointer;
 
       &:hover {
-        background-color: #FF8C00;
+        background-color: #ff8c00;
       }
     }
   }
@@ -90,25 +86,23 @@ $large: 1200px;
 
 .errortext {
   color: red;
-    font-size: 12px;
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-bottom: 10px;
-    width: 300px;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  width: 300px;
 }
 
 .forgot {
-  color : #FF6C00;
+  color: #ff6c00;
   font-size: 12px;
   margin-top: 5px;
   margin-left: 10px;
   width: 300px;
   margin-bottom: 40px;
-
 }
 
-
-@media screen and ( min-width: $medium ) and ( max-width: $large ) {
+@media screen and (min-width: $medium) and (max-width: $large) {
   .loginform {
     width: 400px;
     height: 400px;
@@ -126,17 +120,17 @@ $large: 1200px;
     }
   }
 }
-  
-@media screen and ( min-width: $large ) {
+
+@media screen and (min-width: $large) {
   .loginform {
     width: 700px;
     height: 400px;
     background-color: #fff;
   }
 
-.forgot {
-  width: 700px;
-}
+  .forgot {
+    width: 700px;
+  }
   .logincontainer {
     width: 80%;
     margin-right: auto;
@@ -151,7 +145,7 @@ $large: 1200px;
       font-size: medium;
       background-color: #fff;
       width: 700px;
-          }
+    }
 
     .loginform {
       width: 700px;
@@ -165,8 +159,6 @@ $large: 1200px;
         width: 700px;
       }
     }
-    
-
 
     .errorinput {
       width: 700px;
