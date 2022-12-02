@@ -1,5 +1,5 @@
 import { ArrowDown2, Trash } from 'iconsax-react';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState, useRef } from 'react';
 import Button from '../../components/ui/Button';
 import DataTable from 'react-data-table-component';
 import { Link } from 'react-router-dom';
@@ -40,21 +40,20 @@ const Images = () => {
   const toggleDeleteSuccessModal = async () => {
     showDeleteModal && toggleDeleteModal();
     setShowDeleteSuccessModal((prev) => !prev);
-    // console.log(imageData.tabledata);
-    // console.log(imageData);
-    // setImageData(
-    //   [...imageData].filter((image) => image.tabledata.pictureId !== pictureId)
-    // );
-
-    // console.log(id);
-    // await axios.delete(`${id}`);
-    // setImageData(
-    //   imageData.filter((image) => {
-    //     return image.id !== id;
-    //   })
-    // );
   };
 
+  let menuRef = useRef();
+  useEffect(() => {
+    let handler = (e) => {
+      if (!menuRef.current.contains(e.target)) {
+        setShowMenu(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => {
+      document.removeEventListener('mousedown', handler);
+    };
+  });
   const columns = [
     {
       name: 'S/No',
@@ -178,7 +177,7 @@ const Images = () => {
         <div className="dashboard_images">
           <div className="dashboard__images__head">
             <h1>Images</h1>
-            <div className="relative">
+            <div className="relative" ref={menuRef}>
               <Button
                 text={'Filter'}
                 icon={<ArrowDown2 size={24} color="#FF6C00" />}

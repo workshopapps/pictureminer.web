@@ -6,7 +6,7 @@ import style from '../../styles/layout/Why.module.scss';
 const Why = () => {
   return (
     <div className={style.container}>
-      <div className={style.content}>
+      <div className={style.wrapper}>
         <h1>How Discripto works</h1>
         <div className={style.details}>
           <img src={image.works} alt="works image" />
