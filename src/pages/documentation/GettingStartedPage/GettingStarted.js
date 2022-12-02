@@ -57,7 +57,7 @@ const GettingStarted = () => {
             </div>
           </div>
 
-          <div className="hidden mt-8 text-[#434343] md:w-[35%] md:flex md:flex-row md:gap-2">
+          <div className="hidden mt-8 text-[#434343] md:w-[40%] md:flex md:flex-row md:gap-2">
             <img src={icon} alt="icon" className="w-8 h-8" />
             <div>
               <p className="font-bold mb-1">ON THIS PAGE</p>
