@@ -38,30 +38,32 @@ const DashboardNavbar = ({ data }) => {
         </div>
         <div
           className="drop__down"
-          onClick={() => setShowMenu((prev) => !prev)}
+          // onClick={() => setShowMenu((prev) => !prev)}
         >
-          <svg
-            width="13"
-            height="7"
-            viewBox="0 0 13 7"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M11.7797 0.966797L7.43306 5.31346C6.91973 5.8268 6.07973 5.8268 5.56639 5.31346L1.21973 0.966797"
-              stroke="#1D1D1D"
-              strokeWidth="1.5"
-              strokeMiterlimit="10"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <div className={showMenu ? 'show account' : 'hide account'}>
-            <Link to="account-setup">
-              <p>Account Settings</p>
-            </Link>
+          <div className="svg">
+            <svg
+              width="13"
+              height="7"
+              viewBox="0 0 13 7"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11.7797 0.966797L7.43306 5.31346C6.91973 5.8268 6.07973 5.8268 5.56639 5.31346L1.21973 0.966797"
+                stroke="#1D1D1D"
+                strokeWidth="1.5"
+                strokeMiterlimit="10"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <div className={'hide account'}>
+              <Link to="account-setup">
+                <p>Account Settings</p>
+              </Link>
 
-            <p onClick={handleLogout}>Log out</p>
+              <p onClick={handleLogout}>Log out</p>
+            </div>
           </div>
         </div>
       </div>

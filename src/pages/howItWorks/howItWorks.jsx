@@ -42,7 +42,7 @@ function HowItWorks() {
       </section>
       <section className="mt-12 md:mt-32 lg:mt-40 space-y-20 md:space-y-[167px] lg:space-y-[120px]">
         {features.map((feature, idx) => (
-          <Feature key={feature.title} {...feature} idx={idx} />
+          <Feature key={feature.title} {...feature} idx={idx}/>
         ))}
       </section>
       <section className="my-[120px] md:my-[180px] md:bg-[#F6F6F6] md:py-[66px] lg:py-[86px]">

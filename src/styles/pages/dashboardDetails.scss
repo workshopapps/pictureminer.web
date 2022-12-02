@@ -1,0 +1,22 @@
+.dashboard_details {
+  .tag {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 16px;
+  }
+  .batch_images {
+    @include Flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    .batch_image {
+      width: 100px;
+      height: 100px;
+      @media (max-width: 550px) {
+        width: 64px;
+        height: 64px;
+      }
+    }
+  }
+}

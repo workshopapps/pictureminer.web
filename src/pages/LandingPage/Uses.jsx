@@ -8,7 +8,7 @@ const Uses = () => {
     <section className={style.container}>
       <div className={style.wrapper}>
         <h1>
-          A Few Of Our Integrated <span>Industries</span>
+          A Few of our Integrated <span>Industries</span>
         </h1>
 
         <div className={style.cardWrapper}>
