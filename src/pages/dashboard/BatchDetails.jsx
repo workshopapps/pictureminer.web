@@ -12,8 +12,8 @@ import { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
-import UserContext from '../../context/UserContext';
-import axios from 'axios';
+// import UserContext from '../../context/UserContext';
+// import axios from 'axios';
 
 const BatchDetails = () => {
   // const param = useParams();
