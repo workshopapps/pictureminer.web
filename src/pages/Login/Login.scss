@@ -20,6 +20,10 @@ $large: 1200px;
   }
   .create {
     color: #ff6c00;
+
+    &:hover {
+      color: #ff9d55;
+    }
   }
   .inputlabel {
     width: 300px;
@@ -99,6 +103,10 @@ $large: 1200px;
   margin-left: 10px;
   width: 300px;
   margin-bottom: 40px;
+
+  &:hover {
+    color: #ff9d55;
+  }
 }
 
 @media screen and (min-width: $medium) and (max-width: $large) {
