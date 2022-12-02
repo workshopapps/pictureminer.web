@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Button from '../../components/ui/Button';
 import Modal, { Backdrop } from '../../components/ui/Modal';
 
@@ -7,15 +8,15 @@ import closeIcon from '../../assets/dashboardImageDetails/close-icon.webp';
 import saveIcon from '../../assets/dashboardImageDetails/download-icon.webp';
 import trashIcon from '../../assets/dashboardImageDetails/trash-icon.webp';
 
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useState, useEffect, useContext, useRef } from 'react';
 
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import UserContext from '../../context/UserContext';
 import axios from 'axios';
 
 const BatchDetails = () => {
-  const param = useParams();
+  // const param = useParams();
 
   // eslint-disable-next-line no-unused-vars
   const [imageDets, setImageDets] = useState({ loading: false });
@@ -60,7 +61,6 @@ const BatchDetails = () => {
     };
     fetchData();
   }, [user]);
-  // eslint-disable-next-line no-unused-vars
   const TAG_LIST = [
     { title: 'Water', percentage: '55%' },
     { title: 'Trees', percentage: '30%' },
@@ -75,7 +75,6 @@ const BatchDetails = () => {
   const [showSaveSuccessModal, setShowSaveSuccessModal] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
-  // eslint-disable-next-line no-unused-vars
   const questionInputRef = useRef();
 
   const toggleDeleteModal = () => {
@@ -100,49 +99,8 @@ const BatchDetails = () => {
     event.preventDefault();
   };
 
-  const saveToJsonHandler = () => {
-    const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(
-      JSON.stringify({ ...image })
-    )}`;
-    const link = document.createElement('a');
-    link.href = jsonString;
-    link.download = 'data.json';
-
-    link.click();
-  };
-
-  const [image, setImage] = useState({
-    image_name: '',
-    image_path: '',
-  });
-
-  // const [imageDesc] = useState('Loading Description...');
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          'http://44.211.169.234:9000/api/v1/mine-service/get-all',
-          {
-            headers: {
-              'Content-Type': 'application/json',
-              Accept: 'application/json',
-              Authorization: `Bearer ${user.data.Token}`,
-            },
-          }
-        );
-
-        if (response) {
-          setImage(response.data[0]);
-          // setImage(response.data[0]);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchData();
-  }, [user]);
+  //   link.click();
+  // };
 
   return (
     <main className="">
@@ -178,7 +136,7 @@ const BatchDetails = () => {
             text="Save as Json"
             onclick={() => {
               toggleSaveSuccessModal();
-              saveToJsonHandler();
+              // saveToJsonHandler();
             }}
           />
           <Button
