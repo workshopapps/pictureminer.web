@@ -11,7 +11,7 @@ function TryDemo({ onImageChange }) {
   //   };
 
   return (
-    <div className="container__try-demo w- border border-dashed border-secBrown rounded-lg flex flex-col items-center justify-center pt-8 pb-14">
+    <div className="container__try-demo--sm w- border border-dashed border-secBrown rounded-lg flex flex-col items-center justify-center pt-8 pb-14">
       <h3 className="text-mainOrange text-large">Try Demo</h3>
       <img src={images.addToFolder} alt="" className="mt-10 h-16 w-16" />
       <p className="mt-6 text-xs md:text-sm text-gray-400">

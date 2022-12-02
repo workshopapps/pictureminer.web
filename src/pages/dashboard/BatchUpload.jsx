@@ -29,26 +29,28 @@ const BatchUpload = () => {
     <div className='mb-4'>
       {
         uploaded ? ( <div><Modal> <ModalContent/></Modal> </div>) : (<>
-          <h4 className='my-5 font-'>Image Details: </h4>
-          <div className='flex gap-9 flex-col md:flex-row' >
+          <h4 className='my-5 font-bold'>Image Details: </h4>
+          <div className='flex gap-9 flex-col lg:flex-row' >
 
 
 
-            <div className='flex gap-3 flex-col md:flex-1'>
+            <div className='flex gap-8 flex-col md:flex-1'>
 
 
               <AuthInput
                 placeholder='Building'
                 label='Name of Batch'
-
+                labelClassName='text-dark font-normal text-base'
               />
               <AuthInput
                 placeholder='A list of different rooms in an apartment'
                 label='Description'
+                labelClassName='text-dark font-normal text-base'
 
               />
               <AuthInput
                 placeholder='Bathroom, Bedroom, Kitchen'
+                labelClassName='text-dark font-normal text-base'
 
                 label='Tag'
 

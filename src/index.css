@@ -79,6 +79,14 @@ code {
   .container__try-demo {
     width: clamp(375px, 95vw, 648px);
   }
+
+  .container__try-demo--sm {
+    @media screen and (min-width: 768px) {
+      
+      width: clamp(375px, 95vw, 648px);
+      
+    }
+  }
 }
 
 @layer components {
