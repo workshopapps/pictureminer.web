@@ -29,10 +29,6 @@
     align-items: center;
     padding-top: 2rem;
 
-    img {
-      // width: 50%;
-    }
-
     .text {
       h1 {
         text-align: left;
@@ -57,6 +53,10 @@
         border-radius: 8px;
         color: white;
         border: none;
+
+        &:hover {
+          background-color: #ff9d55;
+        }
         // align-self: flex-start;
       }
     }

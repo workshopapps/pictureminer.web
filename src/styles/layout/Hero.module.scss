@@ -13,15 +13,7 @@
   .cover {
     margin: 0 auto;
     max-width: 1040px;
-    h1 {
-      color: #1d1d1d;
-      font-size: 58px;
-      font-weight: 600;
-    }
-  }
-  .cover {
-    margin: 0 auto;
-    max-width: 1040px;
+
     h1 {
       color: #1d1d1d;
       font-size: 58px;
@@ -30,16 +22,11 @@
     }
 
     p {
-      font-size: 20px;
-      color: #8e8e8e;
-      line-height: 30px;
-      font-weight: 600;
-    }
-    p {
+      margin-top: 24px;
       font-size: 24px;
       color: #434343;
-      line-height: 35px;
-      font-weight: 400;
+      line-height: 30px;
+      font-weight: 600;
     }
   }
   .ctaWrapper {
@@ -48,75 +35,64 @@
     justify-content: center;
     align-items: center;
     gap: 24px;
-    .ctaWrapper {
-      padding: 2rem 0 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 24px;
 
-      a {
-        font-size: 20px;
-        font-weight: 500;
-        padding: 16px 24px;
-        text-decoration: none;
-        border: 1px solid $main-color;
-        border-radius: 8px;
-        a {
-          font-size: 20px;
-          font-weight: 500;
-          padding: 16px 24px;
-          text-decoration: none;
-          border: 1px solid $main-color;
-          border-radius: 8px;
+    a {
+      font-size: 20px;
+      font-weight: 500;
+      padding: 16px 24px;
+      text-decoration: none;
+      border: 1px solid $main-color;
+      border-radius: 8px;
 
-          &:nth-of-type(1) {
-            background-color: $main-color;
-            color: white;
-            // padding: 16px;
+      &:nth-of-type(1) {
+        background-color: $main-color;
+        color: white;
+        // padding: 16px;
 
-            &:hover {
-              background-color: #ff9d55;
-            }
-          }
-          &:nth-of-type(2n) {
-            color: $main-color;
-
-            &:hover {
-              background-color: #ff6c00;
-              color: #ffffff;
-            }
-          }
+        &:hover {
+          background-color: #ff9d55;
         }
       }
+      &:nth-of-type(2n) {
+        color: $main-color;
 
-      @media screen and (max-width: 770px) {
-        flex-direction: column;
-        .cover {
-          h1 {
-            font-size: 36px;
-          }
-          p {
-            font-size: 18px;
-          }
+        &:hover {
+          background-color: #ff6c00;
+          color: #ffffff;
         }
       }
+    }
+  }
 
-      @media screen and (max-width: 480px) {
-        padding: 5rem 2rem;
-
-        .cover {
-          h1 {
-            font-size: 30px;
-          }
-          p {
-            font-size: 16px;
-          }
-        }
-        .ctaWrapper a {
-          font-size: 15px;
-        }
+  @media screen and (max-width: 770px) {
+    flex-direction: column;
+    .cover {
+      h1 {
+        font-size: 35px;
+        line-height: 50px;
       }
+      p {
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: 5rem 2rem;
+
+    .cover {
+      h1 {
+        font-size: 30px;
+        line-height: 42px;
+      }
+      p {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    .ctaWrapper a {
+      font-size: 15px;
     }
   }
 }
