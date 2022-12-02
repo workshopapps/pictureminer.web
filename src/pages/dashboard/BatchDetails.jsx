@@ -85,16 +85,15 @@ const BatchDetails = () => {
     setShowMenu((prev) => !prev);
   };
 
-  // const saveToJsonHandler = () => {
-  //   const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(
-  //     JSON.stringify({ ...image })
-  //   )}`;
-  //   const link = document.createElement('a');
-  //   link.href = jsonString;
-  //   link.download = 'data.json';
-
-  //   link.click();
-  // };
+  const saveToJsonHandler = () => {
+    const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(
+      JSON.stringify({ image: '', image_path: '' })
+    )}`;
+    const link = document.createElement('a');
+    link.href = jsonString;
+    link.download = 'data.json';
+    link.click();
+  };
 
   return (
     <main className="dashboard_details">
@@ -130,7 +129,7 @@ const BatchDetails = () => {
             text="Save as Json"
             onclick={() => {
               toggleSaveSuccessModal();
-              // saveToJsonHandler();
+              saveToJsonHandler();
             }}
           />
           <Button
