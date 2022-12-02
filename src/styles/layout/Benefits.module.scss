@@ -68,22 +68,6 @@
           }
         }
       }
-
-      a {
-        padding: 10px 30px;
-        text-decoration: none;
-        border: 1px solid $main-color;
-        border-radius: 8px;
-        color: $main-color;
-        align-self: flex-start;
-        margin-top: 18px;
-        font-weight: 500;
-
-        &:hover {
-          background-color: $main-color;
-          color: #ffffff;
-        }
-      }
     }
     @media screen and (max-width: 770px) {
       grid-template-columns: 1fr;
