@@ -8,7 +8,7 @@ import closeIcon from '../../assets/dashboardImageDetails/close-icon.webp';
 import saveIcon from '../../assets/dashboardImageDetails/download-icon.webp';
 import trashIcon from '../../assets/dashboardImageDetails/trash-icon.webp';
 
-import { useState, useEffect, useContext, useRef } from 'react';
+import { useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 
@@ -20,47 +20,47 @@ const BatchDetails = () => {
 
   // eslint-disable-next-line no-unused-vars
   const [imageDets, setImageDets] = useState({ loading: false });
-  const { user } = useContext(UserContext);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setImageDets((prev) => {
-          return {
-            ...prev,
-            loading: true,
-          };
-        });
+  // const { user } = useContext(UserContext);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       setImageDets((prev) => {
+  //         return {
+  //           ...prev,
+  //           loading: true,
+  //         };
+  //       });
 
-        const response = await axios.get('mine-service/get-all', {
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-            Authorization: `Bearer ${user.Token}`,
-          },
-        });
+  //       const response = await axios.get('mine-service/get-all', {
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //           Accept: 'application/json',
+  //           Authorization: `Bearer ${user.Token}`,
+  //         },
+  //       });
 
-        if (response) {
-          const deets = response?.data.filter((item) => {
-            console.log(item.date_created.split('.')[1] === param.imageId);
-            return item.date_created.split('.')[1] === param.imageId;
-          });
-          console.log(deets);
-          setImageDets((prev) => {
-            return {
-              ...prev,
-              loading: false,
-              details: deets,
-            };
-          });
-        }
-      } catch (error) {
-        console.log(error);
-      } finally {
-        /* empty */
-      }
-    };
-    fetchData();
-  }, [user]);
+  //       if (response) {
+  //         const deets = response?.data.filter((item) => {
+  //           console.log(item.date_created.split('.')[1] === param.imageId);
+  //           return item.date_created.split('.')[1] === param.imageId;
+  //         });
+  //         console.log(deets);
+  //         setImageDets((prev) => {
+  //           return {
+  //             ...prev,
+  //             loading: false,
+  //             details: deets,
+  //           };
+  //         });
+  //       }
+  //     } catch (error) {
+  //       console.log(error);
+  //     } finally {
+  //       /* empty */
+  //     }
+  //   };
+  //   fetchData();
+  // }, [user]);
   const TAG_LIST = [
     { title: 'Water', percentage: '55%' },
     { title: 'Trees', percentage: '30%' },
@@ -75,7 +75,7 @@ const BatchDetails = () => {
   const [showSaveSuccessModal, setShowSaveSuccessModal] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
-  const questionInputRef = useRef();
+  // const questionInputRef = useRef();
 
   const toggleDeleteModal = () => {
     setShowDeleteModal((prev) => !prev);
