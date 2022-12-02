@@ -39,6 +39,7 @@ import Signup from './pages/signup';
 import { AppProvider } from './context/context';
 import { getLocalStorage } from './localStorage';
 import UserContext from './context/UserContext';
+import BatchDetails from './pages/dashboard/BatchDetails';
 
 const RoutesComponents = () => {
   const { setUser } = useContext(UserContext);
@@ -104,7 +105,7 @@ const RoutesComponents = () => {
             <Route path="*" element={<ErrorPage />}></Route>
 
             {/* <Route path="why-tozilla" element={<WhyTozilla />} /> */}
-            <Route path="why-discripto" element={<WhyMinergram />} />
+            <Route path="/why-discripto" element={<WhyMinergram />} />
 
             <Route path="/login" element={<Login />} />
           </Route>
