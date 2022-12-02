@@ -7,66 +7,58 @@ import closeIcon from '../../assets/dashboardImageDetails/close-icon.webp';
 import saveIcon from '../../assets/dashboardImageDetails/download-icon.webp';
 import trashIcon from '../../assets/dashboardImageDetails/trash-icon.webp';
 
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-import UserContext from '../../context/UserContext';
-import axios from 'axios';
+// import UserContext from '../../context/UserContext';
+// import axios from 'axios';
 
 const BatchDetails = () => {
-  const param = useParams();
+  // const param = useParams();
 
-  // eslint-disable-next-line no-unused-vars
-  const [imageDets, setImageDets] = useState({ loading: false });
-  const { user } = useContext(UserContext);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setImageDets((prev) => {
-          return {
-            ...prev,
-            loading: true,
-          };
-        });
+  // const [imageDets, setImageDets] = useState({ loading: false });
+  // const { user } = useContext(UserContext);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       setImageDets((prev) => {
+  //         return {
+  //           ...prev,
+  //           loading: true,
+  //         };
+  //       });
 
-        const response = await axios.get('mine-service/get-all', {
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-            Authorization: `Bearer ${user.Token}`,
-          },
-        });
+  //       const response = await axios.get('mine-service/get-all', {
+  //         headers: {
+  //           'Content-Type': 'application/json',
+  //           Accept: 'application/json',
+  //           Authorization: `Bearer ${user.Token}`,
+  //         },
+  //       });
 
-        if (response) {
-          const deets = response?.data.filter((item) => {
-            console.log(item.date_created.split('.')[1] === param.imageId);
-            return item.date_created.split('.')[1] === param.imageId;
-          });
-          console.log(deets);
-          setImageDets((prev) => {
-            return {
-              ...prev,
-              loading: false,
-              details: deets,
-            };
-          });
-        }
-      } catch (error) {
-        console.log(error);
-      } finally {
-        /* empty */
-      }
-    };
-    fetchData();
-  }, [user]);
-  // eslint-disable-next-line no-unused-vars
-  const TAG_LIST = [
-    { title: 'Water', percentage: '55%' },
-    { title: 'Trees', percentage: '30%' },
-    { title: 'Cloth', percentage: '20%' },
-    { title: 'Sky', percentage: '10%' },
-  ];
+  //       if (response) {
+  //         const deets = response?.data.filter((item) => {
+  //           console.log(item.date_created.split('.')[1] === param.imageId);
+  //           return item.date_created.split('.')[1] === param.imageId;
+  //         });
+  //         console.log(deets);
+  //         setImageDets((prev) => {
+  //           return {
+  //             ...prev,
+  //             loading: false,
+  //             details: deets,
+  //           };
+  //         });
+  //       }
+  //     } catch (error) {
+  //       console.log(error);
+  //     } finally {
+  //       /* empty */
+  //     }
+  //   };
+  //   fetchData();
+  // }, [user]);
 
   const navigate = useNavigate();
 
@@ -74,9 +66,6 @@ const BatchDetails = () => {
   const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false);
   const [showSaveSuccessModal, setShowSaveSuccessModal] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-
-  // eslint-disable-next-line no-unused-vars
-  const questionInputRef = useRef();
 
   const toggleDeleteModal = () => {
     setShowDeleteModal((prev) => !prev);
@@ -95,54 +84,16 @@ const BatchDetails = () => {
     setShowMenu((prev) => !prev);
   };
 
-  // eslint-disable-next-line no-unused-vars
-  const onSubmitHandler = (event) => {
-    event.preventDefault();
-  };
+  // const saveToJsonHandler = () => {
+  //   const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(
+  //     JSON.stringify({ ...image })
+  //   )}`;
+  //   const link = document.createElement('a');
+  //   link.href = jsonString;
+  //   link.download = 'data.json';
 
-  const saveToJsonHandler = () => {
-    const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(
-      JSON.stringify({ ...image })
-    )}`;
-    const link = document.createElement('a');
-    link.href = jsonString;
-    link.download = 'data.json';
-
-    link.click();
-  };
-
-  const [image, setImage] = useState({
-    image_name: '',
-    image_path: '',
-  });
-
-  // const [imageDesc] = useState('Loading Description...');
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          'http://44.211.169.234:9000/api/v1/mine-service/get-all',
-          {
-            headers: {
-              'Content-Type': 'application/json',
-              Accept: 'application/json',
-              Authorization: `Bearer ${user.data.Token}`,
-            },
-          }
-        );
-
-        if (response) {
-          setImage(response.data[0]);
-          // setImage(response.data[0]);
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchData();
-  }, [user]);
+  //   link.click();
+  // };
 
   return (
     <main className="">
@@ -178,7 +129,7 @@ const BatchDetails = () => {
             text="Save as Json"
             onclick={() => {
               toggleSaveSuccessModal();
-              saveToJsonHandler();
+              // saveToJsonHandler();
             }}
           />
           <Button
@@ -255,9 +206,8 @@ const BatchDetails = () => {
         <div>
           <h3 className="tag">Bathroom</h3>
           <div className="batch_images">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => (
-              // eslint-disable-next-line react/jsx-key
-              <div className="batch_image">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
+              <div className="batch_image" key={item}>
                 <img src="" alt="" />
               </div>
             ))}
