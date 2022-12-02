@@ -17,11 +17,11 @@ function Feature({ title, text, image, idx }) {
             dangerouslySetInnerHTML={{ __html: text }}
           />
         </div>
-        <div className="">
+        <div>
           <img
             src={image}
             alt=""
-            className="w-[315px] lg:w-[540px] h-[253px] lg:h-[510px] rounded-[4px]"
+            className="w-[315px] lg:w-[540px] rounded-[4px] md:py-16"
           />
         </div>
       </div>
