@@ -4,27 +4,22 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   justify-content: center;
-
   padding: 5rem;
   gap: 32px;
-
   text-align: center;
   h1 {
-    color: #434343;
+    color: #1D1D1D;
     font-size: 60px;
     font-weight: 600;
-    span {
-      color: $main-color;
-    }
   }
 
   p {
     font-size: 20px;
-    color: #8e8e8e;
+    color: #434343;
     line-height: 30px;
-    font-weight: 600;
+    font-weight: 400;
+    max-width:70%;
   }
 
   .ctaWrapper {

@@ -8,14 +8,10 @@ const Hero = () => {
   return (
     <section className={style.container}>
       <h1>
-        Large-Scale <span>Conversion</span> Of Images Into Structured Text.
+      Speed up your work with structured text output from images
       </h1>
       <p>
-        We offer you structured text output that eliminates the need to spend
-        time sorting and classifying thousands or millions of objects. Your
-        process time is automated by our API Classification Algorithm, which
-        also provides you with quicker, simpler, and more self-explanatory
-        results.
+      Discripto provides quick and simple large-scale image conversion into structured text. It reduces the need to spend time sorting and categorizing thousands or millions of objects, which can be used for a range of purposes. Our API Classification Algorithm automates your process time while also giving you quicker, clearer, and more self-explanatory results.
       </p>
       <div className={style.ctaWrapper}>
         {user ? null : <Link to="/signup">Sign Up</Link>}
