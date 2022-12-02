@@ -1,11 +1,13 @@
 import React from 'react';
 import DocumentationHero from '../../../features/documentation/components/DocumentationHero';
 import DocumentNav from '../../../features/documentation/components/DocumentNav';
-import ImageMining from '../../../assets/documentationImages/imageMining.webp';
-import DefiningImage from '../../../assets/documentationImages/definingImages.webp';
+import { ArrowRight } from 'iconsax-react';
+import icon from './assets/icon.png';
+// import ImageMining from '../../../assets/documentationImages/imageMining.webp';
+// import DefiningImage from '../../../assets/documentationImages/definingImages.webp';
 
-import './gettingStarted.scss';
-import DocumentationSidebar from '../../../features/documentation/components/DocumentationSidebar';
+// import './gettingStarted.scss';
+// import DocumentationSidebar from '../../../features/documentation/components/DocumentationSidebar';
 
 const GettingStarted = () => {
   return (
@@ -17,26 +19,126 @@ const GettingStarted = () => {
       />
 
       <section
-        className="getting-started_introductionContent"
+        className="getting-started_introductionContent px-9 py-10"
         id="introduction"
       >
-        <div className="getting-started_mainContent">
-          <h1 className="getting-started_title">Introduction</h1>
+        <div className="getting-started_mainContent flex flex-row mb-4">
+          {/* <h1 className="getting-started_title">Introduction</h1>
           <div className="getting-started_underline" />
 
           <p>
             Get started with Discripto and learn by exploring interactive
             examples.
-          </p>
-          <div className="getting-started_overview" id="overview">
-            <h1>Overview</h1>
-            <p>
-              Discripto (currently v3.3.7) has a few easy ways to quickly get
-              started, each one appealing to a different skill level and use
-              case. Read through to see what suits your particular needs.
-            </p>
+          </p> */}
+          <div
+            className="getting-started_overview my-8 flex flex-col gap-5"
+            id="overview"
+          >
+            <h1 className="font-bold text-3xl mb-2">Overview</h1>
+            <div className="text-[#434343]">
+              <p className="mb-3 md:w-[60%]">
+                Discripto (currently v3.3.7) has a few easy ways to quickly get
+                started, each one appealing to a different skill level and the
+                Discripto API is a REST API that makes it easy to find and
+                retrieve the data you need from an Image, it provides a
+                simplified response data structure via JSON payload (eliminating
+                XML).
+              </p>
+              <p className="mb-2">
+                The Discripto API provides an industry standard solution to:
+              </p>
+              <ul>
+                <li>
+                  Retrieve the contents of images as a text description of the
+                  it&apos;s scenery.
+                </li>
+                <li>Check if text prompts exists in images use case.</li>
+              </ul>
+            </div>
           </div>
-          <div className="getting-started_download" id="download">
+
+          <div className="hidden mt-8 text-[#434343] md:w-[35%] md:flex md:flex-row md:gap-2">
+            <img src={icon} alt="icon" className="w-8 h-8" />
+            <div>
+              <p className="font-bold mb-1">ON THIS PAGE</p>
+
+              <div className="text-sm">
+                <ul>
+                  <li>
+                    <a href="#overview" className="mb-1">
+                      Overview
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#benefits">Benefits of Using Discripto API</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="benefits">
+          <h1 className="font-bold text-3xl mb-4">
+            Benefits of Using Discripto API
+          </h1>
+          <div className="flex items-center gap-7 lg:gap-10 flex-col md:flex-row md:flex-wrap mb-6">
+            <div className="mb-3 w-1/2 md:w-[350px] lg:w-[450px]">
+              <h3 className="font-bold text-bold">Get only what you need</h3>
+              <p className="text-[#686868]">
+                Just make a request with image through upload or URL, get back a
+                JSON response containing what you need.
+              </p>
+            </div>
+            <div className="mb-3 w-1/2 md:w-[350px] lg:w-[450px]">
+              <h3 className="font-bold text-bold">Simple to use</h3>
+              <p className="text-[#686868]">
+                You only need to send the image and/or text prompt to get the
+                response.
+              </p>
+            </div>
+            <div className="mb-3 w-1/2 md:w-[350px] lg:w-[450px]">
+              <h3 className="font-bold text-bold">
+                Idustry standard solutions
+              </h3>
+              <p className="text-[#686868]">
+                Discripto APIs use well-established and robust machine learning
+                algorithms to classify your images.
+              </p>
+            </div>
+            <div className="mb-3 w-1/2 md:w-[350px] lg:w-[450px]">
+              <h3 className="font-bold text-bold">
+                Access to images dashboard
+              </h3>
+              <p className="text-[#686868]">
+                You have access to a dashboard containing all the requests you
+                make for reference.
+              </p>
+            </div>
+          </div>
+          <p>
+            You can find onboarding documentation for the IMDb API on the next
+            page - including setting up your AWS Account, signing to the IMDb
+            API endpoint, and sample queries to jump-start your integration.
+          </p>
+        </div>
+
+        <div
+          className="border border-[#B4B4B4] rounded-[8px] mt-6 px-4 py-2 flex fex-row justify-between items-center w-1/2
+"
+        >
+          <div>
+            <h3>Next</h3>
+            <a>
+              <p className="text-[#FF842B] font-bold mt-1">
+                Getting access to the API
+              </p>
+            </a>
+          </div>
+          <ArrowRight />
+        </div>
+
+        {/* <div className="getting-started_download" id="download">
             <h1>Download</h1>
             <div className="download_content">
               <div>
@@ -82,14 +184,13 @@ const GettingStarted = () => {
                   }
                 </span>
                 <span style={{ color: '#0954C3' }}>
-                  {` <!-- Latest compiled and minified JavaScript --> <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-`}
+                  {` <!-- Latest compiled and minified JavaScript --> <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>`}
                 </span>
               </p>
               <p
                 style={{ color: '#D92D20' }}
               >{`<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
-integrity="sha384-`}</p>
+                integrity="sha384-`}</p>
 
               <p>
                 <span style={{ color: ' #686868' }}>
@@ -154,8 +255,6 @@ integrity="sha384-`}</p>
               detection, image identification, and image classification.
             </p>
           </section>
-        </div>
-
         <DocumentationSidebar
           sectionIds={[
             'introduction',
@@ -169,7 +268,7 @@ integrity="sha384-`}</p>
             'Image Mining',
             ' Defining Images',
           ]}
-        />
+        /> */}
       </section>
     </div>
   );

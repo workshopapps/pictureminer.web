@@ -8,13 +8,14 @@ html {
 
 .getting-started_wrapper {
   margin-bottom: 40px;
+  font-size: 2rem;
 }
 
 .getting-started_introductionContent {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 2rem 3rem;
+  justify-content: center;
+  align-items: center;
+  padding: 8rem 3rem;
   font-family: Axiforma;
 }
 
@@ -27,8 +28,8 @@ html {
   align-items: flex-start;
   text-align: start;
   gap: 3rem;
-  color: #434343;
   padding-right: 8px;
+
   @media screen and (max-width: 400px) {
     width: 100%;
     padding-right: 0px;
