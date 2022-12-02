@@ -1,6 +1,7 @@
 import React from 'react';
 import DemoPage from '../../../features/demo/DemoPages';
-import ImageContainer from '../../../features/demo/ImageContainer';
+// import ImageContainer from '../../../features/demo/ImageContainer';
+import ImageUpload from '../../dashboard/ImageUpload';
 import '../../../styles/layout/Ecommerce.scss';
 
 const Healthcare = () => {
@@ -21,7 +22,11 @@ const Healthcare = () => {
           'Start projects with a request form, annotate proofs, and see an audit trail of requested changes all in one place. The final assets should then be made available in the DAM system'
         }
       />
-      <ImageContainer />
+      {/* <ImageContainer /> */}
+
+      <section>
+        <ImageUpload demo />
+      </section>
     </div>
   );
 };

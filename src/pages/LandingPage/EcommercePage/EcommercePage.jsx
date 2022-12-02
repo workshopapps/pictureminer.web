@@ -1,7 +1,8 @@
 /* eslint-disable no-trailing-spaces */
 import React from 'react';
 import DemoPage from '../../../features/demo/DemoPages';
-import ImageContainer from '../../../features/demo/ImageContainer';
+// import ImageContainer from '../../../features/demo/ImageContainer';
+import ImageUpload from '../../dashboard/ImageUpload';
 import '../../../styles/layout/Ecommerce.scss';
 
 const EcommercePage = () => {
@@ -30,7 +31,10 @@ const EcommercePage = () => {
           'Prebuilt API’s and integrations that integrate seamlessly with your existing platforms.'
         }
       />
-      <ImageContainer />
+      {/* <ImageContainer /> */}
+      <section>
+        <ImageUpload demo />
+      </section>
     </div>
   );
 };
