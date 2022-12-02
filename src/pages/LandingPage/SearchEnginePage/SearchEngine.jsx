@@ -72,7 +72,7 @@ const SearchEngine = () => {
                 Useful For Business Analysis
               </h3>
               <p className=" mt-4 text-normal">
-                Oue API also makes it possible to access and evaluate the
+                Our API also makes it possible to access and evaluate the
                 images’ pattern and search result distributions, which is useful
                 for SEO projects and business assessment analysis.
               </p>
