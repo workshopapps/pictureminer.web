@@ -9,23 +9,16 @@ import Dashboard from './pages/dashboard/Dashboard';
 import Images from './pages/dashboard/Images';
 import AccountSettings from './pages/dashboard/AccountSettings';
 import Billing from './pages/dashboard/Billing';
-import DocumentationHome from './pages/documentation/Home/DocumentationHome';
-import GettingStarted from './pages/documentation/GettingStartedPage/GettingStarted';
-import Installations from './pages/documentation/InstallationsPage/Installations';
-import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
-import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
+// import Documentation from './pages/documentation/Documentation';
 import LandingPage from './pages/LandingPage/LandingPage';
 import EcommercePage from './pages/LandingPage/EcommercePage/EcommercePage';
 import Hospitality from './pages/LandingPage/HospitalityPage/Hospitality';
 import SearchEngine from './pages/LandingPage/SearchEnginePage/SearchEngine';
 import Healthcare from './pages/LandingPage/HealthcarePage/Healthcare';
 import ExternalDemoPage from './pages/LandingPage/ExternalPage/ExternalPage';
-import Integrations from './pages/documentation/IntegrationPage/Integrations';
-import Web from './pages/documentation/WebPage/Web';
 import WhyMinergram from './pages/whyTozilla/WhyMinergram';
 import ImageDetails from './pages/dashboard/ImageDetails';
 import Privacypolicy from './pages/privacypolicy/privacypolicy';
-import ApiDocumentation from './pages/documentation/ApiDocumentation';
 import Faq from './pages/FAQ/faq';
 import Layout from './layouts/Layout';
 import HowItWorks from './pages/howItWorks/howItWorks';
@@ -69,35 +62,7 @@ const RoutesComponents = () => {
 
             <Route path="/pricing" element={<Pricing />}></Route>
             <Route path="/pricing/:paymentPlan" element={<Payment />} />
-            <Route
-              path="/documentation"
-              element={<DocumentationHome />}
-            ></Route>
-            <Route
-              path="/documentation/getting-started"
-              element={<GettingStarted />}
-            ></Route>
-            <Route
-              path="/documentation/integrations"
-              element={<Integrations />}
-            ></Route>
-            <Route path="/documentation/web" element={<Web />}></Route>
-            <Route
-              path="/documentation/installations"
-              element={<Installations />}
-            ></Route>
-            <Route
-              path="/documentation/examples"
-              element={<ExamplePage />}
-            ></Route>
-            <Route
-              path="/documentation/utilities"
-              element={<UtilitiesPage />}
-            ></Route>
-            <Route
-              path="/documentation/apis"
-              element={<ApiDocumentation />}
-            ></Route>
+            {/* <Route path="/documentation" element={<Documentation />}></Route> */}
 
             <Route path="/terms-of-use" element={<Termsofuse />}></Route>
             <Route path="/privacy-policy" element={<Privacypolicy />}></Route>
