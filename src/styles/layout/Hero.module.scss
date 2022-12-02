@@ -13,20 +13,23 @@
   .cover {
     margin: 0 auto;
     max-width: 1040px;
+    border: 1px solid rgba(210, 210, 210, 0.5);
+    padding: 1.5rem 2rem;
+    border-radius: 8px;
 
     h1 {
       color: #1d1d1d;
-      font-size: 58px;
+      font-size: 40px;
       font-weight: 600;
-      line-height: 84px;
+      // line-height: 84px;
     }
 
     p {
       margin-top: 24px;
-      font-size: 24px;
+      font-size: 20px;
       color: #434343;
-      line-height: 30px;
-      font-weight: 600;
+      // line-height: 30px;
+      font-weight: 500;
     }
   }
   .ctaWrapper {
@@ -72,7 +75,7 @@
         line-height: 50px;
       }
       p {
-        font-size: 18px;
+        font-size: 16px;
         line-height: 28px;
       }
     }
@@ -87,7 +90,7 @@
         line-height: 42px;
       }
       p {
-        font-size: 16px;
+        font-size: 12px;
         line-height: 24px;
       }
     }
