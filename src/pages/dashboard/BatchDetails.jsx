@@ -7,18 +7,18 @@ import closeIcon from '../../assets/dashboardImageDetails/close-icon.webp';
 import saveIcon from '../../assets/dashboardImageDetails/download-icon.webp';
 import trashIcon from '../../assets/dashboardImageDetails/trash-icon.webp';
 
-import { useContext, useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-import UserContext from '../../context/UserContext';
-import axios from 'axios';
+// import UserContext from '../../context/UserContext';
+// import axios from 'axios';
 
 const BatchDetails = () => {
-  const param = useParams();
+  // const param = useParams();
 
   // const [imageDets, setImageDets] = useState({ loading: false });
-  const { user } = useContext(UserContext);
+  // const { user } = useContext(UserContext);
   // useEffect(() => {
   //   const fetchData = async () => {
   //     try {
@@ -84,16 +84,16 @@ const BatchDetails = () => {
     setShowMenu((prev) => !prev);
   };
 
-  const saveToJsonHandler = () => {
-    const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(
-      JSON.stringify({ ...image })
-    )}`;
-    const link = document.createElement('a');
-    link.href = jsonString;
-    link.download = 'data.json';
+  // const saveToJsonHandler = () => {
+  //   const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(
+  //     JSON.stringify({ ...image })
+  //   )}`;
+  //   const link = document.createElement('a');
+  //   link.href = jsonString;
+  //   link.download = 'data.json';
 
-    link.click();
-  };
+  //   link.click();
+  // };
 
   return (
     <main className="">
@@ -129,7 +129,7 @@ const BatchDetails = () => {
             text="Save as Json"
             onclick={() => {
               toggleSaveSuccessModal();
-              saveToJsonHandler();
+              // saveToJsonHandler();
             }}
           />
           <Button
