@@ -9,8 +9,8 @@ function HowItWorks() {
   return (
     <main className="font-Axiforma">
       <section className="relative mt-2 md:mt-0 lg:mt-[49px]">
-        <div className="md:bg-black/50 py-20 h-[300px] md:h-[328px] overflow-hidden"></div>
-        <div className="bg-[#092C4C] h-[300px] absolute inset-0 flex flex-col items-center justify-center">
+        {/* <div className="py-20 h-[300px]  overflow-hidden"></div> */}
+        <div className="bg-[#092C4C] h-[300px] md:h-[400px] flex flex-col items-center justify-center">
           <div className="flex flex-col justify-center items-center text-center w-[267px] md:w-[395px] lg:w-[517px] md:py-10 lg:py-10">
             <h1 className="font-medium md:font-bold text-2xl md:text-4xl lg:text-6xl md:leading-[50px] lg:leading-[72px] md:-tracking-[0.02em] text-[#FFFDFD]">
               How It Works
@@ -25,7 +25,7 @@ function HowItWorks() {
             </h5> */}
             <button
               type="button"
-              className="md:relative bottom-0 mx-auto md:translate-y-0 translate-y-1/2 bg-[#FF6C00] hover:bg-[#FF9D55] w-40 h-12 leading-[26px] text-white flex items-center justify-center rounded-lg"
+              className="md:relative mt-7 bottom-0 mx-auto md:translate-y-0 translate-y-1/2 bg-[#FF6C00] hover:bg-[#FF9D55] w-40 h-12 leading-[26px] text-white flex items-center justify-center rounded-lg"
             >
               <Link to="/signup">Get Started</Link>
             </button>
