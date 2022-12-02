@@ -7,7 +7,7 @@ const Card = ({ title, paragraph, link }) => {
       <h3>{title}</h3>
       <p>{paragraph}</p>
 
-      <Link to={link}>Learn More</Link>
+      {link && <Link to={link}>Learn More</Link>}
     </div>
   );
 };

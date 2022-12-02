@@ -105,7 +105,7 @@ const RoutesComponents = () => {
             <Route path="*" element={<ErrorPage />}></Route>
 
             {/* <Route path="why-tozilla" element={<WhyTozilla />} /> */}
-            <Route path="why-discripto" element={<WhyMinergram />} />
+            <Route path="/why-discripto" element={<WhyMinergram />} />
 
             <Route path="/login" element={<Login />} />
           </Route>
