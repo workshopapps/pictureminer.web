@@ -49,11 +49,12 @@ const Sidebar = () => {
                 : 'sidebar__links'
             }
             onClick={() => setOpenSidebar(false)}
-            to={'/images'}
+            to={'/imageUpload'}
           >
-            <Gallery size="16" color="#1d1d1d" />
-            Images
+            <GalleryExport size="16" color="#1d1d1d" />
+            Image Upload
           </NavLink>
+
           <NavLink
             className={({ isActive }) =>
               isActive
@@ -61,10 +62,10 @@ const Sidebar = () => {
                 : 'sidebar__links'
             }
             onClick={() => setOpenSidebar(false)}
-            to={'/imageUpload'}
+            to={'/images'}
           >
-            <GalleryExport size="16" color="#1d1d1d" />
-            Image Upload
+            <Gallery size="16" color="#1d1d1d" />
+            Images
           </NavLink>
 
           <NavLink

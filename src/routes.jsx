@@ -39,7 +39,7 @@ import Signup from './pages/signup';
 import { AppProvider } from './context/context';
 import { getLocalStorage } from './localStorage';
 import UserContext from './context/UserContext';
-import BatchUpload from './pages/dashboard/BatchUpload';
+import BatchDetails from './pages/dashboard/BatchDetails';
 
 const RoutesComponents = () => {
   const { setUser } = useContext(UserContext);
@@ -105,7 +105,7 @@ const RoutesComponents = () => {
             <Route path="*" element={<ErrorPage />}></Route>
 
             {/* <Route path="why-tozilla" element={<WhyTozilla />} /> */}
-            <Route path="why-discripto" element={<WhyMinergram />} />
+            <Route path="/why-discripto" element={<WhyMinergram />} />
 
             <Route path="/login" element={<Login />} />
           </Route>
@@ -113,12 +113,12 @@ const RoutesComponents = () => {
 
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path = '/dashboard/BatchUpload' element = {<BatchUpload/> } />
 
             <Route path="/images" element={<Images />} />
             <Route path="/imageUpload" element={<ImageUpload />} />
 
             <Route path="/images/:imageId" element={<ImageDetails />} />
+            <Route path="/images/batch-:Id" element={<BatchDetails />} />
 
             <Route path="/account-setup" element={<AccountSettings />} />
             <Route path="/billing" element={<Billing />} />

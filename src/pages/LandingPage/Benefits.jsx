@@ -4,8 +4,7 @@ const Benefits = () => {
   return (
     <div className={style.container}>
       <h1>
-      Benefits We{' '}
-        <span style={{ color: '#FF6C00' }}>Provide</span>
+        Benefits We <span style={{ color: '#FF6C00' }}>Provide</span>
       </h1>
 
       <div className={style.cardWrapper}>
