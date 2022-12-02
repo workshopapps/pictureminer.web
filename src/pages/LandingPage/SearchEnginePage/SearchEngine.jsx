@@ -13,9 +13,9 @@ const SearchEngine = () => {
     <>
       <section className="bg-secBlue py-10 mt-4">
         <div className="container__search-engine flex flex-col md:flex-row items-center justify-between">
-          <div className="text-white md:w-[50%] text-center md:text-left ">
+          <div className="text-white md:w-2/4 text-center md:text-left ">
             <h1 className="text-xLarge font-bold">Search Engine</h1>
-            <p className="mt-6 tracking-wide text-normal">
+            <p className="mt-6 tracking-normal text-normal">
               Using artificial intelligence , Discripto technology enables
               automatic assignment of images to relevant categories . This
               automated image categorization technology saves time and budget
@@ -36,7 +36,7 @@ const SearchEngine = () => {
       <section>
         <div className="container__search-engine my-16 space-y-20">
           {/* first layout */}
-          <div className="flex flex-col md:flex-row-reverse items-center  md:gap-12 lg:mr-52 lg:gap-24">
+          <div className="flex flex-col md:flex-row-reverse items-center  md:gap-10 xl:mr-52 xl:gap-24">
             <div className="text-center md:text-left">
               <h3 className="text-medium font-bold">Structures Descriptions</h3>
               <p className=" mt-4 text-normal">
@@ -50,7 +50,7 @@ const SearchEngine = () => {
             </div>
           </div>
           {/* second layout */}
-          <div className="flex flex-col md:flex-row items-center  md:gap-12 lg:ml-52 lg:gap-24">
+          <div className="flex flex-col md:flex-row items-center md:gap-10 xl:ml-52 xl:gap-24">
             <div className="text-center md:text-left">
               <h3 className="text-medium font-bold">
                 Precise Image Description
@@ -66,7 +66,7 @@ const SearchEngine = () => {
             </div>
           </div>
           {/* third layout */}
-          <div className="flex flex-col md:flex-row-reverse items-center  md:gap-12 lg:mr-52 lg:gap-24">
+          <div className="flex flex-col md:flex-row-reverse items-center  md:gap-10 xl:mr-52 xl:gap-24">
             <div className="text-center md:text-left">
               <h3 className="text-medium font-bold">
                 Useful For Business Analysis
@@ -83,13 +83,14 @@ const SearchEngine = () => {
           </div>
         </div>
       </section>
-      {/* <div className="my-24 flex items-center justify-center">
-        <TryDemo />
-      </div> */}
-
-      <section>
+      <div className="my-24 flex items-center justify-center">
+        {/* <TryDemo /> */}
         <ImageUpload demo />
-      </section>
+      </div>
+
+      {/* <section>
+        <ImageUpload demo />
+      </section> */}
     </>
   );
 };
