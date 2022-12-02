@@ -18,73 +18,74 @@
       font-weight: 600;
     }
 
-  p {
-    font-size: 20px;
-    color: #8e8e8e;
-    line-height: 30px;
-    font-weight: 600;
-  }
-
-  .ctaWrapper {
-    padding: 2rem 0 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-
-    a {
+    p {
       font-size: 20px;
-      font-weight: 500;
-      padding: 16px 24px;
-      text-decoration: none;
-      border: 1px solid $main-color;
-      border-radius: 8px;
+      color: #8e8e8e;
+      line-height: 30px;
+      font-weight: 600;
+    }
 
-      &:nth-of-type(1) {
-        background-color: $main-color;
-        color: white;
-        // padding: 16px;
+    .ctaWrapper {
+      padding: 2rem 0 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 24px;
 
-        &:hover {
-          background-color: #ff9d55;
+      a {
+        font-size: 20px;
+        font-weight: 500;
+        padding: 16px 24px;
+        text-decoration: none;
+        border: 1px solid $main-color;
+        border-radius: 8px;
+
+        &:nth-of-type(1) {
+          background-color: $main-color;
+          color: white;
+          // padding: 16px;
+
+          &:hover {
+            background-color: #ff9d55;
+          }
+        }
+        &:nth-of-type(2n) {
+          color: $main-color;
+
+          &:hover {
+            background-color: #ff6c00;
+            color: #ffffff;
+          }
         }
       }
-      &:nth-of-type(2n) {
-        color: $main-color;
+    }
 
-        &:hover {
-          background-color: #ff6c00;
-          color: #ffffff;
+    @media screen and (max-width: 770px) {
+      flex-direction: column;
+      .cover {
+        h1 {
+          font-size: 36px;
+        }
+        p {
+          font-size: 18px;
         }
       }
     }
-  }
 
-  @media screen and (max-width: 770px) {
-    flex-direction: column;
-    .cover {
-      h1 {
-        font-size: 36px;
-      }
-      p {
-        font-size: 18px;
-      }
-    }
-  }
+    @media screen and (max-width: 480px) {
+      padding: 5rem 2rem;
 
-  @media screen and (max-width: 480px) {
-    padding: 5rem 2rem;
-
-    .cover {
-      h1 {
-        font-size: 30px;
+      .cover {
+        h1 {
+          font-size: 30px;
+        }
+        p {
+          font-size: 16px;
+        }
       }
-      p {
-        font-size: 16px;
+      .ctaWrapper a {
+        font-size: 15px;
       }
-    }
-    .ctaWrapper a {
-      font-size: 15px;
     }
   }
 }

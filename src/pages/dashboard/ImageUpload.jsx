@@ -41,7 +41,7 @@ const ImageUpload = ({ demo = false }) => {
           }}
         >
           <h2 className="text-[#FF6C00] text-[24px]">Try demo</h2>
-          <div className="w-[54px] w-[54px]">
+          <div className="w-[54px]">
             <img
               src={images.addToFolder}
               className="w-full h-full"
