@@ -7,6 +7,7 @@ import warningIcon from '../../assets/dashboardImageDetails/warning-icon.webp';
 import closeIcon from '../../assets/dashboardImageDetails/close-icon.webp';
 import saveIcon from '../../assets/dashboardImageDetails/download-icon.webp';
 import trashIcon from '../../assets/dashboardImageDetails/trash-icon.webp';
+import customer from '../../assets/customer.webp';
 
 import { useState } from 'react';
 
@@ -103,7 +104,7 @@ const BatchDetails = () => {
   // };
 
   return (
-    <main className="">
+    <main className="dashboard_details">
       <section className="relative flex justify-between items-center">
         <div className="flex items-center gap-4">
           <svg
@@ -213,10 +214,31 @@ const BatchDetails = () => {
         <div>
           <h3 className="tag">Bathroom</h3>
           <div className="batch_images">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(() => (
-              // eslint-disable-next-line react/jsx-key
-              <div className="batch_image">
-                <img src="" alt="" />
+
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
+              <div className="batch_image" key={item}>
+                <img src={customer} alt="" />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h3 className="tag">Bathroom</h3>
+          <div className="batch_images">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
+              <div className="batch_image" key={item}>
+                <img src={customer} alt="" />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div>
+          <h3 className="tag">Bathroom</h3>
+          <div className="batch_images">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
+              <div className="batch_image" key={item}>
+                <img src={customer} alt="" />
+
               </div>
             ))}
           </div>

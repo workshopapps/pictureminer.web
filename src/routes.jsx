@@ -118,7 +118,7 @@ const RoutesComponents = () => {
             <Route path="/imageUpload" element={<ImageUpload />} />
 
             <Route path="/images/:imageId" element={<ImageDetails />} />
-            <Route path="/images/batch-:Id" element={<BatchDetails />} />
+            <Route path="/images/batch/:batchId" element={<BatchDetails />} />
 
             <Route path="/account-setup" element={<AccountSettings />} />
             <Route path="/billing" element={<Billing />} />

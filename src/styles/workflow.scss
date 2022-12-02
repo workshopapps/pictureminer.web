@@ -1,4 +1,4 @@
-@import "./_variables/animations";
+@import './_variables/animations';
 @import './_variables/mixins';
 @import './layout/dashboardLayout.scss';
 @import './layout/sidebar.scss';
@@ -10,7 +10,7 @@
 @import './layout/Testimonials.scss';
 @import './layout//Uses.module.scss';
 @import './layout/DemoHero.scss';
-
+@import './pages/dashboardDetails.scss';
 *,
 ::after,
 ::before {

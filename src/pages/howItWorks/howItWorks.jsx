@@ -52,8 +52,8 @@ function HowItWorks() {
           </p>
           <div className="flex flex-col md:flex-row items-center gap-[22px] lg:gap-x-8">
             <Link
-              to="/signup"
-              as="button"
+              to='/signup'
+              as='button'
               type="button"
               id="btn-primary-hover"
               className="bg-[#FF6C00] hover:bg-[#FF9D55] focus:bg-[#AA4800] disabled:bg-[#D2D2D2] rounded-lg py-5px-[69px] flex items-center justify-center text-white h-[64px] w-[232px]"
