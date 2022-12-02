@@ -104,7 +104,7 @@ const RoutesComponents = () => {
             <Route path="*" element={<ErrorPage />}></Route>
 
             {/* <Route path="why-tozilla" element={<WhyTozilla />} /> */}
-            <Route path="why-discripto" element={<WhyMinergram />} />
+            <Route path="/why-discripto" element={<WhyMinergram />} />
 
             <Route path="/login" element={<Login />} />
           </Route>
@@ -117,6 +117,7 @@ const RoutesComponents = () => {
             <Route path="/imageUpload" element={<ImageUpload />} />
 
             <Route path="/images/:imageId" element={<ImageDetails />} />
+            <Route path="/images/batch-:Id" element={<BatchDetails />} />
 
             <Route path="/account-setup" element={<AccountSettings />} />
             <Route path="/billing" element={<Billing />} />
