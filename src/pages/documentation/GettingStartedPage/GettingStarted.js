@@ -36,7 +36,7 @@ const GettingStarted = () => {
           >
             <h1 className="font-bold text-3xl mb-2">Overview</h1>
             <div className="text-[#434343]">
-              <p className="mb-3 md:w-[60%]">
+              <p className="mb-3 md:w-[50%]">
                 Discripto (currently v3.3.7) has a few easy ways to quickly get
                 started, each one appealing to a different skill level and the
                 Discripto API is a REST API that makes it easy to find and
@@ -57,7 +57,7 @@ const GettingStarted = () => {
             </div>
           </div>
 
-          <div className="hidden mt-8 text-[#434343] md:w-[40%] md:flex md:flex-row md:gap-2">
+          <div className="hidden mt-8 text-[#434343] md:w-full md:flex md:flex-row md:gap-2">
             <img src={icon} alt="icon" className="w-8 h-8" />
             <div>
               <p className="font-bold mb-1">ON THIS PAGE</p>
@@ -83,21 +83,21 @@ const GettingStarted = () => {
             Benefits of Using Discripto API
           </h1>
           <div className="flex items-center gap-7 lg:gap-10 flex-col md:flex-row md:flex-wrap mb-6">
-            <div className="mb-3 w-1/2 md:w-[350px] lg:w-[450px]">
+            <div className="mb-3 w-full md:w-[350px] lg:w-[450px]">
               <h3 className="font-bold text-bold">Get only what you need</h3>
               <p className="text-[#686868]">
                 Just make a request with image through upload or URL, get back a
                 JSON response containing what you need.
               </p>
             </div>
-            <div className="mb-3 w-1/2 md:w-[350px] lg:w-[450px]">
+            <div className="mb-3 w-full md:w-[350px] lg:w-[450px]">
               <h3 className="font-bold text-bold">Simple to use</h3>
               <p className="text-[#686868]">
                 You only need to send the image and/or text prompt to get the
                 response.
               </p>
             </div>
-            <div className="mb-3 w-1/2 md:w-[350px] lg:w-[450px]">
+            <div className="mb-3 w-full md:w-[350px] lg:w-[450px]">
               <h3 className="font-bold text-bold">
                 Idustry standard solutions
               </h3>
@@ -106,7 +106,7 @@ const GettingStarted = () => {
                 algorithms to classify your images.
               </p>
             </div>
-            <div className="mb-3 w-1/2 md:w-[350px] lg:w-[450px]">
+            <div className="mb-3 w-full md:w-[350px] lg:w-[450px]">
               <h3 className="font-bold text-bold">
                 Access to images dashboard
               </h3>
@@ -116,7 +116,7 @@ const GettingStarted = () => {
               </p>
             </div>
           </div>
-          <p>
+          <p className="md:max-w-[80%] font-medium">
             You can find onboarding documentation for the IMDb API on the next
             page - including setting up your AWS Account, signing to the IMDb
             API endpoint, and sample queries to jump-start your integration.
@@ -124,7 +124,7 @@ const GettingStarted = () => {
         </div>
 
         <div
-          className="border border-[#B4B4B4] rounded-[8px] mt-6 px-4 py-2 flex fex-row justify-between items-center w-1/2
+          className="border border-[#B4B4B4] rounded-[8px] mt-6 px-4 py-2 flex fex-row justify-between items-center md:w-1/2
 "
         >
           <div>

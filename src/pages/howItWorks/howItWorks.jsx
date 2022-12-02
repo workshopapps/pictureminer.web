@@ -32,12 +32,15 @@ function HowItWorks() {
           </div>
         </div>
       </section>
-      <section className="mt-12 md:mt-32 lg:mt-40 space-y-20 md:space-y-[167px] lg:space-y-[120px]">
+      <div className="flex flex-col justify-center items-center py-10 px-5">
+        <p className="font-bold text-xl md:text-3xl">Solutions we provide</p>
+      </div>
+      <section className="space-y-20 md:space-y-[167px] lg:space-y-[120px] px-10">
         {features.map((feature, idx) => (
           <Feature key={feature.title} {...feature} idx={idx} />
         ))}
       </section>
-      <section className="my-[120px] md:my-[180px] md:bg-[#F6F6F6] md:py-[66px] lg:py-[86px]">
+      <section className="my-16 md:bg-[#F6F6F6] md:py-[66px] lg:py-[86px]">
         <div className="flex flex-col items-center justify-center">
           <p className="mb-[22px] md:mb-9 text-base md:text-xl md:leading-[30px] text-black text-center">
             Ready to use Discripto?
