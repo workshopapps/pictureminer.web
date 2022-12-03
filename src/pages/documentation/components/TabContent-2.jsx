@@ -75,27 +75,25 @@ function TabContent2({ setTabState }) {
           </div>
         </div>
 
-        <div className="hidden md:flex space-x-3 md:w-1/3 lg:w-1/4">
+        <div className="hidden md:flex space-x-6 md:w-1/3 lg:w-1/4">
           <ElementEqual />
           <div>
             <h3 className="text-normal font-bold text-gray-600">
               ON THIS PAGE
             </h3>
             <p className="text-small text-gray-500 tracking-wide mt-3 ">
+              Getting Access to the API
+            </p>
+            <p className="text-small text-gray-500 tracking-wide mt-3">
               Key Concepts
             </p>
-            <p className="text-xSmall text-gray-500 tracking-wide mt-3 ">
-              Getting Access to the API
-            </p>
-            <p className="text-xSmall text-gray-500 tracking-wide mt-2">API</p>
-            <p className="text-xSmall text-gray-500 tracking-wide mt-2">
-              Endpoint
-            </p>
-            <p className="text-xSmall text-gray-500 tracking-wide mt-2">
+            <p className="text-sm text-gray-500 tracking-wide mt-2">API</p>
+            <p className="text-sm text-gray-500 tracking-wide mt-2">Endpoint</p>
+            <p className="text-sm text-gray-500 tracking-wide mt-2">
               JWT Authentication
             </p>
-            <p className="text-mall text-gray-500 tracking-wide mt-2">
-              Getting Access to the API
+            <p className="text-small text-gray-500 tracking-wide mt-2">
+              Calling the API
             </p>
           </div>
         </div>
@@ -111,7 +109,7 @@ function TabContent2({ setTabState }) {
             <p className="text-mainOrange/90 mt-3">Getting Access to the API</p>
           </div>
         </div>
-        <div className="flex items-center justify-between md:w-[497px] border border-solid border-gray-300 rounded-lg px-8 md:px-10 py-5 mx-8 md:mx-10 lg:mx-20">
+        <div className="flex items-center justify-between md:w-[497px] border border-solid border-gray-300 rounded-lg px-6 md:px-10 py-5 mx-8 md:mx-10 lg:mx-20">
           <div>
             <p>Next</p>
             <p className="text-mainOrange/90 mt-3">Examples of Using the CLI</p>

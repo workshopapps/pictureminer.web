@@ -54,6 +54,7 @@ const Images = () => {
       document.removeEventListener('mousedown', handler);
     };
   });
+
   const columns = [
     {
       name: 'S/No',
@@ -94,6 +95,57 @@ const Images = () => {
       width: '80px',
     },
   ];
+
+  const batchColumns = [
+    {
+      name: 'S/No',
+      selector: (row) => row.sn,
+      sortable: true,
+      flex: 2,
+    },
+    {
+      name: 'Batch',
+      selector: (row) => row.batch,
+      sortable: true,
+      flex: 2,
+    },
+    {
+      name: 'Batch ID',
+      selector: (row) => row.batchId,
+      sortable: true,
+      flex: 4,
+    },
+    {
+      name: 'Date Mined',
+      selector: (row) => row.dateMined,
+      sortable: true,
+      flex: 4,
+    },
+    {
+      name: 'Status',
+      selector: (cell) => cell.status,
+      sortable: true,
+      flex: 1,
+      right: true,
+    },
+    {
+      cell: () => (
+        <div
+          className="delete"
+          onClick={() => {
+            toggleShowMenu();
+            toggleDeleteModal();
+          }}
+        >
+          <Trash size={24} color="#f04438" />
+        </div>
+      ),
+      selector: (row) => row.dateMined,
+      sortable: true,
+      width: '50px',
+    },
+  ];
+
   useEffect(() => {
     const fetchData = async () => {
       try {
