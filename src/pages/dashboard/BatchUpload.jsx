@@ -5,10 +5,17 @@ import Modal from '../../components/ui/Modal';
 import SuccessIcon from '../../assets/SuccessIcon';
 import Button from '../../components/Button';
 import { useNavigate }  from 'react-router-dom';
+import useUploadBatch from '../../Hooks/useUploadBatch';
 
-
+const Loader = () => {
+  return (
+    <div className="loader2">
+    </div>
+  );
+};
 const ModalContent = () => {
   const navigate = useNavigate();
+
   return (
     <div className='flex flex-col gap-4'>
       <SuccessIcon/>
@@ -21,14 +28,38 @@ const ModalContent = () => {
   );
 };
 const BatchUpload = () => {
-  const  [uploaded, setUploaded] = useState(false);
-  const handleUpload = () => {
-    setUploaded(true);
+  // const [file, setFile] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const {  isLoading } = useUploadBatch();
+  const handleOnChangeUpload = (e) => {
+    // setFile(e.target.files[0]);
+    // const formData = new FormData();
+    // formData.append('file', e.target.files[0]);
+    // try {
+    //   uploadBatch(formData);
+
+    // } catch (error) {
+    //   console.log(error);
+
+    // }
+
+
+
+    setShowModal(true);
+
+
   };
+
+  if (isLoading) {
+    return (
+      <Loader />
+    );
+  }
+
   return (
     <div className='mb-4'>
       {
-        uploaded ? ( <div><Modal> <ModalContent/></Modal> </div>) : (<>
+        showModal ? ( <div><Modal> <ModalContent/></Modal> </div>) : (<>
           <h4 className='my-5 font-bold'>Image Details: </h4>
           <div className='flex gap-9 flex-col lg:flex-row' >
 
@@ -57,7 +88,7 @@ const BatchUpload = () => {
               />
             </div>
             <div className='md:flex-1'>
-              <TryDemo onImageChange={handleUpload} text = '' />
+              <TryDemo onImageChange={handleOnChangeUpload} text = '' />
             </div>
 
 
