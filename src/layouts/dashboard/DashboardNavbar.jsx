@@ -7,7 +7,7 @@ import { removeItemFromLocalStorage } from '../../localStorage';
 import { RiSearchLine } from 'react-icons/ri';
 
 const DashboardNavbar = ({ data }) => {
-  const [showMenu, setShowMenu] = useState(false);
+  // const [showMenu, setShowMenu] = useState(false);
   const { setUser } = useContext(UserContext);
   const handleLogout = () => {
     setUser(null);
