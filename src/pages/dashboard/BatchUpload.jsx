@@ -30,11 +30,14 @@ const ModalContent = () => {
 const BatchUpload = () => {
   const [file, setFile] = useState(null);
   const [name, setName] = useState(null);
-  const [Tag, setTag] = useState(null);
+  const [Tag, setTag] = useState([]);
   const [description, setDescription] = useState(null);
   const [errorMessage, seterrorMessage] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const { mutateAsync:uploadBatch,  isLoading } = useUploadBatch();
+  const trnasformTags = (tags) => {
+    return tags.split(',');
+  };
 
   const handleOnChangeUpload = async(e) => {
     setFile(e.target.files[0]);
@@ -103,12 +106,15 @@ const BatchUpload = () => {
 
                 label='Tag'
                 name = 'tag'
-                onChange={(e) => setTag(e.target.value)}
+                onChange={(e) => setTag(trnasformTags(e.target.value))
+                }
 
               />
             </div>
             <button type='submit' className='md:flex-1'>
-              <TryDemo onImageChange={handleOnChangeUpload} text = '' file='csv' />
+              <TryDemo onImageChange={handleOnChangeUpload} text = '' file='csv'
+                disable = {!(name && Tag && description)}
+              />
             </button>
 
 
