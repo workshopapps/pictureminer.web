@@ -1,5 +1,5 @@
 import React from 'react';
-import MainImg from '../images/About-main-img.webp';
+// import MainImg from '../images/About-main-img.webp';
 import FirstImg from '../images/About-first-img.webp';
 import SecondImg from '../images/About-second-img.webp';
 import ourMission from '../images/About-mission-img.webp';
@@ -10,7 +10,11 @@ export default function About() {
     <section>
       <div className="about-general-container">
         <div className="header-container">
-          <img src={MainImg} alt="header-img" width="100%" />
+          <div className='texts'>
+            <h1 className='h-texts'>The image API product just for you!</h1>
+            <p className='p-texts'>Integrate our unique API that delivers to you structured texts and categorizes your images in a short space of time</p>
+          </div>
+          {/* <img src={MainImg} alt="header-img" width="100%" /> */}
         </div>
         <div className="section-container">
           <div className="first-container">

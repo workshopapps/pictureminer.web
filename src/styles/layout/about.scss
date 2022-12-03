@@ -21,9 +21,28 @@
   @include column-aligned();
   .header-container {
     width: inherit;
-    // background-color: url(../../pages/About/images/About-main-img.png);
+    background-image: url("../../pages/About/images/AbtUsHeroBg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $light;
+    position: relative;
+    height: 50vh;
     @include center();
     @include column-aligned();
+    .texts{
+      text-align: center;
+      max-width: 50%;
+    }
+    .h-texts {
+      font-size: 60px;
+      color: $light;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .p-texts {
+      font-size: 1.5em;
+      color: $light;
+    }
     .texts {
       text-align: center;
       .h-texts {
