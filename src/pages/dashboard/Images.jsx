@@ -37,22 +37,23 @@ const Images = () => {
     setShowDeleteModal((prev) => !prev);
   };
 
-  const toggleDeleteSuccessModal = () => {
+  const toggleDeleteSuccessModal = async () => {
     showDeleteModal && toggleDeleteModal();
     setShowDeleteSuccessModal((prev) => !prev);
   };
+
   let menuRef = useRef();
   useEffect(() => {
     let handler = (e) => {
-      if(!menuRef.current.contains(e.target)){
+      if (!menuRef.current.contains(e.target)) {
         setShowMenu(false);
       }
     };
     document.addEventListener('mousedown', handler);
-    return() => {
+    return () => {
       document.removeEventListener('mousedown', handler);
     };
-  } );
+  });
   const columns = [
     {
       name: 'S/No',
