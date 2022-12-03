@@ -4,26 +4,23 @@ import TryDemo from '../../components/ui/TryDemo';
 import Modal from '../../components/ui/Modal';
 import SuccessIcon from '../../assets/SuccessIcon';
 import Button from '../../components/Button';
-import { useNavigate }  from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import useUploadBatch from '../../Hooks/useUploadBatch';
 
 const Loader = () => {
-  return (
-    <div className="loader2">
-    </div>
-  );
+  return <div className="loader2"></div>;
 };
 const ModalContent = () => {
   const navigate = useNavigate();
 
   return (
-    <div className='flex flex-col gap-4'>
-      <SuccessIcon/>
+    <div className="flex flex-col gap-4">
+      <SuccessIcon />
       <div>
-    Your file has been uplaaded succesfully. Please check the Batch page for the progress state
+        Your file has been uplaaded succesfully. Please check the Batch page for
+        the progress state
       </div>
-      <Button text= 'OK' onClick={() => navigate('/images')} />
-
+      <Button text="OK" onClick={() => navigate('/images')} />
     </div>
   );
 };
@@ -63,9 +60,7 @@ const BatchUpload = () => {
   };
 
   if (isLoading) {
-    return (
-      <Loader />
-    );
+    return <Loader />;
   }
 
   return (

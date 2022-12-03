@@ -41,7 +41,6 @@ import { getLocalStorage } from './localStorage';
 import UserContext from './context/UserContext';
 import BatchDetails from './pages/dashboard/BatchDetails';
 
-
 const RoutesComponents = () => {
   const { setUser } = useContext(UserContext);
 
@@ -88,7 +87,6 @@ const RoutesComponents = () => {
             <Route path="/why-discripto" element={<WhyMinergram />} />
 
             <Route path="/login" element={<Login />} />
-
           </Route>
           {/*If your riute us priviate, use Protected Route */}
 

@@ -1,3 +1,5 @@
+// import { Link } from 'react-router-dom';
+
 export const faqData = [
   {
     id: 0,
@@ -12,7 +14,7 @@ export const faqData = [
     question: 'How does Discripto work?',
     answer: [
       'Discripto allows users to make a request by uploading an image or a URL and get a swift validated response(s) detailing the content of their request(s).',
-      'Learn more about how Discripto works (discripto.com/steps-works), or get an overview of our technology discripto.com/support-page.',
+      'Learn more about how Discripto works (https://discripto.hng.tech/how-it-works), or get an overview of our technology discripto.com/support-page.',
     ],
   },
   {
@@ -34,7 +36,7 @@ export const faqData = [
     question:
       'Can I use Discripto for commercial purposes or high-volume searching?',
     answer: [
-      'Yes, there is a paid version (Discripto.com/paid-vers) of Discripto for commercial use, which allows you to make bulk searches. The commercial version of Discripto includes a user interface for easy searching, as well as an API for integrating Discripto with your own website or system.',
+      'Yes, there is a paid version (https://discripto.hng.tech/pricing) of Discripto for commercial use, which allows you to make bulk searches. The commercial version of Discripto includes a user interface for easy searching, as well as an API for integrating Discripto with your own website or system.',
       'If you have any questions, please get in touch (discripto.com/contact).',
     ],
   },
