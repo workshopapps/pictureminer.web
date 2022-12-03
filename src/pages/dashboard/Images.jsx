@@ -90,10 +90,10 @@ const Images = () => {
       name: '',
       selector: (cell) => cell.delete,
       sortable: true,
-
       width: '80px',
     },
   ];
+
   useEffect(() => {
     const fetchData = async () => {
       try {
