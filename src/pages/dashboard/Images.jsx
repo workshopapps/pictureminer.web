@@ -11,6 +11,7 @@ import axios from 'axios';
 import UserContext from '../../context/UserContext';
 import computer from '../../assets/computer.png';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import BatchImage from './BatchImage';
 const NoImageComponent = () => {
   return (
     <div className="no__image">
@@ -54,6 +55,7 @@ const Images = () => {
       document.removeEventListener('mousedown', handler);
     };
   });
+
   const columns = [
     {
       name: 'S/No',
@@ -94,6 +96,40 @@ const Images = () => {
     },
   ];
 
+  const batchColumns = [
+    {
+      name: 'S/No',
+      selector: (row) => row.sn,
+      sortable: true,
+      flex: 2,
+    },
+    {
+      name: 'Batch',
+      selector: (row) => row.batch,
+      sortable: true,
+      flex: 2,
+    },
+    {
+      name: 'Batch ID',
+      selector: (row) => row.batchId,
+      sortable: true,
+      flex: 4,
+    },
+    {
+      name: 'Date Mined',
+      selector: (row) => row.dateMined,
+      sortable: true,
+      flex: 4,
+    },
+    {
+      name: 'Status',
+      selector: (cell) => cell.status,
+      sortable: true,
+      flex: 1,
+      right: true,
+    },
+  ];
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -114,7 +150,6 @@ const Images = () => {
 
         if (response) {
           const structuredData = response?.data.map((item, index) => {
-            console.log(item);
             return {
               id: index,
               sn: index,
@@ -317,135 +352,7 @@ const Images = () => {
         </div>
       </TabPanel>
       <TabPanel>
-        <div className="dashboard_images">
-          <div className="dashboard__images__head">
-            <h1>Images</h1>
-            <div className="relative">
-              <Button
-                text={'Filter'}
-                icon={<ArrowDown2 size={24} color="#FF6C00" />}
-                onclick={() => setShowMenu((prev) => !prev)}
-                className="button"
-                type="secondary"
-              />
-              <div className={showMenu ? 'show filter' : 'hide filter'}>
-                <p>Last two days </p>
-                <p>Last 1 week</p>
-                <p>Last 1 month</p>
-                <p>Last 2 months</p>
-              </div>
-            </div>
-          </div>
-          <div className="images_table">
-            <DataTable
-              columns={columns}
-              // data={imageData.tabledata}
-              progressPending={imageData.loading}
-              responsive
-              striped
-              pagination
-              noDataComponent={<NoImageComponent />}
-              progressComponent={<div className="loader2"></div>}
-            />
-          </div>
-          {showDeleteModal && (
-            <>
-              <Backdrop />
-              <Modal>
-                <div className="flex flex-col items-center justify-center gap-8 p-4">
-                  <img className="" src={warningIcon} alt="warning icon" />
-
-                  <h2 className="text-[1.7rem] font-[500]">Delete Image</h2>
-
-                  <p className="text-[#797b89] text-center text-md">
-                    Are you sure you want to delete this image? This action
-                    cannot be undone.
-                  </p>
-
-                  <div className="flex gap-4 mt-4 w-full">
-                    <Button
-                      styles={{
-                        border: '1px solid #8e8e8e',
-                        color: '#8e8e8e',
-                        padding: '1rem 2rem',
-                        width: '100%',
-                        borderRadius: '.5rem',
-                        fontSize: '1.5rem',
-                        fontWeight: '500',
-                      }}
-                      className="border border-[#8e8e8e] text-[#8e8e8e] py-4 px-8 w-full rounded-lg text-2xl font-medium hover:bg-[#FF6C00] hover:text-white"
-                      text="Cancel"
-                      onclick={toggleDeleteModal}
-                    />
-
-                    <Button
-                      styles={{
-                        background: '#f04438',
-                        color: 'white',
-                        padding: '1rem',
-                        width: '100%',
-                        borderRadius: '.5rem',
-                        fontSize: '1.5rem',
-                        fontWeight: '500',
-                      }}
-                      className="bg-[#f04438] text-white p-4 w-full rounded-lg text-2xl font-medium hover:bg-[#FF9D55]"
-                      text="Delete"
-                      onclick={toggleDeleteSuccessModal}
-                    />
-                  </div>
-                </div>
-              </Modal>
-            </>
-          )}
-
-          {showDeleteSuccessModal && (
-            <>
-              <Backdrop />
-              <Modal>
-                <div className=" flex flex-col items-center justify-center gap-8 p-4">
-                  <div className="flex w-full justify-end">
-                    <div
-                      className="w-14 cursor-pointer"
-                      onClick={toggleDeleteSuccessModal}
-                    >
-                      <img
-                        className="w-full"
-                        src={closeIcon}
-                        alt="close icon"
-                      />
-                    </div>
-                  </div>
-
-                  <img className="" src={successIcon} alt="success icon" />
-
-                  <h2 className="text-[1.7rem] font-[500]">Successful</h2>
-
-                  <p className="text-[#797b89] text-center text-md">
-                    Image successfully deleted
-                  </p>
-
-                  <div className="flex gap-4 mt-4 w-full justify-center">
-                    <Button
-                      styles={{
-                        background: '#ff6c00',
-                        color: 'white',
-                        padding: '1rem',
-                        width: '15rem',
-                        borderRadius: '.5rem',
-                        fontSize: '1.5rem',
-                        fontWeight: '500',
-                      }}
-                      className="bg-[#ff6c00] text-white p-4 w-60 rounded-lg text-2xl font-medium hover:bg-[#FF9D55]"
-                      text="Done"
-                      onclick={toggleDeleteSuccessModal}
-                    />
-                  </div>
-                </div>
-              </Modal>
-            </>
-          )}
-        </div>
-        {/* this is where u will write ur page */}
+        <BatchImage />
       </TabPanel>
     </Tabs>
   );
