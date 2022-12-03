@@ -3,4 +3,5 @@ export const routes = {
   // POST
   login: serverUrl + '',
   signup: serverUrl + '/signup',
+  mineImageWithUrl: serverUrl + '/mine-service/url',
 };
