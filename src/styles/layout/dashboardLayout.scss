@@ -31,7 +31,7 @@
     .filt {
       display: none;
       @media (max-width: 550px) {
-        display: block;
+        display: none;
       }
     }
     .form__input {
@@ -70,12 +70,27 @@
       }
       .drop__down {
         position: relative;
+        .svg {
+          width: 30px;
+          cursor: pointer;
+          .hide {
+            transform: translateY(-150%);
+            opacity: 0;
+          }
+        }
+        .svg:hover .hide {
+          cursor: pointer;
+          transform: translateY(-0%);
+          opacity: 1;
+        }
+
         .account {
           position: absolute;
           width: 221px;
           height: 121px;
           right: -38px;
-          top: 40px;
+          top: 8px;
+          z-index: 1;
 
           background: #fbfbfb;
 
@@ -90,15 +105,7 @@
           }
         }
       }
-      .show {
-        transform: translateY(0%);
-        opacity: 1;
-        transition: all 350ms ease-out;
-      }
-      .hide {
-        transform: translateY(-100%);
-        opacity: 0;
-      }
+
       .user_image {
         width: 40px;
         height: 40px;

@@ -1,13 +1,13 @@
-import HowItWorks1 from '../assets/how-it-works-1.webp';
-import HowItWorks2 from '../assets/how-it-works-2.webp';
-import HowItWorks3 from '../assets/how-it-works-3.webp';
-import HowItWorks4 from '../assets/how-it-works-4.webp';
+import HowItWorks1 from '../assets/image01.webp';
+import HowItWorks2 from '../assets/image02.webp';
+import HowItWorks3 from '../assets/image03.webp';
+import HowItWorks4 from '../assets/image04.webp';
 
 export const features = [
   {
-    title: 'Integrate',
-    text: 'Discripto X Your Website.<br/><br/>With Discripto integrated with your website, users are provided with the ability to access information without leaving your site. This enhances the user experience and reduces the need for customer support. You are the main contact point of information, meaning, users do not have access to the API directly, and guess what, No Third-Party Interference when you give access to your database',
     image: HowItWorks1,
+    title: 'Integrate',
+    text: 'With Discripto integrated with your website, users are provided with the ability to access information without leaving your site. This enhances the user experience and reduces the need for customer support. You are the main contact point of information, meaning, users do not have access to the API directly, and guess what, No Third-Party Interference when you give access to your database',
   },
   {
     title: 'Request',
@@ -15,9 +15,9 @@ export const features = [
     image: HowItWorks2,
   },
   {
-    title: 'Mining',
-    text: 'All the magic happens at this very instant!Every detail about the requested image is compiled into structured text by our AI Classification Algorithm after it has dissected the images contents.',
     image: HowItWorks3,
+    title: 'Mining',
+    text: 'All the magic happens at this very instant! Every detail about the requested image is compiled into structured text by our AI Classification Algorithm after it has dissected the images contents.',
   },
   {
     title: 'Deliver',

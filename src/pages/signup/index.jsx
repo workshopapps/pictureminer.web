@@ -56,7 +56,7 @@ const Signup = () => {
         </p>
         <Link
           to="/login"
-          className="bg-[#FF6C00] w-full max-w-[365px] text-white flex justify-center items-center rounded-[8px] mt-4 h-[50px] mb-3 mx-auto"
+          className="bg-[#FF6C00] hover:text-[#FF9D55] w-full max-w-[365px] text-white flex justify-center items-center rounded-[8px] mt-4 h-[50px] mb-3 mx-auto"
         >
           Login to account
         </Link>
@@ -124,7 +124,10 @@ const Signup = () => {
             <p className="leading-[20px] text-[14px] font-normal mx-auto">
               By clicking the “Create account” button, you agree to
               Discripto&apos;s{' '}
-              <Link to="/terms-of-use" className="text-[#ff6c00]">
+              <Link
+                to="/terms-of-use"
+                className="text-[#ff6c00] hover:text-[#FF9D55]"
+              >
                 terms of acceptable use.
               </Link>
             </p>
@@ -137,7 +140,7 @@ const Signup = () => {
             </button>
             <p className="leading-[20px] text-[14px] font-normal text-center  mb-8">
               Already have an account?{' '}
-              <Link to="/login" className="text-[#ff6c00] ">
+              <Link to="/login" className="text-[#ff6c00] hover:text-[#FF9D55]">
                 Log in
               </Link>{' '}
             </p>

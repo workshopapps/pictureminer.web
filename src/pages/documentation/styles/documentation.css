@@ -1,8 +1,7 @@
 @tailwind components;
 
 @layer components {
-  .container__search-engine {
-    @apply mx-auto px-4 lg:px-0;
+  .container__documentation {
     width: clamp(375px, 95vw, 1280px);
   }
 

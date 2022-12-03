@@ -7,7 +7,7 @@ const DocumentNav = () => {
   return (
     <div>
       <div className={`md:block ${isOpen ? 'is-active' : 'hidden'}`}>
-        <div className="flex md:justify-around  md:flex-row sm: flex-col sm: items-center p-5 text-sm">
+        <div className="flex md:justify-around  md:flex-row sm: flex-col sm: items-center p-5 pb-0 text-sm">
           <nav className=" bg-white-800 text-black shadow mt-6">
             <button
               className="p-2 md:hidden m-2 flex justify-between rounded-md outline-none focus:border-black-400 focus:border"
@@ -46,7 +46,7 @@ const DocumentNav = () => {
           </nav>
 
           <NavLink
-            className=""
+            className="text-white bg-[#092C4C] p-3 mb-0 rounded-t-lg"
             activeClassName="is-active"
             to="/documentation/getting-started"
           >
