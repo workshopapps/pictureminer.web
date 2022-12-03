@@ -6,10 +6,11 @@ const AuthInput = ({
   placeholder = 'placeholder',
   required = true,
   onChange,
+  labelClassName = 'text-[#292929] font-medium text-base',
 }) => {
   return (
     <div className="flex flex-col gap-2 w-full">
-      <label htmlFor={label} className="text-[#292929] font-medium text-base">
+      <label htmlFor={label} className={labelClassName}>
         {label}
       </label>
       <input
