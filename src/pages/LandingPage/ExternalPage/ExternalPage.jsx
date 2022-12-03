@@ -9,7 +9,7 @@ const ExternalPage = () => {
     <div>
       {/* <ImageContainer /> */}
       <section>
-        <ImageUpload demo />
+        <ImageUpload />
       </section>
     </div>
   );

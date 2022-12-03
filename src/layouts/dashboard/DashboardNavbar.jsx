@@ -1,5 +1,5 @@
 import { Filter } from 'iconsax-react';
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import UserContext from '../../context/UserContext';
 import { removeItemFromLocalStorage } from '../../localStorage';
@@ -7,7 +7,7 @@ import { removeItemFromLocalStorage } from '../../localStorage';
 import { RiSearchLine } from 'react-icons/ri';
 
 const DashboardNavbar = ({ data }) => {
-  const [showMenu, setShowMenu] = useState(false);
+  // const [showMenu, setShowMenu] = useState(false);
   const { setUser } = useContext(UserContext);
   const handleLogout = () => {
     setUser(null);
