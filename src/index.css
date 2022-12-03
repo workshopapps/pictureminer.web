@@ -44,7 +44,7 @@ code {
     --fs-md: clamp(1.275rem, 1rem + 1vw, 1.8rem);
     --fs: clamp(1rem, 0.75rem + 1vw, 1.215rem);
     --fs-sm: clamp(0.85rem, 0.7rem + 1vw, 1.1rem);
-    --fs-xs: clamp(0.75rem, 0.5rem + 1vw, 1rem);
+    --fs-xs: clamp(0.75rem, 0.5rem + 1vw, 0.85rem);
   }
 
   [type='text'],
@@ -79,6 +79,14 @@ code {
 
   .container__try-demo {
     width: clamp(355px, 95vw, 648px);
+  }
+
+  .container__try-demo--sm {
+    @media screen and (min-width: 768px) {
+      
+      width: clamp(375px, 95vw, 648px);
+      
+    }
   }
 }
 

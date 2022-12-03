@@ -1,39 +1,37 @@
-import { useState } from 'react';
-// import { useMutation } from '@tanstack/react-query';
-import { useMutation } from 'react-query';
+import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
+import { useState } from 'react';
 import { getLocalStorage } from '../localStorage';
 
-const useUploadImage = () => {
+
+const useUploadBatch = () => {
   const [response, setResponse] = useState(null);
   const user = getLocalStorage('user');
   const userToken = user ? user.Token : null;
-
   const config = {
     headers: {
       'Content-Type': 'multipart/form-data',
       Authorization: `Bearer ${userToken}`,
     },
   };
-  const { mutate, isLoading } = useMutation(
+  const { mutateAsync, isLoading } = useMutation(
     (data) =>
       axios.post(
-        'https://discripto.hng.tech/api1/api/v1/mine-service/upload',
+        'https://discripto.hng.tech/api1/api/v1/batch-service/process-batch',
         data,
         config
       ),
     {
       onSuccess: (data) => {
         setResponse(data.data);
-        console.log({ data });
+        console.log(data);
       },
       onError: (error) => {
-        setResponse({ error });
-        console.log({ error });
+        console.log(error);
       },
     }
   );
-  return { mutate, isLoading, response };
+  return { mutateAsync, isLoading, response };
 };
 
-export default useUploadImage;
+export default useUploadBatch;
