@@ -53,7 +53,7 @@ const Hospitality = () => {
             return (
               <div
                 key={i}
-                className="border border-[#FF6C00] rounded-[8px] w-[250px] h-[160px] flex flex-wrap  bg-red-100 py-4 px-2"
+                className="border border-[#FF6C00] rounded-[8px] w-[250px] h-[160px] flex flex-wrap   py-4 px-2"
               >
                 <div className="w-full">
                   <img src={hospitality} alt="" />
