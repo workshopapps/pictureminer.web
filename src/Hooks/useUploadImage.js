@@ -8,7 +8,6 @@ const useUploadImage = () => {
   const [response, setResponse] = useState(null);
   const user = getLocalStorage('user');
   const userToken = user ? user.Token : null;
-  // console.log(userToken);
 
   const config = {
     headers: {
@@ -26,10 +25,11 @@ const useUploadImage = () => {
     {
       onSuccess: (data) => {
         setResponse(data.data);
-        // console.log(data);
+        console.log({ data });
       },
       onError: (error) => {
-        console.log(error);
+        setResponse({ error });
+        console.log({ error });
       },
     }
   );
