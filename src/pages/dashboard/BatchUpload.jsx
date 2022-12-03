@@ -88,7 +88,7 @@ const BatchUpload = () => {
               />
             </div>
             <div className='md:flex-1'>
-              <TryDemo onImageChange={handleOnChangeUpload} text = '' />
+              <TryDemo onImageChange={handleOnChangeUpload} text = '' file='csv' />
             </div>
 
 

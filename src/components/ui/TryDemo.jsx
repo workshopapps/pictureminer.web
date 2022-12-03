@@ -3,7 +3,7 @@ import { images } from '../../Constants';
 import { ExportCurve } from 'iconsax-react';
 // import ImageUpload from '../../dashboard/ImageUpload';
 
-function TryDemo({ onImageChange, text = 'Try Demo' }) {
+function TryDemo({ onImageChange, text = 'Try Demo', file = 'image' }) {
   // const [imagesUpload, setImagesUpload] = useState([]);
 
   //   const onImageChange = (e) => {
@@ -20,7 +20,7 @@ function TryDemo({ onImageChange, text = 'Try Demo' }) {
       <div className="relative bg-mainOrange cursor-pointer px-24 py-3 rounded-lg mt-6">
         <div className="flex justify-center items-center gap-2 text-white ">
           <ExportCurve size="24" color="#FFF" variant="Outline" />
-          <p className="mt-2">Upload image</p>
+          <p className="mt-2">Upload {file}</p>
         </div>
         <input
           className="absolute inset-0 opacity-0 w-full h-full cursor-pointer"
