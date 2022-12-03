@@ -32,17 +32,21 @@ pipeline {
 
 			steps{
 				echo 'Installing k6'
-                sh 'sudo chmod +x setup_k6.sh'
-                sh 'sudo ./setup_k6.sh'
+
+
+                // sh 'sudo chmod +x setup_k6.sh'
+                // sh 'sudo ./setup_k6.sh'
                 echo 'Running K6 performance tests...'
 				sh 'ls -a'
 				sh "pwd"
-                sh 'k6 run Performance_Test_Discriptof.js' 
+                sh 'k6 run Performance_Test_Discriptof.js'
+
 			}
 		}
 
 		
     }
+
     post{
         failure{
             emailext attachLog: true, 
@@ -56,4 +60,6 @@ pipeline {
 
 
 
+
 // testing the pipeline
+
