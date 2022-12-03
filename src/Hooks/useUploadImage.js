@@ -25,10 +25,11 @@ const useUploadImage = () => {
     {
       onSuccess: (data) => {
         setResponse(data.data);
-        // console.log(data);
+        console.log({ data });
       },
       onError: (error) => {
-        console.log(error);
+        setResponse({ error });
+        console.log({ error });
       },
     }
   );
