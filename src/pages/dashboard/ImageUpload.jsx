@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { DocumentUpload } from 'iconsax-react';
 import { images } from '../../Constants';
+import BatchUpload from './BatchUpload';
 // import { Link } from 'react-router-dom';
 import useUploadImage from '../../Hooks/useUploadImage';
 import './styles/imageUpload.scss';
@@ -88,7 +89,10 @@ const ImageUpload = ({ demo = false }) => {
   return (
     <Tabs>
       <TabList className={'tablist'}>
-        <Tab className={'tab'} selectedClassName={'active__tab'}>
+        <Tab className={
+          'tab'
+
+        } selectedClassName={'active__tab'}>
           Single Upload
         </Tab>
         <Tab className={'tab'} selectedClassName={'active__tab'}>
@@ -149,8 +153,7 @@ const ImageUpload = ({ demo = false }) => {
         </div>
       </TabPanel>
       <TabPanel>
-        <h2>Any content 2</h2>
-        {/* this is where u will write ur page */}
+        <BatchUpload />
       </TabPanel>
     </Tabs>
   );

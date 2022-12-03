@@ -3,7 +3,7 @@ import { images } from '../../Constants';
 import { ExportCurve } from 'iconsax-react';
 // import ImageUpload from '../../dashboard/ImageUpload';
 
-function TryDemo() {
+function TryDemo({ onImageChange, text = 'Try Demo' }) {
   // const [imagesUpload, setImagesUpload] = useState([]);
 
   //   const onImageChange = (e) => {
@@ -11,8 +11,8 @@ function TryDemo() {
   //   };
 
   return (
-    <div className="container__try-demo w- border border-dashed border-secBrown rounded-lg flex flex-col items-center justify-center pt-8 pb-14">
-      <h3 className="text-mainOrange text-large">Try Demo</h3>
+    <div className="container__try-demo--sm w- border border-dashed border-secBrown rounded-lg flex flex-col items-center justify-center pt-8 pb-14">
+      <h3 className="text-mainOrange text-large">{text}</h3>
       <img src={images.addToFolder} alt="" className="mt-10 h-16 w-16" />
       <p className="mt-6 text-xs md:text-sm text-gray-400">
         Drag and drop CSV file here or click to upload
@@ -27,8 +27,8 @@ function TryDemo() {
           id="upload"
           type="file"
           multiple
-          accept="image/*, .png, .svg, .jpg"
-          // onChange={onImageChange}
+          accept='.csv'
+          onChange={onImageChange}
         />
       </div>
     </div>
