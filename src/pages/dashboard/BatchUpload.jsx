@@ -28,7 +28,6 @@ const ModalContent = () => {
   );
 };
 const BatchUpload = () => {
-  const [file, setFile] = useState(null);
   const [name, setName] = useState(null);
   const [Tag, setTag] = useState([]);
   const [description, setDescription] = useState(null);
@@ -40,7 +39,6 @@ const BatchUpload = () => {
   };
 
   const handleOnChangeUpload = async(e) => {
-    setFile(e.target.files[0]);
     const formData = new FormData();
     formData.append('csv', e.target.files[0]);
     formData.append('name', name);
