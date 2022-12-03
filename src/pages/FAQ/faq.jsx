@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './styles/index.css';
-import { faqData } from './data';
+import { faqData } from './faqData';
 import {
   MdOutlineKeyboardArrowDown,
   MdOutlineKeyboardArrowUp,

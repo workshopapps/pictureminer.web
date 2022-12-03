@@ -52,7 +52,7 @@ const Dashboard = () => {
       <div className="dashboard__head">
         <div className="images__card">
           <div className="flex gap-6">
-            <span style={{ fontSize: '16px' }}>Images</span>
+            <span style={{ fontSize: '16px' }}>Total Number of Batches</span>
             {/* {dashboarddata.logo} */}
           </div>
           <h3 style={{ marginTop: '20px', fontSize: '24px' }}>
@@ -61,10 +61,10 @@ const Dashboard = () => {
         </div>
         <div className="images__card">
           <div className="flex gap-6">
-            <span style={{ fontSize: '16px' }}>API Usage No</span>
+            <span style={{ fontSize: '16px' }}>Total Mined Images</span>
           </div>
           <h3 style={{ marginTop: '20px', fontSize: '24px' }}>
-            {user ? user.ApiCallCount : 0}
+            {dashboarddata?.imageData ? dashboarddata?.imageData?.length : 0}
           </h3>
         </div>
         <Link to={'/documentation'}>

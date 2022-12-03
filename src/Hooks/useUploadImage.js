@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { useMutation } from '@tanstack/react-query';
-// import { useMutation } from 'react-query';
+// import { useMutation } from '@tanstack/react-query';
+import { useMutation } from 'react-query';
 import axios from 'axios';
 import { getLocalStorage } from '../localStorage';
 
@@ -25,10 +25,11 @@ const useUploadImage = () => {
     {
       onSuccess: (data) => {
         setResponse(data.data);
-        // console.log(data);
+        console.log({ data });
       },
       onError: (error) => {
-        console.log(error);
+        setResponse({ error });
+        console.log({ error });
       },
     }
   );

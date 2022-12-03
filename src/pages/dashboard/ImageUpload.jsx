@@ -33,16 +33,16 @@ const ImageUpload = ({ demo = false }) => {
   };
 
   useEffect(() => {
-    if (success) {
-      console.log({ serverResponse });
+    if (response) {
+      console.log({ response });
     }
-  }, [success]);
+  }, [response]);
 
-  useEffect(() => {
-    if (error) {
-      console.log({ serverResponseError: error });
-    }
-  }, [error]);
+  // useEffect(() => {
+  //   if (error) {
+  //     console.log({ serverResponseError: error });
+  //   }
+  // }, [error]);
 
   useEffect(() => {
     if (images.length < 1 || images.length > 3) return;
@@ -105,6 +105,9 @@ const ImageUpload = ({ demo = false }) => {
                 />
               ))}
             </div>
+            {response?.error ? (
+              <p className="text-red-400 text-lg">{response?.error?.message}</p>
+            ) : null}
             {imageURLs.length > 0 && (
               <button
                 className="button"
@@ -116,7 +119,11 @@ const ImageUpload = ({ demo = false }) => {
             )}
 
             <div>{isLoading && <p className="loading">Fetching.....</p>}</div>
-            {response && <p>Result: {response.data.text_content}</p>}
+            {response?.data && (
+              <p>
+                Result: {response?.data ? response?.data?.text_content : null}
+              </p>
+            )}
             {/* {console.log(response)} */}
           </div>
         </div>
@@ -169,6 +176,11 @@ const ImageUpload = ({ demo = false }) => {
                   />
                 ))}
               </div>
+              {response?.error ? (
+                <p className="text-red-400 text-lg">
+                  {response?.error?.message}
+                </p>
+              ) : null}
               {imageURLs.length > 0 && (
                 <button
                   className="button"
@@ -180,7 +192,7 @@ const ImageUpload = ({ demo = false }) => {
               )}
 
               <div>{isLoading && <p className="loading">Fetching.....</p>}</div>
-              {response && <p>Result: {response.data.text_content}</p>}
+              {response?.data && <p>Result: {response?.data?.text_content}</p>}
               {/* {console.log(response)} */}
             </div>
           </div>

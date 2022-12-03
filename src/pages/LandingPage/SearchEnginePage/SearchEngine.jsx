@@ -4,7 +4,6 @@ import businessAnalysis from '../assets/Business-Analysis.jpg';
 import structuresDescription from '../assets/Structures-Descriptions.jpg';
 import preciseImageDescription from '../assets/Precise-Image-Description.jpg';
 import '../styles/index.css';
-// import TryDemo from '../../../components/ui/TryDemo';
 import ImageUpload from '../../dashboard/ImageUpload';
 import { Link } from 'react-router-dom';
 
@@ -84,13 +83,8 @@ const SearchEngine = () => {
         </div>
       </section>
       <div className="my-24 flex items-center justify-center">
-        {/* <TryDemo /> */}
         <ImageUpload demo />
       </div>
-
-      {/* <section>
-        <ImageUpload demo />
-      </section> */}
     </>
   );
 };
