@@ -30,12 +30,12 @@ const BatchUpload = () => {
   const [description, setDescription] = useState(null);
   const [errorMessage, seterrorMessage] = useState(null);
   const [showModal, setShowModal] = useState(false);
-  const { mutateAsync:uploadBatch,  isLoading } = useUploadBatch();
+  const { mutateAsync: uploadBatch, isLoading } = useUploadBatch();
   const trnasformTags = (tags) => {
     return tags.split(',');
   };
 
-  const handleOnChangeUpload = async(e) => {
+  const handleOnChangeUpload = async (e) => {
     const formData = new FormData();
     formData.append('csv', e.target.files[0]);
     formData.append('name', name);
@@ -45,18 +45,10 @@ const BatchUpload = () => {
     try {
       await uploadBatch(formData);
       setShowModal(true);
-
     } catch (error) {
       console.log(error);
       seterrorMessage(error.response?.data.message);
-
     }
-
-
-
-
-
-
   };
 
   if (isLoading) {
@@ -64,58 +56,57 @@ const BatchUpload = () => {
   }
 
   return (
-    <div className='mb-4'>
-      {
-        showModal ? ( <div><Modal> <ModalContent/></Modal> </div>) : (<>
-          {errorMessage && <div className='text-red-500'>{errorMessage}</div>}
-          <h4 className='my-5 font-bold'>Image Details: </h4>
+    <div className="mb-4">
+      {showModal ? (
+        <div>
+          <Modal>
+            {' '}
+            <ModalContent />
+          </Modal>{' '}
+        </div>
+      ) : (
+        <>
+          {errorMessage && <div className="text-red-500">{errorMessage}</div>}
+          <h4 className="my-5 font-bold">Image Details: </h4>
 
-          <form className='flex gap-9 flex-col lg:flex-row'
+          <form
+            className="flex gap-9 flex-col lg:flex-row"
             onSubmit={(e) => e.preventDefault()}
           >
-
-
-            <div className='flex gap-8 flex-col md:flex-1'>
-
-
+            <div className="flex gap-8 flex-col md:flex-1">
               <AuthInput
-                placeholder='Building'
-                label='Name of Batch'
-                labelClassName='text-dark font-normal text-base'
-                name = 'name'
+                placeholder="Building"
+                label="Name of Batch"
+                labelClassName="text-dark font-normal text-base"
+                name="name"
                 onChange={(e) => setName(e.target.value)}
               />
               <AuthInput
-                placeholder='A list of different rooms in an apartment'
-                label='Description'
-                labelClassName='text-dark font-normal text-base'
-                name = 'description'
+                placeholder="A list of different rooms in an apartment"
+                label="Description"
+                labelClassName="text-dark font-normal text-base"
+                name="description"
                 onChange={(e) => setDescription(e.target.value)}
-
               />
               <AuthInput
-                placeholder='Bathroom, Bedroom, Kitchen'
-                labelClassName='text-dark font-normal text-base'
-
-                label='Tag'
-                name = 'tag'
-                onChange={(e) => setTag(trnasformTags(e.target.value))
-                }
-
+                placeholder="Bathroom, Bedroom, Kitchen"
+                labelClassName="text-dark font-normal text-base"
+                label="Tag"
+                name="tag"
+                onChange={(e) => setTag(trnasformTags(e.target.value))}
               />
             </div>
-            <button type='submit' className='md:flex-1'>
-              <TryDemo onImageChange={handleOnChangeUpload} text = '' file='csv'
-                disable = {!(name && Tag && description)}
+            <button type="submit" className="md:flex-1">
+              <TryDemo
+                onImageChange={handleOnChangeUpload}
+                text=""
+                file="csv"
+                disable={!(name && Tag && description)}
               />
             </button>
-
-
-
           </form>
-        </>)
-      }
-
+        </>
+      )}
     </div>
   );
 };
