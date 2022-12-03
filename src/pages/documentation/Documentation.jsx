@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './styles/documentation.css';
 import TabContent1 from './components/TabContent-1';
-// import TabContent2 from './components/TabContent-2';
+import TabContent2 from './components/TabContent-2';
 
 function Documentation() {
   const [tabState, setTabState] = useState(1);
@@ -32,7 +32,7 @@ function Documentation() {
 
         {tabState === 1 && <TabContent1 setTabState={setTabState} />}
 
-        {/* {tabState === 2 && <TabContent2 setTabState={setTabState} />} */}
+        {tabState === 2 && <TabContent2 setTabState={setTabState} />}
       </div>
     </>
   );

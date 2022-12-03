@@ -8,7 +8,6 @@ const useUploadImage = () => {
   const [response, setResponse] = useState(null);
   const user = getLocalStorage('user');
   const userToken = user ? user.Token : null;
-  // console.log(userToken);
 
   const config = {
     headers: {
