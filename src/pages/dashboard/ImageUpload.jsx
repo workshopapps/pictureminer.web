@@ -193,7 +193,7 @@ const ImageUpload = ({ demo = false }) => {
             <form onSubmit={handleSubmitUrl}>
               <AuthInput
                 label="Mine image with url"
-                placeholder="Enter image url"
+                placeholder="Enter image url e.g https://via.placeholder.com/300.png"
                 type="url"
                 onChange={(e) => {
                   setUrl(e.target.value.trim());
