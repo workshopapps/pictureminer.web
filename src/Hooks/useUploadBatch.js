@@ -1,8 +1,8 @@
-import { useMutation } from '@tanstack/react-query';
+// import { useMutation } from '@tanstack/react-query';
+import { useMutation } from 'react-query';
 import axios from 'axios';
 import { useState } from 'react';
 import { getLocalStorage } from '../localStorage';
-
 
 const useUploadBatch = () => {
   const [response, setResponse] = useState(null);

@@ -87,20 +87,11 @@ const Images = () => {
       right: true,
     },
     {
-      cell: () => (
-        <div
-          className="delete"
-          onClick={() => {
-            toggleShowMenu();
-            toggleDeleteModal();
-          }}
-        >
-          <Trash size={24} color="#f04438" />
-        </div>
-      ),
-      selector: (row) => row.dateMined,
+      name: '',
+      selector: (cell) => cell.delete,
       sortable: true,
-      width: '50px',
+
+      width: '80px',
     },
   ];
   useEffect(() => {
@@ -123,6 +114,7 @@ const Images = () => {
 
         if (response) {
           const structuredData = response?.data.map((item, index) => {
+            console.log(item);
             return {
               id: index,
               sn: index,
@@ -136,6 +128,17 @@ const Images = () => {
                 >
                   View More
                 </Link>
+              ),
+              delete: (
+                <div
+                  className="delete"
+                  onClick={() => {
+                    toggleShowMenu();
+                    toggleDeleteModal();
+                  }}
+                >
+                  <Trash size={24} color="#f04438" />
+                </div>
               ),
             };
           });
@@ -161,7 +164,14 @@ const Images = () => {
     };
     fetchData();
   }, [user]);
-
+  const handleDelete = function (e) {
+    console.log(e);
+  };
+  // console.log(
+  //   imageData.tabledata.filter((item) => {
+  //     return item.pictureId !== 1;
+  //   })
+  // );
   return (
     <Tabs>
       <TabList className={'tablist'}>
@@ -247,7 +257,10 @@ const Images = () => {
                       }}
                       className="bg-[#f04438] text-white p-4 w-full rounded-lg text-2xl font-medium hover:bg-[#FF9D55]"
                       text="Delete"
-                      onclick={toggleDeleteSuccessModal}
+                      onclick={() => {
+                        toggleDeleteSuccessModal();
+                        handleDelete();
+                      }}
                     />
                   </div>
                 </div>
