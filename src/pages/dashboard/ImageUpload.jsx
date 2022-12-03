@@ -66,7 +66,7 @@ const ImageUpload = ({ demo = false }) => {
   if (demo) {
     return (
       <div className="flex flex-col ga-8 items-center my-10">
-        <form className="container__try-demo flex flex-col gap-8 rounded-lg items-center py-6 mx-6 md:mx-0 relative b-red border border-dashed border-secBrown justify-center">
+        <div className="container__try-demo flex flex-col gap-8 rounded-lg items-center py-6 mx-6 md:mx-0 relative b-red border border-dashed border-secBrown justify-center">
           <h2 className="text-mainOrange text-large">Try demo</h2>
           <img
             src={images.addToFolder}
@@ -119,17 +119,14 @@ const ImageUpload = ({ demo = false }) => {
             {response && <p>Result: {response.data.text_content}</p>}
             {/* {console.log(response)} */}
           </div>
-        </form>
+        </div>
       </div>
     );
   }
   return (
     <Tabs>
       <TabList className={'tablist'}>
-        <Tab className={
-          'tab'
-
-        } selectedClassName={'active__tab'}>
+        <Tab className={'tab'} selectedClassName={'active__tab'}>
           Single Upload
         </Tab>
         <Tab className={'tab'} selectedClassName={'active__tab'}>
