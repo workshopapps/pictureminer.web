@@ -214,11 +214,12 @@ const BatchDetails = () => {
       <section>
         {imageDets.data
           ? imageDets.data.map((item, index) => {
+              console.log(item);
               return (
                 <div key={index} className="categories">
                   <h3 className="tag">{Object.keys(item)[0]}</h3>
                   <div className="batch_images">
-                    {Object.values(item).map((item) => {
+                    {Object.values(item)[0].map((item) => {
                       return (
                         <div className="batch_image" key={item}>
                           <img src={item} alt="" />
