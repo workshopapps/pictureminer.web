@@ -1,6 +1,6 @@
 import { Filter } from 'iconsax-react';
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import UserContext from '../../context/UserContext';
 import { removeItemFromLocalStorage } from '../../localStorage';
 
@@ -13,34 +13,26 @@ const DashboardNavbar = ({ data }) => {
     setUser(null);
     removeItemFromLocalStorage('user');
   };
-
+  const location = useLocation();
   return (
     <div className="navbar">
-      <RiSearchLine className='icon__ri' color='#6B7280'
-        size= '1.2rem'
+      <div className="">
+        {location.pathname === '/images' ? (
+          <>
+            <RiSearchLine className="icon__ri" color="#6B7280" size="1.2rem" />
 
-      />
-      <div className="form__input">
-        <div className="">
-          {location.pathname === '/images' ? (
-            <>
-              <RiSearchLine className="icon__ri" color="#6B7280" size="1.2rem" />
-
-              <div className="form__input">
-                <input type="search" name="" id="" placeholder="Search" />
-              </div>
-              <div className="filt">
-                <Filter size={'40'} color="#ff6c00" />
-              </div>
-            </>
-          ) : null}
-        </div>
-
-        <input type="search" name="" id="" placeholder="Search" />
+            <div className="form__input">
+              <input type="search" name="" id="" placeholder="Search" />
+            </div>
+            <div className="filt">
+              <Filter size={'40'} color="#ff6c00" />
+            </div>
+          </>
+        ) : null}
       </div>
-      <div className="filt">
-        <Filter size={'40'} color="#ff6c00" />
-      </div>
+
+      {/* <input type="search" name="" id="" placeholder="Search" /> */}
+
       <div className="user">
         <div className="user__grid">
           <img className="user_image" src={data ? data.ProfileUrl : null}/>

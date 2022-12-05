@@ -57,10 +57,10 @@ export default function About() {
               </span>
               <span className='crd bg-white p-5 shadow-2xl'>
                 <div className='flex justify-start'>
-                  <img 
-                  src={Generate}
-                  alt=""
-                  height={50}/>
+                  <img
+                    src={Generate}
+                    alt=""
+                    height={50}/>
                   <p className=' font-bold max-[480px]:text-[12px] max-[768px]:text-[30px]'>Generate</p>
                 </div>
                 <p className='max-[480px]:text-[8px] max-[768px]:text-[14px]'>
@@ -86,12 +86,12 @@ export default function About() {
             <Cards/>
           </div>
           <div className='last-section lg:p-20'>
-          <p className='last-heading text-6xl font-bold  lg:max-w-full'>Designed and optimized for you</p>
+            <p className='last-heading text-6xl font-bold  lg:max-w-full'>Designed and optimized for you</p>
             <p className='last-paragraph  lg:max-w-[60%]'>Discripto is a tremendous advancement in computer vision technology. It allows you to recognize anything through natural English prompts.</p>
             <div className='ctaWrapper'>
-        {user ? null : <Link to="/signup">Sign Up</Link>}
-        <Link to="/documentation">View Documentation</Link>
-      </div>
+              {user ? null : <Link to="/signup">Sign Up</Link>}
+              <Link to="/documentation">View Documentation</Link>
+            </div>
           </div>
         </div>
       </div>

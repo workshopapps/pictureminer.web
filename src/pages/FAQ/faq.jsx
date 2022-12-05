@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import './styles/index.css';
-import { faqData } from './data';
+import { faqData } from './faqData';
 import {
   MdOutlineKeyboardArrowDown,
   MdOutlineKeyboardArrowUp,
 } from 'react-icons/md';
+// import { Link } from 'react-router-dom';
 
 const Faq = () => {
   const [clicked, setClicked] = useState(false);
@@ -24,6 +25,7 @@ const Faq = () => {
           className={`w-11/12 md:w-4/5 mx-auto p-4 border-b border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-100/50 ${
             clicked === index ? 'bg-gray-100/50' : ''
           } `}
+          key={faq.id + 1}
         >
           <div
             className="flex items-center justify-between text-gray-500 cursor-pointer"
@@ -39,9 +41,9 @@ const Faq = () => {
           {clicked === index ? (
             <div className="mt-6 ">
               {faq.answer.map((answer) => (
-                <p className="my-3 text-gray-500 " key={answer}>
+                <div className="my-3 text-gray-500 " key={answer}>
                   {answer}
-                </p>
+                </div>
               ))}
             </div>
           ) : null}

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export const faqData = [
   {
     id: 0,
@@ -11,8 +13,18 @@ export const faqData = [
     id: 1,
     question: 'How does Discripto work?',
     answer: [
-      'Discripto allows users to make a request by uploading an image or a URL and get a swift validated response(s) detailing the content of their request(s).',
-      'Learn more about how Discripto works (discripto.com/steps-works), or get an overview of our technology discripto.com/support-page.',
+      <p key={1}>
+        Discripto allows users to make a request by uploading an image or a URL
+        and get a swift validated response(s) detailing the content of their
+        request(s).
+      </p>,
+      <p key={2}>
+        Learn more about how Discripto works (
+        <Link to="/how-it-works" className="text-blue-500">
+          Learn more
+        </Link>
+        ), or get an overview of our technology discripto.com/support-page.
+      </p>,
     ],
   },
   {
@@ -34,8 +46,19 @@ export const faqData = [
     question:
       'Can I use Discripto for commercial purposes or high-volume searching?',
     answer: [
-      'Yes, there is a paid version (Discripto.com/paid-vers) of Discripto for commercial use, which allows you to make bulk searches. The commercial version of Discripto includes a user interface for easy searching, as well as an API for integrating Discripto with your own website or system.',
-      'If you have any questions, please get in touch (discripto.com/contact).',
+      <p key={1}>
+        Yes, there is a paid version (
+        <Link to="/pricing" className="text-blue-500">
+          Learn more
+        </Link>
+        ) of Discripto for commercial use, which allows you to make bulk
+        searches. The commercial version of Discripto includes a user interface
+        for easy searching, as well as an API for integrating Discripto with
+        your own website or system.
+      </p>,
+      <p key={2}>
+        If you have any questions, please get in touch (discripto.com/contact).
+      </p>,
     ],
   },
   {

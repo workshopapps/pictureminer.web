@@ -3,7 +3,7 @@ import { images } from '../../Constants';
 import { ExportCurve } from 'iconsax-react';
 // import ImageUpload from '../../dashboard/ImageUpload';
 
-function TryDemo({ onImageChange, text = 'Try Demo', file = 'image' }) {
+function TryDemo({ onImageChange, text = 'Try Demo', file = 'image', disable = false }) {
   // const [imagesUpload, setImagesUpload] = useState([]);
 
   //   const onImageChange = (e) => {
@@ -29,6 +29,7 @@ function TryDemo({ onImageChange, text = 'Try Demo', file = 'image' }) {
           multiple
           accept='.csv'
           onChange={onImageChange}
+          disabled={disable}
         />
       </div>
     </div>
