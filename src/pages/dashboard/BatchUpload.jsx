@@ -32,10 +32,12 @@ const BatchUpload = () => {
   const [description, setDescription] = useState(null);
   const [errorMessage, seterrorMessage] = useState(null);
   const [showModal, setShowModal] = useState(false);
+
   const { mutateAsync: uploadBatch, isLoading } = useUploadBatch();
   const trnasformTags = (tags) => {
     return tags.split(',');
   };
+
 
   const handleOnChangeUpload = async (e) => {
     const formData = new FormData();
