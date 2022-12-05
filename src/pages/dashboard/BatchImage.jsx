@@ -1,3 +1,4 @@
+
 import { ArrowDown2, Trash } from "iconsax-react";
 import React, { useContext, useEffect, useState, useRef } from "react";
 import Button from "../../components/ui/Button";
@@ -11,6 +12,7 @@ import axios from "axios";
 import UserContext from "../../context/UserContext";
 import computer from "../../assets/computer.png";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+
 const NoImageComponent = () => {
   return (
     <div className="no__image">

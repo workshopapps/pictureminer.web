@@ -1,6 +1,4 @@
-
-// /* eslint-env node */
-
+/* eslint-env node */
 // module.exports = {
 //   'env': {
 //     'browser': true,
@@ -56,10 +54,10 @@
 //     'no-console': 0,
 //     'react/prop-types': 0,
 //     'react/react-in-jsx-scope': 'off',
-
 //   },
 //   'settings': {
 //     'react': {
 //       'version': 'detect'
 //     }
 //   }
+// }
