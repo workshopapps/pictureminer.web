@@ -1,22 +1,24 @@
-import { ArrowDown2 } from 'iconsax-react';
-import React, { useContext, useEffect, useState } from 'react';
-import Button from '../../components/ui/Button';
-import DataTable from 'react-data-table-component';
-import { Link } from 'react-router-dom';
-// import Modal, { Backdrop } from '../../components/ui/Modal';
-// import successIcon from '../../assets/dashboardImageDetails/success-icon.webp';
-// import warningIcon from '../../assets/dashboardImageDetails/warning-icon.webp';
-// import closeIcon from '../../assets/dashboardImageDetails/close-icon.webp';
-import axios from 'axios';
-import UserContext from '../../context/UserContext';
-import computer from '../../assets/computer.png';
-// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
+import { ArrowDown2, Trash } from "iconsax-react";
+import React, { useContext, useEffect, useState, useRef } from "react";
+import Button from "../../components/ui/Button";
+import DataTable from "react-data-table-component";
+import { Link } from "react-router-dom";
+import Modal, { Backdrop } from "../../components/ui/Modal";
+import successIcon from "../../assets/dashboardImageDetails/success-icon.webp";
+import warningIcon from "../../assets/dashboardImageDetails/warning-icon.webp";
+import closeIcon from "../../assets/dashboardImageDetails/close-icon.webp";
+import axios from "axios";
+import UserContext from "../../context/UserContext";
+import computer from "../../assets/computer.png";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+
 const NoImageComponent = () => {
   return (
     <div className="no__image">
       <p>0 Image mined (no data to show yet)</p>
       <div className="image_wrapper">
-        <Link to={'/imageUpload'}>
+        <Link to={"/imageUpload"}>
           <img src={computer} alt="no image" />
         </Link>
       </div>
@@ -30,31 +32,31 @@ const BatchImage = () => {
   const [showMenu, setShowMenu] = useState(false);
   const batchColumns = [
     {
-      name: 'S/No',
+      name: "S/No",
       selector: (row) => row.sn,
       sortable: true,
       flex: 2,
     },
     {
-      name: 'Batch',
+      name: "Batch",
       selector: (row) => row.batch,
       sortable: true,
       flex: 2,
     },
     {
-      name: 'Batch ID',
+      name: "Batch ID",
       selector: (row) => row.batchId,
       sortable: true,
       flex: 4,
     },
     {
-      name: 'Date Mined',
+      name: "Date Mined",
       selector: (row) => row.dateMined,
       sortable: true,
       flex: 4,
     },
     {
-      name: 'Status',
+      name: "Status",
       selector: (cell) => cell.status,
       sortable: true,
       flex: 1,
@@ -71,10 +73,10 @@ const BatchImage = () => {
           };
         });
 
-        const response = await axios.get('batch-service/get-batches', {
+        const response = await axios.get("batch-service/get-batches", {
           headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
+            "Content-Type": "application/json",
+            Accept: "application/json",
             Authorization: `Bearer ${user.Token}`,
           },
         });
@@ -86,10 +88,10 @@ const BatchImage = () => {
               sn: index,
               batch: item.Name,
               batchId: item.ID,
-              dateMined: `${item.DateCreated.split('T')[0]}`,
+              dateMined: `${item.DateCreated.split("T")[0]}`,
               status: (
                 <Link to={`/images/batch/${item.ID}`} className="view__more">
-                  {item.Status}
+                  {item.Status} &rarr;
                 </Link>
               ),
             };
@@ -122,13 +124,13 @@ const BatchImage = () => {
         <h1>Images</h1>
         <div className="relative">
           <Button
-            text={'Filter'}
+            text={"Filter"}
             icon={<ArrowDown2 size={24} color="#FF6C00" />}
             onclick={() => setShowMenu((prev) => !prev)}
             className="button"
             type="secondary"
           />
-          <div className={showMenu ? 'show filter' : 'hide filter'}>
+          <div className={showMenu ? "show filter" : "hide filter"}>
             <p>Last two days </p>
             <p>Last 1 week</p>
             <p>Last 1 month</p>
