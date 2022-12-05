@@ -7,6 +7,7 @@ import Button from '../../components/Button';
 import { useNavigate } from 'react-router-dom';
 import useUploadBatch from '../../Hooks/useUploadBatch';
 
+
 const Loader = () => {
   return <div className="loader2"></div>;
 };
@@ -25,6 +26,7 @@ const ModalContent = () => {
   );
 };
 const BatchUpload = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState(null);
   const [Tag, setTag] = useState([]);
   const [description, setDescription] = useState(null);
@@ -46,7 +48,9 @@ const BatchUpload = () => {
       await uploadBatch(formData);
       setShowModal(true);
     } catch (error) {
-      console.log(error);
+      if (error.response.data.message === 'unable to verify token') {
+        navigate('/login');
+      }
       seterrorMessage(error.response?.data.message);
     }
   };
