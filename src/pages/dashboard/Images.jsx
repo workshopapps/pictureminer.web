@@ -29,9 +29,11 @@ const Images = () => {
   const { user } = useContext(UserContext);
   const [imageData, setImageData] = useState({ loading: false });
   const [showMenu, setShowMenu] = useState(false);
+
   const toggleShowMenu = () => {
     setShowMenu((prev) => !prev);
   };
+
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false);
   const toggleDeleteModal = () => {
@@ -137,7 +139,11 @@ const Images = () => {
                     toggleDeleteModal();
                   }}
                 >
-                  <Trash size={24} color="#f04438" />
+                  <Trash
+                    size={24}
+                    color="#f04438"
+                    style={{ cursor: 'pointer' }}
+                  />
                 </div>
               ),
             };

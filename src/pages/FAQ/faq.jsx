@@ -41,13 +41,9 @@ const Faq = () => {
           {clicked === index ? (
             <div className="mt-6 ">
               {faq.answer.map((answer) => (
-                <p className="my-3 text-gray-500 " key={answer}>
+                <div className="my-3 text-gray-500 " key={answer}>
                   {answer}
-                  {/* {answer.replace(
-                    '<Link>',
-                    <Link to="/pricing">Click me</Link>
-                  )} */}
-                </p>
+                </div>
               ))}
             </div>
           ) : null}
