@@ -15,4 +15,3 @@ export const removeItemFromLocalStorage = (key) => {
     localStorage.removeItem(key);
   }
 };
-
