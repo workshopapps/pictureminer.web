@@ -7,7 +7,7 @@ function TabContent1({ setTabState }) {
       <div className="bg-secBlue">
         <div className="container__documentation mx-auto text-white text-center py-20 md:py-28">
           <h1 className="text-xLarge font-bold">Get Started</h1>
-          <p className=" text-medium">
+          <p className="text-base md:text-medium">
             An overview of how to use and install Discripto
           </p>
         </div>
@@ -95,7 +95,7 @@ function TabContent1({ setTabState }) {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-between lg:w-[752px] xl:w-[972px] border border-solid border-gray-300 rounded-lg px-8 md:px-10 py-5 mt-16 md:mt-20 lg:mt-24 mb-28 md:mb-56 mx-8 md:mx-10 lg:mx-20">
+      <div className="flex items-center justify-between lg:w-[752px] xl:w-[972px] border border-solid border-gray-300 rounded-lg px-6 md:px-10 py-5 mt-16 md:mt-20 lg:mt-24 mb-28 md:mb-56 mx-8 md:mx-10 lg:mx-20">
         <div>
           <p>Next</p>
           <p className="text-mainOrange/90 mt-3">Getting Access to the API</p>

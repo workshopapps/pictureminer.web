@@ -5,8 +5,4 @@
     @apply mx-auto px-4 lg:px-0;
     width: clamp(375px, 95vw, 1280px);
   }
-
-  .b-red {
-    @apply border border-solid border-red-500;
-  }
 }
