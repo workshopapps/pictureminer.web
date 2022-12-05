@@ -43,7 +43,7 @@ const DashboardNavbar = ({ data }) => {
       </div>
       <div className="user">
         <div className="user__grid">
-          <div className="user_image">{data ? data.Username[0] : null}</div>
+          <img className="user_image" src={data ? data.ProfileUrl : null}/>
           <p className="user_name">{data ? data.Username : null}</p>
         </div>
         <div
