@@ -22,6 +22,7 @@ const BatchDetails = () => {
   const param = useParams();
 
   const [imageDets, setImageDets] = useState({ loading: false, tags: null });
+  const [buttonDropdown, setButtonDropdown] = useState(false);
   const { user } = useContext(UserContext);
   useEffect(() => {
     const fetchData = async () => {
@@ -102,6 +103,18 @@ const BatchDetails = () => {
     link.href = jsonString;
     link.download = 'data.json';
     link.click();
+    setButtonDropdown(false);
+    setShowSaveSuccessModal(true);
+  };
+
+  const saveToCsvHandler = () => {
+    const url = `https://discripto.hng.tech/api1/api/v1/batch-service/download/${param.batchId}`;
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'data.csv';
+    link.click();
+    setButtonDropdown(false);
+    setShowSaveSuccessModal(true);
   };
 
   return (
@@ -133,14 +146,32 @@ const BatchDetails = () => {
         </div>
 
         <div className="hidden gap-4 md:flex">
-          <Button
-            className="bg-[#ff6c00] text-white p-4 w-40 rounded-lg font-medium hover:bg-[#FF9D55]"
-            text="Save as Json"
-            onclick={() => {
-              toggleSaveSuccessModal();
-              saveToJsonHandler();
-            }}
-          />
+          <div className="relative">
+            <Button
+              className="bg-[#ff6c00] text-white p-4 w-40 rounded-lg font-medium hover:bg-[#FF9D55]"
+              text="Save"
+              onclick={() => setButtonDropdown((prev) => !prev)}
+            />
+            {buttonDropdown && (
+              <div
+                className="absolute border rounded-lg overflow-hidden w-40 shadow-lg text-center"
+                // onClick={() => setButtonDropdown((prev) => !prev)}
+              >
+                <div
+                  className="bg-white text-[#ff6c00] font-medium p-3 hover:bg-[#FF9D55] hover:text-white cursor-pointer"
+                  onClick={saveToJsonHandler}
+                >
+                  Json
+                </div>
+                <div
+                  className="bg-white text-[#ff6c00] p-3 font-medium hover:bg-[#FF9D55] hover:text-white cursor-pointer"
+                  onClick={saveToCsvHandler}
+                >
+                  Download CSV
+                </div>
+              </div>
+            )}
+          </div>
           <Button
             className="border border-[#ff6c00] text-[#ff6c00] py-4 px-8 w-40 rounded-lg font-medium	hover:bg-[#FF6C00] hover:text-white"
             text="Delete"
@@ -151,37 +182,7 @@ const BatchDetails = () => {
         <div
           className="cursor-pointer md:hidden"
           onClick={() => setShowMenu((prev) => !prev)}
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
-              stroke="black"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12C18 12.5523 18.4477 13 19 13Z"
-              stroke="black"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13Z"
-              stroke="black"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
+        ></div>
 
         {showMenu && (
           <>
@@ -342,7 +343,7 @@ const BatchDetails = () => {
               <h2 className="text-xl font-[500]">Successful</h2>
 
               <p className="text-[#797b89] text-center text-md">
-                Image successfully saved
+                Image successfully downloaded
               </p>
 
               <div className="flex gap-4 mt-4 w-full justify-center">
