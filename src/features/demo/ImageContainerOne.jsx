@@ -42,7 +42,7 @@ function ImageContainerOne() {
   };
 
   // triggers the input when the button is clicked
-  const onButtonClick = () => {
+  const onButtonClick = (e) => {
     e.preventDefault();
     inputRef.current.click();
   };
