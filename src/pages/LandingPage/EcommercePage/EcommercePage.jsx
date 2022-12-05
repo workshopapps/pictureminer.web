@@ -3,7 +3,9 @@ import Button from '../../../components/Button';
 import ImageUpload from '../../dashboard/ImageUpload';
 import commerce from '../assets/commerce.png';
 import commerce2 from '../assets/commerce2.png';
-
+import commerce1 from '../assets/commerce1.png';
+import commerce3 from '../assets/commerce3.png';
+import commerce4 from '../assets/commerce4.png';
 const EcommercePage = () => {
   return (
     <div className="e-commerce">
@@ -25,7 +27,7 @@ const EcommercePage = () => {
       <section className="px-6 py-20">
         <div className="flex zig-zag mb-20">
           <div className="image">
-            <img src={commerce2} alt="" />
+            <img src={commerce1} alt="" />
           </div>
           <div className="text">
             <h2>Automate Your Image Categorization Process</h2>
@@ -41,37 +43,36 @@ const EcommercePage = () => {
             <img src={commerce2} alt="" />
           </div>
           <div className="text">
-            <h2>Automate Your Image Categorization Process</h2>
+            <h2>Large Scale Processing</h2>
             <p>
-              Gains control over your enormous image assets with automatic image
-              categorization and enhance images with corresponding tags to
-              faster image discovery
+              Scale to support millions of product images to creat accurate and
+              high performing product listing pages , product detail pages and
+              shopping experiences.
             </p>
           </div>
         </div>
         <div className="flex zig-zag mb-20">
           <div className="image">
-            <img src={commerce2} alt="" />
+            <img src={commerce3} alt="" />
           </div>
           <div className="text">
-            <h2>Automate Your Image Categorization Process</h2>
+            <h2>Customizable</h2>
             <p>
-              Gains control over your enormous image assets with automatic image
-              categorization and enhance images with corresponding tags to
-              faster image discovery
+              Can be used with any of our already predefined categories from
+              varoius industries or can be trained to learn and recognized
+              custom categories peculiar to your business .
             </p>
           </div>
         </div>
         <div className="flex flex-row-reverse zig-zag">
           <div className="image">
-            <img src={commerce2} alt="" />
+            <img src={commerce4} alt="" />
           </div>
           <div className="text">
-            <h2>Automate Your Image Categorization Process</h2>
+            <h2>Enterprise Grade Integration</h2>
             <p>
-              Gains control over your enormous image assets with automatic image
-              categorization and enhance images with corresponding tags to
-              faster image discovery
+              Prebuilt API’s and integrations that integrate seamlessly with
+              your existing platforms .
             </p>
           </div>
         </div>
