@@ -1,7 +1,6 @@
-version: "3"
+version: '3'
 services:
   picture_api:
-
     image: docker.io/root0877/picture_api:latest
     ports:
       - 9000:9000
@@ -32,4 +31,3 @@ services:
     depends_on:
       - picture_api
       - image_miner
-    

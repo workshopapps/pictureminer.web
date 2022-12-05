@@ -1,7 +1,13 @@
 /* eslint-disable indent */
 import React from 'react';
 
-export default function Button({ text, type = 'primary', onClick, disabled, ...props }) {
+export default function Button({
+  text,
+  type = 'primary',
+  onClick,
+  disabled,
+  ...props
+}) {
   return (
     <button
       disabled={disabled}
@@ -13,8 +19,7 @@ export default function Button({ text, type = 'primary', onClick, disabled, ...p
             ? 'text-white bg-[#FF6C00] hover:bg-[#FF9D55] disabled:bg-[#FF9D55] disabled:cursor-not-allowed'
             : 'bg-white text-[#FF6C00] border border-[#FF6C00] hover:bg-[#FF6C00] hover:text-white'
         }`}
-
-        {...props}
+      {...props}
     >
       {text}
     </button>
