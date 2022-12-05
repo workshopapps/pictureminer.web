@@ -21,7 +21,7 @@
   @include column-aligned();
   .header-container {
     width: inherit;
-    background-image: url("../../pages/About/images/AbtUsHeroBg.png");
+    background-image: url('../../pages/About/images/AbtUsHeroBg.png');
     background-repeat: no-repeat;
     background-size: cover;
     color: $light;
@@ -29,7 +29,7 @@
     min-height: 60vh;
     @include center();
     @include column-aligned();
-    .texts{
+    .texts {
       text-align: center;
       width: 60%;
     }
@@ -48,41 +48,40 @@
     @include column-aligned();
     width: 100%;
     color: #444444;
-    .intro{
+    .intro {
       padding: 70px 100px;
     }
-    .section-heading{
+    .section-heading {
       font-size: 60px;
       font-weight: 700;
       margin-bottom: 20px;
     }
-    .section-paragraph{
+    .section-paragraph {
       font-size: 24px;
-      color: #1D1D1D;
+      color: #1d1d1d;
     }
-    .colorful{
+    .colorful {
       position: relative;
-      .crds{
+      .crds {
         position: absolute;
-        bottom:200px;
-        left:70px;
-        gap:20px;
-        width:60%;
+        bottom: 200px;
+        left: 70px;
+        gap: 20px;
+        width: 60%;
       }
-      .crd{
+      .crd {
         display: flex;
         flex-direction: column;
         padding: 10px;
-
       }
     }
   }
   .ctaWrapper {
     padding: 2rem 0 0;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     gap: 24px;
-  
+
     a {
       font-size: 20px;
       font-weight: 500;
@@ -90,19 +89,19 @@
       text-decoration: none;
       border: 1px solid $main-color;
       border-radius: 8px;
-  
+
       &:nth-of-type(1) {
         background-color: transparent;
         color: $main-color;
         // padding: 16px;
-  
+
         &:hover {
           background-color: #ff9d55;
         }
       }
       &:nth-of-type(2n) {
         color: $main-color;
-  
+
         &:hover {
           background-color: #ff6c00;
           color: #ffffff;
@@ -111,69 +110,65 @@
     }
   }
   @media screen and (max-width: 480px) {
-    .header-container{
-    .texts{
-      width:100%;
-      padding: 20px 50px;
-    }
-    .h-texts {
-      font-size: 20px;
-    }
-    .p-texts {
-      font-size: 12px;
-    }
-  }
-  .section-container {
-    .intro{
-      padding: 50px 20px;
-    }
-    .section-heading{
-      font-size: 20px;
-    }
-    .section-paragraph{
-      font-size: 12px;
-    }
-    .colorful{
-      position: relative;
-      .crds{
-        position: absolute;
-        top:60px;
-        left:10px;
-        width:95%;
+    .header-container {
+      .texts {
+        width: 100%;
+        padding: 20px 50px;
       }
-      .crd{
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-
-      }
-    }
-    .last-section{
-      padding: 50px 20px;
-      .last-heading{
+      .h-texts {
         font-size: 20px;
-        margin-bottom: 20px;
       }
-      .last-paragraph{
+      .p-texts {
         font-size: 12px;
       }
     }
-    .ctaWrapper {
-    
-      a {
-        font-size: 14px;
-        padding: 12px 20px;
+    .section-container {
+      .intro {
+        padding: 50px 20px;
+      }
+      .section-heading {
+        font-size: 20px;
+      }
+      .section-paragraph {
+        font-size: 12px;
+      }
+      .colorful {
+        position: relative;
+        .crds {
+          position: absolute;
+          top: 60px;
+          left: 10px;
+          width: 95%;
+        }
+        .crd {
+          display: flex;
+          flex-direction: column;
+          padding: 10px;
+        }
+      }
+      .last-section {
+        padding: 50px 20px;
+        .last-heading {
+          font-size: 20px;
+          margin-bottom: 20px;
+        }
+        .last-paragraph {
+          font-size: 12px;
+        }
+      }
+      .ctaWrapper {
+        a {
+          font-size: 14px;
+          padding: 12px 20px;
+        }
       }
     }
   }
- 
 
-  }
-
-  @media (min-width: 480px) and (max-width:768px){
-    .header-container{
-      .texts{
-        width:100%;
+  @media (min-width: 480px) and (max-width: 768px) {
+    .header-container {
+      .texts {
+        width: 100%;
         padding: 20px 60px;
       }
       .h-texts {
@@ -184,43 +179,41 @@
       }
     }
     .section-container {
-      .intro{
+      .intro {
         padding: 50px 20px;
       }
-      .section-heading{
+      .section-heading {
         font-size: 36px;
       }
-      .section-paragraph{
+      .section-paragraph {
         font-size: 20px;
       }
-      .colorful{
+      .colorful {
         position: relative;
-        .crds{
+        .crds {
           position: absolute;
-          top:120px;
-          left:60px;
-          gap:20px;
-          width:75%;
+          top: 120px;
+          left: 60px;
+          gap: 20px;
+          width: 75%;
         }
-        .crd{
+        .crd {
           display: flex;
           flex-direction: column;
           padding: 10px;
-  
         }
       }
-      .last-section{
+      .last-section {
         padding: 50px 20px;
-        .last-heading{
+        .last-heading {
           font-size: 36px;
           margin-bottom: 20px;
         }
-        .last-paragraph{
+        .last-paragraph {
           font-size: 20px;
         }
       }
       .ctaWrapper {
-      
         a {
           font-size: 14px;
           padding: 12px 20px;
@@ -228,10 +221,10 @@
       }
     }
   }
-  @media (min-width: 769px) and (max-width:1024px){
-    .header-container{
-      .texts{
-        width:70%;
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .header-container {
+      .texts {
+        width: 70%;
         padding: 20px 40px;
       }
       .h-texts {
@@ -242,87 +235,84 @@
       }
     }
     .section-container {
-      .intro{
+      .intro {
         padding: 50px 20px;
       }
-      .section-heading{
+      .section-heading {
         font-size: 36px;
       }
-      .section-paragraph{
+      .section-paragraph {
         font-size: 20px;
       }
-      .colorful{
+      .colorful {
         position: relative;
-        .crds{
+        .crds {
           position: absolute;
-          top:200px;
-          gap:20px;
-          width:60%;
+          top: 200px;
+          gap: 20px;
+          width: 60%;
         }
-        .crd{
+        .crd {
           display: flex;
           flex-direction: column;
           padding: 10px;
-  
         }
       }
-      .last-section{
-       
-        .last-heading{
+      .last-section {
+        .last-heading {
           font-size: 36px;
           margin-bottom: 20px;
         }
-        .last-paragraph{
+        .last-paragraph {
           font-size: 20px;
         }
       }
       .ctaWrapper {
-      
         a {
           font-size: 14px;
           padding: 12px 20px;
         }
       }
     }
-}
+  }
 
-@media screen and (max-width: 1023px) {
-  .section-container {
-    @include column-aligned();
-    width: 100%;
-    .first-container,
-    .second-container {
-      @include row-aligned();
-      width: 95%;
-      margin: 8% auto;
+  @media screen and (max-width: 1023px) {
+    .section-container {
+      @include column-aligned();
+      width: 100%;
+      .first-container,
+      .second-container {
+        @include row-aligned();
+        width: 95%;
+        margin: 8% auto;
+        .about-msg1,
+        .about-msg2 {
+          width: 50%;
+          margin: auto;
+          @include column-aligned();
+          justify-content: flex-start;
+          padding: 5%;
+        }
+        .img-first,
+        img-second {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .section-container {
+      .second-container {
+        flex-wrap: wrap-reverse !important;
+      }
+      .first-container {
+        flex-direction: column;
+      }
       .about-msg1,
       .about-msg2 {
-        width: 50%;
-        margin: auto;
-        @include column-aligned();
-        justify-content: flex-start;
-        padding: 5%;
-      }
-      .img-first,
-      img-second {
-        margin: 0 auto;
+        width: 100% !important;
       }
     }
   }
 }
-
-@media screen and (max-width: 767px) {
-  .section-container {
-    .second-container {
-      flex-wrap: wrap-reverse !important;
-    }
-    .first-container {
-      flex-direction: column;
-    }
-    .about-msg1,
-    .about-msg2 {
-      width: 100% !important;
-    }
-  }
-}
-  }
