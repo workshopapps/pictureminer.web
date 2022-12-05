@@ -1,5 +1,3 @@
-// import { Link } from 'react-router-dom';
-
 export const faqData = [
   {
     id: 0,
