@@ -4,6 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
+.env
+
+test-v2.csv
 
 # testing
 /coverage
