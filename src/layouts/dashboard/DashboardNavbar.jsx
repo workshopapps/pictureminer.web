@@ -1,10 +1,10 @@
 import { Filter } from 'iconsax-react';
-import React, { useContext, useState, useRef } from 'react';
+import React, { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import UserContext from '../../context/UserContext';
 import { removeItemFromLocalStorage } from '../../localStorage';
 import axios from 'axios';
-import { RiCreativeCommonsSaLine, RiSearchLine } from 'react-icons/ri';
+import { RiSearchLine } from 'react-icons/ri';
 
 const DashboardNavbar = ({ data }) => {
   const { user } = useContext(UserContext);
@@ -35,8 +35,6 @@ const DashboardNavbar = ({ data }) => {
             Authorization: `Bearer ${user.Token}`,
           },
         });
-
-        setProfilePicture(response?.data?.data?.image);
       } catch (error) {
         setIsError(true);
       } finally {

@@ -70,7 +70,7 @@ const Images = () => {
       flex: 2,
     },
     {
-      name: 'Picture',
+      name: 'PictureRow',
       selector: (row) => row.picture,
       sortable: true,
       flex: 2,
@@ -92,6 +92,12 @@ const Images = () => {
       selector: (cell) => cell.details,
       sortable: true,
       flex: 1,
+      right: true,
+    },
+    {
+      name: 'Delete All',
+      selector: (cell) => cell.delete,
+      sortable: true,
       right: true,
     },
     {
@@ -141,7 +147,6 @@ const Images = () => {
                 <div
                   className="delete"
                   onClick={() => {
-                    toggleShowMenu();
                     toggleDeleteModal();
                     setSingleImageKey(item.image_key);
                   }}
@@ -218,7 +223,7 @@ const Images = () => {
               <Button
                 text={'Filter'}
                 icon={<ArrowDown2 size={24} color="#FF6C00" />}
-                onclick={() => setShowMenu((prev) => !prev)}
+                onclick={toggleShowMenu}
                 className="button"
                 type="secondary"
               />

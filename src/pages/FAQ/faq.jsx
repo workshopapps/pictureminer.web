@@ -78,4 +78,4 @@ const faqLists = faqData.map((faq, index) => {
 //   );
 // };
 
-// export default Faq;
+export default Faq;
