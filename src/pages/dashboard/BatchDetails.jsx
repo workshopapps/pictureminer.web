@@ -142,7 +142,7 @@ const BatchDetails = () => {
           <h2 className="font-bold text-2xl">Batches Details</h2>
         </div>
 
-        <div className="hidden gap-4 md:flex">
+        <div className="hidden gap-4 lg:flex">
           <div className="relative">
             <Button
               className="bg-[#ff6c00] text-white p-4 w-40 rounded-lg font-medium hover:bg-[#FF9D55]"
@@ -175,7 +175,7 @@ const BatchDetails = () => {
             onclick={toggleDeleteModal}
           />
         </div>
-        <div className="md:hidden" onClick={toggleShowMenu}>
+        <div className="lg:hidden md:mr-14" onClick={toggleShowMenu}>
           <svg
             width="24"
             height="24"
