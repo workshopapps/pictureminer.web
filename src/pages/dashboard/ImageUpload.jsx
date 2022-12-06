@@ -79,7 +79,11 @@ const ImageUpload = ({ demo = false }) => {
           )}
 
           <div>{isLoading && <p className="loading">Fetching.....</p>}</div>
-          {response && <p>Result: {response.data.text_content}</p>}
+          {response ? (
+            <p>Result: {response.data.text_content}</p>
+          ) : (
+            <p>There seems to be a problem! Please try again later</p>
+          )}
           {/* {console.log(response)} */}
         </div>
       </form>
@@ -142,7 +146,11 @@ const ImageUpload = ({ demo = false }) => {
               )}
 
               <div>{isLoading && <p className="loading">Fetching.....</p>}</div>
-              {response && <p>Result: {response.data.text_content}</p>}
+              {response ? (
+                <p>Result: {response.data.text_content}</p>
+              ) : (
+                <p>There seems to be a problem! Please try again later</p>
+              )}
               {/* {console.log(response)} */}
             </div>
           </div>

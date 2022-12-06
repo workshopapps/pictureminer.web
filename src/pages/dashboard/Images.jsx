@@ -37,9 +37,10 @@ const Images = () => {
     setShowDeleteModal((prev) => !prev);
   };
 
-  const toggleDeleteSuccessModal = async () => {
+  const toggleDeleteSuccessModal = (imageData) => {
     showDeleteModal && toggleDeleteModal();
     setShowDeleteSuccessModal((prev) => !prev);
+    console.log(imageData);
   };
 
   let menuRef = useRef();
