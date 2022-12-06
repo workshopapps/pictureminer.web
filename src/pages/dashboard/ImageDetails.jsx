@@ -285,7 +285,7 @@ const ImageDetails = () => {
                 }}
                 className="p-4 flex items-center gap-4 cursor-pointer justify-between"
               >
-                <span className="">Save a Json</span>
+                <span className="">Save as Json</span>
                 <img src={saveIcon} className="" alt="save icon" />
               </div>
               <div

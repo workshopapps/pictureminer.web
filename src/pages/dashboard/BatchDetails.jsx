@@ -175,11 +175,37 @@ const BatchDetails = () => {
             onclick={toggleDeleteModal}
           />
         </div>
-
-        <div
-          className="cursor-pointer md:hidden"
-          onClick={() => setShowMenu((prev) => !prev)}
-        ></div>
+        <div className="md:hidden" onClick={toggleShowMenu}>
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+              stroke="black"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M19 13C19.5523 13 20 12.5523 20 12C20 11.4477 19.5523 11 19 11C18.4477 11 18 11.4477 18 12C18 12.5523 18.4477 13 19 13Z"
+              stroke="black"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M5 13C5.55228 13 6 12.5523 6 12C6 11.4477 5.55228 11 5 11C4.44772 11 4 11.4477 4 12C4 12.5523 4.44772 13 5 13Z"
+              stroke="black"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </div>
 
         {showMenu && (
           <>
@@ -187,12 +213,22 @@ const BatchDetails = () => {
             <div className="absolute bg-white top-10 right-0 z-[100] p-2 w-[18rem]">
               <div
                 onClick={() => {
+                  saveToJsonHandler();
                   toggleShowMenu();
-                  toggleSaveSuccessModal();
                 }}
                 className="p-4 flex items-center gap-4 cursor-pointer justify-between"
               >
-                <span className="">Save a Json</span>
+                <span className="">Save as Json</span>
+                <img src={saveIcon} className="" alt="save icon" />
+              </div>
+              <div
+                onClick={() => {
+                  saveToCsvHandler();
+                  toggleShowMenu();
+                }}
+                className="p-4 flex items-center gap-4 cursor-pointer justify-between"
+              >
+                <span className="">Download CSV</span>
                 <img src={saveIcon} className="" alt="save icon" />
               </div>
               <div
