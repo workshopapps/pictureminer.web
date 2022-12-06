@@ -4,13 +4,15 @@ import { Link, useLocation } from 'react-router-dom';
 import UserContext from '../../context/UserContext';
 import { removeItemFromLocalStorage } from '../../localStorage';
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import { setLocalStorage } from '../../localStorage';
 import { RiCreativeCommonsSaLine, RiSearchLine } from 'react-icons/ri';
 
 const DashboardNavbar = ({ data }) => {
-  const { user } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
-  const { setUser } = useContext(UserContext);
+
   const handleLogout = () => {
     setUser(null);
     removeItemFromLocalStorage('user');
@@ -24,10 +26,11 @@ const DashboardNavbar = ({ data }) => {
       formData.append('image', e.target.files[0]);
 
       try {
+        toast('Changing Profile Picture');
         const response = await axios({
           method: 'patch',
           url: 'https://discripto.hng.tech/api1/api/v1/update_user_picture',
-          timeout: 2000,
+
           data: formData,
           headers: {
             accept: 'application/json',
@@ -35,8 +38,17 @@ const DashboardNavbar = ({ data }) => {
             Authorization: `Bearer ${user.Token}`,
           },
         });
-
-        setProfilePicture(response?.data?.data?.image);
+        if (response?.data?.status === 'success') {
+          setUser((prev) => {
+            return { ...prev, ProfileUrl: response?.data?.data?.profile_url };
+          });
+          setLocalStorage('user', {
+            ...user,
+            ProfileUrl: response?.data?.data?.profile_url,
+          });
+        } else {
+          toast('Encounter Error');
+        }
       } catch (error) {
         setIsError(true);
       } finally {
@@ -64,17 +76,11 @@ const DashboardNavbar = ({ data }) => {
       <div className="user">
         <div className="user__grid">
           <div>
-            <img
-              className="user_image mb-3"
-              src={data ? data.ProfileUrl : null}
-            />
+            <img className="user_image mb-3" src={user.ProfileUrl} />
           </div>
           <p className="user_name">{data ? data.Username : null}</p>
         </div>
-        <div
-          className="drop__down"
-          // onClick={() => setShowMenu((prev) => !prev)}
-        >
+        <div className="drop__down">
           <div className="svg">
             <svg
               width="13"
@@ -94,9 +100,7 @@ const DashboardNavbar = ({ data }) => {
             </svg>
             <div className={'hide account'}>
               <label className="relative">
-                <p>
-                  <span> Set profile picture </span>
-                </p>
+                <p>Set profile picture</p>
                 <input
                   className="absolute inset-0 w-full h-full opacity-0"
                   type="file"
