@@ -87,20 +87,20 @@
         .account {
           position: absolute;
           width: 221px;
-          height: 121px;
+          height: 150px;
           right: -38px;
           top: 8px;
           z-index: 1;
-
           background: #fbfbfb;
-
-          box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
-          border-radius: 8px;
-          padding: 28px 18px;
+          box-shadow: 0px 1px 3px rgba(16, 24, 40, 0.1),
+            0px 1px 2px rgba(16, 24, 40, 0.06);
+          border-radius: 4px;
+          padding: 16px;
           p {
+            padding: 7px;
             margin-bottom: 16px;
             &:hover {
-              background-color: #ccc;
+              background: rgba(255, 226, 204, 0.5);
             }
           }
         }
@@ -118,7 +118,6 @@
       }
     }
     @media (max-width: 500px) {
-
       // .user {
       //   display: none;
       // }
@@ -146,6 +145,9 @@
       display: none;
     }
     .navbar {
+      .icon__ri {
+        left: 25%;
+      }
       margin-left: 40px;
       justify-content: flex-end;
       gap: 40px;
@@ -167,11 +169,6 @@
   }
   @media (max-width: 1200px) {
     .navbar {
-      .icon__ri {
-        position: absolute;
-        left: 20px;
-        top: 12px;
-      }
       position: relative;
       .form__input {
         width: 360px;
@@ -188,7 +185,7 @@
 
     .navbar {
       .icon__ri {
-        left: 30%;
+        left: 1%;
       }
     }
   }

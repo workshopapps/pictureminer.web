@@ -11,6 +11,8 @@ import axios from 'axios';
 import UserContext from '../../context/UserContext';
 import computer from '../../assets/computer.png';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import BatchImage from './BatchImage';
+
 const NoImageComponent = () => {
   return (
     <div className="no__image">
@@ -28,11 +30,14 @@ const Images = () => {
   const { user } = useContext(UserContext);
   const [imageData, setImageData] = useState({ loading: false });
   const [showMenu, setShowMenu] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false);
+  const [singleImageKey, setSingleImageKey] = useState('');
+
   const toggleShowMenu = () => {
     setShowMenu((prev) => !prev);
   };
-  const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false);
+
   const toggleDeleteModal = () => {
     setShowDeleteModal((prev) => !prev);
   };
@@ -44,6 +49,7 @@ const Images = () => {
   };
 
   let menuRef = useRef();
+
   useEffect(() => {
     let handler = (e) => {
       if (!menuRef.current.contains(e.target)) {
@@ -55,6 +61,7 @@ const Images = () => {
       document.removeEventListener('mousedown', handler);
     };
   });
+
   const columns = [
     {
       name: 'S/No',
@@ -88,22 +95,14 @@ const Images = () => {
       right: true,
     },
     {
-      cell: () => (
-        <div
-          className="delete"
-          onClick={() => {
-            toggleShowMenu();
-            toggleDeleteModal();
-          }}
-        >
-          <Trash size={24} color="#f04438" />
-        </div>
-      ),
-      selector: (row) => row.dateMined,
+      name: '',
+      selector: (cell) => cell.delete,
+
       sortable: true,
-      width: '50px',
+      width: '80px',
     },
   ];
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -138,6 +137,22 @@ const Images = () => {
                   View More
                 </Link>
               ),
+              delete: (
+                <div
+                  className="delete"
+                  onClick={() => {
+                    toggleShowMenu();
+                    toggleDeleteModal();
+                    setSingleImageKey(item.image_key);
+                  }}
+                >
+                  <Trash
+                    size={24}
+                    color="#f04438"
+                    style={{ cursor: 'pointer' }}
+                  />
+                </div>
+              ),
             };
           });
           setImageData((prev) => {
@@ -161,7 +176,28 @@ const Images = () => {
       }
     };
     fetchData();
-  }, [user]);
+  }, [user, singleImageKey]);
+
+  const handleDelete = async function () {
+    await axios.delete(
+      `https://discripto.hng.tech/api1/api/v1/mine-service/delete/${singleImageKey}`,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          Authorization: `Bearer ${user.Token}`,
+        },
+      }
+    );
+
+    setSingleImageKey('');
+
+    // if (response.data.status === 'success') {
+    //     const newTableData = imageData.tabledata.filter((item) => {
+    //       return item.pictureId !== singleImageKey;
+    //     });
+    // }
+  };
 
   return (
     <Tabs>
@@ -248,7 +284,10 @@ const Images = () => {
                       }}
                       className="bg-[#f04438] text-white p-4 w-full rounded-lg text-2xl font-medium hover:bg-[#FF9D55]"
                       text="Delete"
-                      onclick={toggleDeleteSuccessModal}
+                      onclick={() => {
+                        toggleDeleteSuccessModal();
+                        handleDelete();
+                      }}
                     />
                   </div>
                 </div>
@@ -305,8 +344,7 @@ const Images = () => {
         </div>
       </TabPanel>
       <TabPanel>
-        <h2>Any content 2</h2>
-        {/* this is where u will write ur page */}
+        <BatchImage />
       </TabPanel>
     </Tabs>
   );

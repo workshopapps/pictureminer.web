@@ -1,19 +1,49 @@
 import { Filter } from 'iconsax-react';
-import React, { useContext } from 'react';
+import React, { useContext, useState, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import UserContext from '../../context/UserContext';
 import { removeItemFromLocalStorage } from '../../localStorage';
-
-import { RiSearchLine } from 'react-icons/ri';
+import axios from 'axios';
+import { RiCreativeCommonsSaLine, RiSearchLine } from 'react-icons/ri';
 
 const DashboardNavbar = ({ data }) => {
-  // const [showMenu, setShowMenu] = useState(false);
+  const { user } = useContext(UserContext);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isError, setIsError] = useState(false);
   const { setUser } = useContext(UserContext);
   const handleLogout = () => {
     setUser(null);
     removeItemFromLocalStorage('user');
   };
   const location = useLocation();
+  const handleChange = async (e) => {
+    e.preventDefault();
+
+    if (e.target.files && e.target.files[0]) {
+      const formData = new FormData();
+      formData.append('image', e.target.files[0]);
+
+      try {
+        const response = await axios({
+          method: 'patch',
+          url: 'https://discripto.hng.tech/api1/api/v1/update_user_picture',
+          timeout: 2000,
+          data: formData,
+          headers: {
+            accept: 'application/json',
+            'Content-Type': 'multipart/form-data',
+            Authorization: `Bearer ${user.Token}`,
+          },
+        });
+
+        setProfilePicture(response?.data?.data?.image);
+      } catch (error) {
+        setIsError(true);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+  };
   return (
     <div className="navbar">
       <div className="">
@@ -33,7 +63,12 @@ const DashboardNavbar = ({ data }) => {
 
       <div className="user">
         <div className="user__grid">
-          <div className="user_image">{data ? data.Username[0] : null}</div>
+          <div>
+            <img
+              className="user_image mb-3"
+              src={data ? data.ProfileUrl : null}
+            />
+          </div>
           <p className="user_name">{data ? data.Username : null}</p>
         </div>
         <div
@@ -58,10 +93,20 @@ const DashboardNavbar = ({ data }) => {
               />
             </svg>
             <div className={'hide account'}>
+              <label className="relative">
+                <p>
+                  <span> Set profile picture </span>
+                </p>
+                <input
+                  className="absolute inset-0 w-full h-full opacity-0"
+                  type="file"
+                  accept="image/*, .png, .svg, .jpg"
+                  onChange={handleChange}
+                />
+              </label>
               <Link to="account-setup">
                 <p>Account Settings</p>
               </Link>
-
               <p onClick={handleLogout}>Log out</p>
             </div>
           </div>

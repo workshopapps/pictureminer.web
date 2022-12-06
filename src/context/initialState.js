@@ -17,4 +17,5 @@ const loginInitial = {
 export const initialState = Object.freeze({
   login: loginInitial,
   signup: initial,
+  mineImageWithUrl: initial,
 });

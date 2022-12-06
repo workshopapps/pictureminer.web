@@ -15,7 +15,34 @@
     background-color: #ff6c00;
     cursor: pointer;
     color: #fff;
-    padding: 5px 10px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    box-shadow: 0.5px 3px 6px rgba(0, 0, 0, 0.5);
+  }
+  .inactive__tab {
+    background-color: #fff;
+    cursor: pointer;
+    color: #ff6c00;
+    padding: 10px 10px;
+    border-radius: 15px;
+    box-shadow: 0.5px 3px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  .inactive__tab:hover {
+    background-color: #ff6c00;
+    color: #fff;
+  }
+
+  .active__tab:hover {
+    background-color: #fff;
+    color: #ff6c00;
+  }
+
+  .tab:hover {
+    background-color: #fff;
+    cursor: pointer;
+    color: #ff6c00;
+    padding: 10px 10px;
     border-radius: 15px;
     box-shadow: 0.5px 3px 6px rgba(0, 0, 0, 0.5);
   }
