@@ -6,6 +6,8 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.10.14",
+    "@sentry/react": "^7.23.0",
+    "@sentry/tracing": "^7.23.0",
     "@tanstack/react-query": "^4.16.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

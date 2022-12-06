@@ -11,6 +11,4 @@ export const options = {
 export default function () {
   http.get('http://discripto.hng.tech');
   sleep(3);
-
 }
-

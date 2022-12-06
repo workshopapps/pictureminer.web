@@ -7,7 +7,6 @@ import Button from '../../components/Button';
 import { useNavigate } from 'react-router-dom';
 import useUploadBatch from '../../Hooks/useUploadBatch';
 
-
 const Loader = () => {
   return <div className="loader2"></div>;
 };
@@ -37,7 +36,6 @@ const BatchUpload = () => {
   const trnasformTags = (tags) => {
     return tags.split(',');
   };
-
 
   const handleOnChangeUpload = async (e) => {
     const formData = new FormData();
