@@ -15,7 +15,7 @@ import BatchImage from './BatchImage';
 
 const NoImageComponent = () => {
   return (
-    <div className='no__image'>
+    <div className="no__image">
       <p>0 Image mined (no data to show yet)</p>
       <div className="image_wrapper">
         <Link to={'/imageUpload'}>
@@ -34,9 +34,9 @@ const Images = () => {
   const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false);
   const [singleImageKey, setSingleImageKey] = useState('');
 
-  const toggleShowMenu = () => {
-    setShowMenu((prev) => !prev);
-  };
+  // const toggleShowMenu = () => {
+  //   setShowMenu((prev) => !prev);
+  // };
 
   const toggleDeleteModal = () => {
     setShowDeleteModal((prev) => !prev);
@@ -94,7 +94,6 @@ const Images = () => {
       right: true,
     },
     {
-
       name: '',
       selector: (cell) => cell.delete,
 
@@ -141,7 +140,6 @@ const Images = () => {
                 <div
                   className="delete"
                   onClick={() => {
-                    toggleShowMenu();
                     toggleDeleteModal();
                     setSingleImageKey(item.image_key);
                   }}

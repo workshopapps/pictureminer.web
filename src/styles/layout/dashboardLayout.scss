@@ -165,28 +165,25 @@
         }
       }
     }
-    .dashboard_pages {
-      padding-inline: 38px;
-    }
+    // .dashboard_pages {
+    //   padding-inline: 38px;
+    // }
   }
   @media (max-width: 1200px) {
-    
     .navbar {
-    
-      
       position: relative;
       .form__input {
         width: 360px;
       }
     }
-    .dashboard_pages {
-      padding-inline: 38px;
-    }
+    // .dashboard_pages {
+    //   padding-inline: 38px;
+    // }
   }
   @media (max-width: 550px) {
-    .dashboard_pages {
-      padding-inline: 16px;
-    }
+    // .dashboard_pages {
+    //   padding-inline: 16px;
+    // }
 
     .navbar {
       .icon__ri {
