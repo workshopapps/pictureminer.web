@@ -2,14 +2,13 @@
   min-height: 100vh;
   display: flex;
   height: 100%;
-  // position: relative;
 
   .menu__sidebar {
     display: none;
   }
   .dashboard_pages {
     padding: 20px 0;
-    // padding: 20px 64px 0;
+
     width: 100%;
 
     @media (min-width: 550px) {
@@ -70,17 +69,20 @@
       }
       .drop__down {
         position: relative;
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        cursor: pointer;
+        .hide {
+          transform: translateY(-150%);
+          opacity: 0;
+        }
         .svg {
           width: 30px;
-          cursor: pointer;
-          .hide {
-            transform: translateY(-150%);
-            opacity: 0;
-          }
         }
-        .svg:hover .hide {
+        &:hover .hide {
           cursor: pointer;
-          transform: translateY(-0%);
+          transform: translateY(10px);
           opacity: 1;
         }
 
@@ -118,10 +120,6 @@
       }
     }
     @media (max-width: 500px) {
-      // .user {
-      //   display: none;
-      // }
-
       .form_input {
         width: 197px;
       }
@@ -146,7 +144,7 @@
     }
     .navbar {
       .icon__ri {
-        left: 25%;
+        left: 25px;
       }
       margin-left: 40px;
       justify-content: flex-end;
@@ -179,13 +177,26 @@
     }
   }
   @media (max-width: 550px) {
+    overflow-x: hidden;
     .dashboard_pages {
       padding-inline: 16px;
     }
 
     .navbar {
+      .user {
+        flex-direction: column;
+        gap: 0;
+        justify-content: center;
+        align-items: center;
+        .svg {
+          display: none;
+        }
+        .user_image {
+          margin: 0;
+        }
+      }
       .icon__ri {
-        left: 1%;
+        left: 10px;
       }
     }
   }
