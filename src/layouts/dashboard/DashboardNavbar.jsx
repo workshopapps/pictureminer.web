@@ -1,12 +1,12 @@
 import { Filter } from 'iconsax-react';
-import React, { useContext, useState, useRef } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import UserContext from '../../context/UserContext';
 import { removeItemFromLocalStorage } from '../../localStorage';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { setLocalStorage } from '../../localStorage';
-import { RiCreativeCommonsSaLine, RiSearchLine } from 'react-icons/ri';
+import { RiSearchLine } from 'react-icons/ri';
 
 const DashboardNavbar = ({ data }) => {
   const { user, setUser } = useContext(UserContext);
@@ -58,7 +58,7 @@ const DashboardNavbar = ({ data }) => {
   };
   return (
     <div className="navbar">
-      <div className="">
+      <div className="relative">
         {location.pathname === '/images' ? (
           <>
             <RiSearchLine className="icon__ri" color="#6B7280" size="1.2rem" />
@@ -78,9 +78,9 @@ const DashboardNavbar = ({ data }) => {
           <div>
             <img className="user_image mb-3" src={user.ProfileUrl} />
           </div>
-          <p className="user_name">{data ? data.Username : null}</p>
         </div>
         <div className="drop__down">
+          <p className="user_name">{data ? data.Username : null}</p>
           <div className="svg">
             <svg
               width="13"
@@ -98,21 +98,21 @@ const DashboardNavbar = ({ data }) => {
                 strokeLinejoin="round"
               />
             </svg>
-            <div className={'hide account'}>
-              <label className="relative">
-                <p>Set profile picture</p>
-                <input
-                  className="absolute inset-0 w-full h-full opacity-0"
-                  type="file"
-                  accept="image/*, .png, .svg, .jpg"
-                  onChange={handleChange}
-                />
-              </label>
-              <Link to="account-setup">
-                <p>Account Settings</p>
-              </Link>
-              <p onClick={handleLogout}>Log out</p>
-            </div>
+          </div>
+          <div className={'hide account'}>
+            <label className="relative">
+              <p>Set profile picture</p>
+              <input
+                className="absolute inset-0 w-full h-full opacity-0"
+                type="file"
+                accept="image/*, .png, .svg, .jpg"
+                onChange={handleChange}
+              />
+            </label>
+            <Link to="account-setup">
+              <p>Account Settings</p>
+            </Link>
+            <p onClick={handleLogout}>Log out</p>
           </div>
         </div>
       </div>

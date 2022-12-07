@@ -6,6 +6,7 @@ import commerce2 from '../assets/commerce2.png';
 import commerce1 from '../assets/commerce1.png';
 import commerce3 from '../assets/commerce3.png';
 import commerce4 from '../assets/commerce4.png';
+
 const EcommercePage = () => {
   return (
     <div className="e-commerce">
