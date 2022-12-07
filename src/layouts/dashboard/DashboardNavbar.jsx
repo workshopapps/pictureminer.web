@@ -2,10 +2,12 @@ import { Filter } from 'iconsax-react';
 import React, { useContext, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import UserContext from '../../context/UserContext';
-import { removeItemFromLocalStorage } from '../../localStorage';
+import {
+  removeItemFromLocalStorage,
+  setLocalStorage,
+} from '../../localStorage';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { setLocalStorage } from '../../localStorage';
 import { RiSearchLine } from 'react-icons/ri';
 
 const DashboardNavbar = ({ data }) => {
@@ -50,6 +52,7 @@ const DashboardNavbar = ({ data }) => {
           toast('Encounter Error');
         }
       } catch (error) {
+        toast('Encounter Error');
         setIsError(true);
       } finally {
         setIsLoading(false);
