@@ -1,16 +1,17 @@
-import { ArrowDown2, Trash } from 'iconsax-react';
-import React, { useContext, useEffect, useState, useRef } from 'react';
+import { ArrowDown2 } from 'iconsax-react';
+import React, { useContext, useEffect, useState } from 'react';
 import Button from '../../components/ui/Button';
 import DataTable from 'react-data-table-component';
 import { Link } from 'react-router-dom';
-import Modal, { Backdrop } from '../../components/ui/Modal';
-import successIcon from '../../assets/dashboardImageDetails/success-icon.webp';
-import warningIcon from '../../assets/dashboardImageDetails/warning-icon.webp';
-import closeIcon from '../../assets/dashboardImageDetails/close-icon.webp';
+// import Modal, { Backdrop } from '../../components/ui/Modal';
+// import successIcon from '../../assets/dashboardImageDetails/success-icon.webp';
+// import warningIcon from '../../assets/dashboardImageDetails/warning-icon.webp';
+// import closeIcon from '../../assets/dashboardImageDetails/close-icon.webp';
 import axios from 'axios';
 import UserContext from '../../context/UserContext';
 import computer from '../../assets/computer.png';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
 const NoImageComponent = () => {
   return (
     <div className="no__image">
@@ -80,16 +81,17 @@ const BatchImage = () => {
         });
 
         if (response) {
+          console.log(response);
           const structuredData = response?.data.map((item, index) => {
             return {
-              id: item.ID,
+              id: item.id,
               sn: index,
-              batch: item.Name,
-              batchId: item.ID,
-              dateMined: `${item.DateCreated.split('T')[0]}`,
+              batch: item.name,
+              batchId: item.id,
+              dateMined: `${item.date_created.split('T')[0]}`,
               status: (
-                <Link to={`/images/batch/${item.ID}`} className="view__more">
-                  {item.Status}
+                <Link to={`/images/batch/${item.id}`} className="view__more">
+                  {item.status} &rarr;
                 </Link>
               ),
             };

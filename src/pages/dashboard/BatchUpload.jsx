@@ -7,7 +7,6 @@ import Button from '../../components/Button';
 import { useNavigate } from 'react-router-dom';
 import useUploadBatch from '../../Hooks/useUploadBatch';
 
-
 const Loader = () => {
   return <div className="loader2"></div>;
 };
@@ -32,6 +31,7 @@ const BatchUpload = () => {
   const [description, setDescription] = useState(null);
   const [errorMessage, seterrorMessage] = useState(null);
   const [showModal, setShowModal] = useState(false);
+
   const { mutateAsync: uploadBatch, isLoading } = useUploadBatch();
   const trnasformTags = (tags) => {
     return tags.split(',');

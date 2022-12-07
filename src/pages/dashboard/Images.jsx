@@ -12,6 +12,7 @@ import UserContext from '../../context/UserContext';
 import computer from '../../assets/computer.png';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import BatchImage from './BatchImage';
+
 const NoImageComponent = () => {
   return (
     <div className="no__image">
@@ -29,11 +30,14 @@ const Images = () => {
   const { user } = useContext(UserContext);
   const [imageData, setImageData] = useState({ loading: false });
   const [showMenu, setShowMenu] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false);
+  const [singleImageKey, setSingleImageKey] = useState('');
+
   const toggleShowMenu = () => {
     setShowMenu((prev) => !prev);
   };
-  const [showDeleteModal, setShowDeleteModal] = useState(false);
-  const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false);
+
   const toggleDeleteModal = () => {
     setShowDeleteModal((prev) => !prev);
   };
@@ -44,6 +48,7 @@ const Images = () => {
   };
 
   let menuRef = useRef();
+
   useEffect(() => {
     let handler = (e) => {
       if (!menuRef.current.contains(e.target)) {
@@ -91,10 +96,12 @@ const Images = () => {
     {
       name: '',
       selector: (cell) => cell.delete,
+
       sortable: true,
       width: '80px',
     },
   ];
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -135,9 +142,14 @@ const Images = () => {
                   onClick={() => {
                     toggleShowMenu();
                     toggleDeleteModal();
+                    setSingleImageKey(item.image_key);
                   }}
                 >
-                  <Trash size={24} color="#f04438" />
+                  <Trash
+                    size={24}
+                    color="#f04438"
+                    style={{ cursor: 'pointer' }}
+                  />
                 </div>
               ),
             };
@@ -163,15 +175,29 @@ const Images = () => {
       }
     };
     fetchData();
-  }, [user]);
-  const handleDelete = function (e) {
-    console.log(e);
+  }, [user, singleImageKey]);
+
+  const handleDelete = async function () {
+    await axios.delete(
+      `https://discripto.hng.tech/api1/api/v1/mine-service/delete/${singleImageKey}`,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          Authorization: `Bearer ${user.Token}`,
+        },
+      }
+    );
+
+    setSingleImageKey('');
+
+    // if (response.data.status === 'success') {
+    //     const newTableData = imageData.tabledata.filter((item) => {
+    //       return item.pictureId !== singleImageKey;
+    //     });
+    // }
   };
-  // console.log(
-  //   imageData.tabledata.filter((item) => {
-  //     return item.pictureId !== 1;
-  //   })
-  // );
+
   return (
     <Tabs>
       <TabList className={'tablist'}>
