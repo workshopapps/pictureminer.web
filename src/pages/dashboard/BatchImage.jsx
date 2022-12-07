@@ -81,16 +81,17 @@ const BatchImage = () => {
         });
 
         if (response) {
+          console.log(response);
           const structuredData = response?.data.map((item, index) => {
             return {
-              id: item.ID,
+              id: item.id,
               sn: index,
-              batch: item.Name,
-              batchId: item.ID,
-              dateMined: `${item.DateCreated.split('T')[0]}`,
+              batch: item.name,
+              batchId: item.id,
+              dateMined: `${item.date_created.split('T')[0]}`,
               status: (
-                <Link to={`/images/batch/${item.ID}`} className="view__more">
-                  {item.Status} &rarr;
+                <Link to={`/images/batch/${item.id}`} className="view__more">
+                  {item.status} &rarr;
                 </Link>
               ),
             };

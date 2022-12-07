@@ -25,12 +25,12 @@
     @include column-aligned();
     .texts {
       text-align: center;
-      .h-texts{
+      .h-texts {
         font-size: 3em;
         color: $light;
         font-weight: 700;
       }
-      .p-texts{
+      .p-texts {
         font-size: 1.5em;
         color: $light;
       }
@@ -139,8 +139,8 @@
     .second-container {
       flex-wrap: wrap-reverse !important;
     }
-    .first-container{
-        flex-direction: column;
+    .first-container {
+      flex-direction: column;
     }
     .about-msg1,
     .about-msg2 {
