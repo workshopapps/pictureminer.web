@@ -34,7 +34,8 @@ const BatchImage = () => {
       name: 'S/No',
       selector: (row) => row.sn,
       sortable: true,
-      flex: 2,
+      maxWidth: '100px',
+      minWidth: '100px',
     },
     {
       name: 'Batch',
