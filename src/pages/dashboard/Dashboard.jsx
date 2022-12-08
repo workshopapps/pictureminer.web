@@ -1,14 +1,36 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { DocumentCopy } from 'iconsax-react';
 import Button from '../../components/ui/Button';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import UserContext from '../../context/UserContext';
-
+import useGetBatch from '../../Hooks/useGetBatch';
+import { PieChart, Pie, Cell, ResponsiveContainer, Legend, BarChart, CartesianGrid, XAxis, YAxis, Bar, Tooltip } from 'recharts';
 axios.defaults.baseURL = 'https://discripto.hng.tech/api1/api/v1/';
 
 const Dashboard = () => {
   const { user } = useContext(UserContext);
+  const { response:batchImages } = useGetBatch();
+  console.log(batchImages);
+  const totalBatchImages = batchImages?.length;
+  // const untagged = batchImages?.map(item => item.tags).filter(tags => tags[0] === 'null').length;
+  // console.log(untagged);
+
+  const taggedLength = batchImages?.map(item => item.tags).filter(tags => tags[0] !== 'null').length;
+  const untaggedLength = batchImages?.map(item => item.tags).filter(tags => tags[0] === 'null').length;
+
+  const taggedAndUntaggedData = [{
+    name: 'Tagged',
+    value: taggedLength,
+  },
+  {
+    name: 'Untagged',
+    value: untaggedLength,
+  }];
+
+
+
+  console.log(taggedAndUntaggedData);
+
 
   const [dashboarddata, setDashboardData] = useState({ imageData: [] });
   useEffect(() => {
@@ -47,6 +69,28 @@ const Dashboard = () => {
     fetchData();
   }, [user]);
 
+  console.log(dashboarddata);
+
+  const totalSingleImages = dashboarddata?.imageData?.length;
+  const barData = [{
+    name: 'Images Uploaded',
+    'Single Upload': totalSingleImages,
+    'Batch Images': totalBatchImages,
+  },
+  {
+    name : 'Tagged Images',
+    'Single Upload': taggedLength,
+    'Batch Images': taggedLength,
+  },
+  {
+
+    name : 'Untagged Images',
+    'Single Upload': untaggedLength,
+    'Batch Images': untaggedLength,
+  }
+];
+  const COLORS = [ '#FFBB28', '#FF8042'];
+
   return (
     <div className="dashboard">
       <div className="dashboard__head">
@@ -72,30 +116,55 @@ const Dashboard = () => {
         </Link>
       </div>
       <div className="api__details">
-        <h1>API Details:</h1>
-        {[
-          { title: 'Authorization Token', details: user ? user.Token : '' },
-          {
-            title: 'API Endpoint',
-            details: 'minergram.hng-9.com',
-            class: 'colored',
-          },
-          { title: 'Sample Curl Request', details: 'vhvfyavfjvfhjhv' },
-        ].map((item) => (
-          <div key={item.title}>
-            <div className="api__detail">
-              <span>{item.title}</span>
-              <span className={item.class}>{item.details}</span>
-              <span
-                className="copy"
-                onClick={() => navigator.clipboard.writeText(item.details)}
-              >
-                <DocumentCopy size="16" color="#1d1d1d" />
-                <span>copied</span>
-              </span>
-            </div>
-          </div>
-        ))}
+        <div className="api__details__head">
+
+        </div>
+        <ResponsiveContainer width="100%" height="100%">
+
+          <PieChart>
+            <Pie
+              data={taggedAndUntaggedData}
+              dataKey="value"
+              nameKey="name"
+              cx="50%"
+              cy="50%"
+              outerRadius={60}
+              fill="#8884d8"
+              label = {({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+
+
+
+            >
+
+            { taggedAndUntaggedData.map((entry, index) => (  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)) }
+            </Pie>
+            <Legend />
+
+
+          </PieChart>
+        </ResponsiveContainer>
+
+<ResponsiveContainer width="100%" height="100%">
+          <BarChart
+            width={500}
+            height={300}
+            data={barData}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 20,
+              bottom: 5,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="Single Upload" fill="#8884d8" />
+            <Bar dataKey="Batch Images" fill="#82ca9d" />
+          </BarChart>
+        </ResponsiveContainer>
       </div>
     </div>
   );
