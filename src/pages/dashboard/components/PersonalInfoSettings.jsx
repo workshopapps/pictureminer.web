@@ -1,17 +1,26 @@
-import React, { useReducer, useEffect, useState } from 'react';
-import FormInput from '../../../components/form/FormInput';
+import React, { useReducer, useEffect, useContext } from 'react';
+// import FormInput from '../../../components/form/FormInput';
 import Button from '../../../components/ui/Button';
 import '../styles/dashboard.css';
 import { personalInfoReducer } from '../reducers/personalInfoReducer';
-import { AiOutlineExclamation } from 'react-icons/ai';
+import {
+  AiOutlineExclamation,
+  AiOutlineEyeInvisible,
+  AiOutlineEye,
+} from 'react-icons/ai';
 import { IoCloseSharp } from 'react-icons/io5';
 import { actions } from '../actions/actions';
-import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
+import UserContext from '../../../context/UserContext';
+import axios from 'axios';
 
 function PersonalAccountSettings({
   formValues,
   setFormValues,
   initialFormValues,
+  togglePassword,
+  showPassword2,
+  showPassword3,
+  showPassword4,
 }) {
   const initialPersonalInfoState = {
     isSubmitting: false,
@@ -21,13 +30,12 @@ function PersonalAccountSettings({
     successMessage: '',
     errorMessages: {},
   };
+  const { user } = useContext(UserContext);
 
   const [state, dispatch] = useReducer(
     personalInfoReducer,
     initialPersonalInfoState
   );
-  const [showPassword, setShowPassword] = useState(false);
-  const [iconId, setIconId] = useState(0);
 
   const handleChange = (e) => {
     const { value, name } = e.target;
@@ -40,26 +48,58 @@ function PersonalAccountSettings({
 
     const errorWarnings = validatePersonalInfo(formValues);
     dispatch({
-      type: actions.formSubmitted,
+      type: actions.isSubmitting,
       payload: errorWarnings,
     });
+
+    if (Object.keys(state.errorMessages).length === 0) {
+      const updateAccountInfo = async () => {
+        try {
+          const response = await axios({
+            method: 'patch',
+            url: 'https://discripto.hng.tech/api1/api/v1/update-user',
+            data: {
+              current_password: formValues.current_password,
+              new_password: formValues.new_password,
+              confirm_password: formValues.confirm_password,
+            },
+            headers: {
+              accept: 'application/json',
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${user.Token}`,
+            },
+          });
+
+          if (response.status === 200) {
+            setFormValues(initialFormValues);
+            dispatch({ type: actions.accountUpdated });
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
+      updateAccountInfo();
+    } else {
+      dispatch({ type: actions.isNotSubmitting });
+    }
   };
   const validatePersonalInfo = (formValues) => {
     const errors = {};
 
     const passwordRegex = /^[\w@-]{8,20}$/; //eslint-disable-line
 
-    if (!passwordRegex.test(formValues.newPassword)) {
-      errors.newPassword = 'Password must be greater than 8';
-    } else if (formValues.newPassword !== formValues.confirmPassword) {
-      errors.newPassword = 'Please make sure your password match';
-      errors.confirmPassword = 'Please make sure your password match';
+    if (!passwordRegex.test(formValues.new_password)) {
+      errors.new_password = 'Password must be greater than 8';
+    } else if (formValues.new_password !== formValues.confirm_password) {
+      errors.new_password = 'Please make sure your password match';
+      errors.confirm_password = 'Please make sure your password match';
     }
 
     if (
-      formValues.newPassword === formValues.confirmPassword &&
-      formValues.newPassword &&
-      formValues.confirmPassword
+      formValues.new_password === formValues.confirm_password &&
+      formValues.new_password &&
+      formValues.confirm_password
     ) {
       dispatch({
         type: actions.isPasswordMatch,
@@ -70,16 +110,6 @@ function PersonalAccountSettings({
   };
 
   useEffect(() => {
-    if (Object.keys(state.errorMessages).length === 0 && state.isSubmitting) {
-      dispatch({ type: actions.isSubmitting });
-      setTimeout(() => {
-        setFormValues(initialFormValues);
-        dispatch({ type: actions.submitted });
-      }, 5000);
-    } else {
-      dispatch({ type: actions.isNotSubmitting });
-    }
-
     const isNullish = Object.values(formValues).every((formValue) => {
       if (formValue === '') return true;
     });
@@ -91,12 +121,6 @@ function PersonalAccountSettings({
     dispatch({ type: actions.cancelForm });
   };
 
-  const togglePassword = (e) => {
-    setShowPassword((prevState) => !prevState);
-    const btnId = e.currentTarget.id;
-    setIconId(Number(btnId));
-  };
-
   const toggleSuccessMessage = () => {
     dispatch({ type: actions.toggleSuccessMessage });
   };
@@ -104,11 +128,11 @@ function PersonalAccountSettings({
   return (
     <div className="w-full">
       {state.successMessage && (
-        <div className="w-[350px] md:w-[500px] p-6 rounded-md bg-[#12B76A] text-white mt-10 absolute top-[10%] right-5 lg:right-20 flex items-center justify-between space-x-4 flex-shrink-0">
+        <div className="w-[350px] md:w-[500px] p-6 rounded-md bg-[#12B76A] text-white mt-10 absolute top-[10%] md:right-5 lg:right-20 flex items-center justify-between space-x-4 flex-shrink-0">
           <div className="rounded-full bg-white flex items-center justify-center ">
             <AiOutlineExclamation className="text-green-700 text-normal " />
           </div>
-          <p className="text-xSmall">{state.successMessage}</p>
+          <p className="text-small">{state.successMessage}</p>
           <div onClick={toggleSuccessMessage}>
             <IoCloseSharp className="text-normal cursor-pointer" />
           </div>
@@ -116,66 +140,19 @@ function PersonalAccountSettings({
       )}
       <h2 className="text-medium font-bold">Personal Info</h2>
       <form onSubmit={submitPersonalInfo}>
-        <FormInput
-          name="userName"
-          label="Username"
-          type="text"
-          onchange={handleChange}
-          placeholder="johnDoe"
-          value={formValues.userName}
-          labelClassName="form__label"
-          containerClassName="form__group"
-          inputClassName={`w-full placeholder:text-sm placeholder:text-modalGray`}
-        />
         <div className="form__group">
-          <label htmlFor="newPassword" className="form__label">
-            New password
+          <label htmlFor="current_password" className="form__label">
+            Current password
           </label>
           <div className="relative">
             <input
               onChange={handleChange}
-              type={`${showPassword && iconId === 1 ? 'text' : 'password'}`}
-              name="newPassword"
+              type={`${showPassword2 ? 'text' : 'password'}`}
+              name="current_password"
               placeholder="Password@123"
-              value={formValues.newPassword}
+              value={formValues.current_password}
               className={`w-full placeholder:text-sm placeholder:text-modalGray ${
-                state.errorMessages.newPassword && 'border-red-500'
-              } ${state.success && 'border-green-300'}`}
-            />
-            <button
-              id={1}
-              className="absolute bg-transparent top-2/4 right-[3%] -translate-x-[3%] -translate-y-2/4 cursor-pointer"
-              onClick={(e) => {
-                togglePassword(e);
-              }}
-              type="button"
-            >
-              {showPassword && iconId === 1 ? (
-                <AiOutlineEye className="text-large text-modalGray" />
-              ) : (
-                <AiOutlineEyeInvisible className="text-large text-modalGray" />
-              )}
-            </button>
-          </div>
-          {state.errorMessages.newPassword && (
-            <small className="text-sm text-red-500">
-              {state.errorMessages.newPassword}
-            </small>
-          )}
-        </div>
-        <div className="form__group">
-          <label htmlFor="confirmPassword" className="form__label">
-            Confirm password
-          </label>
-          <div className="relative">
-            <input
-              onChange={handleChange}
-              type={`${showPassword && iconId === 2 ? 'text' : 'password'}`}
-              name="confirmPassword"
-              placeholder="Password@123"
-              value={formValues.confirmPassword}
-              className={`w-full placeholder:text-sm placeholder:text-modalGray ${
-                state.errorMessages.confirmPassword && 'border-red-500'
+                state.errorMessages.current_password && 'border-red-500'
               } ${state.success && 'border-green-300'}`}
             />
             <button
@@ -186,28 +163,100 @@ function PersonalAccountSettings({
               }}
               type="button"
             >
-              {showPassword && iconId === 2 ? (
+              {showPassword2 ? (
                 <AiOutlineEye className="text-large text-modalGray" />
               ) : (
                 <AiOutlineEyeInvisible className="text-large text-modalGray" />
               )}
             </button>
           </div>
-          {state.errorMessages.confirmPassword && (
+          {state.errorMessages.current_password && (
             <small className="text-sm text-red-500">
-              {state.errorMessages.confirmPassword}
+              {state.errorMessages.current_password}
+            </small>
+          )}
+        </div>
+        <div className="form__group">
+          <label htmlFor="new_password" className="form__label">
+            New password
+          </label>
+          <div className="relative">
+            <input
+              onChange={handleChange}
+              type={`${showPassword3 ? 'text' : 'password'}`}
+              name="new_password"
+              placeholder="Password@123"
+              value={formValues.new_password}
+              className={`w-full placeholder:text-sm placeholder:text-modalGray ${
+                state.errorMessages.new_password && 'border-red-500'
+              } ${state.success && 'border-green-300'}`}
+            />
+            <button
+              id={3}
+              className="absolute bg-transparent top-2/4 right-[3%] -translate-x-[3%] -translate-y-2/4 cursor-pointer"
+              onClick={(e) => {
+                togglePassword(e);
+              }}
+              type="button"
+            >
+              {showPassword3 ? (
+                <AiOutlineEye className="text-large text-modalGray" />
+              ) : (
+                <AiOutlineEyeInvisible className="text-large text-modalGray" />
+              )}
+            </button>
+          </div>
+          {state.errorMessages.new_password && (
+            <small className="text-sm text-red-500">
+              {state.errorMessages.new_password}
+            </small>
+          )}
+        </div>
+        <div className="form__group">
+          <label htmlFor="confirm_password" className="form__label">
+            Confirm password
+          </label>
+          <div className="relative">
+            <input
+              onChange={handleChange}
+              type={`${showPassword4 ? 'text' : 'password'}`}
+              name="confirm_password"
+              placeholder="Password@123"
+              value={formValues.confirm_password}
+              className={`w-full placeholder:text-sm placeholder:text-modalGray ${
+                state.errorMessages.confirm_password && 'border-red-500'
+              } ${state.success && 'border-green-300'}`}
+            />
+            <button
+              id={4}
+              className="absolute bg-transparent top-2/4 right-[3%] -translate-x-[3%] -translate-y-2/4 cursor-pointer"
+              onClick={(e) => {
+                togglePassword(e);
+              }}
+              type="button"
+            >
+              {showPassword4 ? (
+                <AiOutlineEye className="text-large text-modalGray" />
+              ) : (
+                <AiOutlineEyeInvisible className="text-large text-modalGray" />
+              )}
+            </button>
+          </div>
+          {state.errorMessages.confirm_password && (
+            <small className="text-sm text-red-500">
+              {state.errorMessages.confirm_password}
             </small>
           )}
         </div>
         {/* <FormInput
-          name="newPassword"
+          name="new_password"
           label="New password"
           type={`${showPassword && iconId === 1 ? 'text' : 'password'}`}
           onchange={handleChange}
           placeholder="Password@123"
-          value={formValues.newPassword}
+          value={formValues.new_password}
           inputClassName={`w-full ${
-            state.errorMessages.newPassword && 'border-red-500'
+            state.errorMessages.new_password && 'border-red-500'
           } ${state.success && 'border-green-300'}`}
           labelClassName="form__label"
           containerClassName="form__group"
@@ -216,9 +265,9 @@ function PersonalAccountSettings({
           buttonClassName="absolute bg-transparent top-2/4 right-[3%] -translate-x-[3%] -translate-y-2/4 cursor-pointer"
           eyeIconClassName="text-large text-inputGray"
         />
-        {state.errorMessages.newPassword && (
+        {state.errorMessages.new_password && (
           <small className="text-sm text-red-500">
-            {state.errorMessages.newPassword}
+            {state.errorMessages.new_password}
           </small>
         )} */}
 
