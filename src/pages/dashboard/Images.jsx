@@ -12,6 +12,7 @@ import UserContext from '../../context/UserContext';
 import computer from '../../assets/computer.png';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import BatchImage from './BatchImage';
+import { notifyError } from '../../utils/notify';
 
 const NoImageComponent = () => {
   return (
@@ -34,9 +35,9 @@ const Images = () => {
   const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false);
   const [singleImageKey, setSingleImageKey] = useState('');
 
-  const toggleShowMenu = () => {
-    setShowMenu((prev) => !prev);
-  };
+  // const toggleShowMenu = () => {
+  //   setShowMenu((prev) => !prev);
+  // };
 
   const toggleDeleteModal = () => {
     setShowDeleteModal((prev) => !prev);
@@ -66,7 +67,8 @@ const Images = () => {
       name: 'S/No',
       selector: (row) => row.sn,
       sortable: true,
-      flex: 2,
+      maxWidth: '100px',
+      minWidth: '100px',
     },
     {
       name: 'Picture',
@@ -140,7 +142,6 @@ const Images = () => {
                 <div
                   className="delete"
                   onClick={() => {
-                    toggleShowMenu();
                     toggleDeleteModal();
                     setSingleImageKey(item.image_key);
                   }}
@@ -163,7 +164,7 @@ const Images = () => {
           });
         }
       } catch (error) {
-        console.log(error);
+        notifyError('Unable to mine image');
       } finally {
         setImageData((prev) => {
           return {
@@ -178,16 +179,20 @@ const Images = () => {
   }, [user, singleImageKey]);
 
   const handleDelete = async function () {
-    await axios.delete(
-      `https://discripto.hng.tech/api1/api/v1/mine-service/delete/${singleImageKey}`,
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-          Authorization: `Bearer ${user.Token}`,
-        },
-      }
-    );
+    try {
+      await axios.delete(
+        `https://discripto.hng.tech/api1/api/v1/mine-service/delete/${singleImageKey}`,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            Authorization: `Bearer ${user.Token}`,
+          },
+        }
+      );
+    } catch (err) {
+      notifyError('Unable to delete your image');
+    }
 
     setSingleImageKey('');
 
