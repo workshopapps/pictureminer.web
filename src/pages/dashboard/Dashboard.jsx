@@ -72,22 +72,17 @@ const Dashboard = () => {
   console.log(dashboarddata);
 
   const totalSingleImages = dashboarddata?.imageData?.length;
-  const barData = [{
-    name: 'Images Uploaded',
-    'Single Upload': totalSingleImages,
-    'Batch Images': totalBatchImages,
-  },
-  {
-    name : 'Tagged Images',
-    'Single Upload': taggedLength,
-    'Batch Images': taggedLength,
-  },
-  {
+  const barData = [
+    {
+      name: 'Batch upload',
+      'Total Batch Upload': totalBatchImages,
+    },
+    {
+      name: 'Tag',
+      'Tagged': taggedLength,
+      'Untagged': untaggedLength,
 
-    name : 'Untagged Images',
-    'Single Upload': untaggedLength,
-    'Batch Images': untaggedLength,
-  }
+    }
 ];
   const COLORS = [ '#FFBB28', '#FF8042'];
 
@@ -119,7 +114,7 @@ const Dashboard = () => {
         <div className="api__details__head">
 
         </div>
-        <ResponsiveContainer width="100%" height="100%">
+        {/* <ResponsiveContainer width="100%" height="100%">
 
           <PieChart>
             <Pie
@@ -142,29 +137,32 @@ const Dashboard = () => {
 
 
           </PieChart>
+        </ResponsiveContainer> */}
+<ResponsiveContainer width="100%" height="100%">
+        <BarChart
+          width={500}
+          height={300}
+          data={barData}
+          margin={{
+            top: 5,
+            right: 5,
+            left: 5,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="Total Batch Upload" fill="#8884d8" />
+          <Bar dataKey="Tagged" fill="#82ca9d" />
+          <Bar dataKey="Untagged" fill="#FF8042" />
+        </BarChart>
         </ResponsiveContainer>
 
-<ResponsiveContainer width="100%" height="100%">
-          <BarChart
-            width={500}
-            height={300}
-            data={barData}
-            margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5,
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Bar dataKey="Single Upload" fill="#8884d8" />
-            <Bar dataKey="Batch Images" fill="#82ca9d" />
-          </BarChart>
-        </ResponsiveContainer>
+
+
       </div>
     </div>
   );
