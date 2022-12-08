@@ -109,7 +109,7 @@ function TabContent2({ setTabState }) {
             <p className="text-mainOrange/90 mt-3">Getting Access to the API</p>
           </div>
         </div>
-        <div className="flex items-center justify-between md:w-[497px] border border-solid border-gray-300 rounded-lg px-6 md:px-10 py-5 mx-8 md:mx-10 lg:mx-20">
+        {/* <div className="flex items-center justify-between md:w-[497px] border border-solid border-gray-300 rounded-lg px-6 md:px-10 py-5 mx-8 md:mx-10 lg:mx-20">
           <div>
             <p>Next</p>
             <p className="text-mainOrange/90 mt-3">Examples of Using the CLI</p>
@@ -118,7 +118,7 @@ function TabContent2({ setTabState }) {
             onClick={() => setTabState(2)}
             style={{ cursor: 'pointer' }}
           />
-        </div>
+        </div> */}
       </div>
     </section>
   );
