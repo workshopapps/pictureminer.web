@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import UserContext from '../../context/UserContext';
 import useGetBatch from '../../Hooks/useGetBatch';
-import { PieChart, Pie, Cell, ResponsiveContainer, Legend, BarChart, CartesianGrid, XAxis, YAxis, Bar, Tooltip } from 'recharts';
+import { ResponsiveContainer, Legend, BarChart, CartesianGrid, XAxis, YAxis, Bar, Tooltip } from 'recharts';
+import { notifyError } from '../../utils/notify';
+
 axios.defaults.baseURL = 'https://discripto.hng.tech/api1/api/v1/';
 
 const Dashboard = () => {
@@ -50,6 +52,13 @@ const Dashboard = () => {
             Authorization: `Bearer ${user.Token}`,
           },
         });
+        const response2 = await axios.get('batch-service/get-batches', {
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            Authorization: `Bearer ${user.Token}`,
+          },
+        });
 
         if (response) {
           setDashboardData((prev) => {
@@ -57,11 +66,26 @@ const Dashboard = () => {
               ...prev,
               loading: false,
               imageData: response.data,
+              batchData: response2.data,
             };
           });
         }
       } catch (error) {
-        console.log(error);
+        if (error.response.status === 400) {
+          notifyError('Please try again, an error occured');
+        } else if (error.response.data.message) {
+          notifyError(error.response.data.message);
+        } else if (error.response.status === 401) {
+          notifyError('!Unauthorized, please log out and log in again');
+        } else if (error.response.status === 500) {
+          notifyError(
+            'We are currently experiencing server issues, please try again later'
+          );
+        } else if (error.response.status === 404) {
+          notifyError('Page not found');
+        } else {
+          notifyError('An error occured!!!');
+        }
       } finally {
         /* empty */
       }
@@ -95,7 +119,7 @@ const Dashboard = () => {
             {/* {dashboarddata.logo} */}
           </div>
           <h3 style={{ marginTop: '20px', fontSize: '24px' }}>
-            {dashboarddata?.imageData ? dashboarddata?.imageData?.length : null}
+            {dashboarddata?.batchData ? dashboarddata?.batchData?.length : 0}
           </h3>
         </div>
         <div className="images__card">

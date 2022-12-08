@@ -14,10 +14,10 @@ import { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import UserContext from '../../context/UserContext';
 import axios from 'axios';
+import { notifyError } from '../../utils/notify';
 
 const BatchDetails = () => {
   const param = useParams();
-
   const [imageDets, setImageDets] = useState({ loading: false, tags: null });
   const [buttonDropdown, setButtonDropdown] = useState(false);
   const { user } = useContext(UserContext);
@@ -52,7 +52,21 @@ const BatchDetails = () => {
           });
         }
       } catch (error) {
-        console.log(error);
+        if (error.response.status === 400) {
+          notifyError('Please try again, an error occured');
+        } else if (error.response.data.message) {
+          notifyError(error.response.data.message);
+        } else if (error.response.status === 401) {
+          notifyError('!Unauthorized, please log out and log in again');
+        } else if (error.response.status === 500) {
+          notifyError(
+            'We are currently experiencing server issues, please try again later'
+          );
+        } else if (error.response.status === 404) {
+          notifyError('Page not found');
+        } else {
+          notifyError('An error occured!!!');
+        }
       } finally {
         /* empty */
       }
