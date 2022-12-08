@@ -11,6 +11,7 @@ import AccountSettings from './pages/dashboard/AccountSettings';
 import Billing from './pages/dashboard/Billing';
 import DocumentationHome from './pages/documentation/Documentation';
 import GettingStarted from './pages/documentation/components/TabContent-1';
+// import ExampleCLI from './pages/documentation/components/ExampleCLI';
 // import Installations from './pages/documentation/InstallationsPage/Installations';
 // import UtilitiesPage from './pages/documentation/UtilitiesPage/UtilitiesPage';
 // import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
