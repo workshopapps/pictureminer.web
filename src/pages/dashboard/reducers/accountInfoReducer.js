@@ -23,15 +23,17 @@ export function accountInfoReducer(state, action) {
     case actions.isSubmitting: {
       return {
         ...state,
-        successMessage: 'User details updated successfully',
+        isSubmitting: true,
+        errorMessages: payload,
       };
     }
-    case actions.submitted: {
+    case actions.accountUpdated: {
       return {
         ...state,
         isSubmitting: false,
         success: false,
         isTouched: false,
+        successMessage: 'Details updated successfully',
       };
     }
     case actions.isNotSubmitting: {
