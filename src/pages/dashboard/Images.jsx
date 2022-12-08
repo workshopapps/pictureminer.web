@@ -35,6 +35,7 @@ const Images = () => {
   const [singleImageKey, setSingleImageKey] = useState('');
   const [imageKeyArray, setImageKeyArray] = useState([]);
   const [isChecked, setIsChecked] = useState(false);
+  console.log(imageKeyArray);
 
   const handleCheckboxChange = (e) => {
     const { singleImageKey, checked } = e.target;
@@ -179,8 +180,7 @@ const Images = () => {
                     type="checkbox"
                     id="delete_all"
                     onClick={() => {
-                      setImageKeyArray(item.image_key);
-                      console.log(imageKeyArray);
+                      setImageKeyArray([...imageKeyArray, item.image_key]);
                       getImageKeys();
                     }}
                     // checked={isChecked}
