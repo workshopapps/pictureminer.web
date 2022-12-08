@@ -35,9 +35,9 @@ const Images = () => {
   const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false);
   const [singleImageKey, setSingleImageKey] = useState('');
 
-  const toggleShowMenu = () => {
-    setShowMenu((prev) => !prev);
-  };
+  // const toggleShowMenu = () => {
+  //   setShowMenu((prev) => !prev);
+  // };
 
   const toggleDeleteModal = () => {
     setShowDeleteModal((prev) => !prev);
@@ -142,7 +142,6 @@ const Images = () => {
                 <div
                   className="delete"
                   onClick={() => {
-                    toggleShowMenu();
                     toggleDeleteModal();
                     setSingleImageKey(item.image_key);
                   }}

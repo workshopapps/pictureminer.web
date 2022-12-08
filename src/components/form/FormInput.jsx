@@ -17,6 +17,7 @@ const FormInput = ({
   buttonClassName,
   eyeIconClassName,
   required,
+  id,
 }) => {
   const regEx = /password/gi;
   const nameMatch = name.match(regEx);
@@ -29,7 +30,7 @@ const FormInput = ({
         <div className="relative">
           <input
             onChange={onchange}
-            type={`${showPassword ? 'text' : 'password'}`}
+            type={type}
             name={name}
             id={name}
             placeholder={placeholder}
@@ -41,8 +42,11 @@ const FormInput = ({
             required={required}
           />
           <button
+            id={id}
             className={`${buttonClassName}`}
-            onClick={togglePassword}
+            onClick={(e) => {
+              togglePassword(e);
+            }}
             type="button"
           >
             {showPassword ? (
