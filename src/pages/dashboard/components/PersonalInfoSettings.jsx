@@ -31,7 +31,6 @@ function PersonalAccountSettings({
     errorMessages: {},
   };
   const { user } = useContext(UserContext);
-  // console.log(user);
 
   const [state, dispatch] = useReducer(
     personalInfoReducer,
@@ -60,7 +59,6 @@ function PersonalAccountSettings({
             method: 'patch',
             url: 'https://discripto.hng.tech/api1/api/v1/update-user',
             data: {
-              email: user.Email,
               current_password: formValues.current_password,
               new_password: formValues.new_password,
               confirm_password: formValues.confirm_password,
@@ -75,7 +73,6 @@ function PersonalAccountSettings({
           if (response.status === 200) {
             setFormValues(initialFormValues);
             dispatch({ type: actions.accountUpdated });
-            console.log('success');
           }
         } catch (error) {
           console.log(error);
