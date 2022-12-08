@@ -41,6 +41,8 @@ import { AppProvider } from './context/context';
 import { getLocalStorage } from './localStorage';
 import UserContext from './context/UserContext';
 import BatchDetails from './pages/dashboard/BatchDetails';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const RoutesComponents = () => {
   const { setUser } = useContext(UserContext);
@@ -53,6 +55,7 @@ const RoutesComponents = () => {
   return (
     <AppProvider>
       <ScrollToTop>
+        <ToastContainer />
         <Routes>
           <Route path="" element={<Layout />}>
             <Route exact path="" element={<LandingPage />} />

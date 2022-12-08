@@ -17,7 +17,7 @@ jobs:
           paths: [pictureminer.web/node_modules]
           key: frontend-build
 
-# 
+#
 workflows:
   pictureminer-workflow:
     jobs:

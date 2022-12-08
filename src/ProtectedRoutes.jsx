@@ -5,14 +5,9 @@ const ProtectedRoutes = ({ children }) => {
   const { user } = useContext(UserContext);
 
   if (!user) {
-    return <Navigate to='/login' />;
-
+    return <Navigate to="/login" />;
   }
-  return (
-    <div>
-      {children ? children : <Outlet />}
-    </div>
-  );
+  return <div>{children ? children : <Outlet />}</div>;
 };
 
 export default ProtectedRoutes;

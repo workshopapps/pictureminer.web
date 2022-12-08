@@ -9,59 +9,70 @@ import saveIcon from '../../assets/dashboardImageDetails/download-icon.webp';
 import trashIcon from '../../assets/dashboardImageDetails/trash-icon.webp';
 import customer from '../../assets/customer.webp';
 
-import { useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
-import { useNavigate } from 'react-router-dom';
-
-// import UserContext from '../../context/UserContext';
-// import axios from 'axios';
+import { useNavigate, useParams } from 'react-router-dom';
+import UserContext from '../../context/UserContext';
+import axios from 'axios';
+import { notifyError } from '../../utils/notify';
 
 const BatchDetails = () => {
-  // const param = useParams();
+  const param = useParams();
+  const [imageDets, setImageDets] = useState({ loading: false, tags: null });
+  const [buttonDropdown, setButtonDropdown] = useState(false);
+  const { user } = useContext(UserContext);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setImageDets((prev) => {
+          return {
+            ...prev,
+            loading: true,
+          };
+        });
 
-  // eslint-disable-next-line no-unused-vars
-  const [imageDets, setImageDets] = useState({ loading: false });
-  // const { user } = useContext(UserContext);
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       setImageDets((prev) => {
-  //         return {
-  //           ...prev,
-  //           loading: true,
-  //         };
-  //       });
+        const response = await axios.get(
+          `batch-service/images/${param.batchId}`,
+          {
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json',
+              Authorization: `Bearer ${user.Token}`,
+            },
+          }
+        );
 
-  //       const response = await axios.get('mine-service/get-all', {
-  //         headers: {
-  //           'Content-Type': 'application/json',
-  //           Accept: 'application/json',
-  //           Authorization: `Bearer ${user.Token}`,
-  //         },
-  //       });
-
-  //       if (response) {
-  //         const deets = response?.data.filter((item) => {
-  //           console.log(item.date_created.split('.')[1] === param.imageId);
-  //           return item.date_created.split('.')[1] === param.imageId;
-  //         });
-  //         console.log(deets);
-  //         setImageDets((prev) => {
-  //           return {
-  //             ...prev,
-  //             loading: false,
-  //             details: deets,
-  //           };
-  //         });
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //     } finally {
-  //       /* empty */
-  //     }
-  //   };
-  //   fetchData();
-  // }, [user]);
+        if (response) {
+          setImageDets((prev) => {
+            return {
+              ...prev,
+              loading: false,
+              data: response.data,
+            };
+          });
+        }
+      } catch (error) {
+        if (error.response.status === 400) {
+          notifyError('Please try again, an error occured');
+        } else if (error.response.data.message) {
+          notifyError(error.response.data.message);
+        } else if (error.response.status === 401) {
+          notifyError('!Unauthorized, please log out and log in again');
+        } else if (error.response.status === 500) {
+          notifyError(
+            'We are currently experiencing server issues, please try again later'
+          );
+        } else if (error.response.status === 404) {
+          notifyError('Page not found');
+        } else {
+          notifyError('An error occured!!!');
+        }
+      } finally {
+        /* empty */
+      }
+    };
+    fetchData();
+  }, [user]);
   const TAG_LIST = [
     { title: 'Water', percentage: '55%' },
     { title: 'Trees', percentage: '30%' },
@@ -97,12 +108,24 @@ const BatchDetails = () => {
 
   const saveToJsonHandler = () => {
     const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(
-      JSON.stringify({ image: '', image_path: '' })
+      JSON.stringify({ ...imageDets.data })
     )}`;
     const link = document.createElement('a');
     link.href = jsonString;
     link.download = 'data.json';
     link.click();
+    setButtonDropdown(false);
+    setShowSaveSuccessModal(true);
+  };
+
+  const saveToCsvHandler = () => {
+    const url = `https://discripto.hng.tech/api1/api/v1/batch-service/download/${param.batchId}`;
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'data.csv';
+    link.click();
+    setButtonDropdown(false);
+    setShowSaveSuccessModal(true);
   };
 
   return (
@@ -133,26 +156,40 @@ const BatchDetails = () => {
           <h2 className="font-bold text-2xl">Batches Details</h2>
         </div>
 
-        <div className="hidden gap-4 md:flex">
-          <Button
-            className="bg-[#ff6c00] text-white p-4 w-40 rounded-lg font-medium hover:bg-[#FF9D55]"
-            text="Save as Json"
-            onclick={() => {
-              toggleSaveSuccessModal();
-              saveToJsonHandler();
-            }}
-          />
+        <div className="hidden gap-4 lg:flex">
+          <div className="relative">
+            <Button
+              className="bg-[#ff6c00] text-white p-4 w-40 rounded-lg font-medium hover:bg-[#FF9D55]"
+              text="Save"
+              onclick={() => setButtonDropdown((prev) => !prev)}
+            />
+            {buttonDropdown && (
+              <div
+                className="absolute border rounded-lg overflow-hidden w-40 shadow-lg text-center"
+                // onClick={() => setButtonDropdown((prev) => !prev)}
+              >
+                <div
+                  className="bg-white text-[#ff6c00] font-medium p-3 hover:bg-[#FF9D55] hover:text-white cursor-pointer"
+                  onClick={saveToJsonHandler}
+                >
+                  Json
+                </div>
+                <div
+                  className="bg-white text-[#ff6c00] p-3 font-medium hover:bg-[#FF9D55] hover:text-white cursor-pointer"
+                  onClick={saveToCsvHandler}
+                >
+                  Download CSV
+                </div>
+              </div>
+            )}
+          </div>
           <Button
             className="border border-[#ff6c00] text-[#ff6c00] py-4 px-8 w-40 rounded-lg font-medium	hover:bg-[#FF6C00] hover:text-white"
             text="Delete"
             onclick={toggleDeleteModal}
           />
         </div>
-
-        <div
-          className="cursor-pointer md:hidden"
-          onClick={() => setShowMenu((prev) => !prev)}
-        >
+        <div className="lg:hidden md:mr-14" onClick={toggleShowMenu}>
           <svg
             width="24"
             height="24"
@@ -190,12 +227,22 @@ const BatchDetails = () => {
             <div className="absolute bg-white top-10 right-0 z-[100] p-2 w-[18rem]">
               <div
                 onClick={() => {
+                  saveToJsonHandler();
                   toggleShowMenu();
-                  toggleSaveSuccessModal();
                 }}
                 className="p-4 flex items-center gap-4 cursor-pointer justify-between"
               >
-                <span className="">Save a Json</span>
+                <span className="">Save as Json</span>
+                <img src={saveIcon} className="" alt="save icon" />
+              </div>
+              <div
+                onClick={() => {
+                  saveToCsvHandler();
+                  toggleShowMenu();
+                }}
+                className="p-4 flex items-center gap-4 cursor-pointer justify-between"
+              >
+                <span className="">Download CSV</span>
                 <img src={saveIcon} className="" alt="save icon" />
               </div>
               <div
@@ -213,36 +260,25 @@ const BatchDetails = () => {
         )}
       </section>
       <section>
-        <div>
-          <h3 className="tag">Bathroom</h3>
-          <div className="batch_images">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
-              <div className="batch_image" key={item}>
-                <img src={customer} alt="" />
-              </div>
-            ))}
-          </div>
-        </div>
-        <div>
-          <h3 className="tag">Bathroom</h3>
-          <div className="batch_images">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
-              <div className="batch_image" key={item}>
-                <img src={customer} alt="" />
-              </div>
-            ))}
-          </div>
-        </div>
-        <div>
-          <h3 className="tag">Bathroom</h3>
-          <div className="batch_images">
-            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
-              <div className="batch_image" key={item}>
-                <img src={customer} alt="" />
-              </div>
-            ))}
-          </div>
-        </div>
+        {imageDets.data
+          ? imageDets.data.map((item, index) => {
+              // console.log(item);
+              return (
+                <div key={index} className="categories">
+                  <h3 className="tag">{Object.keys(item)[0]}</h3>
+                  <div className="batch_images">
+                    {Object.values(item)[0].map((item) => {
+                      return (
+                        <div className="batch_image" key={item}>
+                          <img src={item} alt="" />
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })
+          : null}
       </section>
 
       {showDeleteModal && (
@@ -354,7 +390,7 @@ const BatchDetails = () => {
               <h2 className="text-xl font-[500]">Successful</h2>
 
               <p className="text-[#797b89] text-center text-md">
-                Image successfully saved
+                Image successfully downloaded
               </p>
 
               <div className="flex gap-4 mt-4 w-full justify-center">

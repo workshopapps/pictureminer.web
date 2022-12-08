@@ -25,11 +25,13 @@ const ModalContent = () => {
   );
 };
 const BatchUpload = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState(null);
   const [Tag, setTag] = useState([]);
   const [description, setDescription] = useState(null);
   const [errorMessage, seterrorMessage] = useState(null);
   const [showModal, setShowModal] = useState(false);
+
   const { mutateAsync: uploadBatch, isLoading } = useUploadBatch();
   const trnasformTags = (tags) => {
     return tags.split(',');
@@ -46,7 +48,9 @@ const BatchUpload = () => {
       await uploadBatch(formData);
       setShowModal(true);
     } catch (error) {
-      console.log(error);
+      if (error.response.data.message === 'unable to verify token') {
+        navigate('/login');
+      }
       seterrorMessage(error.response?.data.message);
     }
   };
