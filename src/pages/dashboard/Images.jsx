@@ -33,6 +33,13 @@ const Images = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false);
   const [singleImageKey, setSingleImageKey] = useState('');
+  const [imageKeyArray, setImageKeyArray] = useState([]);
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheckboxChange = (e) => {
+    const { singleImageKey, checked } = e.target;
+    console.log(singleImageKey);
+  };
 
   const toggleShowMenu = () => {
     setShowMenu((prev) => !prev);
@@ -47,6 +54,12 @@ const Images = () => {
     setShowDeleteSuccessModal((prev) => !prev);
     console.log(imageData);
   };
+
+  const getImageKeys = (imageKeyArray) => {};
+  let newArray = [];
+  newArray.push(imageKeyArray);
+  console.log(imageKeyArray);
+  console.log(newArray);
 
   let menuRef = useRef();
 
@@ -68,6 +81,12 @@ const Images = () => {
       selector: (row) => row.sn,
       sortable: true,
       flex: 2,
+    },
+    {
+      name: `${(<input type="checkbox" />)}`,
+      selector: (cell) => cell.checkbox,
+      sortable: true,
+      right: true,
     },
     {
       name: 'PictureRow',
@@ -94,12 +113,7 @@ const Images = () => {
       flex: 1,
       right: true,
     },
-    {
-      name: 'Delete All',
-      selector: (cell) => cell.delete,
-      sortable: true,
-      right: true,
-    },
+
     {
       name: '',
       selector: (cell) => cell.delete,
@@ -149,6 +163,7 @@ const Images = () => {
                   onClick={() => {
                     toggleDeleteModal();
                     setSingleImageKey(item.image_key);
+                    console.log(singleImageKey);
                   }}
                 >
                   <Trash
@@ -158,8 +173,24 @@ const Images = () => {
                   />
                 </div>
               ),
+              checkbox: (
+                <div className="pl-0 ml-0">
+                  <input
+                    type="checkbox"
+                    id="delete_all"
+                    onClick={() => {
+                      setImageKeyArray(item.image_key);
+                      console.log(imageKeyArray);
+                      getImageKeys();
+                    }}
+                    // checked={isChecked}
+                    // onChange={handleCheckboxChange}
+                  />
+                </div>
+              ),
             };
           });
+
           setImageData((prev) => {
             return {
               ...prev,
@@ -182,6 +213,17 @@ const Images = () => {
     };
     fetchData();
   }, [user, singleImageKey]);
+
+  const deleteImages = (imageData) => {
+    let arrayKeys = [];
+    imageData.forEach((id) => {
+      if (id.select) {
+        arrayKeys.push(item.image_key);
+      }
+    });
+    console.log(arrayKeys);
+    console.log('clicked');
+  };
 
   const handleDelete = async function () {
     await axios.delete(
@@ -234,6 +276,13 @@ const Images = () => {
                 <p>Last 2 months</p>
               </div>
             </div>
+          </div>
+          <div>
+            <Button
+              text={`Delete Multiple`}
+              className="bg-[#f04438] text-white p-2 rounded-lg text-lg mb-3 hover:bg-[#FF9D55]"
+              onClick={deleteImages}
+            />
           </div>
           <div className="images_table">
             <DataTable
