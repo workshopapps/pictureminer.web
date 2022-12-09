@@ -13,13 +13,53 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import UserContext from '../../context/UserContext';
 import axios from 'axios';
-import { notifyError } from '../../utils/notify';
+import { notifyError, notifySuccess } from '../../utils/notify';
 
 const ImageDetails = () => {
   const param = useParams();
 
   const [imageDets, setImageDets] = useState({ loading: false });
   const { user } = useContext(UserContext);
+  const fetchReview = async () => {
+    try {
+      const response = await axios.get('feedback/all', {
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          Authorization: `Bearer ${user.Token}`,
+        },
+      });
+
+      if (response) {
+        const reviewStatus = response?.data.filter((item) => {
+          return item.image_key === param.imageId;
+        });
+        setImageDets((prev) => {
+          return { ...prev, reviewStatus: reviewStatus[0] };
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      if (error.response?.status === 400) {
+        notifyError('Please try again, an error occured');
+      } else if (error.response?.data.message) {
+        notifyError(error.response.data.message);
+      } else if (error.response?.status === 401) {
+        notifyError('!Unauthorized, please log out and log in again');
+      } else if (error.response?.status === 500) {
+        notifyError(
+          'We are currently experiencing server issues, please try again later'
+        );
+      } else if (error.response?.status === 404) {
+        notifyError('Page not found');
+      } else {
+        notifyError('An error occured!!!');
+      }
+    } finally {
+      /* empty */
+    }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -40,9 +80,8 @@ const ImageDetails = () => {
 
         if (response) {
           const deets = response?.data.filter((item) => {
-            return item.date_created.split('.')[1] === param.imageId;
+            return item.image_key === param.imageId;
           });
-
           setImageDets((prev) => {
             return {
               ...prev,
@@ -52,17 +91,17 @@ const ImageDetails = () => {
           });
         }
       } catch (error) {
-        if (error.response.status === 400) {
+        if (error.response?.status === 400) {
           notifyError('Please try again, an error occured');
-        } else if (error.response.data.message) {
+        } else if (error.response?.data.message) {
           notifyError(error.response.data.message);
-        } else if (error.response.status === 401) {
+        } else if (error.response?.status === 401) {
           notifyError('!Unauthorized, please log out and log in again');
-        } else if (error.response.status === 500) {
+        } else if (error.response?.status === 500) {
           notifyError(
             'We are currently experiencing server issues, please try again later'
           );
-        } else if (error.response.status === 404) {
+        } else if (error.response?.status === 404) {
           notifyError('Page not found');
         } else {
           notifyError('An error occured!!!');
@@ -71,14 +110,9 @@ const ImageDetails = () => {
         /* empty */
       }
     };
+    fetchReview();
     fetchData();
   }, [user]);
-  const TAG_LIST = [
-    { title: 'Water', percentage: '55%' },
-    { title: 'Trees', percentage: '30%' },
-    { title: 'Cloth', percentage: '20%' },
-    { title: 'Sky', percentage: '10%' },
-  ];
 
   const navigate = useNavigate();
 
@@ -112,7 +146,7 @@ const ImageDetails = () => {
 
   const saveToJsonHandler = () => {
     const jsonString = `data:text/json;chatset=utf-8,${encodeURIComponent(
-      JSON.stringify({ ...image })
+      JSON.stringify({ ...imageDets })
     )}`;
     const link = document.createElement('a');
     link.href = jsonString;
@@ -125,65 +159,51 @@ const ImageDetails = () => {
     image_name: '',
     image_path: '',
   });
-
-  // const [imageDesc] = useState('Loading Description...');
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          'http://44.211.169.234:9000/api/v1/mine-service/get-all',
-          {
-            headers: {
-              'Content-Type': 'application/json',
-              Accept: 'application/json',
-              Authorization: `Bearer ${user.data.Token}`,
-            },
-          }
-        );
-
-        if (response) {
-          setImage(response.data[0]);
-          // setImage(response.data[0]);
+  const verifyHelp = async (verify) => {
+    try {
+      const response = await axios.post(
+        'feedback',
+        JSON.stringify({
+          feedback: 'string',
+          image_key: param.imageId,
+          is_helpful: verify,
+          reviewer_email: user.Email,
+        }),
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            Authorization: `Bearer ${user.Token}`,
+          },
         }
-      } catch (error) {
-        console.log(error);
+      );
+
+      if (response) {
+        notifySuccess('Review Successfully submitted');
+
+        fetchReview();
       }
-    };
-
-    fetchData();
-  }, [user]);
-
-  // useEffect(() => {
-  //   // let formData = new FormData();
-  //   // formData.append('image', image.image_name);
-  //   // console.log(formData);
-
-  //   if (image.image_path) {
-  //     const fetchData = async () => {
-  //       // console.log(image.image_path);
-  //       const blob = await image.image_path.blob();
-  //       const file = new File([blob], 'image.jpg', { type: blob.type });
-  //       console.log(file);
-  //       try {
-  //         const response = await axios.post(
-  //           'http://178.128.242.94:8000/caption-generator'
-  //         );
-
-  //         if (response) {
-  //           // setImage(response.data[0]);
-  //           console.log(response);
-  //           console.log('Superfly');
-  //         }
-  //       } catch (error) {
-  //         console.log(error);
-  //       }
-  //     };
-
-  //     fetchData();
-  //   }
-  // }, [image]);
-
+    } catch (error) {
+      if (error.response?.status === 400) {
+        notifyError('Please try again, an error occured');
+      } else if (error.response?.data.message) {
+        notifyError(
+          `${error.response?.data.message}, Please Log out and Log in again`
+        );
+      } else if (error.response?.status === 401) {
+        notifyError('!Unauthorized, please log out and log in again');
+      } else if (error.response?.status === 500) {
+        notifyError(
+          'We are currently experiencing server issues, please try again later'
+        );
+      } else if (error.response?.status === 404) {
+        notifyError('Page not found');
+      } else {
+        notifyError('An error occured!!!');
+      }
+    }
+  };
+  console.log(imageDets.reviewStatus);
   return (
     <main className="">
       <section className="relative flex justify-between items-center">
@@ -210,7 +230,6 @@ const ImageDetails = () => {
           </svg>
 
           <h2 className="font-bold text-2xl">
-            {' '}
             {`Picture ID: #${
               imageDets?.details
                 ? imageDets?.details[0].date_created.split('.')[1]
@@ -337,14 +356,99 @@ const ImageDetails = () => {
                 ? imageDets?.details[0].text_content
                 : 'This is an image of EKO hotel and suites, a popular 5 star hotel in victoria island, lagos, Nigeria.'}
             </p>
+          </div>
+        </div>
+        <div className="flex flex-col gap-6 mt-8 md:flex-row">
+          <p>Was this article helpful</p>
 
-            
-            
+          <div className="flex gap-4 ">
+            {!imageDets?.reviewStatus ? (
+              <>
+                <div
+                  className="rounded-full bg-[#ffe2cc] text-black flex items-center font-normal gap-2 py-2 px-4 cursor-pointer"
+                  onClick={() => verifyHelp(true)}
+                >
+                  Yes
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 17 15"
+                    fill="black"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M3.03014 4.99023H1.16183C0.817876 4.99023 0.539062 5.26905 0.539062 5.613V13.3976C0.539062 13.7416 0.817876 14.0204 1.16183 14.0204H3.03014C3.37409 14.0204 3.65291 13.7416 3.65291 13.3976V5.613C3.65291 5.26905 3.37409 4.99023 3.03014 4.99023Z" />
+                    <path d="M11.0392 4.99108C10.5597 4.99108 10.2531 4.48007 10.4787 4.05693L11.6132 1.92977C12.002 1.20075 11.4737 0.320312 10.6475 0.320312C10.3573 0.320312 10.0789 0.435618 9.87367 0.640852L6.25304 4.26147C5.7859 4.72864 5.52344 5.36225 5.52344 6.02291V11.5302C5.52344 12.9059 6.63872 14.0212 8.01451 14.0212H13.1724C14.0226 14.0212 14.7656 13.4472 14.9802 12.6245L16.4306 7.06493C16.4661 6.92845 16.4842 6.78799 16.4842 6.64696C16.4842 5.73245 15.7428 4.99108 14.8283 4.99108H11.0392Z" />
+                  </svg>
+                </div>
+                <div className="rounded-full bg-[#ffe2cc] text-black flex items-center font-normal gap-2 py-2 px-4 cursor-pointer">
+                  No
+                  <svg
+                    width="15"
+                    height="14"
+                    viewBox="0 0 15 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12.4408 9.16797H14.2489C14.5817 9.16797 14.8516 8.89815 14.8516 8.56529V1.03181C14.8516 0.698949 14.5817 0.42913 14.2489 0.42913H12.4408C12.108 0.42913 11.8382 0.698949 11.8382 1.03181V8.56529C11.8382 8.89815 12.108 9.16797 12.4408 9.16797Z"
+                      fill="black"
+                    />
+                    <path
+                      d="M4.69342 9.16741C5.15748 9.16741 5.45421 9.66194 5.23583 10.0714L4.13793 12.13C3.76167 12.8355 4.2729 13.6875 5.07244 13.6875C5.35335 13.6875 5.62272 13.5759 5.82136 13.3773L9.32518 9.87348C9.77725 9.42138 10.0312 8.80821 10.0312 8.16886V2.83929C10.0312 1.50788 8.95194 0.428572 7.62054 0.428572H2.62903C1.80625 0.428572 1.08723 0.984092 0.879546 1.78023L-0.524002 7.16046C-0.558445 7.29254 -0.575892 7.42847 -0.575892 7.56495C-0.575892 8.44995 0.141566 9.16741 1.02657 9.16741H4.69342Z"
+                      fill="black"
+                    />
+                  </svg>
+                </div>
+              </>
+            ) : (
+              <>
+                <div
+                  className="rounded-full bg-[#ccc] text-[#333] flex items-center font-normal gap-2 py-2 px-4 pointer-events-none"
+                  onClick={() => verifyHelp(true)}
+                >
+                  Yes
+                  <svg
+                    width={imageDets?.reviewStatus.is_helpful ? '24' : '15'}
+                    height={imageDets?.reviewStatus.is_helpful ? '24' : '15'}
+                    viewBox="0 0 17 15"
+                    fill={
+                      imageDets?.reviewStatus.is_helpful ? '#308c63' : '#333'
+                    }
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path d="M3.03014 4.99023H1.16183C0.817876 4.99023 0.539062 5.26905 0.539062 5.613V13.3976C0.539062 13.7416 0.817876 14.0204 1.16183 14.0204H3.03014C3.37409 14.0204 3.65291 13.7416 3.65291 13.3976V5.613C3.65291 5.26905 3.37409 4.99023 3.03014 4.99023Z" />
+                    <path d="M11.0392 4.99108C10.5597 4.99108 10.2531 4.48007 10.4787 4.05693L11.6132 1.92977C12.002 1.20075 11.4737 0.320312 10.6475 0.320312C10.3573 0.320312 10.0789 0.435618 9.87367 0.640852L6.25304 4.26147C5.7859 4.72864 5.52344 5.36225 5.52344 6.02291V11.5302C5.52344 12.9059 6.63872 14.0212 8.01451 14.0212H13.1724C14.0226 14.0212 14.7656 13.4472 14.9802 12.6245L16.4306 7.06493C16.4661 6.92845 16.4842 6.78799 16.4842 6.64696C16.4842 5.73245 15.7428 4.99108 14.8283 4.99108H11.0392Z" />
+                  </svg>
+                </div>
+                <div className="rounded-full bg-[#ccc] text-[#333] flex items-center font-normal gap-2 py-2 px-4 pointer-events-none ">
+                  No{' '}
+                  <svg
+                    width={!imageDets?.reviewStatus.is_helpful ? '24' : '15'}
+                    height={!imageDets?.reviewStatus.is_helpful ? '24' : '15'}
+                    viewBox="0 0 15 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12.4408 9.16797H14.2489C14.5817 9.16797 14.8516 8.89815 14.8516 8.56529V1.03181C14.8516 0.698949 14.5817 0.42913 14.2489 0.42913H12.4408C12.108 0.42913 11.8382 0.698949 11.8382 1.03181V8.56529C11.8382 8.89815 12.108 9.16797 12.4408 9.16797Z"
+                      fill={
+                        !imageDets?.reviewStatus.is_helpful ? 'red' : '#333'
+                      }
+                    />
+                    <path
+                      d="M4.69342 9.16741C5.15748 9.16741 5.45421 9.66194 5.23583 10.0714L4.13793 12.13C3.76167 12.8355 4.2729 13.6875 5.07244 13.6875C5.35335 13.6875 5.62272 13.5759 5.82136 13.3773L9.32518 9.87348C9.77725 9.42138 10.0312 8.80821 10.0312 8.16886V2.83929C10.0312 1.50788 8.95194 0.428572 7.62054 0.428572H2.62903C1.80625 0.428572 1.08723 0.984092 0.879546 1.78023L-0.524002 7.16046C-0.558445 7.29254 -0.575892 7.42847 -0.575892 7.56495C-0.575892 8.44995 0.141566 9.16741 1.02657 9.16741H4.69342Z"
+                      fill={
+                        !imageDets?.reviewStatus.is_helpful ? 'red' : '#333'
+                      }
+                    />
+                  </svg>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </section>
 
-      
       {showDeleteModal && (
         <>
           <Backdrop />

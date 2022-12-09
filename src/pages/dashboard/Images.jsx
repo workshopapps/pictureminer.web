@@ -123,18 +123,16 @@ const Images = () => {
         });
 
         if (response) {
+          console.log(response);
           const structuredData = response?.data.map((item, index) => {
             return {
               id: index,
               sn: index,
               picture: <img src={item.image_path} alt="" />,
-              pictureId: `#${item.date_created.split('.')[1]}`,
+              pictureId: item.image_key,
               dateMined: `${item.date_created.split('T')[0]}`,
               details: (
-                <Link
-                  to={`${item.date_created.split('.')[1]}`}
-                  className="view__more"
-                >
+                <Link to={item.image_key} className="view__more">
                   View More
                 </Link>
               ),
