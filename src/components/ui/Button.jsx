@@ -21,12 +21,12 @@ const Button = ({
       >
         {icon ? icon : ''}
         {loading && (
-          <div class="flex justify-center items-center">
+          <div className="flex justify-center items-center">
             <div
-              class="spinner-border animate-spin inline-block w-4 h-4 border-2 rounded-full mr-2"
+              className="spinner-border animate-spin inline-block w-4 h-4 border-2 rounded-full mr-2"
               role="status"
             >
-              <span class="visually-hidden">Loading...</span>
+              <span className="visually-hidden">Loading...</span>
             </div>
           </div>
         )}
