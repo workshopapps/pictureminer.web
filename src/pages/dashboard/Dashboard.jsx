@@ -4,35 +4,47 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import UserContext from '../../context/UserContext';
 import useGetBatch from '../../Hooks/useGetBatch';
-import { ResponsiveContainer, Legend, BarChart, CartesianGrid, XAxis, YAxis, Bar, Tooltip } from 'recharts';
+import {
+  ResponsiveContainer,
+  Legend,
+  BarChart,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Bar,
+  Tooltip,
+} from 'recharts';
 import { notifyError } from '../../utils/notify';
 
 axios.defaults.baseURL = 'https://discripto.hng.tech/api1/api/v1/';
 
 const Dashboard = () => {
   const { user } = useContext(UserContext);
-  const { response:batchImages } = useGetBatch();
+  const { response: batchImages } = useGetBatch();
   console.log(batchImages);
   const totalBatchImages = batchImages?.length;
   // const untagged = batchImages?.map(item => item.tags).filter(tags => tags[0] === 'null').length;
   // console.log(untagged);
 
-  const taggedLength = batchImages?.map(item => item.tags).filter(tags => tags[0] !== 'null').length;
-  const untaggedLength = batchImages?.map(item => item.tags).filter(tags => tags[0] === 'null').length;
+  const taggedLength = batchImages
+    ?.map((item) => item.tags)
+    .filter((tags) => tags[0] !== 'null').length;
+  const untaggedLength = batchImages
+    ?.map((item) => item.tags)
+    .filter((tags) => tags[0] === 'null').length;
 
-  const taggedAndUntaggedData = [{
-    name: 'Tagged',
-    value: taggedLength,
-  },
-  {
-    name: 'Untagged',
-    value: untaggedLength,
-  }];
-
-
+  const taggedAndUntaggedData = [
+    {
+      name: 'Tagged',
+      value: taggedLength,
+    },
+    {
+      name: 'Untagged',
+      value: untaggedLength,
+    },
+  ];
 
   console.log(taggedAndUntaggedData);
-
 
   const [dashboarddata, setDashboardData] = useState({ imageData: [] });
   useEffect(() => {
@@ -74,7 +86,9 @@ const Dashboard = () => {
         if (error.response.status === 400) {
           notifyError('Please try again, an error occured');
         } else if (error.response.data.message) {
-          notifyError(error.response.data.message);
+          notifyError(
+            `${error.response.data.message}, Please Log out and Log in again`
+          );
         } else if (error.response.status === 401) {
           notifyError('!Unauthorized, please log out and log in again');
         } else if (error.response.status === 500) {
@@ -93,8 +107,6 @@ const Dashboard = () => {
     fetchData();
   }, [user]);
 
-  console.log(dashboarddata);
-
   const totalSingleImages = dashboarddata?.imageData?.length;
   const barData = [
     {
@@ -103,12 +115,11 @@ const Dashboard = () => {
     },
     {
       name: 'Tag',
-      'Tagged': taggedLength,
-      'Untagged': untaggedLength,
-
-    }
-];
-  const COLORS = [ '#FFBB28', '#FF8042'];
+      Tagged: taggedLength,
+      Untagged: untaggedLength,
+    },
+  ];
+  const COLORS = ['#FFBB28', '#FF8042'];
 
   return (
     <div className="dashboard">
@@ -135,9 +146,7 @@ const Dashboard = () => {
         </Link>
       </div>
       <div className="api__details">
-        <div className="api__details__head">
-
-        </div>
+        <div className="api__details__head"></div>
         {/* <ResponsiveContainer width="100%" height="100%">
 
           <PieChart>
@@ -162,31 +171,28 @@ const Dashboard = () => {
 
           </PieChart>
         </ResponsiveContainer> */}
-<ResponsiveContainer width="100%" height="100%">
-        <BarChart
-          width={500}
-          height={300}
-          data={barData}
-          margin={{
-            top: 5,
-            right: 5,
-            left: 5,
-            bottom: 5,
-          }}
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          <Bar dataKey="Total Batch Upload" fill="#8884d8" />
-          <Bar dataKey="Tagged" fill="#82ca9d" />
-          <Bar dataKey="Untagged" fill="#FF8042" />
-        </BarChart>
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart
+            width={500}
+            height={300}
+            data={barData}
+            margin={{
+              top: 5,
+              right: 5,
+              left: 5,
+              bottom: 5,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="Total Batch Upload" fill="#8884d8" />
+            <Bar dataKey="Tagged" fill="#82ca9d" />
+            <Bar dataKey="Untagged" fill="#FF8042" />
+          </BarChart>
         </ResponsiveContainer>
-
-
-
       </div>
     </div>
   );
