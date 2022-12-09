@@ -74,33 +74,36 @@ const Images = () => {
       name: 'Picture',
       selector: (row) => row.picture,
       sortable: true,
-      flex: 2,
+      maxWidth: '120px',
+      minWidth: '120px',
     },
     {
       name: 'Picture ID',
       selector: (row) => row.pictureId,
       sortable: true,
-      flex: 4,
+      maxWidth: '210px',
+      minWidth: '210px',
     },
     {
       name: 'Date Mined',
       selector: (row) => row.dateMined,
       sortable: true,
-      flex: 4,
+      maxWidth: '150px',
+      minWidth: '150px',
     },
     {
       name: 'Details',
       selector: (cell) => cell.details,
       sortable: true,
-      flex: 1,
-      right: true,
+      maxWidth: '130px',
+      minWidth: '130px',
     },
     {
       name: '',
       selector: (cell) => cell.delete,
-
+      right: true,
       sortable: true,
-      width: '80px',
+      width: '100px',
     },
   ];
 
@@ -128,13 +131,10 @@ const Images = () => {
               id: index,
               sn: index,
               picture: <img src={item.image_path} alt="" />,
-              pictureId: `#${item.date_created.split('.')[1]}`,
+              pictureId: item.image_key,
               dateMined: `${item.date_created.split('T')[0]}`,
               details: (
-                <Link
-                  to={`${item.date_created.split('.')[1]}`}
-                  className="view__more"
-                >
+                <Link to={item.image_key} className="view__more">
                   View More
                 </Link>
               ),

@@ -83,7 +83,6 @@ const BatchImage = () => {
         });
 
         if (response) {
-          console.log(response);
           const structuredData = response?.data.map((item, index) => {
             return {
               id: item.id,
@@ -119,7 +118,7 @@ const BatchImage = () => {
     };
     fetchData();
   }, [user]);
-  console.log(batchData);
+
   return (
     <div className="dashboard_images">
       <div className="dashboard__images__head">
