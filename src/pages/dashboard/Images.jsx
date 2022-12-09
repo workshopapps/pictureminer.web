@@ -74,33 +74,36 @@ const Images = () => {
       name: 'Picture',
       selector: (row) => row.picture,
       sortable: true,
-      flex: 2,
+      maxWidth: '120px',
+      minWidth: '120px',
     },
     {
       name: 'Picture ID',
       selector: (row) => row.pictureId,
       sortable: true,
-      flex: 4,
+      maxWidth: '210px',
+      minWidth: '210px',
     },
     {
       name: 'Date Mined',
       selector: (row) => row.dateMined,
       sortable: true,
-      flex: 4,
+      maxWidth: '150px',
+      minWidth: '150px',
     },
     {
       name: 'Details',
       selector: (cell) => cell.details,
       sortable: true,
-      flex: 1,
-      right: true,
+      maxWidth: '130px',
+      minWidth: '130px',
     },
     {
       name: '',
       selector: (cell) => cell.delete,
-
+      right: true,
       sortable: true,
-      width: '80px',
+      width: '100px',
     },
   ];
 
