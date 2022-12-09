@@ -6,6 +6,7 @@ export default function Button({
   type = 'primary',
   onClick,
   disabled,
+  loading,
   ...props
 }) {
   return (
@@ -21,6 +22,16 @@ export default function Button({
         }`}
       {...props}
     >
+      {loading && (
+        <div class="flex justify-center items-center">
+          <div
+            class="spinner-border animate-spin inline-block w-4 h-4 border-2 rounded-full"
+            role="status"
+          >
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      )}
       {text}
     </button>
   );
