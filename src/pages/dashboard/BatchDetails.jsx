@@ -262,7 +262,6 @@ const BatchDetails = () => {
       <section>
         {imageDets.data
           ? imageDets.data.map((item, index) => {
-              // console.log(item);
               return (
                 <div key={index} className="categories">
                   <h3 className="tag">{Object.keys(item)[0]}</h3>

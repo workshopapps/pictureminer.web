@@ -129,7 +129,9 @@ function AccountInfoSettings({ formValues, setFormValues, initialFormValues }) {
           value={formValues.first_name}
           labelClassName="form__label"
           containerClassName="form__group"
-          inputClassName={`w-full placeholder:text-sm placeholder:text-modalGray`}
+          inputClassName={
+            'w-full placeholder:text-sm placeholder:text-modalGray'
+          }
         />
         <FormInput
           name="last_name"
@@ -140,7 +142,9 @@ function AccountInfoSettings({ formValues, setFormValues, initialFormValues }) {
           value={formValues.last_name}
           labelClassName="form__label"
           containerClassName="form__group"
-          inputClassName={`w-full placeholder:text-sm placeholder:text-modalGray`}
+          inputClassName={
+            'w-full placeholder:text-sm placeholder:text-modalGray'
+          }
         />
         <FormInput
           name="email"
@@ -169,7 +173,9 @@ function AccountInfoSettings({ formValues, setFormValues, initialFormValues }) {
           value={formValues.username}
           labelClassName="form__label"
           containerClassName="form__group"
-          inputClassName={`w-full placeholder:text-sm placeholder:text-modalGray`}
+          inputClassName={
+            'w-full placeholder:text-sm placeholder:text-modalGray'
+          }
         />
         <div className="mt-12 space-x-5 flex items-center justify-center md:justify-start">
           <Button
