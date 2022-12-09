@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import * as Sentry from "@sentry/react";
+// import * as Sentry from "@sentry/react";
 
 import ExamplePage from './pages/documentation/ExamplePage/ExamplePage';
 
@@ -26,4 +26,5 @@ function App() {
   );
 }
 
-export default Sentry.withProfiler(App);
+export default App;
+// export default Sentry.withProfiler(App);
