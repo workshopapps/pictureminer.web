@@ -6,6 +6,6 @@ export const actions = {
   isFormEmpty: 'is_form_empty',
   toggleSuccessMessage: 'toggled_success_message',
   isPasswordMatch: 'password_matched',
-  submitted: 'submitted',
+  accountUpdated: 'account_Updated',
   cancelForm: 'form_canceled',
 };
