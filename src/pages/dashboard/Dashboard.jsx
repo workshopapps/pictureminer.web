@@ -12,26 +12,15 @@ axios.defaults.baseURL = 'https://discripto.hng.tech/api1/api/v1/';
 const Dashboard = () => {
   const { user } = useContext(UserContext);
   const { response:batchImages } = useGetBatch();
-  console.log(batchImages);
-  const totalBatchImages = batchImages?.length;
-  // const untagged = batchImages?.map(item => item.tags).filter(tags => tags[0] === 'null').length;
-  // console.log(untagged);
-
-  const taggedLength = batchImages?.map(item => item.tags).filter(tags => tags[0] !== 'null').length;
-  const untaggedLength = batchImages?.map(item => item.tags).filter(tags => tags[0] === 'null').length;
-
-  const taggedAndUntaggedData = [{
-    name: 'Tagged',
-    value: taggedLength,
-  },
-  {
-    name: 'Untagged',
-    value: untaggedLength,
-  }];
-
-
-
-  console.log(taggedAndUntaggedData);
+  
+  const BarData = batchImages.map((batch) => {
+    return {
+      name: batch.batchName,
+      images: batch.images.length,
+    }
+  })
+  
+  
 
 
   const [dashboarddata, setDashboardData] = useState({ imageData: [] });
@@ -93,21 +82,7 @@ const Dashboard = () => {
     fetchData();
   }, [user]);
 
-  console.log(dashboarddata);
-
-  const totalSingleImages = dashboarddata?.imageData?.length;
-  const barData = [
-    {
-      name: 'Batch upload',
-      'Total Batch Upload': totalBatchImages,
-    },
-    {
-      name: 'Tag',
-      'Tagged': taggedLength,
-      'Untagged': untaggedLength,
-
-    }
-];
+  
   const COLORS = [ '#FFBB28', '#FF8042'];
 
   return (
