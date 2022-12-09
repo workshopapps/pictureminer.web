@@ -123,7 +123,6 @@ const Images = () => {
         });
 
         if (response) {
-          console.log(response);
           const structuredData = response?.data.map((item, index) => {
             return {
               id: index,

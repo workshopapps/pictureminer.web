@@ -39,7 +39,6 @@ const ImageDetails = () => {
         });
       }
     } catch (error) {
-      console.log(error);
       if (error.response?.status === 400) {
         notifyError('Please try again, an error occured');
       } else if (error.response?.data.message) {
@@ -203,7 +202,7 @@ const ImageDetails = () => {
       }
     }
   };
-  console.log(imageDets.reviewStatus);
+
   return (
     <main className="">
       <section className="relative flex justify-between items-center">
@@ -380,7 +379,10 @@ const ImageDetails = () => {
                     <path d="M11.0392 4.99108C10.5597 4.99108 10.2531 4.48007 10.4787 4.05693L11.6132 1.92977C12.002 1.20075 11.4737 0.320312 10.6475 0.320312C10.3573 0.320312 10.0789 0.435618 9.87367 0.640852L6.25304 4.26147C5.7859 4.72864 5.52344 5.36225 5.52344 6.02291V11.5302C5.52344 12.9059 6.63872 14.0212 8.01451 14.0212H13.1724C14.0226 14.0212 14.7656 13.4472 14.9802 12.6245L16.4306 7.06493C16.4661 6.92845 16.4842 6.78799 16.4842 6.64696C16.4842 5.73245 15.7428 4.99108 14.8283 4.99108H11.0392Z" />
                   </svg>
                 </div>
-                <div className="rounded-full bg-[#ffe2cc] text-black flex items-center font-normal gap-2 py-2 px-4 cursor-pointer">
+                <div
+                  className="rounded-full bg-[#ffe2cc] text-black flex items-center font-normal gap-2 py-2 px-4 cursor-pointer"
+                  onClick={() => verifyHelp(false)}
+                >
                   No
                   <svg
                     width="15"
@@ -402,10 +404,7 @@ const ImageDetails = () => {
               </>
             ) : (
               <>
-                <div
-                  className="rounded-full bg-[#ccc] text-[#333] flex items-center font-normal gap-2 py-2 px-4 pointer-events-none"
-                  onClick={() => verifyHelp(true)}
-                >
+                <div className="rounded-full bg-[#ccc] text-[#333] flex items-center font-normal gap-2 py-2 px-4 pointer-events-none">
                   Yes
                   <svg
                     width={imageDets?.reviewStatus.is_helpful ? '24' : '15'}
