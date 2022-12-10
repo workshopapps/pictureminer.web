@@ -131,7 +131,7 @@ const Dashboard = () => {
       'Total Images': formatedDate[item],
     };
   });
-  console.log(singleBarData, barData);
+
   return (
     <div className="dashboard">
       <Tabs>
@@ -198,24 +198,25 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="api__details">
-            <ResponsiveContainer width="100%" height="100%">
+            <ResponsiveContainer width="80%" height="100%">
               <BarChart
                 width={500}
                 height={300}
                 data={singleBarData}
                 margin={{
                   top: 5,
-                  right: 2,
-                  left: 2,
+                  right: 5,
+                  left: 5,
                   bottom: 5,
                 }}
+                barSize={70}
               >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="Total Images" fill="#ff6c00" />
+                <Bar dataKey="Total Images" fill="#ff6c00" minPointSize={10} />
               </BarChart>
             </ResponsiveContainer>
           </div>
