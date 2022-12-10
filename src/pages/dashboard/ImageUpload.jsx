@@ -1,5 +1,5 @@
 /* eslint-disable */
-import React, { useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { DocumentUpload } from 'iconsax-react';
 import { images } from '../../Constants';
 import BatchUpload from './BatchUpload';
@@ -10,9 +10,12 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import AuthInput from '../../components/form/AuthInput';
 import { useGlobalContext } from '../../context/context';
 import { mineImageWithUrlAction } from '../../context/actions';
-import Loader from "../../components/Loader"
+import Loader from '../../components/Loader';
+import UserContext from '../../context/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 const ImageUpload = ({ demo = false }) => {
+  const navigate = useNavigate();
   const { mutate, response, isLoading } = useUploadImage();
 
   const [imagesUpload, setImagesUpload] = useState([]);
@@ -34,11 +37,11 @@ const ImageUpload = ({ demo = false }) => {
     await mineImageWithUrlAction({ url })(dispatch);
   };
 
-  useEffect(() => {
-    if (response) {
-      console.log({ response });
-    }
-  }, [response]);
+  // useEffect(() => {
+  //   if (response) {
+  //     console.log({ response });
+  //   }
+  // }, [response]);
 
   // useEffect(() => {
   //   if (error) {
@@ -65,11 +68,21 @@ const ImageUpload = ({ demo = false }) => {
     mutate(formData);
     // console.log(imagesUpload);
   };
+  const { user } = useContext(UserContext);
+
+  const handleTabChange = (index) => {
+    console.log(index);
+    if (!user && index === 1) {
+      navigate('/signup');
+      return false;
+    }
+  };
+
   if (demo) {
     return (
-      <div className="flex flex-col ga-8 items-center my-10">
+      <div className="flex flex-col items-center my-10">
         <div className="container__try-demo flex flex-col gap-8 rounded-lg items-center py-6 mx-6 md:mx-0 relative b-red border border-dashed border-secBrown justify-center">
-          <h2 className="text-mainOrange text-large">Try demo</h2>
+          <h2 className="text-mainOrange text-large">Try demo.</h2>
           <img
             src={images.addToFolder}
             className="h-16 w-16"
@@ -133,7 +146,7 @@ const ImageUpload = ({ demo = false }) => {
     );
   }
   return (
-    <Tabs>
+    <Tabs className={'px-10'} onSelect={(index) => handleTabChange(index)}>
       <TabList className={'tablist'}>
         <Tab className={'tab'} selectedClassName={'active__tab'}>
           Single Upload
@@ -144,7 +157,7 @@ const ImageUpload = ({ demo = false }) => {
       </TabList>
 
       <TabPanel>
-        <div className="mx-auto">
+        <div className="mx-auto max-w-screen-xl mb-8">
           <div className="hero_upload">
             <img
               src={images.addToFolder}
@@ -237,7 +250,7 @@ const ImageUpload = ({ demo = false }) => {
                 </div>
               ) : null}
 
-{ loading && <Loader />}
+              {loading && <Loader />}
 
               <button
                 type="submit"

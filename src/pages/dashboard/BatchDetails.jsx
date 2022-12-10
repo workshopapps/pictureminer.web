@@ -21,6 +21,41 @@ const BatchDetails = () => {
   const [imageDets, setImageDets] = useState({ loading: false, tags: null });
   const [buttonDropdown, setButtonDropdown] = useState(false);
   const { user } = useContext(UserContext);
+  const deleteBatch = async () => {
+    try {
+      const response = await axios.delete(
+        `batch-service/delete/${param.batchId}`,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            Authorization: `Bearer ${user.Token}`,
+          },
+        }
+      );
+      if (response) {
+        navigate(-1);
+      }
+    } catch (error) {
+      if (error.response.status === 400) {
+        notifyError('Please try again, an error occured');
+      } else if (error.response.data.message) {
+        notifyError(error.response.data.message);
+      } else if (error.response.status === 401) {
+        notifyError('!Unauthorized, please log out and log in again');
+      } else if (error.response.status === 500) {
+        notifyError(
+          'We are currently experiencing server issues, please try again later'
+        );
+      } else if (error.response.status === 404) {
+        notifyError('Page not found');
+      } else {
+        notifyError('An error occured!!!');
+      }
+    } finally {
+      /* empty */
+    }
+  };
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -297,30 +332,17 @@ const BatchDetails = () => {
               <div className="flex gap-4 mt-4 w-full">
                 <Button
                   className="border border-[#8e8e8e] text-8e8e8e py-3 px-6 w-full rounded-lg	font-medium hover:bg-[#FF6C00] hover:text-white"
-                  // styles={{,
-                  //   padding: '.7rem 1.4rem',
-                  //   width: '100%',
-                  //   borderRadius: '.5rem',
-                  //   fontSize: '.9rem',
-                  //   fontWeight: '500',
-                  // }}
                   text="Cancel"
                   onclick={toggleDeleteModal}
                 />
 
                 <Button
                   className="bg-[#f04438] text-white py-3 px-6 w-full rounded-lg	font-medium hover:bg-[#FF6C00]"
-                  // styles={{
-                  //   background: '#f04438',
-                  //   color: 'white',
-                  //   padding: '.7rem 1.4rem',
-                  //   width: '100%',
-                  //   borderRadius: '.5rem',
-                  //   fontSize: '.9rem',
-                  //   fontWeight: '500',
-                  // }}
                   text="Delete"
-                  onclick={toggleDeleteSuccessModal}
+                  onclick={() => {
+                    toggleDeleteSuccessModal();
+                    deleteBatch();
+                  }}
                 />
               </div>
             </div>

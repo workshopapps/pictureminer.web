@@ -35,18 +35,26 @@ const Images = () => {
   const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false);
   const [singleImageKey, setSingleImageKey] = useState('');
 
-  // const toggleShowMenu = () => {
-  //   setShowMenu((prev) => !prev);
-  // };
+
+  const toggleShowMenu = () => {
+    setShowMenu((prev) => !prev);
+  };
 
   const toggleDeleteModal = () => {
     setShowDeleteModal((prev) => !prev);
   };
 
-  const toggleDeleteSuccessModal = async () => {
+  const toggleDeleteSuccessModal = (imageData) => {
     showDeleteModal && toggleDeleteModal();
     setShowDeleteSuccessModal((prev) => !prev);
+    console.log(imageData);
   };
+
+  // const getImageKeys = (imageKeyArray) => {};
+  // let newArray = [];
+  // newArray.push(imageKeyArray);
+  // console.log(imageKeyArray);
+  // console.log(newArray);
 
   let menuRef = useRef();
 
@@ -70,8 +78,14 @@ const Images = () => {
       maxWidth: '100px',
       minWidth: '100px',
     },
+    // {
+    //   name: `${(<input type="checkbox" />)}`,
+    //   selector: (cell) => cell.checkbox,
+    //   sortable: true,
+    //   right: true,
+    // },
     {
-      name: 'Picture',
+      name: 'PictureRow',
       selector: (row) => row.picture,
       sortable: true,
       maxWidth: '120px',
@@ -81,23 +95,24 @@ const Images = () => {
       name: 'Picture ID',
       selector: (row) => row.pictureId,
       sortable: true,
-      maxWidth: '210px',
-      minWidth: '210px',
+      maxWidth: '240px',
+      minWidth: '240px',
     },
     {
       name: 'Date Mined',
       selector: (row) => row.dateMined,
       sortable: true,
-      maxWidth: '150px',
-      minWidth: '150px',
+      maxWidth: '180px',
+      minWidth: '180px',
     },
     {
       name: 'Details',
       selector: (cell) => cell.details,
       sortable: true,
-      maxWidth: '130px',
-      minWidth: '130px',
+      maxWidth: '150px',
+      minWidth: '150px',
     },
+
     {
       name: '',
       selector: (cell) => cell.delete,
@@ -144,6 +159,7 @@ const Images = () => {
                   onClick={() => {
                     toggleDeleteModal();
                     setSingleImageKey(item.image_key);
+                    console.log(singleImageKey);
                   }}
                 >
                   <Trash
@@ -153,8 +169,23 @@ const Images = () => {
                   />
                 </div>
               ),
+              // checkbox: (
+              //   <div className="pl-0 ml-0">
+              //     <input
+              //       type="checkbox"
+              //       id="delete_all"
+              //       onClick={() => {
+              //         setImageKeyArray([...imageKeyArray, item.image_key]);
+              //         getImageKeys();
+              //       }}
+              //       // checked={isChecked}
+              //       // onChange={handleCheckboxChange}
+              //     />
+              //   </div>
+              // ),
             };
           });
+
           setImageData((prev) => {
             return {
               ...prev,
@@ -222,7 +253,7 @@ const Images = () => {
               <Button
                 text={'Filter'}
                 icon={<ArrowDown2 size={24} color="#FF6C00" />}
-                onclick={() => setShowMenu((prev) => !prev)}
+                onclick={toggleShowMenu}
                 className="button"
                 type="secondary"
               />
