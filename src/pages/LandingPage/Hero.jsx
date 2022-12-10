@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import style from '../../styles/layout/Hero.module.scss';
 import UserContext from '../../context/UserContext';
 
 const Hero = () => {
@@ -17,10 +16,6 @@ const Hero = () => {
           process time while also giving you quicker, clearer, and more
           self-explanatory results.
         </p>
-      </div>
-      <div className={style.ctaWrapper}>
-        {user ? null : <Link to="/signup">Sign Up</Link>}
-        <Link to="/documentation">View Documentation</Link>
       </div>
     </section>
   );

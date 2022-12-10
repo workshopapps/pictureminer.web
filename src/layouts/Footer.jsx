@@ -27,9 +27,11 @@ const Footer = () => {
           {/* <Link to="/contact">Contact</Link> */}
         </div>
         <div className="flex flex-col gap-2">
-          <div className="mb-6">
-            <img src={logoFooter} alt="logo" />
-          </div>
+          <Link to="/">
+            <div className="mb-6">
+              <img src={logoFooter} alt="logo" />
+            </div>
+          </Link>
           <p className="text-white leading-[24px]">
             Subscribe to our newsletter
           </p>
