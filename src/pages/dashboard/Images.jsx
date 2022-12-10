@@ -34,17 +34,10 @@ const Images = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false);
   const [singleImageKey, setSingleImageKey] = useState('');
-  // const [imageKeyArray, setImageKeyArray] = useState([]);
-  // const [isChecked, setIsChecked] = useState(false);
 
-  // const handleCheckboxChange = (e) => {
-  //   const { singleImageKey, checked } = e.target;
-  //   console.log(singleImageKey);
-  // };
-
-  // const toggleShowMenu = () => {
-  //   setShowMenu((prev) => !prev);
-  // };
+  const toggleShowMenu = () => {
+    setShowMenu((prev) => !prev);
+  };
 
   const toggleDeleteModal = () => {
     setShowDeleteModal((prev) => !prev);
