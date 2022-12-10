@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Feature({ title, svg, text }) {
   return (
     <div className="bg-white pl-4 pr-5 lg:py-6 features-card h-[246px]h py-[40px] lg:my-[30px] rounded-lg max-[480px]:m-[20px]">
-      <div className="flex items-center justify-center w-[30px] lg:w-[40px] h-[30px] lg:h-[40px] bg-[#F79009] rounded-full">
+      <div className="flex items-center justify-center w-[20px] h-[20px] bg-[#F79009] rounded-full">
         {svg}
       </div>
       <div className="mt-4">
@@ -18,7 +18,6 @@ function Feature({ title, svg, text }) {
     </div>
   );
 }
-
 Feature.propTypes = {
   title: PropTypes.string,
   text: PropTypes.string,
