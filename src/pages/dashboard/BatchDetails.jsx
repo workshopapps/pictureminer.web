@@ -33,7 +33,6 @@ const BatchDetails = () => {
           },
         }
       );
-
       if (response) {
         navigate(-1);
       }
