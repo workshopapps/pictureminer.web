@@ -12,7 +12,10 @@ export const faqData = [
       </p>,
       <p key={2}>
         For an overview of how to use Discripto, check out our brief tutorial (
-        <Link to="/how-it-works">discripto.com/how-to-use</Link>)
+        <Link to="/how-it-works" className="text-blue-500">
+          discripto.com/how-to-use
+        </Link>
+        )
       </p>,
     ],
   },
@@ -26,7 +29,7 @@ export const faqData = [
         request(s).
       </p>,
       <p key={2}>
-        Learn more about how Discripto works (
+        Learn more about how Discripto works(
         <Link to="/how-it-works" className="text-blue-500">
           Learn more
         </Link>
@@ -62,10 +65,7 @@ export const faqData = [
         </Link>
         )
       </p>,
-      <p key={2}>
-        If you have any question(s), please get in touch
-        (discripto.com/contact).
-      </p>,
+      <p key={2}>If you have any question(s), please get in touch.</p>,
     ],
   },
   {
@@ -105,7 +105,11 @@ export const faqData = [
         Yes. Just select your preferred option from the ‘Sort by’ dropdown list
         above your results. Discripto will remember your selection for the
         duration of your session. For more information,{' '}
-        <Link to="/how-it-works"> see our guide </Link> on using Discripto.
+        <Link to="/how-it-works" className="text-blue-500">
+          {' '}
+          see our guide{' '}
+        </Link>{' '}
+        on using Discripto.
       </p>,
     ],
   },
@@ -113,7 +117,7 @@ export const faqData = [
     id: 9,
     question: 'How do I change my account email or password?',
     answer: [
-      'Visit the account\'s tab on your dashboard and follow the instructions from there.',
+      'Visit the account&apos;s tab on your dashboard and follow the instructions from there.',
     ],
   },
   {

@@ -1,9 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import UserContext from '../../context/UserContext';
+import style from '../../styles/layout/Hero.module.scss';
 
 const Hero = () => {
-  const { user } = React.useContext(UserContext);
   return (
     <section className={style.container}>
       <div className={style.cover}>
