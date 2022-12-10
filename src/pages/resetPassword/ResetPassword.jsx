@@ -158,6 +158,7 @@ export default function ResetPassword() {
                   password !== confirmPassword ||
                   loading
                 }
+                loading={loading}
               />
             </form>
           </>

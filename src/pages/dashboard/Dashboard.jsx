@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import UserContext from '../../context/UserContext';
 import useGetBatch from '../../Hooks/useGetBatch';
-import { ResponsiveContainer, Legend, BarChart, CartesianGrid, XAxis, YAxis, Bar, Tooltip, LabelList} from 'recharts';
+import { ResponsiveContainer, Legend, BarChart, CartesianGrid, XAxis, YAxis, Bar, Tooltip, Text } from 'recharts';
 import { notifyError } from '../../utils/notify';
 
 axios.defaults.baseURL = 'https://discripto.hng.tech/api1/api/v1/';
@@ -12,52 +12,23 @@ axios.defaults.baseURL = 'https://discripto.hng.tech/api1/api/v1/';
 const Dashboard = () => {
   const { user } = useContext(UserContext);
   const { response:batchImages } = useGetBatch();
-  
-  const BarData = [
-    {
-      "id": "638b70f437a213abb85cb30a",
-      "tagged" : 1,
-       "untagged" : 3,
-       "total" : 4,
-      "date_created": new Date("2022-12-03T15:53:24.196Z").toLocaleDateString('en-US',
+  const xLabelAngle = window.innerWidth < 500 ? -45 : 0;
+  const BarDataChartLastFiveDays = batchImages?.data.filter(item => {
+    const date = new Date(item.date_created);
+    const today = new Date();
+    const diffTime = Math.abs(today - date);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return diffDays <= 5;})?.map(batch => {
+    return {
+      id: batch.id,
+      Tagged: batch.tagged,
+      Untagged: batch.untagged,
+      total: batch.total,
+      date_created: new Date(batch.date_created).toLocaleDateString('en-US',
       { month: 'short', day: 'numeric', year: 'numeric' }),
-    },
-    {
-      "id": "638b70f437a213abb85cb30a",
-      "tagged" : 1,
-       "untagged" : 3,
-       "total" : 4,
-      "date_created": new Date("2022-12-03T15:53:24.196Z").toLocaleDateString('en-US',
-      { month: 'short', day: 'numeric', year: 'numeric' }),
-    },
-    {
-      "id": "638b70f437a213abb85cb30a",
-      "tagged" : 1,
-       "untagged" : 3,
-       "total" : 4,
-      "date_created": new Date("2022-12-03T15:53:24.196Z").toLocaleDateString('en-US',
-      { month: 'short', day: 'numeric', year: 'numeric' }),
-    },
-    {
-      "id": "638b70f437a213abb85cb30a",
-      "tagged" : 1,
-       "untagged" : 3,
-       "total" : 4,
-      "date_created": new Date("2022-12-04T15:53:24.196Z").toLocaleDateString('en-US',
-      { month: 'short', day: 'numeric', year: 'numeric' }),
-    },
-    {
-      "id": "638b70f437a213abb85cb30a",
-      "tagged" : 1,
-       "untagged" : 3,
-       "total" : 4,
-      "date_created": new Date("2022-12-05T15:53:24.196Z").toLocaleDateString('en-US',
-      { month: 'short', day: 'numeric', year: 'numeric' }),
-    },
-    
-     ]
-  
-  
+    };
+  }
+  );
 
 
   const [dashboarddata, setDashboardData] = useState({ imageData: [] });
@@ -100,7 +71,9 @@ const Dashboard = () => {
         if (error.response.status === 400) {
           notifyError('Please try again, an error occured');
         } else if (error.response.data.message) {
-          notifyError(error.response.data.message);
+          notifyError(
+            `${error.response.data.message}, Please Log out and Log in again`
+          );
         } else if (error.response.status === 401) {
           notifyError('!Unauthorized, please log out and log in again');
         } else if (error.response.status === 500) {
@@ -119,7 +92,7 @@ const Dashboard = () => {
     fetchData();
   }, [user]);
 
-  
+
   const COLORS = [ '#FFBB28', '#FF8042'];
 
   return (
@@ -147,79 +120,66 @@ const Dashboard = () => {
         </Link>
       </div>
       <div className="api__details">
-        <div className="api__details__head">
+        <div className="api__details__head"></div>
 
-        </div>
-        {/* <ResponsiveContainer width="100%" height="100%">
-
-          <PieChart>
-            <Pie
-              data={taggedAndUntaggedData}
-              dataKey="value"
-              nameKey="name"
-              cx="50%"
-              cy="50%"
-              outerRadius={60}
-              fill="#8884d8"
-              label = {({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-
-
-
-            >
-
-            { taggedAndUntaggedData.map((entry, index) => (  <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />)) }
-            </Pie>
-            <Legend />
-
-
-          </PieChart>
-        </ResponsiveContainer> */}
 <ResponsiveContainer width="100%" height="100%">
+
         <BarChart
           width={500}
           height={300}
-          data={BarData}
+          data={BarDataChartLastFiveDays}
           margin={{
             top: 5,
-            right: 10,
-            left: 10,
-            bottom: 5,
+            // right: 10,
+            // left: 10,
+            bottom: 20,
           }}
+          barGap={'10%'}
+          title = 'Last Five Days Activity'
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey = 'date_created'
+          allowDataOverflow = {true}
           label={{ value: 'Date Mined', position: 'bottom', offset: 0, fontSize: '16px',
           fontWeight: 'bold',
           position: 'insideBottomRight', dy: 10,
-          fill: '#000000'
+          fill: '#000000',
+          angle: 0
 
         }}
-          
+
           />
-          <YAxis 
-          label={{ value: 'Total', 
+
+          <YAxis
+          allowDecimals = {false}
+          label={{ value: 'Total',
           fontWeight: 'bold',
           position: 'insideLeft',
           fill: '#000000',
-          angle: -90
+          angle: -90,
+
       }}
-          
+
           />
           <Tooltip />
-          <Legend />
-          <Bar dataKey="tagged" stackId="a" fill="#8884d8"  >
-          <LabelList dataKey="tagged" position="top" />
-          </Bar>
-          <Bar dataKey="untagged" stackId="a" fill="#82ca9d" >
-          <LabelList dataKey="untagged" position="top" />
-          </Bar>
-         
+          <Legend
+          verticalAlign="top"
+          height={36}
+          iconType="circle"
+          />
+          <Bar dataKey="Tagged" stackId="a" fill="#FF8042"  />
+          <Bar dataKey="Untagged" stackId="a" fill="#2c2b2b" maxBarSize={
+            20
+          }/>
+           <Text
+
+          >
+            Last Five Days Activity
+          </Text>
+
 
         </BarChart>
         </ResponsiveContainer>
-
-
-
       </div>
     </div>
   );

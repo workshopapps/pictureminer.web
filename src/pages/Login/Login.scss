@@ -13,7 +13,7 @@ $large: 1200px;
   .invalidLogin {
     color: red;
     font-size: 12px;
-    margin-top: 10px;
+    margin-bottom: 10px;
   }
   .dont {
     margin-block: 10px;
@@ -56,6 +56,10 @@ $large: 1200px;
       border: 1px solid #ccc;
       border-radius: 5px;
       padding: 0 10px;
+    }
+
+    .logininput#password {
+      margin-bottom: 0;
     }
 
     .logininput::placeholder {
@@ -102,7 +106,7 @@ $large: 1200px;
   margin-top: 5px;
   margin-left: 10px;
   width: 300px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 
   &:hover {
     color: #ff9d55;
@@ -148,10 +152,9 @@ $large: 1200px;
     }
 
     .invalidLogin {
-      width: 700px;
+      // width: 700px;
       font-size: medium;
       background-color: #fff;
-      width: 700px;
     }
 
     .loginform {
