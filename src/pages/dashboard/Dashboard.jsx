@@ -198,7 +198,7 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="api__details">
-            <ResponsiveContainer width="80%" height="100%">
+            <ResponsiveContainer width="100%" height="100%">
               <BarChart
                 width={500}
                 height={300}
