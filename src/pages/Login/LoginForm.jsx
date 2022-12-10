@@ -2,7 +2,7 @@ import React from 'react';
 import FormInput from './FormInput';
 import Button from '../../components/ui/Button';
 import { Link } from 'react-router-dom';
-const LoginForm = ({ onSubmit, errorMessage }) => {
+const LoginForm = ({ onSubmit, errorMessage, loading }) => {
   return (
     <form className="loginform" onSubmit={onSubmit}>
       <FormInput
@@ -25,7 +25,12 @@ const LoginForm = ({ onSubmit, errorMessage }) => {
         <Link to="/forgot-password">Forgot Password?</Link>
       </div>
 
-      <Button text="Login" type="submit" className="loginbutton" />
+      <Button
+        text="Login"
+        type="submit"
+        className="loginbutton flex justify-center items-center"
+        loading={loading}
+      />
       {errorMessage && (
         <div className="invalidLogin">Invalid Login Details</div>
       )}

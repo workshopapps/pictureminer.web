@@ -25,7 +25,9 @@ function TryDemo({
       <div className="relative bg-mainOrange cursor-pointer px-24 py-3 rounded-lg mt-6">
         <div className="flex justify-center items-center gap-2 text-white ">
           <ExportCurve size="24" color="#FFF" variant="Outline" />
-          <p className="mt-2">Upload {file}</p>
+          <p className="mt-2">
+            Upload <span className="uppercase">{file}</span>
+          </p>
         </div>
         <input
           className="absolute inset-0 opacity-0 w-full h-full cursor-pointer"
