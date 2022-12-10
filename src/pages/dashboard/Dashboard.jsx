@@ -21,7 +21,7 @@ axios.defaults.baseURL = 'https://discripto.hng.tech/api1/api/v1/';
 const Dashboard = () => {
   const { user } = useContext(UserContext);
   const { response: batchImages } = useGetBatch();
-  console.log(batchImages);
+
   const totalBatchImages = batchImages?.length;
   // const untagged = batchImages?.map(item => item.tags).filter(tags => tags[0] === 'null').length;
   // console.log(untagged);
