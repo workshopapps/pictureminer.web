@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState, useEffect } from 'react';
 import { DocumentUpload } from 'iconsax-react';
 import { images } from '../../Constants';
@@ -9,6 +10,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import AuthInput from '../../components/form/AuthInput';
 import { useGlobalContext } from '../../context/context';
 import { mineImageWithUrlAction } from '../../context/actions';
+import Loader from "../../components/Loader"
 
 const ImageUpload = ({ demo = false }) => {
   const { mutate, response, isLoading } = useUploadImage();
@@ -118,7 +120,7 @@ const ImageUpload = ({ demo = false }) => {
               </button>
             )}
 
-            <div>{isLoading && <p className="loading">Fetching.....</p>}</div>
+            <div>{isLoading && <Loader />}</div>
             {response?.data && (
               <p>
                 Result: {response?.data ? response?.data?.text_content : null}
@@ -205,7 +207,7 @@ const ImageUpload = ({ demo = false }) => {
             <form onSubmit={handleSubmitUrl}>
               <AuthInput
                 label="Mine image with url"
-                placeholder="Enter image url e.g https://via.placeholder.com/300.png"
+                placeholder="Enter image url"
                 type="url"
                 onChange={(e) => {
                   setUrl(e.target.value.trim());
@@ -234,6 +236,8 @@ const ImageUpload = ({ demo = false }) => {
                   </p>
                 </div>
               ) : null}
+
+{ loading && <Loader />}
 
               <button
                 type="submit"

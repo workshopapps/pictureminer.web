@@ -22,13 +22,17 @@ const index = () => {
   const [errorMessage, seterrorMessage] = useState(null);
   const navigate = useNavigate();
   const { mutateAsync } = useLogin();
+  const [loading, setLoading] = useState(false);
 
   const onSubmit = async (values) => {
     const { Email, Password } = values;
+    setLoading(true);
     try {
       await mutateAsync({ Email, Password });
+      setLoading(false);
       navigate('/dashboard');
     } catch (error) {
+      setLoading(false);
       console.log(error);
       seterrorMessage(error.response?.data.message);
     }
@@ -46,7 +50,11 @@ const index = () => {
         {({ handleSubmit }) => {
           return (
             <div className="loginform">
-              <LoginForm onSubmit={handleSubmit} errorMessage={errorMessage} />
+              <LoginForm
+                onSubmit={handleSubmit}
+                errorMessage={errorMessage}
+                loading={loading}
+              />
             </div>
           );
         }}

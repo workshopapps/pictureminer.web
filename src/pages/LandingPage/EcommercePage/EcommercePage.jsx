@@ -6,6 +6,8 @@ import commerce2 from '../assets/commerce2.png';
 import commerce1 from '../assets/commerce1.png';
 import commerce3 from '../assets/commerce3.png';
 import commerce4 from '../assets/commerce4.png';
+import { Link } from 'react-router-dom';
+
 const EcommercePage = () => {
   return (
     <div className="e-commerce">
@@ -18,7 +20,9 @@ const EcommercePage = () => {
             and budget of companies operating with massive amounts of
             user-generated or crawled image content.
           </p>
-          <Button text={'Get Started'} />
+          <Link to={'/signup'}>
+            <Button text={'Get Started'} />
+          </Link>
         </div>
         <div className="header_image">
           <img src={commerce} alt="" />
@@ -82,7 +86,9 @@ const EcommercePage = () => {
         <p className="mt-6 mb-11 text-2xl">
           Reduce repetitive manual tasks and IT costs in minutes
         </p>
-        <Button text={'Get Started'} />
+        <Link to={'/signup'}>
+          <Button text={'Get Started'} />
+        </Link>
       </section>
       <div className="my-24 flex items-center justify-center">
         <ImageUpload demo />

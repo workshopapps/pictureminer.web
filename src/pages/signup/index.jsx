@@ -5,6 +5,7 @@ import AuthInput from '../../components/form/AuthInput';
 import { useGlobalContext } from '../../context/context';
 import check from '../../assets/checkmark-orange.svg';
 import { signup } from '../../context/actions';
+import Loader from '../../components/Loader';
 
 const Signup = () => {
   const [firstName, setFirstName] = useState('');
@@ -115,8 +116,11 @@ const Signup = () => {
             }}
           />
 
-          {loading && (
+          {/* {loading && (
             <p className="text-center text-[18px] font-semibold">Loading....</p>
+          )} */}
+          {loading && (
+            <Loader />
           )}
 
           <div>

@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import UserContext from '../../context/UserContext';
 import computer from '../../assets/computer.png';
+import { notifyError } from '../../utils/notify';
 // import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 const NoImageComponent = () => {
@@ -34,7 +35,8 @@ const BatchImage = () => {
       name: 'S/No',
       selector: (row) => row.sn,
       sortable: true,
-      flex: 2,
+      maxWidth: '100px',
+      minWidth: '100px',
     },
     {
       name: 'Batch',
@@ -81,7 +83,6 @@ const BatchImage = () => {
         });
 
         if (response) {
-          console.log(response);
           const structuredData = response?.data.map((item, index) => {
             return {
               id: item.id,
@@ -105,7 +106,7 @@ const BatchImage = () => {
           });
         }
       } catch (error) {
-        console.log(error);
+        notifyError('Unable to mine your batch images');
       } finally {
         setBatchData((prev) => {
           return {
@@ -117,7 +118,7 @@ const BatchImage = () => {
     };
     fetchData();
   }, [user]);
-  console.log(batchData);
+
   return (
     <div className="dashboard_images">
       <div className="dashboard__images__head">

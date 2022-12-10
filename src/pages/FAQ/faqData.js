@@ -31,7 +31,7 @@ export const faqData = [
     id: 2,
     question: 'What can I do with Discripto?',
     answer: [
-      'There are many uses for Discripto, but here are a few: Captioning, Image Recognition, Image Classification, Accessibility Tool',
+      'There are many uses for Discripto, but here are a few: Captioning, Image Recognition, and Image Classification.',
     ],
   },
   {
@@ -53,8 +53,7 @@ export const faqData = [
         </Link>
         ) of Discripto for commercial use, which allows you to make bulk
         searches. The commercial version of Discripto includes a user interface
-        for easy searching, as well as an API for integrating Discripto with
-        your own website or system.
+        for easy searching and response request.
       </p>,
       <p key={2}>
         If you have any questions, please get in touch (discripto.com/contact).
@@ -66,39 +65,50 @@ export const faqData = [
     question:
       'Can I use Discripto’s image recognition technologies with my own images?',
     answer: [
-      'Yes. We have a set of image recognition APIs that work with your own image collections. You can find out more about our APIs by visiting our technology/documentation page.',
+      <p key={1}>
+        Yes. We have a set of image recognition APIs that work with your own
+        image collections. You can find out more about our APIs by visiting our{' '}
+        <Link to="/documentation" className="text-blue-500">
+          documentation page
+        </Link>{' '}
+        .
+      </p>,
     ],
   },
   {
     id: 6,
     question: 'How do I submit an image to be searched?',
     answer: [
-      'From the dashboard, you can upload an image, paste an image, or point to a web image by typing or pasting it in a URL. You can also use our Drag &amp; Drop feature.',
+      'From the dashboard, you can either upload, drag and drop or paste an image link, then click on the mined image button, wait for seconds and see the magic',
     ],
   },
   {
     id: 7,
     question: 'What kinds of images can I search on Discripto?',
     answer: [
-      'File type: Discripto accepts a variety of formats, including, but not limited to, JPEG, PNG, GIF, BMP, TIFF, and WebP images.',
-      'Image dimensions: Discripto works best with images that are at least 300 pixels in either dimension.',
-      'vFile size: 20 megabytes is the maximum file size per image.',
-      'Watermarked images: For best results, visibly watermarked images should be avoided as Discripto may search for the watermark and not the image itself.',
-      'Subject matter: Submitted images must adhere to our Terms of Service (discripto.com/termservice).',
+      'Discripto currently accepts png files...more file formats will be included soon',
     ],
   },
   {
     id: 8,
     question: 'Can I sort my results?',
     answer: [
-      'Yes. Just select your preferred option from the ‘Sort by’ dropdown list above your results. Discripto will remember your selection for the duration of your session. For more information, see our guide (discripto.com/guide) on using Discripto.',
+      <p key={1}>
+        Yes. Just select your preferred option from the ‘Sort by’ dropdown list
+        above your results. Discripto will remember your selection for the
+        duration of your session. For more information, see our guide (L
+        <Link to="/documentation" className="text-blue-500">
+          earn more
+        </Link>
+        ) on using Discripto.
+      </p>,
     ],
   },
   {
     id: 9,
     question: 'How do I change my account email or password?',
     answer: [
-      'Visit the accounts tab on your dashboard and follow the instructions from there. You can also contact us (discripto.com/contact-us) and one of our reps will be happy to help.',
+      'Visit the accounts tab on your dashboard and follow the instructions from there.',
     ],
   },
   {

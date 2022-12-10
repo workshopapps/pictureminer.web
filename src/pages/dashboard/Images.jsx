@@ -12,6 +12,7 @@ import UserContext from '../../context/UserContext';
 import computer from '../../assets/computer.png';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import BatchImage from './BatchImage';
+import { notifyError } from '../../utils/notify';
 
 const NoImageComponent = () => {
   return (
@@ -41,9 +42,9 @@ const Images = () => {
   //   console.log(singleImageKey);
   // };
 
-  const toggleShowMenu = () => {
-    setShowMenu((prev) => !prev);
-  };
+  // const toggleShowMenu = () => {
+  //   setShowMenu((prev) => !prev);
+  // };
 
   const toggleDeleteModal = () => {
     setShowDeleteModal((prev) => !prev);
@@ -80,7 +81,8 @@ const Images = () => {
       name: 'S/No',
       selector: (row) => row.sn,
       sortable: true,
-      flex: 2,
+      maxWidth: '100px',
+      minWidth: '100px',
     },
     // {
     //   name: `${(<input type="checkbox" />)}`,
@@ -92,34 +94,37 @@ const Images = () => {
       name: 'PictureRow',
       selector: (row) => row.picture,
       sortable: true,
-      flex: 2,
+      maxWidth: '120px',
+      minWidth: '120px',
     },
     {
       name: 'Picture ID',
       selector: (row) => row.pictureId,
       sortable: true,
-      flex: 4,
+      maxWidth: '210px',
+      minWidth: '210px',
     },
     {
       name: 'Date Mined',
       selector: (row) => row.dateMined,
       sortable: true,
-      flex: 4,
+      maxWidth: '150px',
+      minWidth: '150px',
     },
     {
       name: 'Details',
       selector: (cell) => cell.details,
       sortable: true,
-      flex: 1,
-      right: true,
+      maxWidth: '130px',
+      minWidth: '130px',
     },
 
     {
       name: '',
       selector: (cell) => cell.delete,
-
+      right: true,
       sortable: true,
-      width: '80px',
+      width: '100px',
     },
   ];
 
@@ -147,13 +152,10 @@ const Images = () => {
               id: index,
               sn: index,
               picture: <img src={item.image_path} alt="" />,
-              pictureId: `#${item.date_created.split('.')[1]}`,
+              pictureId: item.image_key,
               dateMined: `${item.date_created.split('T')[0]}`,
               details: (
-                <Link
-                  to={`${item.date_created.split('.')[1]}`}
-                  className="view__more"
-                >
+                <Link to={item.image_key} className="view__more">
                   View More
                 </Link>
               ),
@@ -199,7 +201,7 @@ const Images = () => {
           });
         }
       } catch (error) {
-        console.log(error);
+        notifyError('Unable to mine image');
       } finally {
         setImageData((prev) => {
           return {
@@ -214,16 +216,20 @@ const Images = () => {
   }, [user, singleImageKey]);
 
   const handleDelete = async function () {
-    await axios.delete(
-      `https://discripto.hng.tech/api1/api/v1/mine-service/delete/${singleImageKey}`,
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-          Authorization: `Bearer ${user.Token}`,
-        },
-      }
-    );
+    try {
+      await axios.delete(
+        `https://discripto.hng.tech/api1/api/v1/mine-service/delete/${singleImageKey}`,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            Authorization: `Bearer ${user.Token}`,
+          },
+        }
+      );
+    } catch (err) {
+      notifyError('Unable to delete your image');
+    }
 
     setSingleImageKey('');
 

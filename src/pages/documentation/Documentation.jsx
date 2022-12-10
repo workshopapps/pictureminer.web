@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import './styles/documentation.css';
 import TabContent1 from './components/TabContent-1';
 import TabContent2 from './components/TabContent-2';
+// import ExampleCLI from './components/Routes/ExampleCLI';
+// import { Routes, Route } from 'react-router-dom';
 
 function Documentation() {
   const [tabState, setTabState] = useState(1);
@@ -34,6 +36,10 @@ function Documentation() {
 
         {tabState === 2 && <TabContent2 setTabState={setTabState} />}
       </div>
+      {/* <Routes>
+        <Route exact path="/examplecli" element={<ExampleCLI />}></Route>
+        <Route></Route>
+      </Routes> */}
     </>
   );
 }

@@ -28,8 +28,8 @@ function Billing() {
   };
 
   return (
-    <div className="mt-12 mb-28 relative">
-      <div className="container-dashboard">
+    <div className="mt-12 mb-28 relative ">
+      <div className="container-dashboard ">
         {showPlanDetailsModal && (
           <div className="bg-modalGray z-[5] fixed inset-0 w-full">
             <div className="w-5/6 md:w-2/4 lg:w-4/12 p-6 flex flex-col bg-white absolute rounded-md top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 ">
