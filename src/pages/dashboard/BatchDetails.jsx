@@ -21,7 +21,6 @@ const BatchDetails = () => {
   const [imageDets, setImageDets] = useState({ loading: false, tags: null });
   const [buttonDropdown, setButtonDropdown] = useState(false);
   const { user } = useContext(UserContext);
-
   const deleteBatch = async () => {
     try {
       const response = await axios.delete(
@@ -57,7 +56,6 @@ const BatchDetails = () => {
       /* empty */
     }
   };
-
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -334,28 +332,12 @@ const BatchDetails = () => {
               <div className="flex gap-4 mt-4 w-full">
                 <Button
                   className="border border-[#8e8e8e] text-8e8e8e py-3 px-6 w-full rounded-lg	font-medium hover:bg-[#FF6C00] hover:text-white"
-                  // styles={{,
-                  //   padding: '.7rem 1.4rem',
-                  //   width: '100%',
-                  //   borderRadius: '.5rem',
-                  //   fontSize: '.9rem',
-                  //   fontWeight: '500',
-                  // }}
                   text="Cancel"
                   onclick={toggleDeleteModal}
                 />
 
                 <Button
                   className="bg-[#f04438] text-white py-3 px-6 w-full rounded-lg	font-medium hover:bg-[#FF6C00]"
-                  // styles={{
-                  //   background: '#f04438',
-                  //   color: 'white',
-                  //   padding: '.7rem 1.4rem',
-                  //   width: '100%',
-                  //   borderRadius: '.5rem',
-                  //   fontSize: '.9rem',
-                  //   fontWeight: '500',
-                  // }}
                   text="Delete"
                   onclick={() => {
                     toggleDeleteSuccessModal();
