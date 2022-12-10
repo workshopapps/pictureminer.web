@@ -5,6 +5,7 @@ import { images } from '../../Constants';
 import BatchUpload from './BatchUpload';
 // import { Link } from 'react-router-dom';
 import useUploadImage from '../../Hooks/useUploadImage';
+import useUploadImageDemo from '../../Hooks/useUploadImageDemo';
 import './styles/imageUpload.scss';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import AuthInput from '../../components/form/AuthInput';
@@ -17,6 +18,7 @@ import { useNavigate } from 'react-router-dom';
 const ImageUpload = ({ demo = false }) => {
   const navigate = useNavigate();
   const { mutate, response, isLoading } = useUploadImage();
+  const { mutate: mutateDemo, response: responseDemo, isLoading: isLoadingDemo } = useUploadImageDemo();
 
   const [imagesUpload, setImagesUpload] = useState([]);
   const [imageURLs, setImageURLs] = useState([]);
@@ -65,7 +67,12 @@ const ImageUpload = ({ demo = false }) => {
     // console.log('clicked');
     const formData = new FormData();
     imagesUpload.forEach((image) => formData.append('image', image));
-    mutate(formData);
+    if(!demo){
+
+      mutate(formData);
+    }else{
+      mutateDemo(formData)
+    }
     // console.log(imagesUpload);
   };
   const { user } = useContext(UserContext);
@@ -120,8 +127,8 @@ const ImageUpload = ({ demo = false }) => {
                 />
               ))}
             </div>
-            {response?.error ? (
-              <p className="text-red-400 text-lg">{response?.error?.message}</p>
+            {responseDemo?.error ? (
+              <p className="text-red-400 text-lg">{responseDemo?.error?.message}</p>
             ) : null}
             {imageURLs.length > 0 && (
               <button
@@ -133,10 +140,10 @@ const ImageUpload = ({ demo = false }) => {
               </button>
             )}
 
-            <div>{isLoading && <Loader />}</div>
-            {response?.data && (
+            <div>{isLoadingDemo && <Loader />}</div>
+            {responseDemo?.data && (
               <p>
-                Result: {response?.data ? response?.data?.text_content : null}
+                Result: {responseDemo?.data ? responseDemo?.data?.text_content : null}
               </p>
             )}
             {/* {console.log(response)} */}
