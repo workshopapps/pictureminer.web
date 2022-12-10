@@ -24,3 +24,4 @@ test-v2.csv
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.eslintrc.js
