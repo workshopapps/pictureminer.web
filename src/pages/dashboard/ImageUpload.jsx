@@ -37,11 +37,11 @@ const ImageUpload = ({ demo = false }) => {
     await mineImageWithUrlAction({ url })(dispatch);
   };
 
-  useEffect(() => {
-    if (response) {
-      console.log({ response });
-    }
-  }, [response]);
+  // useEffect(() => {
+  //   if (response) {
+  //     console.log({ response });
+  //   }
+  // }, [response]);
 
   // useEffect(() => {
   //   if (error) {

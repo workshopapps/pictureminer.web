@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useState } from 'react';
 import './styles/index.css';
 import { faqData } from './faqData';
