@@ -42,9 +42,9 @@ const Images = () => {
   //   console.log(singleImageKey);
   // };
 
-  // const toggleShowMenu = () => {
-  //   setShowMenu((prev) => !prev);
-  // };
+  const toggleShowMenu = () => {
+    setShowMenu((prev) => !prev);
+  };
 
   const toggleDeleteModal = () => {
     setShowDeleteModal((prev) => !prev);
