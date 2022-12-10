@@ -213,10 +213,10 @@ const Dashboard = () => {
               >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
-                <YAxis />
+                <YAxis type="number" domain={[0, 'dataMax + 2']} />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="Total Images" fill="#ff6c00" minPointSize={10} />
+                <Bar dataKey="Total Images" fill="#FF9D55" minPointSize={10} />
               </BarChart>
             </ResponsiveContainer>
           </div>
