@@ -1,4 +1,5 @@
 /* eslint-disable indent */
+/* eslint-disable */
 import axios from 'axios';
 import { getLocalStorage } from '../localStorage';
 import { routes } from '../routes/routes';
@@ -14,6 +15,11 @@ import {
   MINE_IMAGE_WITH_URL_REQUEST,
   MINE_IMAGE_WITH_URL_SUCCESS,
   MINE_IMAGE_WITH_URL_FAIL,
+  NEWS_SUBSCRIPTION_REQUEST,
+  NEWS_SUBSCRIPTION_SUCCESS,
+  NEWS_SUBSCRIPTION_FAIL,
+
+
 } from './contants';
 
 export const login = (username, password) => async (dispatch) => {
@@ -105,7 +111,7 @@ export const mineImageWithUrlAction =
       const user = getLocalStorage('user');
       const userToken = user ? user.Token : null;
 
-      console.log({ userToken });
+      // console.log({ userToken });
 
       const config = {
         headers: {
@@ -133,3 +139,44 @@ export const mineImageWithUrlAction =
       });
     }
   };
+
+
+export const newsSubscriptionAction =
+({ email }) =>
+async (dispatch) => {
+  try {
+    dispatch({
+      type: NEWS_SUBSCRIPTION_REQUEST,
+    });
+
+    // const user = getLocalStorage('user');
+    // const userToken = user ? user.Token : null;
+
+    // console.log({ userToken });
+
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+        // Authorization: `Bearer ${userToken}`,
+      },
+    };
+    const { data } = await axios.post(
+      routes.subscription,
+      { email },
+      config
+    );
+
+    dispatch({
+      type: NEWS_SUBSCRIPTION_SUCCESS,
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: NEWS_SUBSCRIPTION_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    });
+  }
+};

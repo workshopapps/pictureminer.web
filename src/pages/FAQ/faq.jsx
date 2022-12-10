@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { useState } from 'react';
 import './styles/index.css';
 import { faqData } from './faqData';
@@ -19,8 +20,8 @@ const Faq = () => {
   };
 
 const faqLists = faqData.map((faq, index) => {
-  return (                                                   
-    <>          
+  return (
+    <>
       <div
         className={`w-11/12 md:w-4/5 mx-auto p-4 border-b border-gray-200 focus:ring-4 focus:ring-gray-200 hover:bg-gray-100/50 ${
           clicked === index ? 'bg-gray-100/50' : ''

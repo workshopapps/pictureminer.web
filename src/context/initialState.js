@@ -1,3 +1,4 @@
+/* eslint-disable */
 const initial = {
   loading: false,
   success: false,
@@ -18,4 +19,5 @@ export const initialState = Object.freeze({
   login: loginInitial,
   signup: initial,
   mineImageWithUrl: initial,
+  newsSubscription: initial
 });
