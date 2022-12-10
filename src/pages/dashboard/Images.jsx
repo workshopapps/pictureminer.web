@@ -34,17 +34,11 @@ const Images = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false);
   const [singleImageKey, setSingleImageKey] = useState('');
-  // const [imageKeyArray, setImageKeyArray] = useState([]);
-  // const [isChecked, setIsChecked] = useState(false);
 
-  // const handleCheckboxChange = (e) => {
-  //   const { singleImageKey, checked } = e.target;
-  //   console.log(singleImageKey);
-  // };
 
-  // const toggleShowMenu = () => {
-  //   setShowMenu((prev) => !prev);
-  // };
+  const toggleShowMenu = () => {
+    setShowMenu((prev) => !prev);
+  };
 
   const toggleDeleteModal = () => {
     setShowDeleteModal((prev) => !prev);
@@ -101,22 +95,22 @@ const Images = () => {
       name: 'Picture ID',
       selector: (row) => row.pictureId,
       sortable: true,
-      maxWidth: '210px',
-      minWidth: '210px',
+      maxWidth: '240px',
+      minWidth: '240px',
     },
     {
       name: 'Date Mined',
       selector: (row) => row.dateMined,
       sortable: true,
-      maxWidth: '150px',
-      minWidth: '150px',
+      maxWidth: '180px',
+      minWidth: '180px',
     },
     {
       name: 'Details',
       selector: (cell) => cell.details,
       sortable: true,
-      maxWidth: '130px',
-      minWidth: '130px',
+      maxWidth: '150px',
+      minWidth: '150px',
     },
 
     {

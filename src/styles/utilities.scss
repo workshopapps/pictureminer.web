@@ -10,27 +10,23 @@
 }
 .tablist {
   @include Flex;
-  gap: 15px;
+  gap: 5px;
+  padding: 8px;
+  background: rgba(255, 226, 204, 0.5);
+  border: 1px solid #ffe2cc;
+  border-radius: 8px;
+  max-width: 344px;
+  margin-bottom: 20px;
+  .tab {
+    padding: 7px 25px;
+  }
   .active__tab {
     background-color: #ff6c00;
     cursor: pointer;
     color: #fff;
-    padding: 10px 10px;
-    border-radius: 5px;
-    box-shadow: 0.5px 3px 6px rgba(0, 0, 0, 0.5);
-  }
-  .inactive__tab {
-    background-color: #fff;
-    cursor: pointer;
-    color: #ff6c00;
-    padding: 10px 10px;
-    border-radius: 15px;
-    box-shadow: 0.5px 3px 6px rgba(0, 0, 0, 0.5);
-  }
-
-  .inactive__tab:hover {
-    background-color: #ff6c00;
-    color: #fff;
+    &:focus {
+      outline: none;
+    }
   }
 
   .active__tab:hover {
@@ -39,11 +35,7 @@
   }
 
   .tab:hover {
-    background-color: #fff;
     cursor: pointer;
-    color: #ff6c00;
-    padding: 10px 10px;
-    border-radius: 15px;
-    box-shadow: 0.5px 3px 6px rgba(0, 0, 0, 0.5);
+    color: #686868;
   }
 }

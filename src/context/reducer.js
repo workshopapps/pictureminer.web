@@ -10,6 +10,9 @@ import {
   MINE_IMAGE_WITH_URL_REQUEST,
   MINE_IMAGE_WITH_URL_SUCCESS,
   MINE_IMAGE_WITH_URL_FAIL,
+  NEWS_SUBSCRIPTION_REQUEST,
+  NEWS_SUBSCRIPTION_SUCCESS,
+  NEWS_SUBSCRIPTION_FAIL,
 } from './contants';
 
 import { initialState as initial } from './initialState';
@@ -93,6 +96,29 @@ export const reducers = (initialState, action) => {
         ...initialState,
         mineImageWithUrl: {
           ...initial.mineImageWithUrl,
+          error: action.payload,
+        },
+      };
+
+    case NEWS_SUBSCRIPTION_REQUEST:
+      return {
+        ...initialState,
+        newsSubscription: { ...initial.newsSubscription, loading: true },
+      };
+    case NEWS_SUBSCRIPTION_SUCCESS:
+      return {
+        ...initialState,
+        newsSubscription: {
+          ...initial.newsSubscription,
+          success: true,
+          serverResponse: action.payload,
+        },
+      };
+    case NEWS_SUBSCRIPTION_FAIL:
+      return {
+        ...initialState,
+        newsSubscription: {
+          ...initial.newsSubscription,
           error: action.payload,
         },
       };
