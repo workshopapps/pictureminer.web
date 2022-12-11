@@ -3,7 +3,6 @@ import axios from 'axios';
 import UserContext from '../../context/UserContext';
 import useGetBatch from '../../Hooks/useGetBatch';
 import { ResponsiveContainer, Legend, BarChart, CartesianGrid, XAxis, YAxis, Bar, Tooltip, Text } from 'recharts';
-import { notifyError } from '../../utils/notify';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 
 axios.defaults.baseURL = 'https://discripto.hng.tech/api1/api/v1/';
@@ -15,7 +14,7 @@ const Dashboard = () => {
   const { response:batchImages } = useGetBatch();
   const { response: countProcess } = useGetBatch('https://discripto.hng.tech/api1/api/v1/batch-service/count-process', 'count');
   // const xLabelAngle = window.innerWidth < 500 ? -45 : 0;
-  console.log(countProcess);
+
   const options =  [
     { value: 5, label: 'Last 5 Days Activity' },
     { value: 7, label: 'Last 7 Days Activity' },
@@ -120,8 +119,10 @@ const Dashboard = () => {
       'Total Images': formatedDate[item],
     };
   });
+
   return (
     <div className="dashboard">
+
 
         {countProcess && (<div className='flex md:flex-row flex-col
         justify-between gap-4
