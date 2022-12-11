@@ -5,8 +5,18 @@ export const faqData = [
     id: 0,
     question: 'What is Discripto?',
     answer: [
-      'Discripto is an API (Application Programming Interface) system that allows for communication between two applications using requests and responses.',
-      'For an overview of how to use Discripto, check out our brief tutorial (discripto.com/how-to-use)',
+      <p key={1}>
+        Discripto is an API (Application Programming Interface) system that
+        allows for communication between two applications using requests and
+        responses.
+      </p>,
+      <p key={2}>
+        For an overview of how to use Discripto, check out our brief tutorial (
+        <Link to="/how-it-works" className="text-blue-500">
+          discripto.com/how-to-use
+        </Link>
+        )
+      </p>,
     ],
   },
   {
@@ -19,11 +29,11 @@ export const faqData = [
         request(s).
       </p>,
       <p key={2}>
-        Learn more about how Discripto works (
+        Learn more about how Discripto works(
         <Link to="/how-it-works" className="text-blue-500">
           Learn more
         </Link>
-        ), or get an overview of our technology discripto.com/support-page.
+        ).
       </p>,
     ],
   },
@@ -47,17 +57,15 @@ export const faqData = [
       'Can I use Discripto for commercial purposes or high-volume searching?',
     answer: [
       <p key={1}>
-        Yes, there is a paid version (
+        Yes, there is a paid version of Discripto for commercial use, which
+        allows you to make bulk searches. The commercial version of Discripto
+        includes a user interface for easy searching and response request. (
         <Link to="/pricing" className="text-blue-500">
           Learn more
         </Link>
-        ) of Discripto for commercial use, which allows you to make bulk
-        searches. The commercial version of Discripto includes a user interface
-        for easy searching and response request.
+        )
       </p>,
-      <p key={2}>
-        If you have any questions, please get in touch (discripto.com/contact).
-      </p>,
+      <p key={2}>If you have any question(s), please get in touch.</p>,
     ],
   },
   {
@@ -79,14 +87,14 @@ export const faqData = [
     id: 6,
     question: 'How do I submit an image to be searched?',
     answer: [
-      'From the dashboard, you can either upload, drag and drop or paste an image link, then click on the mined image button, wait for seconds and see the magic',
+      'From the dashboard, you can either upload, drag and drop or paste an image link, then click on the mined image button, wait for seconds and see the magic.',
     ],
   },
   {
     id: 7,
-    question: 'What kinds of images can I search on Discripto?',
+    question: 'What kind of image can I search on Discripto?',
     answer: [
-      'Discripto currently accepts png files...more file formats will be included soon',
+      'Discripto currently accepts png files...more file formats will be included soon.',
     ],
   },
   {
@@ -96,11 +104,12 @@ export const faqData = [
       <p key={1}>
         Yes. Just select your preferred option from the ‘Sort by’ dropdown list
         above your results. Discripto will remember your selection for the
-        duration of your session. For more information, see our guide (L
-        <Link to="/documentation" className="text-blue-500">
-          earn more
-        </Link>
-        ) on using Discripto.
+        duration of your session. For more information,{' '}
+        <Link to="/how-it-works" className="text-blue-500">
+          {' '}
+          see our guide{' '}
+        </Link>{' '}
+        on using Discripto.
       </p>,
     ],
   },
@@ -108,14 +117,14 @@ export const faqData = [
     id: 9,
     question: 'How do I change my account email or password?',
     answer: [
-      'Visit the accounts tab on your dashboard and follow the instructions from there.',
+      'Visit the account&apos;s tab on your dashboard and follow the instructions from there.',
     ],
   },
   {
     id: 10,
     question: 'What happens to the images I upload to Discripto?',
     answer: [
-      'When you search with Discripto API, your images are automatically saved so you can view your history on our dashboard. Discripto processes millions of new images every day, but your images belong to you. ',
+      'When you search with Discripto API, your images are automatically saved so you can view your history on our dashboard. Discripto processes millions of new images every day, but your images belongs to you. ',
       'You can choose to delete your files from our servers at any time. Searching with Discripto is private, secure, and always improving.',
     ],
   },

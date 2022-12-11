@@ -264,17 +264,18 @@ const Dashboard = () => {
                 data={singleBarData}
                 margin={{
                   top: 5,
-                  right: 2,
-                  left: 2,
+                  right: 5,
+                  left: 5,
                   bottom: 5,
                 }}
+                barSize={70}
               >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
-                <YAxis />
+                <YAxis type="number" domain={[0, 'dataMax + 2']} />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="Total Images" fill="#ff6c00" />
+                <Bar dataKey="Total Images" fill="#FF9D55" minPointSize={10} />
               </BarChart>
             </ResponsiveContainer>
           </div>
