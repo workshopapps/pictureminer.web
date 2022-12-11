@@ -65,7 +65,6 @@ export const faqData = [
         </Link>
         )
       </p>,
-      <p key={2}>If you have any question(s), please get in touch.</p>,
     ],
   },
   {

@@ -1,47 +1,49 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Button from '../../components/ui/Button';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import UserContext from '../../context/UserContext';
 import useGetBatch from '../../Hooks/useGetBatch';
-import {
-  ResponsiveContainer,
-  Legend,
-  BarChart,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Bar,
-  Tooltip,
-} from 'recharts';
+import { ResponsiveContainer, Legend, BarChart, CartesianGrid, XAxis, YAxis, Bar, Tooltip, Text } from 'recharts';
 import { notifyError } from '../../utils/notify';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 
 axios.defaults.baseURL = 'https://discripto.hng.tech/api1/api/v1/';
+import Select from 'react-select';
+
 
 const Dashboard = () => {
   const { user } = useContext(UserContext);
-  const { response: batchImages } = useGetBatch();
-
-  const totalBatchImages = batchImages?.length;
-
-  const taggedLength = batchImages
-    ?.map((item) => item.tags)
-    .filter((tags) => tags[0] !== 'null').length;
-  const untaggedLength = batchImages
-    ?.map((item) => item.tags)
-    .filter((tags) => tags[0] === 'null').length;
-
-  const taggedAndUntaggedData = [
-    {
-      name: 'Tagged',
-      value: taggedLength,
-    },
-    {
-      name: 'Untagged',
-      value: untaggedLength,
-    },
+  const { response:batchImages } = useGetBatch();
+  // const xLabelAngle = window.innerWidth < 500 ? -45 : 0;
+  const options =  [
+    { value: 5, label: 'Last 5 Days Activity' },
+    { value: 7, label: 'Last 7 Days Activity' },
+    { value: 30, label: 'Last 30 Days Activity' },
   ];
+  const [selectedOption, setSelectedOption] = useState(options[0]);
+
+
+
+  const handleChange = (selectedOption) => {
+    setSelectedOption(selectedOption);
+  };
+
+  const BatchImageChartData = batchImages?.data.filter(item => {
+    const date = new Date(item.date_created);
+    const today = new Date();
+    const diffTime = Math.abs(today - date);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return diffDays <= selectedOption.value;})?.map(batch => {
+    return {
+      id: batch.id,
+      Tagged: batch.tagged,
+      Untagged: batch.untagged,
+      total: batch.total,
+      date_created: new Date(batch.date_created).toLocaleDateString('en-US',
+      { month: 'short', day: 'numeric', year: 'numeric' }),
+    };
+  }
+  );
+
 
   const [dashboarddata, setDashboardData] = useState({ imageData: [] });
   useEffect(() => {
@@ -104,21 +106,6 @@ const Dashboard = () => {
     fetchData();
   }, [user]);
 
-  const totalSingleImages = dashboarddata?.imageData?.length;
-  const barData = [
-    {
-      name: 'Batch upload',
-      'Total Batch Upload': totalBatchImages,
-    },
-
-    {
-      name: 'Tag',
-      Tagged: taggedLength,
-      Untagged: untaggedLength,
-    },
-  ];
-
-  const COLORS = ['#FFBB28', '#FF8042'];
   const dates = dashboarddata.imageData.map((item) => {
     return item.date_created.split('T')[0];
   });
@@ -131,7 +118,6 @@ const Dashboard = () => {
       'Total Images': formatedDate[item],
     };
   });
-
   return (
     <div className="dashboard">
       <Tabs>
@@ -158,31 +144,102 @@ const Dashboard = () => {
               </h3>
             </div>
           </div>
-          {/* This is where the new batch bar chart is */}
           <div className="api__details">
-            <ResponsiveContainer width="100%" height="100%">
-              <BarChart
-                width={500}
-                height={300}
-                data={barData}
-                margin={{
-                  top: 5,
-                  right: 5,
-                  left: 5,
-                  bottom: 5,
-                }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="Total Batch Upload" fill="#8884d8" />
-                <Bar dataKey="Tagged" fill="#82ca9d" />
-                <Bar dataKey="Untagged" fill="#FF8042" />
-              </BarChart>
-            </ResponsiveContainer>
+          {/* This is where the new batch bar chart is */}
+          <Select
+          styles={{
+            control: (base, state) => ({
+              ...base,
+              // match with the menu
+              // overflows to show it's contents
+              overflow: 'visible',
+              // border: '1px solid red',
+              // match with the menu
+              display: 'flex',
+              // match with the menu
+              alignItems: 'center',
+              marginBottom: '30px',
+
+              borderRadius: state.isFocused ? '3px 3px 0 0' : 3,
+              // Overwrittes the different states of border
+              borderColor: state.isFocused ? '#FFBB28' : '#FFBB28',
+              // Removes weird border around container
+              boxShadow: state.isFocused ? null : null,
+              '&:hover': {
+                // Overwrittes the different states of border
+                borderColor: state.isFocused ? '#FFBB28' : '#FFBB28',
+              },
+            }),
+          }}
+
+          options={options}
+          value={selectedOption}
+          onChange={handleChange}
+
+          />
+
+
+
+          <ResponsiveContainer width="100%" height="100%">
+
+        <BarChart
+          width={500}
+          height={300}
+          data={BatchImageChartData}
+          margin={{
+            top: 5,
+            // right: 10,
+            // left: 10,
+            bottom: 20,
+          }}
+          barGap={'10%'}
+          title = 'Total Image mined'
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey = 'date_created'
+          allowDataOverflow = {true}
+          label={{ value: 'Date Mined', position: 'bottom', offset: 0, fontSize: '16px',
+          fontWeight: 'bold',
+          position: 'insideBottomRight', dy: 10,
+          fill: '#000000',
+          angle: 0
+
+        }}
+
+          />
+
+          <YAxis
+          allowDecimals = {false}
+          label={{ value: 'Total',
+          fontWeight: 'bold',
+          position: 'insideLeft',
+          fill: '#000000',
+          angle: -90,
+
+      }}
+
+          />
+          <Tooltip />
+          <Legend
+          verticalAlign="top"
+          height={36}
+          iconType="circle"
+          />
+          <Bar dataKey="Tagged" stackId="a" fill="#FF8042"  />
+          <Bar dataKey="Untagged" stackId="a" fill="#2c2b2b" maxBarSize={
+            50
+          }/>
+           <Text
+
+          >
+            Last Five Days Activity
+          </Text>
+
+
+        </BarChart>
+        </ResponsiveContainer>
           </div>
+
         </TabPanel>
         <TabPanel>
           <div className="dashboard__head">
@@ -198,7 +255,7 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="api__details">
-            <ResponsiveContainer width="80%" height="100%">
+            <ResponsiveContainer width="100%" height="100%">
               <BarChart
                 width={500}
                 height={300}
@@ -213,10 +270,10 @@ const Dashboard = () => {
               >
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
-                <YAxis />
+                <YAxis type="number" domain={[0, 'dataMax + 2']} />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="Total Images" fill="#ff6c00" minPointSize={10} />
+                <Bar dataKey="Total Images" fill="#FF9D55" minPointSize={10} />
               </BarChart>
             </ResponsiveContainer>
           </div>
