@@ -13,7 +13,6 @@ const Dashboard = () => {
   const { user } = useContext(UserContext);
   const { response:batchImages } = useGetBatch();
   const { response: countProcess } = useGetBatch('https://discripto.hng.tech/api1/api/v1/batch-service/count-process', 'count');
-  // const xLabelAngle = window.innerWidth < 500 ? -45 : 0;
 
   const options =  [
     { value: 5, label: 'Last 5 Days Activity' },
@@ -136,9 +135,10 @@ const Dashboard = () => {
         text-gray-600
 
         '>
-      <div> {countProcess.mined_this_month +Math.abs(countProcess.remaining_to_mine) } free mines </div>
-      <div> {countProcess.mined_this_month} free mines used </div>
-      <div> {Math.abs(countProcess.remaining_to_mine)} free mines remaining </div>
+          <div>Regular Account </div>
+      <div> {countProcess.mined_this_month +Math.abs(countProcess.remaining_to_mine) } Free Mines </div>
+      <div> {countProcess.mined_this_month} Free Mines Used </div>
+      <div> {Math.abs(countProcess.remaining_to_mine)} Free Mines Remaining </div>
 
         </div>)}
 
