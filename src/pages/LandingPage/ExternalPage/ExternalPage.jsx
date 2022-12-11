@@ -24,7 +24,7 @@ const ExternalPage = () => {
       {/* <ImageContainer /> */}
       <section className="">
         {!showContainer.container ? (
-          <div className="my-9 flex align-center">
+          <div className="my-9 flex align-center relative">
             <YouTube
               videoId="DXCCE_l2SdM"
               opts={opts}
@@ -53,7 +53,15 @@ const ExternalPage = () => {
             ) : null}
           </div>
         ) : (
-          <ImageUpload />
+          <>
+            <Button
+              text={'Batch Upload >>>>>'}
+              className=" text-white bg-[#FF6C00] hover:bg-[#FF9D55] disabled:bg-[#FF9D55] disabled:cursor-not-allowed flex flex-row justify-end items-center w-[200] 
+            rounded-lg gap-[8px] py-[16px] px-[24px] font-sans
+           font-normal text-[14px] leading-[20px] ml-auto mt-7 mr-5"
+            />
+            <ImageUpload demo />
+          </>
         )}
       </section>
     </div>
