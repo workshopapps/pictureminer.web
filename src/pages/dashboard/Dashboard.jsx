@@ -18,10 +18,10 @@ const Dashboard = () => {
     { value: 5, label: 'Last 5 Days Activity' },
     { value: 7, label: 'Last 7 Days Activity' },
     { value: 30, label: 'Last 30 Days Activity' },
-  ]
-  const [selectedOption, setSelectedOption] = useState(options[0])
-  
-  
+  ];
+  const [selectedOption, setSelectedOption] = useState(options[0]);
+
+
 
   const handleChange = (selectedOption) => {
     setSelectedOption(selectedOption);
@@ -179,7 +179,7 @@ const Dashboard = () => {
           onChange={handleChange}
 
           />
-            
+
 
 
           <ResponsiveContainer width="100%" height="100%">
