@@ -16,7 +16,7 @@ const Why = () => {
               Discripto is very easy to use and you can get several texts for
               several images within a few seconds to a few minutes.
             </p>
-            <Link to="/demo">See More</Link>
+            <Link to="/demo">Watch Demo Video</Link>
           </div>
         </div>
       </div>

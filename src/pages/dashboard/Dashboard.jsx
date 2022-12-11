@@ -2,48 +2,62 @@ import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import UserContext from '../../context/UserContext';
 import useGetBatch from '../../Hooks/useGetBatch';
-import { ResponsiveContainer, Legend, BarChart, CartesianGrid, XAxis, YAxis, Bar, Tooltip, Text } from 'recharts';
+import {
+  ResponsiveContainer,
+  Legend,
+  BarChart,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Bar,
+  Tooltip,
+  Text,
+} from 'recharts';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 
 axios.defaults.baseURL = 'https://discripto.hng.tech/api1/api/v1/';
 import Select from 'react-select';
 
-
 const Dashboard = () => {
   const { user } = useContext(UserContext);
-  const { response:batchImages } = useGetBatch();
-  const { response: countProcess } = useGetBatch('https://discripto.hng.tech/api1/api/v1/batch-service/count-process', 'count');
+  const { response: batchImages } = useGetBatch();
+  const { response: countProcess } = useGetBatch(
+    'https://discripto.hng.tech/api1/api/v1/batch-service/count-process',
+    'count'
+  );
 
-  const options =  [
+  const options = [
     { value: 5, label: 'Last 5 Days Activity' },
     { value: 7, label: 'Last 7 Days Activity' },
     { value: 30, label: 'Last 30 Days Activity' },
   ];
   const [selectedOption, setSelectedOption] = useState(options[0]);
 
-
-
   const handleChange = (selectedOption) => {
     setSelectedOption(selectedOption);
   };
 
-  const BatchImageChartData = batchImages?.data.filter(item => {
-    const date = new Date(item.date_created);
-    const today = new Date();
-    const diffTime = Math.abs(today - date);
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    return diffDays <= selectedOption.value;})?.map(batch => {
-    return {
-      id: batch.id,
-      Tagged: batch.tagged,
-      Untagged: batch.untagged,
-      total: batch.total,
-      date_created: new Date(batch.date_created).toLocaleDateString('en-US',
-      { month: 'short', day: 'numeric', year: 'numeric' }),
-    };
-  }
-  );
-
+  const BatchImageChartData = batchImages?.data
+    .filter((item) => {
+      const date = new Date(item.date_created);
+      const today = new Date();
+      const diffTime = Math.abs(today - date);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      return diffDays <= selectedOption.value;
+    })
+    ?.map((batch) => {
+      return {
+        id: batch.id,
+        Tagged: batch.tagged,
+        Untagged: batch.untagged,
+        total: batch.total,
+        date_created: new Date(batch.date_created).toLocaleDateString('en-US', {
+          month: 'short',
+          day: 'numeric',
+          year: 'numeric',
+        }),
+      };
+    });
 
   const [dashboarddata, setDashboardData] = useState({ imageData: [] });
   useEffect(() => {
@@ -121,9 +135,9 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-
-
-        {countProcess && (<div className='flex md:flex-row flex-col
+      {countProcess && (
+        <div
+          className="flex md:flex-row flex-col
         justify-between gap-4
         items-center
         w-full
@@ -132,15 +146,22 @@ const Dashboard = () => {
         rounded-lg
         shadow-md
         mb-4
-        text-gray-600
-
-        '>
+        text-gray-600"
+        >
           <div>Regular Account </div>
-      <div> {countProcess.mined_this_month +Math.abs(countProcess.remaining_to_mine) } Free Mines </div>
-      <div> {countProcess.mined_this_month} Free Mines Used </div>
-      <div> {Math.abs(countProcess.remaining_to_mine)} Free Mines Remaining </div>
-
-        </div>)}
+          <div>
+            {' '}
+            {countProcess.mined_this_month +
+              Math.abs(countProcess.remaining_to_mine)}{' '}
+            Free Mines{' '}
+          </div>
+          <div> {countProcess.mined_this_month} Free Mines Used </div>
+          <div>
+            {' '}
+            {Math.abs(countProcess.remaining_to_mine)} Free Mines Remaining{' '}
+          </div>
+        </div>
+      )}
 
       <Tabs>
         <TabList className={'tablist'}>
@@ -167,101 +188,95 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="api__details">
-          {/* This is where the new batch bar chart is */}
-          <Select
-          styles={{
-            control: (base, state) => ({
-              ...base,
-              // match with the menu
-              // overflows to show it's contents
-              overflow: 'visible',
-              // border: '1px solid red',
-              // match with the menu
-              display: 'flex',
-              // match with the menu
-              alignItems: 'center',
-              marginBottom: '30px',
+            {/* This is where the new batch bar chart is */}
+            <Select
+              styles={{
+                control: (base, state) => ({
+                  ...base,
+                  // match with the menu
+                  // overflows to show it's contents
+                  overflow: 'visible',
+                  // border: '1px solid red',
+                  // match with the menu
+                  display: 'flex',
+                  // match with the menu
+                  alignItems: 'center',
+                  marginBottom: '30px',
 
-              borderRadius: state.isFocused ? '3px 3px 0 0' : 3,
-              // Overwrittes the different states of border
-              borderColor: state.isFocused ? '#FFBB28' : '#FFBB28',
-              // Removes weird border around container
-              boxShadow: state.isFocused ? null : null,
-              '&:hover': {
-                // Overwrittes the different states of border
-                borderColor: state.isFocused ? '#FFBB28' : '#FFBB28',
-              },
-            }),
-          }}
+                  borderRadius: state.isFocused ? '3px 3px 0 0' : 3,
+                  // Overwrittes the different states of border
+                  borderColor: state.isFocused ? '#FFBB28' : '#FFBB28',
+                  // Removes weird border around container
+                  boxShadow: state.isFocused ? null : null,
+                  '&:hover': {
+                    // Overwrittes the different states of border
+                    borderColor: state.isFocused ? '#FFBB28' : '#FFBB28',
+                  },
+                }),
+              }}
+              options={options}
+              value={selectedOption}
+              onChange={handleChange}
+            />
 
-          options={options}
-          value={selectedOption}
-          onChange={handleChange}
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart
+                width={'100%'}
+                height={'100%'}
+                data={BatchImageChartData}
+                margin={{
+                  top: 5,
+                  // right: 10,
+                  // left: 10,
+                  bottom: 20,
+                }}
+                title="Total Image mined"
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis
+                  dataKey="date_created"
+                  allowDataOverflow={true}
+                  label={{
+                    value: 'Date Mined',
+                    position: 'bottom',
+                    offset: 0,
+                    fontSize: '16px',
+                    fontWeight: 'bold',
+                    position: 'insideBottomRight',
+                    dy: 10,
+                    fill: '#000000',
+                    angle: 0,
+                  }}
+                />
 
-          />
+                <YAxis
+                  allowDecimals={false}
+                  //     label={{ value: 'Total',
+                  //     fontWeight: 'bold',
+                  //     position: 'insideLeft',
+                  //     fill: '#000000',
+                  //     angle: -90,
 
-
-
-          <ResponsiveContainer width="100%" height="100%">
-
-        <BarChart
-          width={'100%'}
-          height={'100%'}
-          data={BatchImageChartData}
-          margin={{
-            top: 5,
-            // right: 10,
-            // left: 10,
-            bottom: 20,
-          }}
-
-          title = 'Total Image mined'
-        >
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey = 'date_created'
-          allowDataOverflow = {true}
-          label={{ value: 'Date Mined', position: 'bottom', offset: 0, fontSize: '16px',
-          fontWeight: 'bold',
-          position: 'insideBottomRight', dy: 10,
-          fill: '#000000',
-          angle: 0
-
-        }}
-
-          />
-
-          <YAxis
-          allowDecimals = {false}
-      //     label={{ value: 'Total',
-      //     fontWeight: 'bold',
-      //     position: 'insideLeft',
-      //     fill: '#000000',
-      //     angle: -90,
-
-      // }}
-
-          />
-          <Tooltip />
-          <Legend
-          verticalAlign="top"
-          height={36}
-          iconType="circle"
-          />
-          <Bar dataKey="Tagged" stackId="a" fill="#FF8042"  />
-          <Bar dataKey="Untagged" stackId="a" fill="#2c2b2b" maxBarSize={
-            50
-          }/>
-           <Text
-
-          >
-            Last Five Days Activity
-          </Text>
-
-
-        </BarChart>
-        </ResponsiveContainer>
+                  // }}
+                />
+                <Tooltip />
+                <Legend verticalAlign="top" height={36} iconType="circle" />
+                <Bar
+                  dataKey="Tagged"
+                  stackId="a"
+                  fill="#FF8042"
+                  maxBarSize={50}
+                />
+                <Bar
+                  dataKey="Untagged"
+                  stackId="a"
+                  fill="#2c2b2b"
+                  maxBarSize={50}
+                />
+                <Text>Last Five Days Activity</Text>
+              </BarChart>
+            </ResponsiveContainer>
           </div>
-
         </TabPanel>
         <TabPanel>
           <div className="dashboard__head">
