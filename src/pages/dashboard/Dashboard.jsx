@@ -5,7 +5,7 @@ import useGetBatch from '../../Hooks/useGetBatch';
 import { ResponsiveContainer, Legend, BarChart, CartesianGrid, XAxis, YAxis, Bar, Tooltip, Text } from 'recharts';
 import { notifyError } from '../../utils/notify';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
-import Button from '../../components/Button';
+
 axios.defaults.baseURL = 'https://discripto.hng.tech/api1/api/v1/';
 import Select from 'react-select';
 
@@ -15,9 +15,9 @@ const Dashboard = () => {
   const { response:batchImages } = useGetBatch();
   // const xLabelAngle = window.innerWidth < 500 ? -45 : 0;
   const options =  [
-    { value: 5, label: 'Last 5 Days' },
-    { value: 7, label: 'Last 7 Days' },
-    { value: 30, label: 'Last 30 Days' },
+    { value: 5, label: 'Last 5 Days Activity' },
+    { value: 7, label: 'Last 7 Days Activity' },
+    { value: 30, label: 'Last 30 Days Activity' },
   ]
   const [selectedOption, setSelectedOption] = useState(options[0])
   
@@ -27,7 +27,6 @@ const Dashboard = () => {
     setSelectedOption(selectedOption);
   };
 
-  console.log(selectedOption);
   const BarDataChartLastFiveDays = batchImages?.data.filter(item => {
     const date = new Date(item.date_created);
     const today = new Date();
@@ -150,6 +149,30 @@ const Dashboard = () => {
           <div className="api__details">
           {/* This is where the new batch bar chart is */}
           <Select
+          styles={{
+            control: (base, state) => ({
+              ...base,
+              // match with the menu
+              // overflows to show it's contents
+              overflow: 'visible',
+              // border: '1px solid red',
+              // match with the menu
+              display: 'flex',
+              // match with the menu
+              alignItems: 'center',
+              marginBottom: '30px',
+
+              borderRadius: state.isFocused ? '3px 3px 0 0' : 3,
+              // Overwrittes the different states of border
+              borderColor: state.isFocused ? '#FFBB28' : '#FFBB28',
+              // Removes weird border around container
+              boxShadow: state.isFocused ? null : null,
+              '&:hover': {
+                // Overwrittes the different states of border
+                borderColor: state.isFocused ? '#FFBB28' : '#FFBB28',
+              },
+            }),
+          }}
 
           options={options}
           value={selectedOption}
@@ -206,7 +229,7 @@ const Dashboard = () => {
           />
           <Bar dataKey="Tagged" stackId="a" fill="#FF8042"  />
           <Bar dataKey="Untagged" stackId="a" fill="#2c2b2b" maxBarSize={
-            20
+            50
           }/>
            <Text
 

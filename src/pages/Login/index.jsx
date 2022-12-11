@@ -33,12 +33,11 @@ const index = () => {
       navigate('/dashboard');
     } catch (error) {
       setLoading(false);
-      console.log(error);
       seterrorMessage(error.response?.data.message);
     }
   };
   return (
-    <div className="logincontainer">
+    <div className="logincontainer ">
       <LoginHeader />
       <Formik
         initialValues={initialValues}
