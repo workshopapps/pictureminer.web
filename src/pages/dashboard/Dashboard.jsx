@@ -25,7 +25,6 @@ const Dashboard = () => {
     'https://discripto.hng.tech/api1/api/v1/batch-service/count-process',
     'count'
   );
-  // const xLabelAngle = window.innerWidth < 500 ? -45 : 0;
 
   const options = [
     { value: 5, label: 'Last 5 Days Activity' },
@@ -147,20 +146,19 @@ const Dashboard = () => {
         rounded-lg
         shadow-md
         mb-4
-        text-gray-600
-
-        "
+        text-gray-600"
         >
+          <div>Regular Account </div>
           <div>
             {' '}
             {countProcess.mined_this_month +
               Math.abs(countProcess.remaining_to_mine)}{' '}
-            free mines{' '}
+            Free Mines{' '}
           </div>
-          <div> {countProcess.mined_this_month} free mines used </div>
+          <div> {countProcess.mined_this_month} Free Mines Used </div>
           <div>
             {' '}
-            {Math.abs(countProcess.remaining_to_mine)} free mines remaining{' '}
+            {Math.abs(countProcess.remaining_to_mine)} Free Mines Remaining{' '}
           </div>
         </div>
       )}

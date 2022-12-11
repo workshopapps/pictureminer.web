@@ -19,7 +19,7 @@ function Pricing() {
         </p>
         <div className="mt-12 md:mt-20 text-center">
           <div className="flex items-center justify-center space-x-1">
-            <p className="font-bold">100% Cash-back Guarantee</p>
+            <p className="font-bold">100% Cash-back Guaranteed</p>
             <BiLike className="mb-1 text-gray-500" />
           </div>
           <p className="text-xSmall font-bold text-grey300">
@@ -104,7 +104,12 @@ function Pricing() {
             <div className="flex flex-col p-6 mx-auto max-w-2xl text-center  bg-[#FFE2CC] rounded-lg border border-gray-100 shadow xl:py-8">
               <div className="flex justify-between items-baseline mt-8">
                 <h3 className="mb-4 text-large font-semibold">Standard</h3>
-                <span className="mr-2 text-normal font-extrabold">$14</span>
+                <div>
+                  <span className="mr-2 text-normal font-extrabold">
+                    {isChecked ? '$14' : '$148'}
+                  </span>
+                  {!isChecked && <p className="mt-1 line-through">$168</p>}
+                </div>
               </div>
               <div className="w-20 border-2 border-mainOrange border-solid"></div>
               {/* List items  */}
@@ -143,7 +148,7 @@ function Pricing() {
                 </li>
               </ul>
               <Link
-                to="/pricing/standard"
+                to={`/pricing/standard${isChecked}`}
                 className="w-[50%] md:w-[60%] text-white bg-mainOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center space-x-4 hover:bg-white hover:text-[#FF6C00] "
               >
                 {' '}
@@ -155,7 +160,12 @@ function Pricing() {
             <div className="flex flex-col p-6 mx-auto max-w-2xl text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow xl:py-8 ">
               <div className="flex justify-between items-baseline mt-8">
                 <h3 className="mb-4 text-large font-semibold">Premium</h3>
-                <span className="mr-2 text-normal font-extrabold">$40</span>
+                <div>
+                  <span className="mr-2 text-normal font-extrabold">
+                    {isChecked ? '$40' : '$422'}
+                  </span>
+                  {!isChecked && <p className="mt-1 line-through">$480</p>}
+                </div>
               </div>
               <div className="w-20 border-2 border-mainOrange border-solid"></div>
               {/* List items  */}
@@ -194,7 +204,7 @@ function Pricing() {
                 </li>
               </ul>
               <Link
-                to="/pricing/premium"
+                to={`/pricing/premium${isChecked}`}
                 className="w-[50%] md:w-[60%] text-white bg-mainOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center space-x-4 hover:bg-white hover:text-[#FF6C00] "
               >
                 <span className="text-small"> Choose plan</span>
