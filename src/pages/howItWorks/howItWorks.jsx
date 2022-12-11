@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Feature from './components/feature';
@@ -9,7 +8,6 @@ function HowItWorks() {
   return (
     <main className="font-Axiforma">
       <section className="relative mt-2 md:mt-0 lg:mt-[49px]">
-        {/* <div className="py-20 h-[300px]  overflow-hidden"></div> */}
         <div className="bg-[#092C4C] h-[300px] md:h-[400px] flex flex-col items-center justify-center">
           <div className="flex flex-col justify-center items-center text-center w-[267px] md:w-[395px] lg:w-[517px] md:py-10 lg:py-10">
             <h1 className="font-medium md:font-bold text-2xl md:text-4xl lg:text-6xl md:leading-[50px] lg:leading-[72px] md:-tracking-[0.02em] text-[#FFFDFD]">
@@ -19,10 +17,6 @@ function HowItWorks() {
               Don’t sweat it! Here’s how Discripto allows you to mine your
               picture content from any device, anytime, anywhere!
             </h5>
-            {/* <h5 className="lg:hidden mt-1.5 md:mt-0 font-semibold text-[#FFFDFD]/80 text-sm">
-              Discripto allows users mine picture content on your website from
-              any device
-            </h5> */}
             <button
               type="button"
               className="md:relative mt-7 bottom-0 mx-auto md:translate-y-0 translate-y-1/2 bg-[#FF6C00] hover:bg-[#FF9D55] w-40 h-12 leading-[26px] text-white flex items-center justify-center rounded-lg"
@@ -33,7 +27,7 @@ function HowItWorks() {
         </div>
       </section>
       <div className="flex flex-col justify-center items-center py-8 px-5">
-        <p className="font-bold text-xl md:text-2xl">Solutions we provide</p>
+        <p className="font-bold text-xl md:text-2xl">Solutions We Provide</p>
       </div>
       <section className="space-y-10 md:space-y-[100px] mb-20">
         {features.map((feature, idx) => (

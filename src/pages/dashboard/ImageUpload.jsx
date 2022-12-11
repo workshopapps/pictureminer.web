@@ -14,7 +14,7 @@ import { mineImageWithUrlAction } from '../../context/actions';
 const ImageUpload = ({ demo = false }) => {
   const { mutate, response, isLoading } = useUploadImage();
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [imagesUpload, setImagesUpload] = useState([]);
   const [imageURLs, setImageURLs] = useState([]);
@@ -65,9 +65,7 @@ const ImageUpload = ({ demo = false }) => {
     imagesUpload.forEach((image) => formData.append('image', image));
     mutate(formData);
     // console.log(imagesUpload);
-    // navigate(`/try-demo/${response.data.text_content}`, {
-    //   state: { demoData: response },
-    // });
+    // navigate(`/try-demo/${response.id}`, {state: {demoData: response}});
   };
   if (demo) {
     return (

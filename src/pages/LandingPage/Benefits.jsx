@@ -5,7 +5,7 @@ import style from '../../styles/layout/Benefits.module.scss';
 const data = [
   {
     title: 'Classification & categorization',
-    p: 'Discripto is the first and only app that allows you to classify and categorize your photos in a faster, easier and more efficient way. With Discripto, you don&apos;t have to spend time laboriously categorizing thousands of photos. Discripto does it all for you!',
+    p: 'Discripto is the first and only app that allows you to classify and categorize your photos in a faster, easier and more efficient way. With Discripto, you do not have to spend time laboriously categorizing thousands of photos. Discripto does it all for you!',
   },
   {
     title: 'Can use to detect image similarity',
@@ -17,7 +17,7 @@ const data = [
   },
   {
     title: 'Seamless integration with your website',
-    p: 'Discripto is the perfect way to increase your website&apos;s functionality. Our seamless integration makes it easy to incorporate into your website, and our wide variety of features allows you to tailor Discripto to your specific needs. Plus, our affordable pricing makes Discripto a cost-effective way to improve your website.',
+    p: 'Discripto is the perfect way to increase your website(s) functionality. Our seamless integration makes it easy to incorporate into your website, and our wide variety of features allows you to tailor Discripto to your specific needs. Plus, our affordable pricing makes Discripto a cost-effective way to improve your website.',
   },
 ];
 

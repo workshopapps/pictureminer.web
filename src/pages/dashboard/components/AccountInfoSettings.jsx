@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from 'react';
+import React, { useEffect, useReducer, useContext } from 'react';
 import FormInput from '../../../components/form/FormInput';
 import Button from '../../../components/ui/Button';
 import '../styles/dashboard.css';
@@ -6,6 +6,8 @@ import { accountInfoReducer } from '../reducers/accountInfoReducer';
 import { AiOutlineExclamation } from 'react-icons/ai';
 import { IoCloseSharp } from 'react-icons/io5';
 import { actions } from '../actions/actions';
+import UserContext from '../../../context/UserContext';
+import axios from 'axios';
 
 function AccountInfoSettings({ formValues, setFormValues, initialFormValues }) {
   const initialAccountInfoState = {
@@ -16,6 +18,7 @@ function AccountInfoSettings({ formValues, setFormValues, initialFormValues }) {
     successMessage: '',
     errorMessages: {},
   };
+  const { user } = useContext(UserContext);
 
   const [state, dispatch] = useReducer(
     accountInfoReducer,
@@ -33,9 +36,42 @@ function AccountInfoSettings({ formValues, setFormValues, initialFormValues }) {
 
     const errorWarnings = validateAccountInfo(formValues);
     dispatch({
-      type: actions.formSubmitted,
+      type: actions.isSubmitting,
       payload: errorWarnings,
     });
+
+    if (Object.keys(state.errorMessages).length === 0) {
+      const updateAccountInfo = async () => {
+        try {
+          const response = await axios({
+            method: 'patch',
+            url: 'https://discripto.hng.tech/api1/api/v1/update-user',
+            data: {
+              email: formValues.email,
+              first_name: formValues.first_name,
+              last_name: formValues.last_name,
+              username: formValues.username,
+            },
+            headers: {
+              accept: 'application/json',
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${user.Token}`,
+            },
+          });
+
+          if (response.status === 200) {
+            setFormValues(initialFormValues);
+            dispatch({ type: actions.accountUpdated });
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      };
+
+      updateAccountInfo();
+    } else {
+      dispatch({ type: actions.isNotSubmitting });
+    }
   };
 
   const validateAccountInfo = (formValues) => {
@@ -44,28 +80,16 @@ function AccountInfoSettings({ formValues, setFormValues, initialFormValues }) {
     const emailRegex =
       /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/; //eslint-disable-line
 
-    if (!emailRegex.test(formValues.email)) {
-      errors.email = 'Please provide a valid email';
+    if (formValues.email) {
+      if (!emailRegex.test(formValues.email)) {
+        errors.email = 'Please provide a valid email';
+      }
     }
-
-    dispatch({
-      type: actions.isPasswordMatch,
-    });
 
     return errors;
   };
 
   useEffect(() => {
-    if (Object.keys(state.errorMessages).length === 0 && state.isSubmitting) {
-      dispatch({ type: actions.isSubmitting });
-      setTimeout(() => {
-        setFormValues(initialFormValues);
-        dispatch({ type: actions.submitted });
-      }, 5000);
-    } else {
-      dispatch({ type: actions.isNotSubmitting });
-    }
-
     const isNullish = Object.values(formValues).every((formValue) => {
       if (formValue === '') return true;
     });
@@ -84,11 +108,11 @@ function AccountInfoSettings({ formValues, setFormValues, initialFormValues }) {
   return (
     <div className="w-full">
       {state.successMessage && (
-        <div className="w-[350px] md:w-[500px] p-6 rounded-md bg-[#12B76A] text-white mt-10 absolute top-[10%] right-5 lg:right-20 flex items-center justify-between space-x-4 flex-shrink-0">
+        <div className="w-[350px] md:w-[500px] p-6 rounded-md bg-[#12B76A]  text-white mt-10 absolute top-[10%] md:right-5 lg:right-20 flex items-center justify-between space-x-4 flex-shrink-0">
           <div className="rounded-full bg-white flex items-center justify-center ">
             <AiOutlineExclamation className="text-green-700 text-normal " />
           </div>
-          <p className="text-xSmall">{state.successMessage}</p>
+          <p className="text-small">{state.successMessage}</p>
           <div onClick={toggleSuccessMessage}>
             <IoCloseSharp className="text-normal cursor-pointer" />
           </div>
@@ -97,26 +121,30 @@ function AccountInfoSettings({ formValues, setFormValues, initialFormValues }) {
       <h2 className="text-medium font-bold">Account Info</h2>
       <form onSubmit={submitAccountInfo}>
         <FormInput
-          name="firstName"
+          name="first_name"
           label="First name"
           type="text"
           onchange={handleChange}
           placeholder="Your first name"
-          value={formValues.firstName}
+          value={formValues.first_name}
           labelClassName="form__label"
           containerClassName="form__group"
-          inputClassName={`w-full placeholder:text-sm placeholder:text-modalGray`}
+          inputClassName={
+            'w-full placeholder:text-sm placeholder:text-modalGray'
+          }
         />
         <FormInput
-          name="lastName"
+          name="last_name"
           label="Last name"
           type="text"
           onchange={handleChange}
           placeholder="Your last name"
-          value={formValues.lastName}
+          value={formValues.last_name}
           labelClassName="form__label"
           containerClassName="form__group"
-          inputClassName={`w-full placeholder:text-sm placeholder:text-modalGray`}
+          inputClassName={
+            'w-full placeholder:text-sm placeholder:text-modalGray'
+          }
         />
         <FormInput
           name="email"
@@ -127,7 +155,27 @@ function AccountInfoSettings({ formValues, setFormValues, initialFormValues }) {
           value={formValues.email}
           labelClassName="form__label"
           containerClassName="form__group"
-          inputClassName={`w-full placeholder:text-sm placeholder:text-modalGray`}
+          inputClassName={`w-full placeholder:text-sm placeholder:text-modalGray ${
+            state.errorMessages.email && 'border-red-500'
+          } ${state.success && 'border-green-300'}`}
+        />
+        {state.errorMessages.email && (
+          <small className="text-sm text-red-500">
+            {state.errorMessages.email}
+          </small>
+        )}
+        <FormInput
+          name="username"
+          label="Username"
+          type="text"
+          onchange={handleChange}
+          placeholder="johnDoe"
+          value={formValues.username}
+          labelClassName="form__label"
+          containerClassName="form__group"
+          inputClassName={
+            'w-full placeholder:text-sm placeholder:text-modalGray'
+          }
         />
         <div className="mt-12 space-x-5 flex items-center justify-center md:justify-start">
           <Button

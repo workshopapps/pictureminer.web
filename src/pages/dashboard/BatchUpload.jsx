@@ -60,7 +60,7 @@ const BatchUpload = () => {
   }
 
   return (
-    <div className="mb-4">
+    <div className="mx-auto max-w-screen-xl my-10">
       {showModal ? (
         <div>
           <Modal>

@@ -1,15 +1,47 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { DocumentCopy } from 'iconsax-react';
 import Button from '../../components/ui/Button';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import UserContext from '../../context/UserContext';
+import useGetBatch from '../../Hooks/useGetBatch';
+import {
+  ResponsiveContainer,
+  Legend,
+  BarChart,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Bar,
+  Tooltip,
+} from 'recharts';
 import { notifyError } from '../../utils/notify';
+import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 
 axios.defaults.baseURL = 'https://discripto.hng.tech/api1/api/v1/';
 
 const Dashboard = () => {
   const { user } = useContext(UserContext);
+  const { response: batchImages } = useGetBatch();
+
+  const totalBatchImages = batchImages?.length;
+
+  const taggedLength = batchImages
+    ?.map((item) => item.tags)
+    .filter((tags) => tags[0] !== 'null').length;
+  const untaggedLength = batchImages
+    ?.map((item) => item.tags)
+    .filter((tags) => tags[0] === 'null').length;
+
+  const taggedAndUntaggedData = [
+    {
+      name: 'Tagged',
+      value: taggedLength,
+    },
+    {
+      name: 'Untagged',
+      value: untaggedLength,
+    },
+  ];
 
   const [dashboarddata, setDashboardData] = useState({ imageData: [] });
   useEffect(() => {
@@ -51,7 +83,9 @@ const Dashboard = () => {
         if (error.response.status === 400) {
           notifyError('Please try again, an error occured');
         } else if (error.response.data.message) {
-          notifyError(error.response.data.message);
+          notifyError(
+            `${error.response.data.message}, Please Log out and Log in again`
+          );
         } else if (error.response.status === 401) {
           notifyError('!Unauthorized, please log out and log in again');
         } else if (error.response.status === 500) {
@@ -70,56 +104,124 @@ const Dashboard = () => {
     fetchData();
   }, [user]);
 
+  const totalSingleImages = dashboarddata?.imageData?.length;
+  const barData = [
+    {
+      name: 'Batch upload',
+      'Total Batch Upload': totalBatchImages,
+    },
+
+    {
+      name: 'Tag',
+      Tagged: taggedLength,
+      Untagged: untaggedLength,
+    },
+  ];
+
+  const COLORS = ['#FFBB28', '#FF8042'];
+  const dates = dashboarddata.imageData.map((item) => {
+    return item.date_created.split('T')[0];
+  });
+  const formatedDate = dates.sort().reduce((acc, cur) => {
+    return { ...acc, [cur]: (acc[cur] || 0) + 1 };
+  }, {});
+  const singleBarData = Object.keys(formatedDate).map((item) => {
+    return {
+      name: item,
+      'Total Images': formatedDate[item],
+    };
+  });
+
   return (
     <div className="dashboard">
-      <div className="dashboard__head">
-        <div className="images__card">
-          <div className="flex gap-6">
-            <span style={{ fontSize: '16px' }}>Total Number of Batches</span>
-            {/* {dashboarddata.logo} */}
-          </div>
-          <h3 style={{ marginTop: '20px', fontSize: '24px' }}>
-            {dashboarddata?.batchData ? dashboarddata?.batchData?.length : 0}
-          </h3>
-        </div>
-        <div className="images__card">
-          <div className="flex gap-6">
-            <span style={{ fontSize: '16px' }}>Total Mined Images</span>
-          </div>
-          <h3 style={{ marginTop: '20px', fontSize: '24px' }}>
-            {dashboarddata?.imageData ? dashboarddata?.imageData?.length : 0}
-          </h3>
-        </div>
-        <Link to={'/documentation'}>
-          <Button text={'View Documentation'} className="button" />
-        </Link>
-      </div>
-      <div className="api__details">
-        <h1>API Details:</h1>
-        {[
-          { title: 'Authorization Token', details: user ? user.Token : '' },
-          {
-            title: 'API Endpoint',
-            details: 'minergram.hng-9.com',
-            class: 'colored',
-          },
-          { title: 'Sample Curl Request', details: 'vhvfyavfjvfhjhv' },
-        ].map((item) => (
-          <div key={item.title}>
-            <div className="api__detail">
-              <span>{item.title}</span>
-              <span className={item.class}>{item.details}</span>
-              <span
-                className="copy"
-                onClick={() => navigator.clipboard.writeText(item.details)}
-              >
-                <DocumentCopy size="16" color="#1d1d1d" />
-                <span>copied</span>
-              </span>
+      <Tabs>
+        <TabList className={'tablist'}>
+          <Tab className={'tab'} selectedClassName={'active__tab'}>
+            Batch Upload
+          </Tab>
+          <Tab className={'tab'} selectedClassName={'active__tab'}>
+            Single Upload
+          </Tab>
+        </TabList>
+        <TabPanel>
+          <div className="dashboard__head">
+            <div className="images__card">
+              <div className="flex gap-6">
+                <span style={{ fontSize: '16px' }}>
+                  Total Number of Batches
+                </span>
+              </div>
+              <h3 style={{ marginTop: '20px', fontSize: '24px' }}>
+                {dashboarddata?.batchData
+                  ? dashboarddata?.batchData?.length
+                  : 0}
+              </h3>
             </div>
           </div>
-        ))}
-      </div>
+          {/* This is where the new batch bar chart is */}
+          <div className="api__details">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart
+                width={500}
+                height={300}
+                data={barData}
+                margin={{
+                  top: 5,
+                  right: 5,
+                  left: 5,
+                  bottom: 5,
+                }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="Total Batch Upload" fill="#8884d8" />
+                <Bar dataKey="Tagged" fill="#82ca9d" />
+                <Bar dataKey="Untagged" fill="#FF8042" />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </TabPanel>
+        <TabPanel>
+          <div className="dashboard__head">
+            <div className="images__card">
+              <div className="flex gap-6">
+                <span style={{ fontSize: '16px' }}>Total Mined Images</span>
+              </div>
+              <h3 style={{ marginTop: '20px', fontSize: '24px' }}>
+                {dashboarddata?.imageData
+                  ? dashboarddata?.imageData?.length
+                  : 0}
+              </h3>
+            </div>
+          </div>
+          <div className="api__details">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart
+                width={500}
+                height={300}
+                data={singleBarData}
+                margin={{
+                  top: 5,
+                  right: 5,
+                  left: 5,
+                  bottom: 5,
+                }}
+                barSize={70}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis type="number" domain={[0, 'dataMax + 2']} />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="Total Images" fill="#FF9D55" minPointSize={10} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </TabPanel>
+      </Tabs>
     </div>
   );
 };

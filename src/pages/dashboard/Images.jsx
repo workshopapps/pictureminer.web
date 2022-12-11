@@ -35,18 +35,26 @@ const Images = () => {
   const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false);
   const [singleImageKey, setSingleImageKey] = useState('');
 
-  // const toggleShowMenu = () => {
-  //   setShowMenu((prev) => !prev);
-  // };
+
+  const toggleShowMenu = () => {
+    setShowMenu((prev) => !prev);
+  };
 
   const toggleDeleteModal = () => {
     setShowDeleteModal((prev) => !prev);
   };
 
-  const toggleDeleteSuccessModal = async () => {
+  const toggleDeleteSuccessModal = (imageData) => {
     showDeleteModal && toggleDeleteModal();
     setShowDeleteSuccessModal((prev) => !prev);
+    console.log(imageData);
   };
+
+  // const getImageKeys = (imageKeyArray) => {};
+  // let newArray = [];
+  // newArray.push(imageKeyArray);
+  // console.log(imageKeyArray);
+  // console.log(newArray);
 
   let menuRef = useRef();
 
@@ -70,37 +78,47 @@ const Images = () => {
       maxWidth: '100px',
       minWidth: '100px',
     },
+    // {
+    //   name: `${(<input type="checkbox" />)}`,
+    //   selector: (cell) => cell.checkbox,
+    //   sortable: true,
+    //   right: true,
+    // },
     {
-      name: 'Picture',
+      name: 'PictureRow',
       selector: (row) => row.picture,
       sortable: true,
-      flex: 2,
+      maxWidth: '120px',
+      minWidth: '120px',
     },
     {
       name: 'Picture ID',
       selector: (row) => row.pictureId,
       sortable: true,
-      flex: 4,
+      maxWidth: '240px',
+      minWidth: '240px',
     },
     {
       name: 'Date Mined',
       selector: (row) => row.dateMined,
       sortable: true,
-      flex: 4,
+      maxWidth: '180px',
+      minWidth: '180px',
     },
     {
       name: 'Details',
       selector: (cell) => cell.details,
       sortable: true,
-      flex: 1,
-      right: true,
+      maxWidth: '150px',
+      minWidth: '150px',
     },
+
     {
       name: '',
       selector: (cell) => cell.delete,
-
+      right: true,
       sortable: true,
-      width: '80px',
+      width: '100px',
     },
   ];
 
@@ -128,13 +146,10 @@ const Images = () => {
               id: index,
               sn: index,
               picture: <img src={item.image_path} alt="" />,
-              pictureId: `#${item.date_created.split('.')[1]}`,
+              pictureId: item.image_key,
               dateMined: `${item.date_created.split('T')[0]}`,
               details: (
-                <Link
-                  to={`${item.date_created.split('.')[1]}`}
-                  className="view__more"
-                >
+                <Link to={item.image_key} className="view__more">
                   View More
                 </Link>
               ),
@@ -144,6 +159,7 @@ const Images = () => {
                   onClick={() => {
                     toggleDeleteModal();
                     setSingleImageKey(item.image_key);
+                    console.log(singleImageKey);
                   }}
                 >
                   <Trash
@@ -153,8 +169,23 @@ const Images = () => {
                   />
                 </div>
               ),
+              // checkbox: (
+              //   <div className="pl-0 ml-0">
+              //     <input
+              //       type="checkbox"
+              //       id="delete_all"
+              //       onClick={() => {
+              //         setImageKeyArray([...imageKeyArray, item.image_key]);
+              //         getImageKeys();
+              //       }}
+              //       // checked={isChecked}
+              //       // onChange={handleCheckboxChange}
+              //     />
+              //   </div>
+              // ),
             };
           });
+
           setImageData((prev) => {
             return {
               ...prev,
@@ -222,7 +253,7 @@ const Images = () => {
               <Button
                 text={'Filter'}
                 icon={<ArrowDown2 size={24} color="#FF6C00" />}
-                onclick={() => setShowMenu((prev) => !prev)}
+                onclick={toggleShowMenu}
                 className="button"
                 type="secondary"
               />
