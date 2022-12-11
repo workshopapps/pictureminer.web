@@ -120,7 +120,7 @@ const Dashboard = () => {
       'Total Images': formatedDate[item],
     };
   });
-  Math.abs(countProcess?.remaining_to_mine) <= 3 && notifyError('You have less than 3 free mines left, please upgrade to continue using the app');
+  countProcess && Math.abs(countProcess.remaining_to_mine)  <= 15 && notifyError('You have less than 3 free mines left, please upgrade to continue using the app');
   return (
     <div className="dashboard">
 
