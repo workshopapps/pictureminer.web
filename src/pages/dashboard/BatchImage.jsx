@@ -91,7 +91,7 @@ const BatchImage = () => {
               batchId: item.id,
               dateMined: `${item.date_created.split('T')[0]}`,
               status: (
-                <Link to={`/images/batch/${item.id}`} className="view__more">
+                <Link to={`/images/batch/${item.id}`} className={item.status}>
                   {item.status} &rarr;
                 </Link>
               ),
@@ -118,7 +118,7 @@ const BatchImage = () => {
     };
     fetchData();
   }, [user]);
-
+  console.log(batchData.tabledata);
   return (
     <div className="dashboard_images">
       <div className="dashboard__images__head">
