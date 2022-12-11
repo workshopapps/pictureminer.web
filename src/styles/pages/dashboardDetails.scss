@@ -10,6 +10,15 @@
   .categories {
     margin-bottom: 10px;
   }
+  .image_categories {
+    @include Flex;
+    gap: 36px;
+    .batch_images {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+    margin-bottom: 38px;
+  }
   .batch_images {
     @include Flex;
     flex-wrap: wrap;
