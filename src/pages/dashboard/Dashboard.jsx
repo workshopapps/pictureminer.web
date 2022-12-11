@@ -27,7 +27,7 @@ const Dashboard = () => {
     setSelectedOption(selectedOption);
   };
 
-  const BarDataChartLastFiveDays = batchImages?.data.filter(item => {
+  const BatchImageChartData = batchImages?.data.filter(item => {
     const date = new Date(item.date_created);
     const today = new Date();
     const diffTime = Math.abs(today - date);
@@ -106,8 +106,6 @@ const Dashboard = () => {
     fetchData();
   }, [user]);
 
-
-  const COLORS = ['#FFBB28', '#FF8042'];
   const dates = dashboarddata.imageData.map((item) => {
     return item.date_created.split('T')[0];
   });
@@ -187,7 +185,7 @@ const Dashboard = () => {
         <BarChart
           width={500}
           height={300}
-          data={BarDataChartLastFiveDays}
+          data={BatchImageChartData}
           margin={{
             top: 5,
             // right: 10,
