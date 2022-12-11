@@ -118,7 +118,7 @@ function AccountInfoSettings({ formValues, setFormValues, initialFormValues }) {
           </div>
         </div>
       )}
-      <h2 className="text-medium font-bold">Account Info</h2>
+      {/* <h2 className="text-medium font-bold">Account Info</h2> */}
       <form onSubmit={submitAccountInfo}>
         <FormInput
           name="first_name"
