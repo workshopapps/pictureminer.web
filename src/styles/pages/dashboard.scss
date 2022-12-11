@@ -1,5 +1,6 @@
 .dashboard {
   position: relative;
+  
   .dashboard__head {
     @include Flex;
     align-items: flex-start;
