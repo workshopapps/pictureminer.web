@@ -36,32 +36,33 @@ const ExternalPage = () => {
               }
             />
             {showContainer.button ? (
-              <Link to="/signup">
-                <Button
-                  text={"Upload Image"}
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white bg-[#FF6C00] hover:bg-[#FF9D55] disabled:bg-[#FF9D55] disabled:cursor-not-allowed flex flex-row justify-center items-center w-[200] 
+              <Button
+                text={"Upload Image"}
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white bg-[#FF6C00] hover:bg-[#FF9D55] disabled:bg-[#FF9D55] disabled:cursor-not-allowed flex flex-row justify-center items-center w-[200] 
             rounded-lg gap-[8px] py-[16px] px-[24px] font-sans
            font-normal text-[14px] leading-[20px]"
-                  onClick={() => {
-                    setShowContainer((prev) => {
-                      return {
-                        ...prev,
-                        container: true,
-                      };
-                    });
-                  }}
-                />
-              </Link>
+                onClick={() => {
+                  setShowContainer((prev) => {
+                    return {
+                      ...prev,
+                      container: true,
+                    };
+                  });
+                }}
+              />
             ) : null}
           </div>
         ) : (
           <>
-            <Button
-              text={"Batch Upload >>>>>"}
-              className=" text-white bg-[#FF6C00] hover:bg-[#FF9D55] disabled:bg-[#FF9D55] disabled:cursor-not-allowed flex flex-row justify-end items-center w-[200] 
+            <Link to="/signup">
+              <Button
+                text={"Batch Upload >>>>>"}
+                className=" text-white bg-[#FF6C00] hover:bg-[#FF9D55] disabled:bg-[#FF9D55] disabled:cursor-not-allowed flex flex-row justify-end items-center w-[200] 
             rounded-lg gap-[8px] py-[16px] px-[24px] font-sans
            font-normal text-[14px] leading-[20px] ml-auto mt-7 mr-5"
-            />
+              />
+            </Link>
+
             <ImageUpload demo />
           </>
         )}
