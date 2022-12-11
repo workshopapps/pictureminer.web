@@ -148,7 +148,7 @@ function Pricing() {
                 </li>
               </ul>
               <Link
-                to="/pricing/standard"
+                to={`/pricing/standard${isChecked}`}
                 className="w-[50%] md:w-[60%] text-white bg-mainOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center space-x-4 hover:bg-white hover:text-[#FF6C00] "
               >
                 {' '}
@@ -204,7 +204,7 @@ function Pricing() {
                 </li>
               </ul>
               <Link
-                to="/pricing/premium"
+                to={`/pricing/premium${isChecked}`}
                 className="w-[50%] md:w-[60%] text-white bg-mainOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center flex items-center space-x-4 hover:bg-white hover:text-[#FF6C00] "
               >
                 <span className="text-small"> Choose plan</span>

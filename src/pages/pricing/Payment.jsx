@@ -141,12 +141,26 @@ function Payment() {
   }, [state.errorMessages]);
 
   useEffect(() => {
-    if (paymentPlan === 'standard') {
-      setPlanAmount(14);
+    if (paymentPlan === 'standardtrue' || paymentPlan === 'standardfalse') {
       setPlanName('Standard');
-    } else if (paymentPlan === 'premium') {
-      setPlanAmount(40);
+    }
+    if (paymentPlan === 'premiumtrue' || paymentPlan === 'premiumfalse') {
       setPlanName('Premium');
+    }
+    if (paymentPlan === 'standardtrue') {
+      setPlanAmount(14);
+    }
+
+    if (paymentPlan === 'standardfalse') {
+      setPlanAmount(148);
+    }
+
+    if (paymentPlan === 'premiumtrue') {
+      setPlanAmount(40);
+    }
+
+    if (paymentPlan === 'premiumfalse') {
+      setPlanAmount(422);
     }
   }, [paymentPlan]);
 
@@ -161,7 +175,7 @@ function Payment() {
     // Implementation for whatever you want to do with reference and after success call.
     dispatch({ type: actions.isNotSubmitting });
     setFormValues(initialFormValues);
-    console.log(reference);
+    // console.log(reference);
   };
 
   const onClose = () => {
