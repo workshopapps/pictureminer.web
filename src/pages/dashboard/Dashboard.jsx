@@ -3,7 +3,6 @@ import axios from 'axios';
 import UserContext from '../../context/UserContext';
 import useGetBatch from '../../Hooks/useGetBatch';
 import { ResponsiveContainer, Legend, BarChart, CartesianGrid, XAxis, YAxis, Bar, Tooltip, Text } from 'recharts';
-import { notifyError } from '../../utils/notify';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 
 axios.defaults.baseURL = 'https://discripto.hng.tech/api1/api/v1/';
@@ -13,7 +12,9 @@ import Select from 'react-select';
 const Dashboard = () => {
   const { user } = useContext(UserContext);
   const { response:batchImages } = useGetBatch();
+  const { response: countProcess } = useGetBatch('https://discripto.hng.tech/api1/api/v1/batch-service/count-process', 'count');
   // const xLabelAngle = window.innerWidth < 500 ? -45 : 0;
+
   const options =  [
     { value: 5, label: 'Last 5 Days Activity' },
     { value: 7, label: 'Last 7 Days Activity' },
@@ -118,8 +119,29 @@ const Dashboard = () => {
       'Total Images': formatedDate[item],
     };
   });
+
   return (
     <div className="dashboard">
+
+
+        {countProcess && (<div className='flex md:flex-row flex-col
+        justify-between gap-4
+        items-center
+        w-full
+        p-4
+        bg-white
+        rounded-lg
+        shadow-md
+        mb-4
+        text-gray-600
+
+        '>
+      <div> {countProcess.mined_this_month +Math.abs(countProcess.remaining_to_mine) } free mines </div>
+      <div> {countProcess.mined_this_month} free mines used </div>
+      <div> {Math.abs(countProcess.remaining_to_mine)} free mines remaining </div>
+
+        </div>)}
+
       <Tabs>
         <TabList className={'tablist'}>
           <Tab className={'tab'} selectedClassName={'active__tab'}>
@@ -183,8 +205,8 @@ const Dashboard = () => {
           <ResponsiveContainer width="100%" height="100%">
 
         <BarChart
-          width={500}
-          height={300}
+          width={'100%'}
+          height={'100%'}
           data={BatchImageChartData}
           margin={{
             top: 5,
@@ -192,7 +214,7 @@ const Dashboard = () => {
             // left: 10,
             bottom: 20,
           }}
-          barGap={'10%'}
+
           title = 'Total Image mined'
         >
           <CartesianGrid strokeDasharray="3 3" />
@@ -210,13 +232,13 @@ const Dashboard = () => {
 
           <YAxis
           allowDecimals = {false}
-          label={{ value: 'Total',
-          fontWeight: 'bold',
-          position: 'insideLeft',
-          fill: '#000000',
-          angle: -90,
+      //     label={{ value: 'Total',
+      //     fontWeight: 'bold',
+      //     position: 'insideLeft',
+      //     fill: '#000000',
+      //     angle: -90,
 
-      }}
+      // }}
 
           />
           <Tooltip />

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import { DocumentUpload } from 'iconsax-react';
 import { images } from '../../Constants';
 import BatchUpload from './BatchUpload';
@@ -13,8 +13,12 @@ import { mineImageWithUrlAction } from '../../context/actions';
 
 const ImageUpload = ({ demo = false }) => {
   const { mutate, response, isLoading } = useUploadImage();
-
-  const navigate = useNavigate();
+  const {
+    mutate: mutateDemo,
+    response: responseDemo,
+    isLoading: isLoadingDemo,
+  } = useUploadImageDemo();
+  const [showDemo, setShowDemo] = useState(true);
 
   const [imagesUpload, setImagesUpload] = useState([]);
   const [imageURLs, setImageURLs] = useState([]);
@@ -63,54 +67,94 @@ const ImageUpload = ({ demo = false }) => {
     // console.log('clicked');
     const formData = new FormData();
     imagesUpload.forEach((image) => formData.append('image', image));
-    mutate(formData);
+    if (!demo) {
+      mutate(formData);
+    } else {
+      mutateDemo(formData);
+    }
     // console.log(imagesUpload);
     // navigate(`/try-demo/${response.id}`, {state: {demoData: response}});
   };
+  const { user } = useContext(UserContext);
+
+  const handleTabChange = (index) => {
+    console.log(index);
+    if (!user && index === 1) {
+      navigate('/signup');
+      return false;
+    }
+  };
+
+  useEffect(() => {
+    if (imagesUpload.length > 0) {
+      setShowDemo(false);
+    }
+  }, [imagesUpload]);
+
   if (demo) {
     return (
-      <div className="flex flex-col ga-8 items-center my-10">
-        <div className="container__try-demo flex flex-col gap-8 rounded-lg items-center py-6 mx-6 md:mx-0 relative b-red border border-dashed border-secBrown justify-center">
-          <h2 className="text-mainOrange text-large">Try demo</h2>
-          <img
-            src={images.addToFolder}
-            className="h-16 w-16"
-            alt="Add to folder"
-          />
-          {/* <div className="w-[54px] "></div> */}
-          <p className="text-[14px] text-[#b4b4b4] leading-[20px] text-center">
-            Drop or drag image here or click to upload
-          </p>
-          <div className="w-[80%]">
-            <label
-              htmlFor="uploaddd"
-              className="bg-mainOrange text-white flex flex-row justify-center items-center h-[48px] rounded-[8px] cursor-pointer"
-            >
-              <DocumentUpload size="24" color="white" variant="Outline" />
-              <p className="px-2">Upload image</p>
-            </label>
-            <input
-              className="hidden"
-              type="file"
-              multiple
-              accept="image/*, .png, .svg, .jpg"
-              onChange={onImageChange}
-              id="uploaddd"
+      <div className="flex flex-col items-center my-10">
+        <div
+          className={`container__try-demo flex flex-col gap-8 rounded-lg items-center py-6 mx-6 md:mx-0 relative b-red border border-dashed border-secBrown justify-center ${
+            !showDemo ? 'w-full max-w-[1200px]' : null
+          }`}
+        >
+          <h2 className="text-mainOrange text-large">Try demo.</h2>
+
+          {showDemo ? (
+            <img
+              src={images.addToFolder}
+              className="h-16 w-16"
+              alt="Add to folder"
             />
-          </div>
+          ) : null}
+          {/* <div className="w-[54px] "></div> */}
+          {showDemo ? (
+            <p className="text-[14px] text-[#b4b4b4] leading-[20px] text-center">
+              Drop or drag image here or click to upload
+            </p>
+          ) : null}
+          {showDemo ? (
+            <div className="w-[80%]">
+              <label
+                htmlFor="uploaddd"
+                className="bg-mainOrange text-white flex flex-row justify-center items-center h-[48px] rounded-[8px] cursor-pointer"
+              >
+                <DocumentUpload size="24" color="white" variant="Outline" />
+                <p className="px-2">Upload image</p>
+              </label>
+              <input
+                className="hidden"
+                type="file"
+                multiple
+                accept="image/*, .png, .svg, .jpg"
+                onChange={onImageChange}
+                id="uploaddd"
+              />
+            </div>
+          ) : null}
 
           <div className="flex flex-col gap-5 items-center justify-center">
-            <div className="flex flex-row gap-5 items-center justify-center">
+            <div className="flex flex-row gap-5 items-center justify-center w-full h-full max-h-[1100px] max-w-[1100px] px-3">
               {imageURLs.map((imageSrc) => (
                 <img
                   key={imagesUpload.length}
                   src={imageSrc}
-                  className="w-24"
+                  className="w-full h-full object-contain"
                 />
               ))}
             </div>
-            {response?.error ? (
-              <p className="text-red-400 text-lg">{response?.error?.message}</p>
+            <div>{isLoadingDemo && <Loader />}</div>
+            {!showDemo && responseDemo?.data && (
+              <p>
+                Result:{' '}
+                {responseDemo?.data ? responseDemo?.data?.text_content : null}
+              </p>
+            )}
+            {responseDemo?.error ? (
+              <p className="text-red-400 text-lg">
+                {responseDemo?.error?.message}
+              </p>
             ) : null}
             {imageURLs.length > 0 && (
               <button
@@ -122,12 +166,18 @@ const ImageUpload = ({ demo = false }) => {
               </button>
             )}
 
-            <div>{isLoading && <p className="loading">Fetching.....</p>}</div>
-            {response?.data && (
-              <p>
-                Result: {response?.data ? response?.data?.text_content : null}
-              </p>
-            )}
+            {!showDemo ? (
+              <button
+                className="button bg-slate-600 my-4"
+                onClick={() => {
+                  setImageURLs([]);
+                  setShowDemo(true);
+                }}
+              >
+                Try again
+              </button>
+            ) : null}
+
             {/* {console.log(response)} */}
           </div>
         </div>
@@ -146,58 +196,92 @@ const ImageUpload = ({ demo = false }) => {
       </TabList>
 
       <TabPanel>
-        <div className="mx-auto">
-          <div className="hero_upload">
-            <img
-              src={images.addToFolder}
-              className="addToFolder"
-              alt="Add to folder"
-            />
-            <p className="hero_upload_text">
-              Drop or drag image here or click to upload
-            </p>
-            <div className="hero_upload_file">
-              <div className="upload_icon flex flex-row justify-center items-center">
-                <DocumentUpload size="32" color="#FF6c00" variant="Outline" />
-                <p>Upload Image</p>
-              </div>
-              <input
-                className="input_file cursor-pointer"
-                id="upload"
-                type="file"
-                multiple
-                accept="image/*, .png, .svg, .jpg"
-                onChange={onImageChange}
-              />
-            </div>
-            <div className="flex flex-col gap-5 items-center justify-center">
-              <div className="flex flex-row gap-5 items-center justify-center">
-                {imageURLs.map((imageSrc) => (
-                  <img
-                    key={imagesUpload.length}
-                    src={imageSrc}
-                    className="w-24"
-                  />
-                ))}
-              </div>
-              {response?.error ? (
-                <p className="text-red-400 text-lg">
-                  {response?.error?.message}
-                </p>
-              ) : null}
-              {imageURLs.length > 0 && (
-                <button
-                  className="button"
-                  onClick={handleImageSubmit}
-                  disabled={imagesUpload.length < 1 || imagesUpload.length > 3}
-                >
-                  Mine Text
-                </button>
+        <div className="py-8">
+          <div className="flex justify-center mx-auto">
+            <div
+              className={`container__try-demo flex flex-col gap-8 rounded-lg items-center py-6 md:mx-0 relative b-red border border-dashed border-secBrown justify-center mx-auto ${
+                imageURLs.length > 0 ? 'w-full max-w-[1200px]' : null
+              }`}
+            >
+              {imageURLs.length === 0 && (
+                <img
+                  src={images.addToFolder}
+                  className="addToFolder"
+                  alt="Add to folder"
+                />
               )}
+              {imageURLs.length === 0 && (
+                <p className="hero_upload_text">
+                  Drop or drag image here or click to upload
+                </p>
+              )}
+              {imageURLs.length === 0 && (
+                <div className="hero_upload_file">
+                  <div className="upload_icon flex flex-row justify-center items-center">
+                    <DocumentUpload
+                      size="32"
+                      color="#FF6c00"
+                      variant="Outline"
+                    />
+                    <p>Upload Image</p>
+                  </div>
+                  <input
+                    className="input_file cursor-pointer"
+                    id="upload"
+                    type="file"
+                    multiple
+                    accept="image/*, .png, .svg, .jpg"
+                    onChange={onImageChange}
+                  />
+                </div>
+              )}
+              <div className="flex flex-col gap-5 items-center justify-center">
+                <div className="flex flex-row gap-5 items-center justify-center w-full h-full max-h-[1100px] max-w-[1100px] px-3">
+                  {imageURLs.map((imageSrc) => (
+                    <img
+                      key={imagesUpload.length}
+                      src={imageSrc}
+                      className="w-full h-full object-contain"
+                    />
+                  ))}
+                </div>
+                <div>
+                  {isLoading && <p className="loading">Fetching.....</p>}
+                </div>
+                {imageURLs.length > 0 && response?.data && (
+                  <p>Result: {response?.data?.text_content}</p>
+                )}
+                {response?.error ? (
+                  <p className="text-red-400 text-lg">
+                    {response?.error?.message}
+                  </p>
+                ) : null}
+                {imageURLs.length > 0 && (
+                  <button
+                    className="button"
+                    onClick={handleImageSubmit}
+                    disabled={
+                      imagesUpload.length < 1 || imagesUpload.length > 3
+                    }
+                  >
+                    Mine Text
+                  </button>
+                )}
 
-              <div>{isLoading && <p className="loading">Fetching.....</p>}</div>
-              {response?.data && <p>Result: {response?.data?.text_content}</p>}
-              {/* {console.log(response)} */}
+                {imageURLs.length > 0 ? (
+                  <button
+                    className="button bg-slate-600 my-4"
+                    onClick={() => {
+                      setImageURLs([]);
+                      setShowDemo(true);
+                    }}
+                  >
+                    Try again
+                  </button>
+                ) : null}
+
+                {/* {console.log(response)} */}
+              </div>
             </div>
           </div>
 

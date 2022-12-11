@@ -65,7 +65,6 @@ export const faqData = [
         </Link>
         )
       </p>,
-      <p key={2}>If you have any question(s), please get in touch.</p>,
     ],
   },
   {
@@ -117,7 +116,7 @@ export const faqData = [
     id: 9,
     question: 'How do I change my account email or password?',
     answer: [
-      'Visit the account&apos;s tab on your dashboard and follow the instructions from there.',
+      'Visit the account’s tab on your dashboard and follow the instructions from there.',
     ],
   },
   {
