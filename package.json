@@ -30,6 +30,7 @@
     "react-select": "^5.7.0",
     "react-tabs": "^6.0.0",
     "react-toastify": "^9.1.1",
+    "react-youtube": "^10.1.0",
     "recharts": "^2.1.16",
     "sass": "^1.56.1",
     "source-map-loader": "^4.0.1",
