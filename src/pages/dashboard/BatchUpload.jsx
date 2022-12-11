@@ -6,6 +6,7 @@ import SuccessIcon from '../../assets/SuccessIcon';
 import Button from '../../components/Button';
 import { useNavigate } from 'react-router-dom';
 import useUploadBatch from '../../Hooks/useUploadBatch';
+import { notifyError } from '../../utils/notify';
 
 const Loader = () => {
   return <div className="loader2"></div>;
@@ -51,7 +52,7 @@ const BatchUpload = () => {
       if (error.response.data.message === 'unable to verify token') {
         navigate('/login');
       }
-      seterrorMessage(error.response?.data.message);
+      notifyError(error.response.data.message);
     }
   };
 
