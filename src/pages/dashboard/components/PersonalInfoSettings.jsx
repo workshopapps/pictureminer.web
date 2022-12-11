@@ -138,7 +138,7 @@ function PersonalAccountSettings({
           </div>
         </div>
       )}
-      <h2 className="text-medium font-bold">Personal Info</h2>
+      {/* <h2 className="text-medium font-bold">Personal Info</h2> */}
       <form onSubmit={submitPersonalInfo}>
         <div className="form__group">
           <label htmlFor="current_password" className="form__label">
@@ -271,7 +271,7 @@ function PersonalAccountSettings({
           </small>
         )} */}
 
-        <div className="mt-12 space-x-5 flex items-center justify-center md:justify-end">
+        <div className="mt-12 space-x-5 flex items-center justify-center md:justify-start">
           <Button
             text="cancel"
             type="button"
