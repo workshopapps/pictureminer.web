@@ -24,7 +24,7 @@ const ExternalPage = () => {
       {/* <ImageContainer /> */}
       <section className="">
         {!showContainer.container ? (
-          <div className="my-9 flex align-center">
+          <div className="my-9 flex align-center relative">
             <YouTube
               videoId="DXCCE_l2SdM"
               opts={opts}
