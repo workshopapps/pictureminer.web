@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { DocumentUpload } from 'iconsax-react';
 import { images } from '../../Constants';
 import BatchUpload from './BatchUpload';
@@ -12,6 +13,8 @@ import { mineImageWithUrlAction } from '../../context/actions';
 
 const ImageUpload = ({ demo = false }) => {
   const { mutate, response, isLoading } = useUploadImage();
+
+  // const navigate = useNavigate();
 
   const [imagesUpload, setImagesUpload] = useState([]);
   const [imageURLs, setImageURLs] = useState([]);
@@ -62,6 +65,9 @@ const ImageUpload = ({ demo = false }) => {
     imagesUpload.forEach((image) => formData.append('image', image));
     mutate(formData);
     // console.log(imagesUpload);
+    // navigate(`/try-demo/${response.data.text_content}`, {
+    //   state: { demoData: response },
+    // });
   };
   if (demo) {
     return (
