@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { getLocalStorage } from '../localStorage';
 
 
-const useGetBatch = (url = 'https://discripto.hng.tech/api1/api/v1/batch-service/count-batches') => {
+const useGetBatch = (url = 'https://discripto.hng.tech/api1/api/v1/batch-service/count-batches', name = 'batch') => {
   const [response, setResponse] = useState(null);
   const user = getLocalStorage('user');
   const userToken = user ? user.Token : null;
@@ -15,7 +15,7 @@ const useGetBatch = (url = 'https://discripto.hng.tech/api1/api/v1/batch-service
     },
   };
   const { data, isLoading, isError } = useQuery(
-    ['batch'],
+    [name],
     () => axios.get(url,config),
     {
       onSuccess: (data) => {
