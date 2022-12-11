@@ -39,3 +39,10 @@
     color: #686868;
   }
 }
+.completed {
+  color: #308c63 !important;
+}
+.ongoing {
+  color: #f7cb73;
+  pointer-events: none;
+}
