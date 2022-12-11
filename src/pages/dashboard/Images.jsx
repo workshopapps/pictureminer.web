@@ -249,7 +249,7 @@ const Images = () => {
         <div className="dashboard_images">
           <div className="dashboard__images__head">
             <h1>Images</h1>
-            <div className="relative" ref={menuRef}>
+            {/* <div className="relative" ref={menuRef}>
               <Button
                 text={'Filter'}
                 icon={<ArrowDown2 size={24} color="#FF6C00" />}
@@ -263,7 +263,7 @@ const Images = () => {
                 <p>Last 1 month</p>
                 <p>Last 2 months</p>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="images_table">
             <DataTable

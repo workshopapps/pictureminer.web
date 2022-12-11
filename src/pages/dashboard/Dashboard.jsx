@@ -183,8 +183,8 @@ const Dashboard = () => {
           <ResponsiveContainer width="100%" height="100%">
 
         <BarChart
-          width={500}
-          height={300}
+          width={'100%'}
+          height={'100%'}
           data={BatchImageChartData}
           margin={{
             top: 5,
@@ -192,7 +192,7 @@ const Dashboard = () => {
             // left: 10,
             bottom: 20,
           }}
-          barGap={'10%'}
+
           title = 'Total Image mined'
         >
           <CartesianGrid strokeDasharray="3 3" />
@@ -210,13 +210,13 @@ const Dashboard = () => {
 
           <YAxis
           allowDecimals = {false}
-          label={{ value: 'Total',
-          fontWeight: 'bold',
-          position: 'insideLeft',
-          fill: '#000000',
-          angle: -90,
+      //     label={{ value: 'Total',
+      //     fontWeight: 'bold',
+      //     position: 'insideLeft',
+      //     fill: '#000000',
+      //     angle: -90,
 
-      }}
+      // }}
 
           />
           <Tooltip />
