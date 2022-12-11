@@ -3,7 +3,6 @@ import axios from 'axios';
 import UserContext from '../../context/UserContext';
 import useGetBatch from '../../Hooks/useGetBatch';
 import { ResponsiveContainer, Legend, BarChart, CartesianGrid, XAxis, YAxis, Bar, Tooltip, Text } from 'recharts';
-import { notifyWarn } from '../../utils/notify';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 
 axios.defaults.baseURL = 'https://discripto.hng.tech/api1/api/v1/';
@@ -120,7 +119,7 @@ const Dashboard = () => {
       'Total Images': formatedDate[item],
     };
   });
-  countProcess && Math.abs(countProcess.remaining_to_mine)  < 3 && notifyWarn('You have less than 3 free mines left, please upgrade to continue using the app');
+
   return (
     <div className="dashboard">
 
