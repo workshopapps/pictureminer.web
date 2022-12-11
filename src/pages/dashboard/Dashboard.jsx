@@ -1,25 +1,39 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Button from '../../components/ui/Button';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import UserContext from '../../context/UserContext';
 import useGetBatch from '../../Hooks/useGetBatch';
 import { ResponsiveContainer, Legend, BarChart, CartesianGrid, XAxis, YAxis, Bar, Tooltip, Text } from 'recharts';
 import { notifyError } from '../../utils/notify';
 import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
-
+import Button from '../../components/Button';
 axios.defaults.baseURL = 'https://discripto.hng.tech/api1/api/v1/';
+import Select from 'react-select';
+
 
 const Dashboard = () => {
   const { user } = useContext(UserContext);
   const { response:batchImages } = useGetBatch();
-  const xLabelAngle = window.innerWidth < 500 ? -45 : 0;
+  // const xLabelAngle = window.innerWidth < 500 ? -45 : 0;
+  const options =  [
+    { value: 5, label: 'Last 5 Days' },
+    { value: 7, label: 'Last 7 Days' },
+    { value: 30, label: 'Last 30 Days' },
+  ]
+  const [selectedOption, setSelectedOption] = useState(options[0])
+  
+  
+
+  const handleChange = (selectedOption) => {
+    setSelectedOption(selectedOption);
+  };
+
+  console.log(selectedOption);
   const BarDataChartLastFiveDays = batchImages?.data.filter(item => {
     const date = new Date(item.date_created);
     const today = new Date();
     const diffTime = Math.abs(today - date);
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    return diffDays <= 5;})?.map(batch => {
+    return diffDays <= selectedOption.value;})?.map(batch => {
     return {
       id: batch.id,
       Tagged: batch.tagged,
@@ -135,6 +149,16 @@ const Dashboard = () => {
           </div>
           <div className="api__details">
           {/* This is where the new batch bar chart is */}
+          <Select
+
+          options={options}
+          value={selectedOption}
+          onChange={handleChange}
+
+          />
+            
+
+
           <ResponsiveContainer width="100%" height="100%">
 
         <BarChart
@@ -148,7 +172,7 @@ const Dashboard = () => {
             bottom: 20,
           }}
           barGap={'10%'}
-          title = 'Last Five Days Activity'
+          title = 'Total Image mined'
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey = 'date_created'
