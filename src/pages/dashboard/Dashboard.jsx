@@ -172,13 +172,14 @@ const Dashboard = () => {
               </span>
           </div>
           <div
-            className="cursor-pointer bg-[#FFB800] rounded-lg px-4 py-2
+            className="cursor-pointer bg-[#ff6c00] rounded-lg px-4 py-2
             text-white
             font-semibold
             text-sm
             uppercase
             tracking-wider
-            hover:bg-[#806114]
+            hover:bg-white
+            hover:text-black
             "
             onClick={() => setUpgrade((prevState) => !prevState)}
           >
