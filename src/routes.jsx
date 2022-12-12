@@ -43,6 +43,7 @@ import UserContext from './context/UserContext';
 import BatchDetails from './pages/dashboard/BatchDetails';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ContactUs from './pages/contactUs/ContactUs';
 
 const RoutesComponents = () => {
   const { setUser } = useContext(UserContext);
@@ -85,6 +86,7 @@ const RoutesComponents = () => {
             <Route path="/terms-of-use" element={<Termsofuse />}></Route>
             <Route path="/privacy-policy" element={<Privacypolicy />}></Route>
             <Route path="/faq" element={<Faq />}></Route>
+            <Route path="/contact-us" element={<ContactUs />}></Route>
             <Route path="*" element={<ErrorPage />}></Route>
 
             {/* <Route path="why-tozilla" element={<WhyTozilla />} /> */}
