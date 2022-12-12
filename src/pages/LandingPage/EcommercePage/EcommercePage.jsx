@@ -7,10 +7,17 @@ import commerce1 from '../assets/commerce1.png';
 import commerce3 from '../assets/commerce3.png';
 import commerce4 from '../assets/commerce4.png';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const EcommercePage = () => {
   return (
-    <div className="e-commerce">
+    <motion.div
+      className="e-commerce"
+      initial={{ opacity: 0, x: -300 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 300 }}
+      transition={{ type: 'spring', duration: 0.85, ease: 'easeOut' }}
+    >
       <header className="e-commerce_header px-6 md:px-16">
         <div className="header_text">
           <h1>API Solutions For Digital Commerce</h1>
@@ -93,7 +100,7 @@ const EcommercePage = () => {
       <div className="my-24 flex items-center justify-center">
         <ImageUpload demo />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -6,7 +6,8 @@ import {
   MdOutlineKeyboardArrowDown,
   MdOutlineKeyboardArrowUp,
 } from 'react-icons/md';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Faq = () => {
   const [clicked, setClicked] = useState(false);
@@ -53,7 +54,13 @@ const Faq = () => {
   });
 
   return (
-    <div className="">
+    <motion.div
+      className=""
+      initial={{ opacity: 0, x: -300 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 300 }}
+      transition={{ type: 'spring', duration: 0.85, ease: 'easeOut' }}
+    >
       <div className=" container-faq my-20">
         <h1 className="text-large text-center font-bold mb-12">
           Frequently Asked Questions
@@ -67,15 +74,24 @@ const Faq = () => {
           <h2 className="text-xl font-bold lg:text-3xl">
             Can’t find what you’re looking for?
           </h2>
-          <p className="text-xSmall">
+          <p className="text-normal font-bold">
             Send us a message if you still need clarifications
           </p>
         </div>
-        <button className="bg-mainOrange hover:bg-[#FF9D55] px-[45px] py-[18.5px] md:px-28  rounded-lg text-small text-white font-semibold mt-10 md:mt-0">
+        {/* <button className="bg-mainOrange hover:bg-[#FF9D55] px-[45px] py-[18.5px] md:px-28  rounded-lg text-small text-white font-semibold mt-10 md:mt-0">
           Get in touch
-        </button>
+        </button> */}
+        <Link
+          to="/contact-us"
+          as="button"
+          type="button"
+          id="btn-primary-hover"
+          className="bg-mainOrange hover:bg-[#FF9D55] px-[45px] py-[18.5px] md:px-28  rounded-lg text-small text-white font-semibold mt-10 md:mt-0"
+        >
+          Get in touch
+        </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

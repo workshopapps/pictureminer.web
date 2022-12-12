@@ -3,10 +3,16 @@ import { Link } from 'react-router-dom';
 import Feature from './components/feature';
 import { features } from './data/features';
 import './styles.scss';
-
+import { motion } from 'framer-motion';
 function HowItWorks() {
   return (
-    <main className="font-Axiforma">
+    <motion.main
+      className="font-Axiforma"
+      initial={{ opacity: 0, x: -300 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 300 }}
+      transition={{ type: 'spring', duration: 0.85, ease: 'easeOut' }}
+    >
       <section className="relative mt-2 md:mt-0 lg:mt-[49px]">
         <div className="bg-[#092C4C] h-[300px] md:h-[400px] flex flex-col items-center justify-center">
           <div className="flex flex-col justify-center items-center text-center w-[267px] md:w-[395px] lg:w-[517px] md:py-10 lg:py-10">
@@ -60,7 +66,7 @@ function HowItWorks() {
           </div>
         </div>
       </section>
-    </main>
+    </motion.main>
   );
 }
 

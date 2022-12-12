@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import FormInput from '../../components/form/FormInput';
 import Button from '../../components/ui/Button';
 import { usePaystackPayment } from 'react-paystack';
+import { Link } from 'react-router-dom';
 
 const initialFormValues = {
   firstName: '',
@@ -156,7 +157,7 @@ function Payment() {
     }
 
     if (paymentPlan === 'premiumtrue') {
-      setPlanAmount(40);
+      setPlanAmount(25);
     }
 
     if (paymentPlan === 'premiumfalse') {
@@ -264,12 +265,21 @@ function Payment() {
             )}
             <Button
               text="Proceed to payment"
-              className={`w-full py-2 px-8 rounded-lg text-small bg-[#D2D2D2] hover:bg-[#EEEEEE] cursor-pointer mt-7 ${
+              className={`w-[50%] py-2 px-8 rounded-lg text-small bg-[#D2D2D2] hover:bg-[#EEEEEE] cursor-pointer mt-7 ${
                 state.success || (state.isTouched && 'bg-mainOrange text-white')
               }`}
               type="submit"
               disabled={!state.isTouched || state.isFormValueEmpty}
             />
+            <Link to="/dashboard">
+              <Button
+                text="Back"
+                className={
+                  'w-[45%] ml-5 py-2 px-8 rounded-lg text-small bg-[#D2D2D2] hover:bg-[#EEEEEE] cursor-pointer mt-7'
+                }
+                type="button"
+              />
+            </Link>
             <div className="mt-12 space-y-5 ">
               <p className="tracking-normal">
                 Your subscription will automatically renew every month. You will
