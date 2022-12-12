@@ -257,7 +257,7 @@ const ImageUpload = ({ demo = false }) => {
                 )}
                 {response?.error ? (
                   <p className="text-red-400 text-lg">
-                    {response?.error?.message}
+                    {response?.data?.message}
                   </p>
                 ) : null}
                 {imageURLs.length > 0 && (

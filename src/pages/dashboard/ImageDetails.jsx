@@ -59,6 +59,29 @@ const ImageDetails = () => {
     }
   };
 
+  const handleDelete = async function () {
+    try {
+      const response = await axios.delete(
+        `https://discripto.hng.tech/api1/api/v1/mine-service/delete/${param.imageId}`,
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+            Authorization: `Bearer ${user.Token}`,
+          },
+        }
+      );
+      if (response) navigate(-1);
+    } catch (err) {
+      notifyError('Unable to delete your image');
+    }
+    // if (response.data.status === 'success') {
+    //     const newTableData = imageData.tabledata.filter((item) => {
+    //       return item.pictureId !== singleImageKey;
+    //     });
+    // }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -488,7 +511,10 @@ const ImageDetails = () => {
                   //   fontWeight: '500',
                   // }}
                   text="Delete"
-                  onclick={toggleDeleteSuccessModal}
+                  onclick={() => {
+                    toggleDeleteSuccessModal();
+                    handleDelete();
+                  }}
                 />
               </div>
             </div>
