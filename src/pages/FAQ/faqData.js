@@ -11,11 +11,11 @@ export const faqData = [
         responses.
       </p>,
       <p key={2}>
-        For an overview of how to use Discripto, check out our brief tutorial (
-        <Link to="/how-it-works" className="text-blue-500">
-          discripto.com/how-to-use
+        For an overview of how to use Discripto, check out our brief (
+        <Link to="/demo" className="text-blue-500">
+          tutorial
         </Link>
-        )
+        ).
       </p>,
     ],
   },
