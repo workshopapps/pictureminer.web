@@ -155,7 +155,7 @@ const Dashboard = () => {
         mb-8
         text-gray-800"
         >
-          <div>Regular Account </div>
+          <div className="active:border-b-2">Regular Account </div>
           <div>
             {' '}
             {countProcess.mined_this_month +
@@ -168,7 +168,7 @@ const Dashboard = () => {
             {Math.abs(countProcess.remaining_to_mine)} Free Mines Remaining{' '}
           </div> */}
           <div
-            className="cursor-pointer hover:text-[#FF9D55]"
+            className="cursor-pointer hover:text-[#FF9D55] active:border-b-2 active:border-[#FF9D55]"
             onClick={() => setUpgrade((prevState) => !prevState)}
           >
             Upgrade Account{' '}
@@ -229,7 +229,7 @@ const Dashboard = () => {
                 className="w-[50%] md:w-[60%] mt-16 text-white bg-mainOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-5 text-center flex items-center space-x-4 hover:bg-white hover:text-[#FF6C00] "
               >
                 {' '}
-                <span className="text-small"> Activate</span>
+                <span className="text-small m-auto"> Activate</span>
               </Link>
             </div>
             <div className="flex flex-col p-6 mx-auto max-w-2xl text-center text-gray-900 bg-white rounded-lg border border-[#FFE2CC] xl:py-8 ">
@@ -288,7 +288,7 @@ const Dashboard = () => {
                 to={`/pricing/premium${isChecked}`}
                 className="w-[50%] md:w-[60%] text-mainOrange bg-lightOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-5 text-center flex items-center space-x-4 hover:bg-[#FF6C00] hover:text-white "
               >
-                <span className="text-small "> Activate</span>
+                <span className="text-small m-auto"> Activate</span>
               </Link>
             </div>
           </div>
