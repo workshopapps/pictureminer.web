@@ -11,7 +11,7 @@ export const faqData = [
         responses.
       </p>,
       <p key={2}>
-        For an overview of how to use Discripto, check out our brief
+        For an overview of how to use Discripto, check out our brief{' '}
         <Link to="/demo" className="text-blue-500">
           tutorial
         </Link>

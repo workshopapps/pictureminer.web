@@ -12,7 +12,7 @@ const Footer = () => {
   const {
     state: {
       newsSubscription: { loading, success, serverResponse, error },
-    },
+    }, 
     dispatch,
   } = useGlobalContext();
 
