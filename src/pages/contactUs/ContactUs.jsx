@@ -7,7 +7,7 @@ export default function ContactUs() {
       <div className="lg:py-20 lg:px-60 md:p-10 p-5">
         <h3 className="text-4xl">Get In Touch</h3>
         <p className="mt-5 md:mb-6 md:text-xl text-lg">
-          Hi there, we would like to here from you.
+          Hi there, we would like to hear from you.
         </p>
         <form action="" method="GET">
           <div className="md:mt-12 mt-8 grid grid-cols-2 gap-6 md:pt-4">
