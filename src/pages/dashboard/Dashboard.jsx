@@ -294,20 +294,37 @@ const Dashboard = () => {
           <div className="api__details">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart
-                width={500}
-                height={300}
+                width={'100%'}
+                height={'100%'}
                 data={singleBarData}
                 margin={{
                   top: 5,
-                  right: 5,
-                  left: 5,
+
                   bottom: 5,
                 }}
                 barSize={70}
               >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis type="number" domain={[0, 'dataMax + 2']} />
+                <XAxis
+                  dataKey="name"
+                  allowDataOverflow={true}
+                  label={{
+                    value: 'Date Mined',
+                    position: 'bottom',
+                    offset: 0,
+                    fontSize: '16px',
+                    fontWeight: 'bold',
+                    position: 'insideBottomRight',
+                    dy: 10,
+                    fill: '#000000',
+                    angle: 0,
+                  }}
+                />
+                <YAxis
+                  type="number"
+                  domain={[0, 'dataMax + 2']}
+                  allowDecimals={false}
+                />
                 <Tooltip />
                 <Legend />
                 <Bar dataKey="Total Images" fill="#FF9D55" minPointSize={10} />

@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 const EcommercePage = () => {
   return (
     <div className="e-commerce">
-      <header className="e-commerce_header px-6">
+      <header className="e-commerce_header px-6 md:px-16">
         <div className="header_text">
           <h1>API Solutions For Digital Commerce</h1>
           <p>
@@ -28,7 +28,7 @@ const EcommercePage = () => {
           <img src={commerce} alt="" />
         </div>
       </header>
-      <section className="px-6 py-20">
+      <section className="px-6 py-20 md:px-16">
         <div className="flex zig-zag mb-20">
           <div className="image">
             <img src={commerce1} alt="" />
