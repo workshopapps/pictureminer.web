@@ -142,6 +142,15 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
+      { (Math.abs(countProcess?.remaining_to_mine) < 3) && (
+
+
+
+          <div className='moving__warrnig__text' >
+            You have {Math.abs(countProcess?.remaining_to_mine)} free mines left, upgrade your account to continue mining
+
+        </div>
+      )}
       {countProcess && (
         <div
           className="flex md:flex-row flex-col
@@ -160,13 +169,8 @@ const Dashboard = () => {
             {' '}
             {countProcess.mined_this_month +
               Math.abs(countProcess.remaining_to_mine)}{' '}
-            Free Mines{' '}
+            Free Mines
           </div>
-          {/* <div> {countProcess.mined_this_month} Free Mines Used </div> */}
-          {/* <div>
-            {' '}
-            {Math.abs(countProcess.remaining_to_mine)} Free Mines Remaining{' '}
-          </div> */}
           <div
             className="cursor-pointer hover:text-[#FF9D55]"
             onClick={() => setUpgrade((prevState) => !prevState)}
