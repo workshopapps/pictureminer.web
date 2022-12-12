@@ -2,10 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import image from '../../Constants/image';
 import style from '../../styles/layout/Why.module.scss';
-
+import { motion } from 'framer-motion';
 const Why = () => {
   return (
-    <div className={style.container}>
+    <motion.div className={style.container}
+    whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 100 }}
+        transition = {{ duration: 1 }}
+    >
       <div className={style.wrapper}>
         <h1>How Discripto works</h1>
         <div className={style.details}>
@@ -20,7 +24,7 @@ const Why = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
