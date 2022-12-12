@@ -4,12 +4,18 @@ import { BiLike } from 'react-icons/bi';
 import { SlCheck } from 'react-icons/sl';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-
+import { motion } from 'framer-motion';
 function Pricing() {
   const [isChecked, setIsChecked] = useState(true);
 
   return (
-    <div className="mt-16 md:mt-20">
+    <motion.div
+      className="mt-16 md:mt-20"
+      initial={{ opacity: 0, x: -300 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 300 }}
+      transition={{ type: 'spring', duration: 0.85, ease: 'easeOut' }}
+    >
       <header className="text-center pricing-container">
         <h1 className="text-large font-bold leading-tight">
           We’ve got a strategical plan that works best for you.
@@ -214,7 +220,7 @@ function Pricing() {
           </div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 }
 

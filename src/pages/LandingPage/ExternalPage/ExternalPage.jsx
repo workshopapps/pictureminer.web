@@ -5,14 +5,13 @@ import ImageUpload from '../../dashboard/ImageUpload';
 import '../../../styles/layout/Ecommerce.scss';
 import YouTube from 'react-youtube';
 import Button from '../../../components/Button';
+import { motion } from 'framer-motion';
 
 const opts = {
-
   // height: '390',
   width: '100%',
 
   playerVars: {
-    // https://developers.google.com/youtube/player_parameters
     autoplay: 1,
   },
 };
@@ -22,15 +21,20 @@ const ExternalPage = () => {
     container: false,
   });
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0, x: -300 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 300 }}
+      transition={{ type: 'spring', duration: 0.85, ease: 'easeOut' }}
+    >
       {/* <ImageContainer /> */}
       <section className="">
         {!showContainer.container ? (
-          <div className="my-9 flex align-center relative">
+          <div className="my-9 flex justify-center align-center relative min-h-[90vh]">
             <YouTube
               videoId="AcusMK7TGyo"
               opts={opts}
-              className="mx-auto youtube__player"
+              className="m-auto youtube__player"
               onEnd={() =>
                 setShowContainer((prev) => {
                   return { ...prev, button: true };
@@ -44,7 +48,6 @@ const ExternalPage = () => {
               style={{ width: '600px' }}
             />
             {showContainer.button ? (
-
               <div className="youtube_player absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                 <Button
                   text={'Upload Image'}
@@ -79,7 +82,7 @@ const ExternalPage = () => {
           </>
         )}
       </section>
-    </div>
+    </motion.div>
   );
 };
 
