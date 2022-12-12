@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from './Card';
 import style from '../../styles/layout/Benefits.module.scss';
-
+import { motion } from 'framer-motion';
 const data = [
   {
     title: 'Classification & categorization',
@@ -23,7 +23,12 @@ const data = [
 
 const Benefits = () => {
   return (
-    <div className={style.container}>
+    <motion.div
+    whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, y: 100 }}
+      transition={{ duration: 1 }}
+
+    className={style.container}>
       <div className={style.wrapper}>
         <h1>Benefits We Provide</h1>
 
@@ -33,7 +38,7 @@ const Benefits = () => {
           })}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
