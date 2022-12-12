@@ -81,7 +81,7 @@ const Faq = () => {
           id="btn-primary-hover"
           className="bg-mainOrange hover:bg-[#FF9D55] px-[45px] py-[18.5px] md:px-28  rounded-lg text-small text-white font-semibold mt-10 md:mt-0"
         >
-          Get in touch
+          Get in Touch
         </Link>
       </div>
     </div>
