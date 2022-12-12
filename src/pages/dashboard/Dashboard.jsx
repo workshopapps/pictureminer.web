@@ -141,13 +141,10 @@ const Dashboard = () => {
   });
   return (
     <div className="dashboard">
-      { (Math.abs(countProcess?.remaining_to_mine) < 3) && (
-
-
-
-          <div className='moving__warrnig__text' >
-            You have {Math.abs(countProcess?.remaining_to_mine)} free mines left, upgrade your account to continue mining
-
+      {Math.abs(countProcess?.remaining_to_mine) < 3 && (
+        <div className="moving__warrnig__text">
+          You have {Math.abs(countProcess?.remaining_to_mine)} free mines left,
+          upgrade your account to continue mining
         </div>
       )}
       {countProcess && (
@@ -165,11 +162,8 @@ const Dashboard = () => {
         >
           <div>Regular Account </div>
           <div>
-
-            {
-              Math.abs(countProcess.remaining_to_mine)}  <span>
-                Free Mines left
-              </span>
+            {Math.abs(countProcess.remaining_to_mine)}{' '}
+            <span>Free Mines left</span>
           </div>
           <div
             className="cursor-pointer bg-[#ff6c00] rounded-lg px-4 py-2
@@ -307,7 +301,7 @@ const Dashboard = () => {
         </div>
       ) : (
         <Tabs>
-          <TabList className={'tablist'}>
+          <TabList className={'tablist dashboard_tablist'}>
             <Tab className={'tab'} selectedClassName={'active__tab'}>
               Batch Upload
             </Tab>

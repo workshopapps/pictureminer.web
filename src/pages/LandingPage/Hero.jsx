@@ -5,12 +5,11 @@ import { motion } from 'framer-motion';
 const Hero = () => {
   return (
     <motion.section
-    whileInView={{ opacity: 1, y: 0 }}
-      initial={{ opacity: 0, y: 100 }}
+      // whileInView={{ opacity: 1, y: 0 }}
+      // initial={{ opacity: 0, y: 100 }}
       transition={{ duration: 1 }}
-
-
-    className={style.container}>
+      className={style.container}
+    >
       <div className={style.cover}>
         <h1>Speed up your work with structured text output from images</h1>
         <p>
