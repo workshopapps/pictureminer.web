@@ -7,8 +7,8 @@ import YouTube from 'react-youtube';
 import Button from '../../../components/Button';
 
 const opts = {
-  height: '390',
-  width: '640',
+  // height: '390',
+  width: '100%',
   playerVars: {
     // https://developers.google.com/youtube/player_parameters
     autoplay: 1,
@@ -26,30 +26,38 @@ const ExternalPage = () => {
         {!showContainer.container ? (
           <div className="my-9 flex align-center relative">
             <YouTube
-              videoId="DXCCE_l2SdM"
+              videoId="AcusMK7TGyo"
               opts={opts}
-              className="mx-auto "
+              className="mx-auto youtube__player"
               onEnd={() =>
                 setShowContainer((prev) => {
                   return { ...prev, button: true };
                 })
               }
+              onError={() =>
+                setShowContainer((prev) => {
+                  return { ...prev, button: true };
+                })
+              }
+              style={{ width: '600px' }}
             />
             {showContainer.button ? (
-              <Button
-                text={'Upload Image'}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white bg-[#FF6C00] hover:bg-[#FF9D55] disabled:bg-[#FF9D55] disabled:cursor-not-allowed flex flex-row justify-center items-center w-[200] 
+              <div className="youtube_player absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                <Button
+                  text={'Upload Image'}
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white bg-[#FF6C00] hover:bg-[#FF9D55] disabled:bg-[#FF9D55] disabled:cursor-not-allowed flex flex-row justify-center items-center w-[200] 
             rounded-lg gap-[8px] py-[16px] px-[24px] font-sans
            font-normal text-[14px] leading-[20px]"
-                onClick={() => {
-                  setShowContainer((prev) => {
-                    return {
-                      ...prev,
-                      container: true,
-                    };
-                  });
-                }}
-              />
+                  onClick={() => {
+                    setShowContainer((prev) => {
+                      return {
+                        ...prev,
+                        container: true,
+                      };
+                    });
+                  }}
+                />
+              </div>
             ) : null}
           </div>
         ) : (
