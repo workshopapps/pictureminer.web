@@ -139,7 +139,6 @@ const Dashboard = () => {
       'Total Images': formatedDate[item],
     };
   });
-
   return (
     <div className="dashboard">
       { (Math.abs(countProcess?.remaining_to_mine) < 3) && (
@@ -166,13 +165,21 @@ const Dashboard = () => {
         >
           <div>Regular Account </div>
           <div>
-            {' '}
-            {countProcess.mined_this_month +
-              Math.abs(countProcess.remaining_to_mine)}{' '}
-            Free Mines
+
+            {
+              Math.abs(countProcess.remaining_to_mine)}  <span>
+                Free Mines left
+              </span>
           </div>
           <div
-            className="cursor-pointer hover:text-[#FF9D55]"
+            className="cursor-pointer bg-[#FFB800] rounded-lg px-4 py-2
+            text-white
+            font-semibold
+            text-sm
+            uppercase
+            tracking-wider
+            hover:bg-[#806114]
+            "
             onClick={() => setUpgrade((prevState) => !prevState)}
           >
             Upgrade Account{' '}
