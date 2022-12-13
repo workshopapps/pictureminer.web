@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useState } from "react";
-import axios from "axios";
-import UserContext from "../../context/UserContext";
-import useGetBatch from "../../Hooks/useGetBatch";
-import { Link } from "react-router-dom";
-import { SlCheck } from "react-icons/sl";
+import React, { useContext, useEffect, useState } from 'react';
+import axios from 'axios';
+import UserContext from '../../context/UserContext';
+import useGetBatch from '../../Hooks/useGetBatch';
+import { Link } from 'react-router-dom';
+import { SlCheck } from 'react-icons/sl';
 import {
   ResponsiveContainer,
   Legend,
@@ -14,24 +14,24 @@ import {
   Bar,
   Tooltip,
   Text,
-} from "recharts";
-import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
+} from 'recharts';
+import { Tab, TabList, TabPanel, Tabs } from 'react-tabs';
 
-axios.defaults.baseURL = "https://discripto.hng.tech/api1/api/v1/";
-import Select from "react-select";
+axios.defaults.baseURL = 'https://discripto.hng.tech/api1/api/v1/';
+import Select from 'react-select';
 
 const Dashboard = () => {
   const { user } = useContext(UserContext);
   const { response: batchImages } = useGetBatch();
   const { response: countProcess } = useGetBatch(
-    "https://discripto.hng.tech/api1/api/v1/batch-service/count-process",
-    "count"
+    'https://discripto.hng.tech/api1/api/v1/batch-service/count-process',
+    'count'
   );
 
   const options = [
-    { value: 5, label: "Last 5 Days Activity" },
-    { value: 7, label: "Last 7 Days Activity" },
-    { value: 30, label: "Last 30 Days Activity" },
+    { value: 5, label: 'Last 5 Days Activity' },
+    { value: 7, label: 'Last 7 Days Activity' },
+    { value: 30, label: 'Last 30 Days Activity' },
   ];
   const [selectedOption, setSelectedOption] = useState(options[0]);
 
@@ -53,10 +53,10 @@ const Dashboard = () => {
         Tagged: batch.tagged,
         Untagged: batch.untagged,
         total: batch.total,
-        date_created: new Date(batch.date_created).toLocaleDateString("en-US", {
-          month: "short",
-          day: "numeric",
-          year: "numeric",
+        date_created: new Date(batch.date_created).toLocaleDateString('en-US', {
+          month: 'short',
+          day: 'numeric',
+          year: 'numeric',
         }),
       };
     });
@@ -77,17 +77,17 @@ const Dashboard = () => {
           };
         });
 
-        const response = await axios.get("mine-service/get-all", {
+        const response = await axios.get('mine-service/get-all', {
           headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
             Authorization: `Bearer ${user.Token}`,
           },
         });
-        const response2 = await axios.get("batch-service/get-batches", {
+        const response2 = await axios.get('batch-service/get-batches', {
           headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
             Authorization: `Bearer ${user.Token}`,
           },
         });
@@ -104,21 +104,21 @@ const Dashboard = () => {
         }
       } catch (error) {
         if (error.response.status === 400) {
-          notifyError("Please try again, an error occured");
+          notifyError('Please try again, an error occured');
         } else if (error.response.data.message) {
           notifyError(
             `${error.response.data.message}, Please Log out and Log in again`
           );
         } else if (error.response.status === 401) {
-          notifyError("!Unauthorized, please log out and log in again");
+          notifyError('!Unauthorized, please log out and log in again');
         } else if (error.response.status === 500) {
           notifyError(
-            "We are currently experiencing server issues, please try again later"
+            'We are currently experiencing server issues, please try again later'
           );
         } else if (error.response.status === 404) {
-          notifyError("Page not found");
+          notifyError('Page not found');
         } else {
-          notifyError("An error occured!!!");
+          notifyError('An error occured!!!');
         }
       } finally {
         /* empty */
@@ -128,7 +128,7 @@ const Dashboard = () => {
   }, [user]);
 
   const dates = dashboarddata.imageData.map((item) => {
-    return item.date_created.split("T")[0];
+    return item.date_created.split('T')[0];
   });
   const formatedDate = dates.sort().reduce((acc, cur) => {
     return { ...acc, [cur]: (acc[cur] || 0) + 1 };
@@ -136,7 +136,7 @@ const Dashboard = () => {
   const singleBarData = Object.keys(formatedDate).map((item) => {
     return {
       name: item,
-      "Total Images": formatedDate[item],
+      'Total Images': formatedDate[item],
     };
   });
   return (
@@ -149,11 +149,11 @@ const Dashboard = () => {
       )}
       {countProcess && (
         <div
-          className="flex md:flex-row md:hidden
+          className="flex flex-col  md:flex-row md:hidden
         justify-between
         items-center
         w-full
-        py-4
+        p-4
         bg-white
         rounded-lg
         shadow
@@ -162,14 +162,14 @@ const Dashboard = () => {
         >
           <div className="active:border-b-2">Regular Account </div>
           <div>
-            {Math.abs(countProcess.remaining_to_mine)}{" "}
+            {Math.abs(countProcess.remaining_to_mine)}{' '}
             <span>Free Mines left</span>
           </div>
           <div
-            className="cursor-pointer hover:text-[#FF9D55] active:border-b-2 active:border-[#FF9D55]"
+            className="cursor-pointer bg-mainOrange rounded-lg px-4 py-2 text-white font-semibold text-sm uppercase tracking-wider hover:bg-white hover:text-black"
             onClick={() => setUpgrade((prevState) => !prevState)}
           >
-            Upgrade Account{" "}
+            Upgrade Account{' '}
           </div>
         </div>
       )}
@@ -181,7 +181,7 @@ const Dashboard = () => {
                 <h3 className="mb-4 text-large font-semibold">Standard</h3>
                 <div>
                   <span className="mr-2 text-normal font-extrabold">
-                    {isChecked ? "$14" : "$148"}
+                    {isChecked ? '$14' : '$148'}
                   </span>
                   {!isChecked && <p className="mt-1 line-through">$168</p>}
                 </div>
@@ -210,15 +210,15 @@ const Dashboard = () => {
                   <span>24/7 customer support </span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  <SlCheck className="text-lg " />{" "}
+                  <SlCheck className="text-lg " />{' '}
                   <span>Access to CSV file upload</span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  <SlCheck className="text-lg " />{" "}
+                  <SlCheck className="text-lg " />{' '}
                   <span>Access to detailed dashboard </span>
                 </li>
                 <li className="flex items-center space-x-3">
-                  <SlCheck className="text-lg " />{" "}
+                  <SlCheck className="text-lg " />{' '}
                   <span>Download of 10 categorized items</span>
                 </li>
               </ul>
@@ -226,7 +226,7 @@ const Dashboard = () => {
                 to={`/pricing/standard${isChecked}`}
                 className="w-[50%] md:w-[60%] mt-16 text-white bg-mainOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-5 text-center flex items-center space-x-4 hover:bg-white hover:text-[#FF6C00] "
               >
-                {" "}
+                {' '}
                 <span className="text-small m-auto"> Activate</span>
               </Link>
             </div>
@@ -235,7 +235,7 @@ const Dashboard = () => {
                 <h3 className="mb-4 text-large font-semibold">Premium</h3>
                 <div>
                   <span className="mr-2 text-normal font-extrabold">
-                    {isChecked ? "$25" : "$422"}
+                    {isChecked ? '$25' : '$422'}
                   </span>
                   {!isChecked && <p className="mt-1 line-through">$480</p>}
                 </div>
@@ -293,11 +293,11 @@ const Dashboard = () => {
         </div>
       ) : (
         <Tabs>
-          <TabList className={"tablist dashboard_tablist"}>
-            <Tab className={"tab"} selectedClassName={"active__tab"}>
+          <TabList className={'tablist dashboard_tablist'}>
+            <Tab className={'tab'} selectedClassName={'active__tab'}>
               Batch Upload
             </Tab>
-            <Tab className={"tab"} selectedClassName={"active__tab"}>
+            <Tab className={'tab'} selectedClassName={'active__tab'}>
               Single Upload
             </Tab>
           </TabList>
@@ -305,11 +305,11 @@ const Dashboard = () => {
             <div className="dashboard__head">
               <div className="images__card">
                 <div className="flex gap-6">
-                  <span style={{ fontSize: "16px" }}>
+                  <span style={{ fontSize: '16px' }}>
                     Total Number of Batches
                   </span>
                 </div>
-                <h3 style={{ marginTop: "20px", fontSize: "24px" }}>
+                <h3 style={{ marginTop: '20px', fontSize: '24px' }}>
                   {dashboarddata?.batchData
                     ? dashboarddata?.batchData?.length
                     : 0}
@@ -324,22 +324,22 @@ const Dashboard = () => {
                     ...base,
                     // match with the menu
                     // overflows to show it's contents
-                    overflow: "visible",
+                    overflow: 'visible',
                     // border: '1px solid red',
                     // match with the menu
-                    display: "flex",
+                    display: 'flex',
                     // match with the menu
-                    alignItems: "center",
-                    marginBottom: "30px",
+                    alignItems: 'center',
+                    marginBottom: '30px',
 
-                    borderRadius: state.isFocused ? "3px 3px 0 0" : 3,
+                    borderRadius: state.isFocused ? '3px 3px 0 0' : 3,
                     // Overwrittes the different states of border
-                    borderColor: state.isFocused ? "#FFBB28" : "#FFBB28",
+                    borderColor: state.isFocused ? '#FFBB28' : '#FFBB28',
                     // Removes weird border around container
                     boxShadow: state.isFocused ? null : null,
-                    "&:hover": {
+                    '&:hover': {
                       // Overwrittes the different states of border
-                      borderColor: state.isFocused ? "#FFBB28" : "#FFBB28",
+                      borderColor: state.isFocused ? '#FFBB28' : '#FFBB28',
                     },
                   }),
                 }}
@@ -350,8 +350,8 @@ const Dashboard = () => {
 
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart
-                  width={"100%"}
-                  height={"100%"}
+                  width={'100%'}
+                  height={'100%'}
                   data={BatchImageChartData}
                   margin={{
                     top: 5,
@@ -366,14 +366,14 @@ const Dashboard = () => {
                     dataKey="date_created"
                     allowDataOverflow={true}
                     label={{
-                      value: "Date Mined",
-                      position: "bottom",
+                      value: 'Date Mined',
+                      position: 'bottom',
                       offset: 0,
-                      fontSize: "16px",
-                      fontWeight: "bold",
-                      position: "insideBottomRight",
+                      fontSize: '16px',
+                      fontWeight: 'bold',
+                      position: 'insideBottomRight',
                       dy: 10,
-                      fill: "#000000",
+                      fill: '#000000',
                       angle: 0,
                     }}
                   />
@@ -411,9 +411,9 @@ const Dashboard = () => {
             <div className="dashboard__head">
               <div className="images__card">
                 <div className="flex gap-6">
-                  <span style={{ fontSize: "16px" }}>Total Mined Images</span>
+                  <span style={{ fontSize: '16px' }}>Total Mined Images</span>
                 </div>
-                <h3 style={{ marginTop: "20px", fontSize: "24px" }}>
+                <h3 style={{ marginTop: '20px', fontSize: '24px' }}>
                   {dashboarddata?.imageData
                     ? dashboarddata?.imageData?.length
                     : 0}
@@ -436,7 +436,7 @@ const Dashboard = () => {
                 >
                   <CartesianGrid strokeDasharray="3 3" />
                   <XAxis dataKey="name" />
-                  <YAxis type="number" domain={[0, "dataMax + 2"]} />
+                  <YAxis type="number" domain={[0, 'dataMax + 2']} />
                   <Tooltip />
                   <Legend />
                   <Bar
