@@ -2,6 +2,7 @@ import React from 'react';
 import style from '../../styles/layout/Hero.module.scss';
 import { motion } from 'framer-motion';
 import Button from '../../components/Button';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -16,7 +17,9 @@ const Hero = () => {
         <p>
           Discripto provides quick and simple large-scale image categorization
         </p>
-        <Button text={'View Documentation'} type={'secondary'} />
+        <Link to={'/documentation'}>
+          <Button text={'View Documentation'} type={'secondary'} />
+        </Link>
       </div>
     </motion.section>
   );
