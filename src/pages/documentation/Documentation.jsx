@@ -16,7 +16,7 @@ function Documentation() {
         initial={{ opacity: 0, x: -300 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: 300 }}
-        transition={{ type: 'spring', duration: 0.85, ease: 'easeOut' }}
+        transition={{ type: 'spring', duration: 1, ease: 'easeOut' }}
       >
         {/* Tabs */}
         <div className="container__documentation flex mt-4 lg:mt-10 ml-8 md:ml-10 lg:ml-20">

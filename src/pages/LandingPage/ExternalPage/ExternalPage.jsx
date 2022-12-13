@@ -8,7 +8,7 @@ import Button from '../../../components/Button';
 import { motion } from 'framer-motion';
 
 const opts = {
-  // height: '390',
+  height: '100%',
   width: '100%',
 
   playerVars: {
@@ -45,16 +45,15 @@ const ExternalPage = () => {
                   return { ...prev, button: true };
                 })
               }
-              style={{ width: '600px' }}
             />
             {showContainer.button ? (
-              <div className="youtube_player absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div className="youtube_player absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
                 <Button
                   text={'Upload Image'}
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white bg-[#FF6C00] hover:bg-[#FF9D55] disabled:bg-[#FF9D55] disabled:cursor-not-allowed flex flex-row justify-center items-center w-[200] 
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white bg-[#FF6C00] hover:bg-[#FF9D55] disabled:bg-[#FF9D55] disabled:cursor-not-allowed flex flex-row justify-center items-center 
 
             rounded-lg gap-[8px] py-[16px] px-[24px] font-sans
-           font-normal text-[14px] leading-[20px]"
+           font-normal text-[24px] leading-[20px]"
                   onClick={() => {
                     setShowContainer((prev) => {
                       return {

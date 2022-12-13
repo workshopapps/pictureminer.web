@@ -1,12 +1,25 @@
 .dashboard {
   position: relative;
+  .dashboard_tablist {
+    background: #fffbfa;
 
+    border: 1px solid #ff6c00;
+    border-radius: 8px;
+    .active__tab {
+      background: #ffe2cc;
+      border-radius: 4px;
+      color: #1d1d1d;
+    }
+    .tab:hover {
+      background: #ffe2cc;
+    }
+  }
 
   .moving__warrnig__text {
-    animation : moveright 10s linear infinite;
+    animation: moveright 10s linear infinite;
     display: flex;
     word-spacing: 10px;
-    
+
     font-size: 20px;
     font-weight: 500;
     color: #ff6c00;
@@ -18,20 +31,15 @@
         transform: translateX(100%);
       }
     }
-  
-  @media screen and (max-width: 550px) {
-    font-size: 16px;
-    font-weight: 400;
-    word-spacing: 5px;
-    justify-content: center;
-    align-items: center;
-    animation: none;
 
-    
-  
-    
-  }
-    
+    @media screen and (max-width: 550px) {
+      font-size: 16px;
+      font-weight: 400;
+      word-spacing: 5px;
+      justify-content: center;
+      align-items: center;
+      animation: none;
+    }
   }
   .dashboard__head {
     @include Flex;
@@ -89,7 +97,7 @@
   }
   .api__details {
     height: 300px;
-    
+
     h1 {
       font-weight: 500;
       font-size: 16px;
