@@ -61,7 +61,7 @@ export default function ContactUs() {
               ></textarea>
             </div>
           </div>
-          <Button text={'Get in touch'} />
+          <Button text={'Get in Touch'} />
         </form>
       </div>
     </div>
