@@ -67,6 +67,7 @@ const DashboardNavbar = ({ data }) => {
     }
   };
   return (
+
     <>
       <div className="navbar">
         <div className="relative">
@@ -114,6 +115,7 @@ const DashboardNavbar = ({ data }) => {
           <div className="user__grid">
             <div>
               <img className="user_image mb-3" src={user.ProfileUrl} />
+
             </div>
           </div>
           <div className="drop__down">
