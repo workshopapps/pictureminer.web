@@ -9,7 +9,7 @@ import warningIcon from '../../assets/dashboardImageDetails/warning-icon.webp';
 import closeIcon from '../../assets/dashboardImageDetails/close-icon.webp';
 import axios from 'axios';
 import UserContext from '../../context/UserContext';
-import computer from '../../assets/computer.png';
+import computer from '../../assets/computer.webp';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import BatchImage from './BatchImage';
 import { notifyError } from '../../utils/notify';
@@ -34,7 +34,6 @@ const Images = () => {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false);
   const [singleImageKey, setSingleImageKey] = useState('');
-
 
   const toggleShowMenu = () => {
     setShowMenu((prev) => !prev);
