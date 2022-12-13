@@ -255,7 +255,7 @@ const ImageDetails = () => {
             {`Picture ID: #${
               imageDets?.details
                 ? imageDets?.details[0].date_created.split('.')[1]
-                : 'None'
+                : ''
             }`}
           </h2>
         </div>
@@ -362,11 +362,7 @@ const ImageDetails = () => {
           <div className="w-full md:w-1/2">
             <img
               className="w-full"
-              src={
-                imageDets?.details
-                  ? imageDets?.details[0].image_path
-                  : 'https://images.unsplash.com/photo-1596120236172-231999844ade?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8dmFjYXRpb258ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'
-              }
+              src={imageDets?.details ? imageDets?.details[0].image_path : null}
               alt="Image descr"
             />
           </div>
@@ -381,9 +377,9 @@ const ImageDetails = () => {
           </div>
         </div>
         <div className="flex flex-col gap-6 mt-8 md:flex-row">
-          <p>Was this article helpful</p>
+          <p className="text-center">Was this description helpful?</p>
 
-          <div className="flex gap-4 ">
+          <div className="flex gap-4 align-center justify-center">
             {!imageDets?.reviewStatus ? (
               <>
                 <div
