@@ -256,7 +256,7 @@ const ImageUpload = ({ demo = false }) => {
                 )}
                 {response?.error ? (
                   <p className="text-red-400 text-lg">
-                    {response?.error?.message}
+                    {response?.error?.response?.data?.message}
                   </p>
                 ) : null}
                 {imageURLs.length > 0 && (
@@ -289,11 +289,11 @@ const ImageUpload = ({ demo = false }) => {
           </div>
 
           <div className="text-2xl opacity-80 text-center my-8">OR</div>
-          <div className="container__try-demo mx-auto my-16">
+          <div className="container__try-demo mx-auto my-16 w-full max-w-[375px]">
             {error ? (
               <p className="text-red-400 text-lg">{error && error}</p>
             ) : null}
-            <form onSubmit={handleSubmitUrl}>
+            <form onSubmit={handleSubmitUrl}  className=" w-full max-w-[375px]">
               <AuthInput
                 label="Mine image with url"
                 placeholder="Enter image url e.g https://via.placeholder.com/300.png"

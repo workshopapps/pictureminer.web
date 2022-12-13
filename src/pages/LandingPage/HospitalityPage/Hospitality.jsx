@@ -6,6 +6,7 @@ import React from 'react';
 import women from '../../../assets/two-women.svg';
 import hospitality from '../../../assets/hospitality.svg';
 import ImageUpload from '../../dashboard/ImageUpload';
+import { motion } from 'framer-motion';
 const datad = [
   'Organize your content in a smart and easy method',
   'Automatically assign images to relevant categories',
@@ -15,7 +16,12 @@ const datad = [
 
 const Hospitality = () => {
   return (
-    <main>
+    <motion.main
+      initial={{ opacity: 0, x: -300 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 300 }}
+      transition={{ type: 'spring', duration: 1, ease: 'easeOut' }}
+    >
       <section className="flex flex-col lg:flex-row justify-between  items-center bg-[#092C4C] text-[#FBFBFB] px-4 sm:px-[2rem] md:px-[81px] py-8 sm:py-[4rem] md:py-[75px]">
         <div className=" w-full max-w-[572px]">
           <h1 className="font-bold text-[30px] sm:text-[36px] leading-[42px] sm:leading-[50px] py-[1rem] sm:py-[2rem]">
@@ -67,7 +73,7 @@ const Hospitality = () => {
       <section>
         <ImageUpload demo />
       </section>
-    </main>
+    </motion.main>
   );
 };
 

@@ -8,7 +8,18 @@
     text-transform: capitalize;
   }
   .categories {
-    margin-bottom: 10px;
+    margin-block: 34px 10px;
+  }
+  .image_categories {
+    @include Flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 36px;
+    .batch_images {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+    margin-bottom: 38px;
   }
   .batch_images {
     @include Flex;

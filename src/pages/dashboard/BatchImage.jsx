@@ -91,7 +91,7 @@ const BatchImage = () => {
               batchId: item.id,
               dateMined: `${item.date_created.split('T')[0]}`,
               status: (
-                <Link to={`/images/batch/${item.id}`} className="view__more">
+                <Link to={`/images/batch/${item.id}`} className={item.status}>
                   {item.status} &rarr;
                 </Link>
               ),
@@ -118,12 +118,12 @@ const BatchImage = () => {
     };
     fetchData();
   }, [user]);
-
+  console.log(batchData.tabledata);
   return (
     <div className="dashboard_images">
       <div className="dashboard__images__head">
         <h1>Images</h1>
-        <div className="relative">
+        {/* <div className="relative">
           <Button
             text={'Filter'}
             icon={<ArrowDown2 size={24} color="#FF6C00" />}
@@ -137,7 +137,7 @@ const BatchImage = () => {
             <p>Last 1 month</p>
             <p>Last 2 months</p>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="images_table">
         <DataTable

@@ -4,7 +4,7 @@ import Colorful from '../images/colorful.png';
 import Gallery from '../images/Gallery.png';
 import Upload from '../images/clarity_upload-cloud-line.png';
 import Generate from '../images/arcticons_grow.png';
-
+import { motion } from 'framer-motion';
 import '../../../styles/layout/about.scss';
 import Cards from './WhatWeDoCards/Cards';
 
@@ -13,7 +13,12 @@ import UserContext from '../../../context/UserContext';
 export default function About() {
   const { user } = React.useContext(UserContext);
   return (
-    <section>
+    <motion.section
+      initial={{ opacity: 0, x: -300 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 300 }}
+      transition={{ type: 'spring', duration: 1, ease: 'easeOut' }}
+    >
       <div className="about-general-container">
         <div className="header-container">
           <div className="texts">
@@ -107,6 +112,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

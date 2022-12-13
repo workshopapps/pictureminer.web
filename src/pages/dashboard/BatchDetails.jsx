@@ -82,9 +82,19 @@ const BatchDetails = () => {
             return {
               ...prev,
               loading: false,
-              data: response.data,
+              data: response.data.filter((item) => {
+                return !item.untagged;
+              }),
+              untaggedData: response.data.filter((item) => {
+                return item.untagged;
+              }),
             };
           });
+          console.log(
+            response.data.filter((item) => {
+              return !item.untagged;
+            })
+          );
         }
       } catch (error) {
         if (error.response.status === 400) {
@@ -152,7 +162,6 @@ const BatchDetails = () => {
     setButtonDropdown(false);
     setShowSaveSuccessModal(true);
   };
-
   const saveToCsvHandler = () => {
     const url = `https://discripto.hng.tech/api1/api/v1/batch-service/download/${param.batchId}`;
     const link = document.createElement('a');
@@ -294,7 +303,7 @@ const BatchDetails = () => {
           </>
         )}
       </section>
-      <section>
+      <section className="image_categories">
         {imageDets.data
           ? imageDets.data.map((item, index) => {
               return (
@@ -314,7 +323,26 @@ const BatchDetails = () => {
             })
           : null}
       </section>
-
+      <section>
+        {imageDets.data
+          ? imageDets.untaggedData.map((item, index) => {
+              return (
+                <div key={index} className="">
+                  <h3 className="tag">{Object.keys(item)[0]}</h3>
+                  <div className="batch_images">
+                    {Object.values(item)[0].map((item) => {
+                      return (
+                        <div className="batch_image" key={item}>
+                          <img src={item} alt="" />
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })
+          : null}
+      </section>
       {showDeleteModal && (
         <>
           <Backdrop />

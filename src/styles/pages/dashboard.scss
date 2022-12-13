@@ -1,20 +1,62 @@
 .dashboard {
   position: relative;
-  
+  .dashboard_tablist {
+    background: #fffbfa;
+
+    border: 1px solid #ff6c00;
+    border-radius: 8px;
+    .active__tab {
+      background: #ffe2cc;
+      border-radius: 4px;
+      color: #1d1d1d;
+    }
+    .tab:hover {
+      background: #ffe2cc;
+    }
+  }
+
+  .moving__warrnig__text {
+    animation: moveright 10s linear infinite;
+    display: flex;
+    word-spacing: 10px;
+
+    font-size: 20px;
+    font-weight: 500;
+    color: #ff6c00;
+    @keyframes moveright {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+
+    @media screen and (max-width: 550px) {
+      font-size: 16px;
+      font-weight: 400;
+      word-spacing: 5px;
+      justify-content: center;
+      align-items: center;
+      animation: none;
+    }
+  }
   .dashboard__head {
     @include Flex;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-end;
+
     @media (max-width: 550px) {
       align-items: center;
       justify-content: stretch;
       gap: 30px;
     }
+
     .images__card {
       width: 280px;
 
       height: 140px;
-
+      // margin-bottom: 100px;
       background: rgba(255, 226, 204, 0.07);
 
       border: 1px solid rgba(102, 80, 63, 0.07);
@@ -57,7 +99,7 @@
   }
   .api__details {
     height: 300px;
-    
+
     h1 {
       font-weight: 500;
       font-size: 16px;

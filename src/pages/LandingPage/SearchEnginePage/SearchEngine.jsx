@@ -6,10 +6,16 @@ import preciseImageDescription from '../assets/Precise-Image-Description.jpg';
 import '../styles/index.css';
 import ImageUpload from '../../dashboard/ImageUpload';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const SearchEngine = () => {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0, x: -300 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 300 }}
+      transition={{ type: 'spring', duration: 1, ease: 'easeOut' }}
+    >
       <section className="bg-secBlue py-10 mt-4">
         <div className="container__search-engine flex flex-col md:flex-row items-center justify-between">
           <div className="text-white md:w-2/4 text-center md:text-left ">
@@ -85,7 +91,7 @@ const SearchEngine = () => {
       <div className="my-24 flex items-center justify-center">
         <ImageUpload demo />
       </div>
-    </>
+    </motion.div>
   );
 };
 
