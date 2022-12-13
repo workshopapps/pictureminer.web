@@ -1,14 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 // import { useNavigate } from 'react-router-dom';
 import { DocumentUpload } from 'iconsax-react';
 import { images } from '../../Constants';
 import BatchUpload from './BatchUpload';
+import Loader from '../../components/Loader';
 // import { Link } from 'react-router-dom';
 import useUploadImage from '../../Hooks/useUploadImage';
+import useUploadImageDemo from '../../Hooks/useUploadImageDemo';
 import './styles/imageUpload.scss';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import AuthInput from '../../components/form/AuthInput';
 import { useGlobalContext } from '../../context/context';
+import UserContext from '../../context/UserContext';
 import { mineImageWithUrlAction } from '../../context/actions';
 
 const ImageUpload = ({ demo = false }) => {
@@ -99,7 +102,7 @@ const ImageUpload = ({ demo = false }) => {
             !showDemo ? 'w-full max-w-[1200px]' : null
           }`}
         >
-          <h2 className="text-mainOrange text-large">Try demo.</h2>
+          <h2 className="text-mainOrange text-large">Try demo</h2>
 
           {showDemo ? (
             <img
