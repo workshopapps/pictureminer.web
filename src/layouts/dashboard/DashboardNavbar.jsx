@@ -64,9 +64,13 @@ const DashboardNavbar = ({ data }) => {
       <div className="relative">
         {location.pathname === '/images' ? (
           <>
-            <RiSearchLine className="icon__ri" color="#6B7280" size="1.2rem" />
+            <RiSearchLine
+              className="icon__ri max-[768px]:hidden"
+              color="#6B7280"
+              size="1.2rem"
+            />
 
-            <div className="form__input">
+            <div className="form__input max-[768px]:hidden">
               <input type="search" name="" id="" placeholder="Search" />
             </div>
             <div className="filt">

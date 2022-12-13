@@ -1,5 +1,5 @@
 /* eslint-disable  */
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import logoFooter from '../assets/logo-footer.svg';
 import { Link } from 'react-router-dom';
 import { useGlobalContext } from '../context/context';
@@ -7,12 +7,12 @@ import { newsSubscriptionAction } from '../context/actions';
 import Loader from '../components/Loader';
 
 const Footer = () => {
-  const [email, setEmail] = useState("")
-  const [response, setResponse] = useState("")
+  const [email, setEmail] = useState('');
+  const [response, setResponse] = useState('');
   const {
     state: {
       newsSubscription: { loading, success, serverResponse, error },
-    },
+    }, 
     dispatch,
   } = useGlobalContext();
 
@@ -23,25 +23,22 @@ const Footer = () => {
   };
 
   useEffect(() => {
-if(success){
-  // console.log(serverResponse)
-  setResponse(serverResponse?.message)
-  setEmail("")
-}
-  }, [success])
+    if (success) {
+      // console.log(serverResponse)
+      setResponse(serverResponse?.message);
+      setEmail('');
+    }
+  }, [success]);
 
   useEffect(() => {
     let timeout;
 
     timeout = setTimeout(() => {
-      setResponse("")
+      setResponse('');
     }, 5000);
 
-    return () => clearTimeout(timeout)
-  }, [response])
-
-
-
+    return () => clearTimeout(timeout);
+  }, [response]);
 
   return (
     <footer className="bg-[#09264c] py-14 px-4 md:px-[100px] border-t border-white text-white">
@@ -52,6 +49,7 @@ if(success){
 
           <Link to="/faq">FAQ</Link>
           <Link to="/how-it-works">How it works</Link>
+          <Link to="/contact-us">Get in touch</Link>
         </div>
         <div className="flex flex-col gap-4">
           <h2 className="mb-4">Resources</h2>
@@ -75,18 +73,18 @@ if(success){
             Subscribe to our newsletter
           </p>
           <form onSubmit={handleSubmit}>
-          {error ? (
+            {error ? (
               <p className="text-red-400 text-lg">{error && error}</p>
             ) : null}
-          {response && response ? (
+            {response && response ? (
               <p className="text-green-400 text-lg">{response}</p>
             ) : null}
             {loading ? <Loader /> : null}
             <div className=" h-[44px] rounded-[8px] flex">
               <input
-              required
-              onChange={(e) => setEmail(e.target.value.trim())}
-              value={email}
+                required
+                onChange={(e) => setEmail(e.target.value.trim())}
+                value={email}
                 type="email"
                 placeholder="Enter email address"
                 className=" flex-1  h-[44px] flex items-center text-[sm] leading-[20px] mt-3 py-3 px-4 outline-none bg-white border border-solid border-l-[#909090] border-t-[#909090] border-b-[#909090] rounded-l-lg rounded-r-none font-normal   focus:outline-none "
@@ -96,7 +94,7 @@ if(success){
                 // disabled="true"
                 className="flex-1 py-3 px-4 h-[44px] flex justify-center items-center text-sm  border border-[#FF6C00]  font-medium leading-[20px] text-white bg-[#FF6C00]  mt-3 rounded-r-lg text-[14px] text-center  hover:bg-[#FF9D55]"
               >
-                {loading ? "Loading..." :"Subscribe"}
+                {loading ? 'Loading...' : 'Subscribe'}
               </button>
             </div>
           </form>

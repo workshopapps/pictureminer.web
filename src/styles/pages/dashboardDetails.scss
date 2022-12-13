@@ -13,6 +13,7 @@
   .image_categories {
     @include Flex;
     align-items: flex-start;
+    flex-wrap: wrap;
     gap: 36px;
     .batch_images {
       display: grid;

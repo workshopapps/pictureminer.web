@@ -139,9 +139,14 @@ const Dashboard = () => {
       'Total Images': formatedDate[item],
     };
   });
-
   return (
     <div className="dashboard">
+      {Math.abs(countProcess?.remaining_to_mine) < 3 && (
+        <div className="moving__warrnig__text">
+          You have {Math.abs(countProcess?.remaining_to_mine)} free mines left,
+          upgrade your account to continue mining
+        </div>
+      )}
       {countProcess && (
         <div
           className="flex md:flex-row flex-col
@@ -161,13 +166,11 @@ const Dashboard = () => {
         >
           <div className="active:border-b-2">Regular Account </div>
           <div>
-            {' '}
-            {countProcess.mined_this_month +
-              Math.abs(countProcess.remaining_to_mine)}{' '}
-            Free Mines{' '}
+            {Math.abs(countProcess.remaining_to_mine)}{' '}
+            <span>Free Mines left</span>
           </div>
           <div
-            className="cursor-pointer hover:text-[#FF9D55] active:border-2 active:border-[#FF9D55] active:bg-[#FF9D55] active:text-white  active:p-2 active:rounded-lg"
+            className="cursor-pointer hover:text-[#FF9D55] active:border-b-2 active:border-[#FF9D55]"
             onClick={() => setUpgrade((prevState) => !prevState)}
           >
             Upgrade Account{' '}
@@ -294,7 +297,7 @@ const Dashboard = () => {
         </div>
       ) : (
         <Tabs>
-          <TabList className={'tablist'}>
+          <TabList className={'tablist dashboard_tablist'}>
             <Tab className={'tab'} selectedClassName={'active__tab'}>
               Batch Upload
             </Tab>
