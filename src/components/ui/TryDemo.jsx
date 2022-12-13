@@ -22,7 +22,7 @@ function TryDemo({
       <p className="mt-6 text-xs md:text-sm text-gray-400">
         Drag and drop CSV file here or click to upload
       </p>
-      <div className="relative bg-mainOrange cursor-pointer px-24 py-3 rounded-lg mt-6">
+      <div className="relative bg-mainOrange cursor-pointer px-3 md:px-24 py-3 rounded-lg mt-6">
         <div className="flex justify-center items-center gap-2 text-white ">
           <ExportCurve size="24" color="#FFF" variant="Outline" />
           <p className="mt-2">
