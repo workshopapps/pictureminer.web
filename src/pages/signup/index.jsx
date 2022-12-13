@@ -119,9 +119,7 @@ const Signup = () => {
           {/* {loading && (
             <p className="text-center text-[18px] font-semibold">Loading....</p>
           )} */}
-          {loading && (
-            <Loader />
-          )}
+          {loading && <Loader />}
 
           <div>
             <p className="leading-[20px] text-[14px] font-normal mx-auto">
@@ -131,7 +129,7 @@ const Signup = () => {
                 to="/terms-of-use"
                 className="text-[#ff6c00] hover:text-[#FF9D55]"
               >
-                terms of acceptable use.
+                <small>terms of acceptable use.</small>
               </Link>
             </p>
             <button

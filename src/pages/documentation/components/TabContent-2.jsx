@@ -1,5 +1,5 @@
 import React from 'react';
-import { ElementEqual, ArrowRight, ArrowLeft } from 'iconsax-react';
+import { ElementEqual, ArrowLeft } from 'iconsax-react';
 
 function TabContent2({ setTabState }) {
   return (
