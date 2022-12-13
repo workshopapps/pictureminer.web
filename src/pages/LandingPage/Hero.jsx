@@ -18,7 +18,7 @@ const Hero = () => {
           Discripto provides quick and simple large-scale image categorization
         </p>
         <Link to={'/demo'}>
-          <Button text={'Watch demo Video'} type={'secondary'} />
+          <Button text={'Watch Demo Video'} type={'secondary'} />
         </Link>
       </div>
     </motion.section>
