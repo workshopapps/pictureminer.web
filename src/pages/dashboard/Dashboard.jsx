@@ -153,7 +153,11 @@ const Dashboard = () => {
         rounded-lg
         shadow
         mb-8
-        text-gray-800"
+        text-gray-800
+        max-[768px]:flex-row
+        max-[768px]:p-2
+        max-[768px]:text-[13px]
+        max-[768px]:font-[600]"
         >
           <div className="active:border-b-2">Regular Account </div>
           <div>
@@ -162,13 +166,8 @@ const Dashboard = () => {
               Math.abs(countProcess.remaining_to_mine)}{' '}
             Free Mines{' '}
           </div>
-          {/* <div> {countProcess.mined_this_month} Free Mines Used </div> */}
-          {/* <div>
-            {' '}
-            {Math.abs(countProcess.remaining_to_mine)} Free Mines Remaining{' '}
-          </div> */}
           <div
-            className="cursor-pointer hover:text-[#FF9D55] active:border-b-2 active:border-[#FF9D55]"
+            className="cursor-pointer hover:text-[#FF9D55] active:border-2 active:border-[#FF9D55] active:bg-[#FF9D55] active:text-white  active:p-2 active:rounded-lg"
             onClick={() => setUpgrade((prevState) => !prevState)}
           >
             Upgrade Account{' '}
@@ -226,7 +225,7 @@ const Dashboard = () => {
               </ul>
               <Link
                 to={`/pricing/standard${isChecked}`}
-                className="w-[50%] md:w-[60%] mt-16 text-white bg-mainOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-5 text-center flex items-center space-x-4 hover:bg-white hover:text-[#FF6C00] "
+                className="w-[50%] md:w-[60%] mt-16 max-[768px]:m-auto text-white bg-mainOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-5 text-center flex items-center space-x-4 hover:bg-white hover:text-[#FF6C00] "
               >
                 {' '}
                 <span className="text-small m-auto"> Activate</span>
@@ -259,7 +258,7 @@ const Dashboard = () => {
                 </li>
                 <li className="flex items-center space-x-3">
                   <SlCheck className="text-lg " />
-                  <span>Faster processig speed</span>
+                  <span>Faster processing speed</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <SlCheck className="text-lg " />
@@ -286,7 +285,7 @@ const Dashboard = () => {
               </ul>
               <Link
                 to={`/pricing/premium${isChecked}`}
-                className="w-[50%] md:w-[60%] text-mainOrange bg-lightOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-5 text-center flex items-center space-x-4 hover:bg-[#FF6C00] hover:text-white "
+                className="w-[50%] md:w-[60%] max-[768px]:m-auto text-mainOrange bg-lightOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-5 text-center flex items-center space-x-4 hover:bg-[#FF6C00] hover:text-white "
               >
                 <span className="text-small m-auto"> Activate</span>
               </Link>
