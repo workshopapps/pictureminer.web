@@ -16,7 +16,7 @@ const EcommercePage = () => {
       initial={{ opacity: 0, x: -300 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 300 }}
-      transition={{ type: 'spring', duration: 0.85, ease: 'easeOut' }}
+      transition={{ type: 'spring', duration: 1, ease: 'easeOut' }}
     >
       <header className="e-commerce_header px-6 md:px-16">
         <div className="header_text">
