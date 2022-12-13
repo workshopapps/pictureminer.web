@@ -44,6 +44,7 @@ import BatchDetails from './pages/dashboard/BatchDetails';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ContactUs from './pages/contactUs/ContactUs';
+import { AnimatePresence } from 'framer-motion';
 
 const RoutesComponents = () => {
   const { setUser } = useContext(UserContext);
@@ -55,63 +56,65 @@ const RoutesComponents = () => {
 
   return (
     <AppProvider>
-      <ScrollToTop>
-        <ToastContainer />
-        <Routes>
-          <Route path="" element={<Layout />}>
-            <Route exact path="" element={<LandingPage />} />
-            <Route exact path="/hospitality" element={<Hospitality />} />
-            <Route exact path="/search-engine" element={<SearchEngine />} />
-            <Route exact path="/health-care" element={<Healthcare />} />
-            <Route path="/signup" element={<Signup />} />
+      <AnimatePresence mode="wait">
+        <ScrollToTop>
+          <ToastContainer />
+          <Routes location={location} key={location.pathname}>
+            <Route path="" element={<Layout />}>
+              <Route exact path="" element={<LandingPage />} />
+              <Route exact path="/hospitality" element={<Hospitality />} />
+              <Route exact path="/search-engine" element={<SearchEngine />} />
+              <Route exact path="/health-care" element={<Healthcare />} />
+              <Route path="/signup" element={<Signup />} />
 
-            {/* <Route path="/demo" element={<MinergramDemo />} /> */}
-            <Route path="/demo" element={<ExternalDemoPage />} />
+              {/* <Route path="/demo" element={<MinergramDemo />} /> */}
+              <Route path="/demo" element={<ExternalDemoPage />} />
 
-            <Route path="/e-commerce" element={<EcommercePage />} />
-            <Route path="/about-us" element={<About />} />
-            <Route path="/how-it-works" element={<HowItWorks />} />
+              <Route path="/e-commerce" element={<EcommercePage />} />
+              <Route path="/about-us" element={<About />} />
+              <Route path="/how-it-works" element={<HowItWorks />} />
 
-            <Route path="/pricing" element={<Pricing />}></Route>
-            <Route path="/pricing/:paymentPlan" element={<Payment />} />
-            <Route
-              path="/documentation"
-              element={<DocumentationHome />}
-            ></Route>
-            <Route
-              path="/documentation/getting-started"
-              element={<GettingStarted />}
-            ></Route>
+              <Route path="/pricing" element={<Pricing />}></Route>
+              <Route path="/pricing/:paymentPlan" element={<Payment />} />
+              <Route
+                path="/documentation"
+                element={<DocumentationHome />}
+              ></Route>
+              <Route
+                path="/documentation/getting-started"
+                element={<GettingStarted />}
+              ></Route>
 
-            <Route path="/terms-of-use" element={<Termsofuse />}></Route>
-            <Route path="/privacy-policy" element={<Privacypolicy />}></Route>
-            <Route path="/faq" element={<Faq />}></Route>
-            <Route path="/contact-us" element={<ContactUs />}></Route>
-            <Route path="*" element={<ErrorPage />}></Route>
+              <Route path="/terms-of-use" element={<Termsofuse />}></Route>
+              <Route path="/privacy-policy" element={<Privacypolicy />}></Route>
+              <Route path="/faq" element={<Faq />}></Route>
+              <Route path="/contact-us" element={<ContactUs />}></Route>
+              <Route path="*" element={<ErrorPage />}></Route>
 
-            {/* <Route path="why-tozilla" element={<WhyTozilla />} /> */}
-            <Route path="/why-discripto" element={<WhyMinergram />} />
+              {/* <Route path="why-tozilla" element={<WhyTozilla />} /> */}
+              <Route path="/why-discripto" element={<WhyMinergram />} />
 
-            <Route path="/login" element={<Login />} />
-          </Route>
-          {/*If your riute us priviate, use Protected Route */}
+              <Route path="/login" element={<Login />} />
+            </Route>
+            {/*If your riute us priviate, use Protected Route */}
 
-          <Route element={<DashboardLayout />}>
-            <Route path="/dashboard" element={<Dashboard />} />
+            <Route element={<DashboardLayout />}>
+              <Route path="/dashboard" element={<Dashboard />} />
 
-            <Route path="/images" element={<Images />} />
-            <Route path="/imageUpload" element={<ImageUpload />} />
+              <Route path="/images" element={<Images />} />
+              <Route path="/imageUpload" element={<ImageUpload />} />
 
-            <Route path="/images/:imageId" element={<ImageDetails />} />
-            <Route path="/images/batch/:batchId" element={<BatchDetails />} />
+              <Route path="/images/:imageId" element={<ImageDetails />} />
+              <Route path="/images/batch/:batchId" element={<BatchDetails />} />
 
-            <Route path="/account-setup" element={<AccountSettings />} />
-            <Route path="/billing" element={<Billing />} />
-          </Route>
-          <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
-        </Routes>
-      </ScrollToTop>
+              <Route path="/account-setup" element={<AccountSettings />} />
+              <Route path="/billing" element={<Billing />} />
+            </Route>
+            <Route path="/forgot-password" element={<ForgotPassword />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
+          </Routes>
+        </ScrollToTop>
+      </AnimatePresence>
     </AppProvider>
   );
 };

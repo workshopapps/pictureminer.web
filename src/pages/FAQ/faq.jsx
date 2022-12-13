@@ -7,6 +7,7 @@ import {
   MdOutlineKeyboardArrowUp,
 } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Faq = () => {
   const [clicked, setClicked] = useState(false);
@@ -53,7 +54,13 @@ const Faq = () => {
   });
 
   return (
-    <div className="">
+    <motion.div
+      className=""
+      initial={{ opacity: 0, x: -300 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 300 }}
+      transition={{ type: 'spring', duration: 0.85, ease: 'easeOut' }}
+    >
       <div className=" container-faq my-20">
         <h1 className="text-large text-center font-bold mb-12">
           Frequently Asked Questions
@@ -84,7 +91,7 @@ const Faq = () => {
           Get in Touch
         </Link>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
