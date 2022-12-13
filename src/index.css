@@ -87,6 +87,10 @@ code {
       width: clamp(375px, 95vw, 648px);
     }
   }
+
+  .b-red {
+    @apply border border-solid border-red-500;
+  }
 }
 
 @layer components {

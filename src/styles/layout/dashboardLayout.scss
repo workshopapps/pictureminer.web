@@ -8,7 +8,6 @@
   }
   .dashboard_pages {
     padding: 20px 0;
-
     width: 100%;
 
     @media (min-width: 550px) {
@@ -17,10 +16,18 @@
   }
   .navbar {
     @include Flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-items: flex-end;
     margin-bottom: 1.1rem;
     position: relative;
+
+    @media (min-width: 800px) {
+      flex-direction: row;
+      align-items: center;
+      gap: 32px;
+    }
+
     .icon__ri {
       position: absolute;
       left: 20px;
@@ -50,8 +57,10 @@
       }
     }
     .user {
+      margin-bottom: 16px;
       @include Flex;
       gap: 8px;
+
       .user__grid {
         display: flex;
         grid-template-columns: auto 1fr;
@@ -60,9 +69,11 @@
         align-items: center;
         place-items: center;
         justify-content: center;
+
         .user_image {
           font-size: 20px;
         }
+
         .user_number {
           font-size: 10px;
         }

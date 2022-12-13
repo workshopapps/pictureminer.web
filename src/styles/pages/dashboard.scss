@@ -44,17 +44,19 @@
   .dashboard__head {
     @include Flex;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-end;
+
     @media (max-width: 550px) {
       align-items: center;
       justify-content: stretch;
       gap: 30px;
     }
+
     .images__card {
       width: 280px;
 
       height: 140px;
-
+      // margin-bottom: 100px;
       background: rgba(255, 226, 204, 0.07);
 
       border: 1px solid rgba(102, 80, 63, 0.07);
