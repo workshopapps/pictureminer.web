@@ -147,22 +147,18 @@ const Dashboard = () => {
           upgrade your account to continue mining
         </div>
       )}
-      {/* {countProcess && (
+      {countProcess && (
         <div
-          className="flex md:flex-row md:hidden
+          className="flex flex-col  md:flex-row md:hidden
         justify-between
         items-center
         w-full
-        py-4
+        p-4
         bg-white
         rounded-lg
         shadow
         mb-8
-        text-gray-800
-        max-[768px]:flex-row
-        max-[768px]:p-2
-        max-[768px]:text-[13px]
-        max-[768px]:font-[600]"
+        text-gray-800"
         >
           <div className="active:border-b-2">Regular Account </div>
           <div>
@@ -170,13 +166,13 @@ const Dashboard = () => {
             <span>Free Mines left</span>
           </div>
           <div
-            className="cursor-pointer hover:text-[#FF9D55] active:border-b-2 active:border-[#FF9D55]"
+            className="cursor-pointer bg-mainOrange rounded-lg px-4 py-2 text-white font-semibold text-sm uppercase tracking-wider hover:bg-white hover:text-black"
             onClick={() => setUpgrade((prevState) => !prevState)}
           >
             Upgrade Account{' '}
           </div>
         </div>
-      )} */}
+      )}
       {upgrade !== false ? (
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
           <div className="space-y-8 lg:grid lg:grid-cols-2 sm:gap-6 xl:gap-10 lg:space-y-0">
@@ -228,7 +224,7 @@ const Dashboard = () => {
               </ul>
               <Link
                 to={`/pricing/standard${isChecked}`}
-                className="w-[50%] md:w-[60%] mt-16 max-[768px]:m-auto text-white bg-mainOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-5 text-center flex items-center space-x-4 hover:bg-white hover:text-[#FF6C00] "
+                className="w-[50%] md:w-[60%] mt-16 text-white bg-mainOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-5 text-center flex items-center space-x-4 hover:bg-white hover:text-[#FF6C00] "
               >
                 {' '}
                 <span className="text-small m-auto"> Activate</span>
@@ -261,7 +257,7 @@ const Dashboard = () => {
                 </li>
                 <li className="flex items-center space-x-3">
                   <SlCheck className="text-lg " />
-                  <span>Faster processing speed</span>
+                  <span>Faster processig speed</span>
                 </li>
                 <li className="flex items-center space-x-3">
                   <SlCheck className="text-lg " />
@@ -288,7 +284,7 @@ const Dashboard = () => {
               </ul>
               <Link
                 to={`/pricing/premium${isChecked}`}
-                className="w-[50%] md:w-[60%] max-[768px]:m-auto text-mainOrange bg-lightOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-5 text-center flex items-center space-x-4 hover:bg-[#FF6C00] hover:text-white "
+                className="w-[50%] md:w-[60%] text-mainOrange bg-lightOrange focus:ring-4 focus:ring-primary-200 font-medium rounded-lg text-sm px-5 py-5 text-center flex items-center space-x-4 hover:bg-[#FF6C00] hover:text-white "
               >
                 <span className="text-small m-auto"> Activate</span>
               </Link>
