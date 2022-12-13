@@ -13,7 +13,7 @@ export default function ContactUs() {
           <div className="md:mt-12 mt-8 grid grid-cols-2 gap-6 md:pt-4">
             <div className="flex flex-col col-span-2 md:col-span-1">
               <label htmlFor="first_name" className="text-sm font-medium mb-1">
-                First name
+                First Name
               </label>
               <input
                 type="text"
@@ -25,7 +25,7 @@ export default function ContactUs() {
             </div>
             <div className="flex flex-col col-span-2 md:col-span-1">
               <label htmlFor="last_name" className="text-sm font-medium mb-1">
-                Last name
+                Last Name
               </label>
               <input
                 type="text"
