@@ -1,11 +1,11 @@
 import React from 'react';
 import Button from '../../../components/Button';
 import ImageUpload from '../../dashboard/ImageUpload';
-import commerce from '../assets/commerce.png';
-import commerce2 from '../assets/commerce2.png';
-import commerce1 from '../assets/commerce1.png';
-import commerce3 from '../assets/commerce3.png';
-import commerce4 from '../assets/commerce4.png';
+import commerce from '../assets/commerce.webp';
+import commerce2 from '../assets/commerce2.webp';
+import commerce1 from '../assets/commerce1.webp';
+import commerce3 from '../assets/commerce3.webp';
+import commerce4 from '../assets/commerce4.webp';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 

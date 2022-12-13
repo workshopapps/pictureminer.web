@@ -1,9 +1,9 @@
 import React from 'react';
-import Download from '../../images/Download.png';
-import Upload from '../../images/Upload.png';
-import Mining from '../../images/Mining.png';
-import Activity from '../../images/Activity.png';
-import Documentation from '../../images/Documentation.png';
+import Download from '../../images/Download.webp';
+import Upload from '../../images/Upload.webp';
+import Mining from '../../images/Mining.webp';
+import Activity from '../../images/Activity.webp';
+import Documentation from '../../images/Documentation.webp';
 import '../../../../styles/layout/about.scss';
 
 export default function Cards() {

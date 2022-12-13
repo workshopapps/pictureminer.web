@@ -1,8 +1,8 @@
 import React from 'react';
-import heroImg from '../assets/Search-engine-hero.jpg';
-import businessAnalysis from '../assets/Business-Analysis.jpg';
-import structuresDescription from '../assets/Structures-Descriptions.jpg';
-import preciseImageDescription from '../assets/Precise-Image-Description.jpg';
+import heroImg from '../assets/Search-engine-hero.webp';
+import businessAnalysis from '../assets/Business-Analysis.webp';
+import structuresDescription from '../assets/Structures-Descriptions.webp';
+import preciseImageDescription from '../assets/Precise-Image-Description.webp';
 import '../styles/index.css';
 import ImageUpload from '../../dashboard/ImageUpload';
 import { Link } from 'react-router-dom';

@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 // import closeIcon from '../../assets/dashboardImageDetails/close-icon.webp';
 import axios from 'axios';
 import UserContext from '../../context/UserContext';
-import computer from '../../assets/computer.png';
+import computer from '../../assets/computer.webp';
 import { notifyError } from '../../utils/notify';
 // import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
