@@ -14,7 +14,7 @@ const SearchEngine = () => {
       initial={{ opacity: 0, x: -300 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 300 }}
-      transition={{ type: 'spring', duration: 0.85, ease: 'easeOut' }}
+      transition={{ type: 'spring', duration: 1, ease: 'easeOut' }}
     >
       <section className="bg-secBlue py-10 mt-4">
         <div className="container__search-engine flex flex-col md:flex-row items-center justify-between">

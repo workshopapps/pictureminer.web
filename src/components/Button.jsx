@@ -1,5 +1,6 @@
 /* eslint-disable indent */
 import React from 'react';
+import { motion } from 'framer-motion';
 
 export default function Button({
   text,
@@ -10,7 +11,9 @@ export default function Button({
   ...props
 }) {
   return (
-    <button
+    <motion.button
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
       disabled={disabled}
       onClick={onClick}
       className={`flex flex-row justify-center items-center w-[100%] 
@@ -33,6 +36,6 @@ export default function Button({
         </div>
       )}
       {text}
-    </button>
+    </motion.button>
   );
 }

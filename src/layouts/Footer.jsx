@@ -12,7 +12,7 @@ const Footer = () => {
   const {
     state: {
       newsSubscription: { loading, success, serverResponse, error },
-    }, 
+    },
     dispatch,
   } = useGlobalContext();
 
@@ -45,10 +45,10 @@ const Footer = () => {
       <div className="flex flex-wrap flex-row justify-between gap-6">
         <div className="flex flex-col gap-3">
           <h2 className="mb-4">Company</h2>
-          <Link to="/about-us">About us</Link>
+          <Link to="/about-us">About Us</Link>
 
           <Link to="/faq">FAQ</Link>
-          <Link to="/how-it-works">How it works</Link>
+          <Link to="/how-it-works">How it Works</Link>
           <Link to="/contact-us">Get in touch</Link>
         </div>
         <div className="flex flex-col gap-4">
@@ -87,12 +87,12 @@ const Footer = () => {
                 value={email}
                 type="email"
                 placeholder="Enter email address"
-                className=" flex-1  h-[44px] flex items-center text-[sm] leading-[20px] mt-3 py-3 px-4 outline-none bg-white border border-solid border-l-[#909090] border-t-[#909090] border-b-[#909090] rounded-l-lg rounded-r-none font-normal   focus:outline-none "
+                className=" flex-1  h-[44px] flex items-center text-[sm] leading-[20px] mt-3 py-3 md:px-4 px-2 outline-none bg-white border border-solid border-l-[#909090] border-t-[#909090] border-b-[#909090] rounded-l-lg rounded-r-none font-normal   focus:outline-none "
               />
               <button
                 type="submit"
                 // disabled="true"
-                className="flex-1 py-3 px-4 h-[44px] flex justify-center items-center text-sm  border border-[#FF6C00]  font-medium leading-[20px] text-white bg-[#FF6C00]  mt-3 rounded-r-lg text-[14px] text-center  hover:bg-[#FF9D55]"
+                className="flex-1 py-3 md:px-4 px-2 h-[44px] flex justify-center items-center text-sm  border border-[#FF6C00]  font-medium leading-[20px] text-white bg-[#FF6C00]  mt-3 rounded-r-lg text-[14px] text-center  hover:bg-[#FF9D55]"
               >
                 {loading ? 'Loading...' : 'Subscribe'}
               </button>
