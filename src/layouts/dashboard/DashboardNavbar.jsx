@@ -68,14 +68,13 @@ const DashboardNavbar = ({ data }) => {
     }
   };
   return (
-
     <>
       <div className="navbar">
         <div className="relative ">
           {location.pathname === '/dashboard' ? (
             <>
               {countProcess && (
-                <div className="flex flex-col md:flex-row justify-between gap-6 items-center w-full p-4 bg-white rounded-lg shadow mb-8 text-gray-800">
+                <div className="md:flex md:flex-row  hidden justify-between gap-6 items-center w-full p-4 bg-white rounded-lg shadow mb-8 text-gray-800">
                   <div>Regular Account </div>
                   <div>
                     {Math.abs(countProcess.remaining_to_mine)}{' '}
@@ -97,7 +96,6 @@ const DashboardNavbar = ({ data }) => {
           <div className="user__grid">
             <div>
               <img className="user_image mb-3" src={user.ProfileUrl} />
-
             </div>
           </div>
           <div className="drop__down">
