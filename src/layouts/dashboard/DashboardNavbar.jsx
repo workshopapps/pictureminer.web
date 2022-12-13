@@ -72,12 +72,6 @@ const DashboardNavbar = ({ data }) => {
         <div className="relative">
           {location.pathname === '/dashboard' ? (
             <>
-              {Math.abs(countProcess?.remaining_to_mine) < 3 && (
-                <div className="moving__warrnig__text">
-                  You have {Math.abs(countProcess?.remaining_to_mine)} free
-                  mines left, upgrade your account to continue mining
-                </div>
-              )}
               {countProcess && (
                 <div
                   className="flex md:flex hidden
