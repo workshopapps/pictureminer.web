@@ -6,6 +6,7 @@ import { Formik } from 'formik';
 import useLogin from '../../Hooks/useLogin';
 import * as Yup from 'yup';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const initialValues = {
   Email: '',
@@ -37,7 +38,13 @@ const index = () => {
     }
   };
   return (
-    <div className="logincontainer ">
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1 }}
+
+
+    className="logincontainer ">
       <LoginHeader />
       <Formik
         initialValues={initialValues}
@@ -58,7 +65,7 @@ const index = () => {
           );
         }}
       </Formik>
-    </div>
+    </motion.div>
   );
 };
 

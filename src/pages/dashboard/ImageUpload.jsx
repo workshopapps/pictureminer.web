@@ -1,8 +1,9 @@
-/* eslint-disable */
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+// import { useNavigate } from 'react-router-dom';
 import { DocumentUpload } from 'iconsax-react';
 import { images } from '../../Constants';
 import BatchUpload from './BatchUpload';
+import Loader from '../../components/Loader';
 // import { Link } from 'react-router-dom';
 import useUploadImage from '../../Hooks/useUploadImage';
 import useUploadImageDemo from '../../Hooks/useUploadImageDemo';
@@ -10,13 +11,10 @@ import './styles/imageUpload.scss';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import AuthInput from '../../components/form/AuthInput';
 import { useGlobalContext } from '../../context/context';
-import { mineImageWithUrlAction } from '../../context/actions';
-import Loader from '../../components/Loader';
 import UserContext from '../../context/UserContext';
-import { useNavigate } from 'react-router-dom';
+import { mineImageWithUrlAction } from '../../context/actions';
 
 const ImageUpload = ({ demo = false }) => {
-  const navigate = useNavigate();
   const { mutate, response, isLoading } = useUploadImage();
   const {
     mutate: mutateDemo,
@@ -44,11 +42,11 @@ const ImageUpload = ({ demo = false }) => {
     await mineImageWithUrlAction({ url })(dispatch);
   };
 
-  // useEffect(() => {
-  //   if (response) {
-  //     console.log({ response });
-  //   }
-  // }, [response]);
+  useEffect(() => {
+    if (response) {
+      console.log({ response });
+    }
+  }, [response]);
 
   // useEffect(() => {
   //   if (error) {
@@ -78,6 +76,7 @@ const ImageUpload = ({ demo = false }) => {
       mutateDemo(formData);
     }
     // console.log(imagesUpload);
+    // navigate(`/try-demo/${response.id}`, {state: {demoData: response}});
   };
   const { user } = useContext(UserContext);
 
@@ -103,7 +102,7 @@ const ImageUpload = ({ demo = false }) => {
             !showDemo ? 'w-full max-w-[1200px]' : null
           }`}
         >
-          <h2 className="text-mainOrange text-large">Try demo.</h2>
+          <h2 className="text-mainOrange text-large">Try demo</h2>
 
           {showDemo ? (
             <img
@@ -189,7 +188,7 @@ const ImageUpload = ({ demo = false }) => {
     );
   }
   return (
-    <Tabs className={'px-10'} onSelect={(index) => handleTabChange(index)}>
+    <Tabs>
       <TabList className={'tablist'}>
         <Tab className={'tab'} selectedClassName={'active__tab'}>
           Single Upload
@@ -297,7 +296,7 @@ const ImageUpload = ({ demo = false }) => {
             <form onSubmit={handleSubmitUrl}  className=" w-full max-w-[375px]">
               <AuthInput
                 label="Mine image with url"
-                placeholder="Enter image url"
+                placeholder="Enter image url e.g https://via.placeholder.com/300.png"
                 type="url"
                 onChange={(e) => {
                   setUrl(e.target.value.trim());
@@ -326,8 +325,6 @@ const ImageUpload = ({ demo = false }) => {
                   </p>
                 </div>
               ) : null}
-
-              {loading && <Loader />}
 
               <button
                 type="submit"
