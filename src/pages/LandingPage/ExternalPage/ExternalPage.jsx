@@ -48,8 +48,7 @@ const ExternalPage = () => {
             />
             {showContainer.button ? (
               <div className="youtube_player absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 ">
-                <Button
-                  text={'Upload Image'}
+                <button
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white bg-[#FF6C00] hover:bg-[#FF9D55] disabled:bg-[#FF9D55] disabled:cursor-not-allowed flex flex-row justify-center items-center 
 
             rounded-lg gap-[8px] py-[16px] px-[24px] font-sans
@@ -62,7 +61,9 @@ const ExternalPage = () => {
                       };
                     });
                   }}
-                />
+                >
+                  Upload Image
+                </button>
               </div>
             ) : null}
           </div>

@@ -67,17 +67,12 @@ const DashboardNavbar = ({ data }) => {
     }
   };
   return (
+
     <>
       <div className="navbar">
         <div className="relative">
           {location.pathname === '/dashboard' ? (
             <>
-              {Math.abs(countProcess?.remaining_to_mine) < 3 && (
-                <div className="moving__warrnig__text">
-                  You have {Math.abs(countProcess?.remaining_to_mine)} free
-                  mines left, upgrade your account to continue mining
-                </div>
-              )}
               {countProcess && (
                 <div
                   className="flex md:flex hidden
@@ -120,6 +115,7 @@ const DashboardNavbar = ({ data }) => {
           <div className="user__grid">
             <div>
               <img className="user_image mb-3" src={user.ProfileUrl} />
+
             </div>
           </div>
           <div className="drop__down">

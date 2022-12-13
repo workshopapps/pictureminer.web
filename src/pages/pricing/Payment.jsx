@@ -207,7 +207,7 @@ function Payment() {
               <div className="w-full">
                 <FormInput
                   name="firstName"
-                  label="First name"
+                  label="First Name"
                   type="text"
                   onchange={handleChange}
                   placeholder="Your first name"
@@ -227,7 +227,7 @@ function Payment() {
               <div className="w-full">
                 <FormInput
                   name="lastName"
-                  label="Last name"
+                  label="Last Name"
                   type="text"
                   onchange={handleChange}
                   placeholder="Your last name"
@@ -247,7 +247,7 @@ function Payment() {
             </div>
             <FormInput
               name="email"
-              label="Email address"
+              label="Email Address"
               type="email"
               onchange={handleChange}
               placeholder="example@gmail.com"
@@ -263,26 +263,29 @@ function Payment() {
                 {state.errorMessages.email}
               </small>
             )}
-            <Button
-              text="Proceed to payment"
-              className={`w-[50%] py-2 px-8 rounded-lg text-small bg-[#D2D2D2] hover:bg-[#EEEEEE] cursor-pointer mt-7 ${
-                state.success || (state.isTouched && 'bg-mainOrange text-white')
-              }`}
-              type="submit"
-              disabled={!state.isTouched || state.isFormValueEmpty}
-            />
-            <Link to="/dashboard">
+            <div className="max-[768px]:flex w-full">
               <Button
-                text="Back"
-                className={
-                  'w-[45%] ml-5 py-2 px-8 rounded-lg text-small bg-[#D2D2D2] hover:bg-[#EEEEEE] cursor-pointer mt-7'
-                }
-                type="button"
+                text="Proceed to Payment"
+                className={`min-[769px]:w-[50%] py-2 px-8 rounded-lg text-small bg-[#D2D2D2] hover:bg-[#EEEEEE] cursor-pointer mt-7 ${
+                  state.success ||
+                  (state.isTouched && 'bg-mainOrange text-white')
+                }`}
+                type="submit"
+                disabled={!state.isTouched || state.isFormValueEmpty}
               />
-            </Link>
+              <Link to="/dashboard">
+                <Button
+                  text="Back"
+                  className={
+                    ' min-[769px]:w-[45%] ml-5 py-2 px-8 rounded-lg text-small bg-[#D2D2D2] hover:bg-[#EEEEEE] cursor-pointer mt-7'
+                  }
+                  type="button"
+                />
+              </Link>
+            </div>
             <div className="mt-12 space-y-5 ">
               <p className="tracking-normal">
-                Your subscription will automatically renew every month. You will
+                Your subscription will automatically renewed monthly. You will
                 be charged <span>{planAmount}</span> USD on each renewal until
                 you cancel your subscription. If you cancel, previous charges
                 will not be refunded, but you may continue to use the service
