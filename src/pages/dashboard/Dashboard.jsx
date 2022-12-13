@@ -147,7 +147,7 @@ const Dashboard = () => {
           upgrade your account to continue mining
         </div>
       )}
-      {countProcess && (
+      {/* {countProcess && (
         <div
           className="flex md:flex-row md:hidden
         justify-between
@@ -166,15 +166,13 @@ const Dashboard = () => {
             <span>Free Mines left</span>
           </div>
           <div
-
             className="cursor-pointer hover:text-[#FF9D55] active:border-b-2 active:border-[#FF9D55]"
-
             onClick={() => setUpgrade((prevState) => !prevState)}
           >
             Upgrade Account{' '}
           </div>
         </div>
-      )}
+      )} */}
       {upgrade !== false ? (
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
           <div className="space-y-8 lg:grid lg:grid-cols-2 sm:gap-6 xl:gap-10 lg:space-y-0">

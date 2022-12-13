@@ -27,6 +27,7 @@ const DashboardNavbar = ({ data }) => {
   );
   const [upgrade, setUpgrade] = useState(false);
   const [isChecked, setIsChecked] = useState(true);
+
   const handleChange = async (e) => {
     e.preventDefault();
 
@@ -69,7 +70,7 @@ const DashboardNavbar = ({ data }) => {
   return (
     <>
       <div className="navbar">
-        <div className="relative">
+        <div className="relative ">
           {location.pathname === '/dashboard' ? (
             <>
               {Math.abs(countProcess?.remaining_to_mine) < 3 && (
@@ -79,33 +80,14 @@ const DashboardNavbar = ({ data }) => {
                 </div>
               )}
               {countProcess && (
-                <div
-                  className="flex md:flex hidden
-        justify-center gap-6
-        items-center
-        w-full
-        p-4
-        bg-white
-        rounded-lg
-        shadow
-        mb-8
-        text-gray-800"
-                >
+                <div className="flex flex-col md:flex-row justify-between gap-6 items-center w-full p-4 bg-white rounded-lg shadow mb-8 text-gray-800">
                   <div>Regular Account </div>
                   <div>
                     {Math.abs(countProcess.remaining_to_mine)}{' '}
                     <span>Free Mines left</span>
                   </div>
                   <div
-                    className="cursor-pointer bg-[#ff6c00] rounded-lg px-4 py-2
-            text-white
-            font-semibold
-            text-sm
-            uppercase
-            tracking-wider
-            hover:bg-white
-            hover:text-black
-            "
+                    className="cursor-pointer bg-mainOrange rounded-lg px-4 py-2 text-white font-semibold text-sm uppercase tracking-wider hover:bg-white hover:text-black"
                     onClick={() => setUpgrade((prevState) => !prevState)}
                   >
                     Upgrade Account
