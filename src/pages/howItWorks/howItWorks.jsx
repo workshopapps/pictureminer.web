@@ -11,7 +11,7 @@ function HowItWorks() {
       initial={{ opacity: 0, x: -300 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 300 }}
-      transition={{ type: 'spring', duration: 0.85, ease: 'easeOut' }}
+      transition={{ type: 'spring', duration: 1, ease: 'easeOut' }}
     >
       <section className="relative mt-2 md:mt-0 lg:mt-[49px]">
         <div className="bg-[#092C4C] h-[300px] md:h-[400px] flex flex-col items-center justify-center">

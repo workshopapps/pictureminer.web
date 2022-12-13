@@ -14,7 +14,7 @@ function Pricing() {
       initial={{ opacity: 0, x: -300 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 300 }}
-      transition={{ type: 'spring', duration: 0.85, ease: 'easeOut' }}
+      transition={{ type: 'spring', duration: 1, ease: 'easeOut' }}
     >
       <header className="text-center pricing-container">
         <h1 className="text-large font-bold leading-tight">

@@ -149,11 +149,11 @@ const Dashboard = () => {
       )}
       {countProcess && (
         <div
-          className="flex md:flex-row flex-col
-        justify-center gap-6
+          className="flex md:flex-row md:hidden
+        justify-between
         items-center
         w-full
-        p-4
+        py-4
         bg-white
         rounded-lg
         shadow

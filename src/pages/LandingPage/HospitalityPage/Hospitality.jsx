@@ -20,7 +20,7 @@ const Hospitality = () => {
       initial={{ opacity: 0, x: -300 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 300 }}
-      transition={{ type: 'spring', duration: 0.85, ease: 'easeOut' }}
+      transition={{ type: 'spring', duration: 1, ease: 'easeOut' }}
     >
       <section className="flex flex-col lg:flex-row justify-between  items-center bg-[#092C4C] text-[#FBFBFB] px-4 sm:px-[2rem] md:px-[81px] py-8 sm:py-[4rem] md:py-[75px]">
         <div className=" w-full max-w-[572px]">
