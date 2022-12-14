@@ -1,10 +1,10 @@
-import React, { useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
-import UserContext from '../context/UserContext';
-import logo from '../assets/logo.svg';
-import { removeItemFromLocalStorage } from '../localStorage';
+import React, { useState, useContext } from "react";
+import { Link } from "react-router-dom";
+import UserContext from "../context/UserContext";
+import logo from "../assets/logo.svg";
+import { removeItemFromLocalStorage } from "../localStorage";
 
-import { HambergerMenu } from 'iconsax-react';
+import { HambergerMenu } from "iconsax-react";
 
 const NavBar = () => {
   const [hide, setHide] = useState(true);
@@ -12,7 +12,7 @@ const NavBar = () => {
 
   const handleLogout = () => {
     setUser(null);
-    removeItemFromLocalStorage('user');
+    removeItemFromLocalStorage("user");
   };
 
   return (
@@ -31,14 +31,14 @@ const NavBar = () => {
       </button>
       <div
         className={`bg-slate-100 md:bg-white p-3 md:p-0 flex-col flex md:flex-row gap-4 md:gap-3 lg:gap-8 md:justify-center md:items-center w-full md:w-fit mt-4 md:mt-0 ${
-          hide ? 'hidden md:flex' : ''
+          hide ? "hidden md:flex" : ""
         }`}
       >
         <Link
           to="/documentation"
           className="hover:text-[#FF9D55] text-sm lg:text-lg"
         >
-          API Documentation
+          Documentation
         </Link>
         <Link
           to="/pricing"
