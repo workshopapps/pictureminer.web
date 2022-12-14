@@ -44,23 +44,11 @@ function Billing() {
                 </li>
                 <li className="flex space-x-3 items-center">
                   <BsCheckCircle />
-                  <p>25 free trials</p>
+                  <p>25 image categorization</p>
                 </li>
                 <li className="flex space-x-3 items-center">
                   <BsCheckCircle />
-                  <p>Image upload not more than 200 MB</p>
-                </li>
-                <li className="flex space-x-3 items-center">
-                  <BsCheckCircle />
-                  <p>Live chat</p>
-                </li>
-                <li className="flex space-x-3 items-center">
-                  <BsCheckCircle />
-                  <p>24/7 Hour support</p>
-                </li>
-                <li className="flex space-x-3 items-center">
-                  <BsCheckCircle />
-                  <p>Get access to upload by others</p>
+                  <p>Image upload not more than 100 MB</p>
                 </li>
                 <li className="flex space-x-3 items-center">
                   <BsCheckCircle />
@@ -68,7 +56,19 @@ function Billing() {
                 </li>
                 <li className="flex space-x-3 items-center">
                   <BsCheckCircle />
-                  <p>Upload two images simultaneously</p>
+                  <p>24/7 customer support </p>
+                </li>
+                <li className="flex space-x-3 items-center">
+                  <BsCheckCircle />
+                  <p>Access to CSV file upload</p>
+                </li>
+                <li className="flex space-x-3 items-center">
+                  <BsCheckCircle />
+                  <p>Access to detailed dashboard </p>
+                </li>
+                <li className="flex space-x-3 items-center">
+                  <BsCheckCircle />
+                  <p>Download of 10 categorized items</p>
                 </li>
               </ul>
             </div>
@@ -158,29 +158,29 @@ function Billing() {
           <div className="flex border border-modalGray border-solid rounded mt-8 items-center justify-between p-2">
             <div className="">
               <small>Plan</small>
-              <p className="text-small">Discripto Basic</p>
+              <p className="text-small">Discripto Standard</p>
             </div>
             <div>
               <small>Price</small>
-              <p className="text-small">$9.99/month</p>
+              <p className="text-small">$14/month</p>
             </div>
           </div>
           <p
             className="mt-8 text-red-500 cursor-pointer hover:text-[#FF9D55]"
             onClick={toggleCancelPlanModal}
           >
-            Cancel Discripto Basic Plan
+            Cancel Discripto Standard Plan
           </p>
         </section>
         <section className="border border-modalGray border-solid rounded mt-8 p-4">
           <p>Billing history</p>
           <div className="flex flex-col mt-8 space-y-4">
             <div className="border border-modalGray border-solid rounded p-2 ">
-              <p>Discripto basic plan subscription - $9.99</p>
+              <p>Discripto Standard Plan Subscription - $14</p>
               <small className="font-medium text-inputGray">Nov 10, 2022</small>
             </div>
             <div className="border border-modalGray border-solid rounded p-2 ">
-              <p>Discripto basic plan subscription - $9.99</p>
+              <p>Discripto Standard plan Subscription - $14</p>
               <small className="font-medium text-inputGray">Nov 10, 2022</small>
             </div>
           </div>
