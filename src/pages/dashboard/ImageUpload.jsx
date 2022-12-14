@@ -296,7 +296,7 @@ const ImageUpload = ({ demo = false }) => {
             <form onSubmit={handleSubmitUrl}  className=" w-full max-w-[375px]">
               <AuthInput
                 label="Mine image with url"
-                placeholder="Enter image url e.g https://via.placeholder.com/300.png"
+                placeholder="Enter image url"
                 type="url"
                 onChange={(e) => {
                   setUrl(e.target.value.trim());
