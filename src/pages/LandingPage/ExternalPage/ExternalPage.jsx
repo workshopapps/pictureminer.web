@@ -71,11 +71,11 @@ const ExternalPage = () => {
           <>
             <Link to="/signup">
               <p
-                className="  hover:text-[#FF9D55] disabled:bg-[#FF9D55] disabled:cursor-not-allowed flex flex-row justify-end items-center w-[200] 
-            rounded-lg gap-[8px] py-[16px] px-[24px] font-sans
-           font-normal text-[22px] leading-[20px] ml-auto mt-7 mr-5"
+                className="  text-[#FF6C00]hover:text-[#FF9D55] disabled:bg-[#FF9D55] disabled:cursor-not-allowed flex flex-row justify-end items-center w-[200] 
+            rounded-lg gap-[8px] py-[16px] px-[12px] font-sans
+           font-normal text-[20px] leading-[20px] ml-auto mt-7 mr-5"
               >
-                Batch Upload {">>>>>"}
+                Batch Upload {">>"}
               </p>
             </Link>
 

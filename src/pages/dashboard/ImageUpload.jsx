@@ -102,7 +102,7 @@ const ImageUpload = ({ demo = false }) => {
             !showDemo ? "w-full max-w-[1200px]" : null
           }`}
         >
-          <h2 className="text-mainOrange text-large">Try demo</h2>
+          <h2 className="text-mainOrange text-large">Try Demo</h2>
 
           {showDemo ? (
             <img
@@ -124,7 +124,7 @@ const ImageUpload = ({ demo = false }) => {
                 className="bg-mainOrange text-white flex flex-row justify-center items-center h-[48px] rounded-[8px] cursor-pointer"
               >
                 <DocumentUpload size="24" color="white" variant="Outline" />
-                <p className="px-2">Upload image</p>
+                <p className="px-2">Upload Image</p>
               </label>
               <input
                 className="hidden"
