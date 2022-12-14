@@ -49,7 +49,7 @@ const Footer = () => {
 
           <Link to="/faq">FAQ</Link>
           <Link to="/how-it-works">How it Works</Link>
-          <Link to="/contact-us">Get in touch</Link>
+          <Link to="/contact-us">Get in Touch</Link>
         </div>
         <div className="flex flex-col gap-4">
           <h2 className="mb-4">Resources</h2>

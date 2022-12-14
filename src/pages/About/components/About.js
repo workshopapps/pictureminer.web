@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Colorful from '../images/colorful.png';
-import Gallery from '../images/Gallery.png';
-import Upload from '../images/clarity_upload-cloud-line.png';
-import Generate from '../images/arcticons_grow.png';
+import Colorful from '../images/colorful.webp';
+import Gallery from '../images/Gallery.webp';
+import Upload from '../images/clarity_upload-cloud-line.webp';
+import Generate from '../images/arcticons_grow.webp';
 import { motion } from 'framer-motion';
 import '../../../styles/layout/about.scss';
 import Cards from './WhatWeDoCards/Cards';

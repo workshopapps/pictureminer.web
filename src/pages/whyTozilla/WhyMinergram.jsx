@@ -11,7 +11,7 @@ function WhyMinergram() {
       <section className="flex flex-col md:flex-col max-[480px]:max-w-full md:pt-[30px] max-[480px]:p-[25px] items-center m-auto max-w-[60%] mt-[30px] mb-0 min-[1024px]:pt-[25px]">
         <div className="text-center">
           <h4 className="font-medium text-2xl lg:leading-[56px] font-Axiforma text-[#061D33] max-[480px]:text-2xl min-[1024px]:text-4xl min-[1200px]:text-5xl">
-            Why Choose Discripto API?
+            Why Choose Discripto?
           </h4>
           <p className="mt-[18px] md:mt-5 lg:mt-[25px] text-xs leading-[18px] lg:text-lg lg:leading-7 text-[#08253F]">
             Discripto is an accurate image recognition API that makes life
