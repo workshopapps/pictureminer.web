@@ -1,18 +1,18 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext } from "react";
 // import { useNavigate } from 'react-router-dom';
-import { DocumentUpload } from 'iconsax-react';
-import { images } from '../../Constants';
-import BatchUpload from './BatchUpload';
-import Loader from '../../components/Loader';
+import { DocumentUpload } from "iconsax-react";
+import { images } from "../../Constants";
+import BatchUpload from "./BatchUpload";
+import Loader from "../../components/Loader";
 // import { Link } from 'react-router-dom';
-import useUploadImage from '../../Hooks/useUploadImage';
-import useUploadImageDemo from '../../Hooks/useUploadImageDemo';
-import './styles/imageUpload.scss';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import AuthInput from '../../components/form/AuthInput';
-import { useGlobalContext } from '../../context/context';
-import UserContext from '../../context/UserContext';
-import { mineImageWithUrlAction } from '../../context/actions';
+import useUploadImage from "../../Hooks/useUploadImage";
+import useUploadImageDemo from "../../Hooks/useUploadImageDemo";
+import "./styles/imageUpload.scss";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import AuthInput from "../../components/form/AuthInput";
+import { useGlobalContext } from "../../context/context";
+import UserContext from "../../context/UserContext";
+import { mineImageWithUrlAction } from "../../context/actions";
 
 const ImageUpload = ({ demo = false }) => {
   const { mutate, response, isLoading } = useUploadImage();
@@ -27,7 +27,7 @@ const ImageUpload = ({ demo = false }) => {
   const [imageURLs, setImageURLs] = useState([]);
 
   // mine image with image url
-  const [url, setUrl] = useState('');
+  const [url, setUrl] = useState("");
 
   const {
     state: {
@@ -69,7 +69,7 @@ const ImageUpload = ({ demo = false }) => {
   const handleImageSubmit = () => {
     // console.log('clicked');
     const formData = new FormData();
-    imagesUpload.forEach((image) => formData.append('image', image));
+    imagesUpload.forEach((image) => formData.append("image", image));
     if (!demo) {
       mutate(formData);
     } else {
@@ -83,7 +83,7 @@ const ImageUpload = ({ demo = false }) => {
   const handleTabChange = (index) => {
     console.log(index);
     if (!user && index === 1) {
-      navigate('/signup');
+      navigate("/signup");
       return false;
     }
   };
@@ -99,7 +99,7 @@ const ImageUpload = ({ demo = false }) => {
       <div className="flex flex-col items-center my-10">
         <div
           className={`container__try-demo flex flex-col gap-8 rounded-lg items-center py-6 mx-6 md:mx-0 relative b-red border border-dashed border-secBrown justify-center ${
-            !showDemo ? 'w-full max-w-[1200px]' : null
+            !showDemo ? "w-full max-w-[1200px]" : null
           }`}
         >
           <h2 className="text-mainOrange text-large">Try demo</h2>
@@ -150,7 +150,7 @@ const ImageUpload = ({ demo = false }) => {
             <div>{isLoadingDemo && <Loader />}</div>
             {!showDemo && responseDemo?.data && (
               <p>
-                Result:{' '}
+                Result:{" "}
                 {responseDemo?.data ? responseDemo?.data?.text_content : null}
               </p>
             )}
@@ -189,11 +189,11 @@ const ImageUpload = ({ demo = false }) => {
   }
   return (
     <Tabs>
-      <TabList className={'tablist'}>
-        <Tab className={'tab'} selectedClassName={'active__tab'}>
+      <TabList className={"tablist"}>
+        <Tab className={"tab"} selectedClassName={"active__tab"}>
           Single Upload
         </Tab>
-        <Tab className={'tab'} selectedClassName={'active__tab'}>
+        <Tab className={"tab"} selectedClassName={"active__tab"}>
           Batch Upload
         </Tab>
       </TabList>
@@ -203,7 +203,7 @@ const ImageUpload = ({ demo = false }) => {
           <div className="flex justify-center mx-auto">
             <div
               className={`container__try-demo flex flex-col gap-8 rounded-lg items-center py-6 md:mx-0 relative b-red border border-dashed border-secBrown justify-center mx-auto ${
-                imageURLs.length > 0 ? 'w-full max-w-[1200px]' : null
+                imageURLs.length > 0 ? "w-full max-w-[1200px]" : null
               }`}
             >
               {imageURLs.length === 0 && (
@@ -239,7 +239,7 @@ const ImageUpload = ({ demo = false }) => {
                 </div>
               )}
               <div className="flex flex-col gap-5 items-center justify-center">
-                <div className="flex flex-row gap-5 items-center justify-center w-full h-full max-h-[1100px] max-w-[1100px] px-3">
+                <div className="flex flex-row gap-5 items-center justify-center w-full h-full max-h-[400px] max-w-[400px] px-3">
                   {imageURLs.map((imageSrc) => (
                     <img
                       key={imagesUpload.length}
@@ -293,7 +293,7 @@ const ImageUpload = ({ demo = false }) => {
             {error ? (
               <p className="text-red-400 text-lg">{error && error}</p>
             ) : null}
-            <form onSubmit={handleSubmitUrl}  className=" w-full max-w-[375px]">
+            <form onSubmit={handleSubmitUrl} className=" w-full max-w-[375px]">
               <AuthInput
                 label="Mine image with url"
                 placeholder="Enter image url"
@@ -309,7 +309,7 @@ const ImageUpload = ({ demo = false }) => {
                     alt=""
                     className="w-full h-full"
                     style={{
-                      objectFit: 'cover',
+                      objectFit: "cover",
                     }}
                   />
                 </div>
@@ -317,7 +317,7 @@ const ImageUpload = ({ demo = false }) => {
 
               {success ? (
                 <div className="my-8">
-                  <p className="text-lg" style={{ color: 'green' }}>
+                  <p className="text-lg" style={{ color: "green" }}>
                     Mining was successful
                   </p>
                   <p className="text-xl">
@@ -331,7 +331,7 @@ const ImageUpload = ({ demo = false }) => {
                 className="bg-[#FF6C00] hover:bg-[#FF9D55] w-full max-w-[300px] text-white flex justify-center items-center rounded-[8px] mt-4 h-[50px] mb-3 mx-auto"
                 disabled={loading ? true : false}
               >
-                {loading && loading ? 'Loading......' : 'Mine Image'}
+                {loading && loading ? "Loading......" : "Mine Image"}
               </button>
             </form>
           </div>
