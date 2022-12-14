@@ -579,7 +579,7 @@ const ImageDetails = () => {
               <h2 className="text-xl font-[500]">Successful</h2>
 
               <p className="text-[#797b89] text-center text-md">
-                Image successfully saved
+                Download Successful
               </p>
 
               <div className="flex gap-4 mt-4 w-full justify-center">
