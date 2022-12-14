@@ -5,8 +5,6 @@ import { motion } from 'framer-motion';
 const Card = ({ title, paragraph, link }) => {
   return (
     <motion.div
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
 
 
 
